@@ -12,22 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.Geocode;
-/**
- * The address.
- */
+import java.util.Objects;
+
+/** The address. */
 @Schema(description = "The address.")
-
-
 public class Address {
   @SerializedName("name")
   private String name = null;
@@ -70,11 +60,14 @@ public class Address {
     return this;
   }
 
-   /**
+  /**
    * The name of the person, business or institution at the address.
+   *
    * @return name
-  **/
-  @Schema(required = true, description = "The name of the person, business or institution at the address.")
+   */
+  @Schema(
+      required = true,
+      description = "The name of the person, business or institution at the address.")
   public String getName() {
     return name;
   }
@@ -88,10 +81,11 @@ public class Address {
     return this;
   }
 
-   /**
+  /**
    * The first line of the address.
+   *
    * @return addressLine1
-  **/
+   */
   @Schema(required = true, description = "The first line of the address.")
   public String getAddressLine1() {
     return addressLine1;
@@ -106,10 +100,11 @@ public class Address {
     return this;
   }
 
-   /**
+  /**
    * Additional address information, if required.
+   *
    * @return addressLine2
-  **/
+   */
   @Schema(description = "Additional address information, if required.")
   public String getAddressLine2() {
     return addressLine2;
@@ -124,10 +119,11 @@ public class Address {
     return this;
   }
 
-   /**
+  /**
    * Additional address information, if required.
+   *
    * @return addressLine3
-  **/
+   */
   @Schema(description = "Additional address information, if required.")
   public String getAddressLine3() {
     return addressLine3;
@@ -142,10 +138,11 @@ public class Address {
     return this;
   }
 
-   /**
+  /**
    * The name of the business or institution associated with the address.
+   *
    * @return companyName
-  **/
+   */
   @Schema(description = "The name of the business or institution associated with the address.")
   public String getCompanyName() {
     return companyName;
@@ -160,10 +157,11 @@ public class Address {
     return this;
   }
 
-   /**
+  /**
    * Get stateOrRegion
+   *
    * @return stateOrRegion
-  **/
+   */
   @Schema(required = true, description = "")
   public String getStateOrRegion() {
     return stateOrRegion;
@@ -178,10 +176,11 @@ public class Address {
     return this;
   }
 
-   /**
+  /**
    * Get city
+   *
    * @return city
-  **/
+   */
   @Schema(required = true, description = "")
   public String getCity() {
     return city;
@@ -196,10 +195,11 @@ public class Address {
     return this;
   }
 
-   /**
+  /**
    * Get countryCode
+   *
    * @return countryCode
-  **/
+   */
   @Schema(required = true, description = "")
   public String getCountryCode() {
     return countryCode;
@@ -214,10 +214,11 @@ public class Address {
     return this;
   }
 
-   /**
+  /**
    * Get postalCode
+   *
    * @return postalCode
-  **/
+   */
   @Schema(required = true, description = "")
   public String getPostalCode() {
     return postalCode;
@@ -232,10 +233,11 @@ public class Address {
     return this;
   }
 
-   /**
+  /**
    * The email address of the contact associated with the address.
+   *
    * @return email
-  **/
+   */
   @Schema(description = "The email address of the contact associated with the address.")
   public String getEmail() {
     return email;
@@ -250,11 +252,16 @@ public class Address {
     return this;
   }
 
-   /**
-   * The phone number of the person, business or institution located at that address, including the country calling code.
+  /**
+   * The phone number of the person, business or institution located at that address, including the
+   * country calling code.
+   *
    * @return phoneNumber
-  **/
-  @Schema(description = "The phone number of the person, business or institution located at that address, including the country calling code.")
+   */
+  @Schema(
+      description =
+          "The phone number of the person, business or institution located at that address,"
+              + " including the country calling code.")
   public String getPhoneNumber() {
     return phoneNumber;
   }
@@ -268,10 +275,11 @@ public class Address {
     return this;
   }
 
-   /**
+  /**
    * Get geocode
+   *
    * @return geocode
-  **/
+   */
   @Schema(description = "")
   public Geocode getGeocode() {
     return geocode;
@@ -280,7 +288,6 @@ public class Address {
   public void setGeocode(Geocode geocode) {
     this.geocode = geocode;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -291,31 +298,42 @@ public class Address {
       return false;
     }
     Address address = (Address) o;
-    return Objects.equals(this.name, address.name) &&
-        Objects.equals(this.addressLine1, address.addressLine1) &&
-        Objects.equals(this.addressLine2, address.addressLine2) &&
-        Objects.equals(this.addressLine3, address.addressLine3) &&
-        Objects.equals(this.companyName, address.companyName) &&
-        Objects.equals(this.stateOrRegion, address.stateOrRegion) &&
-        Objects.equals(this.city, address.city) &&
-        Objects.equals(this.countryCode, address.countryCode) &&
-        Objects.equals(this.postalCode, address.postalCode) &&
-        Objects.equals(this.email, address.email) &&
-        Objects.equals(this.phoneNumber, address.phoneNumber) &&
-        Objects.equals(this.geocode, address.geocode);
+    return Objects.equals(this.name, address.name)
+        && Objects.equals(this.addressLine1, address.addressLine1)
+        && Objects.equals(this.addressLine2, address.addressLine2)
+        && Objects.equals(this.addressLine3, address.addressLine3)
+        && Objects.equals(this.companyName, address.companyName)
+        && Objects.equals(this.stateOrRegion, address.stateOrRegion)
+        && Objects.equals(this.city, address.city)
+        && Objects.equals(this.countryCode, address.countryCode)
+        && Objects.equals(this.postalCode, address.postalCode)
+        && Objects.equals(this.email, address.email)
+        && Objects.equals(this.phoneNumber, address.phoneNumber)
+        && Objects.equals(this.geocode, address.geocode);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, addressLine1, addressLine2, addressLine3, companyName, stateOrRegion, city, countryCode, postalCode, email, phoneNumber, geocode);
+    return Objects.hash(
+        name,
+        addressLine1,
+        addressLine2,
+        addressLine3,
+        companyName,
+        stateOrRegion,
+        city,
+        countryCode,
+        postalCode,
+        email,
+        phoneNumber,
+        geocode);
   }
-
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Address {\n");
-    
+
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    addressLine1: ").append(toIndentedString(addressLine1)).append("\n");
     sb.append("    addressLine2: ").append(toIndentedString(addressLine2)).append("\n");
@@ -333,8 +351,7 @@ public class Address {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -342,5 +359,4 @@ public class Address {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

@@ -12,23 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.IneligibleRateList;
-import software.amazon.spapi.models.shipping.v2.RateList;
-/**
- * The payload for the getRates operation.
- */
+import java.util.Objects;
+
+/** The payload for the getRates operation. */
 @Schema(description = "The payload for the getRates operation.")
-
-
 public class GetRatesResult {
   @SerializedName("requestToken")
   private String requestToken = null;
@@ -44,10 +33,11 @@ public class GetRatesResult {
     return this;
   }
 
-   /**
+  /**
    * Get requestToken
+   *
    * @return requestToken
-  **/
+   */
   @Schema(required = true, description = "")
   public String getRequestToken() {
     return requestToken;
@@ -62,10 +52,11 @@ public class GetRatesResult {
     return this;
   }
 
-   /**
+  /**
    * Get rates
+   *
    * @return rates
-  **/
+   */
   @Schema(required = true, description = "")
   public RateList getRates() {
     return rates;
@@ -80,10 +71,11 @@ public class GetRatesResult {
     return this;
   }
 
-   /**
+  /**
    * Get ineligibleRates
+   *
    * @return ineligibleRates
-  **/
+   */
   @Schema(description = "")
   public IneligibleRateList getIneligibleRates() {
     return ineligibleRates;
@@ -92,7 +84,6 @@ public class GetRatesResult {
   public void setIneligibleRates(IneligibleRateList ineligibleRates) {
     this.ineligibleRates = ineligibleRates;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -103,9 +94,9 @@ public class GetRatesResult {
       return false;
     }
     GetRatesResult getRatesResult = (GetRatesResult) o;
-    return Objects.equals(this.requestToken, getRatesResult.requestToken) &&
-        Objects.equals(this.rates, getRatesResult.rates) &&
-        Objects.equals(this.ineligibleRates, getRatesResult.ineligibleRates);
+    return Objects.equals(this.requestToken, getRatesResult.requestToken)
+        && Objects.equals(this.rates, getRatesResult.rates)
+        && Objects.equals(this.ineligibleRates, getRatesResult.ineligibleRates);
   }
 
   @Override
@@ -113,12 +104,11 @@ public class GetRatesResult {
     return Objects.hash(requestToken, rates, ineligibleRates);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetRatesResult {\n");
-    
+
     sb.append("    requestToken: ").append(toIndentedString(requestToken)).append("\n");
     sb.append("    rates: ").append(toIndentedString(rates)).append("\n");
     sb.append("    ineligibleRates: ").append(toIndentedString(ineligibleRates)).append("\n");
@@ -127,8 +117,7 @@ public class GetRatesResult {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -136,5 +125,4 @@ public class GetRatesResult {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

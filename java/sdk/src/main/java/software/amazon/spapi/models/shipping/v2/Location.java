@@ -12,21 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-/**
- * The location where the person, business or institution is located.
- */
+import java.util.Objects;
+
+/** The location where the person, business or institution is located. */
 @Schema(description = "The location where the person, business or institution is located.")
-
-
 public class Location {
   @SerializedName("stateOrRegion")
   private String stateOrRegion = null;
@@ -45,10 +36,11 @@ public class Location {
     return this;
   }
 
-   /**
+  /**
    * Get stateOrRegion
+   *
    * @return stateOrRegion
-  **/
+   */
   @Schema(description = "")
   public String getStateOrRegion() {
     return stateOrRegion;
@@ -63,10 +55,11 @@ public class Location {
     return this;
   }
 
-   /**
+  /**
    * Get city
+   *
    * @return city
-  **/
+   */
   @Schema(description = "")
   public String getCity() {
     return city;
@@ -81,10 +74,11 @@ public class Location {
     return this;
   }
 
-   /**
+  /**
    * Get countryCode
+   *
    * @return countryCode
-  **/
+   */
   @Schema(description = "")
   public String getCountryCode() {
     return countryCode;
@@ -99,10 +93,11 @@ public class Location {
     return this;
   }
 
-   /**
+  /**
    * Get postalCode
+   *
    * @return postalCode
-  **/
+   */
   @Schema(description = "")
   public String getPostalCode() {
     return postalCode;
@@ -111,7 +106,6 @@ public class Location {
   public void setPostalCode(String postalCode) {
     this.postalCode = postalCode;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -122,10 +116,10 @@ public class Location {
       return false;
     }
     Location location = (Location) o;
-    return Objects.equals(this.stateOrRegion, location.stateOrRegion) &&
-        Objects.equals(this.city, location.city) &&
-        Objects.equals(this.countryCode, location.countryCode) &&
-        Objects.equals(this.postalCode, location.postalCode);
+    return Objects.equals(this.stateOrRegion, location.stateOrRegion)
+        && Objects.equals(this.city, location.city)
+        && Objects.equals(this.countryCode, location.countryCode)
+        && Objects.equals(this.postalCode, location.postalCode);
   }
 
   @Override
@@ -133,12 +127,11 @@ public class Location {
     return Objects.hash(stateOrRegion, city, countryCode, postalCode);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Location {\n");
-    
+
     sb.append("    stateOrRegion: ").append(toIndentedString(stateOrRegion)).append("\n");
     sb.append("    city: ").append(toIndentedString(city)).append("\n");
     sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
@@ -148,8 +141,7 @@ public class Location {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -157,5 +149,4 @@ public class Location {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

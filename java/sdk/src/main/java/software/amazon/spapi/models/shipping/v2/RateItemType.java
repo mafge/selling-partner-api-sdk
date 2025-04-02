@@ -12,19 +12,14 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import io.swagger.v3.oas.annotations.media.Schema;
-import com.google.gson.annotations.SerializedName;
-import java.io.IOException;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-/**
- * Type of the rateItem.
- */
+/** Type of the rateItem. */
 @JsonAdapter(RateItemType.Adapter.class)
 public enum RateItemType {
   @SerializedName("MANDATORY")
@@ -60,14 +55,15 @@ public enum RateItemType {
 
   public static class Adapter extends TypeAdapter<RateItemType> {
     @Override
-    public void write(final JsonWriter jsonWriter, final RateItemType enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final RateItemType enumeration)
+        throws IOException {
       jsonWriter.value(String.valueOf(enumeration.getValue()));
     }
 
     @Override
     public RateItemType read(final JsonReader jsonReader) throws IOException {
       Object value = jsonReader.nextString();
-      return RateItemType.fromValue((String)(value));
+      return RateItemType.fromValue((String) (value));
     }
   }
 }

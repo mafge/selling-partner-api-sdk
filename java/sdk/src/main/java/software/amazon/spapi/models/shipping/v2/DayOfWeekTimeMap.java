@@ -12,18 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.HashMap;
-import java.util.Map;
-import software.amazon.spapi.models.shipping.v2.OperatingHours;
-/**
- * Map of day of the week to operating hours of that day
- */
+import java.util.Objects;
+
+/** Map of day of the week to operating hours of that day */
 @Schema(description = "Map of day of the week to operating hours of that day")
-
-
 public class DayOfWeekTimeMap extends HashMap<String, OperatingHours> {
 
   @Override
@@ -42,7 +36,6 @@ public class DayOfWeekTimeMap extends HashMap<String, OperatingHours> {
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -53,8 +46,7 @@ public class DayOfWeekTimeMap extends HashMap<String, OperatingHours> {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -62,5 +54,4 @@ public class DayOfWeekTimeMap extends HashMap<String, OperatingHours> {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

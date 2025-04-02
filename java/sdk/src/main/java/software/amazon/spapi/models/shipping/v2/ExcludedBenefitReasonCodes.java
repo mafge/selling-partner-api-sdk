@@ -12,17 +12,18 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
+
 /**
- * List of reasons (eg. LATE_DELIVERY_RISK, etc.) indicating why a benefit is excluded for a shipping offer.
+ * List of reasons (eg. LATE_DELIVERY_RISK, etc.) indicating why a benefit is excluded for a
+ * shipping offer.
  */
-@Schema(description = "List of reasons (eg. LATE_DELIVERY_RISK, etc.) indicating why a benefit is excluded for a shipping offer.")
-
-
+@Schema(
+    description =
+        "List of reasons (eg. LATE_DELIVERY_RISK, etc.) indicating why a benefit is excluded for a"
+            + " shipping offer.")
 public class ExcludedBenefitReasonCodes extends ArrayList<String> {
 
   @Override
@@ -41,7 +42,6 @@ public class ExcludedBenefitReasonCodes extends ArrayList<String> {
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -52,8 +52,7 @@ public class ExcludedBenefitReasonCodes extends ArrayList<String> {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -61,5 +60,4 @@ public class ExcludedBenefitReasonCodes extends ArrayList<String> {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

@@ -12,18 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.ArrayList;
-import java.util.List;
-import software.amazon.spapi.models.shipping.v2.LabelAttribute;
-/**
- * Specify the type of attributes to be added on a label.
- */
+import java.util.Objects;
+
+/** Specify the type of attributes to be added on a label. */
 @Schema(description = "Specify the type of attributes to be added on a label.")
-
-
 public class RequestAttributes extends ArrayList<LabelAttribute> {
 
   @Override
@@ -42,7 +36,6 @@ public class RequestAttributes extends ArrayList<LabelAttribute> {
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -53,8 +46,7 @@ public class RequestAttributes extends ArrayList<LabelAttribute> {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -62,5 +54,4 @@ public class RequestAttributes extends ArrayList<LabelAttribute> {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

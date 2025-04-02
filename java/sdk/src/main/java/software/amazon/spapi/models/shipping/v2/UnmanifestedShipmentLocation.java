@@ -12,22 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.Address;
-/**
- * UnmanifestedShipmentLocation info 
- */
+import java.util.Objects;
+
+/** UnmanifestedShipmentLocation info */
 @Schema(description = "UnmanifestedShipmentLocation info ")
-
-
 public class UnmanifestedShipmentLocation {
   @SerializedName("address")
   private Address address = null;
@@ -40,10 +30,11 @@ public class UnmanifestedShipmentLocation {
     return this;
   }
 
-   /**
+  /**
    * Get address
+   *
    * @return address
-  **/
+   */
   @Schema(description = "")
   public Address getAddress() {
     return address;
@@ -58,10 +49,11 @@ public class UnmanifestedShipmentLocation {
     return this;
   }
 
-   /**
+  /**
    * Its Last Manifest Date.
+   *
    * @return lastManifestDate
-  **/
+   */
   @Schema(description = "Its Last Manifest Date.")
   public String getLastManifestDate() {
     return lastManifestDate;
@@ -70,7 +62,6 @@ public class UnmanifestedShipmentLocation {
   public void setLastManifestDate(String lastManifestDate) {
     this.lastManifestDate = lastManifestDate;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,8 +72,8 @@ public class UnmanifestedShipmentLocation {
       return false;
     }
     UnmanifestedShipmentLocation unmanifestedShipmentLocation = (UnmanifestedShipmentLocation) o;
-    return Objects.equals(this.address, unmanifestedShipmentLocation.address) &&
-        Objects.equals(this.lastManifestDate, unmanifestedShipmentLocation.lastManifestDate);
+    return Objects.equals(this.address, unmanifestedShipmentLocation.address)
+        && Objects.equals(this.lastManifestDate, unmanifestedShipmentLocation.lastManifestDate);
   }
 
   @Override
@@ -90,12 +81,11 @@ public class UnmanifestedShipmentLocation {
     return Objects.hash(address, lastManifestDate);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UnmanifestedShipmentLocation {\n");
-    
+
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    lastManifestDate: ").append(toIndentedString(lastManifestDate)).append("\n");
     sb.append("}");
@@ -103,8 +93,7 @@ public class UnmanifestedShipmentLocation {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -112,5 +101,4 @@ public class UnmanifestedShipmentLocation {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

@@ -12,26 +12,14 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import software.amazon.spapi.models.shipping.v2.RequestedDocumentSpecification;
-import software.amazon.spapi.models.shipping.v2.RequestedValueAddedServiceList;
-/**
- * The request schema for the purchaseShipment operation.
- */
+import java.util.Objects;
+
+/** The request schema for the purchaseShipment operation. */
 @Schema(description = "The request schema for the purchaseShipment operation.")
-
-
 public class PurchaseShipmentRequest {
   @SerializedName("requestToken")
   private String requestToken = null;
@@ -53,10 +41,11 @@ public class PurchaseShipmentRequest {
     return this;
   }
 
-   /**
+  /**
    * Get requestToken
+   *
    * @return requestToken
-  **/
+   */
   @Schema(required = true, description = "")
   public String getRequestToken() {
     return requestToken;
@@ -71,10 +60,11 @@ public class PurchaseShipmentRequest {
     return this;
   }
 
-   /**
+  /**
    * Get rateId
+   *
    * @return rateId
-  **/
+   */
   @Schema(required = true, description = "")
   public String getRateId() {
     return rateId;
@@ -84,39 +74,45 @@ public class PurchaseShipmentRequest {
     this.rateId = rateId;
   }
 
-  public PurchaseShipmentRequest requestedDocumentSpecification(RequestedDocumentSpecification requestedDocumentSpecification) {
+  public PurchaseShipmentRequest requestedDocumentSpecification(
+      RequestedDocumentSpecification requestedDocumentSpecification) {
     this.requestedDocumentSpecification = requestedDocumentSpecification;
     return this;
   }
 
-   /**
+  /**
    * Get requestedDocumentSpecification
+   *
    * @return requestedDocumentSpecification
-  **/
+   */
   @Schema(required = true, description = "")
   public RequestedDocumentSpecification getRequestedDocumentSpecification() {
     return requestedDocumentSpecification;
   }
 
-  public void setRequestedDocumentSpecification(RequestedDocumentSpecification requestedDocumentSpecification) {
+  public void setRequestedDocumentSpecification(
+      RequestedDocumentSpecification requestedDocumentSpecification) {
     this.requestedDocumentSpecification = requestedDocumentSpecification;
   }
 
-  public PurchaseShipmentRequest requestedValueAddedServices(RequestedValueAddedServiceList requestedValueAddedServices) {
+  public PurchaseShipmentRequest requestedValueAddedServices(
+      RequestedValueAddedServiceList requestedValueAddedServices) {
     this.requestedValueAddedServices = requestedValueAddedServices;
     return this;
   }
 
-   /**
+  /**
    * Get requestedValueAddedServices
+   *
    * @return requestedValueAddedServices
-  **/
+   */
   @Schema(description = "")
   public RequestedValueAddedServiceList getRequestedValueAddedServices() {
     return requestedValueAddedServices;
   }
 
-  public void setRequestedValueAddedServices(RequestedValueAddedServiceList requestedValueAddedServices) {
+  public void setRequestedValueAddedServices(
+      RequestedValueAddedServiceList requestedValueAddedServices) {
     this.requestedValueAddedServices = requestedValueAddedServices;
   }
 
@@ -133,11 +129,21 @@ public class PurchaseShipmentRequest {
     return this;
   }
 
-   /**
-   * The additional inputs required to purchase a shipping offering, in JSON format. The JSON provided here must adhere to the JSON schema that is returned in the response to the getAdditionalInputs operation.  Additional inputs are only required when indicated by the requiresAdditionalInputs property in the response to the getRates operation.
+  /**
+   * The additional inputs required to purchase a shipping offering, in JSON format. The JSON
+   * provided here must adhere to the JSON schema that is returned in the response to the
+   * getAdditionalInputs operation. Additional inputs are only required when indicated by the
+   * requiresAdditionalInputs property in the response to the getRates operation.
+   *
    * @return additionalInputs
-  **/
-  @Schema(description = "The additional inputs required to purchase a shipping offering, in JSON format. The JSON provided here must adhere to the JSON schema that is returned in the response to the getAdditionalInputs operation.  Additional inputs are only required when indicated by the requiresAdditionalInputs property in the response to the getRates operation.")
+   */
+  @Schema(
+      description =
+          "The additional inputs required to purchase a shipping offering, in JSON format. The JSON"
+              + " provided here must adhere to the JSON schema that is returned in the response to"
+              + " the getAdditionalInputs operation.  Additional inputs are only required when"
+              + " indicated by the requiresAdditionalInputs property in the response to the"
+              + " getRates operation.")
   public Map<String, Object> getAdditionalInputs() {
     return additionalInputs;
   }
@@ -145,7 +151,6 @@ public class PurchaseShipmentRequest {
   public void setAdditionalInputs(Map<String, Object> additionalInputs) {
     this.additionalInputs = additionalInputs;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -156,36 +161,46 @@ public class PurchaseShipmentRequest {
       return false;
     }
     PurchaseShipmentRequest purchaseShipmentRequest = (PurchaseShipmentRequest) o;
-    return Objects.equals(this.requestToken, purchaseShipmentRequest.requestToken) &&
-        Objects.equals(this.rateId, purchaseShipmentRequest.rateId) &&
-        Objects.equals(this.requestedDocumentSpecification, purchaseShipmentRequest.requestedDocumentSpecification) &&
-        Objects.equals(this.requestedValueAddedServices, purchaseShipmentRequest.requestedValueAddedServices) &&
-        Objects.equals(this.additionalInputs, purchaseShipmentRequest.additionalInputs);
+    return Objects.equals(this.requestToken, purchaseShipmentRequest.requestToken)
+        && Objects.equals(this.rateId, purchaseShipmentRequest.rateId)
+        && Objects.equals(
+            this.requestedDocumentSpecification,
+            purchaseShipmentRequest.requestedDocumentSpecification)
+        && Objects.equals(
+            this.requestedValueAddedServices, purchaseShipmentRequest.requestedValueAddedServices)
+        && Objects.equals(this.additionalInputs, purchaseShipmentRequest.additionalInputs);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(requestToken, rateId, requestedDocumentSpecification, requestedValueAddedServices, additionalInputs);
+    return Objects.hash(
+        requestToken,
+        rateId,
+        requestedDocumentSpecification,
+        requestedValueAddedServices,
+        additionalInputs);
   }
-
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PurchaseShipmentRequest {\n");
-    
+
     sb.append("    requestToken: ").append(toIndentedString(requestToken)).append("\n");
     sb.append("    rateId: ").append(toIndentedString(rateId)).append("\n");
-    sb.append("    requestedDocumentSpecification: ").append(toIndentedString(requestedDocumentSpecification)).append("\n");
-    sb.append("    requestedValueAddedServices: ").append(toIndentedString(requestedValueAddedServices)).append("\n");
+    sb.append("    requestedDocumentSpecification: ")
+        .append(toIndentedString(requestedDocumentSpecification))
+        .append("\n");
+    sb.append("    requestedValueAddedServices: ")
+        .append(toIndentedString(requestedValueAddedServices))
+        .append("\n");
     sb.append("    additionalInputs: ").append(toIndentedString(additionalInputs)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -193,5 +208,4 @@ public class PurchaseShipmentRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

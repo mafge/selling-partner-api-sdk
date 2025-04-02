@@ -12,18 +12,20 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.ArrayList;
-import java.util.List;
-import software.amazon.spapi.models.shipping.v2.AccessPoint;
+import java.util.Objects;
+
 /**
- * List of relevant Access points requested by shipper. These access points are sorted by proximity to postal code, and are limited to 40. We have internally defined a radius value to render relevant results.
+ * List of relevant Access points requested by shipper. These access points are sorted by proximity
+ * to postal code, and are limited to 40. We have internally defined a radius value to render
+ * relevant results.
  */
-@Schema(description = "List of relevant Access points requested by shipper. These access points are sorted by proximity to postal code, and are limited to 40. We have internally defined a radius value to render relevant results.")
-
-
+@Schema(
+    description =
+        "List of relevant Access points requested by shipper. These access points are sorted by"
+            + " proximity to postal code, and are limited to 40. We have internally defined a"
+            + " radius value to render relevant results.")
 public class AccessPointList extends ArrayList<AccessPoint> {
 
   @Override
@@ -42,7 +44,6 @@ public class AccessPointList extends ArrayList<AccessPoint> {
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -53,8 +54,7 @@ public class AccessPointList extends ArrayList<AccessPoint> {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -62,5 +62,4 @@ public class AccessPointList extends ArrayList<AccessPoint> {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

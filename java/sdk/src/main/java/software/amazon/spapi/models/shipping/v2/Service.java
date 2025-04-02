@@ -12,21 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-/**
- * Service Related Info
- */
+import java.util.Objects;
+
+/** Service Related Info */
 @Schema(description = "Service Related Info")
-
-
 public class Service {
   @SerializedName("id")
   private String id = null;
@@ -39,10 +30,11 @@ public class Service {
     return this;
   }
 
-   /**
+  /**
    * Get id
+   *
    * @return id
-  **/
+   */
   @Schema(required = true, description = "")
   public String getId() {
     return id;
@@ -57,10 +49,11 @@ public class Service {
     return this;
   }
 
-   /**
+  /**
    * Get name
+   *
    * @return name
-  **/
+   */
   @Schema(required = true, description = "")
   public String getName() {
     return name;
@@ -69,7 +62,6 @@ public class Service {
   public void setName(String name) {
     this.name = name;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -80,8 +72,7 @@ public class Service {
       return false;
     }
     Service service = (Service) o;
-    return Objects.equals(this.id, service.id) &&
-        Objects.equals(this.name, service.name);
+    return Objects.equals(this.id, service.id) && Objects.equals(this.name, service.name);
   }
 
   @Override
@@ -89,12 +80,11 @@ public class Service {
     return Objects.hash(id, name);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Service {\n");
-    
+
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
@@ -102,8 +92,7 @@ public class Service {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -111,5 +100,4 @@ public class Service {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

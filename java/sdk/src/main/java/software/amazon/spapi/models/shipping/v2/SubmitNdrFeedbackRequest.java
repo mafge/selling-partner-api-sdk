@@ -12,23 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.NdrAction;
-import software.amazon.spapi.models.shipping.v2.NdrRequestData;
-/**
- * The request schema for the NdrFeedback operation
- */
+import java.util.Objects;
+
+/** The request schema for the NdrFeedback operation */
 @Schema(description = "The request schema for the NdrFeedback operation")
-
-
 public class SubmitNdrFeedbackRequest {
   @SerializedName("trackingId")
   private String trackingId = null;
@@ -44,10 +33,11 @@ public class SubmitNdrFeedbackRequest {
     return this;
   }
 
-   /**
+  /**
    * Get trackingId
+   *
    * @return trackingId
-  **/
+   */
   @Schema(required = true, description = "")
   public String getTrackingId() {
     return trackingId;
@@ -62,10 +52,11 @@ public class SubmitNdrFeedbackRequest {
     return this;
   }
 
-   /**
+  /**
    * Get ndrAction
+   *
    * @return ndrAction
-  **/
+   */
   @Schema(required = true, description = "")
   public NdrAction getNdrAction() {
     return ndrAction;
@@ -80,10 +71,11 @@ public class SubmitNdrFeedbackRequest {
     return this;
   }
 
-   /**
+  /**
    * Get ndrRequestData
+   *
    * @return ndrRequestData
-  **/
+   */
   @Schema(description = "")
   public NdrRequestData getNdrRequestData() {
     return ndrRequestData;
@@ -92,7 +84,6 @@ public class SubmitNdrFeedbackRequest {
   public void setNdrRequestData(NdrRequestData ndrRequestData) {
     this.ndrRequestData = ndrRequestData;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -103,9 +94,9 @@ public class SubmitNdrFeedbackRequest {
       return false;
     }
     SubmitNdrFeedbackRequest submitNdrFeedbackRequest = (SubmitNdrFeedbackRequest) o;
-    return Objects.equals(this.trackingId, submitNdrFeedbackRequest.trackingId) &&
-        Objects.equals(this.ndrAction, submitNdrFeedbackRequest.ndrAction) &&
-        Objects.equals(this.ndrRequestData, submitNdrFeedbackRequest.ndrRequestData);
+    return Objects.equals(this.trackingId, submitNdrFeedbackRequest.trackingId)
+        && Objects.equals(this.ndrAction, submitNdrFeedbackRequest.ndrAction)
+        && Objects.equals(this.ndrRequestData, submitNdrFeedbackRequest.ndrRequestData);
   }
 
   @Override
@@ -113,12 +104,11 @@ public class SubmitNdrFeedbackRequest {
     return Objects.hash(trackingId, ndrAction, ndrRequestData);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SubmitNdrFeedbackRequest {\n");
-    
+
     sb.append("    trackingId: ").append(toIndentedString(trackingId)).append("\n");
     sb.append("    ndrAction: ").append(toIndentedString(ndrAction)).append("\n");
     sb.append("    ndrRequestData: ").append(toIndentedString(ndrRequestData)).append("\n");
@@ -127,8 +117,7 @@ public class SubmitNdrFeedbackRequest {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -136,5 +125,4 @@ public class SubmitNdrFeedbackRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

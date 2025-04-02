@@ -12,22 +12,14 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.RequestAttributes;
-/**
- * Object contains customised data requested by a shipper to be printed on a shipping label.
- */
-@Schema(description = "Object contains customised data requested by a shipper to be printed on a shipping label.")
+import java.util.Objects;
 
-
+/** Object contains customised data requested by a shipper to be printed on a shipping label. */
+@Schema(
+    description =
+        "Object contains customised data requested by a shipper to be printed on a shipping label.")
 public class RequestedLabelCustomization {
   @SerializedName("requestAttributes")
   private RequestAttributes requestAttributes = null;
@@ -37,10 +29,11 @@ public class RequestedLabelCustomization {
     return this;
   }
 
-   /**
+  /**
    * Get requestAttributes
+   *
    * @return requestAttributes
-  **/
+   */
   @Schema(description = "")
   public RequestAttributes getRequestAttributes() {
     return requestAttributes;
@@ -49,7 +42,6 @@ public class RequestedLabelCustomization {
   public void setRequestAttributes(RequestAttributes requestAttributes) {
     this.requestAttributes = requestAttributes;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,20 +60,18 @@ public class RequestedLabelCustomization {
     return Objects.hash(requestAttributes);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RequestedLabelCustomization {\n");
-    
+
     sb.append("    requestAttributes: ").append(toIndentedString(requestAttributes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -89,5 +79,4 @@ public class RequestedLabelCustomization {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

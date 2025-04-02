@@ -12,23 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.Address;
-import software.amazon.spapi.models.shipping.v2.GenerationStatus;
-/**
- * Active Account Details
- */
+import java.util.Objects;
+
+/** Active Account Details */
 @Schema(description = "Active Account Details")
-
-
 public class CollectionFormsHistoryRecord {
   @SerializedName("carrierName")
   private String carrierName = null;
@@ -50,10 +39,11 @@ public class CollectionFormsHistoryRecord {
     return this;
   }
 
-   /**
+  /**
    * Get carrierName
+   *
    * @return carrierName
-  **/
+   */
   @Schema(description = "")
   public String getCarrierName() {
     return carrierName;
@@ -68,10 +58,11 @@ public class CollectionFormsHistoryRecord {
     return this;
   }
 
-   /**
+  /**
    * Creation Time for this account.
+   *
    * @return creationDate
-  **/
+   */
   @Schema(description = "Creation Time for this account.")
   public String getCreationDate() {
     return creationDate;
@@ -86,10 +77,11 @@ public class CollectionFormsHistoryRecord {
     return this;
   }
 
-   /**
+  /**
    * Get generationStatus
+   *
    * @return generationStatus
-  **/
+   */
   @Schema(description = "")
   public GenerationStatus getGenerationStatus() {
     return generationStatus;
@@ -104,10 +96,11 @@ public class CollectionFormsHistoryRecord {
     return this;
   }
 
-   /**
+  /**
    * Get collectionFormId
+   *
    * @return collectionFormId
-  **/
+   */
   @Schema(description = "")
   public String getCollectionFormId() {
     return collectionFormId;
@@ -122,10 +115,11 @@ public class CollectionFormsHistoryRecord {
     return this;
   }
 
-   /**
+  /**
    * Get shipFromAddress
+   *
    * @return shipFromAddress
-  **/
+   */
   @Schema(description = "")
   public Address getShipFromAddress() {
     return shipFromAddress;
@@ -134,7 +128,6 @@ public class CollectionFormsHistoryRecord {
   public void setShipFromAddress(Address shipFromAddress) {
     this.shipFromAddress = shipFromAddress;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -145,24 +138,24 @@ public class CollectionFormsHistoryRecord {
       return false;
     }
     CollectionFormsHistoryRecord collectionFormsHistoryRecord = (CollectionFormsHistoryRecord) o;
-    return Objects.equals(this.carrierName, collectionFormsHistoryRecord.carrierName) &&
-        Objects.equals(this.creationDate, collectionFormsHistoryRecord.creationDate) &&
-        Objects.equals(this.generationStatus, collectionFormsHistoryRecord.generationStatus) &&
-        Objects.equals(this.collectionFormId, collectionFormsHistoryRecord.collectionFormId) &&
-        Objects.equals(this.shipFromAddress, collectionFormsHistoryRecord.shipFromAddress);
+    return Objects.equals(this.carrierName, collectionFormsHistoryRecord.carrierName)
+        && Objects.equals(this.creationDate, collectionFormsHistoryRecord.creationDate)
+        && Objects.equals(this.generationStatus, collectionFormsHistoryRecord.generationStatus)
+        && Objects.equals(this.collectionFormId, collectionFormsHistoryRecord.collectionFormId)
+        && Objects.equals(this.shipFromAddress, collectionFormsHistoryRecord.shipFromAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(carrierName, creationDate, generationStatus, collectionFormId, shipFromAddress);
+    return Objects.hash(
+        carrierName, creationDate, generationStatus, collectionFormId, shipFromAddress);
   }
-
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CollectionFormsHistoryRecord {\n");
-    
+
     sb.append("    carrierName: ").append(toIndentedString(carrierName)).append("\n");
     sb.append("    creationDate: ").append(toIndentedString(creationDate)).append("\n");
     sb.append("    generationStatus: ").append(toIndentedString(generationStatus)).append("\n");
@@ -173,8 +166,7 @@ public class CollectionFormsHistoryRecord {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -182,5 +174,4 @@ public class CollectionFormsHistoryRecord {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

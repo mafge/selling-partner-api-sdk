@@ -12,24 +12,14 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import software.amazon.spapi.models.shipping.v2.TimeOfDay;
-/**
- * The hours in which the access point shall remain operational
- */
+import java.util.Objects;
+
+/** The hours in which the access point shall remain operational */
 @Schema(description = "The hours in which the access point shall remain operational")
-
-
 public class OperatingHours {
   @SerializedName("closingTime")
   private TimeOfDay closingTime = null;
@@ -45,10 +35,11 @@ public class OperatingHours {
     return this;
   }
 
-   /**
+  /**
    * Get closingTime
+   *
    * @return closingTime
-  **/
+   */
   @Schema(description = "")
   public TimeOfDay getClosingTime() {
     return closingTime;
@@ -63,10 +54,11 @@ public class OperatingHours {
     return this;
   }
 
-   /**
+  /**
    * Get openingTime
+   *
    * @return openingTime
-  **/
+   */
   @Schema(description = "")
   public TimeOfDay getOpeningTime() {
     return openingTime;
@@ -89,10 +81,11 @@ public class OperatingHours {
     return this;
   }
 
-   /**
+  /**
    * midDayClosures operating hours array
+   *
    * @return midDayClosures
-  **/
+   */
   @Schema(description = "midDayClosures operating hours array")
   public List<TimeOfDay> getMidDayClosures() {
     return midDayClosures;
@@ -101,7 +94,6 @@ public class OperatingHours {
   public void setMidDayClosures(List<TimeOfDay> midDayClosures) {
     this.midDayClosures = midDayClosures;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -112,9 +104,9 @@ public class OperatingHours {
       return false;
     }
     OperatingHours operatingHours = (OperatingHours) o;
-    return Objects.equals(this.closingTime, operatingHours.closingTime) &&
-        Objects.equals(this.openingTime, operatingHours.openingTime) &&
-        Objects.equals(this.midDayClosures, operatingHours.midDayClosures);
+    return Objects.equals(this.closingTime, operatingHours.closingTime)
+        && Objects.equals(this.openingTime, operatingHours.openingTime)
+        && Objects.equals(this.midDayClosures, operatingHours.midDayClosures);
   }
 
   @Override
@@ -122,12 +114,11 @@ public class OperatingHours {
     return Objects.hash(closingTime, openingTime, midDayClosures);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OperatingHours {\n");
-    
+
     sb.append("    closingTime: ").append(toIndentedString(closingTime)).append("\n");
     sb.append("    openingTime: ").append(toIndentedString(openingTime)).append("\n");
     sb.append("    midDayClosures: ").append(toIndentedString(midDayClosures)).append("\n");
@@ -136,8 +127,7 @@ public class OperatingHours {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -145,5 +135,4 @@ public class OperatingHours {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

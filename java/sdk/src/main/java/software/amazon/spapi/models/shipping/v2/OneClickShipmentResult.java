@@ -12,26 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.Carrier;
-import software.amazon.spapi.models.shipping.v2.Currency;
-import software.amazon.spapi.models.shipping.v2.PackageDocumentDetailList;
-import software.amazon.spapi.models.shipping.v2.Promise;
-import software.amazon.spapi.models.shipping.v2.Service;
-/**
- * The payload for the OneClickShipment API.
- */
+import java.util.Objects;
+
+/** The payload for the OneClickShipment API. */
 @Schema(description = "The payload for the OneClickShipment API.")
-
-
 public class OneClickShipmentResult {
   @SerializedName("shipmentId")
   private String shipmentId = null;
@@ -56,10 +42,11 @@ public class OneClickShipmentResult {
     return this;
   }
 
-   /**
+  /**
    * Get shipmentId
+   *
    * @return shipmentId
-  **/
+   */
   @Schema(required = true, description = "")
   public String getShipmentId() {
     return shipmentId;
@@ -69,15 +56,17 @@ public class OneClickShipmentResult {
     this.shipmentId = shipmentId;
   }
 
-  public OneClickShipmentResult packageDocumentDetails(PackageDocumentDetailList packageDocumentDetails) {
+  public OneClickShipmentResult packageDocumentDetails(
+      PackageDocumentDetailList packageDocumentDetails) {
     this.packageDocumentDetails = packageDocumentDetails;
     return this;
   }
 
-   /**
+  /**
    * Get packageDocumentDetails
+   *
    * @return packageDocumentDetails
-  **/
+   */
   @Schema(required = true, description = "")
   public PackageDocumentDetailList getPackageDocumentDetails() {
     return packageDocumentDetails;
@@ -92,10 +81,11 @@ public class OneClickShipmentResult {
     return this;
   }
 
-   /**
+  /**
    * Get promise
+   *
    * @return promise
-  **/
+   */
   @Schema(required = true, description = "")
   public Promise getPromise() {
     return promise;
@@ -110,10 +100,11 @@ public class OneClickShipmentResult {
     return this;
   }
 
-   /**
+  /**
    * Get carrier
+   *
    * @return carrier
-  **/
+   */
   @Schema(required = true, description = "")
   public Carrier getCarrier() {
     return carrier;
@@ -128,10 +119,11 @@ public class OneClickShipmentResult {
     return this;
   }
 
-   /**
+  /**
    * Get service
+   *
    * @return service
-  **/
+   */
   @Schema(required = true, description = "")
   public Service getService() {
     return service;
@@ -146,10 +138,11 @@ public class OneClickShipmentResult {
     return this;
   }
 
-   /**
+  /**
    * Get totalCharge
+   *
    * @return totalCharge
-  **/
+   */
   @Schema(required = true, description = "")
   public Currency getTotalCharge() {
     return totalCharge;
@@ -158,7 +151,6 @@ public class OneClickShipmentResult {
   public void setTotalCharge(Currency totalCharge) {
     this.totalCharge = totalCharge;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -169,12 +161,13 @@ public class OneClickShipmentResult {
       return false;
     }
     OneClickShipmentResult oneClickShipmentResult = (OneClickShipmentResult) o;
-    return Objects.equals(this.shipmentId, oneClickShipmentResult.shipmentId) &&
-        Objects.equals(this.packageDocumentDetails, oneClickShipmentResult.packageDocumentDetails) &&
-        Objects.equals(this.promise, oneClickShipmentResult.promise) &&
-        Objects.equals(this.carrier, oneClickShipmentResult.carrier) &&
-        Objects.equals(this.service, oneClickShipmentResult.service) &&
-        Objects.equals(this.totalCharge, oneClickShipmentResult.totalCharge);
+    return Objects.equals(this.shipmentId, oneClickShipmentResult.shipmentId)
+        && Objects.equals(
+            this.packageDocumentDetails, oneClickShipmentResult.packageDocumentDetails)
+        && Objects.equals(this.promise, oneClickShipmentResult.promise)
+        && Objects.equals(this.carrier, oneClickShipmentResult.carrier)
+        && Objects.equals(this.service, oneClickShipmentResult.service)
+        && Objects.equals(this.totalCharge, oneClickShipmentResult.totalCharge);
   }
 
   @Override
@@ -182,14 +175,15 @@ public class OneClickShipmentResult {
     return Objects.hash(shipmentId, packageDocumentDetails, promise, carrier, service, totalCharge);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OneClickShipmentResult {\n");
-    
+
     sb.append("    shipmentId: ").append(toIndentedString(shipmentId)).append("\n");
-    sb.append("    packageDocumentDetails: ").append(toIndentedString(packageDocumentDetails)).append("\n");
+    sb.append("    packageDocumentDetails: ")
+        .append(toIndentedString(packageDocumentDetails))
+        .append("\n");
     sb.append("    promise: ").append(toIndentedString(promise)).append("\n");
     sb.append("    carrier: ").append(toIndentedString(carrier)).append("\n");
     sb.append("    service: ").append(toIndentedString(service)).append("\n");
@@ -199,8 +193,7 @@ public class OneClickShipmentResult {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -208,5 +201,4 @@ public class OneClickShipmentResult {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

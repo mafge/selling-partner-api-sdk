@@ -12,22 +12,13 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.Currency;
-/**
- * A value-added service available for purchase with a shipment service offering.
- */
-@Schema(description = "A value-added service available for purchase with a shipment service offering.")
+import java.util.Objects;
 
-
+/** A value-added service available for purchase with a shipment service offering. */
+@Schema(
+    description = "A value-added service available for purchase with a shipment service offering.")
 public class ValueAddedService {
   @SerializedName("id")
   private String id = null;
@@ -43,10 +34,11 @@ public class ValueAddedService {
     return this;
   }
 
-   /**
+  /**
    * The identifier for the value-added service.
+   *
    * @return id
-  **/
+   */
   @Schema(required = true, description = "The identifier for the value-added service.")
   public String getId() {
     return id;
@@ -61,10 +53,11 @@ public class ValueAddedService {
     return this;
   }
 
-   /**
+  /**
    * The name of the value-added service.
+   *
    * @return name
-  **/
+   */
   @Schema(required = true, description = "The name of the value-added service.")
   public String getName() {
     return name;
@@ -79,10 +72,11 @@ public class ValueAddedService {
     return this;
   }
 
-   /**
+  /**
    * Get cost
+   *
    * @return cost
-  **/
+   */
   @Schema(required = true, description = "")
   public Currency getCost() {
     return cost;
@@ -91,7 +85,6 @@ public class ValueAddedService {
   public void setCost(Currency cost) {
     this.cost = cost;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -102,9 +95,9 @@ public class ValueAddedService {
       return false;
     }
     ValueAddedService valueAddedService = (ValueAddedService) o;
-    return Objects.equals(this.id, valueAddedService.id) &&
-        Objects.equals(this.name, valueAddedService.name) &&
-        Objects.equals(this.cost, valueAddedService.cost);
+    return Objects.equals(this.id, valueAddedService.id)
+        && Objects.equals(this.name, valueAddedService.name)
+        && Objects.equals(this.cost, valueAddedService.cost);
   }
 
   @Override
@@ -112,12 +105,11 @@ public class ValueAddedService {
     return Objects.hash(id, name, cost);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ValueAddedService {\n");
-    
+
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    cost: ").append(toIndentedString(cost)).append("\n");
@@ -126,8 +118,7 @@ public class ValueAddedService {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -135,5 +126,4 @@ public class ValueAddedService {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

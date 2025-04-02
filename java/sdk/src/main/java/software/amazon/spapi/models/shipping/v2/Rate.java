@@ -12,29 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.AvailableValueAddedServiceGroupList;
-import software.amazon.spapi.models.shipping.v2.Benefits;
-import software.amazon.spapi.models.shipping.v2.Currency;
-import software.amazon.spapi.models.shipping.v2.PaymentType;
-import software.amazon.spapi.models.shipping.v2.Promise;
-import software.amazon.spapi.models.shipping.v2.RateItemList;
-import software.amazon.spapi.models.shipping.v2.SupportedDocumentSpecificationList;
-import software.amazon.spapi.models.shipping.v2.Weight;
-/**
- * The details of a shipping service offering.
- */
+import java.util.Objects;
+
+/** The details of a shipping service offering. */
 @Schema(description = "The details of a shipping service offering.")
-
-
 public class Rate {
   @SerializedName("rateId")
   private String rateId = null;
@@ -83,10 +66,11 @@ public class Rate {
     return this;
   }
 
-   /**
+  /**
    * Get rateId
+   *
    * @return rateId
-  **/
+   */
   @Schema(required = true, description = "")
   public String getRateId() {
     return rateId;
@@ -101,10 +85,11 @@ public class Rate {
     return this;
   }
 
-   /**
+  /**
    * Get carrierId
+   *
    * @return carrierId
-  **/
+   */
   @Schema(required = true, description = "")
   public String getCarrierId() {
     return carrierId;
@@ -119,10 +104,11 @@ public class Rate {
     return this;
   }
 
-   /**
+  /**
    * Get carrierName
+   *
    * @return carrierName
-  **/
+   */
   @Schema(required = true, description = "")
   public String getCarrierName() {
     return carrierName;
@@ -137,10 +123,11 @@ public class Rate {
     return this;
   }
 
-   /**
+  /**
    * Get serviceId
+   *
    * @return serviceId
-  **/
+   */
   @Schema(required = true, description = "")
   public String getServiceId() {
     return serviceId;
@@ -155,10 +142,11 @@ public class Rate {
     return this;
   }
 
-   /**
+  /**
    * Get serviceName
+   *
    * @return serviceName
-  **/
+   */
   @Schema(required = true, description = "")
   public String getServiceName() {
     return serviceName;
@@ -173,10 +161,11 @@ public class Rate {
     return this;
   }
 
-   /**
+  /**
    * Get billedWeight
+   *
    * @return billedWeight
-  **/
+   */
   @Schema(description = "")
   public Weight getBilledWeight() {
     return billedWeight;
@@ -191,10 +180,11 @@ public class Rate {
     return this;
   }
 
-   /**
+  /**
    * Get totalCharge
+   *
    * @return totalCharge
-  **/
+   */
   @Schema(required = true, description = "")
   public Currency getTotalCharge() {
     return totalCharge;
@@ -209,10 +199,11 @@ public class Rate {
     return this;
   }
 
-   /**
+  /**
    * Get promise
+   *
    * @return promise
-  **/
+   */
   @Schema(required = true, description = "")
   public Promise getPromise() {
     return promise;
@@ -222,39 +213,45 @@ public class Rate {
     this.promise = promise;
   }
 
-  public Rate supportedDocumentSpecifications(SupportedDocumentSpecificationList supportedDocumentSpecifications) {
+  public Rate supportedDocumentSpecifications(
+      SupportedDocumentSpecificationList supportedDocumentSpecifications) {
     this.supportedDocumentSpecifications = supportedDocumentSpecifications;
     return this;
   }
 
-   /**
+  /**
    * Get supportedDocumentSpecifications
+   *
    * @return supportedDocumentSpecifications
-  **/
+   */
   @Schema(required = true, description = "")
   public SupportedDocumentSpecificationList getSupportedDocumentSpecifications() {
     return supportedDocumentSpecifications;
   }
 
-  public void setSupportedDocumentSpecifications(SupportedDocumentSpecificationList supportedDocumentSpecifications) {
+  public void setSupportedDocumentSpecifications(
+      SupportedDocumentSpecificationList supportedDocumentSpecifications) {
     this.supportedDocumentSpecifications = supportedDocumentSpecifications;
   }
 
-  public Rate availableValueAddedServiceGroups(AvailableValueAddedServiceGroupList availableValueAddedServiceGroups) {
+  public Rate availableValueAddedServiceGroups(
+      AvailableValueAddedServiceGroupList availableValueAddedServiceGroups) {
     this.availableValueAddedServiceGroups = availableValueAddedServiceGroups;
     return this;
   }
 
-   /**
+  /**
    * Get availableValueAddedServiceGroups
+   *
    * @return availableValueAddedServiceGroups
-  **/
+   */
   @Schema(description = "")
   public AvailableValueAddedServiceGroupList getAvailableValueAddedServiceGroups() {
     return availableValueAddedServiceGroups;
   }
 
-  public void setAvailableValueAddedServiceGroups(AvailableValueAddedServiceGroupList availableValueAddedServiceGroups) {
+  public void setAvailableValueAddedServiceGroups(
+      AvailableValueAddedServiceGroupList availableValueAddedServiceGroups) {
     this.availableValueAddedServiceGroups = availableValueAddedServiceGroups;
   }
 
@@ -263,11 +260,20 @@ public class Rate {
     return this;
   }
 
-   /**
-   * When true, indicates that additional inputs are required to purchase this shipment service. You must then call the getAdditionalInputs operation to return the JSON schema to use when providing the additional inputs to the purchaseShipment operation.
+  /**
+   * When true, indicates that additional inputs are required to purchase this shipment service. You
+   * must then call the getAdditionalInputs operation to return the JSON schema to use when
+   * providing the additional inputs to the purchaseShipment operation.
+   *
    * @return requiresAdditionalInputs
-  **/
-  @Schema(required = true, description = "When true, indicates that additional inputs are required to purchase this shipment service. You must then call the getAdditionalInputs operation to return the JSON schema to use when providing the additional inputs to the purchaseShipment operation.")
+   */
+  @Schema(
+      required = true,
+      description =
+          "When true, indicates that additional inputs are required to purchase this shipment"
+              + " service. You must then call the getAdditionalInputs operation to return the JSON"
+              + " schema to use when providing the additional inputs to the purchaseShipment"
+              + " operation.")
   public Boolean isRequiresAdditionalInputs() {
     return requiresAdditionalInputs;
   }
@@ -281,10 +287,11 @@ public class Rate {
     return this;
   }
 
-   /**
+  /**
    * Get rateItemList
+   *
    * @return rateItemList
-  **/
+   */
   @Schema(description = "")
   public RateItemList getRateItemList() {
     return rateItemList;
@@ -299,10 +306,11 @@ public class Rate {
     return this;
   }
 
-   /**
+  /**
    * Get paymentType
+   *
    * @return paymentType
-  **/
+   */
   @Schema(description = "")
   public PaymentType getPaymentType() {
     return paymentType;
@@ -317,10 +325,11 @@ public class Rate {
     return this;
   }
 
-   /**
+  /**
    * Get benefits
+   *
    * @return benefits
-  **/
+   */
   @Schema(description = "")
   public Benefits getBenefits() {
     return benefits;
@@ -329,7 +338,6 @@ public class Rate {
   public void setBenefits(Benefits benefits) {
     this.benefits = benefits;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -340,33 +348,48 @@ public class Rate {
       return false;
     }
     Rate rate = (Rate) o;
-    return Objects.equals(this.rateId, rate.rateId) &&
-        Objects.equals(this.carrierId, rate.carrierId) &&
-        Objects.equals(this.carrierName, rate.carrierName) &&
-        Objects.equals(this.serviceId, rate.serviceId) &&
-        Objects.equals(this.serviceName, rate.serviceName) &&
-        Objects.equals(this.billedWeight, rate.billedWeight) &&
-        Objects.equals(this.totalCharge, rate.totalCharge) &&
-        Objects.equals(this.promise, rate.promise) &&
-        Objects.equals(this.supportedDocumentSpecifications, rate.supportedDocumentSpecifications) &&
-        Objects.equals(this.availableValueAddedServiceGroups, rate.availableValueAddedServiceGroups) &&
-        Objects.equals(this.requiresAdditionalInputs, rate.requiresAdditionalInputs) &&
-        Objects.equals(this.rateItemList, rate.rateItemList) &&
-        Objects.equals(this.paymentType, rate.paymentType) &&
-        Objects.equals(this.benefits, rate.benefits);
+    return Objects.equals(this.rateId, rate.rateId)
+        && Objects.equals(this.carrierId, rate.carrierId)
+        && Objects.equals(this.carrierName, rate.carrierName)
+        && Objects.equals(this.serviceId, rate.serviceId)
+        && Objects.equals(this.serviceName, rate.serviceName)
+        && Objects.equals(this.billedWeight, rate.billedWeight)
+        && Objects.equals(this.totalCharge, rate.totalCharge)
+        && Objects.equals(this.promise, rate.promise)
+        && Objects.equals(
+            this.supportedDocumentSpecifications, rate.supportedDocumentSpecifications)
+        && Objects.equals(
+            this.availableValueAddedServiceGroups, rate.availableValueAddedServiceGroups)
+        && Objects.equals(this.requiresAdditionalInputs, rate.requiresAdditionalInputs)
+        && Objects.equals(this.rateItemList, rate.rateItemList)
+        && Objects.equals(this.paymentType, rate.paymentType)
+        && Objects.equals(this.benefits, rate.benefits);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(rateId, carrierId, carrierName, serviceId, serviceName, billedWeight, totalCharge, promise, supportedDocumentSpecifications, availableValueAddedServiceGroups, requiresAdditionalInputs, rateItemList, paymentType, benefits);
+    return Objects.hash(
+        rateId,
+        carrierId,
+        carrierName,
+        serviceId,
+        serviceName,
+        billedWeight,
+        totalCharge,
+        promise,
+        supportedDocumentSpecifications,
+        availableValueAddedServiceGroups,
+        requiresAdditionalInputs,
+        rateItemList,
+        paymentType,
+        benefits);
   }
-
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Rate {\n");
-    
+
     sb.append("    rateId: ").append(toIndentedString(rateId)).append("\n");
     sb.append("    carrierId: ").append(toIndentedString(carrierId)).append("\n");
     sb.append("    carrierName: ").append(toIndentedString(carrierName)).append("\n");
@@ -375,9 +398,15 @@ public class Rate {
     sb.append("    billedWeight: ").append(toIndentedString(billedWeight)).append("\n");
     sb.append("    totalCharge: ").append(toIndentedString(totalCharge)).append("\n");
     sb.append("    promise: ").append(toIndentedString(promise)).append("\n");
-    sb.append("    supportedDocumentSpecifications: ").append(toIndentedString(supportedDocumentSpecifications)).append("\n");
-    sb.append("    availableValueAddedServiceGroups: ").append(toIndentedString(availableValueAddedServiceGroups)).append("\n");
-    sb.append("    requiresAdditionalInputs: ").append(toIndentedString(requiresAdditionalInputs)).append("\n");
+    sb.append("    supportedDocumentSpecifications: ")
+        .append(toIndentedString(supportedDocumentSpecifications))
+        .append("\n");
+    sb.append("    availableValueAddedServiceGroups: ")
+        .append(toIndentedString(availableValueAddedServiceGroups))
+        .append("\n");
+    sb.append("    requiresAdditionalInputs: ")
+        .append(toIndentedString(requiresAdditionalInputs))
+        .append("\n");
     sb.append("    rateItemList: ").append(toIndentedString(rateItemList)).append("\n");
     sb.append("    paymentType: ").append(toIndentedString(paymentType)).append("\n");
     sb.append("    benefits: ").append(toIndentedString(benefits)).append("\n");
@@ -386,8 +415,7 @@ public class Rate {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -395,5 +423,4 @@ public class Rate {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

@@ -12,18 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.ArrayList;
-import java.util.List;
-import software.amazon.spapi.models.shipping.v2.ValidationMetadata;
-/**
- * A list of ValidationMetadata
- */
+import java.util.Objects;
+
+/** A list of ValidationMetadata */
 @Schema(description = "A list of ValidationMetadata")
-
-
 public class ValidationMetadataList extends ArrayList<ValidationMetadata> {
 
   @Override
@@ -42,7 +36,6 @@ public class ValidationMetadataList extends ArrayList<ValidationMetadata> {
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -53,8 +46,7 @@ public class ValidationMetadataList extends ArrayList<ValidationMetadata> {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -62,5 +54,4 @@ public class ValidationMetadataList extends ArrayList<ValidationMetadata> {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

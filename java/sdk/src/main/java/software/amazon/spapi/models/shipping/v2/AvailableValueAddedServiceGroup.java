@@ -12,24 +12,16 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import software.amazon.spapi.models.shipping.v2.ValueAddedService;
-/**
- * The value-added services available for purchase with a shipping service offering.
- */
-@Schema(description = "The value-added services available for purchase with a shipping service offering.")
+import java.util.Objects;
 
-
+/** The value-added services available for purchase with a shipping service offering. */
+@Schema(
+    description =
+        "The value-added services available for purchase with a shipping service offering.")
 public class AvailableValueAddedServiceGroup {
   @SerializedName("groupId")
   private String groupId = null;
@@ -48,10 +40,11 @@ public class AvailableValueAddedServiceGroup {
     return this;
   }
 
-   /**
+  /**
    * The type of the value-added service group.
+   *
    * @return groupId
-  **/
+   */
   @Schema(required = true, description = "The type of the value-added service group.")
   public String getGroupId() {
     return groupId;
@@ -66,10 +59,11 @@ public class AvailableValueAddedServiceGroup {
     return this;
   }
 
-   /**
+  /**
    * The name of the value-added service group.
+   *
    * @return groupDescription
-  **/
+   */
   @Schema(required = true, description = "The name of the value-added service group.")
   public String getGroupDescription() {
     return groupDescription;
@@ -84,11 +78,14 @@ public class AvailableValueAddedServiceGroup {
     return this;
   }
 
-   /**
+  /**
    * When true, one or more of the value-added services listed must be specified.
+   *
    * @return isRequired
-  **/
-  @Schema(required = true, description = "When true, one or more of the value-added services listed must be specified.")
+   */
+  @Schema(
+      required = true,
+      description = "When true, one or more of the value-added services listed must be specified.")
   public Boolean isIsRequired() {
     return isRequired;
   }
@@ -97,12 +94,14 @@ public class AvailableValueAddedServiceGroup {
     this.isRequired = isRequired;
   }
 
-  public AvailableValueAddedServiceGroup valueAddedServices(List<ValueAddedService> valueAddedServices) {
+  public AvailableValueAddedServiceGroup valueAddedServices(
+      List<ValueAddedService> valueAddedServices) {
     this.valueAddedServices = valueAddedServices;
     return this;
   }
 
-  public AvailableValueAddedServiceGroup addValueAddedServicesItem(ValueAddedService valueAddedServicesItem) {
+  public AvailableValueAddedServiceGroup addValueAddedServicesItem(
+      ValueAddedService valueAddedServicesItem) {
     if (this.valueAddedServices == null) {
       this.valueAddedServices = new ArrayList<ValueAddedService>();
     }
@@ -110,11 +109,16 @@ public class AvailableValueAddedServiceGroup {
     return this;
   }
 
-   /**
-   * A list of optional value-added services available for purchase with a shipping service offering.
+  /**
+   * A list of optional value-added services available for purchase with a shipping service
+   * offering.
+   *
    * @return valueAddedServices
-  **/
-  @Schema(description = "A list of optional value-added services available for purchase with a shipping service offering.")
+   */
+  @Schema(
+      description =
+          "A list of optional value-added services available for purchase with a shipping service"
+              + " offering.")
   public List<ValueAddedService> getValueAddedServices() {
     return valueAddedServices;
   }
@@ -122,7 +126,6 @@ public class AvailableValueAddedServiceGroup {
   public void setValueAddedServices(List<ValueAddedService> valueAddedServices) {
     this.valueAddedServices = valueAddedServices;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -132,11 +135,13 @@ public class AvailableValueAddedServiceGroup {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AvailableValueAddedServiceGroup availableValueAddedServiceGroup = (AvailableValueAddedServiceGroup) o;
-    return Objects.equals(this.groupId, availableValueAddedServiceGroup.groupId) &&
-        Objects.equals(this.groupDescription, availableValueAddedServiceGroup.groupDescription) &&
-        Objects.equals(this.isRequired, availableValueAddedServiceGroup.isRequired) &&
-        Objects.equals(this.valueAddedServices, availableValueAddedServiceGroup.valueAddedServices);
+    AvailableValueAddedServiceGroup availableValueAddedServiceGroup =
+        (AvailableValueAddedServiceGroup) o;
+    return Objects.equals(this.groupId, availableValueAddedServiceGroup.groupId)
+        && Objects.equals(this.groupDescription, availableValueAddedServiceGroup.groupDescription)
+        && Objects.equals(this.isRequired, availableValueAddedServiceGroup.isRequired)
+        && Objects.equals(
+            this.valueAddedServices, availableValueAddedServiceGroup.valueAddedServices);
   }
 
   @Override
@@ -144,12 +149,11 @@ public class AvailableValueAddedServiceGroup {
     return Objects.hash(groupId, groupDescription, isRequired, valueAddedServices);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AvailableValueAddedServiceGroup {\n");
-    
+
     sb.append("    groupId: ").append(toIndentedString(groupId)).append("\n");
     sb.append("    groupDescription: ").append(toIndentedString(groupDescription)).append("\n");
     sb.append("    isRequired: ").append(toIndentedString(isRequired)).append("\n");
@@ -159,8 +163,7 @@ public class AvailableValueAddedServiceGroup {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -168,5 +171,4 @@ public class AvailableValueAddedServiceGroup {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

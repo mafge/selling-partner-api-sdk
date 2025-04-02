@@ -12,24 +12,18 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.Currency;
-import software.amazon.spapi.models.shipping.v2.RateItemID;
-import software.amazon.spapi.models.shipping.v2.RateItemType;
+import java.util.Objects;
+
 /**
- * Rate Item for shipping (base cost, transaction fee, confirmation, insurance, etc.) Data source definition: 
+ * Rate Item for shipping (base cost, transaction fee, confirmation, insurance, etc.) Data source
+ * definition:
  */
-@Schema(description = "Rate Item for shipping (base cost, transaction fee, confirmation, insurance, etc.) Data source definition: ")
-
-
+@Schema(
+    description =
+        "Rate Item for shipping (base cost, transaction fee, confirmation, insurance, etc.) Data"
+            + " source definition: ")
 public class RateItem {
   @SerializedName("rateItemID")
   private RateItemID rateItemID = null;
@@ -48,10 +42,11 @@ public class RateItem {
     return this;
   }
 
-   /**
+  /**
    * Get rateItemID
+   *
    * @return rateItemID
-  **/
+   */
   @Schema(description = "")
   public RateItemID getRateItemID() {
     return rateItemID;
@@ -66,10 +61,11 @@ public class RateItem {
     return this;
   }
 
-   /**
+  /**
    * Get rateItemType
+   *
    * @return rateItemType
-  **/
+   */
   @Schema(description = "")
   public RateItemType getRateItemType() {
     return rateItemType;
@@ -84,10 +80,11 @@ public class RateItem {
     return this;
   }
 
-   /**
+  /**
    * Get rateItemCharge
+   *
    * @return rateItemCharge
-  **/
+   */
   @Schema(description = "")
   public Currency getRateItemCharge() {
     return rateItemCharge;
@@ -102,10 +99,11 @@ public class RateItem {
     return this;
   }
 
-   /**
+  /**
    * Used for the localization.
+   *
    * @return rateItemNameLocalization
-  **/
+   */
   @Schema(description = "Used for the localization.")
   public String getRateItemNameLocalization() {
     return rateItemNameLocalization;
@@ -114,7 +112,6 @@ public class RateItem {
   public void setRateItemNameLocalization(String rateItemNameLocalization) {
     this.rateItemNameLocalization = rateItemNameLocalization;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,10 +122,10 @@ public class RateItem {
       return false;
     }
     RateItem rateItem = (RateItem) o;
-    return Objects.equals(this.rateItemID, rateItem.rateItemID) &&
-        Objects.equals(this.rateItemType, rateItem.rateItemType) &&
-        Objects.equals(this.rateItemCharge, rateItem.rateItemCharge) &&
-        Objects.equals(this.rateItemNameLocalization, rateItem.rateItemNameLocalization);
+    return Objects.equals(this.rateItemID, rateItem.rateItemID)
+        && Objects.equals(this.rateItemType, rateItem.rateItemType)
+        && Objects.equals(this.rateItemCharge, rateItem.rateItemCharge)
+        && Objects.equals(this.rateItemNameLocalization, rateItem.rateItemNameLocalization);
   }
 
   @Override
@@ -136,23 +133,23 @@ public class RateItem {
     return Objects.hash(rateItemID, rateItemType, rateItemCharge, rateItemNameLocalization);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RateItem {\n");
-    
+
     sb.append("    rateItemID: ").append(toIndentedString(rateItemID)).append("\n");
     sb.append("    rateItemType: ").append(toIndentedString(rateItemType)).append("\n");
     sb.append("    rateItemCharge: ").append(toIndentedString(rateItemCharge)).append("\n");
-    sb.append("    rateItemNameLocalization: ").append(toIndentedString(rateItemNameLocalization)).append("\n");
+    sb.append("    rateItemNameLocalization: ")
+        .append(toIndentedString(rateItemNameLocalization))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -160,5 +157,4 @@ public class RateItem {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

@@ -12,22 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.ActiveAccounts;
-/**
- * The Response  for the GetCarrierAccountsResponse operation.
- */
+import java.util.Objects;
+
+/** The Response for the GetCarrierAccountsResponse operation. */
 @Schema(description = "The Response  for the GetCarrierAccountsResponse operation.")
-
-
 public class GetCarrierAccountsResponse {
   @SerializedName("activeAccounts")
   private ActiveAccounts activeAccounts = null;
@@ -37,10 +27,11 @@ public class GetCarrierAccountsResponse {
     return this;
   }
 
-   /**
+  /**
    * Get activeAccounts
+   *
    * @return activeAccounts
-  **/
+   */
   @Schema(required = true, description = "")
   public ActiveAccounts getActiveAccounts() {
     return activeAccounts;
@@ -49,7 +40,6 @@ public class GetCarrierAccountsResponse {
   public void setActiveAccounts(ActiveAccounts activeAccounts) {
     this.activeAccounts = activeAccounts;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,20 +58,18 @@ public class GetCarrierAccountsResponse {
     return Objects.hash(activeAccounts);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetCarrierAccountsResponse {\n");
-    
+
     sb.append("    activeAccounts: ").append(toIndentedString(activeAccounts)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -89,5 +77,4 @@ public class GetCarrierAccountsResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

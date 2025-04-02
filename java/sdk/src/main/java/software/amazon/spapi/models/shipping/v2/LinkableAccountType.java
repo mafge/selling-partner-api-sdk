@@ -12,23 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.AccountType;
-import software.amazon.spapi.models.shipping.v2.CarrierAccountInputsList;
-/**
- * Info About Linkable Account Type
- */
+import java.util.Objects;
+
+/** Info About Linkable Account Type */
 @Schema(description = "Info About Linkable Account Type")
-
-
 public class LinkableAccountType {
   @SerializedName("accountType")
   private AccountType accountType = null;
@@ -41,10 +30,11 @@ public class LinkableAccountType {
     return this;
   }
 
-   /**
+  /**
    * Get accountType
+   *
    * @return accountType
-  **/
+   */
   @Schema(description = "")
   public AccountType getAccountType() {
     return accountType;
@@ -59,10 +49,11 @@ public class LinkableAccountType {
     return this;
   }
 
-   /**
+  /**
    * Get carrierAccountInputs
+   *
    * @return carrierAccountInputs
-  **/
+   */
   @Schema(description = "")
   public CarrierAccountInputsList getCarrierAccountInputs() {
     return carrierAccountInputs;
@@ -71,7 +62,6 @@ public class LinkableAccountType {
   public void setCarrierAccountInputs(CarrierAccountInputsList carrierAccountInputs) {
     this.carrierAccountInputs = carrierAccountInputs;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -82,8 +72,8 @@ public class LinkableAccountType {
       return false;
     }
     LinkableAccountType linkableAccountType = (LinkableAccountType) o;
-    return Objects.equals(this.accountType, linkableAccountType.accountType) &&
-        Objects.equals(this.carrierAccountInputs, linkableAccountType.carrierAccountInputs);
+    return Objects.equals(this.accountType, linkableAccountType.accountType)
+        && Objects.equals(this.carrierAccountInputs, linkableAccountType.carrierAccountInputs);
   }
 
   @Override
@@ -91,21 +81,21 @@ public class LinkableAccountType {
     return Objects.hash(accountType, carrierAccountInputs);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class LinkableAccountType {\n");
-    
+
     sb.append("    accountType: ").append(toIndentedString(accountType)).append("\n");
-    sb.append("    carrierAccountInputs: ").append(toIndentedString(carrierAccountInputs)).append("\n");
+    sb.append("    carrierAccountInputs: ")
+        .append(toIndentedString(carrierAccountInputs))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -113,5 +103,4 @@ public class LinkableAccountType {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

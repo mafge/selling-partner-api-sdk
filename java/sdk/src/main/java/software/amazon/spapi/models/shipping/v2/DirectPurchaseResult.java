@@ -12,22 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.PackageDocumentDetailList;
-/**
- * The payload for the directPurchaseShipment operation.
- */
+import java.util.Objects;
+
+/** The payload for the directPurchaseShipment operation. */
 @Schema(description = "The payload for the directPurchaseShipment operation.")
-
-
 public class DirectPurchaseResult {
   @SerializedName("shipmentId")
   private String shipmentId = null;
@@ -40,10 +30,11 @@ public class DirectPurchaseResult {
     return this;
   }
 
-   /**
+  /**
    * Get shipmentId
+   *
    * @return shipmentId
-  **/
+   */
   @Schema(required = true, description = "")
   public String getShipmentId() {
     return shipmentId;
@@ -53,15 +44,17 @@ public class DirectPurchaseResult {
     this.shipmentId = shipmentId;
   }
 
-  public DirectPurchaseResult packageDocumentDetailList(PackageDocumentDetailList packageDocumentDetailList) {
+  public DirectPurchaseResult packageDocumentDetailList(
+      PackageDocumentDetailList packageDocumentDetailList) {
     this.packageDocumentDetailList = packageDocumentDetailList;
     return this;
   }
 
-   /**
+  /**
    * Get packageDocumentDetailList
+   *
    * @return packageDocumentDetailList
-  **/
+   */
   @Schema(description = "")
   public PackageDocumentDetailList getPackageDocumentDetailList() {
     return packageDocumentDetailList;
@@ -70,7 +63,6 @@ public class DirectPurchaseResult {
   public void setPackageDocumentDetailList(PackageDocumentDetailList packageDocumentDetailList) {
     this.packageDocumentDetailList = packageDocumentDetailList;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,8 +73,9 @@ public class DirectPurchaseResult {
       return false;
     }
     DirectPurchaseResult directPurchaseResult = (DirectPurchaseResult) o;
-    return Objects.equals(this.shipmentId, directPurchaseResult.shipmentId) &&
-        Objects.equals(this.packageDocumentDetailList, directPurchaseResult.packageDocumentDetailList);
+    return Objects.equals(this.shipmentId, directPurchaseResult.shipmentId)
+        && Objects.equals(
+            this.packageDocumentDetailList, directPurchaseResult.packageDocumentDetailList);
   }
 
   @Override
@@ -90,21 +83,21 @@ public class DirectPurchaseResult {
     return Objects.hash(shipmentId, packageDocumentDetailList);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DirectPurchaseResult {\n");
-    
+
     sb.append("    shipmentId: ").append(toIndentedString(shipmentId)).append("\n");
-    sb.append("    packageDocumentDetailList: ").append(toIndentedString(packageDocumentDetailList)).append("\n");
+    sb.append("    packageDocumentDetailList: ")
+        .append(toIndentedString(packageDocumentDetailList))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -112,5 +105,4 @@ public class DirectPurchaseResult {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

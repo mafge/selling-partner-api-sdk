@@ -12,18 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.HashMap;
-import java.util.Map;
-import software.amazon.spapi.models.shipping.v2.AccessPointList;
-/**
- * Map of type of access point to list of access points
- */
+import java.util.Objects;
+
+/** Map of type of access point to list of access points */
 @Schema(description = "Map of type of access point to list of access points")
-
-
 public class AccessPointsMap extends HashMap<String, AccessPointList> {
 
   @Override
@@ -42,7 +36,6 @@ public class AccessPointsMap extends HashMap<String, AccessPointList> {
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -53,8 +46,7 @@ public class AccessPointsMap extends HashMap<String, AccessPointList> {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -62,5 +54,4 @@ public class AccessPointsMap extends HashMap<String, AccessPointList> {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

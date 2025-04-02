@@ -12,24 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.DocumentFormat;
-import software.amazon.spapi.models.shipping.v2.DocumentSize;
-import software.amazon.spapi.models.shipping.v2.PrintOptionList;
-/**
- * Document specification that is supported for a service offering.
- */
+import java.util.Objects;
+
+/** Document specification that is supported for a service offering. */
 @Schema(description = "Document specification that is supported for a service offering.")
-
-
 public class SupportedDocumentSpecification {
   @SerializedName("format")
   private DocumentFormat format = null;
@@ -45,10 +33,11 @@ public class SupportedDocumentSpecification {
     return this;
   }
 
-   /**
+  /**
    * Get format
+   *
    * @return format
-  **/
+   */
   @Schema(required = true, description = "")
   public DocumentFormat getFormat() {
     return format;
@@ -63,10 +52,11 @@ public class SupportedDocumentSpecification {
     return this;
   }
 
-   /**
+  /**
    * Get size
+   *
    * @return size
-  **/
+   */
   @Schema(required = true, description = "")
   public DocumentSize getSize() {
     return size;
@@ -81,10 +71,11 @@ public class SupportedDocumentSpecification {
     return this;
   }
 
-   /**
+  /**
    * Get printOptions
+   *
    * @return printOptions
-  **/
+   */
   @Schema(required = true, description = "")
   public PrintOptionList getPrintOptions() {
     return printOptions;
@@ -94,7 +85,6 @@ public class SupportedDocumentSpecification {
     this.printOptions = printOptions;
   }
 
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -103,10 +93,11 @@ public class SupportedDocumentSpecification {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    SupportedDocumentSpecification supportedDocumentSpecification = (SupportedDocumentSpecification) o;
-    return Objects.equals(this.format, supportedDocumentSpecification.format) &&
-        Objects.equals(this.size, supportedDocumentSpecification.size) &&
-        Objects.equals(this.printOptions, supportedDocumentSpecification.printOptions);
+    SupportedDocumentSpecification supportedDocumentSpecification =
+        (SupportedDocumentSpecification) o;
+    return Objects.equals(this.format, supportedDocumentSpecification.format)
+        && Objects.equals(this.size, supportedDocumentSpecification.size)
+        && Objects.equals(this.printOptions, supportedDocumentSpecification.printOptions);
   }
 
   @Override
@@ -114,12 +105,11 @@ public class SupportedDocumentSpecification {
     return Objects.hash(format, size, printOptions);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SupportedDocumentSpecification {\n");
-    
+
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("    printOptions: ").append(toIndentedString(printOptions)).append("\n");
@@ -128,8 +118,7 @@ public class SupportedDocumentSpecification {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -137,5 +126,4 @@ public class SupportedDocumentSpecification {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

@@ -12,23 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.DateRange;
-import software.amazon.spapi.models.shipping.v2.OperatingHours;
-/**
- * Defines exceptions to standard operating hours for certain date ranges.
- */
+import java.util.Objects;
+
+/** Defines exceptions to standard operating hours for certain date ranges. */
 @Schema(description = "Defines exceptions to standard operating hours for certain date ranges.")
-
-
 public class ExceptionOperatingHours {
   @SerializedName("dateRange")
   private DateRange dateRange = null;
@@ -41,10 +30,11 @@ public class ExceptionOperatingHours {
     return this;
   }
 
-   /**
+  /**
    * Get dateRange
+   *
    * @return dateRange
-  **/
+   */
   @Schema(description = "")
   public DateRange getDateRange() {
     return dateRange;
@@ -59,10 +49,11 @@ public class ExceptionOperatingHours {
     return this;
   }
 
-   /**
+  /**
    * Get operatingHours
+   *
    * @return operatingHours
-  **/
+   */
   @Schema(description = "")
   public OperatingHours getOperatingHours() {
     return operatingHours;
@@ -71,7 +62,6 @@ public class ExceptionOperatingHours {
   public void setOperatingHours(OperatingHours operatingHours) {
     this.operatingHours = operatingHours;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -82,8 +72,8 @@ public class ExceptionOperatingHours {
       return false;
     }
     ExceptionOperatingHours exceptionOperatingHours = (ExceptionOperatingHours) o;
-    return Objects.equals(this.dateRange, exceptionOperatingHours.dateRange) &&
-        Objects.equals(this.operatingHours, exceptionOperatingHours.operatingHours);
+    return Objects.equals(this.dateRange, exceptionOperatingHours.dateRange)
+        && Objects.equals(this.operatingHours, exceptionOperatingHours.operatingHours);
   }
 
   @Override
@@ -91,12 +81,11 @@ public class ExceptionOperatingHours {
     return Objects.hash(dateRange, operatingHours);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ExceptionOperatingHours {\n");
-    
+
     sb.append("    dateRange: ").append(toIndentedString(dateRange)).append("\n");
     sb.append("    operatingHours: ").append(toIndentedString(operatingHours)).append("\n");
     sb.append("}");
@@ -104,8 +93,7 @@ public class ExceptionOperatingHours {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -113,5 +101,4 @@ public class ExceptionOperatingHours {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

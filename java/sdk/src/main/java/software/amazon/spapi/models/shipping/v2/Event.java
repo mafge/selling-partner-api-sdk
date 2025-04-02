@@ -12,25 +12,13 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
+import java.util.Objects;
 import org.threeten.bp.OffsetDateTime;
-import software.amazon.spapi.models.shipping.v2.EventCode;
-import software.amazon.spapi.models.shipping.v2.Location;
-import software.amazon.spapi.models.shipping.v2.ShipmentType;
-/**
- * A tracking event.
- */
+
+/** A tracking event. */
 @Schema(description = "A tracking event.")
-
-
 public class Event {
   @SerializedName("eventCode")
   private EventCode eventCode = null;
@@ -49,10 +37,11 @@ public class Event {
     return this;
   }
 
-   /**
+  /**
    * Get eventCode
+   *
    * @return eventCode
-  **/
+   */
   @Schema(required = true, description = "")
   public EventCode getEventCode() {
     return eventCode;
@@ -67,10 +56,11 @@ public class Event {
     return this;
   }
 
-   /**
+  /**
    * Get location
+   *
    * @return location
-  **/
+   */
   @Schema(description = "")
   public Location getLocation() {
     return location;
@@ -85,10 +75,11 @@ public class Event {
     return this;
   }
 
-   /**
+  /**
    * The ISO 8601 formatted timestamp of the event.
+   *
    * @return eventTime
-  **/
+   */
   @Schema(required = true, description = "The ISO 8601 formatted timestamp of the event.")
   public OffsetDateTime getEventTime() {
     return eventTime;
@@ -103,10 +94,11 @@ public class Event {
     return this;
   }
 
-   /**
+  /**
    * Get shipmentType
+   *
    * @return shipmentType
-  **/
+   */
   @Schema(description = "")
   public ShipmentType getShipmentType() {
     return shipmentType;
@@ -115,7 +107,6 @@ public class Event {
   public void setShipmentType(ShipmentType shipmentType) {
     this.shipmentType = shipmentType;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -126,10 +117,10 @@ public class Event {
       return false;
     }
     Event event = (Event) o;
-    return Objects.equals(this.eventCode, event.eventCode) &&
-        Objects.equals(this.location, event.location) &&
-        Objects.equals(this.eventTime, event.eventTime) &&
-        Objects.equals(this.shipmentType, event.shipmentType);
+    return Objects.equals(this.eventCode, event.eventCode)
+        && Objects.equals(this.location, event.location)
+        && Objects.equals(this.eventTime, event.eventTime)
+        && Objects.equals(this.shipmentType, event.shipmentType);
   }
 
   @Override
@@ -137,12 +128,11 @@ public class Event {
     return Objects.hash(eventCode, location, eventTime, shipmentType);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Event {\n");
-    
+
     sb.append("    eventCode: ").append(toIndentedString(eventCode)).append("\n");
     sb.append("    location: ").append(toIndentedString(location)).append("\n");
     sb.append("    eventTime: ").append(toIndentedString(eventTime)).append("\n");
@@ -152,8 +142,7 @@ public class Event {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -161,5 +150,4 @@ public class Event {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

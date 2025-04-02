@@ -12,21 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-/**
- * ValidationMetadata Details
- */
+import java.util.Objects;
+
+/** ValidationMetadata Details */
 @Schema(description = "ValidationMetadata Details")
-
-
 public class ValidationMetadata {
   @SerializedName("errorMessage")
   private String errorMessage = null;
@@ -42,10 +33,11 @@ public class ValidationMetadata {
     return this;
   }
 
-   /**
+  /**
    * errorMessage for the error.
+   *
    * @return errorMessage
-  **/
+   */
   @Schema(description = "errorMessage for the error.")
   public String getErrorMessage() {
     return errorMessage;
@@ -60,10 +52,11 @@ public class ValidationMetadata {
     return this;
   }
 
-   /**
+  /**
    * validationStrategy for the error.
+   *
    * @return validationStrategy
-  **/
+   */
   @Schema(description = "validationStrategy for the error.")
   public String getValidationStrategy() {
     return validationStrategy;
@@ -78,10 +71,11 @@ public class ValidationMetadata {
     return this;
   }
 
-   /**
+  /**
    * Value.
+   *
    * @return value
-  **/
+   */
   @Schema(description = "Value.")
   public String getValue() {
     return value;
@@ -90,7 +84,6 @@ public class ValidationMetadata {
   public void setValue(String value) {
     this.value = value;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -101,9 +94,9 @@ public class ValidationMetadata {
       return false;
     }
     ValidationMetadata validationMetadata = (ValidationMetadata) o;
-    return Objects.equals(this.errorMessage, validationMetadata.errorMessage) &&
-        Objects.equals(this.validationStrategy, validationMetadata.validationStrategy) &&
-        Objects.equals(this.value, validationMetadata.value);
+    return Objects.equals(this.errorMessage, validationMetadata.errorMessage)
+        && Objects.equals(this.validationStrategy, validationMetadata.validationStrategy)
+        && Objects.equals(this.value, validationMetadata.value);
   }
 
   @Override
@@ -111,12 +104,11 @@ public class ValidationMetadata {
     return Objects.hash(errorMessage, validationStrategy, value);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ValidationMetadata {\n");
-    
+
     sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
     sb.append("    validationStrategy: ").append(toIndentedString(validationStrategy)).append("\n");
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
@@ -125,8 +117,7 @@ public class ValidationMetadata {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -134,5 +125,4 @@ public class ValidationMetadata {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

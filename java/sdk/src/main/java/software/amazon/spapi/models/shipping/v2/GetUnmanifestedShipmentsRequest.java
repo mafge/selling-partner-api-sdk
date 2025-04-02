@@ -12,35 +12,27 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.ClientReferenceDetails;
-/**
- * The request schema for the GetUnmanifestedShipmentsRequest operation.
- */
+import java.util.Objects;
+
+/** The request schema for the GetUnmanifestedShipmentsRequest operation. */
 @Schema(description = "The request schema for the GetUnmanifestedShipmentsRequest operation.")
-
-
 public class GetUnmanifestedShipmentsRequest {
   @SerializedName("clientReferenceDetails")
   private ClientReferenceDetails clientReferenceDetails = null;
 
-  public GetUnmanifestedShipmentsRequest clientReferenceDetails(ClientReferenceDetails clientReferenceDetails) {
+  public GetUnmanifestedShipmentsRequest clientReferenceDetails(
+      ClientReferenceDetails clientReferenceDetails) {
     this.clientReferenceDetails = clientReferenceDetails;
     return this;
   }
 
-   /**
+  /**
    * Get clientReferenceDetails
+   *
    * @return clientReferenceDetails
-  **/
+   */
   @Schema(description = "")
   public ClientReferenceDetails getClientReferenceDetails() {
     return clientReferenceDetails;
@@ -50,7 +42,6 @@ public class GetUnmanifestedShipmentsRequest {
     this.clientReferenceDetails = clientReferenceDetails;
   }
 
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -59,8 +50,10 @@ public class GetUnmanifestedShipmentsRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GetUnmanifestedShipmentsRequest getUnmanifestedShipmentsRequest = (GetUnmanifestedShipmentsRequest) o;
-    return Objects.equals(this.clientReferenceDetails, getUnmanifestedShipmentsRequest.clientReferenceDetails);
+    GetUnmanifestedShipmentsRequest getUnmanifestedShipmentsRequest =
+        (GetUnmanifestedShipmentsRequest) o;
+    return Objects.equals(
+        this.clientReferenceDetails, getUnmanifestedShipmentsRequest.clientReferenceDetails);
   }
 
   @Override
@@ -68,20 +61,20 @@ public class GetUnmanifestedShipmentsRequest {
     return Objects.hash(clientReferenceDetails);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetUnmanifestedShipmentsRequest {\n");
-    
-    sb.append("    clientReferenceDetails: ").append(toIndentedString(clientReferenceDetails)).append("\n");
+
+    sb.append("    clientReferenceDetails: ")
+        .append(toIndentedString(clientReferenceDetails))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -89,5 +82,4 @@ public class GetUnmanifestedShipmentsRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

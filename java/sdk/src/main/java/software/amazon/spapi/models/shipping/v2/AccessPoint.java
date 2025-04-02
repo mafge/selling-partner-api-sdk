@@ -12,8 +12,6 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -23,17 +21,10 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import software.amazon.spapi.models.shipping.v2.AccessPointType;
-import software.amazon.spapi.models.shipping.v2.AccessibilityAttributes;
-import software.amazon.spapi.models.shipping.v2.Address;
-import software.amazon.spapi.models.shipping.v2.DayOfWeekTimeMap;
-import software.amazon.spapi.models.shipping.v2.ExceptionOperatingHours;
-/**
- * Access point details
- */
+import java.util.Objects;
+
+/** Access point details */
 @Schema(description = "Access point details")
-
-
 public class AccessPoint {
   @SerializedName("accessPointId")
   private String accessPointId = null;
@@ -56,9 +47,7 @@ public class AccessPoint {
   @SerializedName("exceptionOperatingHours")
   private List<ExceptionOperatingHours> exceptionOperatingHours = null;
 
-  /**
-   * Assistance type enum for Access point i.e. STAFF_ASSISTED or SELF_ASSISTED
-   */
+  /** Assistance type enum for Access point i.e. STAFF_ASSISTED or SELF_ASSISTED */
   @JsonAdapter(AssistanceTypeEnum.Adapter.class)
   public enum AssistanceTypeEnum {
     @SerializedName("STAFF_ASSISTED")
@@ -71,6 +60,7 @@ public class AccessPoint {
     AssistanceTypeEnum(String value) {
       this.value = value;
     }
+
     public String getValue() {
       return value;
     }
@@ -79,6 +69,7 @@ public class AccessPoint {
     public String toString() {
       return String.valueOf(value);
     }
+
     public static AssistanceTypeEnum fromValue(String input) {
       for (AssistanceTypeEnum b : AssistanceTypeEnum.values()) {
         if (b.value.equals(input)) {
@@ -87,19 +78,23 @@ public class AccessPoint {
       }
       return null;
     }
+
     public static class Adapter extends TypeAdapter<AssistanceTypeEnum> {
       @Override
-      public void write(final JsonWriter jsonWriter, final AssistanceTypeEnum enumeration) throws IOException {
+      public void write(final JsonWriter jsonWriter, final AssistanceTypeEnum enumeration)
+          throws IOException {
         jsonWriter.value(String.valueOf(enumeration.getValue()));
       }
 
       @Override
       public AssistanceTypeEnum read(final JsonReader jsonReader) throws IOException {
         Object value = jsonReader.nextString();
-        return AssistanceTypeEnum.fromValue((String)(value));
+        return AssistanceTypeEnum.fromValue((String) (value));
       }
     }
-  }  @SerializedName("assistanceType")
+  }
+
+  @SerializedName("assistanceType")
   private AssistanceTypeEnum assistanceType = null;
 
   @SerializedName("score")
@@ -113,10 +108,11 @@ public class AccessPoint {
     return this;
   }
 
-   /**
+  /**
    * Get accessPointId
+   *
    * @return accessPointId
-  **/
+   */
   @Schema(description = "")
   public String getAccessPointId() {
     return accessPointId;
@@ -131,10 +127,11 @@ public class AccessPoint {
     return this;
   }
 
-   /**
+  /**
    * Name of entity (store/hub etc) where this access point is located
+   *
    * @return name
-  **/
+   */
   @Schema(description = "Name of entity (store/hub etc) where this access point is located")
   public String getName() {
     return name;
@@ -149,10 +146,11 @@ public class AccessPoint {
     return this;
   }
 
-   /**
+  /**
    * Timezone of access point
+   *
    * @return timezone
-  **/
+   */
   @Schema(description = "Timezone of access point")
   public String getTimezone() {
     return timezone;
@@ -167,10 +165,11 @@ public class AccessPoint {
     return this;
   }
 
-   /**
+  /**
    * Get type
+   *
    * @return type
-  **/
+   */
   @Schema(description = "")
   public AccessPointType getType() {
     return type;
@@ -185,10 +184,11 @@ public class AccessPoint {
     return this;
   }
 
-   /**
+  /**
    * Get accessibilityAttributes
+   *
    * @return accessibilityAttributes
-  **/
+   */
   @Schema(description = "")
   public AccessibilityAttributes getAccessibilityAttributes() {
     return accessibilityAttributes;
@@ -203,10 +203,11 @@ public class AccessPoint {
     return this;
   }
 
-   /**
+  /**
    * Get address
+   *
    * @return address
-  **/
+   */
   @Schema(description = "")
   public Address getAddress() {
     return address;
@@ -216,12 +217,14 @@ public class AccessPoint {
     this.address = address;
   }
 
-  public AccessPoint exceptionOperatingHours(List<ExceptionOperatingHours> exceptionOperatingHours) {
+  public AccessPoint exceptionOperatingHours(
+      List<ExceptionOperatingHours> exceptionOperatingHours) {
     this.exceptionOperatingHours = exceptionOperatingHours;
     return this;
   }
 
-  public AccessPoint addExceptionOperatingHoursItem(ExceptionOperatingHours exceptionOperatingHoursItem) {
+  public AccessPoint addExceptionOperatingHoursItem(
+      ExceptionOperatingHours exceptionOperatingHoursItem) {
     if (this.exceptionOperatingHours == null) {
       this.exceptionOperatingHours = new ArrayList<ExceptionOperatingHours>();
     }
@@ -229,10 +232,11 @@ public class AccessPoint {
     return this;
   }
 
-   /**
+  /**
    * Exception operating hours for Access Point
+   *
    * @return exceptionOperatingHours
-  **/
+   */
   @Schema(description = "Exception operating hours for Access Point")
   public List<ExceptionOperatingHours> getExceptionOperatingHours() {
     return exceptionOperatingHours;
@@ -247,11 +251,13 @@ public class AccessPoint {
     return this;
   }
 
-   /**
+  /**
    * Assistance type enum for Access point i.e. STAFF_ASSISTED or SELF_ASSISTED
+   *
    * @return assistanceType
-  **/
-  @Schema(description = "Assistance type enum for Access point i.e. STAFF_ASSISTED or SELF_ASSISTED")
+   */
+  @Schema(
+      description = "Assistance type enum for Access point i.e. STAFF_ASSISTED or SELF_ASSISTED")
   public AssistanceTypeEnum getAssistanceType() {
     return assistanceType;
   }
@@ -265,11 +271,16 @@ public class AccessPoint {
     return this;
   }
 
-   /**
-   * The score of access point, based on proximity to postal code and sorting preference. This can be used to sort access point results on shipper&#x27;s end.
+  /**
+   * The score of access point, based on proximity to postal code and sorting preference. This can
+   * be used to sort access point results on shipper&#x27;s end.
+   *
    * @return score
-  **/
-  @Schema(description = "The score of access point, based on proximity to postal code and sorting preference. This can be used to sort access point results on shipper's end.")
+   */
+  @Schema(
+      description =
+          "The score of access point, based on proximity to postal code and sorting preference."
+              + " This can be used to sort access point results on shipper's end.")
   public String getScore() {
     return score;
   }
@@ -283,10 +294,11 @@ public class AccessPoint {
     return this;
   }
 
-   /**
+  /**
    * Get standardOperatingHours
+   *
    * @return standardOperatingHours
-  **/
+   */
   @Schema(description = "")
   public DayOfWeekTimeMap getStandardOperatingHours() {
     return standardOperatingHours;
@@ -295,7 +307,6 @@ public class AccessPoint {
   public void setStandardOperatingHours(DayOfWeekTimeMap standardOperatingHours) {
     this.standardOperatingHours = standardOperatingHours;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -306,46 +317,60 @@ public class AccessPoint {
       return false;
     }
     AccessPoint accessPoint = (AccessPoint) o;
-    return Objects.equals(this.accessPointId, accessPoint.accessPointId) &&
-        Objects.equals(this.name, accessPoint.name) &&
-        Objects.equals(this.timezone, accessPoint.timezone) &&
-        Objects.equals(this.type, accessPoint.type) &&
-        Objects.equals(this.accessibilityAttributes, accessPoint.accessibilityAttributes) &&
-        Objects.equals(this.address, accessPoint.address) &&
-        Objects.equals(this.exceptionOperatingHours, accessPoint.exceptionOperatingHours) &&
-        Objects.equals(this.assistanceType, accessPoint.assistanceType) &&
-        Objects.equals(this.score, accessPoint.score) &&
-        Objects.equals(this.standardOperatingHours, accessPoint.standardOperatingHours);
+    return Objects.equals(this.accessPointId, accessPoint.accessPointId)
+        && Objects.equals(this.name, accessPoint.name)
+        && Objects.equals(this.timezone, accessPoint.timezone)
+        && Objects.equals(this.type, accessPoint.type)
+        && Objects.equals(this.accessibilityAttributes, accessPoint.accessibilityAttributes)
+        && Objects.equals(this.address, accessPoint.address)
+        && Objects.equals(this.exceptionOperatingHours, accessPoint.exceptionOperatingHours)
+        && Objects.equals(this.assistanceType, accessPoint.assistanceType)
+        && Objects.equals(this.score, accessPoint.score)
+        && Objects.equals(this.standardOperatingHours, accessPoint.standardOperatingHours);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(accessPointId, name, timezone, type, accessibilityAttributes, address, exceptionOperatingHours, assistanceType, score, standardOperatingHours);
+    return Objects.hash(
+        accessPointId,
+        name,
+        timezone,
+        type,
+        accessibilityAttributes,
+        address,
+        exceptionOperatingHours,
+        assistanceType,
+        score,
+        standardOperatingHours);
   }
-
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AccessPoint {\n");
-    
+
     sb.append("    accessPointId: ").append(toIndentedString(accessPointId)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    timezone: ").append(toIndentedString(timezone)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    accessibilityAttributes: ").append(toIndentedString(accessibilityAttributes)).append("\n");
+    sb.append("    accessibilityAttributes: ")
+        .append(toIndentedString(accessibilityAttributes))
+        .append("\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
-    sb.append("    exceptionOperatingHours: ").append(toIndentedString(exceptionOperatingHours)).append("\n");
+    sb.append("    exceptionOperatingHours: ")
+        .append(toIndentedString(exceptionOperatingHours))
+        .append("\n");
     sb.append("    assistanceType: ").append(toIndentedString(assistanceType)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
-    sb.append("    standardOperatingHours: ").append(toIndentedString(standardOperatingHours)).append("\n");
+    sb.append("    standardOperatingHours: ")
+        .append(toIndentedString(standardOperatingHours))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -353,5 +378,4 @@ public class AccessPoint {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

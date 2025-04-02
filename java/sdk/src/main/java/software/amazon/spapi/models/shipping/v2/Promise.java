@@ -12,22 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.TimeWindow;
-/**
- * The time windows promised for pickup and delivery events.
- */
+import java.util.Objects;
+
+/** The time windows promised for pickup and delivery events. */
 @Schema(description = "The time windows promised for pickup and delivery events.")
-
-
 public class Promise {
   @SerializedName("deliveryWindow")
   private TimeWindow deliveryWindow = null;
@@ -40,10 +30,11 @@ public class Promise {
     return this;
   }
 
-   /**
+  /**
    * Get deliveryWindow
+   *
    * @return deliveryWindow
-  **/
+   */
   @Schema(description = "")
   public TimeWindow getDeliveryWindow() {
     return deliveryWindow;
@@ -58,10 +49,11 @@ public class Promise {
     return this;
   }
 
-   /**
+  /**
    * Get pickupWindow
+   *
    * @return pickupWindow
-  **/
+   */
   @Schema(description = "")
   public TimeWindow getPickupWindow() {
     return pickupWindow;
@@ -70,7 +62,6 @@ public class Promise {
   public void setPickupWindow(TimeWindow pickupWindow) {
     this.pickupWindow = pickupWindow;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,8 +72,8 @@ public class Promise {
       return false;
     }
     Promise promise = (Promise) o;
-    return Objects.equals(this.deliveryWindow, promise.deliveryWindow) &&
-        Objects.equals(this.pickupWindow, promise.pickupWindow);
+    return Objects.equals(this.deliveryWindow, promise.deliveryWindow)
+        && Objects.equals(this.pickupWindow, promise.pickupWindow);
   }
 
   @Override
@@ -90,12 +81,11 @@ public class Promise {
     return Objects.hash(deliveryWindow, pickupWindow);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Promise {\n");
-    
+
     sb.append("    deliveryWindow: ").append(toIndentedString(deliveryWindow)).append("\n");
     sb.append("    pickupWindow: ").append(toIndentedString(pickupWindow)).append("\n");
     sb.append("}");
@@ -103,8 +93,7 @@ public class Promise {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -112,5 +101,4 @@ public class Promise {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

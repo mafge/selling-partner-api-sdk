@@ -12,23 +12,22 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.ExcludedBenefits;
-import software.amazon.spapi.models.shipping.v2.IncludedBenefits;
+import java.util.Objects;
+
 /**
- * Benefits that are included and excluded for each shipping offer. Benefits represents services provided by Amazon (eg. CLAIMS_PROTECTED, etc.) when sellers purchase shipping through Amazon. Benefit details will be made available for any shipment placed on or after January 1st 2024 00:00 UTC.
+ * Benefits that are included and excluded for each shipping offer. Benefits represents services
+ * provided by Amazon (eg. CLAIMS_PROTECTED, etc.) when sellers purchase shipping through Amazon.
+ * Benefit details will be made available for any shipment placed on or after January 1st 2024 00:00
+ * UTC.
  */
-@Schema(description = "Benefits that are included and excluded for each shipping offer. Benefits represents services provided by Amazon (eg. CLAIMS_PROTECTED, etc.) when sellers purchase shipping through Amazon. Benefit details will be made available for any shipment placed on or after January 1st 2024 00:00 UTC.")
-
-
+@Schema(
+    description =
+        "Benefits that are included and excluded for each shipping offer. Benefits represents"
+            + " services provided by Amazon (eg. CLAIMS_PROTECTED, etc.) when sellers purchase"
+            + " shipping through Amazon. Benefit details will be made available for any shipment"
+            + " placed on or after January 1st 2024 00:00 UTC.")
 public class Benefits {
   @SerializedName("includedBenefits")
   private IncludedBenefits includedBenefits = null;
@@ -41,10 +40,11 @@ public class Benefits {
     return this;
   }
 
-   /**
+  /**
    * Get includedBenefits
+   *
    * @return includedBenefits
-  **/
+   */
   @Schema(required = true, description = "")
   public IncludedBenefits getIncludedBenefits() {
     return includedBenefits;
@@ -59,10 +59,11 @@ public class Benefits {
     return this;
   }
 
-   /**
+  /**
    * Get excludedBenefits
+   *
    * @return excludedBenefits
-  **/
+   */
   @Schema(required = true, description = "")
   public ExcludedBenefits getExcludedBenefits() {
     return excludedBenefits;
@@ -71,7 +72,6 @@ public class Benefits {
   public void setExcludedBenefits(ExcludedBenefits excludedBenefits) {
     this.excludedBenefits = excludedBenefits;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -82,8 +82,8 @@ public class Benefits {
       return false;
     }
     Benefits benefits = (Benefits) o;
-    return Objects.equals(this.includedBenefits, benefits.includedBenefits) &&
-        Objects.equals(this.excludedBenefits, benefits.excludedBenefits);
+    return Objects.equals(this.includedBenefits, benefits.includedBenefits)
+        && Objects.equals(this.excludedBenefits, benefits.excludedBenefits);
   }
 
   @Override
@@ -91,12 +91,11 @@ public class Benefits {
     return Objects.hash(includedBenefits, excludedBenefits);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Benefits {\n");
-    
+
     sb.append("    includedBenefits: ").append(toIndentedString(includedBenefits)).append("\n");
     sb.append("    excludedBenefits: ").append(toIndentedString(excludedBenefits)).append("\n");
     sb.append("}");
@@ -104,8 +103,7 @@ public class Benefits {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -113,5 +111,4 @@ public class Benefits {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

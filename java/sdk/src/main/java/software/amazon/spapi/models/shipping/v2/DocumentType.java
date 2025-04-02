@@ -12,19 +12,14 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import io.swagger.v3.oas.annotations.media.Schema;
-import com.google.gson.annotations.SerializedName;
-import java.io.IOException;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-/**
- * The type of shipping document.
- */
+/** The type of shipping document. */
 @JsonAdapter(DocumentType.Adapter.class)
 public enum DocumentType {
   @SerializedName("PACKSLIP")
@@ -62,14 +57,15 @@ public enum DocumentType {
 
   public static class Adapter extends TypeAdapter<DocumentType> {
     @Override
-    public void write(final JsonWriter jsonWriter, final DocumentType enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final DocumentType enumeration)
+        throws IOException {
       jsonWriter.value(String.valueOf(enumeration.getValue()));
     }
 
     @Override
     public DocumentType read(final JsonReader jsonReader) throws IOException {
       Object value = jsonReader.nextString();
-      return DocumentType.fromValue((String)(value));
+      return DocumentType.fromValue((String) (value));
     }
   }
 }

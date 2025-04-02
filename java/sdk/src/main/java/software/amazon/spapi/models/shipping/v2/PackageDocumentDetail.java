@@ -12,22 +12,14 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.PackageDocumentList;
-/**
- * The post-purchase details of a package that will be shipped using a shipping service.
- */
-@Schema(description = "The post-purchase details of a package that will be shipped using a shipping service.")
+import java.util.Objects;
 
-
+/** The post-purchase details of a package that will be shipped using a shipping service. */
+@Schema(
+    description =
+        "The post-purchase details of a package that will be shipped using a shipping service.")
 public class PackageDocumentDetail {
   @SerializedName("packageClientReferenceId")
   private String packageClientReferenceId = null;
@@ -43,10 +35,11 @@ public class PackageDocumentDetail {
     return this;
   }
 
-   /**
+  /**
    * Get packageClientReferenceId
+   *
    * @return packageClientReferenceId
-  **/
+   */
   @Schema(required = true, description = "")
   public String getPackageClientReferenceId() {
     return packageClientReferenceId;
@@ -61,10 +54,11 @@ public class PackageDocumentDetail {
     return this;
   }
 
-   /**
+  /**
    * Get packageDocuments
+   *
    * @return packageDocuments
-  **/
+   */
   @Schema(required = true, description = "")
   public PackageDocumentList getPackageDocuments() {
     return packageDocuments;
@@ -79,10 +73,11 @@ public class PackageDocumentDetail {
     return this;
   }
 
-   /**
+  /**
    * Get trackingId
+   *
    * @return trackingId
-  **/
+   */
   @Schema(description = "")
   public String getTrackingId() {
     return trackingId;
@@ -91,7 +86,6 @@ public class PackageDocumentDetail {
   public void setTrackingId(String trackingId) {
     this.trackingId = trackingId;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -102,9 +96,10 @@ public class PackageDocumentDetail {
       return false;
     }
     PackageDocumentDetail packageDocumentDetail = (PackageDocumentDetail) o;
-    return Objects.equals(this.packageClientReferenceId, packageDocumentDetail.packageClientReferenceId) &&
-        Objects.equals(this.packageDocuments, packageDocumentDetail.packageDocuments) &&
-        Objects.equals(this.trackingId, packageDocumentDetail.trackingId);
+    return Objects.equals(
+            this.packageClientReferenceId, packageDocumentDetail.packageClientReferenceId)
+        && Objects.equals(this.packageDocuments, packageDocumentDetail.packageDocuments)
+        && Objects.equals(this.trackingId, packageDocumentDetail.trackingId);
   }
 
   @Override
@@ -112,13 +107,14 @@ public class PackageDocumentDetail {
     return Objects.hash(packageClientReferenceId, packageDocuments, trackingId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PackageDocumentDetail {\n");
-    
-    sb.append("    packageClientReferenceId: ").append(toIndentedString(packageClientReferenceId)).append("\n");
+
+    sb.append("    packageClientReferenceId: ")
+        .append(toIndentedString(packageClientReferenceId))
+        .append("\n");
     sb.append("    packageDocuments: ").append(toIndentedString(packageDocuments)).append("\n");
     sb.append("    trackingId: ").append(toIndentedString(trackingId)).append("\n");
     sb.append("}");
@@ -126,8 +122,7 @@ public class PackageDocumentDetail {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -135,5 +130,4 @@ public class PackageDocumentDetail {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

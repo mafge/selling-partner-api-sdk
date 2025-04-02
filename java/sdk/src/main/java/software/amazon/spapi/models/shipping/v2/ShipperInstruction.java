@@ -12,21 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-/**
- * The shipper instruction.
- */
+import java.util.Objects;
+
+/** The shipper instruction. */
 @Schema(description = "The shipper instruction.")
-
-
 public class ShipperInstruction {
   @SerializedName("deliveryNotes")
   private String deliveryNotes = null;
@@ -36,10 +27,11 @@ public class ShipperInstruction {
     return this;
   }
 
-   /**
+  /**
    * The delivery notes for the shipment
+   *
    * @return deliveryNotes
-  **/
+   */
   @Schema(description = "The delivery notes for the shipment")
   public String getDeliveryNotes() {
     return deliveryNotes;
@@ -48,7 +40,6 @@ public class ShipperInstruction {
   public void setDeliveryNotes(String deliveryNotes) {
     this.deliveryNotes = deliveryNotes;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -67,20 +58,18 @@ public class ShipperInstruction {
     return Objects.hash(deliveryNotes);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ShipperInstruction {\n");
-    
+
     sb.append("    deliveryNotes: ").append(toIndentedString(deliveryNotes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -88,5 +77,4 @@ public class ShipperInstruction {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

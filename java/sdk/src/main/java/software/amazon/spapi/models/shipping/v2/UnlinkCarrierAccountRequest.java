@@ -12,22 +12,14 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.ClientReferenceDetails;
-/**
- * The request schema for remove the Carrier Account associated with the provided merchant.
- */
-@Schema(description = "The request schema for remove the Carrier Account associated with the provided merchant.")
+import java.util.Objects;
 
-
+/** The request schema for remove the Carrier Account associated with the provided merchant. */
+@Schema(
+    description =
+        "The request schema for remove the Carrier Account associated with the provided merchant.")
 public class UnlinkCarrierAccountRequest {
   @SerializedName("clientReferenceDetails")
   private ClientReferenceDetails clientReferenceDetails = null;
@@ -35,15 +27,17 @@ public class UnlinkCarrierAccountRequest {
   @SerializedName("accountId")
   private String accountId = null;
 
-  public UnlinkCarrierAccountRequest clientReferenceDetails(ClientReferenceDetails clientReferenceDetails) {
+  public UnlinkCarrierAccountRequest clientReferenceDetails(
+      ClientReferenceDetails clientReferenceDetails) {
     this.clientReferenceDetails = clientReferenceDetails;
     return this;
   }
 
-   /**
+  /**
    * Get clientReferenceDetails
+   *
    * @return clientReferenceDetails
-  **/
+   */
   @Schema(description = "")
   public ClientReferenceDetails getClientReferenceDetails() {
     return clientReferenceDetails;
@@ -58,10 +52,11 @@ public class UnlinkCarrierAccountRequest {
     return this;
   }
 
-   /**
+  /**
    * Get accountId
+   *
    * @return accountId
-  **/
+   */
   @Schema(description = "")
   public String getAccountId() {
     return accountId;
@@ -70,7 +65,6 @@ public class UnlinkCarrierAccountRequest {
   public void setAccountId(String accountId) {
     this.accountId = accountId;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,8 +75,9 @@ public class UnlinkCarrierAccountRequest {
       return false;
     }
     UnlinkCarrierAccountRequest unlinkCarrierAccountRequest = (UnlinkCarrierAccountRequest) o;
-    return Objects.equals(this.clientReferenceDetails, unlinkCarrierAccountRequest.clientReferenceDetails) &&
-        Objects.equals(this.accountId, unlinkCarrierAccountRequest.accountId);
+    return Objects.equals(
+            this.clientReferenceDetails, unlinkCarrierAccountRequest.clientReferenceDetails)
+        && Objects.equals(this.accountId, unlinkCarrierAccountRequest.accountId);
   }
 
   @Override
@@ -90,21 +85,21 @@ public class UnlinkCarrierAccountRequest {
     return Objects.hash(clientReferenceDetails, accountId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UnlinkCarrierAccountRequest {\n");
-    
-    sb.append("    clientReferenceDetails: ").append(toIndentedString(clientReferenceDetails)).append("\n");
+
+    sb.append("    clientReferenceDetails: ")
+        .append(toIndentedString(clientReferenceDetails))
+        .append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -112,5 +107,4 @@ public class UnlinkCarrierAccountRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

@@ -12,32 +12,19 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
+import java.util.Objects;
 import org.threeten.bp.OffsetDateTime;
-import software.amazon.spapi.models.shipping.v2.AccessPointDetails;
-import software.amazon.spapi.models.shipping.v2.Address;
-import software.amazon.spapi.models.shipping.v2.ChannelDetails;
-import software.amazon.spapi.models.shipping.v2.GoodsOwner;
-import software.amazon.spapi.models.shipping.v2.OneClickShipmentValueAddedServiceDetails;
-import software.amazon.spapi.models.shipping.v2.PackageList;
-import software.amazon.spapi.models.shipping.v2.RequestedDocumentSpecification;
-import software.amazon.spapi.models.shipping.v2.ServiceSelection;
-import software.amazon.spapi.models.shipping.v2.ShipperInstruction;
-import software.amazon.spapi.models.shipping.v2.TaxDetailList;
+
 /**
- * The request schema for the OneClickShipment operation. When the channelType is not Amazon, shipTo is required and when channelType is Amazon shipTo is ignored.
+ * The request schema for the OneClickShipment operation. When the channelType is not Amazon, shipTo
+ * is required and when channelType is Amazon shipTo is ignored.
  */
-@Schema(description = "The request schema for the OneClickShipment operation. When the channelType is not Amazon, shipTo is required and when channelType is Amazon shipTo is ignored.")
-
-
+@Schema(
+    description =
+        "The request schema for the OneClickShipment operation. When the channelType is not Amazon,"
+            + " shipTo is required and when channelType is Amazon shipTo is ignored.")
 public class OneClickShipmentRequest {
   @SerializedName("shipTo")
   private Address shipTo = null;
@@ -83,10 +70,11 @@ public class OneClickShipmentRequest {
     return this;
   }
 
-   /**
+  /**
    * Get shipTo
+   *
    * @return shipTo
-  **/
+   */
   @Schema(description = "")
   public Address getShipTo() {
     return shipTo;
@@ -101,10 +89,11 @@ public class OneClickShipmentRequest {
     return this;
   }
 
-   /**
+  /**
    * Get shipFrom
+   *
    * @return shipFrom
-  **/
+   */
   @Schema(required = true, description = "")
   public Address getShipFrom() {
     return shipFrom;
@@ -119,10 +108,11 @@ public class OneClickShipmentRequest {
     return this;
   }
 
-   /**
+  /**
    * Get returnTo
+   *
    * @return returnTo
-  **/
+   */
   @Schema(description = "")
   public Address getReturnTo() {
     return returnTo;
@@ -137,11 +127,15 @@ public class OneClickShipmentRequest {
     return this;
   }
 
-   /**
+  /**
    * The ship date and time (the requested pickup). This defaults to the current date and time.
+   *
    * @return shipDate
-  **/
-  @Schema(description = "The ship date and time (the requested pickup). This defaults to the current date and time.")
+   */
+  @Schema(
+      description =
+          "The ship date and time (the requested pickup). This defaults to the current date and"
+              + " time.")
   public OffsetDateTime getShipDate() {
     return shipDate;
   }
@@ -155,10 +149,11 @@ public class OneClickShipmentRequest {
     return this;
   }
 
-   /**
+  /**
    * Get goodsOwner
+   *
    * @return goodsOwner
-  **/
+   */
   @Schema(description = "")
   public GoodsOwner getGoodsOwner() {
     return goodsOwner;
@@ -173,10 +168,11 @@ public class OneClickShipmentRequest {
     return this;
   }
 
-   /**
+  /**
    * Get packages
+   *
    * @return packages
-  **/
+   */
   @Schema(required = true, description = "")
   public PackageList getPackages() {
     return packages;
@@ -186,21 +182,24 @@ public class OneClickShipmentRequest {
     this.packages = packages;
   }
 
-  public OneClickShipmentRequest valueAddedServicesDetails(OneClickShipmentValueAddedServiceDetails valueAddedServicesDetails) {
+  public OneClickShipmentRequest valueAddedServicesDetails(
+      OneClickShipmentValueAddedServiceDetails valueAddedServicesDetails) {
     this.valueAddedServicesDetails = valueAddedServicesDetails;
     return this;
   }
 
-   /**
+  /**
    * Get valueAddedServicesDetails
+   *
    * @return valueAddedServicesDetails
-  **/
+   */
   @Schema(description = "")
   public OneClickShipmentValueAddedServiceDetails getValueAddedServicesDetails() {
     return valueAddedServicesDetails;
   }
 
-  public void setValueAddedServicesDetails(OneClickShipmentValueAddedServiceDetails valueAddedServicesDetails) {
+  public void setValueAddedServicesDetails(
+      OneClickShipmentValueAddedServiceDetails valueAddedServicesDetails) {
     this.valueAddedServicesDetails = valueAddedServicesDetails;
   }
 
@@ -209,10 +208,11 @@ public class OneClickShipmentRequest {
     return this;
   }
 
-   /**
+  /**
    * Get taxDetails
+   *
    * @return taxDetails
-  **/
+   */
   @Schema(description = "")
   public TaxDetailList getTaxDetails() {
     return taxDetails;
@@ -227,10 +227,11 @@ public class OneClickShipmentRequest {
     return this;
   }
 
-   /**
+  /**
    * Get channelDetails
+   *
    * @return channelDetails
-  **/
+   */
   @Schema(required = true, description = "")
   public ChannelDetails getChannelDetails() {
     return channelDetails;
@@ -240,15 +241,17 @@ public class OneClickShipmentRequest {
     this.channelDetails = channelDetails;
   }
 
-  public OneClickShipmentRequest labelSpecifications(RequestedDocumentSpecification labelSpecifications) {
+  public OneClickShipmentRequest labelSpecifications(
+      RequestedDocumentSpecification labelSpecifications) {
     this.labelSpecifications = labelSpecifications;
     return this;
   }
 
-   /**
+  /**
    * Get labelSpecifications
+   *
    * @return labelSpecifications
-  **/
+   */
   @Schema(required = true, description = "")
   public RequestedDocumentSpecification getLabelSpecifications() {
     return labelSpecifications;
@@ -263,10 +266,11 @@ public class OneClickShipmentRequest {
     return this;
   }
 
-   /**
+  /**
    * Get serviceSelection
+   *
    * @return serviceSelection
-  **/
+   */
   @Schema(required = true, description = "")
   public ServiceSelection getServiceSelection() {
     return serviceSelection;
@@ -281,10 +285,11 @@ public class OneClickShipmentRequest {
     return this;
   }
 
-   /**
+  /**
    * Get shipperInstruction
+   *
    * @return shipperInstruction
-  **/
+   */
   @Schema(description = "")
   public ShipperInstruction getShipperInstruction() {
     return shipperInstruction;
@@ -294,15 +299,17 @@ public class OneClickShipmentRequest {
     this.shipperInstruction = shipperInstruction;
   }
 
-  public OneClickShipmentRequest destinationAccessPointDetails(AccessPointDetails destinationAccessPointDetails) {
+  public OneClickShipmentRequest destinationAccessPointDetails(
+      AccessPointDetails destinationAccessPointDetails) {
     this.destinationAccessPointDetails = destinationAccessPointDetails;
     return this;
   }
 
-   /**
+  /**
    * Get destinationAccessPointDetails
+   *
    * @return destinationAccessPointDetails
-  **/
+   */
   @Schema(description = "")
   public AccessPointDetails getDestinationAccessPointDetails() {
     return destinationAccessPointDetails;
@@ -311,7 +318,6 @@ public class OneClickShipmentRequest {
   public void setDestinationAccessPointDetails(AccessPointDetails destinationAccessPointDetails) {
     this.destinationAccessPointDetails = destinationAccessPointDetails;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -322,52 +328,72 @@ public class OneClickShipmentRequest {
       return false;
     }
     OneClickShipmentRequest oneClickShipmentRequest = (OneClickShipmentRequest) o;
-    return Objects.equals(this.shipTo, oneClickShipmentRequest.shipTo) &&
-        Objects.equals(this.shipFrom, oneClickShipmentRequest.shipFrom) &&
-        Objects.equals(this.returnTo, oneClickShipmentRequest.returnTo) &&
-        Objects.equals(this.shipDate, oneClickShipmentRequest.shipDate) &&
-        Objects.equals(this.goodsOwner, oneClickShipmentRequest.goodsOwner) &&
-        Objects.equals(this.packages, oneClickShipmentRequest.packages) &&
-        Objects.equals(this.valueAddedServicesDetails, oneClickShipmentRequest.valueAddedServicesDetails) &&
-        Objects.equals(this.taxDetails, oneClickShipmentRequest.taxDetails) &&
-        Objects.equals(this.channelDetails, oneClickShipmentRequest.channelDetails) &&
-        Objects.equals(this.labelSpecifications, oneClickShipmentRequest.labelSpecifications) &&
-        Objects.equals(this.serviceSelection, oneClickShipmentRequest.serviceSelection) &&
-        Objects.equals(this.shipperInstruction, oneClickShipmentRequest.shipperInstruction) &&
-        Objects.equals(this.destinationAccessPointDetails, oneClickShipmentRequest.destinationAccessPointDetails);
+    return Objects.equals(this.shipTo, oneClickShipmentRequest.shipTo)
+        && Objects.equals(this.shipFrom, oneClickShipmentRequest.shipFrom)
+        && Objects.equals(this.returnTo, oneClickShipmentRequest.returnTo)
+        && Objects.equals(this.shipDate, oneClickShipmentRequest.shipDate)
+        && Objects.equals(this.goodsOwner, oneClickShipmentRequest.goodsOwner)
+        && Objects.equals(this.packages, oneClickShipmentRequest.packages)
+        && Objects.equals(
+            this.valueAddedServicesDetails, oneClickShipmentRequest.valueAddedServicesDetails)
+        && Objects.equals(this.taxDetails, oneClickShipmentRequest.taxDetails)
+        && Objects.equals(this.channelDetails, oneClickShipmentRequest.channelDetails)
+        && Objects.equals(this.labelSpecifications, oneClickShipmentRequest.labelSpecifications)
+        && Objects.equals(this.serviceSelection, oneClickShipmentRequest.serviceSelection)
+        && Objects.equals(this.shipperInstruction, oneClickShipmentRequest.shipperInstruction)
+        && Objects.equals(
+            this.destinationAccessPointDetails,
+            oneClickShipmentRequest.destinationAccessPointDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(shipTo, shipFrom, returnTo, shipDate, goodsOwner, packages, valueAddedServicesDetails, taxDetails, channelDetails, labelSpecifications, serviceSelection, shipperInstruction, destinationAccessPointDetails);
+    return Objects.hash(
+        shipTo,
+        shipFrom,
+        returnTo,
+        shipDate,
+        goodsOwner,
+        packages,
+        valueAddedServicesDetails,
+        taxDetails,
+        channelDetails,
+        labelSpecifications,
+        serviceSelection,
+        shipperInstruction,
+        destinationAccessPointDetails);
   }
-
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OneClickShipmentRequest {\n");
-    
+
     sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
     sb.append("    shipFrom: ").append(toIndentedString(shipFrom)).append("\n");
     sb.append("    returnTo: ").append(toIndentedString(returnTo)).append("\n");
     sb.append("    shipDate: ").append(toIndentedString(shipDate)).append("\n");
     sb.append("    goodsOwner: ").append(toIndentedString(goodsOwner)).append("\n");
     sb.append("    packages: ").append(toIndentedString(packages)).append("\n");
-    sb.append("    valueAddedServicesDetails: ").append(toIndentedString(valueAddedServicesDetails)).append("\n");
+    sb.append("    valueAddedServicesDetails: ")
+        .append(toIndentedString(valueAddedServicesDetails))
+        .append("\n");
     sb.append("    taxDetails: ").append(toIndentedString(taxDetails)).append("\n");
     sb.append("    channelDetails: ").append(toIndentedString(channelDetails)).append("\n");
-    sb.append("    labelSpecifications: ").append(toIndentedString(labelSpecifications)).append("\n");
+    sb.append("    labelSpecifications: ")
+        .append(toIndentedString(labelSpecifications))
+        .append("\n");
     sb.append("    serviceSelection: ").append(toIndentedString(serviceSelection)).append("\n");
     sb.append("    shipperInstruction: ").append(toIndentedString(shipperInstruction)).append("\n");
-    sb.append("    destinationAccessPointDetails: ").append(toIndentedString(destinationAccessPointDetails)).append("\n");
+    sb.append("    destinationAccessPointDetails: ")
+        .append(toIndentedString(destinationAccessPointDetails))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -375,5 +401,4 @@ public class OneClickShipmentRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

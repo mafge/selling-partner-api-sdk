@@ -12,19 +12,14 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import io.swagger.v3.oas.annotations.media.Schema;
-import com.google.gson.annotations.SerializedName;
-import java.io.IOException;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-/**
- * The type of NDR action shipper wants to take for a particular shipment.
- */
+/** The type of NDR action shipper wants to take for a particular shipment. */
 @JsonAdapter(NdrAction.Adapter.class)
 public enum NdrAction {
   @SerializedName("RESCHEDULE")
@@ -67,7 +62,7 @@ public enum NdrAction {
     @Override
     public NdrAction read(final JsonReader jsonReader) throws IOException {
       Object value = jsonReader.nextString();
-      return NdrAction.fromValue((String)(value));
+      return NdrAction.fromValue((String) (value));
     }
   }
 }

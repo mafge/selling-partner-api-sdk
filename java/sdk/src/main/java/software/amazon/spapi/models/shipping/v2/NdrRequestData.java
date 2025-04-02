@@ -12,22 +12,21 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
+import java.util.Objects;
 import org.threeten.bp.OffsetDateTime;
+
 /**
- * Additional information required for the NDR action that has been filed. If the NDR Action is RESCHEDULE, rescheduleDate is a required field. Otherwise, if the NDR Action is REATTEMPT, additionalAddressNotes is a required field. 
+ * Additional information required for the NDR action that has been filed. If the NDR Action is
+ * RESCHEDULE, rescheduleDate is a required field. Otherwise, if the NDR Action is REATTEMPT,
+ * additionalAddressNotes is a required field.
  */
-@Schema(description = "Additional information required for the NDR action that has been filed. If the NDR Action is RESCHEDULE, rescheduleDate is a required field. Otherwise, if the NDR Action is REATTEMPT, additionalAddressNotes is a required field. ")
-
-
+@Schema(
+    description =
+        "Additional information required for the NDR action that has been filed. If the NDR Action"
+            + " is RESCHEDULE, rescheduleDate is a required field. Otherwise, if the NDR Action is"
+            + " REATTEMPT, additionalAddressNotes is a required field. ")
 public class NdrRequestData {
   @SerializedName("rescheduleDate")
   private OffsetDateTime rescheduleDate = null;
@@ -40,11 +39,17 @@ public class NdrRequestData {
     return this;
   }
 
-   /**
-   * The date on which the Seller wants to reschedule shipment delivery, in ISO-8601 date/time format
+  /**
+   * The date on which the Seller wants to reschedule shipment delivery, in ISO-8601 date/time
+   * format
+   *
    * @return rescheduleDate
-  **/
-  @Schema(example = "2023-12-12T05:24Z", description = "The date on which the Seller wants to reschedule shipment delivery, in ISO-8601 date/time format")
+   */
+  @Schema(
+      example = "2023-12-12T05:24Z",
+      description =
+          "The date on which the Seller wants to reschedule shipment delivery, in ISO-8601"
+              + " date/time format")
   public OffsetDateTime getRescheduleDate() {
     return rescheduleDate;
   }
@@ -58,10 +63,11 @@ public class NdrRequestData {
     return this;
   }
 
-   /**
+  /**
    * Get additionalAddressNotes
+   *
    * @return additionalAddressNotes
-  **/
+   */
   @Schema(description = "")
   public String getAdditionalAddressNotes() {
     return additionalAddressNotes;
@@ -70,7 +76,6 @@ public class NdrRequestData {
   public void setAdditionalAddressNotes(String additionalAddressNotes) {
     this.additionalAddressNotes = additionalAddressNotes;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,8 +86,8 @@ public class NdrRequestData {
       return false;
     }
     NdrRequestData ndrRequestData = (NdrRequestData) o;
-    return Objects.equals(this.rescheduleDate, ndrRequestData.rescheduleDate) &&
-        Objects.equals(this.additionalAddressNotes, ndrRequestData.additionalAddressNotes);
+    return Objects.equals(this.rescheduleDate, ndrRequestData.rescheduleDate)
+        && Objects.equals(this.additionalAddressNotes, ndrRequestData.additionalAddressNotes);
   }
 
   @Override
@@ -90,21 +95,21 @@ public class NdrRequestData {
     return Objects.hash(rescheduleDate, additionalAddressNotes);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class NdrRequestData {\n");
-    
+
     sb.append("    rescheduleDate: ").append(toIndentedString(rescheduleDate)).append("\n");
-    sb.append("    additionalAddressNotes: ").append(toIndentedString(additionalAddressNotes)).append("\n");
+    sb.append("    additionalAddressNotes: ")
+        .append(toIndentedString(additionalAddressNotes))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -112,5 +117,4 @@ public class NdrRequestData {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

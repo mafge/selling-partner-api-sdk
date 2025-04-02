@@ -12,17 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.ArrayList;
-import java.util.List;
-/**
- * A list of included benefits.
- */
+import java.util.Objects;
+
+/** A list of included benefits. */
 @Schema(description = "A list of included benefits.")
-
-
 public class IncludedBenefits extends ArrayList<String> {
 
   @Override
@@ -41,7 +36,6 @@ public class IncludedBenefits extends ArrayList<String> {
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -52,8 +46,7 @@ public class IncludedBenefits extends ArrayList<String> {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -61,5 +54,4 @@ public class IncludedBenefits extends ArrayList<String> {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

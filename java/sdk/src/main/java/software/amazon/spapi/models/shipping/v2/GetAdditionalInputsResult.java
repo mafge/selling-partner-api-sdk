@@ -12,17 +12,18 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.HashMap;
-import java.util.Map;
+import java.util.Objects;
+
 /**
- * The JSON schema to use to provide additional inputs when required to purchase a shipping offering.
+ * The JSON schema to use to provide additional inputs when required to purchase a shipping
+ * offering.
  */
-@Schema(description = "The JSON schema to use to provide additional inputs when required to purchase a shipping offering.")
-
-
+@Schema(
+    description =
+        "The JSON schema to use to provide additional inputs when required to purchase a shipping"
+            + " offering.")
 public class GetAdditionalInputsResult extends HashMap<String, Object> {
 
   @Override
@@ -41,7 +42,6 @@ public class GetAdditionalInputsResult extends HashMap<String, Object> {
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -52,8 +52,7 @@ public class GetAdditionalInputsResult extends HashMap<String, Object> {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -61,5 +60,4 @@ public class GetAdditionalInputsResult extends HashMap<String, Object> {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

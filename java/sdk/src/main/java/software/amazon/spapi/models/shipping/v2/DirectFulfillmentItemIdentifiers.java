@@ -12,21 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-/**
- * Item identifiers for an item in a direct fulfillment shipment.
- */
+import java.util.Objects;
+
+/** Item identifiers for an item in a direct fulfillment shipment. */
 @Schema(description = "Item identifiers for an item in a direct fulfillment shipment.")
-
-
 public class DirectFulfillmentItemIdentifiers {
   @SerializedName("lineItemID")
   private String lineItemID = null;
@@ -39,11 +30,20 @@ public class DirectFulfillmentItemIdentifiers {
     return this;
   }
 
-   /**
-   * A unique identifier for an item provided by the client for a direct fulfillment shipment. This is only populated for direct fulfillment multi-piece shipments. It is required if a vendor wants to change the configuration of the packages in which the purchase order is shipped.
+  /**
+   * A unique identifier for an item provided by the client for a direct fulfillment shipment. This
+   * is only populated for direct fulfillment multi-piece shipments. It is required if a vendor
+   * wants to change the configuration of the packages in which the purchase order is shipped.
+   *
    * @return lineItemID
-  **/
-  @Schema(required = true, description = "A unique identifier for an item provided by the client for a direct fulfillment shipment. This is only populated for direct fulfillment multi-piece shipments. It is required if a vendor wants to change the configuration of the packages in which the purchase order is shipped.")
+   */
+  @Schema(
+      required = true,
+      description =
+          "A unique identifier for an item provided by the client for a direct fulfillment"
+              + " shipment. This is only populated for direct fulfillment multi-piece shipments. It"
+              + " is required if a vendor wants to change the configuration of the packages in"
+              + " which the purchase order is shipped.")
   public String getLineItemID() {
     return lineItemID;
   }
@@ -57,11 +57,17 @@ public class DirectFulfillmentItemIdentifiers {
     return this;
   }
 
-   /**
-   * A unique identifier for an item provided by the client for a direct fulfillment shipment. This is only populated if a single line item has multiple pieces. Defaults to 1.
+  /**
+   * A unique identifier for an item provided by the client for a direct fulfillment shipment. This
+   * is only populated if a single line item has multiple pieces. Defaults to 1.
+   *
    * @return pieceNumber
-  **/
-  @Schema(description = "A unique identifier for an item provided by the client for a direct fulfillment shipment. This is only populated if a single line item has multiple pieces. Defaults to 1.")
+   */
+  @Schema(
+      description =
+          "A unique identifier for an item provided by the client for a direct fulfillment"
+              + " shipment. This is only populated if a single line item has multiple pieces."
+              + " Defaults to 1.")
   public String getPieceNumber() {
     return pieceNumber;
   }
@@ -69,7 +75,6 @@ public class DirectFulfillmentItemIdentifiers {
   public void setPieceNumber(String pieceNumber) {
     this.pieceNumber = pieceNumber;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -79,9 +84,10 @@ public class DirectFulfillmentItemIdentifiers {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    DirectFulfillmentItemIdentifiers directFulfillmentItemIdentifiers = (DirectFulfillmentItemIdentifiers) o;
-    return Objects.equals(this.lineItemID, directFulfillmentItemIdentifiers.lineItemID) &&
-        Objects.equals(this.pieceNumber, directFulfillmentItemIdentifiers.pieceNumber);
+    DirectFulfillmentItemIdentifiers directFulfillmentItemIdentifiers =
+        (DirectFulfillmentItemIdentifiers) o;
+    return Objects.equals(this.lineItemID, directFulfillmentItemIdentifiers.lineItemID)
+        && Objects.equals(this.pieceNumber, directFulfillmentItemIdentifiers.pieceNumber);
   }
 
   @Override
@@ -89,12 +95,11 @@ public class DirectFulfillmentItemIdentifiers {
     return Objects.hash(lineItemID, pieceNumber);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DirectFulfillmentItemIdentifiers {\n");
-    
+
     sb.append("    lineItemID: ").append(toIndentedString(lineItemID)).append("\n");
     sb.append("    pieceNumber: ").append(toIndentedString(pieceNumber)).append("\n");
     sb.append("}");
@@ -102,8 +107,7 @@ public class DirectFulfillmentItemIdentifiers {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -111,5 +115,4 @@ public class DirectFulfillmentItemIdentifiers {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

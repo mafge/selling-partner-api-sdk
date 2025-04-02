@@ -12,25 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.ClaimProofURLs;
-import software.amazon.spapi.models.shipping.v2.ClaimReason;
-import software.amazon.spapi.models.shipping.v2.Currency;
-import software.amazon.spapi.models.shipping.v2.SettlementType;
-/**
- * The request schema for the CreateClaim operation
- */
+import java.util.Objects;
+
+/** The request schema for the CreateClaim operation */
 @Schema(description = "The request schema for the CreateClaim operation")
-
-
 public class CreateClaimRequest {
   @SerializedName("trackingId")
   private String trackingId = null;
@@ -55,10 +42,11 @@ public class CreateClaimRequest {
     return this;
   }
 
-   /**
+  /**
    * Get trackingId
+   *
    * @return trackingId
-  **/
+   */
   @Schema(required = true, description = "")
   public String getTrackingId() {
     return trackingId;
@@ -73,10 +61,11 @@ public class CreateClaimRequest {
     return this;
   }
 
-   /**
+  /**
    * Get declaredValue
+   *
    * @return declaredValue
-  **/
+   */
   @Schema(description = "")
   public Currency getDeclaredValue() {
     return declaredValue;
@@ -91,10 +80,11 @@ public class CreateClaimRequest {
     return this;
   }
 
-   /**
+  /**
    * Get claimReason
+   *
    * @return claimReason
-  **/
+   */
   @Schema(required = true, description = "")
   public ClaimReason getClaimReason() {
     return claimReason;
@@ -109,11 +99,13 @@ public class CreateClaimRequest {
     return this;
   }
 
-   /**
+  /**
    * Applicable for only On Amazon shipments to identify if replacement was sent
+   *
    * @return isReplacementPackageSent
-  **/
-  @Schema(description = "Applicable for only On Amazon shipments to identify if replacement was sent")
+   */
+  @Schema(
+      description = "Applicable for only On Amazon shipments to identify if replacement was sent")
   public Boolean isIsReplacementPackageSent() {
     return isReplacementPackageSent;
   }
@@ -127,10 +119,11 @@ public class CreateClaimRequest {
     return this;
   }
 
-   /**
+  /**
    * Get proofs
+   *
    * @return proofs
-  **/
+   */
   @Schema(description = "")
   public ClaimProofURLs getProofs() {
     return proofs;
@@ -145,10 +138,11 @@ public class CreateClaimRequest {
     return this;
   }
 
-   /**
+  /**
    * Get settlementType
+   *
    * @return settlementType
-  **/
+   */
   @Schema(required = true, description = "")
   public SettlementType getSettlementType() {
     return settlementType;
@@ -157,7 +151,6 @@ public class CreateClaimRequest {
   public void setSettlementType(SettlementType settlementType) {
     this.settlementType = settlementType;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -168,29 +161,32 @@ public class CreateClaimRequest {
       return false;
     }
     CreateClaimRequest createClaimRequest = (CreateClaimRequest) o;
-    return Objects.equals(this.trackingId, createClaimRequest.trackingId) &&
-        Objects.equals(this.declaredValue, createClaimRequest.declaredValue) &&
-        Objects.equals(this.claimReason, createClaimRequest.claimReason) &&
-        Objects.equals(this.isReplacementPackageSent, createClaimRequest.isReplacementPackageSent) &&
-        Objects.equals(this.proofs, createClaimRequest.proofs) &&
-        Objects.equals(this.settlementType, createClaimRequest.settlementType);
+    return Objects.equals(this.trackingId, createClaimRequest.trackingId)
+        && Objects.equals(this.declaredValue, createClaimRequest.declaredValue)
+        && Objects.equals(this.claimReason, createClaimRequest.claimReason)
+        && Objects.equals(
+            this.isReplacementPackageSent, createClaimRequest.isReplacementPackageSent)
+        && Objects.equals(this.proofs, createClaimRequest.proofs)
+        && Objects.equals(this.settlementType, createClaimRequest.settlementType);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(trackingId, declaredValue, claimReason, isReplacementPackageSent, proofs, settlementType);
+    return Objects.hash(
+        trackingId, declaredValue, claimReason, isReplacementPackageSent, proofs, settlementType);
   }
-
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateClaimRequest {\n");
-    
+
     sb.append("    trackingId: ").append(toIndentedString(trackingId)).append("\n");
     sb.append("    declaredValue: ").append(toIndentedString(declaredValue)).append("\n");
     sb.append("    claimReason: ").append(toIndentedString(claimReason)).append("\n");
-    sb.append("    isReplacementPackageSent: ").append(toIndentedString(isReplacementPackageSent)).append("\n");
+    sb.append("    isReplacementPackageSent: ")
+        .append(toIndentedString(isReplacementPackageSent))
+        .append("\n");
     sb.append("    proofs: ").append(toIndentedString(proofs)).append("\n");
     sb.append("    settlementType: ").append(toIndentedString(settlementType)).append("\n");
     sb.append("}");
@@ -198,8 +194,7 @@ public class CreateClaimRequest {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -207,5 +202,4 @@ public class CreateClaimRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

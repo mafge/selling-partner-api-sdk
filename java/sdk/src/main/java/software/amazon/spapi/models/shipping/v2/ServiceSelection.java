@@ -12,22 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.ServiceIds;
-/**
- * Service Selection Criteria.
- */
+import java.util.Objects;
+
+/** Service Selection Criteria. */
 @Schema(description = "Service Selection Criteria.")
-
-
 public class ServiceSelection {
   @SerializedName("serviceId")
   private ServiceIds serviceId = null;
@@ -37,10 +27,11 @@ public class ServiceSelection {
     return this;
   }
 
-   /**
+  /**
    * Get serviceId
+   *
    * @return serviceId
-  **/
+   */
   @Schema(required = true, description = "")
   public ServiceIds getServiceId() {
     return serviceId;
@@ -49,7 +40,6 @@ public class ServiceSelection {
   public void setServiceId(ServiceIds serviceId) {
     this.serviceId = serviceId;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,20 +58,18 @@ public class ServiceSelection {
     return Objects.hash(serviceId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ServiceSelection {\n");
-    
+
     sb.append("    serviceId: ").append(toIndentedString(serviceId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -89,5 +77,4 @@ public class ServiceSelection {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

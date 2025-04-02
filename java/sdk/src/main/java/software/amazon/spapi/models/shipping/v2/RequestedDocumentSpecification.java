@@ -12,27 +12,22 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import software.amazon.spapi.models.shipping.v2.DocumentFormat;
-import software.amazon.spapi.models.shipping.v2.DocumentSize;
-import software.amazon.spapi.models.shipping.v2.DocumentType;
-import software.amazon.spapi.models.shipping.v2.RequestedLabelCustomization;
+import java.util.Objects;
+
 /**
- * The document specifications requested. For calls to the purchaseShipment operation, the shipment purchase fails if the specified document specifications are not among those returned in the response to the getRates operation.
+ * The document specifications requested. For calls to the purchaseShipment operation, the shipment
+ * purchase fails if the specified document specifications are not among those returned in the
+ * response to the getRates operation.
  */
-@Schema(description = "The document specifications requested. For calls to the purchaseShipment operation, the shipment purchase fails if the specified document specifications are not among those returned in the response to the getRates operation.")
-
-
+@Schema(
+    description =
+        "The document specifications requested. For calls to the purchaseShipment operation, the"
+            + " shipment purchase fails if the specified document specifications are not among"
+            + " those returned in the response to the getRates operation.")
 public class RequestedDocumentSpecification {
   @SerializedName("format")
   private DocumentFormat format = null;
@@ -60,10 +55,11 @@ public class RequestedDocumentSpecification {
     return this;
   }
 
-   /**
+  /**
    * Get format
+   *
    * @return format
-  **/
+   */
   @Schema(required = true, description = "")
   public DocumentFormat getFormat() {
     return format;
@@ -78,10 +74,11 @@ public class RequestedDocumentSpecification {
     return this;
   }
 
-   /**
+  /**
    * Get size
+   *
    * @return size
-  **/
+   */
   @Schema(required = true, description = "")
   public DocumentSize getSize() {
     return size;
@@ -96,10 +93,11 @@ public class RequestedDocumentSpecification {
     return this;
   }
 
-   /**
+  /**
    * Get dpi
+   *
    * @return dpi
-  **/
+   */
   @Schema(description = "")
   public Integer getDpi() {
     return dpi;
@@ -114,10 +112,11 @@ public class RequestedDocumentSpecification {
     return this;
   }
 
-   /**
+  /**
    * Get pageLayout
+   *
    * @return pageLayout
-  **/
+   */
   @Schema(description = "")
   public String getPageLayout() {
     return pageLayout;
@@ -132,10 +131,11 @@ public class RequestedDocumentSpecification {
     return this;
   }
 
-   /**
+  /**
    * Get needFileJoining
+   *
    * @return needFileJoining
-  **/
+   */
   @Schema(required = true, description = "")
   public Boolean getNeedFileJoining() {
     return needFileJoining;
@@ -145,20 +145,23 @@ public class RequestedDocumentSpecification {
     this.needFileJoining = needFileJoining;
   }
 
-  public RequestedDocumentSpecification requestedDocumentTypes(List<DocumentType> requestedDocumentTypes) {
+  public RequestedDocumentSpecification requestedDocumentTypes(
+      List<DocumentType> requestedDocumentTypes) {
     this.requestedDocumentTypes = requestedDocumentTypes;
     return this;
   }
 
-  public RequestedDocumentSpecification addRequestedDocumentTypesItem(DocumentType requestedDocumentTypesItem) {
+  public RequestedDocumentSpecification addRequestedDocumentTypesItem(
+      DocumentType requestedDocumentTypesItem) {
     this.requestedDocumentTypes.add(requestedDocumentTypesItem);
     return this;
   }
 
-   /**
+  /**
    * A list of the document types requested.
+   *
    * @return requestedDocumentTypes
-  **/
+   */
   @Schema(required = true, description = "A list of the document types requested.")
   public List<DocumentType> getRequestedDocumentTypes() {
     return requestedDocumentTypes;
@@ -168,24 +171,26 @@ public class RequestedDocumentSpecification {
     this.requestedDocumentTypes = requestedDocumentTypes;
   }
 
-  public RequestedDocumentSpecification requestedLabelCustomization(RequestedLabelCustomization requestedLabelCustomization) {
+  public RequestedDocumentSpecification requestedLabelCustomization(
+      RequestedLabelCustomization requestedLabelCustomization) {
     this.requestedLabelCustomization = requestedLabelCustomization;
     return this;
   }
 
-   /**
+  /**
    * Get requestedLabelCustomization
+   *
    * @return requestedLabelCustomization
-  **/
+   */
   @Schema(description = "")
   public RequestedLabelCustomization getRequestedLabelCustomization() {
     return requestedLabelCustomization;
   }
 
-  public void setRequestedLabelCustomization(RequestedLabelCustomization requestedLabelCustomization) {
+  public void setRequestedLabelCustomization(
+      RequestedLabelCustomization requestedLabelCustomization) {
     this.requestedLabelCustomization = requestedLabelCustomization;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -195,41 +200,54 @@ public class RequestedDocumentSpecification {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    RequestedDocumentSpecification requestedDocumentSpecification = (RequestedDocumentSpecification) o;
-    return Objects.equals(this.format, requestedDocumentSpecification.format) &&
-        Objects.equals(this.size, requestedDocumentSpecification.size) &&
-        Objects.equals(this.dpi, requestedDocumentSpecification.dpi) &&
-        Objects.equals(this.pageLayout, requestedDocumentSpecification.pageLayout) &&
-        Objects.equals(this.needFileJoining, requestedDocumentSpecification.needFileJoining) &&
-        Objects.equals(this.requestedDocumentTypes, requestedDocumentSpecification.requestedDocumentTypes) &&
-        Objects.equals(this.requestedLabelCustomization, requestedDocumentSpecification.requestedLabelCustomization);
+    RequestedDocumentSpecification requestedDocumentSpecification =
+        (RequestedDocumentSpecification) o;
+    return Objects.equals(this.format, requestedDocumentSpecification.format)
+        && Objects.equals(this.size, requestedDocumentSpecification.size)
+        && Objects.equals(this.dpi, requestedDocumentSpecification.dpi)
+        && Objects.equals(this.pageLayout, requestedDocumentSpecification.pageLayout)
+        && Objects.equals(this.needFileJoining, requestedDocumentSpecification.needFileJoining)
+        && Objects.equals(
+            this.requestedDocumentTypes, requestedDocumentSpecification.requestedDocumentTypes)
+        && Objects.equals(
+            this.requestedLabelCustomization,
+            requestedDocumentSpecification.requestedLabelCustomization);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(format, size, dpi, pageLayout, needFileJoining, requestedDocumentTypes, requestedLabelCustomization);
+    return Objects.hash(
+        format,
+        size,
+        dpi,
+        pageLayout,
+        needFileJoining,
+        requestedDocumentTypes,
+        requestedLabelCustomization);
   }
-
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RequestedDocumentSpecification {\n");
-    
+
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("    dpi: ").append(toIndentedString(dpi)).append("\n");
     sb.append("    pageLayout: ").append(toIndentedString(pageLayout)).append("\n");
     sb.append("    needFileJoining: ").append(toIndentedString(needFileJoining)).append("\n");
-    sb.append("    requestedDocumentTypes: ").append(toIndentedString(requestedDocumentTypes)).append("\n");
-    sb.append("    requestedLabelCustomization: ").append(toIndentedString(requestedLabelCustomization)).append("\n");
+    sb.append("    requestedDocumentTypes: ")
+        .append(toIndentedString(requestedDocumentTypes))
+        .append("\n");
+    sb.append("    requestedLabelCustomization: ")
+        .append(toIndentedString(requestedLabelCustomization))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -237,5 +255,4 @@ public class RequestedDocumentSpecification {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

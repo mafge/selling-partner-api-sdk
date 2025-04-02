@@ -12,8 +12,6 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,12 +20,10 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
 import java.math.BigDecimal;
-/**
- * The size dimensions of the label.
- */
+import java.util.Objects;
+
+/** The size dimensions of the label. */
 @Schema(description = "The size dimensions of the label.")
-
-
 public class DocumentSize {
   @SerializedName("width")
   private BigDecimal width = null;
@@ -35,9 +31,7 @@ public class DocumentSize {
   @SerializedName("length")
   private BigDecimal length = null;
 
-  /**
-   * The unit of measurement.
-   */
+  /** The unit of measurement. */
   @JsonAdapter(UnitEnum.Adapter.class)
   public enum UnitEnum {
     @SerializedName("INCH")
@@ -50,6 +44,7 @@ public class DocumentSize {
     UnitEnum(String value) {
       this.value = value;
     }
+
     public String getValue() {
       return value;
     }
@@ -58,6 +53,7 @@ public class DocumentSize {
     public String toString() {
       return String.valueOf(value);
     }
+
     public static UnitEnum fromValue(String input) {
       for (UnitEnum b : UnitEnum.values()) {
         if (b.value.equals(input)) {
@@ -66,19 +62,23 @@ public class DocumentSize {
       }
       return null;
     }
+
     public static class Adapter extends TypeAdapter<UnitEnum> {
       @Override
-      public void write(final JsonWriter jsonWriter, final UnitEnum enumeration) throws IOException {
+      public void write(final JsonWriter jsonWriter, final UnitEnum enumeration)
+          throws IOException {
         jsonWriter.value(String.valueOf(enumeration.getValue()));
       }
 
       @Override
       public UnitEnum read(final JsonReader jsonReader) throws IOException {
         Object value = jsonReader.nextString();
-        return UnitEnum.fromValue((String)(value));
+        return UnitEnum.fromValue((String) (value));
       }
     }
-  }  @SerializedName("unit")
+  }
+
+  @SerializedName("unit")
   private UnitEnum unit = null;
 
   public DocumentSize width(BigDecimal width) {
@@ -86,11 +86,14 @@ public class DocumentSize {
     return this;
   }
 
-   /**
+  /**
    * The width of the document measured in the units specified.
+   *
    * @return width
-  **/
-  @Schema(required = true, description = "The width of the document measured in the units specified.")
+   */
+  @Schema(
+      required = true,
+      description = "The width of the document measured in the units specified.")
   public BigDecimal getWidth() {
     return width;
   }
@@ -104,11 +107,14 @@ public class DocumentSize {
     return this;
   }
 
-   /**
+  /**
    * The length of the document measured in the units specified.
+   *
    * @return length
-  **/
-  @Schema(required = true, description = "The length of the document measured in the units specified.")
+   */
+  @Schema(
+      required = true,
+      description = "The length of the document measured in the units specified.")
   public BigDecimal getLength() {
     return length;
   }
@@ -122,10 +128,11 @@ public class DocumentSize {
     return this;
   }
 
-   /**
+  /**
    * The unit of measurement.
+   *
    * @return unit
-  **/
+   */
   @Schema(required = true, description = "The unit of measurement.")
   public UnitEnum getUnit() {
     return unit;
@@ -134,7 +141,6 @@ public class DocumentSize {
   public void setUnit(UnitEnum unit) {
     this.unit = unit;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -145,9 +151,9 @@ public class DocumentSize {
       return false;
     }
     DocumentSize documentSize = (DocumentSize) o;
-    return Objects.equals(this.width, documentSize.width) &&
-        Objects.equals(this.length, documentSize.length) &&
-        Objects.equals(this.unit, documentSize.unit);
+    return Objects.equals(this.width, documentSize.width)
+        && Objects.equals(this.length, documentSize.length)
+        && Objects.equals(this.unit, documentSize.unit);
   }
 
   @Override
@@ -155,12 +161,11 @@ public class DocumentSize {
     return Objects.hash(width, length, unit);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DocumentSize {\n");
-    
+
     sb.append("    width: ").append(toIndentedString(width)).append("\n");
     sb.append("    length: ").append(toIndentedString(length)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
@@ -169,8 +174,7 @@ public class DocumentSize {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -178,5 +182,4 @@ public class DocumentSize {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

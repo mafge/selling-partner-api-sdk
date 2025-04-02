@@ -12,18 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.ArrayList;
-import java.util.List;
-import software.amazon.spapi.models.shipping.v2.IneligibleRate;
-/**
- * A list of ineligible shipping service offerings.
- */
+import java.util.Objects;
+
+/** A list of ineligible shipping service offerings. */
 @Schema(description = "A list of ineligible shipping service offerings.")
-
-
 public class IneligibleRateList extends ArrayList<IneligibleRate> {
 
   @Override
@@ -42,7 +36,6 @@ public class IneligibleRateList extends ArrayList<IneligibleRate> {
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -53,8 +46,7 @@ public class IneligibleRateList extends ArrayList<IneligibleRate> {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -62,5 +54,4 @@ public class IneligibleRateList extends ArrayList<IneligibleRate> {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

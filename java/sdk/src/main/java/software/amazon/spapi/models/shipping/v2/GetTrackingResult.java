@@ -12,26 +12,15 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import org.threeten.bp.OffsetDateTime;
-import software.amazon.spapi.models.shipping.v2.Event;
-import software.amazon.spapi.models.shipping.v2.TrackingSummary;
-/**
- * The payload for the getTracking operation.
- */
+
+/** The payload for the getTracking operation. */
 @Schema(description = "The payload for the getTracking operation.")
-
-
 public class GetTrackingResult {
   @SerializedName("trackingId")
   private String trackingId = null;
@@ -53,10 +42,11 @@ public class GetTrackingResult {
     return this;
   }
 
-   /**
+  /**
    * Get trackingId
+   *
    * @return trackingId
-  **/
+   */
   @Schema(required = true, description = "")
   public String getTrackingId() {
     return trackingId;
@@ -71,10 +61,11 @@ public class GetTrackingResult {
     return this;
   }
 
-   /**
+  /**
    * Get alternateLegTrackingId
+   *
    * @return alternateLegTrackingId
-  **/
+   */
   @Schema(required = true, description = "")
   public String getAlternateLegTrackingId() {
     return alternateLegTrackingId;
@@ -94,10 +85,11 @@ public class GetTrackingResult {
     return this;
   }
 
-   /**
+  /**
    * A list of tracking events.
+   *
    * @return eventHistory
-  **/
+   */
   @Schema(required = true, description = "A list of tracking events.")
   public List<Event> getEventHistory() {
     return eventHistory;
@@ -112,11 +104,14 @@ public class GetTrackingResult {
     return this;
   }
 
-   /**
+  /**
    * The date and time by which the shipment is promised to be delivered.
+   *
    * @return promisedDeliveryDate
-  **/
-  @Schema(required = true, description = "The date and time by which the shipment is promised to be delivered.")
+   */
+  @Schema(
+      required = true,
+      description = "The date and time by which the shipment is promised to be delivered.")
   public OffsetDateTime getPromisedDeliveryDate() {
     return promisedDeliveryDate;
   }
@@ -130,10 +125,11 @@ public class GetTrackingResult {
     return this;
   }
 
-   /**
+  /**
    * Get summary
+   *
    * @return summary
-  **/
+   */
   @Schema(required = true, description = "")
   public TrackingSummary getSummary() {
     return summary;
@@ -142,7 +138,6 @@ public class GetTrackingResult {
   public void setSummary(TrackingSummary summary) {
     this.summary = summary;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -153,36 +148,39 @@ public class GetTrackingResult {
       return false;
     }
     GetTrackingResult getTrackingResult = (GetTrackingResult) o;
-    return Objects.equals(this.trackingId, getTrackingResult.trackingId) &&
-        Objects.equals(this.alternateLegTrackingId, getTrackingResult.alternateLegTrackingId) &&
-        Objects.equals(this.eventHistory, getTrackingResult.eventHistory) &&
-        Objects.equals(this.promisedDeliveryDate, getTrackingResult.promisedDeliveryDate) &&
-        Objects.equals(this.summary, getTrackingResult.summary);
+    return Objects.equals(this.trackingId, getTrackingResult.trackingId)
+        && Objects.equals(this.alternateLegTrackingId, getTrackingResult.alternateLegTrackingId)
+        && Objects.equals(this.eventHistory, getTrackingResult.eventHistory)
+        && Objects.equals(this.promisedDeliveryDate, getTrackingResult.promisedDeliveryDate)
+        && Objects.equals(this.summary, getTrackingResult.summary);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(trackingId, alternateLegTrackingId, eventHistory, promisedDeliveryDate, summary);
+    return Objects.hash(
+        trackingId, alternateLegTrackingId, eventHistory, promisedDeliveryDate, summary);
   }
-
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetTrackingResult {\n");
-    
+
     sb.append("    trackingId: ").append(toIndentedString(trackingId)).append("\n");
-    sb.append("    alternateLegTrackingId: ").append(toIndentedString(alternateLegTrackingId)).append("\n");
+    sb.append("    alternateLegTrackingId: ")
+        .append(toIndentedString(alternateLegTrackingId))
+        .append("\n");
     sb.append("    eventHistory: ").append(toIndentedString(eventHistory)).append("\n");
-    sb.append("    promisedDeliveryDate: ").append(toIndentedString(promisedDeliveryDate)).append("\n");
+    sb.append("    promisedDeliveryDate: ")
+        .append(toIndentedString(promisedDeliveryDate))
+        .append("\n");
     sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -190,5 +188,4 @@ public class GetTrackingResult {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

@@ -12,21 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-/**
- * Carrier Account details used to fetch rates.
- */
+import java.util.Objects;
+
+/** Carrier Account details used to fetch rates. */
 @Schema(description = "Carrier Account details used to fetch rates.")
-
-
 public class CarrierAccount {
   @SerializedName("carrierAccountId")
   private String carrierAccountId = null;
@@ -39,10 +30,11 @@ public class CarrierAccount {
     return this;
   }
 
-   /**
+  /**
    * Get carrierAccountId
+   *
    * @return carrierAccountId
-  **/
+   */
   @Schema(required = true, description = "")
   public String getCarrierAccountId() {
     return carrierAccountId;
@@ -57,10 +49,11 @@ public class CarrierAccount {
     return this;
   }
 
-   /**
+  /**
    * Get carrierId
+   *
    * @return carrierId
-  **/
+   */
   @Schema(required = true, description = "")
   public String getCarrierId() {
     return carrierId;
@@ -69,7 +62,6 @@ public class CarrierAccount {
   public void setCarrierId(String carrierId) {
     this.carrierId = carrierId;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -80,8 +72,8 @@ public class CarrierAccount {
       return false;
     }
     CarrierAccount carrierAccount = (CarrierAccount) o;
-    return Objects.equals(this.carrierAccountId, carrierAccount.carrierAccountId) &&
-        Objects.equals(this.carrierId, carrierAccount.carrierId);
+    return Objects.equals(this.carrierAccountId, carrierAccount.carrierAccountId)
+        && Objects.equals(this.carrierId, carrierAccount.carrierId);
   }
 
   @Override
@@ -89,12 +81,11 @@ public class CarrierAccount {
     return Objects.hash(carrierAccountId, carrierId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CarrierAccount {\n");
-    
+
     sb.append("    carrierAccountId: ").append(toIndentedString(carrierAccountId)).append("\n");
     sb.append("    carrierId: ").append(toIndentedString(carrierId)).append("\n");
     sb.append("}");
@@ -102,8 +93,7 @@ public class CarrierAccount {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -111,5 +101,4 @@ public class CarrierAccount {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

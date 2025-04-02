@@ -12,29 +12,14 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import software.amazon.spapi.models.shipping.v2.Currency;
-import software.amazon.spapi.models.shipping.v2.DangerousGoodsDetails;
-import software.amazon.spapi.models.shipping.v2.DirectFulfillmentItemIdentifiers;
-import software.amazon.spapi.models.shipping.v2.InvoiceDetails;
-import software.amazon.spapi.models.shipping.v2.LiquidVolume;
-import software.amazon.spapi.models.shipping.v2.Weight;
-/**
- * An item in a package.
- */
+import java.util.Objects;
+
+/** An item in a package. */
 @Schema(description = "An item in a package.")
-
-
 public class Item {
   @SerializedName("itemValue")
   private Currency itemValue = null;
@@ -77,10 +62,11 @@ public class Item {
     return this;
   }
 
-   /**
+  /**
    * Get itemValue
+   *
    * @return itemValue
-  **/
+   */
   @Schema(description = "")
   public Currency getItemValue() {
     return itemValue;
@@ -95,10 +81,11 @@ public class Item {
     return this;
   }
 
-   /**
+  /**
    * The product description of the item.
+   *
    * @return description
-  **/
+   */
   @Schema(description = "The product description of the item.")
   public String getDescription() {
     return description;
@@ -113,10 +100,11 @@ public class Item {
     return this;
   }
 
-   /**
+  /**
    * A unique identifier for an item provided by the client.
+   *
    * @return itemIdentifier
-  **/
+   */
   @Schema(description = "A unique identifier for an item provided by the client.")
   public String getItemIdentifier() {
     return itemIdentifier;
@@ -131,10 +119,11 @@ public class Item {
     return this;
   }
 
-   /**
+  /**
    * The number of units. This value is required.
+   *
    * @return quantity
-  **/
+   */
   @Schema(required = true, description = "The number of units. This value is required.")
   public Integer getQuantity() {
     return quantity;
@@ -149,10 +138,11 @@ public class Item {
     return this;
   }
 
-   /**
+  /**
    * Get weight
+   *
    * @return weight
-  **/
+   */
   @Schema(description = "")
   public Weight getWeight() {
     return weight;
@@ -167,10 +157,11 @@ public class Item {
     return this;
   }
 
-   /**
+  /**
    * Get liquidVolume
+   *
    * @return liquidVolume
-  **/
+   */
   @Schema(description = "")
   public LiquidVolume getLiquidVolume() {
     return liquidVolume;
@@ -185,11 +176,14 @@ public class Item {
     return this;
   }
 
-   /**
+  /**
    * When true, the item qualifies as hazardous materials (hazmat). Defaults to false.
+   *
    * @return isHazmat
-  **/
-  @Schema(description = "When true, the item qualifies as hazardous materials (hazmat). Defaults to false.")
+   */
+  @Schema(
+      description =
+          "When true, the item qualifies as hazardous materials (hazmat). Defaults to false.")
   public Boolean isIsHazmat() {
     return isHazmat;
   }
@@ -203,10 +197,11 @@ public class Item {
     return this;
   }
 
-   /**
+  /**
    * Get dangerousGoodsDetails
+   *
    * @return dangerousGoodsDetails
-  **/
+   */
   @Schema(description = "")
   public DangerousGoodsDetails getDangerousGoodsDetails() {
     return dangerousGoodsDetails;
@@ -221,10 +216,11 @@ public class Item {
     return this;
   }
 
-   /**
+  /**
    * The product type of the item.
+   *
    * @return productType
-  **/
+   */
   @Schema(description = "The product type of the item.")
   public String getProductType() {
     return productType;
@@ -239,10 +235,11 @@ public class Item {
     return this;
   }
 
-   /**
+  /**
    * Get invoiceDetails
+   *
    * @return invoiceDetails
-  **/
+   */
   @Schema(description = "")
   public InvoiceDetails getInvoiceDetails() {
     return invoiceDetails;
@@ -265,11 +262,19 @@ public class Item {
     return this;
   }
 
-   /**
-   * A list of unique serial numbers in an Amazon package that can be used to guarantee non-fraudulent items. The number of serial numbers in the list must be less than or equal to the quantity of items being shipped. Only applicable when channel source is Amazon.
+  /**
+   * A list of unique serial numbers in an Amazon package that can be used to guarantee
+   * non-fraudulent items. The number of serial numbers in the list must be less than or equal to
+   * the quantity of items being shipped. Only applicable when channel source is Amazon.
+   *
    * @return serialNumbers
-  **/
-  @Schema(description = "A list of unique serial numbers in an Amazon package that can be used to guarantee non-fraudulent items. The number of serial numbers in the list must be less than or equal to the quantity of items being shipped. Only applicable when channel source is Amazon.")
+   */
+  @Schema(
+      description =
+          "A list of unique serial numbers in an Amazon package that can be used to guarantee"
+              + " non-fraudulent items. The number of serial numbers in the list must be less than"
+              + " or equal to the quantity of items being shipped. Only applicable when channel"
+              + " source is Amazon.")
   public List<String> getSerialNumbers() {
     return serialNumbers;
   }
@@ -278,24 +283,26 @@ public class Item {
     this.serialNumbers = serialNumbers;
   }
 
-  public Item directFulfillmentItemIdentifiers(DirectFulfillmentItemIdentifiers directFulfillmentItemIdentifiers) {
+  public Item directFulfillmentItemIdentifiers(
+      DirectFulfillmentItemIdentifiers directFulfillmentItemIdentifiers) {
     this.directFulfillmentItemIdentifiers = directFulfillmentItemIdentifiers;
     return this;
   }
 
-   /**
+  /**
    * Get directFulfillmentItemIdentifiers
+   *
    * @return directFulfillmentItemIdentifiers
-  **/
+   */
   @Schema(description = "")
   public DirectFulfillmentItemIdentifiers getDirectFulfillmentItemIdentifiers() {
     return directFulfillmentItemIdentifiers;
   }
 
-  public void setDirectFulfillmentItemIdentifiers(DirectFulfillmentItemIdentifiers directFulfillmentItemIdentifiers) {
+  public void setDirectFulfillmentItemIdentifiers(
+      DirectFulfillmentItemIdentifiers directFulfillmentItemIdentifiers) {
     this.directFulfillmentItemIdentifiers = directFulfillmentItemIdentifiers;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -306,31 +313,43 @@ public class Item {
       return false;
     }
     Item item = (Item) o;
-    return Objects.equals(this.itemValue, item.itemValue) &&
-        Objects.equals(this.description, item.description) &&
-        Objects.equals(this.itemIdentifier, item.itemIdentifier) &&
-        Objects.equals(this.quantity, item.quantity) &&
-        Objects.equals(this.weight, item.weight) &&
-        Objects.equals(this.liquidVolume, item.liquidVolume) &&
-        Objects.equals(this.isHazmat, item.isHazmat) &&
-        Objects.equals(this.dangerousGoodsDetails, item.dangerousGoodsDetails) &&
-        Objects.equals(this.productType, item.productType) &&
-        Objects.equals(this.invoiceDetails, item.invoiceDetails) &&
-        Objects.equals(this.serialNumbers, item.serialNumbers) &&
-        Objects.equals(this.directFulfillmentItemIdentifiers, item.directFulfillmentItemIdentifiers);
+    return Objects.equals(this.itemValue, item.itemValue)
+        && Objects.equals(this.description, item.description)
+        && Objects.equals(this.itemIdentifier, item.itemIdentifier)
+        && Objects.equals(this.quantity, item.quantity)
+        && Objects.equals(this.weight, item.weight)
+        && Objects.equals(this.liquidVolume, item.liquidVolume)
+        && Objects.equals(this.isHazmat, item.isHazmat)
+        && Objects.equals(this.dangerousGoodsDetails, item.dangerousGoodsDetails)
+        && Objects.equals(this.productType, item.productType)
+        && Objects.equals(this.invoiceDetails, item.invoiceDetails)
+        && Objects.equals(this.serialNumbers, item.serialNumbers)
+        && Objects.equals(
+            this.directFulfillmentItemIdentifiers, item.directFulfillmentItemIdentifiers);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(itemValue, description, itemIdentifier, quantity, weight, liquidVolume, isHazmat, dangerousGoodsDetails, productType, invoiceDetails, serialNumbers, directFulfillmentItemIdentifiers);
+    return Objects.hash(
+        itemValue,
+        description,
+        itemIdentifier,
+        quantity,
+        weight,
+        liquidVolume,
+        isHazmat,
+        dangerousGoodsDetails,
+        productType,
+        invoiceDetails,
+        serialNumbers,
+        directFulfillmentItemIdentifiers);
   }
-
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Item {\n");
-    
+
     sb.append("    itemValue: ").append(toIndentedString(itemValue)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    itemIdentifier: ").append(toIndentedString(itemIdentifier)).append("\n");
@@ -338,18 +357,21 @@ public class Item {
     sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
     sb.append("    liquidVolume: ").append(toIndentedString(liquidVolume)).append("\n");
     sb.append("    isHazmat: ").append(toIndentedString(isHazmat)).append("\n");
-    sb.append("    dangerousGoodsDetails: ").append(toIndentedString(dangerousGoodsDetails)).append("\n");
+    sb.append("    dangerousGoodsDetails: ")
+        .append(toIndentedString(dangerousGoodsDetails))
+        .append("\n");
     sb.append("    productType: ").append(toIndentedString(productType)).append("\n");
     sb.append("    invoiceDetails: ").append(toIndentedString(invoiceDetails)).append("\n");
     sb.append("    serialNumbers: ").append(toIndentedString(serialNumbers)).append("\n");
-    sb.append("    directFulfillmentItemIdentifiers: ").append(toIndentedString(directFulfillmentItemIdentifiers)).append("\n");
+    sb.append("    directFulfillmentItemIdentifiers: ")
+        .append(toIndentedString(directFulfillmentItemIdentifiers))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -357,5 +379,4 @@ public class Item {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

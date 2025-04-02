@@ -12,8 +12,6 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -21,20 +19,15 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.Currency;
-/**
- * The type and amount of a charge applied on a package.
- */
+import java.util.Objects;
+
+/** The type and amount of a charge applied on a package. */
 @Schema(description = "The type and amount of a charge applied on a package.")
-
-
 public class ChargeComponent {
   @SerializedName("amount")
   private Currency amount = null;
 
-  /**
-   * The type of charge.
-   */
+  /** The type of charge. */
   @JsonAdapter(ChargeTypeEnum.Adapter.class)
   public enum ChargeTypeEnum {
     @SerializedName("TAX")
@@ -47,6 +40,7 @@ public class ChargeComponent {
     ChargeTypeEnum(String value) {
       this.value = value;
     }
+
     public String getValue() {
       return value;
     }
@@ -55,6 +49,7 @@ public class ChargeComponent {
     public String toString() {
       return String.valueOf(value);
     }
+
     public static ChargeTypeEnum fromValue(String input) {
       for (ChargeTypeEnum b : ChargeTypeEnum.values()) {
         if (b.value.equals(input)) {
@@ -63,19 +58,23 @@ public class ChargeComponent {
       }
       return null;
     }
+
     public static class Adapter extends TypeAdapter<ChargeTypeEnum> {
       @Override
-      public void write(final JsonWriter jsonWriter, final ChargeTypeEnum enumeration) throws IOException {
+      public void write(final JsonWriter jsonWriter, final ChargeTypeEnum enumeration)
+          throws IOException {
         jsonWriter.value(String.valueOf(enumeration.getValue()));
       }
 
       @Override
       public ChargeTypeEnum read(final JsonReader jsonReader) throws IOException {
         Object value = jsonReader.nextString();
-        return ChargeTypeEnum.fromValue((String)(value));
+        return ChargeTypeEnum.fromValue((String) (value));
       }
     }
-  }  @SerializedName("chargeType")
+  }
+
+  @SerializedName("chargeType")
   private ChargeTypeEnum chargeType = null;
 
   public ChargeComponent amount(Currency amount) {
@@ -83,10 +82,11 @@ public class ChargeComponent {
     return this;
   }
 
-   /**
+  /**
    * Get amount
+   *
    * @return amount
-  **/
+   */
   @Schema(description = "")
   public Currency getAmount() {
     return amount;
@@ -101,10 +101,11 @@ public class ChargeComponent {
     return this;
   }
 
-   /**
+  /**
    * The type of charge.
+   *
    * @return chargeType
-  **/
+   */
   @Schema(description = "The type of charge.")
   public ChargeTypeEnum getChargeType() {
     return chargeType;
@@ -113,7 +114,6 @@ public class ChargeComponent {
   public void setChargeType(ChargeTypeEnum chargeType) {
     this.chargeType = chargeType;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -124,8 +124,8 @@ public class ChargeComponent {
       return false;
     }
     ChargeComponent chargeComponent = (ChargeComponent) o;
-    return Objects.equals(this.amount, chargeComponent.amount) &&
-        Objects.equals(this.chargeType, chargeComponent.chargeType);
+    return Objects.equals(this.amount, chargeComponent.amount)
+        && Objects.equals(this.chargeType, chargeComponent.chargeType);
   }
 
   @Override
@@ -133,12 +133,11 @@ public class ChargeComponent {
     return Objects.hash(amount, chargeType);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ChargeComponent {\n");
-    
+
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    chargeType: ").append(toIndentedString(chargeType)).append("\n");
     sb.append("}");
@@ -146,8 +145,7 @@ public class ChargeComponent {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -155,5 +153,4 @@ public class ChargeComponent {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

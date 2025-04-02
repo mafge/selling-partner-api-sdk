@@ -12,24 +12,20 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import software.amazon.spapi.models.shipping.v2.DetailCodes;
+import java.util.Objects;
+
 /**
- * Contains detail codes that provide additional details related to the forward and return leg of the shipment.
+ * Contains detail codes that provide additional details related to the forward and return leg of
+ * the shipment.
  */
-@Schema(description = "Contains detail codes that provide additional details related to the forward and return leg of the shipment.")
-
-
+@Schema(
+    description =
+        "Contains detail codes that provide additional details related to the forward and return"
+            + " leg of the shipment.")
 public class TrackingDetailCodes {
   @SerializedName("forward")
   private List<DetailCodes> forward = new ArrayList<DetailCodes>();
@@ -47,11 +43,17 @@ public class TrackingDetailCodes {
     return this;
   }
 
-   /**
-   * Contains detail codes that provide additional details related to the forward leg of the shipment.
+  /**
+   * Contains detail codes that provide additional details related to the forward leg of the
+   * shipment.
+   *
    * @return forward
-  **/
-  @Schema(required = true, description = "Contains detail codes that provide additional details related to the forward leg of the shipment.")
+   */
+  @Schema(
+      required = true,
+      description =
+          "Contains detail codes that provide additional details related to the forward leg of the"
+              + " shipment.")
   public List<DetailCodes> getForward() {
     return forward;
   }
@@ -70,11 +72,17 @@ public class TrackingDetailCodes {
     return this;
   }
 
-   /**
-   * Contains detail codes that provide additional details related to the return leg of the shipment.
+  /**
+   * Contains detail codes that provide additional details related to the return leg of the
+   * shipment.
+   *
    * @return returns
-  **/
-  @Schema(required = true, description = "Contains detail codes that provide additional details related to the return leg of the shipment.")
+   */
+  @Schema(
+      required = true,
+      description =
+          "Contains detail codes that provide additional details related to the return leg of the"
+              + " shipment.")
   public List<DetailCodes> getReturns() {
     return returns;
   }
@@ -82,7 +90,6 @@ public class TrackingDetailCodes {
   public void setReturns(List<DetailCodes> returns) {
     this.returns = returns;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -93,8 +100,8 @@ public class TrackingDetailCodes {
       return false;
     }
     TrackingDetailCodes trackingDetailCodes = (TrackingDetailCodes) o;
-    return Objects.equals(this.forward, trackingDetailCodes.forward) &&
-        Objects.equals(this.returns, trackingDetailCodes.returns);
+    return Objects.equals(this.forward, trackingDetailCodes.forward)
+        && Objects.equals(this.returns, trackingDetailCodes.returns);
   }
 
   @Override
@@ -102,12 +109,11 @@ public class TrackingDetailCodes {
     return Objects.hash(forward, returns);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TrackingDetailCodes {\n");
-    
+
     sb.append("    forward: ").append(toIndentedString(forward)).append("\n");
     sb.append("    returns: ").append(toIndentedString(returns)).append("\n");
     sb.append("}");
@@ -115,8 +121,7 @@ public class TrackingDetailCodes {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -124,5 +129,4 @@ public class TrackingDetailCodes {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

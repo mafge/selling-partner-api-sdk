@@ -12,19 +12,14 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import io.swagger.v3.oas.annotations.media.Schema;
-import com.google.gson.annotations.SerializedName;
-import java.io.IOException;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-/**
- * The type of access point, like counter (HELIX), lockers, etc.
- */
+/** The type of access point, like counter (HELIX), lockers, etc. */
 @JsonAdapter(AccessPointType.Adapter.class)
 public enum AccessPointType {
   @SerializedName("HELIX")
@@ -70,14 +65,15 @@ public enum AccessPointType {
 
   public static class Adapter extends TypeAdapter<AccessPointType> {
     @Override
-    public void write(final JsonWriter jsonWriter, final AccessPointType enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final AccessPointType enumeration)
+        throws IOException {
       jsonWriter.value(String.valueOf(enumeration.getValue()));
     }
 
     @Override
     public AccessPointType read(final JsonReader jsonReader) throws IOException {
       Object value = jsonReader.nextString();
-      return AccessPointType.fromValue((String)(value));
+      return AccessPointType.fromValue((String) (value));
     }
   }
 }

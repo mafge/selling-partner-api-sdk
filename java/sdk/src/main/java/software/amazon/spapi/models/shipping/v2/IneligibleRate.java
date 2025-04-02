@@ -12,24 +12,14 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import software.amazon.spapi.models.shipping.v2.IneligibilityReason;
-/**
- * Detailed information for an ineligible shipping service offering.
- */
+import java.util.Objects;
+
+/** Detailed information for an ineligible shipping service offering. */
 @Schema(description = "Detailed information for an ineligible shipping service offering.")
-
-
 public class IneligibleRate {
   @SerializedName("serviceId")
   private String serviceId = null;
@@ -51,10 +41,11 @@ public class IneligibleRate {
     return this;
   }
 
-   /**
+  /**
    * Get serviceId
+   *
    * @return serviceId
-  **/
+   */
   @Schema(required = true, description = "")
   public String getServiceId() {
     return serviceId;
@@ -69,10 +60,11 @@ public class IneligibleRate {
     return this;
   }
 
-   /**
+  /**
    * Get serviceName
+   *
    * @return serviceName
-  **/
+   */
   @Schema(required = true, description = "")
   public String getServiceName() {
     return serviceName;
@@ -87,10 +79,11 @@ public class IneligibleRate {
     return this;
   }
 
-   /**
+  /**
    * Get carrierName
+   *
    * @return carrierName
-  **/
+   */
   @Schema(required = true, description = "")
   public String getCarrierName() {
     return carrierName;
@@ -105,10 +98,11 @@ public class IneligibleRate {
     return this;
   }
 
-   /**
+  /**
    * Get carrierId
+   *
    * @return carrierId
-  **/
+   */
   @Schema(required = true, description = "")
   public String getCarrierId() {
     return carrierId;
@@ -128,11 +122,14 @@ public class IneligibleRate {
     return this;
   }
 
-   /**
+  /**
    * A list of reasons why a shipping service offering is ineligible.
+   *
    * @return ineligibilityReasons
-  **/
-  @Schema(required = true, description = "A list of reasons why a shipping service offering is ineligible.")
+   */
+  @Schema(
+      required = true,
+      description = "A list of reasons why a shipping service offering is ineligible.")
   public List<IneligibilityReason> getIneligibilityReasons() {
     return ineligibilityReasons;
   }
@@ -140,7 +137,6 @@ public class IneligibleRate {
   public void setIneligibilityReasons(List<IneligibilityReason> ineligibilityReasons) {
     this.ineligibilityReasons = ineligibilityReasons;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -151,11 +147,11 @@ public class IneligibleRate {
       return false;
     }
     IneligibleRate ineligibleRate = (IneligibleRate) o;
-    return Objects.equals(this.serviceId, ineligibleRate.serviceId) &&
-        Objects.equals(this.serviceName, ineligibleRate.serviceName) &&
-        Objects.equals(this.carrierName, ineligibleRate.carrierName) &&
-        Objects.equals(this.carrierId, ineligibleRate.carrierId) &&
-        Objects.equals(this.ineligibilityReasons, ineligibleRate.ineligibilityReasons);
+    return Objects.equals(this.serviceId, ineligibleRate.serviceId)
+        && Objects.equals(this.serviceName, ineligibleRate.serviceName)
+        && Objects.equals(this.carrierName, ineligibleRate.carrierName)
+        && Objects.equals(this.carrierId, ineligibleRate.carrierId)
+        && Objects.equals(this.ineligibilityReasons, ineligibleRate.ineligibilityReasons);
   }
 
   @Override
@@ -163,24 +159,24 @@ public class IneligibleRate {
     return Objects.hash(serviceId, serviceName, carrierName, carrierId, ineligibilityReasons);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IneligibleRate {\n");
-    
+
     sb.append("    serviceId: ").append(toIndentedString(serviceId)).append("\n");
     sb.append("    serviceName: ").append(toIndentedString(serviceName)).append("\n");
     sb.append("    carrierName: ").append(toIndentedString(carrierName)).append("\n");
     sb.append("    carrierId: ").append(toIndentedString(carrierId)).append("\n");
-    sb.append("    ineligibilityReasons: ").append(toIndentedString(ineligibilityReasons)).append("\n");
+    sb.append("    ineligibilityReasons: ")
+        .append(toIndentedString(ineligibilityReasons))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -188,5 +184,4 @@ public class IneligibleRate {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

@@ -12,44 +12,36 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.UnmanifestedCarrierInformationList;
-/**
- * The Response  for the GetUnmanifestedShipmentsResponse operation.
- */
+import java.util.Objects;
+
+/** The Response for the GetUnmanifestedShipmentsResponse operation. */
 @Schema(description = "The Response  for the GetUnmanifestedShipmentsResponse operation.")
-
-
 public class GetUnmanifestedShipmentsResponse {
   @SerializedName("unmanifestedCarrierInformationList")
   private UnmanifestedCarrierInformationList unmanifestedCarrierInformationList = null;
 
-  public GetUnmanifestedShipmentsResponse unmanifestedCarrierInformationList(UnmanifestedCarrierInformationList unmanifestedCarrierInformationList) {
+  public GetUnmanifestedShipmentsResponse unmanifestedCarrierInformationList(
+      UnmanifestedCarrierInformationList unmanifestedCarrierInformationList) {
     this.unmanifestedCarrierInformationList = unmanifestedCarrierInformationList;
     return this;
   }
 
-   /**
+  /**
    * Get unmanifestedCarrierInformationList
+   *
    * @return unmanifestedCarrierInformationList
-  **/
+   */
   @Schema(description = "")
   public UnmanifestedCarrierInformationList getUnmanifestedCarrierInformationList() {
     return unmanifestedCarrierInformationList;
   }
 
-  public void setUnmanifestedCarrierInformationList(UnmanifestedCarrierInformationList unmanifestedCarrierInformationList) {
+  public void setUnmanifestedCarrierInformationList(
+      UnmanifestedCarrierInformationList unmanifestedCarrierInformationList) {
     this.unmanifestedCarrierInformationList = unmanifestedCarrierInformationList;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -59,8 +51,11 @@ public class GetUnmanifestedShipmentsResponse {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GetUnmanifestedShipmentsResponse getUnmanifestedShipmentsResponse = (GetUnmanifestedShipmentsResponse) o;
-    return Objects.equals(this.unmanifestedCarrierInformationList, getUnmanifestedShipmentsResponse.unmanifestedCarrierInformationList);
+    GetUnmanifestedShipmentsResponse getUnmanifestedShipmentsResponse =
+        (GetUnmanifestedShipmentsResponse) o;
+    return Objects.equals(
+        this.unmanifestedCarrierInformationList,
+        getUnmanifestedShipmentsResponse.unmanifestedCarrierInformationList);
   }
 
   @Override
@@ -68,20 +63,20 @@ public class GetUnmanifestedShipmentsResponse {
     return Objects.hash(unmanifestedCarrierInformationList);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetUnmanifestedShipmentsResponse {\n");
-    
-    sb.append("    unmanifestedCarrierInformationList: ").append(toIndentedString(unmanifestedCarrierInformationList)).append("\n");
+
+    sb.append("    unmanifestedCarrierInformationList: ")
+        .append(toIndentedString(unmanifestedCarrierInformationList))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -89,5 +84,4 @@ public class GetUnmanifestedShipmentsResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

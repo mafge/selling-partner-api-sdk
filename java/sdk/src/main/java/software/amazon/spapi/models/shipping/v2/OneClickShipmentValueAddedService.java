@@ -12,22 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.Currency;
-/**
- * A value-added service to be applied to a shipping service purchase.
- */
+import java.util.Objects;
+
+/** A value-added service to be applied to a shipping service purchase. */
 @Schema(description = "A value-added service to be applied to a shipping service purchase.")
-
-
 public class OneClickShipmentValueAddedService {
   @SerializedName("id")
   private String id = null;
@@ -40,10 +30,11 @@ public class OneClickShipmentValueAddedService {
     return this;
   }
 
-   /**
+  /**
    * The identifier of the selected value-added service.
+   *
    * @return id
-  **/
+   */
   @Schema(required = true, description = "The identifier of the selected value-added service.")
   public String getId() {
     return id;
@@ -58,10 +49,11 @@ public class OneClickShipmentValueAddedService {
     return this;
   }
 
-   /**
+  /**
    * Get amount
+   *
    * @return amount
-  **/
+   */
   @Schema(description = "")
   public Currency getAmount() {
     return amount;
@@ -71,7 +63,6 @@ public class OneClickShipmentValueAddedService {
     this.amount = amount;
   }
 
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -80,9 +71,10 @@ public class OneClickShipmentValueAddedService {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    OneClickShipmentValueAddedService oneClickShipmentValueAddedService = (OneClickShipmentValueAddedService) o;
-    return Objects.equals(this.id, oneClickShipmentValueAddedService.id) &&
-        Objects.equals(this.amount, oneClickShipmentValueAddedService.amount);
+    OneClickShipmentValueAddedService oneClickShipmentValueAddedService =
+        (OneClickShipmentValueAddedService) o;
+    return Objects.equals(this.id, oneClickShipmentValueAddedService.id)
+        && Objects.equals(this.amount, oneClickShipmentValueAddedService.amount);
   }
 
   @Override
@@ -90,12 +82,11 @@ public class OneClickShipmentValueAddedService {
     return Objects.hash(id, amount);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class OneClickShipmentValueAddedService {\n");
-    
+
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("}");
@@ -103,8 +94,7 @@ public class OneClickShipmentValueAddedService {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -112,5 +102,4 @@ public class OneClickShipmentValueAddedService {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

@@ -12,21 +12,14 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-/**
- * Amazon order information. This is required if the shipment source channel is Amazon.
- */
-@Schema(description = "Amazon order information. This is required if the shipment source channel is Amazon.")
+import java.util.Objects;
 
-
+/** Amazon order information. This is required if the shipment source channel is Amazon. */
+@Schema(
+    description =
+        "Amazon order information. This is required if the shipment source channel is Amazon.")
 public class AmazonOrderDetails {
   @SerializedName("orderId")
   private String orderId = null;
@@ -36,11 +29,15 @@ public class AmazonOrderDetails {
     return this;
   }
 
-   /**
+  /**
    * The Amazon order ID associated with the Amazon order fulfilled by this shipment.
+   *
    * @return orderId
-  **/
-  @Schema(required = true, description = "The Amazon order ID associated with the Amazon order fulfilled by this shipment.")
+   */
+  @Schema(
+      required = true,
+      description =
+          "The Amazon order ID associated with the Amazon order fulfilled by this shipment.")
   public String getOrderId() {
     return orderId;
   }
@@ -48,7 +45,6 @@ public class AmazonOrderDetails {
   public void setOrderId(String orderId) {
     this.orderId = orderId;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -67,20 +63,18 @@ public class AmazonOrderDetails {
     return Objects.hash(orderId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AmazonOrderDetails {\n");
-    
+
     sb.append("    orderId: ").append(toIndentedString(orderId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -88,5 +82,4 @@ public class AmazonOrderDetails {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

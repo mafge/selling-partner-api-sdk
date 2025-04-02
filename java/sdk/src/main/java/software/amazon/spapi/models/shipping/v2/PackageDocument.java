@@ -12,23 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.DocumentFormat;
-import software.amazon.spapi.models.shipping.v2.DocumentType;
-/**
- * A document related to a package.
- */
+import java.util.Objects;
+
+/** A document related to a package. */
 @Schema(description = "A document related to a package.")
-
-
 public class PackageDocument {
   @SerializedName("type")
   private DocumentType type = null;
@@ -44,10 +33,11 @@ public class PackageDocument {
     return this;
   }
 
-   /**
+  /**
    * Get type
+   *
    * @return type
-  **/
+   */
   @Schema(required = true, description = "")
   public DocumentType getType() {
     return type;
@@ -62,10 +52,11 @@ public class PackageDocument {
     return this;
   }
 
-   /**
+  /**
    * Get format
+   *
    * @return format
-  **/
+   */
   @Schema(required = true, description = "")
   public DocumentFormat getFormat() {
     return format;
@@ -80,10 +71,11 @@ public class PackageDocument {
     return this;
   }
 
-   /**
+  /**
    * Get contents
+   *
    * @return contents
-  **/
+   */
   @Schema(required = true, description = "")
   public String getContents() {
     return contents;
@@ -92,7 +84,6 @@ public class PackageDocument {
   public void setContents(String contents) {
     this.contents = contents;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -103,9 +94,9 @@ public class PackageDocument {
       return false;
     }
     PackageDocument packageDocument = (PackageDocument) o;
-    return Objects.equals(this.type, packageDocument.type) &&
-        Objects.equals(this.format, packageDocument.format) &&
-        Objects.equals(this.contents, packageDocument.contents);
+    return Objects.equals(this.type, packageDocument.type)
+        && Objects.equals(this.format, packageDocument.format)
+        && Objects.equals(this.contents, packageDocument.contents);
   }
 
   @Override
@@ -113,12 +104,11 @@ public class PackageDocument {
     return Objects.hash(type, format, contents);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PackageDocument {\n");
-    
+
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    format: ").append(toIndentedString(format)).append("\n");
     sb.append("    contents: ").append(toIndentedString(contents)).append("\n");
@@ -127,8 +117,7 @@ public class PackageDocument {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -136,5 +125,4 @@ public class PackageDocument {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

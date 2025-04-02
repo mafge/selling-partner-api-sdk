@@ -12,35 +12,27 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.ClientReferenceDetails;
-/**
- * The request schema for the GetCarrierAccounts operation.
- */
+import java.util.Objects;
+
+/** The request schema for the GetCarrierAccounts operation. */
 @Schema(description = "The request schema for the GetCarrierAccounts operation.")
-
-
 public class GetCarrierAccountsRequest {
   @SerializedName("clientReferenceDetails")
   private ClientReferenceDetails clientReferenceDetails = null;
 
-  public GetCarrierAccountsRequest clientReferenceDetails(ClientReferenceDetails clientReferenceDetails) {
+  public GetCarrierAccountsRequest clientReferenceDetails(
+      ClientReferenceDetails clientReferenceDetails) {
     this.clientReferenceDetails = clientReferenceDetails;
     return this;
   }
 
-   /**
+  /**
    * Get clientReferenceDetails
+   *
    * @return clientReferenceDetails
-  **/
+   */
   @Schema(description = "")
   public ClientReferenceDetails getClientReferenceDetails() {
     return clientReferenceDetails;
@@ -49,7 +41,6 @@ public class GetCarrierAccountsRequest {
   public void setClientReferenceDetails(ClientReferenceDetails clientReferenceDetails) {
     this.clientReferenceDetails = clientReferenceDetails;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -60,7 +51,8 @@ public class GetCarrierAccountsRequest {
       return false;
     }
     GetCarrierAccountsRequest getCarrierAccountsRequest = (GetCarrierAccountsRequest) o;
-    return Objects.equals(this.clientReferenceDetails, getCarrierAccountsRequest.clientReferenceDetails);
+    return Objects.equals(
+        this.clientReferenceDetails, getCarrierAccountsRequest.clientReferenceDetails);
   }
 
   @Override
@@ -68,20 +60,20 @@ public class GetCarrierAccountsRequest {
     return Objects.hash(clientReferenceDetails);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetCarrierAccountsRequest {\n");
-    
-    sb.append("    clientReferenceDetails: ").append(toIndentedString(clientReferenceDetails)).append("\n");
+
+    sb.append("    clientReferenceDetails: ")
+        .append(toIndentedString(clientReferenceDetails))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -89,5 +81,4 @@ public class GetCarrierAccountsRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

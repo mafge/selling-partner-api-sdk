@@ -12,22 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.AccountStatus;
-/**
- * The Response  for the LinkCarrierAccount operation.
- */
+import java.util.Objects;
+
+/** The Response for the LinkCarrierAccount operation. */
 @Schema(description = "The Response  for the LinkCarrierAccount operation.")
-
-
 public class LinkCarrierAccountResponse {
   @SerializedName("registrationStatus")
   private AccountStatus registrationStatus = null;
@@ -40,10 +30,11 @@ public class LinkCarrierAccountResponse {
     return this;
   }
 
-   /**
+  /**
    * Get registrationStatus
+   *
    * @return registrationStatus
-  **/
+   */
   @Schema(description = "")
   public AccountStatus getRegistrationStatus() {
     return registrationStatus;
@@ -58,10 +49,11 @@ public class LinkCarrierAccountResponse {
     return this;
   }
 
-   /**
+  /**
    * Get accountId
+   *
    * @return accountId
-  **/
+   */
   @Schema(description = "")
   public String getAccountId() {
     return accountId;
@@ -70,7 +62,6 @@ public class LinkCarrierAccountResponse {
   public void setAccountId(String accountId) {
     this.accountId = accountId;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,8 +72,8 @@ public class LinkCarrierAccountResponse {
       return false;
     }
     LinkCarrierAccountResponse linkCarrierAccountResponse = (LinkCarrierAccountResponse) o;
-    return Objects.equals(this.registrationStatus, linkCarrierAccountResponse.registrationStatus) &&
-        Objects.equals(this.accountId, linkCarrierAccountResponse.accountId);
+    return Objects.equals(this.registrationStatus, linkCarrierAccountResponse.registrationStatus)
+        && Objects.equals(this.accountId, linkCarrierAccountResponse.accountId);
   }
 
   @Override
@@ -90,12 +81,11 @@ public class LinkCarrierAccountResponse {
     return Objects.hash(registrationStatus, accountId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class LinkCarrierAccountResponse {\n");
-    
+
     sb.append("    registrationStatus: ").append(toIndentedString(registrationStatus)).append("\n");
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("}");
@@ -103,8 +93,7 @@ public class LinkCarrierAccountResponse {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -112,5 +101,4 @@ public class LinkCarrierAccountResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

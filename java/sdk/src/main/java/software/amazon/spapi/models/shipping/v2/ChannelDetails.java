@@ -12,24 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.AmazonOrderDetails;
-import software.amazon.spapi.models.shipping.v2.AmazonShipmentDetails;
-import software.amazon.spapi.models.shipping.v2.ChannelType;
-/**
- * Shipment source channel related information.
- */
+import java.util.Objects;
+
+/** Shipment source channel related information. */
 @Schema(description = "Shipment source channel related information.")
-
-
 public class ChannelDetails {
   @SerializedName("channelType")
   private ChannelType channelType = null;
@@ -45,10 +33,11 @@ public class ChannelDetails {
     return this;
   }
 
-   /**
+  /**
    * Get channelType
+   *
    * @return channelType
-  **/
+   */
   @Schema(required = true, description = "")
   public ChannelType getChannelType() {
     return channelType;
@@ -63,10 +52,11 @@ public class ChannelDetails {
     return this;
   }
 
-   /**
+  /**
    * Get amazonOrderDetails
+   *
    * @return amazonOrderDetails
-  **/
+   */
   @Schema(description = "")
   public AmazonOrderDetails getAmazonOrderDetails() {
     return amazonOrderDetails;
@@ -81,10 +71,11 @@ public class ChannelDetails {
     return this;
   }
 
-   /**
+  /**
    * Get amazonShipmentDetails
+   *
    * @return amazonShipmentDetails
-  **/
+   */
   @Schema(description = "")
   public AmazonShipmentDetails getAmazonShipmentDetails() {
     return amazonShipmentDetails;
@@ -93,7 +84,6 @@ public class ChannelDetails {
   public void setAmazonShipmentDetails(AmazonShipmentDetails amazonShipmentDetails) {
     this.amazonShipmentDetails = amazonShipmentDetails;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -104,9 +94,9 @@ public class ChannelDetails {
       return false;
     }
     ChannelDetails channelDetails = (ChannelDetails) o;
-    return Objects.equals(this.channelType, channelDetails.channelType) &&
-        Objects.equals(this.amazonOrderDetails, channelDetails.amazonOrderDetails) &&
-        Objects.equals(this.amazonShipmentDetails, channelDetails.amazonShipmentDetails);
+    return Objects.equals(this.channelType, channelDetails.channelType)
+        && Objects.equals(this.amazonOrderDetails, channelDetails.amazonOrderDetails)
+        && Objects.equals(this.amazonShipmentDetails, channelDetails.amazonShipmentDetails);
   }
 
   @Override
@@ -114,22 +104,22 @@ public class ChannelDetails {
     return Objects.hash(channelType, amazonOrderDetails, amazonShipmentDetails);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ChannelDetails {\n");
-    
+
     sb.append("    channelType: ").append(toIndentedString(channelType)).append("\n");
     sb.append("    amazonOrderDetails: ").append(toIndentedString(amazonOrderDetails)).append("\n");
-    sb.append("    amazonShipmentDetails: ").append(toIndentedString(amazonShipmentDetails)).append("\n");
+    sb.append("    amazonShipmentDetails: ")
+        .append(toIndentedString(amazonShipmentDetails))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -137,5 +127,4 @@ public class ChannelDetails {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

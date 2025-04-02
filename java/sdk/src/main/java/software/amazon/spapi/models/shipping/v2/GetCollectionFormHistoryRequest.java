@@ -12,24 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.Address;
-import software.amazon.spapi.models.shipping.v2.ClientReferenceDetails;
-import software.amazon.spapi.models.shipping.v2.DateRange;
-/**
- * The request schema to get query collections form history API .
- */
+import java.util.Objects;
+
+/** The request schema to get query collections form history API . */
 @Schema(description = "The request schema to get query collections form history API .")
-
-
 public class GetCollectionFormHistoryRequest {
   @SerializedName("clientReferenceDetails")
   private ClientReferenceDetails clientReferenceDetails = null;
@@ -46,15 +34,17 @@ public class GetCollectionFormHistoryRequest {
   @SerializedName("dateRange")
   private DateRange dateRange = null;
 
-  public GetCollectionFormHistoryRequest clientReferenceDetails(ClientReferenceDetails clientReferenceDetails) {
+  public GetCollectionFormHistoryRequest clientReferenceDetails(
+      ClientReferenceDetails clientReferenceDetails) {
     this.clientReferenceDetails = clientReferenceDetails;
     return this;
   }
 
-   /**
+  /**
    * Get clientReferenceDetails
+   *
    * @return clientReferenceDetails
-  **/
+   */
   @Schema(description = "")
   public ClientReferenceDetails getClientReferenceDetails() {
     return clientReferenceDetails;
@@ -69,10 +59,11 @@ public class GetCollectionFormHistoryRequest {
     return this;
   }
 
-   /**
+  /**
    * max Number of Results for query .
+   *
    * @return maxResults
-  **/
+   */
   @Schema(description = "max Number of Results for query .")
   public Integer getMaxResults() {
     return maxResults;
@@ -87,10 +78,11 @@ public class GetCollectionFormHistoryRequest {
     return this;
   }
 
-   /**
+  /**
    * Get carrierId
+   *
    * @return carrierId
-  **/
+   */
   @Schema(description = "")
   public String getCarrierId() {
     return carrierId;
@@ -105,10 +97,11 @@ public class GetCollectionFormHistoryRequest {
     return this;
   }
 
-   /**
+  /**
    * Get shipFromAddress
+   *
    * @return shipFromAddress
-  **/
+   */
   @Schema(description = "")
   public Address getShipFromAddress() {
     return shipFromAddress;
@@ -123,10 +116,11 @@ public class GetCollectionFormHistoryRequest {
     return this;
   }
 
-   /**
+  /**
    * Get dateRange
+   *
    * @return dateRange
-  **/
+   */
   @Schema(description = "")
   public DateRange getDateRange() {
     return dateRange;
@@ -136,7 +130,6 @@ public class GetCollectionFormHistoryRequest {
     this.dateRange = dateRange;
   }
 
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -145,12 +138,14 @@ public class GetCollectionFormHistoryRequest {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    GetCollectionFormHistoryRequest getCollectionFormHistoryRequest = (GetCollectionFormHistoryRequest) o;
-    return Objects.equals(this.clientReferenceDetails, getCollectionFormHistoryRequest.clientReferenceDetails) &&
-        Objects.equals(this.maxResults, getCollectionFormHistoryRequest.maxResults) &&
-        Objects.equals(this.carrierId, getCollectionFormHistoryRequest.carrierId) &&
-        Objects.equals(this.shipFromAddress, getCollectionFormHistoryRequest.shipFromAddress) &&
-        Objects.equals(this.dateRange, getCollectionFormHistoryRequest.dateRange);
+    GetCollectionFormHistoryRequest getCollectionFormHistoryRequest =
+        (GetCollectionFormHistoryRequest) o;
+    return Objects.equals(
+            this.clientReferenceDetails, getCollectionFormHistoryRequest.clientReferenceDetails)
+        && Objects.equals(this.maxResults, getCollectionFormHistoryRequest.maxResults)
+        && Objects.equals(this.carrierId, getCollectionFormHistoryRequest.carrierId)
+        && Objects.equals(this.shipFromAddress, getCollectionFormHistoryRequest.shipFromAddress)
+        && Objects.equals(this.dateRange, getCollectionFormHistoryRequest.dateRange);
   }
 
   @Override
@@ -158,13 +153,14 @@ public class GetCollectionFormHistoryRequest {
     return Objects.hash(clientReferenceDetails, maxResults, carrierId, shipFromAddress, dateRange);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetCollectionFormHistoryRequest {\n");
-    
-    sb.append("    clientReferenceDetails: ").append(toIndentedString(clientReferenceDetails)).append("\n");
+
+    sb.append("    clientReferenceDetails: ")
+        .append(toIndentedString(clientReferenceDetails))
+        .append("\n");
     sb.append("    maxResults: ").append(toIndentedString(maxResults)).append("\n");
     sb.append("    carrierId: ").append(toIndentedString(carrierId)).append("\n");
     sb.append("    shipFromAddress: ").append(toIndentedString(shipFromAddress)).append("\n");
@@ -174,8 +170,7 @@ public class GetCollectionFormHistoryRequest {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -183,5 +178,4 @@ public class GetCollectionFormHistoryRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

@@ -12,18 +12,18 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.ArrayList;
-import java.util.List;
-import software.amazon.spapi.models.shipping.v2.CarrierAccountAttribute;
+import java.util.Objects;
+
 /**
- * A list of all attributes required by the carrier in order to successfully link the merchant&#x27;s account
+ * A list of all attributes required by the carrier in order to successfully link the
+ * merchant&#x27;s account
  */
-@Schema(description = "A list of all attributes required by the carrier in order to successfully link the merchant's account")
-
-
+@Schema(
+    description =
+        "A list of all attributes required by the carrier in order to successfully link the"
+            + " merchant's account")
 public class CarrierAccountAttributes extends ArrayList<CarrierAccountAttribute> {
 
   @Override
@@ -42,7 +42,6 @@ public class CarrierAccountAttributes extends ArrayList<CarrierAccountAttribute>
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -53,8 +52,7 @@ public class CarrierAccountAttributes extends ArrayList<CarrierAccountAttribute>
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -62,5 +60,4 @@ public class CarrierAccountAttributes extends ArrayList<CarrierAccountAttribute>
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

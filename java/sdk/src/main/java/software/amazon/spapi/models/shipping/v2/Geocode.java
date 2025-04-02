@@ -12,21 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-/**
- * Defines the latitude and longitude of the access point.
- */
+import java.util.Objects;
+
+/** Defines the latitude and longitude of the access point. */
 @Schema(description = "Defines the latitude and longitude of the access point.")
-
-
 public class Geocode {
   @SerializedName("latitude")
   private String latitude = null;
@@ -39,10 +30,11 @@ public class Geocode {
     return this;
   }
 
-   /**
+  /**
    * The latitude of access point.
+   *
    * @return latitude
-  **/
+   */
   @Schema(description = "The latitude of access point.")
   public String getLatitude() {
     return latitude;
@@ -57,10 +49,11 @@ public class Geocode {
     return this;
   }
 
-   /**
+  /**
    * The longitude of access point.
+   *
    * @return longitude
-  **/
+   */
   @Schema(description = "The longitude of access point.")
   public String getLongitude() {
     return longitude;
@@ -69,7 +62,6 @@ public class Geocode {
   public void setLongitude(String longitude) {
     this.longitude = longitude;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -80,8 +72,8 @@ public class Geocode {
       return false;
     }
     Geocode geocode = (Geocode) o;
-    return Objects.equals(this.latitude, geocode.latitude) &&
-        Objects.equals(this.longitude, geocode.longitude);
+    return Objects.equals(this.latitude, geocode.latitude)
+        && Objects.equals(this.longitude, geocode.longitude);
   }
 
   @Override
@@ -89,12 +81,11 @@ public class Geocode {
     return Objects.hash(latitude, longitude);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Geocode {\n");
-    
+
     sb.append("    latitude: ").append(toIndentedString(latitude)).append("\n");
     sb.append("    longitude: ").append(toIndentedString(longitude)).append("\n");
     sb.append("}");
@@ -102,8 +93,7 @@ public class Geocode {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -111,5 +101,4 @@ public class Geocode {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

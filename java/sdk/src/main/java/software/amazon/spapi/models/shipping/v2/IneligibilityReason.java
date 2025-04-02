@@ -12,22 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.IneligibilityReasonCode;
-/**
- * The reason why a shipping service offering is ineligible.
- */
+import java.util.Objects;
+
+/** The reason why a shipping service offering is ineligible. */
 @Schema(description = "The reason why a shipping service offering is ineligible.")
-
-
 public class IneligibilityReason {
   @SerializedName("code")
   private IneligibilityReasonCode code = null;
@@ -40,10 +30,11 @@ public class IneligibilityReason {
     return this;
   }
 
-   /**
+  /**
    * Get code
+   *
    * @return code
-  **/
+   */
   @Schema(required = true, description = "")
   public IneligibilityReasonCode getCode() {
     return code;
@@ -58,10 +49,11 @@ public class IneligibilityReason {
     return this;
   }
 
-   /**
+  /**
    * The ineligibility reason.
+   *
    * @return message
-  **/
+   */
   @Schema(required = true, description = "The ineligibility reason.")
   public String getMessage() {
     return message;
@@ -70,7 +62,6 @@ public class IneligibilityReason {
   public void setMessage(String message) {
     this.message = message;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,8 +72,8 @@ public class IneligibilityReason {
       return false;
     }
     IneligibilityReason ineligibilityReason = (IneligibilityReason) o;
-    return Objects.equals(this.code, ineligibilityReason.code) &&
-        Objects.equals(this.message, ineligibilityReason.message);
+    return Objects.equals(this.code, ineligibilityReason.code)
+        && Objects.equals(this.message, ineligibilityReason.message);
   }
 
   @Override
@@ -90,12 +81,11 @@ public class IneligibilityReason {
     return Objects.hash(code, message);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class IneligibilityReason {\n");
-    
+
     sb.append("    code: ").append(toIndentedString(code)).append("\n");
     sb.append("    message: ").append(toIndentedString(message)).append("\n");
     sb.append("}");
@@ -103,8 +93,7 @@ public class IneligibilityReason {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -112,5 +101,4 @@ public class IneligibilityReason {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

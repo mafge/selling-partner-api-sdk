@@ -12,19 +12,14 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import io.swagger.v3.oas.annotations.media.Schema;
-import com.google.gson.annotations.SerializedName;
-import java.io.IOException;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-/**
- * Reasons that make a shipment service offering ineligible.
- */
+/** Reasons that make a shipment service offering ineligible. */
 @JsonAdapter(IneligibilityReasonCode.Adapter.class)
 public enum IneligibilityReasonCode {
   @SerializedName("NO_COVERAGE")
@@ -74,14 +69,15 @@ public enum IneligibilityReasonCode {
 
   public static class Adapter extends TypeAdapter<IneligibilityReasonCode> {
     @Override
-    public void write(final JsonWriter jsonWriter, final IneligibilityReasonCode enumeration) throws IOException {
+    public void write(final JsonWriter jsonWriter, final IneligibilityReasonCode enumeration)
+        throws IOException {
       jsonWriter.value(String.valueOf(enumeration.getValue()));
     }
 
     @Override
     public IneligibilityReasonCode read(final JsonReader jsonReader) throws IOException {
       Object value = jsonReader.nextString();
-      return IneligibilityReasonCode.fromValue((String)(value));
+      return IneligibilityReasonCode.fromValue((String) (value));
     }
   }
 }

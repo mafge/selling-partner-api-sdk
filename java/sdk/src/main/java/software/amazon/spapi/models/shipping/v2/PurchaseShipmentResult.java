@@ -12,24 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.Benefits;
-import software.amazon.spapi.models.shipping.v2.PackageDocumentDetailList;
-import software.amazon.spapi.models.shipping.v2.Promise;
-/**
- * The payload for the purchaseShipment operation.
- */
+import java.util.Objects;
+
+/** The payload for the purchaseShipment operation. */
 @Schema(description = "The payload for the purchaseShipment operation.")
-
-
 public class PurchaseShipmentResult {
   @SerializedName("shipmentId")
   private String shipmentId = null;
@@ -48,10 +36,11 @@ public class PurchaseShipmentResult {
     return this;
   }
 
-   /**
+  /**
    * Get shipmentId
+   *
    * @return shipmentId
-  **/
+   */
   @Schema(required = true, description = "")
   public String getShipmentId() {
     return shipmentId;
@@ -61,15 +50,17 @@ public class PurchaseShipmentResult {
     this.shipmentId = shipmentId;
   }
 
-  public PurchaseShipmentResult packageDocumentDetails(PackageDocumentDetailList packageDocumentDetails) {
+  public PurchaseShipmentResult packageDocumentDetails(
+      PackageDocumentDetailList packageDocumentDetails) {
     this.packageDocumentDetails = packageDocumentDetails;
     return this;
   }
 
-   /**
+  /**
    * Get packageDocumentDetails
+   *
    * @return packageDocumentDetails
-  **/
+   */
   @Schema(required = true, description = "")
   public PackageDocumentDetailList getPackageDocumentDetails() {
     return packageDocumentDetails;
@@ -84,10 +75,11 @@ public class PurchaseShipmentResult {
     return this;
   }
 
-   /**
+  /**
    * Get promise
+   *
    * @return promise
-  **/
+   */
   @Schema(required = true, description = "")
   public Promise getPromise() {
     return promise;
@@ -102,10 +94,11 @@ public class PurchaseShipmentResult {
     return this;
   }
 
-   /**
+  /**
    * Get benefits
+   *
    * @return benefits
-  **/
+   */
   @Schema(description = "")
   public Benefits getBenefits() {
     return benefits;
@@ -114,7 +107,6 @@ public class PurchaseShipmentResult {
   public void setBenefits(Benefits benefits) {
     this.benefits = benefits;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -125,10 +117,11 @@ public class PurchaseShipmentResult {
       return false;
     }
     PurchaseShipmentResult purchaseShipmentResult = (PurchaseShipmentResult) o;
-    return Objects.equals(this.shipmentId, purchaseShipmentResult.shipmentId) &&
-        Objects.equals(this.packageDocumentDetails, purchaseShipmentResult.packageDocumentDetails) &&
-        Objects.equals(this.promise, purchaseShipmentResult.promise) &&
-        Objects.equals(this.benefits, purchaseShipmentResult.benefits);
+    return Objects.equals(this.shipmentId, purchaseShipmentResult.shipmentId)
+        && Objects.equals(
+            this.packageDocumentDetails, purchaseShipmentResult.packageDocumentDetails)
+        && Objects.equals(this.promise, purchaseShipmentResult.promise)
+        && Objects.equals(this.benefits, purchaseShipmentResult.benefits);
   }
 
   @Override
@@ -136,14 +129,15 @@ public class PurchaseShipmentResult {
     return Objects.hash(shipmentId, packageDocumentDetails, promise, benefits);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PurchaseShipmentResult {\n");
-    
+
     sb.append("    shipmentId: ").append(toIndentedString(shipmentId)).append("\n");
-    sb.append("    packageDocumentDetails: ").append(toIndentedString(packageDocumentDetails)).append("\n");
+    sb.append("    packageDocumentDetails: ")
+        .append(toIndentedString(packageDocumentDetails))
+        .append("\n");
     sb.append("    promise: ").append(toIndentedString(promise)).append("\n");
     sb.append("    benefits: ").append(toIndentedString(benefits)).append("\n");
     sb.append("}");
@@ -151,8 +145,7 @@ public class PurchaseShipmentResult {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -160,5 +153,4 @@ public class PurchaseShipmentResult {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

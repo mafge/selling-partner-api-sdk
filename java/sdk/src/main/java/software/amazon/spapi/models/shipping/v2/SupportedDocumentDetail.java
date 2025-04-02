@@ -12,22 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.DocumentType;
-/**
- * The supported document types for a service offering.
- */
+import java.util.Objects;
+
+/** The supported document types for a service offering. */
 @Schema(description = "The supported document types for a service offering.")
-
-
 public class SupportedDocumentDetail {
   @SerializedName("name")
   private DocumentType name = null;
@@ -40,10 +30,11 @@ public class SupportedDocumentDetail {
     return this;
   }
 
-   /**
+  /**
    * Get name
+   *
    * @return name
-  **/
+   */
   @Schema(required = true, description = "")
   public DocumentType getName() {
     return name;
@@ -58,10 +49,11 @@ public class SupportedDocumentDetail {
     return this;
   }
 
-   /**
+  /**
    * When true, the supported document type is required.
+   *
    * @return isMandatory
-  **/
+   */
   @Schema(required = true, description = "When true, the supported document type is required.")
   public Boolean isIsMandatory() {
     return isMandatory;
@@ -70,7 +62,6 @@ public class SupportedDocumentDetail {
   public void setIsMandatory(Boolean isMandatory) {
     this.isMandatory = isMandatory;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,8 +72,8 @@ public class SupportedDocumentDetail {
       return false;
     }
     SupportedDocumentDetail supportedDocumentDetail = (SupportedDocumentDetail) o;
-    return Objects.equals(this.name, supportedDocumentDetail.name) &&
-        Objects.equals(this.isMandatory, supportedDocumentDetail.isMandatory);
+    return Objects.equals(this.name, supportedDocumentDetail.name)
+        && Objects.equals(this.isMandatory, supportedDocumentDetail.isMandatory);
   }
 
   @Override
@@ -90,12 +81,11 @@ public class SupportedDocumentDetail {
     return Objects.hash(name, isMandatory);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SupportedDocumentDetail {\n");
-    
+
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    isMandatory: ").append(toIndentedString(isMandatory)).append("\n");
     sb.append("}");
@@ -103,8 +93,7 @@ public class SupportedDocumentDetail {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -112,5 +101,4 @@ public class SupportedDocumentDetail {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

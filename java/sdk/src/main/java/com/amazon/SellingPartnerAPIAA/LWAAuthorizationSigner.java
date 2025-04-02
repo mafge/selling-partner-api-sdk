@@ -5,72 +5,72 @@ import lombok.Getter;
 import lombok.Setter;
 import okhttp3.Request;
 
-/**
- * LWA Authorization Signer
- */
+/** LWA Authorization Signer */
 public class LWAAuthorizationSigner {
-    private static final String SIGNED_ACCESS_TOKEN_HEADER_NAME = "x-amz-access-token";
+  private static final String SIGNED_ACCESS_TOKEN_HEADER_NAME = "x-amz-access-token";
 
-    @Getter(AccessLevel.PACKAGE)
-    @Setter(AccessLevel.PACKAGE)
-    private LWAClient lwaClient;
+  @Getter(AccessLevel.PACKAGE)
+  @Setter(AccessLevel.PACKAGE)
+  private LWAClient lwaClient;
 
-    private LWAAccessTokenRequestMeta lwaAccessTokenRequestMeta;
+  private LWAAccessTokenRequestMeta lwaAccessTokenRequestMeta;
 
-    private void buildLWAAccessTokenRequestMeta(LWAAuthorizationCredentials lwaAuthorizationCredentials) {
-        String tokenRequestGrantType;
-        if (!lwaAuthorizationCredentials.getScopes().isEmpty()) {
-            tokenRequestGrantType = "client_credentials";
-        } else {
-            tokenRequestGrantType = "refresh_token";
-        }
-
-        lwaAccessTokenRequestMeta = LWAAccessTokenRequestMeta.builder()
-                .clientId(lwaAuthorizationCredentials.getClientId())
-                .clientSecret(lwaAuthorizationCredentials.getClientSecret())
-                .refreshToken(lwaAuthorizationCredentials.getRefreshToken())
-                .grantType(tokenRequestGrantType).scopes(lwaAuthorizationCredentials.getScopes())
-                .build();
+  private void buildLWAAccessTokenRequestMeta(
+      LWAAuthorizationCredentials lwaAuthorizationCredentials) {
+    String tokenRequestGrantType;
+    if (!lwaAuthorizationCredentials.getScopes().isEmpty()) {
+      tokenRequestGrantType = "client_credentials";
+    } else {
+      tokenRequestGrantType = "refresh_token";
     }
 
-     /**
-     *
-     * @param lwaAuthorizationCredentials LWA Authorization Credentials for token exchange
-     */
-    public LWAAuthorizationSigner(LWAAuthorizationCredentials lwaAuthorizationCredentials) {
+    lwaAccessTokenRequestMeta =
+        LWAAccessTokenRequestMeta.builder()
+            .clientId(lwaAuthorizationCredentials.getClientId())
+            .clientSecret(lwaAuthorizationCredentials.getClientSecret())
+            .refreshToken(lwaAuthorizationCredentials.getRefreshToken())
+            .grantType(tokenRequestGrantType)
+            .scopes(lwaAuthorizationCredentials.getScopes())
+            .build();
+  }
 
-        lwaClient = new LWAClient(lwaAuthorizationCredentials.getEndpoint());
+  /**
+   * @param lwaAuthorizationCredentials LWA Authorization Credentials for token exchange
+   */
+  public LWAAuthorizationSigner(LWAAuthorizationCredentials lwaAuthorizationCredentials) {
 
-        buildLWAAccessTokenRequestMeta(lwaAuthorizationCredentials);
+    lwaClient = new LWAClient(lwaAuthorizationCredentials.getEndpoint());
 
-    }
+    buildLWAAccessTokenRequestMeta(lwaAuthorizationCredentials);
+  }
 
-    /**
-    *
-    * Overloaded Constructor @param lwaAuthorizationCredentials LWA Authorization Credentials for token exchange
-    * and LWAAccessTokenCache
-    */
-    public LWAAuthorizationSigner(LWAAuthorizationCredentials lwaAuthorizationCredentials,
-           LWAAccessTokenCache lwaAccessTokenCache) {
+  /**
+   * Overloaded Constructor @param lwaAuthorizationCredentials LWA Authorization Credentials for
+   * token exchange and LWAAccessTokenCache
+   */
+  public LWAAuthorizationSigner(
+      LWAAuthorizationCredentials lwaAuthorizationCredentials,
+      LWAAccessTokenCache lwaAccessTokenCache) {
 
-       lwaClient = new LWAClient(lwaAuthorizationCredentials.getEndpoint());
-       lwaClient.setLWAAccessTokenCache(lwaAccessTokenCache);
+    lwaClient = new LWAClient(lwaAuthorizationCredentials.getEndpoint());
+    lwaClient.setLWAAccessTokenCache(lwaAccessTokenCache);
 
-       buildLWAAccessTokenRequestMeta(lwaAuthorizationCredentials);
+    buildLWAAccessTokenRequestMeta(lwaAuthorizationCredentials);
+  }
 
-   }
+  /**
+   * Signs a Request with an LWA Access Token
+   *
+   * @param originalRequest Request to sign (treated as immutable)
+   * @return Copy of originalRequest with LWA signature
+   * @throws LWAException If calls to fetch LWA access token fails
+   */
+  public Request sign(Request originalRequest) throws LWAException {
+    String accessToken = lwaClient.getAccessToken(lwaAccessTokenRequestMeta);
 
-    /**
-     *  Signs a Request with an LWA Access Token
-     * @param originalRequest Request to sign (treated as immutable)
-     * @return Copy of originalRequest with LWA signature
-     * @throws LWAException If calls to fetch LWA access token fails
-     */
-    public Request sign(Request originalRequest) throws LWAException {
-        String accessToken = lwaClient.getAccessToken(lwaAccessTokenRequestMeta);
-
-        return originalRequest.newBuilder()
-                .addHeader(SIGNED_ACCESS_TOKEN_HEADER_NAME, accessToken)
-                .build();
-    }
+    return originalRequest
+        .newBuilder()
+        .addHeader(SIGNED_ACCESS_TOKEN_HEADER_NAME, accessToken)
+        .build();
+  }
 }

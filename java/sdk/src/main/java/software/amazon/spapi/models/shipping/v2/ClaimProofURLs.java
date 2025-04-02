@@ -12,17 +12,18 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
+
 /**
- * A list of proof URLs for a claim. Basic URL validation will happen for each URLs present in the list
+ * A list of proof URLs for a claim. Basic URL validation will happen for each URLs present in the
+ * list
  */
-@Schema(description = "A list of proof URLs for a claim. Basic URL validation will happen for each URLs present in the list")
-
-
+@Schema(
+    description =
+        "A list of proof URLs for a claim. Basic URL validation will happen for each URLs present"
+            + " in the list")
 public class ClaimProofURLs extends ArrayList<String> {
 
   @Override
@@ -41,7 +42,6 @@ public class ClaimProofURLs extends ArrayList<String> {
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -52,8 +52,7 @@ public class ClaimProofURLs extends ArrayList<String> {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -61,5 +60,4 @@ public class ClaimProofURLs extends ArrayList<String> {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

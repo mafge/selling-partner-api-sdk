@@ -2,8 +2,7 @@ package com.amazon.SellingPartnerAPIAA;
 
 public interface RateLimitConfiguration {
 
-    Double getRateLimitPermit();
+  Double getRateLimitPermit();
 
-    Long getTimeOut();
-
+  Long getTimeOut();
 }

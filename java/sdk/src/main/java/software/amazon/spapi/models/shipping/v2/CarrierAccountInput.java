@@ -12,23 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.InputType;
-import software.amazon.spapi.models.shipping.v2.ValidationMetadataList;
-/**
- * Info About CarrierAccountInput
- */
+import java.util.Objects;
+
+/** Info About CarrierAccountInput */
 @Schema(description = "Info About CarrierAccountInput")
-
-
 public class CarrierAccountInput {
   @SerializedName("descriptionLocalizationKey")
   private String descriptionLocalizationKey = null;
@@ -59,10 +48,11 @@ public class CarrierAccountInput {
     return this;
   }
 
-   /**
+  /**
    * descriptionLocalizationKey value .
+   *
    * @return descriptionLocalizationKey
-  **/
+   */
   @Schema(description = "descriptionLocalizationKey value .")
   public String getDescriptionLocalizationKey() {
     return descriptionLocalizationKey;
@@ -77,10 +67,11 @@ public class CarrierAccountInput {
     return this;
   }
 
-   /**
+  /**
    * name value .
+   *
    * @return name
-  **/
+   */
   @Schema(description = "name value .")
   public String getName() {
     return name;
@@ -95,10 +86,11 @@ public class CarrierAccountInput {
     return this;
   }
 
-   /**
+  /**
    * groupName value .
+   *
    * @return groupName
-  **/
+   */
   @Schema(description = "groupName value .")
   public String getGroupName() {
     return groupName;
@@ -113,10 +105,11 @@ public class CarrierAccountInput {
     return this;
   }
 
-   /**
+  /**
    * Get inputType
+   *
    * @return inputType
-  **/
+   */
   @Schema(description = "")
   public InputType getInputType() {
     return inputType;
@@ -131,10 +124,11 @@ public class CarrierAccountInput {
     return this;
   }
 
-   /**
-   * mandatory or not  value .
+  /**
+   * mandatory or not value .
+   *
    * @return isMandatory
-  **/
+   */
   @Schema(description = "mandatory or not  value .")
   public Boolean isIsMandatory() {
     return isMandatory;
@@ -149,10 +143,11 @@ public class CarrierAccountInput {
     return this;
   }
 
-   /**
+  /**
    * is value is Confidential .
+   *
    * @return isConfidential
-  **/
+   */
   @Schema(description = "is value is Confidential .")
   public Boolean isIsConfidential() {
     return isConfidential;
@@ -167,10 +162,11 @@ public class CarrierAccountInput {
     return this;
   }
 
-   /**
+  /**
    * is value is hidden .
+   *
    * @return isHidden
-  **/
+   */
   @Schema(description = "is value is hidden .")
   public Boolean isIsHidden() {
     return isHidden;
@@ -185,10 +181,11 @@ public class CarrierAccountInput {
     return this;
   }
 
-   /**
+  /**
    * Get validationMetadata
+   *
    * @return validationMetadata
-  **/
+   */
   @Schema(description = "")
   public ValidationMetadataList getValidationMetadata() {
     return validationMetadata;
@@ -197,7 +194,6 @@ public class CarrierAccountInput {
   public void setValidationMetadata(ValidationMetadataList validationMetadata) {
     this.validationMetadata = validationMetadata;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -208,28 +204,38 @@ public class CarrierAccountInput {
       return false;
     }
     CarrierAccountInput carrierAccountInput = (CarrierAccountInput) o;
-    return Objects.equals(this.descriptionLocalizationKey, carrierAccountInput.descriptionLocalizationKey) &&
-        Objects.equals(this.name, carrierAccountInput.name) &&
-        Objects.equals(this.groupName, carrierAccountInput.groupName) &&
-        Objects.equals(this.inputType, carrierAccountInput.inputType) &&
-        Objects.equals(this.isMandatory, carrierAccountInput.isMandatory) &&
-        Objects.equals(this.isConfidential, carrierAccountInput.isConfidential) &&
-        Objects.equals(this.isHidden, carrierAccountInput.isHidden) &&
-        Objects.equals(this.validationMetadata, carrierAccountInput.validationMetadata);
+    return Objects.equals(
+            this.descriptionLocalizationKey, carrierAccountInput.descriptionLocalizationKey)
+        && Objects.equals(this.name, carrierAccountInput.name)
+        && Objects.equals(this.groupName, carrierAccountInput.groupName)
+        && Objects.equals(this.inputType, carrierAccountInput.inputType)
+        && Objects.equals(this.isMandatory, carrierAccountInput.isMandatory)
+        && Objects.equals(this.isConfidential, carrierAccountInput.isConfidential)
+        && Objects.equals(this.isHidden, carrierAccountInput.isHidden)
+        && Objects.equals(this.validationMetadata, carrierAccountInput.validationMetadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(descriptionLocalizationKey, name, groupName, inputType, isMandatory, isConfidential, isHidden, validationMetadata);
+    return Objects.hash(
+        descriptionLocalizationKey,
+        name,
+        groupName,
+        inputType,
+        isMandatory,
+        isConfidential,
+        isHidden,
+        validationMetadata);
   }
-
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CarrierAccountInput {\n");
-    
-    sb.append("    descriptionLocalizationKey: ").append(toIndentedString(descriptionLocalizationKey)).append("\n");
+
+    sb.append("    descriptionLocalizationKey: ")
+        .append(toIndentedString(descriptionLocalizationKey))
+        .append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    groupName: ").append(toIndentedString(groupName)).append("\n");
     sb.append("    inputType: ").append(toIndentedString(inputType)).append("\n");
@@ -242,8 +248,7 @@ public class CarrierAccountInput {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -251,5 +256,4 @@ public class CarrierAccountInput {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

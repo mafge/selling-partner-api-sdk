@@ -12,21 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-/**
- * A value-added service to be applied to a shipping service purchase.
- */
+import java.util.Objects;
+
+/** A value-added service to be applied to a shipping service purchase. */
 @Schema(description = "A value-added service to be applied to a shipping service purchase.")
-
-
 public class RequestedValueAddedService {
   @SerializedName("id")
   private String id = null;
@@ -36,11 +27,17 @@ public class RequestedValueAddedService {
     return this;
   }
 
-   /**
-   * The identifier of the selected value-added service. Must be among those returned in the response to the getRates operation.
+  /**
+   * The identifier of the selected value-added service. Must be among those returned in the
+   * response to the getRates operation.
+   *
    * @return id
-  **/
-  @Schema(required = true, description = "The identifier of the selected value-added service. Must be among those returned in the response to the getRates operation.")
+   */
+  @Schema(
+      required = true,
+      description =
+          "The identifier of the selected value-added service. Must be among those returned in the"
+              + " response to the getRates operation.")
   public String getId() {
     return id;
   }
@@ -48,7 +45,6 @@ public class RequestedValueAddedService {
   public void setId(String id) {
     this.id = id;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -67,20 +63,18 @@ public class RequestedValueAddedService {
     return Objects.hash(id);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class RequestedValueAddedService {\n");
-    
+
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -88,5 +82,4 @@ public class RequestedValueAddedService {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

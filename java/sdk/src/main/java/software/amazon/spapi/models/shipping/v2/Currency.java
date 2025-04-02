@@ -12,22 +12,13 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
 import java.math.BigDecimal;
-/**
- * The monetary value in the currency indicated, in ISO 4217 standard format.
- */
+import java.util.Objects;
+
+/** The monetary value in the currency indicated, in ISO 4217 standard format. */
 @Schema(description = "The monetary value in the currency indicated, in ISO 4217 standard format.")
-
-
 public class Currency {
   @SerializedName("value")
   private BigDecimal value = null;
@@ -40,10 +31,11 @@ public class Currency {
     return this;
   }
 
-   /**
+  /**
    * The monetary value.
+   *
    * @return value
-  **/
+   */
   @Schema(required = true, description = "The monetary value.")
   public BigDecimal getValue() {
     return value;
@@ -58,10 +50,11 @@ public class Currency {
     return this;
   }
 
-   /**
+  /**
    * The ISO 4217 format 3-character currency code.
+   *
    * @return unit
-  **/
+   */
   @Schema(required = true, description = "The ISO 4217 format 3-character currency code.")
   public String getUnit() {
     return unit;
@@ -70,7 +63,6 @@ public class Currency {
   public void setUnit(String unit) {
     this.unit = unit;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -81,8 +73,7 @@ public class Currency {
       return false;
     }
     Currency currency = (Currency) o;
-    return Objects.equals(this.value, currency.value) &&
-        Objects.equals(this.unit, currency.unit);
+    return Objects.equals(this.value, currency.value) && Objects.equals(this.unit, currency.unit);
   }
 
   @Override
@@ -90,12 +81,11 @@ public class Currency {
     return Objects.hash(value, unit);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class Currency {\n");
-    
+
     sb.append("    value: ").append(toIndentedString(value)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
     sb.append("}");
@@ -103,8 +93,7 @@ public class Currency {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -112,5 +101,4 @@ public class Currency {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

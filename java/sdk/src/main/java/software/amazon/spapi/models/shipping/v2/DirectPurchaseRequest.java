@@ -12,25 +12,18 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.Address;
-import software.amazon.spapi.models.shipping.v2.ChannelDetails;
-import software.amazon.spapi.models.shipping.v2.PackageList;
-import software.amazon.spapi.models.shipping.v2.RequestedDocumentSpecification;
+import java.util.Objects;
+
 /**
- * The request schema for the directPurchaseShipment operation. When the channel type is Amazon, the shipTo address is not required and will be ignored.
+ * The request schema for the directPurchaseShipment operation. When the channel type is Amazon, the
+ * shipTo address is not required and will be ignored.
  */
-@Schema(description = "The request schema for the directPurchaseShipment operation. When the channel type is Amazon, the shipTo address is not required and will be ignored.")
-
-
+@Schema(
+    description =
+        "The request schema for the directPurchaseShipment operation. When the channel type is"
+            + " Amazon, the shipTo address is not required and will be ignored.")
 public class DirectPurchaseRequest {
   @SerializedName("shipTo")
   private Address shipTo = null;
@@ -55,10 +48,11 @@ public class DirectPurchaseRequest {
     return this;
   }
 
-   /**
+  /**
    * Get shipTo
+   *
    * @return shipTo
-  **/
+   */
   @Schema(description = "")
   public Address getShipTo() {
     return shipTo;
@@ -73,10 +67,11 @@ public class DirectPurchaseRequest {
     return this;
   }
 
-   /**
+  /**
    * Get shipFrom
+   *
    * @return shipFrom
-  **/
+   */
   @Schema(description = "")
   public Address getShipFrom() {
     return shipFrom;
@@ -91,10 +86,11 @@ public class DirectPurchaseRequest {
     return this;
   }
 
-   /**
+  /**
    * Get returnTo
+   *
    * @return returnTo
-  **/
+   */
   @Schema(description = "")
   public Address getReturnTo() {
     return returnTo;
@@ -109,10 +105,11 @@ public class DirectPurchaseRequest {
     return this;
   }
 
-   /**
+  /**
    * Get packages
+   *
    * @return packages
-  **/
+   */
   @Schema(description = "")
   public PackageList getPackages() {
     return packages;
@@ -127,10 +124,11 @@ public class DirectPurchaseRequest {
     return this;
   }
 
-   /**
+  /**
    * Get channelDetails
+   *
    * @return channelDetails
-  **/
+   */
   @Schema(required = true, description = "")
   public ChannelDetails getChannelDetails() {
     return channelDetails;
@@ -140,15 +138,17 @@ public class DirectPurchaseRequest {
     this.channelDetails = channelDetails;
   }
 
-  public DirectPurchaseRequest labelSpecifications(RequestedDocumentSpecification labelSpecifications) {
+  public DirectPurchaseRequest labelSpecifications(
+      RequestedDocumentSpecification labelSpecifications) {
     this.labelSpecifications = labelSpecifications;
     return this;
   }
 
-   /**
+  /**
    * Get labelSpecifications
+   *
    * @return labelSpecifications
-  **/
+   */
   @Schema(description = "")
   public RequestedDocumentSpecification getLabelSpecifications() {
     return labelSpecifications;
@@ -157,7 +157,6 @@ public class DirectPurchaseRequest {
   public void setLabelSpecifications(RequestedDocumentSpecification labelSpecifications) {
     this.labelSpecifications = labelSpecifications;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -168,12 +167,12 @@ public class DirectPurchaseRequest {
       return false;
     }
     DirectPurchaseRequest directPurchaseRequest = (DirectPurchaseRequest) o;
-    return Objects.equals(this.shipTo, directPurchaseRequest.shipTo) &&
-        Objects.equals(this.shipFrom, directPurchaseRequest.shipFrom) &&
-        Objects.equals(this.returnTo, directPurchaseRequest.returnTo) &&
-        Objects.equals(this.packages, directPurchaseRequest.packages) &&
-        Objects.equals(this.channelDetails, directPurchaseRequest.channelDetails) &&
-        Objects.equals(this.labelSpecifications, directPurchaseRequest.labelSpecifications);
+    return Objects.equals(this.shipTo, directPurchaseRequest.shipTo)
+        && Objects.equals(this.shipFrom, directPurchaseRequest.shipFrom)
+        && Objects.equals(this.returnTo, directPurchaseRequest.returnTo)
+        && Objects.equals(this.packages, directPurchaseRequest.packages)
+        && Objects.equals(this.channelDetails, directPurchaseRequest.channelDetails)
+        && Objects.equals(this.labelSpecifications, directPurchaseRequest.labelSpecifications);
   }
 
   @Override
@@ -181,25 +180,25 @@ public class DirectPurchaseRequest {
     return Objects.hash(shipTo, shipFrom, returnTo, packages, channelDetails, labelSpecifications);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DirectPurchaseRequest {\n");
-    
+
     sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
     sb.append("    shipFrom: ").append(toIndentedString(shipFrom)).append("\n");
     sb.append("    returnTo: ").append(toIndentedString(returnTo)).append("\n");
     sb.append("    packages: ").append(toIndentedString(packages)).append("\n");
     sb.append("    channelDetails: ").append(toIndentedString(channelDetails)).append("\n");
-    sb.append("    labelSpecifications: ").append(toIndentedString(labelSpecifications)).append("\n");
+    sb.append("    labelSpecifications: ")
+        .append(toIndentedString(labelSpecifications))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -207,5 +206,4 @@ public class DirectPurchaseRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

@@ -12,19 +12,14 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import io.swagger.v3.oas.annotations.media.Schema;
-import com.google.gson.annotations.SerializedName;
-import java.io.IOException;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-/**
- * Type of Input.
- */
+/** Type of Input. */
 @JsonAdapter(InputType.Adapter.class)
 public enum InputType {
   @SerializedName("TEXTBOX")
@@ -65,7 +60,7 @@ public enum InputType {
     @Override
     public InputType read(final JsonReader jsonReader) throws IOException {
       Object value = jsonReader.nextString();
-      return InputType.fromValue((String)(value));
+      return InputType.fromValue((String) (value));
     }
   }
 }

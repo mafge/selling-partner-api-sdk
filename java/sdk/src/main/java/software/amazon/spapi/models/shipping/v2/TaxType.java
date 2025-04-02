@@ -12,19 +12,14 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import io.swagger.v3.oas.annotations.media.Schema;
-import com.google.gson.annotations.SerializedName;
-import java.io.IOException;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
+import java.io.IOException;
 
-/**
- * Indicates the type of tax.
- */
+/** Indicates the type of tax. */
 @JsonAdapter(TaxType.Adapter.class)
 public enum TaxType {
   @SerializedName("GST")
@@ -63,7 +58,7 @@ public enum TaxType {
     @Override
     public TaxType read(final JsonReader jsonReader) throws IOException {
       Object value = jsonReader.nextString();
-      return TaxType.fromValue((String)(value));
+      return TaxType.fromValue((String) (value));
     }
   }
 }

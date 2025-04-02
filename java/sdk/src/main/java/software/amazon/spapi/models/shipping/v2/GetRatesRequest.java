@@ -12,32 +12,19 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
+import java.util.Objects;
 import org.threeten.bp.OffsetDateTime;
-import software.amazon.spapi.models.shipping.v2.AccessPointDetails;
-import software.amazon.spapi.models.shipping.v2.Address;
-import software.amazon.spapi.models.shipping.v2.CarrierAccounts;
-import software.amazon.spapi.models.shipping.v2.ChannelDetails;
-import software.amazon.spapi.models.shipping.v2.ClientReferenceDetails;
-import software.amazon.spapi.models.shipping.v2.PackageList;
-import software.amazon.spapi.models.shipping.v2.ShipmentType;
-import software.amazon.spapi.models.shipping.v2.ShipperInstruction;
-import software.amazon.spapi.models.shipping.v2.TaxDetailList;
-import software.amazon.spapi.models.shipping.v2.ValueAddedServiceDetails;
+
 /**
- * The request schema for the getRates operation. When the channelType is Amazon, the shipTo address is not required and will be ignored.
+ * The request schema for the getRates operation. When the channelType is Amazon, the shipTo address
+ * is not required and will be ignored.
  */
-@Schema(description = "The request schema for the getRates operation. When the channelType is Amazon, the shipTo address is not required and will be ignored.")
-
-
+@Schema(
+    description =
+        "The request schema for the getRates operation. When the channelType is Amazon, the shipTo"
+            + " address is not required and will be ignored.")
 public class GetRatesRequest {
   @SerializedName("shipTo")
   private Address shipTo = null;
@@ -83,10 +70,11 @@ public class GetRatesRequest {
     return this;
   }
 
-   /**
+  /**
    * Get shipTo
+   *
    * @return shipTo
-  **/
+   */
   @Schema(description = "")
   public Address getShipTo() {
     return shipTo;
@@ -101,10 +89,11 @@ public class GetRatesRequest {
     return this;
   }
 
-   /**
+  /**
    * Get shipFrom
+   *
    * @return shipFrom
-  **/
+   */
   @Schema(required = true, description = "")
   public Address getShipFrom() {
     return shipFrom;
@@ -119,10 +108,11 @@ public class GetRatesRequest {
     return this;
   }
 
-   /**
+  /**
    * Get returnTo
+   *
    * @return returnTo
-  **/
+   */
   @Schema(description = "")
   public Address getReturnTo() {
     return returnTo;
@@ -137,11 +127,15 @@ public class GetRatesRequest {
     return this;
   }
 
-   /**
+  /**
    * The ship date and time (the requested pickup). This defaults to the current date and time.
+   *
    * @return shipDate
-  **/
-  @Schema(description = "The ship date and time (the requested pickup). This defaults to the current date and time.")
+   */
+  @Schema(
+      description =
+          "The ship date and time (the requested pickup). This defaults to the current date and"
+              + " time.")
   public OffsetDateTime getShipDate() {
     return shipDate;
   }
@@ -155,10 +149,11 @@ public class GetRatesRequest {
     return this;
   }
 
-   /**
+  /**
    * Get shipperInstruction
+   *
    * @return shipperInstruction
-  **/
+   */
   @Schema(description = "")
   public ShipperInstruction getShipperInstruction() {
     return shipperInstruction;
@@ -173,10 +168,11 @@ public class GetRatesRequest {
     return this;
   }
 
-   /**
+  /**
    * Get packages
+   *
    * @return packages
-  **/
+   */
   @Schema(required = true, description = "")
   public PackageList getPackages() {
     return packages;
@@ -191,10 +187,11 @@ public class GetRatesRequest {
     return this;
   }
 
-   /**
+  /**
    * Get valueAddedServices
+   *
    * @return valueAddedServices
-  **/
+   */
   @Schema(description = "")
   public ValueAddedServiceDetails getValueAddedServices() {
     return valueAddedServices;
@@ -209,10 +206,11 @@ public class GetRatesRequest {
     return this;
   }
 
-   /**
+  /**
    * Get taxDetails
+   *
    * @return taxDetails
-  **/
+   */
   @Schema(description = "")
   public TaxDetailList getTaxDetails() {
     return taxDetails;
@@ -227,10 +225,11 @@ public class GetRatesRequest {
     return this;
   }
 
-   /**
+  /**
    * Get channelDetails
+   *
    * @return channelDetails
-  **/
+   */
   @Schema(required = true, description = "")
   public ChannelDetails getChannelDetails() {
     return channelDetails;
@@ -245,10 +244,11 @@ public class GetRatesRequest {
     return this;
   }
 
-   /**
+  /**
    * Get clientReferenceDetails
+   *
    * @return clientReferenceDetails
-  **/
+   */
   @Schema(description = "")
   public ClientReferenceDetails getClientReferenceDetails() {
     return clientReferenceDetails;
@@ -263,10 +263,11 @@ public class GetRatesRequest {
     return this;
   }
 
-   /**
+  /**
    * Get shipmentType
+   *
    * @return shipmentType
-  **/
+   */
   @Schema(description = "")
   public ShipmentType getShipmentType() {
     return shipmentType;
@@ -276,15 +277,17 @@ public class GetRatesRequest {
     this.shipmentType = shipmentType;
   }
 
-  public GetRatesRequest destinationAccessPointDetails(AccessPointDetails destinationAccessPointDetails) {
+  public GetRatesRequest destinationAccessPointDetails(
+      AccessPointDetails destinationAccessPointDetails) {
     this.destinationAccessPointDetails = destinationAccessPointDetails;
     return this;
   }
 
-   /**
+  /**
    * Get destinationAccessPointDetails
+   *
    * @return destinationAccessPointDetails
-  **/
+   */
   @Schema(description = "")
   public AccessPointDetails getDestinationAccessPointDetails() {
     return destinationAccessPointDetails;
@@ -299,10 +302,11 @@ public class GetRatesRequest {
     return this;
   }
 
-   /**
+  /**
    * Get carrierAccounts
+   *
    * @return carrierAccounts
-  **/
+   */
   @Schema(description = "")
   public CarrierAccounts getCarrierAccounts() {
     return carrierAccounts;
@@ -311,7 +315,6 @@ public class GetRatesRequest {
   public void setCarrierAccounts(CarrierAccounts carrierAccounts) {
     this.carrierAccounts = carrierAccounts;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -322,32 +325,45 @@ public class GetRatesRequest {
       return false;
     }
     GetRatesRequest getRatesRequest = (GetRatesRequest) o;
-    return Objects.equals(this.shipTo, getRatesRequest.shipTo) &&
-        Objects.equals(this.shipFrom, getRatesRequest.shipFrom) &&
-        Objects.equals(this.returnTo, getRatesRequest.returnTo) &&
-        Objects.equals(this.shipDate, getRatesRequest.shipDate) &&
-        Objects.equals(this.shipperInstruction, getRatesRequest.shipperInstruction) &&
-        Objects.equals(this.packages, getRatesRequest.packages) &&
-        Objects.equals(this.valueAddedServices, getRatesRequest.valueAddedServices) &&
-        Objects.equals(this.taxDetails, getRatesRequest.taxDetails) &&
-        Objects.equals(this.channelDetails, getRatesRequest.channelDetails) &&
-        Objects.equals(this.clientReferenceDetails, getRatesRequest.clientReferenceDetails) &&
-        Objects.equals(this.shipmentType, getRatesRequest.shipmentType) &&
-        Objects.equals(this.destinationAccessPointDetails, getRatesRequest.destinationAccessPointDetails) &&
-        Objects.equals(this.carrierAccounts, getRatesRequest.carrierAccounts);
+    return Objects.equals(this.shipTo, getRatesRequest.shipTo)
+        && Objects.equals(this.shipFrom, getRatesRequest.shipFrom)
+        && Objects.equals(this.returnTo, getRatesRequest.returnTo)
+        && Objects.equals(this.shipDate, getRatesRequest.shipDate)
+        && Objects.equals(this.shipperInstruction, getRatesRequest.shipperInstruction)
+        && Objects.equals(this.packages, getRatesRequest.packages)
+        && Objects.equals(this.valueAddedServices, getRatesRequest.valueAddedServices)
+        && Objects.equals(this.taxDetails, getRatesRequest.taxDetails)
+        && Objects.equals(this.channelDetails, getRatesRequest.channelDetails)
+        && Objects.equals(this.clientReferenceDetails, getRatesRequest.clientReferenceDetails)
+        && Objects.equals(this.shipmentType, getRatesRequest.shipmentType)
+        && Objects.equals(
+            this.destinationAccessPointDetails, getRatesRequest.destinationAccessPointDetails)
+        && Objects.equals(this.carrierAccounts, getRatesRequest.carrierAccounts);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(shipTo, shipFrom, returnTo, shipDate, shipperInstruction, packages, valueAddedServices, taxDetails, channelDetails, clientReferenceDetails, shipmentType, destinationAccessPointDetails, carrierAccounts);
+    return Objects.hash(
+        shipTo,
+        shipFrom,
+        returnTo,
+        shipDate,
+        shipperInstruction,
+        packages,
+        valueAddedServices,
+        taxDetails,
+        channelDetails,
+        clientReferenceDetails,
+        shipmentType,
+        destinationAccessPointDetails,
+        carrierAccounts);
   }
-
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetRatesRequest {\n");
-    
+
     sb.append("    shipTo: ").append(toIndentedString(shipTo)).append("\n");
     sb.append("    shipFrom: ").append(toIndentedString(shipFrom)).append("\n");
     sb.append("    returnTo: ").append(toIndentedString(returnTo)).append("\n");
@@ -357,17 +373,20 @@ public class GetRatesRequest {
     sb.append("    valueAddedServices: ").append(toIndentedString(valueAddedServices)).append("\n");
     sb.append("    taxDetails: ").append(toIndentedString(taxDetails)).append("\n");
     sb.append("    channelDetails: ").append(toIndentedString(channelDetails)).append("\n");
-    sb.append("    clientReferenceDetails: ").append(toIndentedString(clientReferenceDetails)).append("\n");
+    sb.append("    clientReferenceDetails: ")
+        .append(toIndentedString(clientReferenceDetails))
+        .append("\n");
     sb.append("    shipmentType: ").append(toIndentedString(shipmentType)).append("\n");
-    sb.append("    destinationAccessPointDetails: ").append(toIndentedString(destinationAccessPointDetails)).append("\n");
+    sb.append("    destinationAccessPointDetails: ")
+        .append(toIndentedString(destinationAccessPointDetails))
+        .append("\n");
     sb.append("    carrierAccounts: ").append(toIndentedString(carrierAccounts)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -375,5 +394,4 @@ public class GetRatesRequest {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

@@ -12,21 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-/**
- * Date Range for query the results.
- */
+import java.util.Objects;
+
+/** Date Range for query the results. */
 @Schema(description = "Date Range for query the results.")
-
-
 public class DateRange {
   @SerializedName("startDate")
   private String startDate = null;
@@ -39,10 +30,11 @@ public class DateRange {
     return this;
   }
 
-   /**
+  /**
    * Start Date for query .
+   *
    * @return startDate
-  **/
+   */
   @Schema(description = "Start Date for query .")
   public String getStartDate() {
     return startDate;
@@ -57,10 +49,11 @@ public class DateRange {
     return this;
   }
 
-   /**
+  /**
    * end date for query.
+   *
    * @return endDate
-  **/
+   */
   @Schema(description = "end date for query.")
   public String getEndDate() {
     return endDate;
@@ -69,7 +62,6 @@ public class DateRange {
   public void setEndDate(String endDate) {
     this.endDate = endDate;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -80,8 +72,8 @@ public class DateRange {
       return false;
     }
     DateRange dateRange = (DateRange) o;
-    return Objects.equals(this.startDate, dateRange.startDate) &&
-        Objects.equals(this.endDate, dateRange.endDate);
+    return Objects.equals(this.startDate, dateRange.startDate)
+        && Objects.equals(this.endDate, dateRange.endDate);
   }
 
   @Override
@@ -89,12 +81,11 @@ public class DateRange {
     return Objects.hash(startDate, endDate);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DateRange {\n");
-    
+
     sb.append("    startDate: ").append(toIndentedString(startDate)).append("\n");
     sb.append("    endDate: ").append(toIndentedString(endDate)).append("\n");
     sb.append("}");
@@ -102,8 +93,7 @@ public class DateRange {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -111,5 +101,4 @@ public class DateRange {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

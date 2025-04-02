@@ -12,19 +12,14 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.ArrayList;
-import java.util.List;
-import software.amazon.spapi.models.shipping.v2.AvailableValueAddedServiceGroup;
-/**
- * A list of value-added services available for a shipping service offering.
- */
+import java.util.Objects;
+
+/** A list of value-added services available for a shipping service offering. */
 @Schema(description = "A list of value-added services available for a shipping service offering.")
-
-
-public class AvailableValueAddedServiceGroupList extends ArrayList<AvailableValueAddedServiceGroup> {
+public class AvailableValueAddedServiceGroupList
+    extends ArrayList<AvailableValueAddedServiceGroup> {
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -42,7 +37,6 @@ public class AvailableValueAddedServiceGroupList extends ArrayList<AvailableValu
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -53,8 +47,7 @@ public class AvailableValueAddedServiceGroupList extends ArrayList<AvailableValu
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -62,5 +55,4 @@ public class AvailableValueAddedServiceGroupList extends ArrayList<AvailableValu
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

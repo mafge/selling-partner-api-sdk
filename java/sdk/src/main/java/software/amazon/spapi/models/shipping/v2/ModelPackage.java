@@ -12,26 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.ChargeList;
-import software.amazon.spapi.models.shipping.v2.Currency;
-import software.amazon.spapi.models.shipping.v2.Dimensions;
-import software.amazon.spapi.models.shipping.v2.ItemList;
-import software.amazon.spapi.models.shipping.v2.Weight;
-/**
- * A package to be shipped through a shipping service offering.
- */
+import java.util.Objects;
+
+/** A package to be shipped through a shipping service offering. */
 @Schema(description = "A package to be shipped through a shipping service offering.")
-
-
 public class ModelPackage {
   @SerializedName("dimensions")
   private Dimensions dimensions = null;
@@ -62,10 +48,11 @@ public class ModelPackage {
     return this;
   }
 
-   /**
+  /**
    * Get dimensions
+   *
    * @return dimensions
-  **/
+   */
   @Schema(required = true, description = "")
   public Dimensions getDimensions() {
     return dimensions;
@@ -80,10 +67,11 @@ public class ModelPackage {
     return this;
   }
 
-   /**
+  /**
    * Get weight
+   *
    * @return weight
-  **/
+   */
   @Schema(required = true, description = "")
   public Weight getWeight() {
     return weight;
@@ -98,10 +86,11 @@ public class ModelPackage {
     return this;
   }
 
-   /**
+  /**
    * Get insuredValue
+   *
    * @return insuredValue
-  **/
+   */
   @Schema(required = true, description = "")
   public Currency getInsuredValue() {
     return insuredValue;
@@ -116,10 +105,11 @@ public class ModelPackage {
     return this;
   }
 
-   /**
+  /**
    * When true, the package contains hazardous materials. Defaults to false.
+   *
    * @return isHazmat
-  **/
+   */
   @Schema(description = "When true, the package contains hazardous materials. Defaults to false.")
   public Boolean isIsHazmat() {
     return isHazmat;
@@ -134,10 +124,11 @@ public class ModelPackage {
     return this;
   }
 
-   /**
+  /**
    * The seller name displayed on the label.
+   *
    * @return sellerDisplayName
-  **/
+   */
   @Schema(description = "The seller name displayed on the label.")
   public String getSellerDisplayName() {
     return sellerDisplayName;
@@ -152,10 +143,11 @@ public class ModelPackage {
     return this;
   }
 
-   /**
+  /**
    * Get charges
+   *
    * @return charges
-  **/
+   */
   @Schema(description = "")
   public ChargeList getCharges() {
     return charges;
@@ -170,10 +162,11 @@ public class ModelPackage {
     return this;
   }
 
-   /**
+  /**
    * Get packageClientReferenceId
+   *
    * @return packageClientReferenceId
-  **/
+   */
   @Schema(required = true, description = "")
   public String getPackageClientReferenceId() {
     return packageClientReferenceId;
@@ -188,10 +181,11 @@ public class ModelPackage {
     return this;
   }
 
-   /**
+  /**
    * Get items
+   *
    * @return items
-  **/
+   */
   @Schema(required = true, description = "")
   public ItemList getItems() {
     return items;
@@ -200,7 +194,6 @@ public class ModelPackage {
   public void setItems(ItemList items) {
     this.items = items;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -211,42 +204,50 @@ public class ModelPackage {
       return false;
     }
     ModelPackage _package = (ModelPackage) o;
-    return Objects.equals(this.dimensions, _package.dimensions) &&
-        Objects.equals(this.weight, _package.weight) &&
-        Objects.equals(this.insuredValue, _package.insuredValue) &&
-        Objects.equals(this.isHazmat, _package.isHazmat) &&
-        Objects.equals(this.sellerDisplayName, _package.sellerDisplayName) &&
-        Objects.equals(this.charges, _package.charges) &&
-        Objects.equals(this.packageClientReferenceId, _package.packageClientReferenceId) &&
-        Objects.equals(this.items, _package.items);
+    return Objects.equals(this.dimensions, _package.dimensions)
+        && Objects.equals(this.weight, _package.weight)
+        && Objects.equals(this.insuredValue, _package.insuredValue)
+        && Objects.equals(this.isHazmat, _package.isHazmat)
+        && Objects.equals(this.sellerDisplayName, _package.sellerDisplayName)
+        && Objects.equals(this.charges, _package.charges)
+        && Objects.equals(this.packageClientReferenceId, _package.packageClientReferenceId)
+        && Objects.equals(this.items, _package.items);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dimensions, weight, insuredValue, isHazmat, sellerDisplayName, charges, packageClientReferenceId, items);
+    return Objects.hash(
+        dimensions,
+        weight,
+        insuredValue,
+        isHazmat,
+        sellerDisplayName,
+        charges,
+        packageClientReferenceId,
+        items);
   }
-
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ModelPackage {\n");
-    
+
     sb.append("    dimensions: ").append(toIndentedString(dimensions)).append("\n");
     sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
     sb.append("    insuredValue: ").append(toIndentedString(insuredValue)).append("\n");
     sb.append("    isHazmat: ").append(toIndentedString(isHazmat)).append("\n");
     sb.append("    sellerDisplayName: ").append(toIndentedString(sellerDisplayName)).append("\n");
     sb.append("    charges: ").append(toIndentedString(charges)).append("\n");
-    sb.append("    packageClientReferenceId: ").append(toIndentedString(packageClientReferenceId)).append("\n");
+    sb.append("    packageClientReferenceId: ")
+        .append(toIndentedString(packageClientReferenceId))
+        .append("\n");
     sb.append("    items: ").append(toIndentedString(items)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -254,5 +255,4 @@ public class ModelPackage {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

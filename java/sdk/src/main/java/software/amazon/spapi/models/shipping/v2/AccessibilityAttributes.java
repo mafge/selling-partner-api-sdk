@@ -12,21 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-/**
- * Defines the accessibility details of the access point.
- */
+import java.util.Objects;
+
+/** Defines the accessibility details of the access point. */
 @Schema(description = "Defines the accessibility details of the access point.")
-
-
 public class AccessibilityAttributes {
   @SerializedName("distance")
   private String distance = null;
@@ -39,11 +30,13 @@ public class AccessibilityAttributes {
     return this;
   }
 
-   /**
+  /**
    * The approximate distance of access point from input postalCode&#x27;s centroid.
+   *
    * @return distance
-  **/
-  @Schema(description = "The approximate distance of access point from input postalCode's centroid.")
+   */
+  @Schema(
+      description = "The approximate distance of access point from input postalCode's centroid.")
   public String getDistance() {
     return distance;
   }
@@ -57,10 +50,11 @@ public class AccessibilityAttributes {
     return this;
   }
 
-   /**
+  /**
    * The approximate (static) drive time from input postal code&#x27;s centroid.
+   *
    * @return driveTime
-  **/
+   */
   @Schema(description = "The approximate (static) drive time from input postal code's centroid.")
   public Integer getDriveTime() {
     return driveTime;
@@ -69,7 +63,6 @@ public class AccessibilityAttributes {
   public void setDriveTime(Integer driveTime) {
     this.driveTime = driveTime;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -80,8 +73,8 @@ public class AccessibilityAttributes {
       return false;
     }
     AccessibilityAttributes accessibilityAttributes = (AccessibilityAttributes) o;
-    return Objects.equals(this.distance, accessibilityAttributes.distance) &&
-        Objects.equals(this.driveTime, accessibilityAttributes.driveTime);
+    return Objects.equals(this.distance, accessibilityAttributes.distance)
+        && Objects.equals(this.driveTime, accessibilityAttributes.driveTime);
   }
 
   @Override
@@ -89,12 +82,11 @@ public class AccessibilityAttributes {
     return Objects.hash(distance, driveTime);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AccessibilityAttributes {\n");
-    
+
     sb.append("    distance: ").append(toIndentedString(distance)).append("\n");
     sb.append("    driveTime: ").append(toIndentedString(driveTime)).append("\n");
     sb.append("}");
@@ -102,8 +94,7 @@ public class AccessibilityAttributes {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -111,5 +102,4 @@ public class AccessibilityAttributes {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

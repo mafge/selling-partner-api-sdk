@@ -12,21 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-/**
- * Active Account Details
- */
+import java.util.Objects;
+
+/** Active Account Details */
 @Schema(description = "Active Account Details")
-
-
 public class ActiveAccount {
   @SerializedName("accountId")
   private String accountId = null;
@@ -39,10 +30,11 @@ public class ActiveAccount {
     return this;
   }
 
-   /**
+  /**
    * Get accountId
+   *
    * @return accountId
-  **/
+   */
   @Schema(description = "")
   public String getAccountId() {
     return accountId;
@@ -57,10 +49,11 @@ public class ActiveAccount {
     return this;
   }
 
-   /**
+  /**
    * Get carrierId
+   *
    * @return carrierId
-  **/
+   */
   @Schema(description = "")
   public String getCarrierId() {
     return carrierId;
@@ -69,7 +62,6 @@ public class ActiveAccount {
   public void setCarrierId(String carrierId) {
     this.carrierId = carrierId;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -80,8 +72,8 @@ public class ActiveAccount {
       return false;
     }
     ActiveAccount activeAccount = (ActiveAccount) o;
-    return Objects.equals(this.accountId, activeAccount.accountId) &&
-        Objects.equals(this.carrierId, activeAccount.carrierId);
+    return Objects.equals(this.accountId, activeAccount.accountId)
+        && Objects.equals(this.carrierId, activeAccount.carrierId);
   }
 
   @Override
@@ -89,12 +81,11 @@ public class ActiveAccount {
     return Objects.hash(accountId, carrierId);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ActiveAccount {\n");
-    
+
     sb.append("    accountId: ").append(toIndentedString(accountId)).append("\n");
     sb.append("    carrierId: ").append(toIndentedString(carrierId)).append("\n");
     sb.append("}");
@@ -102,8 +93,7 @@ public class ActiveAccount {
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -111,5 +101,4 @@ public class ActiveAccount {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

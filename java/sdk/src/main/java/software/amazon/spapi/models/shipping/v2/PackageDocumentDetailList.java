@@ -12,18 +12,17 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
 import io.swagger.v3.oas.annotations.media.Schema;
 import java.util.ArrayList;
-import java.util.List;
-import software.amazon.spapi.models.shipping.v2.PackageDocumentDetail;
+import java.util.Objects;
+
 /**
  * A list of post-purchase details about a package that will be shipped using a shipping service.
  */
-@Schema(description = "A list of post-purchase details about a package that will be shipped using a shipping service.")
-
-
+@Schema(
+    description =
+        "A list of post-purchase details about a package that will be shipped using a shipping"
+            + " service.")
 public class PackageDocumentDetailList extends ArrayList<PackageDocumentDetail> {
 
   @Override
@@ -42,7 +41,6 @@ public class PackageDocumentDetailList extends ArrayList<PackageDocumentDetail> 
     return Objects.hash(super.hashCode());
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
@@ -53,8 +51,7 @@ public class PackageDocumentDetailList extends ArrayList<PackageDocumentDetail> 
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -62,5 +59,4 @@ public class PackageDocumentDetailList extends ArrayList<PackageDocumentDetail> 
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

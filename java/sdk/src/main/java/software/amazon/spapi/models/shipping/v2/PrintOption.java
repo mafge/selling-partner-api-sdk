@@ -12,24 +12,14 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import software.amazon.spapi.models.shipping.v2.SupportedDocumentDetail;
-/**
- * The format options available for a label.
- */
+import java.util.Objects;
+
+/** The format options available for a label. */
 @Schema(description = "The format options available for a label.")
-
-
 public class PrintOption {
   @SerializedName("supportedDPIs")
   private List<Integer> supportedDPIs = null;
@@ -41,7 +31,8 @@ public class PrintOption {
   private List<Boolean> supportedFileJoiningOptions = new ArrayList<Boolean>();
 
   @SerializedName("supportedDocumentDetails")
-  private List<SupportedDocumentDetail> supportedDocumentDetails = new ArrayList<SupportedDocumentDetail>();
+  private List<SupportedDocumentDetail> supportedDocumentDetails =
+      new ArrayList<SupportedDocumentDetail>();
 
   public PrintOption supportedDPIs(List<Integer> supportedDPIs) {
     this.supportedDPIs = supportedDPIs;
@@ -56,10 +47,11 @@ public class PrintOption {
     return this;
   }
 
-   /**
+  /**
    * A list of the supported DPI options for a document.
+   *
    * @return supportedDPIs
-  **/
+   */
   @Schema(description = "A list of the supported DPI options for a document.")
   public List<Integer> getSupportedDPIs() {
     return supportedDPIs;
@@ -79,11 +71,14 @@ public class PrintOption {
     return this;
   }
 
-   /**
+  /**
    * A list of the supported page layout options for a document.
+   *
    * @return supportedPageLayouts
-  **/
-  @Schema(required = true, description = "A list of the supported page layout options for a document.")
+   */
+  @Schema(
+      required = true,
+      description = "A list of the supported page layout options for a document.")
   public List<String> getSupportedPageLayouts() {
     return supportedPageLayouts;
   }
@@ -102,11 +97,14 @@ public class PrintOption {
     return this;
   }
 
-   /**
+  /**
    * A list of the supported needFileJoining boolean values for a document.
+   *
    * @return supportedFileJoiningOptions
-  **/
-  @Schema(required = true, description = "A list of the supported needFileJoining boolean values for a document.")
+   */
+  @Schema(
+      required = true,
+      description = "A list of the supported needFileJoining boolean values for a document.")
   public List<Boolean> getSupportedFileJoiningOptions() {
     return supportedFileJoiningOptions;
   }
@@ -115,20 +113,23 @@ public class PrintOption {
     this.supportedFileJoiningOptions = supportedFileJoiningOptions;
   }
 
-  public PrintOption supportedDocumentDetails(List<SupportedDocumentDetail> supportedDocumentDetails) {
+  public PrintOption supportedDocumentDetails(
+      List<SupportedDocumentDetail> supportedDocumentDetails) {
     this.supportedDocumentDetails = supportedDocumentDetails;
     return this;
   }
 
-  public PrintOption addSupportedDocumentDetailsItem(SupportedDocumentDetail supportedDocumentDetailsItem) {
+  public PrintOption addSupportedDocumentDetailsItem(
+      SupportedDocumentDetail supportedDocumentDetailsItem) {
     this.supportedDocumentDetails.add(supportedDocumentDetailsItem);
     return this;
   }
 
-   /**
+  /**
    * A list of the supported documented details.
+   *
    * @return supportedDocumentDetails
-  **/
+   */
   @Schema(required = true, description = "A list of the supported documented details.")
   public List<SupportedDocumentDetail> getSupportedDocumentDetails() {
     return supportedDocumentDetails;
@@ -137,7 +138,6 @@ public class PrintOption {
   public void setSupportedDocumentDetails(List<SupportedDocumentDetail> supportedDocumentDetails) {
     this.supportedDocumentDetails = supportedDocumentDetails;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -148,34 +148,39 @@ public class PrintOption {
       return false;
     }
     PrintOption printOption = (PrintOption) o;
-    return Objects.equals(this.supportedDPIs, printOption.supportedDPIs) &&
-        Objects.equals(this.supportedPageLayouts, printOption.supportedPageLayouts) &&
-        Objects.equals(this.supportedFileJoiningOptions, printOption.supportedFileJoiningOptions) &&
-        Objects.equals(this.supportedDocumentDetails, printOption.supportedDocumentDetails);
+    return Objects.equals(this.supportedDPIs, printOption.supportedDPIs)
+        && Objects.equals(this.supportedPageLayouts, printOption.supportedPageLayouts)
+        && Objects.equals(this.supportedFileJoiningOptions, printOption.supportedFileJoiningOptions)
+        && Objects.equals(this.supportedDocumentDetails, printOption.supportedDocumentDetails);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(supportedDPIs, supportedPageLayouts, supportedFileJoiningOptions, supportedDocumentDetails);
+    return Objects.hash(
+        supportedDPIs, supportedPageLayouts, supportedFileJoiningOptions, supportedDocumentDetails);
   }
-
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class PrintOption {\n");
-    
+
     sb.append("    supportedDPIs: ").append(toIndentedString(supportedDPIs)).append("\n");
-    sb.append("    supportedPageLayouts: ").append(toIndentedString(supportedPageLayouts)).append("\n");
-    sb.append("    supportedFileJoiningOptions: ").append(toIndentedString(supportedFileJoiningOptions)).append("\n");
-    sb.append("    supportedDocumentDetails: ").append(toIndentedString(supportedDocumentDetails)).append("\n");
+    sb.append("    supportedPageLayouts: ")
+        .append(toIndentedString(supportedPageLayouts))
+        .append("\n");
+    sb.append("    supportedFileJoiningOptions: ")
+        .append(toIndentedString(supportedFileJoiningOptions))
+        .append("\n");
+    sb.append("    supportedDocumentDetails: ")
+        .append(toIndentedString(supportedDocumentDetails))
+        .append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -183,5 +188,4 @@ public class PrintOption {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

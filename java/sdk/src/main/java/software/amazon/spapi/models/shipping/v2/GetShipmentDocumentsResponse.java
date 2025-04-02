@@ -12,22 +12,12 @@
 
 package software.amazon.spapi.models.shipping.v2;
 
-import java.util.Objects;
-import java.util.Arrays;
-import com.google.gson.TypeAdapter;
-import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.IOException;
-import software.amazon.spapi.models.shipping.v2.GetShipmentDocumentsResult;
-/**
- * The response schema for the the getShipmentDocuments operation.
- */
+import java.util.Objects;
+
+/** The response schema for the the getShipmentDocuments operation. */
 @Schema(description = "The response schema for the the getShipmentDocuments operation.")
-
-
 public class GetShipmentDocumentsResponse {
   @SerializedName("payload")
   private GetShipmentDocumentsResult payload = null;
@@ -37,10 +27,11 @@ public class GetShipmentDocumentsResponse {
     return this;
   }
 
-   /**
+  /**
    * Get payload
+   *
    * @return payload
-  **/
+   */
   @Schema(description = "")
   public GetShipmentDocumentsResult getPayload() {
     return payload;
@@ -49,7 +40,6 @@ public class GetShipmentDocumentsResponse {
   public void setPayload(GetShipmentDocumentsResult payload) {
     this.payload = payload;
   }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -68,20 +58,18 @@ public class GetShipmentDocumentsResponse {
     return Objects.hash(payload);
   }
 
-
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetShipmentDocumentsResponse {\n");
-    
+
     sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
     sb.append("}");
     return sb.toString();
   }
 
   /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
+   * Convert the given object to string with each line indented by 4 spaces (except the first line).
    */
   private String toIndentedString(java.lang.Object o) {
     if (o == null) {
@@ -89,5 +77,4 @@ public class GetShipmentDocumentsResponse {
     }
     return o.toString().replace("\n", "\n    ");
   }
-
 }

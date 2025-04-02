@@ -12,19 +12,26 @@
 
 package software.amazon.spapi.api.shipping.v2;
 
-import software.amazon.spapi.ApiResponse;
+import static org.junit.jupiter.api.Assertions.*;
+
 import com.amazon.SellingPartnerAPIAA.LWAAuthorizationCredentials;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse.BodyHandlers;
+import java.util.*;
+import java.util.stream.Collectors;
 import org.jeasy.random.EasyRandom;
 import org.jeasy.random.EasyRandomParameters;
+import org.junit.jupiter.api.Test;
 import org.threeten.bp.LocalDate;
 import org.threeten.bp.OffsetDateTime;
-import java.math.BigDecimal;
+import software.amazon.spapi.ApiResponse;
 import software.amazon.spapi.models.shipping.v2.CancelShipmentResponse;
 import software.amazon.spapi.models.shipping.v2.CreateClaimRequest;
 import software.amazon.spapi.models.shipping.v2.CreateClaimResponse;
 import software.amazon.spapi.models.shipping.v2.DirectPurchaseRequest;
 import software.amazon.spapi.models.shipping.v2.DirectPurchaseResponse;
-import software.amazon.spapi.models.shipping.v2.ErrorList;
 import software.amazon.spapi.models.shipping.v2.GenerateCollectionFormRequest;
 import software.amazon.spapi.models.shipping.v2.GenerateCollectionFormResponse;
 import software.amazon.spapi.models.shipping.v2.GetAccessPointsResponse;
@@ -50,275 +57,283 @@ import software.amazon.spapi.models.shipping.v2.PurchaseShipmentResponse;
 import software.amazon.spapi.models.shipping.v2.SubmitNdrFeedbackRequest;
 import software.amazon.spapi.models.shipping.v2.UnlinkCarrierAccountRequest;
 import software.amazon.spapi.models.shipping.v2.UnlinkCarrierAccountResponse;
-import org.junit.jupiter.api.Test;
-
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse.BodyHandlers;
-import java.util.*;
-import java.util.stream.Collectors;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 public class ShippingApiTest {
 
-    private static String endpoint = "http://localhost:3000";
-    private static String authEndpoint = "http://localhost:3000/auth/o2/token";
-    private static LWAAuthorizationCredentials credentials = LWAAuthorizationCredentials.builder()
-        .clientId("clientId")
-        .clientSecret("clientSecret")
-        .refreshToken("refreshToken")
-        .endpoint(authEndpoint)
-        .build();
-
-    private final ShippingApi api = new ShippingApi.Builder()
-        .lwaAuthorizationCredentials(credentials)
-        .endpoint(endpoint)
-        .build();
-
-    private final EasyRandom easyRandom = new EasyRandom(
-        new EasyRandomParameters().randomize(OffsetDateTime.class, OffsetDateTime::now)
-                .randomize(LocalDate.class, LocalDate::now)
-                .collectionSizeRange(1, 2)
-    );
-
-    @Test
-    public void cancelShipmentTest() throws Exception {
-        instructBackendMock("cancelShipment", "200");
-        String shipmentId = easyRandom.nextObject(String.class);
-
-        ApiResponse<CancelShipmentResponse> response = api.cancelShipmentWithHttpInfo(shipmentId, null);
-
-        assertEquals(200, response.getStatusCode());
-        assertValidResponsePayload(200, response.getData());
-    }
-
-    @Test
-    public void createClaimTest() throws Exception {
-        instructBackendMock("createClaim", "201");
-        CreateClaimRequest body = easyRandom.nextObject(CreateClaimRequest.class);
-
-        ApiResponse<CreateClaimResponse> response = api.createClaimWithHttpInfo(body, null);
-
-        assertEquals(201, response.getStatusCode());
-        assertValidResponsePayload(201, response.getData());
-    }
-
-    @Test
-    public void directPurchaseShipmentTest() throws Exception {
-        instructBackendMock("directPurchaseShipment", "200");
-        DirectPurchaseRequest body = easyRandom.nextObject(DirectPurchaseRequest.class);
-
-        ApiResponse<DirectPurchaseResponse> response = api.directPurchaseShipmentWithHttpInfo(body, null, null, null);
-
-        assertEquals(200, response.getStatusCode());
-        assertValidResponsePayload(200, response.getData());
-    }
-
-    @Test
-    public void generateCollectionFormTest() throws Exception {
-        instructBackendMock("generateCollectionForm", "200");
-        GenerateCollectionFormRequest body = easyRandom.nextObject(GenerateCollectionFormRequest.class);
-
-        ApiResponse<GenerateCollectionFormResponse> response = api.generateCollectionFormWithHttpInfo(body, null, null);
-
-        assertEquals(200, response.getStatusCode());
-        assertValidResponsePayload(200, response.getData());
-    }
-
-    @Test
-    public void getAccessPointsTest() throws Exception {
-        instructBackendMock("getAccessPoints", "200");
-        List<String> accessPointTypes = easyRandom.objects(String.class, 2).collect(Collectors.toList());
-        String countryCode = easyRandom.nextObject(String.class);
-        String postalCode = easyRandom.nextObject(String.class);
-
-        ApiResponse<GetAccessPointsResponse> response = api.getAccessPointsWithHttpInfo(accessPointTypes, countryCode, postalCode, null);
-
-        assertEquals(200, response.getStatusCode());
-        assertValidResponsePayload(200, response.getData());
-    }
-
-    @Test
-    public void getAdditionalInputsTest() throws Exception {
-        instructBackendMock("getAdditionalInputs", "200");
-        String requestToken = easyRandom.nextObject(String.class);
-        String rateId = easyRandom.nextObject(String.class);
-
-        ApiResponse<GetAdditionalInputsResponse> response = api.getAdditionalInputsWithHttpInfo(requestToken, rateId, null);
-
-        assertEquals(200, response.getStatusCode());
-        assertValidResponsePayload(200, response.getData());
-    }
-
-    @Test
-    public void getCarrierAccountFormInputsTest() throws Exception {
-        instructBackendMock("getCarrierAccountFormInputs", "200");
-
-        ApiResponse<GetCarrierAccountFormInputsResponse> response = api.getCarrierAccountFormInputsWithHttpInfo(null);
-
-        assertEquals(200, response.getStatusCode());
-        assertValidResponsePayload(200, response.getData());
-    }
-
-    @Test
-    public void getCarrierAccountsTest() throws Exception {
-        instructBackendMock("getCarrierAccounts", "200");
-        GetCarrierAccountsRequest body = easyRandom.nextObject(GetCarrierAccountsRequest.class);
-
-        ApiResponse<GetCarrierAccountsResponse> response = api.getCarrierAccountsWithHttpInfo(body, null);
-
-        assertEquals(200, response.getStatusCode());
-        assertValidResponsePayload(200, response.getData());
-    }
-
-    @Test
-    public void getCollectionFormTest() throws Exception {
-        instructBackendMock("getCollectionForm", "200");
-        String collectionFormId = easyRandom.nextObject(String.class);
-
-        ApiResponse<GetCollectionFormResponse> response = api.getCollectionFormWithHttpInfo(collectionFormId, null);
-
-        assertEquals(200, response.getStatusCode());
-        assertValidResponsePayload(200, response.getData());
-    }
-
-    @Test
-    public void getCollectionFormHistoryTest() throws Exception {
-        instructBackendMock("getCollectionFormHistory", "200");
-        GetCollectionFormHistoryRequest body = easyRandom.nextObject(GetCollectionFormHistoryRequest.class);
-
-        ApiResponse<GetCollectionFormHistoryResponse> response = api.getCollectionFormHistoryWithHttpInfo(body, null);
-
-        assertEquals(200, response.getStatusCode());
-        assertValidResponsePayload(200, response.getData());
-    }
-
-    @Test
-    public void getRatesTest() throws Exception {
-        instructBackendMock("getRates", "200");
-        GetRatesRequest body = easyRandom.nextObject(GetRatesRequest.class);
-
-        ApiResponse<GetRatesResponse> response = api.getRatesWithHttpInfo(body, null);
-
-        assertEquals(200, response.getStatusCode());
-        assertValidResponsePayload(200, response.getData());
-    }
-
-    @Test
-    public void getShipmentDocumentsTest() throws Exception {
-        instructBackendMock("getShipmentDocuments", "200");
-        String shipmentId = easyRandom.nextObject(String.class);
-        String packageClientReferenceId = easyRandom.nextObject(String.class);
-
-        ApiResponse<GetShipmentDocumentsResponse> response = api.getShipmentDocumentsWithHttpInfo(shipmentId, packageClientReferenceId, null, null, null);
-
-        assertEquals(200, response.getStatusCode());
-        assertValidResponsePayload(200, response.getData());
-    }
-
-    @Test
-    public void getTrackingTest() throws Exception {
-        instructBackendMock("getTracking", "200");
-        String trackingId = easyRandom.nextObject(String.class);
-        String carrierId = easyRandom.nextObject(String.class);
-
-        ApiResponse<GetTrackingResponse> response = api.getTrackingWithHttpInfo(trackingId, carrierId, null);
-
-        assertEquals(200, response.getStatusCode());
-        assertValidResponsePayload(200, response.getData());
-    }
-
-    @Test
-    public void getUnmanifestedShipmentsTest() throws Exception {
-        instructBackendMock("getUnmanifestedShipments", "200");
-        GetUnmanifestedShipmentsRequest body = easyRandom.nextObject(GetUnmanifestedShipmentsRequest.class);
-
-        ApiResponse<GetUnmanifestedShipmentsResponse> response = api.getUnmanifestedShipmentsWithHttpInfo(body, null);
-
-        assertEquals(200, response.getStatusCode());
-        assertValidResponsePayload(200, response.getData());
-    }
-
-    @Test
-    public void linkCarrierAccountTest() throws Exception {
-        instructBackendMock("linkCarrierAccount", "200");
-        LinkCarrierAccountRequest body = easyRandom.nextObject(LinkCarrierAccountRequest.class);
-        String carrierId = easyRandom.nextObject(String.class);
-
-        ApiResponse<LinkCarrierAccountResponse> response = api.linkCarrierAccountWithHttpInfo(body, carrierId, null);
-
-        assertEquals(200, response.getStatusCode());
-        assertValidResponsePayload(200, response.getData());
-    }
-
-    @Test
-    public void linkCarrierAccount_0Test() throws Exception {
-        instructBackendMock("linkCarrierAccount_0", "200");
-        LinkCarrierAccountRequest body = easyRandom.nextObject(LinkCarrierAccountRequest.class);
-        String carrierId = easyRandom.nextObject(String.class);
-
-        ApiResponse<LinkCarrierAccountResponse> response = api.linkCarrierAccount_0WithHttpInfo(body, carrierId, null);
-
-        assertEquals(200, response.getStatusCode());
-        assertValidResponsePayload(200, response.getData());
-    }
-
-    @Test
-    public void oneClickShipmentTest() throws Exception {
-        instructBackendMock("oneClickShipment", "200");
-        OneClickShipmentRequest body = easyRandom.nextObject(OneClickShipmentRequest.class);
-
-        ApiResponse<OneClickShipmentResponse> response = api.oneClickShipmentWithHttpInfo(body, null);
-
-        assertEquals(200, response.getStatusCode());
-        assertValidResponsePayload(200, response.getData());
-    }
-
-    @Test
-    public void purchaseShipmentTest() throws Exception {
-        instructBackendMock("purchaseShipment", "200");
-        PurchaseShipmentRequest body = easyRandom.nextObject(PurchaseShipmentRequest.class);
-
-        ApiResponse<PurchaseShipmentResponse> response = api.purchaseShipmentWithHttpInfo(body, null, null);
-
-        assertEquals(200, response.getStatusCode());
-        assertValidResponsePayload(200, response.getData());
-    }
-
-    @Test
-    public void submitNdrFeedbackTest() throws Exception {
-        instructBackendMock("submitNdrFeedback", "204");
-        SubmitNdrFeedbackRequest body = easyRandom.nextObject(SubmitNdrFeedbackRequest.class);
-
-        api.submitNdrFeedbackWithHttpInfo(body, null);
-
-    }
-
-    @Test
-    public void unlinkCarrierAccountTest() throws Exception {
-        instructBackendMock("unlinkCarrierAccount", "200");
-        UnlinkCarrierAccountRequest body = easyRandom.nextObject(UnlinkCarrierAccountRequest.class);
-        String carrierId = easyRandom.nextObject(String.class);
-
-        ApiResponse<UnlinkCarrierAccountResponse> response = api.unlinkCarrierAccountWithHttpInfo(body, carrierId, null);
-
-        assertEquals(200, response.getStatusCode());
-        assertValidResponsePayload(200, response.getData());
-    }
-
-
-    private void instructBackendMock(String response, String code) throws Exception {
-        HttpRequest request = HttpRequest.newBuilder()
-              .uri(new URI(endpoint + "/response/" + response + "/code/" + code))
-              .POST(HttpRequest.BodyPublishers.noBody())
-              .build();
-
-        HttpClient.newHttpClient().send(request, BodyHandlers.discarding());
-    }
-
-    private static void assertValidResponsePayload(int statusCode, Object body) {
-        if(statusCode != 204) assertNotNull(body);
-    }
+  private static String endpoint = "http://localhost:3000";
+  private static String authEndpoint = "http://localhost:3000/auth/o2/token";
+  private static LWAAuthorizationCredentials credentials =
+      LWAAuthorizationCredentials.builder()
+          .clientId("clientId")
+          .clientSecret("clientSecret")
+          .refreshToken("refreshToken")
+          .endpoint(authEndpoint)
+          .build();
+
+  private final ShippingApi api =
+      new ShippingApi.Builder().lwaAuthorizationCredentials(credentials).endpoint(endpoint).build();
+
+  private final EasyRandom easyRandom =
+      new EasyRandom(
+          new EasyRandomParameters()
+              .randomize(OffsetDateTime.class, OffsetDateTime::now)
+              .randomize(LocalDate.class, LocalDate::now)
+              .collectionSizeRange(1, 2));
+
+  @Test
+  public void cancelShipmentTest() throws Exception {
+    instructBackendMock("cancelShipment", "200");
+    String shipmentId = easyRandom.nextObject(String.class);
+
+    ApiResponse<CancelShipmentResponse> response = api.cancelShipmentWithHttpInfo(shipmentId, null);
+
+    assertEquals(200, response.getStatusCode());
+    assertValidResponsePayload(200, response.getData());
+  }
+
+  @Test
+  public void createClaimTest() throws Exception {
+    instructBackendMock("createClaim", "201");
+    CreateClaimRequest body = easyRandom.nextObject(CreateClaimRequest.class);
+
+    ApiResponse<CreateClaimResponse> response = api.createClaimWithHttpInfo(body, null);
+
+    assertEquals(201, response.getStatusCode());
+    assertValidResponsePayload(201, response.getData());
+  }
+
+  @Test
+  public void directPurchaseShipmentTest() throws Exception {
+    instructBackendMock("directPurchaseShipment", "200");
+    DirectPurchaseRequest body = easyRandom.nextObject(DirectPurchaseRequest.class);
+
+    ApiResponse<DirectPurchaseResponse> response =
+        api.directPurchaseShipmentWithHttpInfo(body, null, null, null);
+
+    assertEquals(200, response.getStatusCode());
+    assertValidResponsePayload(200, response.getData());
+  }
+
+  @Test
+  public void generateCollectionFormTest() throws Exception {
+    instructBackendMock("generateCollectionForm", "200");
+    GenerateCollectionFormRequest body = easyRandom.nextObject(GenerateCollectionFormRequest.class);
+
+    ApiResponse<GenerateCollectionFormResponse> response =
+        api.generateCollectionFormWithHttpInfo(body, null, null);
+
+    assertEquals(200, response.getStatusCode());
+    assertValidResponsePayload(200, response.getData());
+  }
+
+  @Test
+  public void getAccessPointsTest() throws Exception {
+    instructBackendMock("getAccessPoints", "200");
+    List<String> accessPointTypes =
+        easyRandom.objects(String.class, 2).collect(Collectors.toList());
+    String countryCode = easyRandom.nextObject(String.class);
+    String postalCode = easyRandom.nextObject(String.class);
+
+    ApiResponse<GetAccessPointsResponse> response =
+        api.getAccessPointsWithHttpInfo(accessPointTypes, countryCode, postalCode, null);
+
+    assertEquals(200, response.getStatusCode());
+    assertValidResponsePayload(200, response.getData());
+  }
+
+  @Test
+  public void getAdditionalInputsTest() throws Exception {
+    instructBackendMock("getAdditionalInputs", "200");
+    String requestToken = easyRandom.nextObject(String.class);
+    String rateId = easyRandom.nextObject(String.class);
+
+    ApiResponse<GetAdditionalInputsResponse> response =
+        api.getAdditionalInputsWithHttpInfo(requestToken, rateId, null);
+
+    assertEquals(200, response.getStatusCode());
+    assertValidResponsePayload(200, response.getData());
+  }
+
+  @Test
+  public void getCarrierAccountFormInputsTest() throws Exception {
+    instructBackendMock("getCarrierAccountFormInputs", "200");
+
+    ApiResponse<GetCarrierAccountFormInputsResponse> response =
+        api.getCarrierAccountFormInputsWithHttpInfo(null);
+
+    assertEquals(200, response.getStatusCode());
+    assertValidResponsePayload(200, response.getData());
+  }
+
+  @Test
+  public void getCarrierAccountsTest() throws Exception {
+    instructBackendMock("getCarrierAccounts", "200");
+    GetCarrierAccountsRequest body = easyRandom.nextObject(GetCarrierAccountsRequest.class);
+
+    ApiResponse<GetCarrierAccountsResponse> response =
+        api.getCarrierAccountsWithHttpInfo(body, null);
+
+    assertEquals(200, response.getStatusCode());
+    assertValidResponsePayload(200, response.getData());
+  }
+
+  @Test
+  public void getCollectionFormTest() throws Exception {
+    instructBackendMock("getCollectionForm", "200");
+    String collectionFormId = easyRandom.nextObject(String.class);
+
+    ApiResponse<GetCollectionFormResponse> response =
+        api.getCollectionFormWithHttpInfo(collectionFormId, null);
+
+    assertEquals(200, response.getStatusCode());
+    assertValidResponsePayload(200, response.getData());
+  }
+
+  @Test
+  public void getCollectionFormHistoryTest() throws Exception {
+    instructBackendMock("getCollectionFormHistory", "200");
+    GetCollectionFormHistoryRequest body =
+        easyRandom.nextObject(GetCollectionFormHistoryRequest.class);
+
+    ApiResponse<GetCollectionFormHistoryResponse> response =
+        api.getCollectionFormHistoryWithHttpInfo(body, null);
+
+    assertEquals(200, response.getStatusCode());
+    assertValidResponsePayload(200, response.getData());
+  }
+
+  @Test
+  public void getRatesTest() throws Exception {
+    instructBackendMock("getRates", "200");
+    GetRatesRequest body = easyRandom.nextObject(GetRatesRequest.class);
+
+    ApiResponse<GetRatesResponse> response = api.getRatesWithHttpInfo(body, null);
+
+    assertEquals(200, response.getStatusCode());
+    assertValidResponsePayload(200, response.getData());
+  }
+
+  @Test
+  public void getShipmentDocumentsTest() throws Exception {
+    instructBackendMock("getShipmentDocuments", "200");
+    String shipmentId = easyRandom.nextObject(String.class);
+    String packageClientReferenceId = easyRandom.nextObject(String.class);
+
+    ApiResponse<GetShipmentDocumentsResponse> response =
+        api.getShipmentDocumentsWithHttpInfo(
+            shipmentId, packageClientReferenceId, null, null, null);
+
+    assertEquals(200, response.getStatusCode());
+    assertValidResponsePayload(200, response.getData());
+  }
+
+  @Test
+  public void getTrackingTest() throws Exception {
+    instructBackendMock("getTracking", "200");
+    String trackingId = easyRandom.nextObject(String.class);
+    String carrierId = easyRandom.nextObject(String.class);
+
+    ApiResponse<GetTrackingResponse> response =
+        api.getTrackingWithHttpInfo(trackingId, carrierId, null);
+
+    assertEquals(200, response.getStatusCode());
+    assertValidResponsePayload(200, response.getData());
+  }
+
+  @Test
+  public void getUnmanifestedShipmentsTest() throws Exception {
+    instructBackendMock("getUnmanifestedShipments", "200");
+    GetUnmanifestedShipmentsRequest body =
+        easyRandom.nextObject(GetUnmanifestedShipmentsRequest.class);
+
+    ApiResponse<GetUnmanifestedShipmentsResponse> response =
+        api.getUnmanifestedShipmentsWithHttpInfo(body, null);
+
+    assertEquals(200, response.getStatusCode());
+    assertValidResponsePayload(200, response.getData());
+  }
+
+  @Test
+  public void linkCarrierAccountTest() throws Exception {
+    instructBackendMock("linkCarrierAccount", "200");
+    LinkCarrierAccountRequest body = easyRandom.nextObject(LinkCarrierAccountRequest.class);
+    String carrierId = easyRandom.nextObject(String.class);
+
+    ApiResponse<LinkCarrierAccountResponse> response =
+        api.linkCarrierAccountWithHttpInfo(body, carrierId, null);
+
+    assertEquals(200, response.getStatusCode());
+    assertValidResponsePayload(200, response.getData());
+  }
+
+  @Test
+  public void linkCarrierAccount_0Test() throws Exception {
+    instructBackendMock("linkCarrierAccount_0", "200");
+    LinkCarrierAccountRequest body = easyRandom.nextObject(LinkCarrierAccountRequest.class);
+    String carrierId = easyRandom.nextObject(String.class);
+
+    ApiResponse<LinkCarrierAccountResponse> response =
+        api.linkCarrierAccount_0WithHttpInfo(body, carrierId, null);
+
+    assertEquals(200, response.getStatusCode());
+    assertValidResponsePayload(200, response.getData());
+  }
+
+  @Test
+  public void oneClickShipmentTest() throws Exception {
+    instructBackendMock("oneClickShipment", "200");
+    OneClickShipmentRequest body = easyRandom.nextObject(OneClickShipmentRequest.class);
+
+    ApiResponse<OneClickShipmentResponse> response = api.oneClickShipmentWithHttpInfo(body, null);
+
+    assertEquals(200, response.getStatusCode());
+    assertValidResponsePayload(200, response.getData());
+  }
+
+  @Test
+  public void purchaseShipmentTest() throws Exception {
+    instructBackendMock("purchaseShipment", "200");
+    PurchaseShipmentRequest body = easyRandom.nextObject(PurchaseShipmentRequest.class);
+
+    ApiResponse<PurchaseShipmentResponse> response =
+        api.purchaseShipmentWithHttpInfo(body, null, null);
+
+    assertEquals(200, response.getStatusCode());
+    assertValidResponsePayload(200, response.getData());
+  }
+
+  @Test
+  public void submitNdrFeedbackTest() throws Exception {
+    instructBackendMock("submitNdrFeedback", "204");
+    SubmitNdrFeedbackRequest body = easyRandom.nextObject(SubmitNdrFeedbackRequest.class);
+
+    api.submitNdrFeedbackWithHttpInfo(body, null);
+  }
+
+  @Test
+  public void unlinkCarrierAccountTest() throws Exception {
+    instructBackendMock("unlinkCarrierAccount", "200");
+    UnlinkCarrierAccountRequest body = easyRandom.nextObject(UnlinkCarrierAccountRequest.class);
+    String carrierId = easyRandom.nextObject(String.class);
+
+    ApiResponse<UnlinkCarrierAccountResponse> response =
+        api.unlinkCarrierAccountWithHttpInfo(body, carrierId, null);
+
+    assertEquals(200, response.getStatusCode());
+    assertValidResponsePayload(200, response.getData());
+  }
+
+  private void instructBackendMock(String response, String code) throws Exception {
+    HttpRequest request =
+        HttpRequest.newBuilder()
+            .uri(new URI(endpoint + "/response/" + response + "/code/" + code))
+            .POST(HttpRequest.BodyPublishers.noBody())
+            .build();
+
+    HttpClient.newHttpClient().send(request, BodyHandlers.discarding());
+  }
+
+  private static void assertValidResponsePayload(int statusCode, Object body) {
+    if (statusCode != 204) assertNotNull(body);
+  }
 }
