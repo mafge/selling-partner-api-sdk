@@ -3,7 +3,7 @@
 /**
  * Account.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\sellers\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -63,20 +62,23 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Account';
+    protected static $openAPIModelName = 'Account';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'marketplace_participation_list' => '\SpApi\Model\sellers\v1\MarketplaceParticipation[]',
         'business_type' => 'string',
         'selling_plan' => 'string',
         'business' => '\SpApi\Model\sellers\v1\Business',
-        'primary_contact' => '\SpApi\Model\sellers\v1\PrimaryContact'];
+        'primary_contact' => '\SpApi\Model\sellers\v1\PrimaryContact',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -87,12 +89,13 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'marketplace_participation_list' => null,
         'business_type' => null,
         'selling_plan' => null,
         'business' => null,
-        'primary_contact' => null];
+        'primary_contact' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -103,8 +106,8 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
         'marketplace_participation_list' => false,
         'business_type' => false,
         'selling_plan' => false,
-        'business' => true,
-        'primary_contact' => true,
+        'business' => false,
+        'primary_contact' => false,
     ];
 
     /**
@@ -120,7 +123,7 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'marketplace_participation_list' => 'marketplaceParticipationList',
         'business_type' => 'businessType',
         'selling_plan' => 'sellingPlan',
@@ -133,7 +136,7 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'marketplace_participation_list' => 'setMarketplaceParticipationList',
         'business_type' => 'setBusinessType',
         'selling_plan' => 'setSellingPlan',
@@ -146,7 +149,7 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'marketplace_participation_list' => 'getMarketplaceParticipationList',
         'business_type' => 'getBusinessType',
         'selling_plan' => 'getSellingPlan',
@@ -156,14 +159,16 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -189,16 +194,20 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -222,32 +231,40 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -257,7 +274,7 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getBusinessTypeAllowableValues(): array
+    public function getBusinessTypeAllowableValues()
     {
         return [
             self::BUSINESS_TYPE_CHARITY,
@@ -276,7 +293,7 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getSellingPlanAllowableValues(): array
+    public function getSellingPlanAllowableValues()
     {
         return [
             self::SELLING_PLAN_PROFESSIONAL,
@@ -289,7 +306,7 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -329,15 +346,17 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets marketplace_participation_list.
+     *
+     * @return MarketplaceParticipation[]
      */
-    public function getMarketplaceParticipationList(): array
+    public function getMarketplaceParticipationList()
     {
         return $this->container['marketplace_participation_list'];
     }
@@ -345,9 +364,11 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets marketplace_participation_list.
      *
-     * @param array $marketplace_participation_list list of marketplace participations
+     * @param MarketplaceParticipation[] $marketplace_participation_list list of marketplace participations
+     *
+     * @return self
      */
-    public function setMarketplaceParticipationList(array $marketplace_participation_list): self
+    public function setMarketplaceParticipationList($marketplace_participation_list)
     {
         if (is_null($marketplace_participation_list)) {
             throw new \InvalidArgumentException('non-nullable marketplace_participation_list cannot be null');
@@ -359,8 +380,10 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets business_type.
+     *
+     * @return string
      */
-    public function getBusinessType(): string
+    public function getBusinessType()
     {
         return $this->container['business_type'];
     }
@@ -369,8 +392,10 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets business_type.
      *
      * @param string $business_type the type of business registered for the seller account
+     *
+     * @return self
      */
-    public function setBusinessType(string $business_type): self
+    public function setBusinessType($business_type)
     {
         if (is_null($business_type)) {
             throw new \InvalidArgumentException('non-nullable business_type cannot be null');
@@ -392,8 +417,10 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets selling_plan.
+     *
+     * @return string
      */
-    public function getSellingPlan(): string
+    public function getSellingPlan()
     {
         return $this->container['selling_plan'];
     }
@@ -402,8 +429,10 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets selling_plan.
      *
      * @param string $selling_plan the selling plan details
+     *
+     * @return self
      */
-    public function setSellingPlan(string $selling_plan): self
+    public function setSellingPlan($selling_plan)
     {
         if (is_null($selling_plan)) {
             throw new \InvalidArgumentException('non-nullable selling_plan cannot be null');
@@ -425,8 +454,10 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets business.
+     *
+     * @return null|Business
      */
-    public function getBusiness(): ?Business
+    public function getBusiness()
     {
         return $this->container['business'];
     }
@@ -435,18 +466,13 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets business.
      *
      * @param null|Business $business business
+     *
+     * @return self
      */
-    public function setBusiness(?Business $business): self
+    public function setBusiness($business)
     {
         if (is_null($business)) {
-            array_push($this->openAPINullablesSetToNull, 'business');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('business', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable business cannot be null');
         }
         $this->container['business'] = $business;
 
@@ -455,8 +481,10 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets primary_contact.
+     *
+     * @return null|PrimaryContact
      */
-    public function getPrimaryContact(): ?PrimaryContact
+    public function getPrimaryContact()
     {
         return $this->container['primary_contact'];
     }
@@ -465,18 +493,13 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets primary_contact.
      *
      * @param null|PrimaryContact $primary_contact primary_contact
+     *
+     * @return self
      */
-    public function setPrimaryContact(?PrimaryContact $primary_contact): self
+    public function setPrimaryContact($primary_contact)
     {
         if (is_null($primary_contact)) {
-            array_push($this->openAPINullablesSetToNull, 'primary_contact');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('primary_contact', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable primary_contact cannot be null');
         }
         $this->container['primary_contact'] = $primary_contact;
 
@@ -501,7 +524,7 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -512,7 +535,7 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -540,15 +563,17 @@ class Account implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

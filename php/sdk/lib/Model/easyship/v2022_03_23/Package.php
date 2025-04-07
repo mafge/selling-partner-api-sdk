@@ -3,7 +3,7 @@
 /**
  * Package.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\easyship\v2022_03_23;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Package';
+    protected static $openAPIModelName = 'Package';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'scheduled_package_id' => '\SpApi\Model\easyship\v2022_03_23\ScheduledPackageId',
         'package_dimensions' => '\SpApi\Model\easyship\v2022_03_23\Dimensions',
         'package_weight' => '\SpApi\Model\easyship\v2022_03_23\Weight',
@@ -69,7 +70,8 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
         'package_identifier' => 'string',
         'invoice' => '\SpApi\Model\easyship\v2022_03_23\InvoiceData',
         'package_status' => '\SpApi\Model\easyship\v2022_03_23\PackageStatus',
-        'tracking_details' => '\SpApi\Model\easyship\v2022_03_23\TrackingDetails'];
+        'tracking_details' => '\SpApi\Model\easyship\v2022_03_23\TrackingDetails',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -80,7 +82,7 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'scheduled_package_id' => null,
         'package_dimensions' => null,
         'package_weight' => null,
@@ -89,7 +91,8 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
         'package_identifier' => null,
         'invoice' => null,
         'package_status' => null,
-        'tracking_details' => null];
+        'tracking_details' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -100,12 +103,12 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
         'scheduled_package_id' => false,
         'package_dimensions' => false,
         'package_weight' => false,
-        'package_items' => true,
+        'package_items' => false,
         'package_time_slot' => false,
-        'package_identifier' => true,
-        'invoice' => true,
-        'package_status' => true,
-        'tracking_details' => true,
+        'package_identifier' => false,
+        'invoice' => false,
+        'package_status' => false,
+        'tracking_details' => false,
     ];
 
     /**
@@ -121,7 +124,7 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'scheduled_package_id' => 'scheduledPackageId',
         'package_dimensions' => 'packageDimensions',
         'package_weight' => 'packageWeight',
@@ -138,7 +141,7 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'scheduled_package_id' => 'setScheduledPackageId',
         'package_dimensions' => 'setPackageDimensions',
         'package_weight' => 'setPackageWeight',
@@ -155,7 +158,7 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'scheduled_package_id' => 'getScheduledPackageId',
         'package_dimensions' => 'getPackageDimensions',
         'package_weight' => 'getPackageWeight',
@@ -169,14 +172,16 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -206,16 +211,20 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -239,32 +248,40 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -274,7 +291,7 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -304,15 +321,17 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets scheduled_package_id.
+     *
+     * @return ScheduledPackageId
      */
-    public function getScheduledPackageId(): ScheduledPackageId
+    public function getScheduledPackageId()
     {
         return $this->container['scheduled_package_id'];
     }
@@ -321,8 +340,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets scheduled_package_id.
      *
      * @param ScheduledPackageId $scheduled_package_id scheduled_package_id
+     *
+     * @return self
      */
-    public function setScheduledPackageId(ScheduledPackageId $scheduled_package_id): self
+    public function setScheduledPackageId($scheduled_package_id)
     {
         if (is_null($scheduled_package_id)) {
             throw new \InvalidArgumentException('non-nullable scheduled_package_id cannot be null');
@@ -334,8 +355,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets package_dimensions.
+     *
+     * @return Dimensions
      */
-    public function getPackageDimensions(): Dimensions
+    public function getPackageDimensions()
     {
         return $this->container['package_dimensions'];
     }
@@ -344,8 +367,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets package_dimensions.
      *
      * @param Dimensions $package_dimensions package_dimensions
+     *
+     * @return self
      */
-    public function setPackageDimensions(Dimensions $package_dimensions): self
+    public function setPackageDimensions($package_dimensions)
     {
         if (is_null($package_dimensions)) {
             throw new \InvalidArgumentException('non-nullable package_dimensions cannot be null');
@@ -357,8 +382,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets package_weight.
+     *
+     * @return Weight
      */
-    public function getPackageWeight(): Weight
+    public function getPackageWeight()
     {
         return $this->container['package_weight'];
     }
@@ -367,8 +394,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets package_weight.
      *
      * @param Weight $package_weight package_weight
+     *
+     * @return self
      */
-    public function setPackageWeight(Weight $package_weight): self
+    public function setPackageWeight($package_weight)
     {
         if (is_null($package_weight)) {
             throw new \InvalidArgumentException('non-nullable package_weight cannot be null');
@@ -380,8 +409,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets package_items.
+     *
+     * @return null|Item[]
      */
-    public function getPackageItems(): ?array
+    public function getPackageItems()
     {
         return $this->container['package_items'];
     }
@@ -389,22 +420,17 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets package_items.
      *
-     * @param null|array $package_items a list of items contained in the package
+     * @param null|Item[] $package_items a list of items contained in the package
+     *
+     * @return self
      */
-    public function setPackageItems(?array $package_items): self
+    public function setPackageItems($package_items)
     {
         if (is_null($package_items)) {
-            array_push($this->openAPINullablesSetToNull, 'package_items');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('package_items', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable package_items cannot be null');
         }
 
-        if (!is_null($package_items) && (count($package_items) > 500)) {
+        if (count($package_items) > 500) {
             throw new \InvalidArgumentException('invalid value for $package_items when calling Package., number of items must be less than or equal to 500.');
         }
         $this->container['package_items'] = $package_items;
@@ -414,8 +440,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets package_time_slot.
+     *
+     * @return TimeSlot
      */
-    public function getPackageTimeSlot(): TimeSlot
+    public function getPackageTimeSlot()
     {
         return $this->container['package_time_slot'];
     }
@@ -424,8 +452,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets package_time_slot.
      *
      * @param TimeSlot $package_time_slot package_time_slot
+     *
+     * @return self
      */
-    public function setPackageTimeSlot(TimeSlot $package_time_slot): self
+    public function setPackageTimeSlot($package_time_slot)
     {
         if (is_null($package_time_slot)) {
             throw new \InvalidArgumentException('non-nullable package_time_slot cannot be null');
@@ -437,8 +467,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets package_identifier.
+     *
+     * @return null|string
      */
-    public function getPackageIdentifier(): ?string
+    public function getPackageIdentifier()
     {
         return $this->container['package_identifier'];
     }
@@ -447,18 +479,13 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets package_identifier.
      *
      * @param null|string $package_identifier optional seller-created identifier that is printed on the shipping label to help the seller identify the package
+     *
+     * @return self
      */
-    public function setPackageIdentifier(?string $package_identifier): self
+    public function setPackageIdentifier($package_identifier)
     {
         if (is_null($package_identifier)) {
-            array_push($this->openAPINullablesSetToNull, 'package_identifier');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('package_identifier', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable package_identifier cannot be null');
         }
         $this->container['package_identifier'] = $package_identifier;
 
@@ -467,8 +494,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets invoice.
+     *
+     * @return null|InvoiceData
      */
-    public function getInvoice(): ?InvoiceData
+    public function getInvoice()
     {
         return $this->container['invoice'];
     }
@@ -477,18 +506,13 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets invoice.
      *
      * @param null|InvoiceData $invoice invoice
+     *
+     * @return self
      */
-    public function setInvoice(?InvoiceData $invoice): self
+    public function setInvoice($invoice)
     {
         if (is_null($invoice)) {
-            array_push($this->openAPINullablesSetToNull, 'invoice');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('invoice', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable invoice cannot be null');
         }
         $this->container['invoice'] = $invoice;
 
@@ -497,8 +521,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets package_status.
+     *
+     * @return null|PackageStatus
      */
-    public function getPackageStatus(): ?string
+    public function getPackageStatus()
     {
         return $this->container['package_status'];
     }
@@ -506,19 +532,14 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets package_status.
      *
-     * @param null|string $package_status package_status
+     * @param null|PackageStatus $package_status package_status
+     *
+     * @return self
      */
-    public function setPackageStatus(?string $package_status): self
+    public function setPackageStatus($package_status)
     {
         if (is_null($package_status)) {
-            array_push($this->openAPINullablesSetToNull, 'package_status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('package_status', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable package_status cannot be null');
         }
         $this->container['package_status'] = $package_status;
 
@@ -527,8 +548,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets tracking_details.
+     *
+     * @return null|TrackingDetails
      */
-    public function getTrackingDetails(): ?TrackingDetails
+    public function getTrackingDetails()
     {
         return $this->container['tracking_details'];
     }
@@ -537,18 +560,13 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets tracking_details.
      *
      * @param null|TrackingDetails $tracking_details tracking_details
+     *
+     * @return self
      */
-    public function setTrackingDetails(?TrackingDetails $tracking_details): self
+    public function setTrackingDetails($tracking_details)
     {
         if (is_null($tracking_details)) {
-            array_push($this->openAPINullablesSetToNull, 'tracking_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tracking_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tracking_details cannot be null');
         }
         $this->container['tracking_details'] = $tracking_details;
 
@@ -573,7 +591,7 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -584,7 +602,7 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -612,15 +630,17 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

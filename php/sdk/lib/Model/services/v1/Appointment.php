@@ -3,7 +3,7 @@
 /**
  * Appointment.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\services\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -56,21 +55,24 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Appointment';
+    protected static $openAPIModelName = 'Appointment';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'appointment_id' => 'string',
         'appointment_status' => 'string',
         'appointment_time' => '\SpApi\Model\services\v1\AppointmentTime',
         'assigned_technicians' => '\SpApi\Model\services\v1\Technician[]',
         'rescheduled_appointment_id' => 'string',
-        'poa' => '\SpApi\Model\services\v1\Poa'];
+        'poa' => '\SpApi\Model\services\v1\Poa',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -81,13 +83,14 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'appointment_id' => null,
         'appointment_status' => null,
         'appointment_time' => null,
         'assigned_technicians' => null,
         'rescheduled_appointment_id' => null,
-        'poa' => null];
+        'poa' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -95,12 +98,12 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'appointment_id' => true,
-        'appointment_status' => true,
-        'appointment_time' => true,
-        'assigned_technicians' => true,
-        'rescheduled_appointment_id' => true,
-        'poa' => true,
+        'appointment_id' => false,
+        'appointment_status' => false,
+        'appointment_time' => false,
+        'assigned_technicians' => false,
+        'rescheduled_appointment_id' => false,
+        'poa' => false,
     ];
 
     /**
@@ -116,7 +119,7 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'appointment_id' => 'appointmentId',
         'appointment_status' => 'appointmentStatus',
         'appointment_time' => 'appointmentTime',
@@ -130,7 +133,7 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'appointment_id' => 'setAppointmentId',
         'appointment_status' => 'setAppointmentStatus',
         'appointment_time' => 'setAppointmentTime',
@@ -144,7 +147,7 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'appointment_id' => 'getAppointmentId',
         'appointment_status' => 'getAppointmentStatus',
         'appointment_time' => 'getAppointmentTime',
@@ -155,14 +158,16 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -189,16 +194,20 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -222,32 +231,40 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -257,7 +274,7 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getAppointmentStatusAllowableValues(): array
+    public function getAppointmentStatusAllowableValues()
     {
         return [
             self::APPOINTMENT_STATUS_ACTIVE,
@@ -271,7 +288,7 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -313,15 +330,17 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets appointment_id.
+     *
+     * @return null|string
      */
-    public function getAppointmentId(): ?string
+    public function getAppointmentId()
     {
         return $this->container['appointment_id'];
     }
@@ -330,23 +349,18 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets appointment_id.
      *
      * @param null|string $appointment_id the appointment identifier
+     *
+     * @return self
      */
-    public function setAppointmentId(?string $appointment_id): self
+    public function setAppointmentId($appointment_id)
     {
         if (is_null($appointment_id)) {
-            array_push($this->openAPINullablesSetToNull, 'appointment_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('appointment_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable appointment_id cannot be null');
         }
-        if (!is_null($appointment_id) && (mb_strlen($appointment_id) > 100)) {
+        if (mb_strlen($appointment_id) > 100) {
             throw new \InvalidArgumentException('invalid length for $appointment_id when calling Appointment., must be smaller than or equal to 100.');
         }
-        if (!is_null($appointment_id) && (mb_strlen($appointment_id) < 5)) {
+        if (mb_strlen($appointment_id) < 5) {
             throw new \InvalidArgumentException('invalid length for $appointment_id when calling Appointment., must be bigger than or equal to 5.');
         }
 
@@ -357,8 +371,10 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets appointment_status.
+     *
+     * @return null|string
      */
-    public function getAppointmentStatus(): ?string
+    public function getAppointmentStatus()
     {
         return $this->container['appointment_status'];
     }
@@ -367,21 +383,16 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets appointment_status.
      *
      * @param null|string $appointment_status the status of the appointment
+     *
+     * @return self
      */
-    public function setAppointmentStatus(?string $appointment_status): self
+    public function setAppointmentStatus($appointment_status)
     {
         if (is_null($appointment_status)) {
-            array_push($this->openAPINullablesSetToNull, 'appointment_status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('appointment_status', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable appointment_status cannot be null');
         }
         $allowedValues = $this->getAppointmentStatusAllowableValues();
-        if (!is_null($appointment_status) && !in_array($appointment_status, $allowedValues, true)) {
+        if (!in_array($appointment_status, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'appointment_status', must be one of '%s'",
@@ -397,8 +408,10 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets appointment_time.
+     *
+     * @return null|AppointmentTime
      */
-    public function getAppointmentTime(): ?AppointmentTime
+    public function getAppointmentTime()
     {
         return $this->container['appointment_time'];
     }
@@ -407,18 +420,13 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets appointment_time.
      *
      * @param null|AppointmentTime $appointment_time appointment_time
+     *
+     * @return self
      */
-    public function setAppointmentTime(?AppointmentTime $appointment_time): self
+    public function setAppointmentTime($appointment_time)
     {
         if (is_null($appointment_time)) {
-            array_push($this->openAPINullablesSetToNull, 'appointment_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('appointment_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable appointment_time cannot be null');
         }
         $this->container['appointment_time'] = $appointment_time;
 
@@ -427,8 +435,10 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets assigned_technicians.
+     *
+     * @return null|Technician[]
      */
-    public function getAssignedTechnicians(): ?array
+    public function getAssignedTechnicians()
     {
         return $this->container['assigned_technicians'];
     }
@@ -436,22 +446,17 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets assigned_technicians.
      *
-     * @param null|array $assigned_technicians a list of technicians assigned to the service job
+     * @param null|Technician[] $assigned_technicians a list of technicians assigned to the service job
+     *
+     * @return self
      */
-    public function setAssignedTechnicians(?array $assigned_technicians): self
+    public function setAssignedTechnicians($assigned_technicians)
     {
         if (is_null($assigned_technicians)) {
-            array_push($this->openAPINullablesSetToNull, 'assigned_technicians');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('assigned_technicians', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable assigned_technicians cannot be null');
         }
 
-        if (!is_null($assigned_technicians) && (count($assigned_technicians) < 1)) {
+        if (count($assigned_technicians) < 1) {
             throw new \InvalidArgumentException('invalid length for $assigned_technicians when calling Appointment., number of items must be greater than or equal to 1.');
         }
         $this->container['assigned_technicians'] = $assigned_technicians;
@@ -461,8 +466,10 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets rescheduled_appointment_id.
+     *
+     * @return null|string
      */
-    public function getRescheduledAppointmentId(): ?string
+    public function getRescheduledAppointmentId()
     {
         return $this->container['rescheduled_appointment_id'];
     }
@@ -471,23 +478,18 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets rescheduled_appointment_id.
      *
      * @param null|string $rescheduled_appointment_id the appointment identifier
+     *
+     * @return self
      */
-    public function setRescheduledAppointmentId(?string $rescheduled_appointment_id): self
+    public function setRescheduledAppointmentId($rescheduled_appointment_id)
     {
         if (is_null($rescheduled_appointment_id)) {
-            array_push($this->openAPINullablesSetToNull, 'rescheduled_appointment_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rescheduled_appointment_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable rescheduled_appointment_id cannot be null');
         }
-        if (!is_null($rescheduled_appointment_id) && (mb_strlen($rescheduled_appointment_id) > 100)) {
+        if (mb_strlen($rescheduled_appointment_id) > 100) {
             throw new \InvalidArgumentException('invalid length for $rescheduled_appointment_id when calling Appointment., must be smaller than or equal to 100.');
         }
-        if (!is_null($rescheduled_appointment_id) && (mb_strlen($rescheduled_appointment_id) < 5)) {
+        if (mb_strlen($rescheduled_appointment_id) < 5) {
             throw new \InvalidArgumentException('invalid length for $rescheduled_appointment_id when calling Appointment., must be bigger than or equal to 5.');
         }
 
@@ -498,8 +500,10 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets poa.
+     *
+     * @return null|Poa
      */
-    public function getPoa(): ?Poa
+    public function getPoa()
     {
         return $this->container['poa'];
     }
@@ -508,18 +512,13 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets poa.
      *
      * @param null|Poa $poa poa
+     *
+     * @return self
      */
-    public function setPoa(?Poa $poa): self
+    public function setPoa($poa)
     {
         if (is_null($poa)) {
-            array_push($this->openAPINullablesSetToNull, 'poa');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('poa', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable poa cannot be null');
         }
         $this->container['poa'] = $poa;
 
@@ -544,7 +543,7 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -555,7 +554,7 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -583,15 +582,17 @@ class Appointment implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

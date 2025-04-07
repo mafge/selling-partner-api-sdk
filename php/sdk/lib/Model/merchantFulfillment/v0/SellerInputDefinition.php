@@ -3,7 +3,7 @@
 /**
  * SellerInputDefinition.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\merchantFulfillment\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,22 +51,25 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'SellerInputDefinition';
+    protected static $openAPIModelName = 'SellerInputDefinition';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'is_required' => 'bool',
         'data_type' => 'string',
         'constraints' => '\SpApi\Model\merchantFulfillment\v0\Constraint[]',
         'input_display_text' => 'string',
         'input_target' => '\SpApi\Model\merchantFulfillment\v0\InputTargetType',
         'stored_value' => '\SpApi\Model\merchantFulfillment\v0\AdditionalSellerInput',
-        'restricted_set_values' => 'string[]'];
+        'restricted_set_values' => 'string[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -78,14 +80,15 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'is_required' => null,
         'data_type' => null,
         'constraints' => null,
         'input_display_text' => null,
         'input_target' => null,
         'stored_value' => null,
-        'restricted_set_values' => null];
+        'restricted_set_values' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -97,9 +100,9 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
         'data_type' => false,
         'constraints' => false,
         'input_display_text' => false,
-        'input_target' => true,
+        'input_target' => false,
         'stored_value' => false,
-        'restricted_set_values' => true,
+        'restricted_set_values' => false,
     ];
 
     /**
@@ -115,7 +118,7 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'is_required' => 'IsRequired',
         'data_type' => 'DataType',
         'constraints' => 'Constraints',
@@ -130,7 +133,7 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'is_required' => 'setIsRequired',
         'data_type' => 'setDataType',
         'constraints' => 'setConstraints',
@@ -145,7 +148,7 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'is_required' => 'getIsRequired',
         'data_type' => 'getDataType',
         'constraints' => 'getConstraints',
@@ -157,14 +160,16 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -192,16 +197,20 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -225,32 +234,40 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -260,7 +277,7 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -289,15 +306,17 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets is_required.
+     *
+     * @return bool
      */
-    public function getIsRequired(): bool
+    public function getIsRequired()
     {
         return $this->container['is_required'];
     }
@@ -306,8 +325,10 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets is_required.
      *
      * @param bool $is_required when true, the additional input field is required
+     *
+     * @return self
      */
-    public function setIsRequired(bool $is_required): self
+    public function setIsRequired($is_required)
     {
         if (is_null($is_required)) {
             throw new \InvalidArgumentException('non-nullable is_required cannot be null');
@@ -319,8 +340,10 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets data_type.
+     *
+     * @return string
      */
-    public function getDataType(): string
+    public function getDataType()
     {
         return $this->container['data_type'];
     }
@@ -329,8 +352,10 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets data_type.
      *
      * @param string $data_type the data type of the additional input field
+     *
+     * @return self
      */
-    public function setDataType(string $data_type): self
+    public function setDataType($data_type)
     {
         if (is_null($data_type)) {
             throw new \InvalidArgumentException('non-nullable data_type cannot be null');
@@ -342,8 +367,10 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets constraints.
+     *
+     * @return Constraint[]
      */
-    public function getConstraints(): array
+    public function getConstraints()
     {
         return $this->container['constraints'];
     }
@@ -351,9 +378,11 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Sets constraints.
      *
-     * @param array $constraints list of constraints
+     * @param Constraint[] $constraints list of constraints
+     *
+     * @return self
      */
-    public function setConstraints(array $constraints): self
+    public function setConstraints($constraints)
     {
         if (is_null($constraints)) {
             throw new \InvalidArgumentException('non-nullable constraints cannot be null');
@@ -365,8 +394,10 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets input_display_text.
+     *
+     * @return string
      */
-    public function getInputDisplayText(): string
+    public function getInputDisplayText()
     {
         return $this->container['input_display_text'];
     }
@@ -375,8 +406,10 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets input_display_text.
      *
      * @param string $input_display_text the display text for the additional input field
+     *
+     * @return self
      */
-    public function setInputDisplayText(string $input_display_text): self
+    public function setInputDisplayText($input_display_text)
     {
         if (is_null($input_display_text)) {
             throw new \InvalidArgumentException('non-nullable input_display_text cannot be null');
@@ -388,8 +421,10 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets input_target.
+     *
+     * @return null|InputTargetType
      */
-    public function getInputTarget(): ?string
+    public function getInputTarget()
     {
         return $this->container['input_target'];
     }
@@ -397,19 +432,14 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Sets input_target.
      *
-     * @param null|string $input_target input_target
+     * @param null|InputTargetType $input_target input_target
+     *
+     * @return self
      */
-    public function setInputTarget(?string $input_target): self
+    public function setInputTarget($input_target)
     {
         if (is_null($input_target)) {
-            array_push($this->openAPINullablesSetToNull, 'input_target');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('input_target', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable input_target cannot be null');
         }
         $this->container['input_target'] = $input_target;
 
@@ -418,8 +448,10 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets stored_value.
+     *
+     * @return AdditionalSellerInput
      */
-    public function getStoredValue(): AdditionalSellerInput
+    public function getStoredValue()
     {
         return $this->container['stored_value'];
     }
@@ -428,8 +460,10 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets stored_value.
      *
      * @param AdditionalSellerInput $stored_value stored_value
+     *
+     * @return self
      */
-    public function setStoredValue(AdditionalSellerInput $stored_value): self
+    public function setStoredValue($stored_value)
     {
         if (is_null($stored_value)) {
             throw new \InvalidArgumentException('non-nullable stored_value cannot be null');
@@ -441,8 +475,10 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets restricted_set_values.
+     *
+     * @return null|string[]
      */
-    public function getRestrictedSetValues(): ?array
+    public function getRestrictedSetValues()
     {
         return $this->container['restricted_set_values'];
     }
@@ -450,19 +486,14 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Sets restricted_set_values.
      *
-     * @param null|array $restricted_set_values the set of fixed values in an additional seller input
+     * @param null|string[] $restricted_set_values the set of fixed values in an additional seller input
+     *
+     * @return self
      */
-    public function setRestrictedSetValues(?array $restricted_set_values): self
+    public function setRestrictedSetValues($restricted_set_values)
     {
         if (is_null($restricted_set_values)) {
-            array_push($this->openAPINullablesSetToNull, 'restricted_set_values');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('restricted_set_values', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable restricted_set_values cannot be null');
         }
         $this->container['restricted_set_values'] = $restricted_set_values;
 
@@ -487,7 +518,7 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -498,7 +529,7 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -526,15 +557,17 @@ class SellerInputDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

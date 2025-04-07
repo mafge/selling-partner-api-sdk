@@ -3,7 +3,7 @@
 /**
  * FulfillmentPreview.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'FulfillmentPreview';
+    protected static $openAPIModelName = 'FulfillmentPreview';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'shipping_speed_category' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\ShippingSpeedCategory',
         'scheduled_delivery_info' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\ScheduledDeliveryInfo',
         'is_fulfillable' => 'bool',
@@ -71,7 +72,8 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
         'unfulfillable_preview_items' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\UnfulfillablePreviewItem[]',
         'order_unfulfillable_reasons' => 'string[]',
         'marketplace_id' => 'string',
-        'feature_constraints' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\FeatureSettings[]'];
+        'feature_constraints' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\FeatureSettings[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -82,7 +84,7 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'shipping_speed_category' => null,
         'scheduled_delivery_info' => null,
         'is_fulfillable' => null,
@@ -93,7 +95,8 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
         'unfulfillable_preview_items' => null,
         'order_unfulfillable_reasons' => null,
         'marketplace_id' => null,
-        'feature_constraints' => null];
+        'feature_constraints' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -102,16 +105,16 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
      */
     protected static array $openAPINullables = [
         'shipping_speed_category' => false,
-        'scheduled_delivery_info' => true,
+        'scheduled_delivery_info' => false,
         'is_fulfillable' => false,
         'is_cod_capable' => false,
-        'estimated_shipping_weight' => true,
-        'estimated_fees' => true,
-        'fulfillment_preview_shipments' => true,
-        'unfulfillable_preview_items' => true,
-        'order_unfulfillable_reasons' => true,
+        'estimated_shipping_weight' => false,
+        'estimated_fees' => false,
+        'fulfillment_preview_shipments' => false,
+        'unfulfillable_preview_items' => false,
+        'order_unfulfillable_reasons' => false,
         'marketplace_id' => false,
-        'feature_constraints' => true,
+        'feature_constraints' => false,
     ];
 
     /**
@@ -127,7 +130,7 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'shipping_speed_category' => 'shippingSpeedCategory',
         'scheduled_delivery_info' => 'scheduledDeliveryInfo',
         'is_fulfillable' => 'isFulfillable',
@@ -146,7 +149,7 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'shipping_speed_category' => 'setShippingSpeedCategory',
         'scheduled_delivery_info' => 'setScheduledDeliveryInfo',
         'is_fulfillable' => 'setIsFulfillable',
@@ -165,7 +168,7 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'shipping_speed_category' => 'getShippingSpeedCategory',
         'scheduled_delivery_info' => 'getScheduledDeliveryInfo',
         'is_fulfillable' => 'getIsFulfillable',
@@ -181,14 +184,16 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -220,16 +225,20 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -253,32 +262,40 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -288,7 +305,7 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -314,15 +331,17 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets shipping_speed_category.
+     *
+     * @return ShippingSpeedCategory
      */
-    public function getShippingSpeedCategory(): string
+    public function getShippingSpeedCategory()
     {
         return $this->container['shipping_speed_category'];
     }
@@ -330,9 +349,11 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Sets shipping_speed_category.
      *
-     * @param string $shipping_speed_category shipping_speed_category
+     * @param ShippingSpeedCategory $shipping_speed_category shipping_speed_category
+     *
+     * @return self
      */
-    public function setShippingSpeedCategory(string $shipping_speed_category): self
+    public function setShippingSpeedCategory($shipping_speed_category)
     {
         if (is_null($shipping_speed_category)) {
             throw new \InvalidArgumentException('non-nullable shipping_speed_category cannot be null');
@@ -344,8 +365,10 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets scheduled_delivery_info.
+     *
+     * @return null|ScheduledDeliveryInfo
      */
-    public function getScheduledDeliveryInfo(): ?ScheduledDeliveryInfo
+    public function getScheduledDeliveryInfo()
     {
         return $this->container['scheduled_delivery_info'];
     }
@@ -354,18 +377,13 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets scheduled_delivery_info.
      *
      * @param null|ScheduledDeliveryInfo $scheduled_delivery_info scheduled_delivery_info
+     *
+     * @return self
      */
-    public function setScheduledDeliveryInfo(?ScheduledDeliveryInfo $scheduled_delivery_info): self
+    public function setScheduledDeliveryInfo($scheduled_delivery_info)
     {
         if (is_null($scheduled_delivery_info)) {
-            array_push($this->openAPINullablesSetToNull, 'scheduled_delivery_info');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('scheduled_delivery_info', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable scheduled_delivery_info cannot be null');
         }
         $this->container['scheduled_delivery_info'] = $scheduled_delivery_info;
 
@@ -374,8 +392,10 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets is_fulfillable.
+     *
+     * @return bool
      */
-    public function getIsFulfillable(): bool
+    public function getIsFulfillable()
     {
         return $this->container['is_fulfillable'];
     }
@@ -384,8 +404,10 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets is_fulfillable.
      *
      * @param bool $is_fulfillable when true, this fulfillment order preview is fulfillable
+     *
+     * @return self
      */
-    public function setIsFulfillable(bool $is_fulfillable): self
+    public function setIsFulfillable($is_fulfillable)
     {
         if (is_null($is_fulfillable)) {
             throw new \InvalidArgumentException('non-nullable is_fulfillable cannot be null');
@@ -397,8 +419,10 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets is_cod_capable.
+     *
+     * @return bool
      */
-    public function getIsCodCapable(): bool
+    public function getIsCodCapable()
     {
         return $this->container['is_cod_capable'];
     }
@@ -407,8 +431,10 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets is_cod_capable.
      *
      * @param bool $is_cod_capable when true, this fulfillment order preview is for COD (Cash On Delivery)
+     *
+     * @return self
      */
-    public function setIsCodCapable(bool $is_cod_capable): self
+    public function setIsCodCapable($is_cod_capable)
     {
         if (is_null($is_cod_capable)) {
             throw new \InvalidArgumentException('non-nullable is_cod_capable cannot be null');
@@ -420,8 +446,10 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets estimated_shipping_weight.
+     *
+     * @return null|Weight
      */
-    public function getEstimatedShippingWeight(): ?Weight
+    public function getEstimatedShippingWeight()
     {
         return $this->container['estimated_shipping_weight'];
     }
@@ -430,18 +458,13 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets estimated_shipping_weight.
      *
      * @param null|Weight $estimated_shipping_weight estimated_shipping_weight
+     *
+     * @return self
      */
-    public function setEstimatedShippingWeight(?Weight $estimated_shipping_weight): self
+    public function setEstimatedShippingWeight($estimated_shipping_weight)
     {
         if (is_null($estimated_shipping_weight)) {
-            array_push($this->openAPINullablesSetToNull, 'estimated_shipping_weight');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('estimated_shipping_weight', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable estimated_shipping_weight cannot be null');
         }
         $this->container['estimated_shipping_weight'] = $estimated_shipping_weight;
 
@@ -450,8 +473,10 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets estimated_fees.
+     *
+     * @return null|Fee[]
      */
-    public function getEstimatedFees(): ?array
+    public function getEstimatedFees()
     {
         return $this->container['estimated_fees'];
     }
@@ -459,19 +484,14 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Sets estimated_fees.
      *
-     * @param null|array $estimated_fees an array of fee type and cost pairs
+     * @param null|Fee[] $estimated_fees an array of fee type and cost pairs
+     *
+     * @return self
      */
-    public function setEstimatedFees(?array $estimated_fees): self
+    public function setEstimatedFees($estimated_fees)
     {
         if (is_null($estimated_fees)) {
-            array_push($this->openAPINullablesSetToNull, 'estimated_fees');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('estimated_fees', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable estimated_fees cannot be null');
         }
         $this->container['estimated_fees'] = $estimated_fees;
 
@@ -480,8 +500,10 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets fulfillment_preview_shipments.
+     *
+     * @return null|FulfillmentPreviewShipment[]
      */
-    public function getFulfillmentPreviewShipments(): ?array
+    public function getFulfillmentPreviewShipments()
     {
         return $this->container['fulfillment_preview_shipments'];
     }
@@ -489,19 +511,14 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Sets fulfillment_preview_shipments.
      *
-     * @param null|array $fulfillment_preview_shipments an array of fulfillment preview shipment information
+     * @param null|FulfillmentPreviewShipment[] $fulfillment_preview_shipments an array of fulfillment preview shipment information
+     *
+     * @return self
      */
-    public function setFulfillmentPreviewShipments(?array $fulfillment_preview_shipments): self
+    public function setFulfillmentPreviewShipments($fulfillment_preview_shipments)
     {
         if (is_null($fulfillment_preview_shipments)) {
-            array_push($this->openAPINullablesSetToNull, 'fulfillment_preview_shipments');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fulfillment_preview_shipments', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fulfillment_preview_shipments cannot be null');
         }
         $this->container['fulfillment_preview_shipments'] = $fulfillment_preview_shipments;
 
@@ -510,8 +527,10 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets unfulfillable_preview_items.
+     *
+     * @return null|UnfulfillablePreviewItem[]
      */
-    public function getUnfulfillablePreviewItems(): ?array
+    public function getUnfulfillablePreviewItems()
     {
         return $this->container['unfulfillable_preview_items'];
     }
@@ -519,19 +538,14 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Sets unfulfillable_preview_items.
      *
-     * @param null|array $unfulfillable_preview_items an array of unfulfillable preview item information
+     * @param null|UnfulfillablePreviewItem[] $unfulfillable_preview_items an array of unfulfillable preview item information
+     *
+     * @return self
      */
-    public function setUnfulfillablePreviewItems(?array $unfulfillable_preview_items): self
+    public function setUnfulfillablePreviewItems($unfulfillable_preview_items)
     {
         if (is_null($unfulfillable_preview_items)) {
-            array_push($this->openAPINullablesSetToNull, 'unfulfillable_preview_items');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('unfulfillable_preview_items', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable unfulfillable_preview_items cannot be null');
         }
         $this->container['unfulfillable_preview_items'] = $unfulfillable_preview_items;
 
@@ -540,8 +554,10 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets order_unfulfillable_reasons.
+     *
+     * @return null|string[]
      */
-    public function getOrderUnfulfillableReasons(): ?array
+    public function getOrderUnfulfillableReasons()
     {
         return $this->container['order_unfulfillable_reasons'];
     }
@@ -549,19 +565,14 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Sets order_unfulfillable_reasons.
      *
-     * @param null|array $order_unfulfillable_reasons String list
+     * @param null|string[] $order_unfulfillable_reasons String list
+     *
+     * @return self
      */
-    public function setOrderUnfulfillableReasons(?array $order_unfulfillable_reasons): self
+    public function setOrderUnfulfillableReasons($order_unfulfillable_reasons)
     {
         if (is_null($order_unfulfillable_reasons)) {
-            array_push($this->openAPINullablesSetToNull, 'order_unfulfillable_reasons');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('order_unfulfillable_reasons', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable order_unfulfillable_reasons cannot be null');
         }
         $this->container['order_unfulfillable_reasons'] = $order_unfulfillable_reasons;
 
@@ -570,8 +581,10 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
-    public function getMarketplaceId(): string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -580,8 +593,10 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets marketplace_id.
      *
      * @param string $marketplace_id the marketplace the fulfillment order is placed against
+     *
+     * @return self
      */
-    public function setMarketplaceId(string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
             throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
@@ -593,8 +608,10 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets feature_constraints.
+     *
+     * @return null|FeatureSettings[]
      */
-    public function getFeatureConstraints(): ?array
+    public function getFeatureConstraints()
     {
         return $this->container['feature_constraints'];
     }
@@ -602,19 +619,14 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Sets feature_constraints.
      *
-     * @param null|array $feature_constraints a list of features and their fulfillment policies to apply to the order
+     * @param null|FeatureSettings[] $feature_constraints a list of features and their fulfillment policies to apply to the order
+     *
+     * @return self
      */
-    public function setFeatureConstraints(?array $feature_constraints): self
+    public function setFeatureConstraints($feature_constraints)
     {
         if (is_null($feature_constraints)) {
-            array_push($this->openAPINullablesSetToNull, 'feature_constraints');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('feature_constraints', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable feature_constraints cannot be null');
         }
         $this->container['feature_constraints'] = $feature_constraints;
 
@@ -639,7 +651,7 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -650,7 +662,7 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -678,15 +690,17 @@ class FulfillmentPreview implements ModelInterface, \ArrayAccess, \JsonSerializa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

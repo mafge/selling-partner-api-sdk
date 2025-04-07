@@ -3,7 +3,7 @@
 /**
  * ConfirmShipmentRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\orders\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -54,18 +53,21 @@ class ConfirmShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ConfirmShipmentRequest';
+    protected static $openAPIModelName = 'ConfirmShipmentRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'package_detail' => '\SpApi\Model\orders\v0\PackageDetail',
         'cod_collection_method' => 'string',
-        'marketplace_id' => 'string'];
+        'marketplace_id' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,10 +78,11 @@ class ConfirmShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'package_detail' => null,
         'cod_collection_method' => null,
-        'marketplace_id' => null];
+        'marketplace_id' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -88,7 +91,7 @@ class ConfirmShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeria
      */
     protected static array $openAPINullables = [
         'package_detail' => false,
-        'cod_collection_method' => true,
+        'cod_collection_method' => false,
         'marketplace_id' => false,
     ];
 
@@ -105,7 +108,7 @@ class ConfirmShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'package_detail' => 'packageDetail',
         'cod_collection_method' => 'codCollectionMethod',
         'marketplace_id' => 'marketplaceId',
@@ -116,7 +119,7 @@ class ConfirmShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'package_detail' => 'setPackageDetail',
         'cod_collection_method' => 'setCodCollectionMethod',
         'marketplace_id' => 'setMarketplaceId',
@@ -127,7 +130,7 @@ class ConfirmShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'package_detail' => 'getPackageDetail',
         'cod_collection_method' => 'getCodCollectionMethod',
         'marketplace_id' => 'getMarketplaceId',
@@ -135,14 +138,16 @@ class ConfirmShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -166,16 +171,20 @@ class ConfirmShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -199,32 +208,40 @@ class ConfirmShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -234,7 +251,7 @@ class ConfirmShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return string[]
      */
-    public function getCodCollectionMethodAllowableValues(): array
+    public function getCodCollectionMethodAllowableValues()
     {
         return [
             self::COD_COLLECTION_METHOD_DIRECT_PAYMENT,
@@ -246,7 +263,7 @@ class ConfirmShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -275,15 +292,17 @@ class ConfirmShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets package_detail.
+     *
+     * @return PackageDetail
      */
-    public function getPackageDetail(): PackageDetail
+    public function getPackageDetail()
     {
         return $this->container['package_detail'];
     }
@@ -292,8 +311,10 @@ class ConfirmShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets package_detail.
      *
      * @param PackageDetail $package_detail package_detail
+     *
+     * @return self
      */
-    public function setPackageDetail(PackageDetail $package_detail): self
+    public function setPackageDetail($package_detail)
     {
         if (is_null($package_detail)) {
             throw new \InvalidArgumentException('non-nullable package_detail cannot be null');
@@ -305,8 +326,10 @@ class ConfirmShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets cod_collection_method.
+     *
+     * @return null|string
      */
-    public function getCodCollectionMethod(): ?string
+    public function getCodCollectionMethod()
     {
         return $this->container['cod_collection_method'];
     }
@@ -315,21 +338,16 @@ class ConfirmShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets cod_collection_method.
      *
      * @param null|string $cod_collection_method the COD collection method (only supported in the JP marketplace)
+     *
+     * @return self
      */
-    public function setCodCollectionMethod(?string $cod_collection_method): self
+    public function setCodCollectionMethod($cod_collection_method)
     {
         if (is_null($cod_collection_method)) {
-            array_push($this->openAPINullablesSetToNull, 'cod_collection_method');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('cod_collection_method', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable cod_collection_method cannot be null');
         }
         $allowedValues = $this->getCodCollectionMethodAllowableValues();
-        if (!is_null($cod_collection_method) && !in_array($cod_collection_method, $allowedValues, true)) {
+        if (!in_array($cod_collection_method, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'cod_collection_method', must be one of '%s'",
@@ -345,8 +363,10 @@ class ConfirmShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
-    public function getMarketplaceId(): string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -355,8 +375,10 @@ class ConfirmShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets marketplace_id.
      *
      * @param string $marketplace_id the unobfuscated marketplace identifier
+     *
+     * @return self
      */
-    public function setMarketplaceId(string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
             throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
@@ -384,7 +406,7 @@ class ConfirmShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeria
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -395,7 +417,7 @@ class ConfirmShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeria
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -423,15 +445,17 @@ class ConfirmShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeria
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

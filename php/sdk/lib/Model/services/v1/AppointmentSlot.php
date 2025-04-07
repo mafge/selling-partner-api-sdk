@@ -3,7 +3,7 @@
 /**
  * AppointmentSlot.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\services\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class AppointmentSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'AppointmentSlot';
+    protected static $openAPIModelName = 'AppointmentSlot';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'start_time' => '\DateTime',
         'end_time' => '\DateTime',
-        'capacity' => 'int'];
+        'capacity' => 'int',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class AppointmentSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'start_time' => 'date-time',
         'end_time' => 'date-time',
-        'capacity' => null];
+        'capacity' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class AppointmentSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'start_time' => true,
-        'end_time' => true,
-        'capacity' => true,
+        'start_time' => false,
+        'end_time' => false,
+        'capacity' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class AppointmentSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'start_time' => 'startTime',
         'end_time' => 'endTime',
         'capacity' => 'capacity',
@@ -114,7 +117,7 @@ class AppointmentSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'start_time' => 'setStartTime',
         'end_time' => 'setEndTime',
         'capacity' => 'setCapacity',
@@ -125,7 +128,7 @@ class AppointmentSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'start_time' => 'getStartTime',
         'end_time' => 'getEndTime',
         'capacity' => 'getCapacity',
@@ -133,14 +136,16 @@ class AppointmentSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class AppointmentSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class AppointmentSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class AppointmentSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -249,15 +266,17 @@ class AppointmentSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets start_time.
+     *
+     * @return null|\DateTime
      */
-    public function getStartTime(): ?\DateTime
+    public function getStartTime()
     {
         return $this->container['start_time'];
     }
@@ -266,18 +285,13 @@ class AppointmentSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets start_time.
      *
      * @param null|\DateTime $start_time time window start time in ISO 8601 format
+     *
+     * @return self
      */
-    public function setStartTime(?\DateTime $start_time): self
+    public function setStartTime($start_time)
     {
         if (is_null($start_time)) {
-            array_push($this->openAPINullablesSetToNull, 'start_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('start_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable start_time cannot be null');
         }
         $this->container['start_time'] = $start_time;
 
@@ -286,8 +300,10 @@ class AppointmentSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets end_time.
+     *
+     * @return null|\DateTime
      */
-    public function getEndTime(): ?\DateTime
+    public function getEndTime()
     {
         return $this->container['end_time'];
     }
@@ -296,18 +312,13 @@ class AppointmentSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets end_time.
      *
      * @param null|\DateTime $end_time time window end time in ISO 8601 format
+     *
+     * @return self
      */
-    public function setEndTime(?\DateTime $end_time): self
+    public function setEndTime($end_time)
     {
         if (is_null($end_time)) {
-            array_push($this->openAPINullablesSetToNull, 'end_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('end_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable end_time cannot be null');
         }
         $this->container['end_time'] = $end_time;
 
@@ -316,8 +327,10 @@ class AppointmentSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets capacity.
+     *
+     * @return null|int
      */
-    public function getCapacity(): ?int
+    public function getCapacity()
     {
         return $this->container['capacity'];
     }
@@ -326,21 +339,16 @@ class AppointmentSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets capacity.
      *
      * @param null|int $capacity number of resources for which a slot can be reserved
+     *
+     * @return self
      */
-    public function setCapacity(?int $capacity): self
+    public function setCapacity($capacity)
     {
         if (is_null($capacity)) {
-            array_push($this->openAPINullablesSetToNull, 'capacity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('capacity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable capacity cannot be null');
         }
 
-        if (!is_null($capacity) && ($capacity < 0)) {
+        if ($capacity < 0) {
             throw new \InvalidArgumentException('invalid value for $capacity when calling AppointmentSlot., must be bigger than or equal to 0.');
         }
 
@@ -367,7 +375,7 @@ class AppointmentSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -378,7 +386,7 @@ class AppointmentSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -406,15 +414,17 @@ class AppointmentSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

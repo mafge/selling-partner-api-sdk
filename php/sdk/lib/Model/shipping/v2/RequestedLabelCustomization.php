@@ -3,7 +3,7 @@
 /**
  * RequestedLabelCustomization.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,16 +52,19 @@ class RequestedLabelCustomization implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'RequestedLabelCustomization';
+    protected static $openAPIModelName = 'RequestedLabelCustomization';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
-        'request_attributes' => '\SpApi\Model\shipping\v2\LabelAttribute[]'];
+    protected static $openAPITypes = [
+        'request_attributes' => '\SpApi\Model\shipping\v2\LabelAttribute[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,8 +75,9 @@ class RequestedLabelCustomization implements ModelInterface, \ArrayAccess, \Json
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
-        'request_attributes' => null];
+    protected static $openAPIFormats = [
+        'request_attributes' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -82,7 +85,7 @@ class RequestedLabelCustomization implements ModelInterface, \ArrayAccess, \Json
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'request_attributes' => true,
+        'request_attributes' => false,
     ];
 
     /**
@@ -98,7 +101,7 @@ class RequestedLabelCustomization implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'request_attributes' => 'requestAttributes',
     ];
 
@@ -107,7 +110,7 @@ class RequestedLabelCustomization implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'request_attributes' => 'setRequestAttributes',
     ];
 
@@ -116,20 +119,22 @@ class RequestedLabelCustomization implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'request_attributes' => 'getRequestAttributes',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -151,16 +156,20 @@ class RequestedLabelCustomization implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -184,32 +193,40 @@ class RequestedLabelCustomization implements ModelInterface, \ArrayAccess, \Json
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -219,7 +236,7 @@ class RequestedLabelCustomization implements ModelInterface, \ArrayAccess, \Json
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -230,15 +247,17 @@ class RequestedLabelCustomization implements ModelInterface, \ArrayAccess, \Json
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets request_attributes.
+     *
+     * @return null|LabelAttribute[]
      */
-    public function getRequestAttributes(): ?array
+    public function getRequestAttributes()
     {
         return $this->container['request_attributes'];
     }
@@ -246,19 +265,14 @@ class RequestedLabelCustomization implements ModelInterface, \ArrayAccess, \Json
     /**
      * Sets request_attributes.
      *
-     * @param null|array $request_attributes specify the type of attributes to be added on a label
+     * @param null|LabelAttribute[] $request_attributes specify the type of attributes to be added on a label
+     *
+     * @return self
      */
-    public function setRequestAttributes(?array $request_attributes): self
+    public function setRequestAttributes($request_attributes)
     {
         if (is_null($request_attributes)) {
-            array_push($this->openAPINullablesSetToNull, 'request_attributes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('request_attributes', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable request_attributes cannot be null');
         }
         $this->container['request_attributes'] = $request_attributes;
 
@@ -283,7 +297,7 @@ class RequestedLabelCustomization implements ModelInterface, \ArrayAccess, \Json
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -294,7 +308,7 @@ class RequestedLabelCustomization implements ModelInterface, \ArrayAccess, \Json
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -322,15 +336,17 @@ class RequestedLabelCustomization implements ModelInterface, \ArrayAccess, \Json
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

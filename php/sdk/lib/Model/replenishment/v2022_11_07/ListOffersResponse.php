@@ -3,7 +3,7 @@
 /**
  * ListOffersResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\replenishment\v2022_11_07;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class ListOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ListOffersResponse';
+    protected static $openAPIModelName = 'ListOffersResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'offers' => '\SpApi\Model\replenishment\v2022_11_07\ListOffersResponseOffer[]',
-        'pagination' => '\SpApi\Model\replenishment\v2022_11_07\PaginationResponse'];
+        'pagination' => '\SpApi\Model\replenishment\v2022_11_07\PaginationResponse',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class ListOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'offers' => null,
-        'pagination' => null];
+        'pagination' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class ListOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'offers' => true,
-        'pagination' => true,
+        'offers' => false,
+        'pagination' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class ListOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'offers' => 'offers',
         'pagination' => 'pagination',
     ];
@@ -110,7 +113,7 @@ class ListOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'offers' => 'setOffers',
         'pagination' => 'setPagination',
     ];
@@ -120,21 +123,23 @@ class ListOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'offers' => 'getOffers',
         'pagination' => 'getPagination',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class ListOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class ListOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class ListOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -236,15 +253,17 @@ class ListOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets offers.
+     *
+     * @return null|ListOffersResponseOffer[]
      */
-    public function getOffers(): ?array
+    public function getOffers()
     {
         return $this->container['offers'];
     }
@@ -252,19 +271,14 @@ class ListOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Sets offers.
      *
-     * @param null|array $offers a list of offers
+     * @param null|ListOffersResponseOffer[] $offers a list of offers
+     *
+     * @return self
      */
-    public function setOffers(?array $offers): self
+    public function setOffers($offers)
     {
         if (is_null($offers)) {
-            array_push($this->openAPINullablesSetToNull, 'offers');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('offers', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable offers cannot be null');
         }
         $this->container['offers'] = $offers;
 
@@ -273,8 +287,10 @@ class ListOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets pagination.
+     *
+     * @return null|PaginationResponse
      */
-    public function getPagination(): ?PaginationResponse
+    public function getPagination()
     {
         return $this->container['pagination'];
     }
@@ -283,18 +299,13 @@ class ListOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets pagination.
      *
      * @param null|PaginationResponse $pagination pagination
+     *
+     * @return self
      */
-    public function setPagination(?PaginationResponse $pagination): self
+    public function setPagination($pagination)
     {
         if (is_null($pagination)) {
-            array_push($this->openAPINullablesSetToNull, 'pagination');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('pagination', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable pagination cannot be null');
         }
         $this->container['pagination'] = $pagination;
 
@@ -319,7 +330,7 @@ class ListOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +341,7 @@ class ListOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +369,17 @@ class ListOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

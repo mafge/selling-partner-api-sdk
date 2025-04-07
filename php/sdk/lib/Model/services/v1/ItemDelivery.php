@@ -3,7 +3,7 @@
 /**
  * ItemDelivery.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\services\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class ItemDelivery implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ItemDelivery';
+    protected static $openAPIModelName = 'ItemDelivery';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'estimated_delivery_date' => '\DateTime',
-        'item_delivery_promise' => '\SpApi\Model\services\v1\ItemDeliveryPromise'];
+        'item_delivery_promise' => '\SpApi\Model\services\v1\ItemDeliveryPromise',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class ItemDelivery implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'estimated_delivery_date' => 'date-time',
-        'item_delivery_promise' => null];
+        'item_delivery_promise' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class ItemDelivery implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'estimated_delivery_date' => true,
-        'item_delivery_promise' => true,
+        'estimated_delivery_date' => false,
+        'item_delivery_promise' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class ItemDelivery implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'estimated_delivery_date' => 'estimatedDeliveryDate',
         'item_delivery_promise' => 'itemDeliveryPromise',
     ];
@@ -110,7 +113,7 @@ class ItemDelivery implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'estimated_delivery_date' => 'setEstimatedDeliveryDate',
         'item_delivery_promise' => 'setItemDeliveryPromise',
     ];
@@ -120,21 +123,23 @@ class ItemDelivery implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'estimated_delivery_date' => 'getEstimatedDeliveryDate',
         'item_delivery_promise' => 'getItemDeliveryPromise',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class ItemDelivery implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class ItemDelivery implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class ItemDelivery implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -236,15 +253,17 @@ class ItemDelivery implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets estimated_delivery_date.
+     *
+     * @return null|\DateTime
      */
-    public function getEstimatedDeliveryDate(): ?\DateTime
+    public function getEstimatedDeliveryDate()
     {
         return $this->container['estimated_delivery_date'];
     }
@@ -253,18 +272,13 @@ class ItemDelivery implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets estimated_delivery_date.
      *
      * @param null|\DateTime $estimated_delivery_date The date and time of the latest Estimated Delivery Date (EDD) of all the items with an EDD. In ISO 8601 format.
+     *
+     * @return self
      */
-    public function setEstimatedDeliveryDate(?\DateTime $estimated_delivery_date): self
+    public function setEstimatedDeliveryDate($estimated_delivery_date)
     {
         if (is_null($estimated_delivery_date)) {
-            array_push($this->openAPINullablesSetToNull, 'estimated_delivery_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('estimated_delivery_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable estimated_delivery_date cannot be null');
         }
         $this->container['estimated_delivery_date'] = $estimated_delivery_date;
 
@@ -273,8 +287,10 @@ class ItemDelivery implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets item_delivery_promise.
+     *
+     * @return null|ItemDeliveryPromise
      */
-    public function getItemDeliveryPromise(): ?ItemDeliveryPromise
+    public function getItemDeliveryPromise()
     {
         return $this->container['item_delivery_promise'];
     }
@@ -283,18 +299,13 @@ class ItemDelivery implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets item_delivery_promise.
      *
      * @param null|ItemDeliveryPromise $item_delivery_promise item_delivery_promise
+     *
+     * @return self
      */
-    public function setItemDeliveryPromise(?ItemDeliveryPromise $item_delivery_promise): self
+    public function setItemDeliveryPromise($item_delivery_promise)
     {
         if (is_null($item_delivery_promise)) {
-            array_push($this->openAPINullablesSetToNull, 'item_delivery_promise');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('item_delivery_promise', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable item_delivery_promise cannot be null');
         }
         $this->container['item_delivery_promise'] = $item_delivery_promise;
 
@@ -319,7 +330,7 @@ class ItemDelivery implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +341,7 @@ class ItemDelivery implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +369,17 @@ class ItemDelivery implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

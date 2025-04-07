@@ -3,7 +3,7 @@
 /**
  * GetItemOffersBatchRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,16 +51,19 @@ class GetItemOffersBatchRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetItemOffersBatchRequest';
+    protected static $openAPIModelName = 'GetItemOffersBatchRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
-        'requests' => '\SpApi\Model\pricing\v0\ItemOffersRequest[]'];
+    protected static $openAPITypes = [
+        'requests' => '\SpApi\Model\pricing\v0\ItemOffersRequest[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -72,8 +74,9 @@ class GetItemOffersBatchRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
-        'requests' => null];
+    protected static $openAPIFormats = [
+        'requests' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -81,7 +84,7 @@ class GetItemOffersBatchRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'requests' => true,
+        'requests' => false,
     ];
 
     /**
@@ -97,7 +100,7 @@ class GetItemOffersBatchRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'requests' => 'requests',
     ];
 
@@ -106,7 +109,7 @@ class GetItemOffersBatchRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'requests' => 'setRequests',
     ];
 
@@ -115,20 +118,22 @@ class GetItemOffersBatchRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'requests' => 'getRequests',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -150,16 +155,20 @@ class GetItemOffersBatchRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -183,32 +192,40 @@ class GetItemOffersBatchRequest implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -218,7 +235,7 @@ class GetItemOffersBatchRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -239,15 +256,17 @@ class GetItemOffersBatchRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets requests.
+     *
+     * @return null|ItemOffersRequest[]
      */
-    public function getRequests(): ?array
+    public function getRequests()
     {
         return $this->container['requests'];
     }
@@ -255,25 +274,20 @@ class GetItemOffersBatchRequest implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets requests.
      *
-     * @param null|array $requests a list of `getListingOffers` batched requests to run
+     * @param null|ItemOffersRequest[] $requests a list of `getListingOffers` batched requests to run
+     *
+     * @return self
      */
-    public function setRequests(?array $requests): self
+    public function setRequests($requests)
     {
         if (is_null($requests)) {
-            array_push($this->openAPINullablesSetToNull, 'requests');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('requests', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable requests cannot be null');
         }
 
-        if (!is_null($requests) && (count($requests) > 20)) {
+        if (count($requests) > 20) {
             throw new \InvalidArgumentException('invalid value for $requests when calling GetItemOffersBatchRequest., number of items must be less than or equal to 20.');
         }
-        if (!is_null($requests) && (count($requests) < 1)) {
+        if (count($requests) < 1) {
             throw new \InvalidArgumentException('invalid length for $requests when calling GetItemOffersBatchRequest., number of items must be greater than or equal to 1.');
         }
         $this->container['requests'] = $requests;
@@ -299,7 +313,7 @@ class GetItemOffersBatchRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -310,7 +324,7 @@ class GetItemOffersBatchRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -338,15 +352,17 @@ class GetItemOffersBatchRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

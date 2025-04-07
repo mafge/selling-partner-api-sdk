@@ -3,7 +3,7 @@
 /**
  * CreateFeedSpecification.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\feeds\v2021_06_30;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CreateFeedSpecification';
+    protected static $openAPIModelName = 'CreateFeedSpecification';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'feed_type' => 'string',
         'marketplace_ids' => 'string[]',
         'input_feed_document_id' => 'string',
-        'feed_options' => 'array<string,string>'];
+        'feed_options' => 'array<string,string>',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'feed_type' => null,
         'marketplace_ids' => null,
         'input_feed_document_id' => null,
-        'feed_options' => null];
+        'feed_options' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -90,7 +93,7 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
         'feed_type' => false,
         'marketplace_ids' => false,
         'input_feed_document_id' => false,
-        'feed_options' => true,
+        'feed_options' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'feed_type' => 'feedType',
         'marketplace_ids' => 'marketplaceIds',
         'input_feed_document_id' => 'inputFeedDocumentId',
@@ -118,7 +121,7 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'feed_type' => 'setFeedType',
         'marketplace_ids' => 'setMarketplaceIds',
         'input_feed_document_id' => 'setInputFeedDocumentId',
@@ -130,7 +133,7 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'feed_type' => 'getFeedType',
         'marketplace_ids' => 'getMarketplaceIds',
         'input_feed_document_id' => 'getInputFeedDocumentId',
@@ -139,14 +142,16 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -270,15 +287,17 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets feed_type.
+     *
+     * @return string
      */
-    public function getFeedType(): string
+    public function getFeedType()
     {
         return $this->container['feed_type'];
     }
@@ -287,8 +306,10 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets feed_type.
      *
      * @param string $feed_type the feed type
+     *
+     * @return self
      */
-    public function setFeedType(string $feed_type): self
+    public function setFeedType($feed_type)
     {
         if (is_null($feed_type)) {
             throw new \InvalidArgumentException('non-nullable feed_type cannot be null');
@@ -300,8 +321,10 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets marketplace_ids.
+     *
+     * @return string[]
      */
-    public function getMarketplaceIds(): array
+    public function getMarketplaceIds()
     {
         return $this->container['marketplace_ids'];
     }
@@ -309,9 +332,11 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Sets marketplace_ids.
      *
-     * @param array $marketplace_ids a list of identifiers for marketplaces that you want the feed to be applied to
+     * @param string[] $marketplace_ids a list of identifiers for marketplaces that you want the feed to be applied to
+     *
+     * @return self
      */
-    public function setMarketplaceIds(array $marketplace_ids): self
+    public function setMarketplaceIds($marketplace_ids)
     {
         if (is_null($marketplace_ids)) {
             throw new \InvalidArgumentException('non-nullable marketplace_ids cannot be null');
@@ -330,8 +355,10 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets input_feed_document_id.
+     *
+     * @return string
      */
-    public function getInputFeedDocumentId(): string
+    public function getInputFeedDocumentId()
     {
         return $this->container['input_feed_document_id'];
     }
@@ -340,8 +367,10 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets input_feed_document_id.
      *
      * @param string $input_feed_document_id The document identifier returned by the createFeedDocument operation. Upload the feed document contents before calling the createFeed operation.
+     *
+     * @return self
      */
-    public function setInputFeedDocumentId(string $input_feed_document_id): self
+    public function setInputFeedDocumentId($input_feed_document_id)
     {
         if (is_null($input_feed_document_id)) {
             throw new \InvalidArgumentException('non-nullable input_feed_document_id cannot be null');
@@ -356,7 +385,7 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return null|array<string,string>
      */
-    public function getFeedOptions(): ?array
+    public function getFeedOptions()
     {
         return $this->container['feed_options'];
     }
@@ -365,18 +394,13 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets feed_options.
      *
      * @param null|array<string,string> $feed_options Additional options to control the feed. These vary by feed type.
+     *
+     * @return self
      */
-    public function setFeedOptions(?array $feed_options): self
+    public function setFeedOptions($feed_options)
     {
         if (is_null($feed_options)) {
-            array_push($this->openAPINullablesSetToNull, 'feed_options');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('feed_options', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable feed_options cannot be null');
         }
         $this->container['feed_options'] = $feed_options;
 
@@ -401,7 +425,7 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -412,7 +436,7 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -440,15 +464,17 @@ class CreateFeedSpecification implements ModelInterface, \ArrayAccess, \JsonSeri
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

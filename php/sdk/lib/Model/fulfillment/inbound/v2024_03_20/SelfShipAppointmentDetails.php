@@ -3,7 +3,7 @@
 /**
  * SelfShipAppointmentDetails.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class SelfShipAppointmentDetails implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'SelfShipAppointmentDetails';
+    protected static $openAPIModelName = 'SelfShipAppointmentDetails';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'appointment_id' => 'float',
         'appointment_slot_time' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\AppointmentSlotTime',
-        'appointment_status' => 'string'];
+        'appointment_status' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class SelfShipAppointmentDetails implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'appointment_id' => null,
         'appointment_slot_time' => null,
-        'appointment_status' => null];
+        'appointment_status' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class SelfShipAppointmentDetails implements ModelInterface, \ArrayAccess, \JsonS
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'appointment_id' => true,
-        'appointment_slot_time' => true,
-        'appointment_status' => true,
+        'appointment_id' => false,
+        'appointment_slot_time' => false,
+        'appointment_status' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class SelfShipAppointmentDetails implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'appointment_id' => 'appointmentId',
         'appointment_slot_time' => 'appointmentSlotTime',
         'appointment_status' => 'appointmentStatus',
@@ -114,7 +117,7 @@ class SelfShipAppointmentDetails implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'appointment_id' => 'setAppointmentId',
         'appointment_slot_time' => 'setAppointmentSlotTime',
         'appointment_status' => 'setAppointmentStatus',
@@ -125,7 +128,7 @@ class SelfShipAppointmentDetails implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'appointment_id' => 'getAppointmentId',
         'appointment_slot_time' => 'getAppointmentSlotTime',
         'appointment_status' => 'getAppointmentStatus',
@@ -133,14 +136,16 @@ class SelfShipAppointmentDetails implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class SelfShipAppointmentDetails implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class SelfShipAppointmentDetails implements ModelInterface, \ArrayAccess, \JsonS
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class SelfShipAppointmentDetails implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -253,15 +270,17 @@ class SelfShipAppointmentDetails implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets appointment_id.
+     *
+     * @return null|float
      */
-    public function getAppointmentId(): ?float
+    public function getAppointmentId()
     {
         return $this->container['appointment_id'];
     }
@@ -270,18 +289,13 @@ class SelfShipAppointmentDetails implements ModelInterface, \ArrayAccess, \JsonS
      * Sets appointment_id.
      *
      * @param null|float $appointment_id identifier for appointment
+     *
+     * @return self
      */
-    public function setAppointmentId(?float $appointment_id): self
+    public function setAppointmentId($appointment_id)
     {
         if (is_null($appointment_id)) {
-            array_push($this->openAPINullablesSetToNull, 'appointment_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('appointment_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable appointment_id cannot be null');
         }
         $this->container['appointment_id'] = $appointment_id;
 
@@ -290,8 +304,10 @@ class SelfShipAppointmentDetails implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets appointment_slot_time.
+     *
+     * @return null|AppointmentSlotTime
      */
-    public function getAppointmentSlotTime(): ?AppointmentSlotTime
+    public function getAppointmentSlotTime()
     {
         return $this->container['appointment_slot_time'];
     }
@@ -300,18 +316,13 @@ class SelfShipAppointmentDetails implements ModelInterface, \ArrayAccess, \JsonS
      * Sets appointment_slot_time.
      *
      * @param null|AppointmentSlotTime $appointment_slot_time appointment_slot_time
+     *
+     * @return self
      */
-    public function setAppointmentSlotTime(?AppointmentSlotTime $appointment_slot_time): self
+    public function setAppointmentSlotTime($appointment_slot_time)
     {
         if (is_null($appointment_slot_time)) {
-            array_push($this->openAPINullablesSetToNull, 'appointment_slot_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('appointment_slot_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable appointment_slot_time cannot be null');
         }
         $this->container['appointment_slot_time'] = $appointment_slot_time;
 
@@ -320,8 +331,10 @@ class SelfShipAppointmentDetails implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets appointment_status.
+     *
+     * @return null|string
      */
-    public function getAppointmentStatus(): ?string
+    public function getAppointmentStatus()
     {
         return $this->container['appointment_status'];
     }
@@ -330,23 +343,18 @@ class SelfShipAppointmentDetails implements ModelInterface, \ArrayAccess, \JsonS
      * Sets appointment_status.
      *
      * @param null|string $appointment_status status of the appointment
+     *
+     * @return self
      */
-    public function setAppointmentStatus(?string $appointment_status): self
+    public function setAppointmentStatus($appointment_status)
     {
         if (is_null($appointment_status)) {
-            array_push($this->openAPINullablesSetToNull, 'appointment_status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('appointment_status', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable appointment_status cannot be null');
         }
-        if (!is_null($appointment_status) && (mb_strlen($appointment_status) > 1024)) {
+        if (mb_strlen($appointment_status) > 1024) {
             throw new \InvalidArgumentException('invalid length for $appointment_status when calling SelfShipAppointmentDetails., must be smaller than or equal to 1024.');
         }
-        if (!is_null($appointment_status) && (mb_strlen($appointment_status) < 1)) {
+        if (mb_strlen($appointment_status) < 1) {
             throw new \InvalidArgumentException('invalid length for $appointment_status when calling SelfShipAppointmentDetails., must be bigger than or equal to 1.');
         }
 
@@ -373,7 +381,7 @@ class SelfShipAppointmentDetails implements ModelInterface, \ArrayAccess, \JsonS
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -384,7 +392,7 @@ class SelfShipAppointmentDetails implements ModelInterface, \ArrayAccess, \JsonS
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -412,15 +420,17 @@ class SelfShipAppointmentDetails implements ModelInterface, \ArrayAccess, \JsonS
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

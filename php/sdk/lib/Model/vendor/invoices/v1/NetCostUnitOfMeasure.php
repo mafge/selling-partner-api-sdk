@@ -2,7 +2,7 @@
 /**
  * NetCostUnitOfMeasure
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -27,8 +27,7 @@
  */
 
 namespace SpApi\Model\vendor\invoices\v1;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \SpApi\ObjectSerializer;
 
 /**
  * NetCostUnitOfMeasure Class Doc Comment
@@ -56,7 +55,7 @@ class NetCostUnitOfMeasure
      * Gets allowable values of the enum
      * @return string[]
      */
-    public static function getAllowableEnumValues(): array
+    public static function getAllowableEnumValues()
     {
         return [
             self::POUNDS,

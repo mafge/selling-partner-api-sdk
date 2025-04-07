@@ -3,7 +3,7 @@
 /**
  * BuyerTaxInformation.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\orders\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'BuyerTaxInformation';
+    protected static $openAPIModelName = 'BuyerTaxInformation';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'buyer_legal_company_name' => 'string',
         'buyer_business_address' => 'string',
         'buyer_tax_registration_id' => 'string',
-        'buyer_tax_office' => 'string'];
+        'buyer_tax_office' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'buyer_legal_company_name' => null,
         'buyer_business_address' => null,
         'buyer_tax_registration_id' => null,
-        'buyer_tax_office' => null];
+        'buyer_tax_office' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,10 +90,10 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'buyer_legal_company_name' => true,
-        'buyer_business_address' => true,
-        'buyer_tax_registration_id' => true,
-        'buyer_tax_office' => true,
+        'buyer_legal_company_name' => false,
+        'buyer_business_address' => false,
+        'buyer_tax_registration_id' => false,
+        'buyer_tax_office' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'buyer_legal_company_name' => 'BuyerLegalCompanyName',
         'buyer_business_address' => 'BuyerBusinessAddress',
         'buyer_tax_registration_id' => 'BuyerTaxRegistrationId',
@@ -118,7 +121,7 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'buyer_legal_company_name' => 'setBuyerLegalCompanyName',
         'buyer_business_address' => 'setBuyerBusinessAddress',
         'buyer_tax_registration_id' => 'setBuyerTaxRegistrationId',
@@ -130,7 +133,7 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'buyer_legal_company_name' => 'getBuyerLegalCompanyName',
         'buyer_business_address' => 'getBuyerBusinessAddress',
         'buyer_tax_registration_id' => 'getBuyerTaxRegistrationId',
@@ -139,14 +142,16 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -250,15 +267,17 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets buyer_legal_company_name.
+     *
+     * @return null|string
      */
-    public function getBuyerLegalCompanyName(): ?string
+    public function getBuyerLegalCompanyName()
     {
         return $this->container['buyer_legal_company_name'];
     }
@@ -267,18 +286,13 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets buyer_legal_company_name.
      *
      * @param null|string $buyer_legal_company_name business buyer's company legal name
+     *
+     * @return self
      */
-    public function setBuyerLegalCompanyName(?string $buyer_legal_company_name): self
+    public function setBuyerLegalCompanyName($buyer_legal_company_name)
     {
         if (is_null($buyer_legal_company_name)) {
-            array_push($this->openAPINullablesSetToNull, 'buyer_legal_company_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('buyer_legal_company_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable buyer_legal_company_name cannot be null');
         }
         $this->container['buyer_legal_company_name'] = $buyer_legal_company_name;
 
@@ -287,8 +301,10 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets buyer_business_address.
+     *
+     * @return null|string
      */
-    public function getBuyerBusinessAddress(): ?string
+    public function getBuyerBusinessAddress()
     {
         return $this->container['buyer_business_address'];
     }
@@ -297,18 +313,13 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets buyer_business_address.
      *
      * @param null|string $buyer_business_address business buyer's address
+     *
+     * @return self
      */
-    public function setBuyerBusinessAddress(?string $buyer_business_address): self
+    public function setBuyerBusinessAddress($buyer_business_address)
     {
         if (is_null($buyer_business_address)) {
-            array_push($this->openAPINullablesSetToNull, 'buyer_business_address');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('buyer_business_address', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable buyer_business_address cannot be null');
         }
         $this->container['buyer_business_address'] = $buyer_business_address;
 
@@ -317,8 +328,10 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets buyer_tax_registration_id.
+     *
+     * @return null|string
      */
-    public function getBuyerTaxRegistrationId(): ?string
+    public function getBuyerTaxRegistrationId()
     {
         return $this->container['buyer_tax_registration_id'];
     }
@@ -327,18 +340,13 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets buyer_tax_registration_id.
      *
      * @param null|string $buyer_tax_registration_id business buyer's tax registration ID
+     *
+     * @return self
      */
-    public function setBuyerTaxRegistrationId(?string $buyer_tax_registration_id): self
+    public function setBuyerTaxRegistrationId($buyer_tax_registration_id)
     {
         if (is_null($buyer_tax_registration_id)) {
-            array_push($this->openAPINullablesSetToNull, 'buyer_tax_registration_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('buyer_tax_registration_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable buyer_tax_registration_id cannot be null');
         }
         $this->container['buyer_tax_registration_id'] = $buyer_tax_registration_id;
 
@@ -347,8 +355,10 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets buyer_tax_office.
+     *
+     * @return null|string
      */
-    public function getBuyerTaxOffice(): ?string
+    public function getBuyerTaxOffice()
     {
         return $this->container['buyer_tax_office'];
     }
@@ -357,18 +367,13 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets buyer_tax_office.
      *
      * @param null|string $buyer_tax_office business buyer's tax office
+     *
+     * @return self
      */
-    public function setBuyerTaxOffice(?string $buyer_tax_office): self
+    public function setBuyerTaxOffice($buyer_tax_office)
     {
         if (is_null($buyer_tax_office)) {
-            array_push($this->openAPINullablesSetToNull, 'buyer_tax_office');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('buyer_tax_office', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable buyer_tax_office cannot be null');
         }
         $this->container['buyer_tax_office'] = $buyer_tax_office;
 
@@ -393,7 +398,7 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -404,7 +409,7 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -432,15 +437,17 @@ class BuyerTaxInformation implements ModelInterface, \ArrayAccess, \JsonSerializ
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

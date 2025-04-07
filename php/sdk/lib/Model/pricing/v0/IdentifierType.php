@@ -3,7 +3,7 @@
 /**
  * IdentifierType.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class IdentifierType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'IdentifierType';
+    protected static $openAPIModelName = 'IdentifierType';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'marketplace_asin' => '\SpApi\Model\pricing\v0\ASINIdentifier',
-        'sku_identifier' => '\SpApi\Model\pricing\v0\SellerSKUIdentifier'];
+        'sku_identifier' => '\SpApi\Model\pricing\v0\SellerSKUIdentifier',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class IdentifierType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'marketplace_asin' => null,
-        'sku_identifier' => null];
+        'sku_identifier' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -84,7 +87,7 @@ class IdentifierType implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'marketplace_asin' => false,
-        'sku_identifier' => true,
+        'sku_identifier' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class IdentifierType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'marketplace_asin' => 'MarketplaceASIN',
         'sku_identifier' => 'SKUIdentifier',
     ];
@@ -110,7 +113,7 @@ class IdentifierType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'marketplace_asin' => 'setMarketplaceAsin',
         'sku_identifier' => 'setSkuIdentifier',
     ];
@@ -120,21 +123,23 @@ class IdentifierType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'marketplace_asin' => 'getMarketplaceAsin',
         'sku_identifier' => 'getSkuIdentifier',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class IdentifierType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class IdentifierType implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class IdentifierType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -242,15 +259,17 @@ class IdentifierType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets marketplace_asin.
+     *
+     * @return ASINIdentifier
      */
-    public function getMarketplaceAsin(): ASINIdentifier
+    public function getMarketplaceAsin()
     {
         return $this->container['marketplace_asin'];
     }
@@ -259,8 +278,10 @@ class IdentifierType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets marketplace_asin.
      *
      * @param ASINIdentifier $marketplace_asin marketplace_asin
+     *
+     * @return self
      */
-    public function setMarketplaceAsin(ASINIdentifier $marketplace_asin): self
+    public function setMarketplaceAsin($marketplace_asin)
     {
         if (is_null($marketplace_asin)) {
             throw new \InvalidArgumentException('non-nullable marketplace_asin cannot be null');
@@ -272,8 +293,10 @@ class IdentifierType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets sku_identifier.
+     *
+     * @return null|SellerSKUIdentifier
      */
-    public function getSkuIdentifier(): ?SellerSKUIdentifier
+    public function getSkuIdentifier()
     {
         return $this->container['sku_identifier'];
     }
@@ -282,18 +305,13 @@ class IdentifierType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets sku_identifier.
      *
      * @param null|SellerSKUIdentifier $sku_identifier sku_identifier
+     *
+     * @return self
      */
-    public function setSkuIdentifier(?SellerSKUIdentifier $sku_identifier): self
+    public function setSkuIdentifier($sku_identifier)
     {
         if (is_null($sku_identifier)) {
-            array_push($this->openAPINullablesSetToNull, 'sku_identifier');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sku_identifier', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable sku_identifier cannot be null');
         }
         $this->container['sku_identifier'] = $sku_identifier;
 
@@ -318,7 +336,7 @@ class IdentifierType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -329,7 +347,7 @@ class IdentifierType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -357,15 +375,17 @@ class IdentifierType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

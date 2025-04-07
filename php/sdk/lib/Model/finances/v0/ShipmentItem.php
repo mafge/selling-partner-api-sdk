@@ -3,7 +3,7 @@
 /**
  * ShipmentItem.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ShipmentItem';
+    protected static $openAPIModelName = 'ShipmentItem';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'seller_sku' => 'string',
         'order_item_id' => 'string',
         'order_adjustment_item_id' => 'string',
@@ -73,7 +74,8 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
         'promotion_list' => '\SpApi\Model\finances\v0\Promotion[]',
         'promotion_adjustment_list' => '\SpApi\Model\finances\v0\Promotion[]',
         'cost_of_points_granted' => '\SpApi\Model\finances\v0\Currency',
-        'cost_of_points_returned' => '\SpApi\Model\finances\v0\Currency'];
+        'cost_of_points_returned' => '\SpApi\Model\finances\v0\Currency',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -84,7 +86,7 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'seller_sku' => null,
         'order_item_id' => null,
         'order_adjustment_item_id' => null,
@@ -97,7 +99,8 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
         'promotion_list' => null,
         'promotion_adjustment_list' => null,
         'cost_of_points_granted' => null,
-        'cost_of_points_returned' => null];
+        'cost_of_points_returned' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -105,19 +108,19 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'seller_sku' => true,
-        'order_item_id' => true,
-        'order_adjustment_item_id' => true,
-        'quantity_shipped' => true,
-        'item_charge_list' => true,
-        'item_charge_adjustment_list' => true,
-        'item_fee_list' => true,
-        'item_fee_adjustment_list' => true,
-        'item_tax_withheld_list' => true,
-        'promotion_list' => true,
-        'promotion_adjustment_list' => true,
-        'cost_of_points_granted' => true,
-        'cost_of_points_returned' => true,
+        'seller_sku' => false,
+        'order_item_id' => false,
+        'order_adjustment_item_id' => false,
+        'quantity_shipped' => false,
+        'item_charge_list' => false,
+        'item_charge_adjustment_list' => false,
+        'item_fee_list' => false,
+        'item_fee_adjustment_list' => false,
+        'item_tax_withheld_list' => false,
+        'promotion_list' => false,
+        'promotion_adjustment_list' => false,
+        'cost_of_points_granted' => false,
+        'cost_of_points_returned' => false,
     ];
 
     /**
@@ -133,7 +136,7 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'seller_sku' => 'SellerSKU',
         'order_item_id' => 'OrderItemId',
         'order_adjustment_item_id' => 'OrderAdjustmentItemId',
@@ -154,7 +157,7 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'seller_sku' => 'setSellerSku',
         'order_item_id' => 'setOrderItemId',
         'order_adjustment_item_id' => 'setOrderAdjustmentItemId',
@@ -175,7 +178,7 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'seller_sku' => 'getSellerSku',
         'order_item_id' => 'getOrderItemId',
         'order_adjustment_item_id' => 'getOrderAdjustmentItemId',
@@ -193,14 +196,16 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -234,16 +239,20 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -267,32 +276,40 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -302,7 +319,7 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -313,15 +330,17 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets seller_sku.
+     *
+     * @return null|string
      */
-    public function getSellerSku(): ?string
+    public function getSellerSku()
     {
         return $this->container['seller_sku'];
     }
@@ -330,18 +349,13 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets seller_sku.
      *
      * @param null|string $seller_sku The seller SKU of the item. The seller SKU is qualified by the seller's seller ID, which is included with every call to the Selling Partner API.
+     *
+     * @return self
      */
-    public function setSellerSku(?string $seller_sku): self
+    public function setSellerSku($seller_sku)
     {
         if (is_null($seller_sku)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_sku');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_sku', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_sku cannot be null');
         }
         $this->container['seller_sku'] = $seller_sku;
 
@@ -350,8 +364,10 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets order_item_id.
+     *
+     * @return null|string
      */
-    public function getOrderItemId(): ?string
+    public function getOrderItemId()
     {
         return $this->container['order_item_id'];
     }
@@ -360,18 +376,13 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets order_item_id.
      *
      * @param null|string $order_item_id an Amazon-defined order item identifier
+     *
+     * @return self
      */
-    public function setOrderItemId(?string $order_item_id): self
+    public function setOrderItemId($order_item_id)
     {
         if (is_null($order_item_id)) {
-            array_push($this->openAPINullablesSetToNull, 'order_item_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('order_item_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable order_item_id cannot be null');
         }
         $this->container['order_item_id'] = $order_item_id;
 
@@ -380,8 +391,10 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets order_adjustment_item_id.
+     *
+     * @return null|string
      */
-    public function getOrderAdjustmentItemId(): ?string
+    public function getOrderAdjustmentItemId()
     {
         return $this->container['order_adjustment_item_id'];
     }
@@ -390,18 +403,13 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets order_adjustment_item_id.
      *
      * @param null|string $order_adjustment_item_id an Amazon-defined order adjustment identifier defined for refunds, guarantee claims, and chargeback events
+     *
+     * @return self
      */
-    public function setOrderAdjustmentItemId(?string $order_adjustment_item_id): self
+    public function setOrderAdjustmentItemId($order_adjustment_item_id)
     {
         if (is_null($order_adjustment_item_id)) {
-            array_push($this->openAPINullablesSetToNull, 'order_adjustment_item_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('order_adjustment_item_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable order_adjustment_item_id cannot be null');
         }
         $this->container['order_adjustment_item_id'] = $order_adjustment_item_id;
 
@@ -410,8 +418,10 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets quantity_shipped.
+     *
+     * @return null|int
      */
-    public function getQuantityShipped(): ?int
+    public function getQuantityShipped()
     {
         return $this->container['quantity_shipped'];
     }
@@ -420,18 +430,13 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets quantity_shipped.
      *
      * @param null|int $quantity_shipped the number of items shipped
+     *
+     * @return self
      */
-    public function setQuantityShipped(?int $quantity_shipped): self
+    public function setQuantityShipped($quantity_shipped)
     {
         if (is_null($quantity_shipped)) {
-            array_push($this->openAPINullablesSetToNull, 'quantity_shipped');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('quantity_shipped', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable quantity_shipped cannot be null');
         }
         $this->container['quantity_shipped'] = $quantity_shipped;
 
@@ -440,8 +445,10 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets item_charge_list.
+     *
+     * @return null|ChargeComponent[]
      */
-    public function getItemChargeList(): ?array
+    public function getItemChargeList()
     {
         return $this->container['item_charge_list'];
     }
@@ -449,19 +456,14 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets item_charge_list.
      *
-     * @param null|array $item_charge_list a list of charge information on the seller's account
+     * @param null|ChargeComponent[] $item_charge_list a list of charge information on the seller's account
+     *
+     * @return self
      */
-    public function setItemChargeList(?array $item_charge_list): self
+    public function setItemChargeList($item_charge_list)
     {
         if (is_null($item_charge_list)) {
-            array_push($this->openAPINullablesSetToNull, 'item_charge_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('item_charge_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable item_charge_list cannot be null');
         }
         $this->container['item_charge_list'] = $item_charge_list;
 
@@ -470,8 +472,10 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets item_charge_adjustment_list.
+     *
+     * @return null|ChargeComponent[]
      */
-    public function getItemChargeAdjustmentList(): ?array
+    public function getItemChargeAdjustmentList()
     {
         return $this->container['item_charge_adjustment_list'];
     }
@@ -479,19 +483,14 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets item_charge_adjustment_list.
      *
-     * @param null|array $item_charge_adjustment_list a list of charge information on the seller's account
+     * @param null|ChargeComponent[] $item_charge_adjustment_list a list of charge information on the seller's account
+     *
+     * @return self
      */
-    public function setItemChargeAdjustmentList(?array $item_charge_adjustment_list): self
+    public function setItemChargeAdjustmentList($item_charge_adjustment_list)
     {
         if (is_null($item_charge_adjustment_list)) {
-            array_push($this->openAPINullablesSetToNull, 'item_charge_adjustment_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('item_charge_adjustment_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable item_charge_adjustment_list cannot be null');
         }
         $this->container['item_charge_adjustment_list'] = $item_charge_adjustment_list;
 
@@ -500,8 +499,10 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets item_fee_list.
+     *
+     * @return null|FeeComponent[]
      */
-    public function getItemFeeList(): ?array
+    public function getItemFeeList()
     {
         return $this->container['item_fee_list'];
     }
@@ -509,19 +510,14 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets item_fee_list.
      *
-     * @param null|array $item_fee_list a list of fee component information
+     * @param null|FeeComponent[] $item_fee_list a list of fee component information
+     *
+     * @return self
      */
-    public function setItemFeeList(?array $item_fee_list): self
+    public function setItemFeeList($item_fee_list)
     {
         if (is_null($item_fee_list)) {
-            array_push($this->openAPINullablesSetToNull, 'item_fee_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('item_fee_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable item_fee_list cannot be null');
         }
         $this->container['item_fee_list'] = $item_fee_list;
 
@@ -530,8 +526,10 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets item_fee_adjustment_list.
+     *
+     * @return null|FeeComponent[]
      */
-    public function getItemFeeAdjustmentList(): ?array
+    public function getItemFeeAdjustmentList()
     {
         return $this->container['item_fee_adjustment_list'];
     }
@@ -539,19 +537,14 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets item_fee_adjustment_list.
      *
-     * @param null|array $item_fee_adjustment_list a list of fee component information
+     * @param null|FeeComponent[] $item_fee_adjustment_list a list of fee component information
+     *
+     * @return self
      */
-    public function setItemFeeAdjustmentList(?array $item_fee_adjustment_list): self
+    public function setItemFeeAdjustmentList($item_fee_adjustment_list)
     {
         if (is_null($item_fee_adjustment_list)) {
-            array_push($this->openAPINullablesSetToNull, 'item_fee_adjustment_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('item_fee_adjustment_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable item_fee_adjustment_list cannot be null');
         }
         $this->container['item_fee_adjustment_list'] = $item_fee_adjustment_list;
 
@@ -560,8 +553,10 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets item_tax_withheld_list.
+     *
+     * @return null|TaxWithheldComponent[]
      */
-    public function getItemTaxWithheldList(): ?array
+    public function getItemTaxWithheldList()
     {
         return $this->container['item_tax_withheld_list'];
     }
@@ -569,19 +564,14 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets item_tax_withheld_list.
      *
-     * @param null|array $item_tax_withheld_list a list of information about taxes withheld
+     * @param null|TaxWithheldComponent[] $item_tax_withheld_list a list of information about taxes withheld
+     *
+     * @return self
      */
-    public function setItemTaxWithheldList(?array $item_tax_withheld_list): self
+    public function setItemTaxWithheldList($item_tax_withheld_list)
     {
         if (is_null($item_tax_withheld_list)) {
-            array_push($this->openAPINullablesSetToNull, 'item_tax_withheld_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('item_tax_withheld_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable item_tax_withheld_list cannot be null');
         }
         $this->container['item_tax_withheld_list'] = $item_tax_withheld_list;
 
@@ -590,8 +580,10 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets promotion_list.
+     *
+     * @return null|Promotion[]
      */
-    public function getPromotionList(): ?array
+    public function getPromotionList()
     {
         return $this->container['promotion_list'];
     }
@@ -599,19 +591,14 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets promotion_list.
      *
-     * @param null|array $promotion_list a list of promotions
+     * @param null|Promotion[] $promotion_list a list of promotions
+     *
+     * @return self
      */
-    public function setPromotionList(?array $promotion_list): self
+    public function setPromotionList($promotion_list)
     {
         if (is_null($promotion_list)) {
-            array_push($this->openAPINullablesSetToNull, 'promotion_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('promotion_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable promotion_list cannot be null');
         }
         $this->container['promotion_list'] = $promotion_list;
 
@@ -620,8 +607,10 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets promotion_adjustment_list.
+     *
+     * @return null|Promotion[]
      */
-    public function getPromotionAdjustmentList(): ?array
+    public function getPromotionAdjustmentList()
     {
         return $this->container['promotion_adjustment_list'];
     }
@@ -629,19 +618,14 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets promotion_adjustment_list.
      *
-     * @param null|array $promotion_adjustment_list a list of promotions
+     * @param null|Promotion[] $promotion_adjustment_list a list of promotions
+     *
+     * @return self
      */
-    public function setPromotionAdjustmentList(?array $promotion_adjustment_list): self
+    public function setPromotionAdjustmentList($promotion_adjustment_list)
     {
         if (is_null($promotion_adjustment_list)) {
-            array_push($this->openAPINullablesSetToNull, 'promotion_adjustment_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('promotion_adjustment_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable promotion_adjustment_list cannot be null');
         }
         $this->container['promotion_adjustment_list'] = $promotion_adjustment_list;
 
@@ -650,8 +634,10 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets cost_of_points_granted.
+     *
+     * @return null|Currency
      */
-    public function getCostOfPointsGranted(): ?Currency
+    public function getCostOfPointsGranted()
     {
         return $this->container['cost_of_points_granted'];
     }
@@ -660,18 +646,13 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets cost_of_points_granted.
      *
      * @param null|Currency $cost_of_points_granted cost_of_points_granted
+     *
+     * @return self
      */
-    public function setCostOfPointsGranted(?Currency $cost_of_points_granted): self
+    public function setCostOfPointsGranted($cost_of_points_granted)
     {
         if (is_null($cost_of_points_granted)) {
-            array_push($this->openAPINullablesSetToNull, 'cost_of_points_granted');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('cost_of_points_granted', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable cost_of_points_granted cannot be null');
         }
         $this->container['cost_of_points_granted'] = $cost_of_points_granted;
 
@@ -680,8 +661,10 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets cost_of_points_returned.
+     *
+     * @return null|Currency
      */
-    public function getCostOfPointsReturned(): ?Currency
+    public function getCostOfPointsReturned()
     {
         return $this->container['cost_of_points_returned'];
     }
@@ -690,18 +673,13 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets cost_of_points_returned.
      *
      * @param null|Currency $cost_of_points_returned cost_of_points_returned
+     *
+     * @return self
      */
-    public function setCostOfPointsReturned(?Currency $cost_of_points_returned): self
+    public function setCostOfPointsReturned($cost_of_points_returned)
     {
         if (is_null($cost_of_points_returned)) {
-            array_push($this->openAPINullablesSetToNull, 'cost_of_points_returned');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('cost_of_points_returned', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable cost_of_points_returned cannot be null');
         }
         $this->container['cost_of_points_returned'] = $cost_of_points_returned;
 
@@ -726,7 +704,7 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -737,7 +715,7 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -765,15 +743,17 @@ class ShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

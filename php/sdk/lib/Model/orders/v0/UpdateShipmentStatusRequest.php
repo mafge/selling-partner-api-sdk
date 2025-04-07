@@ -3,7 +3,7 @@
 /**
  * UpdateShipmentStatusRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\orders\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class UpdateShipmentStatusRequest implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'UpdateShipmentStatusRequest';
+    protected static $openAPIModelName = 'UpdateShipmentStatusRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'marketplace_id' => 'string',
         'shipment_status' => '\SpApi\Model\orders\v0\ShipmentStatus',
-        'order_items' => '\SpApi\Model\orders\v0\OrderItemsInner[]'];
+        'order_items' => '\SpApi\Model\orders\v0\OrderItemsInner[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class UpdateShipmentStatusRequest implements ModelInterface, \ArrayAccess, \Json
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'marketplace_id' => null,
         'shipment_status' => null,
-        'order_items' => null];
+        'order_items' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,7 +90,7 @@ class UpdateShipmentStatusRequest implements ModelInterface, \ArrayAccess, \Json
     protected static array $openAPINullables = [
         'marketplace_id' => false,
         'shipment_status' => false,
-        'order_items' => true,
+        'order_items' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class UpdateShipmentStatusRequest implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'marketplace_id' => 'marketplaceId',
         'shipment_status' => 'shipmentStatus',
         'order_items' => 'orderItems',
@@ -114,7 +117,7 @@ class UpdateShipmentStatusRequest implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
         'shipment_status' => 'setShipmentStatus',
         'order_items' => 'setOrderItems',
@@ -125,7 +128,7 @@ class UpdateShipmentStatusRequest implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
         'shipment_status' => 'getShipmentStatus',
         'order_items' => 'getOrderItems',
@@ -133,14 +136,16 @@ class UpdateShipmentStatusRequest implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class UpdateShipmentStatusRequest implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class UpdateShipmentStatusRequest implements ModelInterface, \ArrayAccess, \Json
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class UpdateShipmentStatusRequest implements ModelInterface, \ArrayAccess, \Json
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -252,15 +269,17 @@ class UpdateShipmentStatusRequest implements ModelInterface, \ArrayAccess, \Json
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
-    public function getMarketplaceId(): string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -269,8 +288,10 @@ class UpdateShipmentStatusRequest implements ModelInterface, \ArrayAccess, \Json
      * Sets marketplace_id.
      *
      * @param string $marketplace_id the unobfuscated marketplace identifier
+     *
+     * @return self
      */
-    public function setMarketplaceId(string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
             throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
@@ -282,8 +303,10 @@ class UpdateShipmentStatusRequest implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Gets shipment_status.
+     *
+     * @return ShipmentStatus
      */
-    public function getShipmentStatus(): string
+    public function getShipmentStatus()
     {
         return $this->container['shipment_status'];
     }
@@ -291,9 +314,11 @@ class UpdateShipmentStatusRequest implements ModelInterface, \ArrayAccess, \Json
     /**
      * Sets shipment_status.
      *
-     * @param string $shipment_status shipment_status
+     * @param ShipmentStatus $shipment_status shipment_status
+     *
+     * @return self
      */
-    public function setShipmentStatus(string $shipment_status): self
+    public function setShipmentStatus($shipment_status)
     {
         if (is_null($shipment_status)) {
             throw new \InvalidArgumentException('non-nullable shipment_status cannot be null');
@@ -305,8 +330,10 @@ class UpdateShipmentStatusRequest implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Gets order_items.
+     *
+     * @return null|OrderItemsInner[]
      */
-    public function getOrderItems(): ?array
+    public function getOrderItems()
     {
         return $this->container['order_items'];
     }
@@ -314,19 +341,14 @@ class UpdateShipmentStatusRequest implements ModelInterface, \ArrayAccess, \Json
     /**
      * Sets order_items.
      *
-     * @param null|array $order_items for partial shipment status updates, the list of order items and quantities to be updated
+     * @param null|OrderItemsInner[] $order_items for partial shipment status updates, the list of order items and quantities to be updated
+     *
+     * @return self
      */
-    public function setOrderItems(?array $order_items): self
+    public function setOrderItems($order_items)
     {
         if (is_null($order_items)) {
-            array_push($this->openAPINullablesSetToNull, 'order_items');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('order_items', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable order_items cannot be null');
         }
         $this->container['order_items'] = $order_items;
 
@@ -351,7 +373,7 @@ class UpdateShipmentStatusRequest implements ModelInterface, \ArrayAccess, \Json
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -362,7 +384,7 @@ class UpdateShipmentStatusRequest implements ModelInterface, \ArrayAccess, \Json
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -390,15 +412,17 @@ class UpdateShipmentStatusRequest implements ModelInterface, \ArrayAccess, \Json
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

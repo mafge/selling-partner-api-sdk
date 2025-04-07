@@ -2,7 +2,7 @@
 /**
  * InnerContainersDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * InnerContainersDetails Class Doc Comment
@@ -52,16 +50,17 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'InnerContainersDetails';
+    protected static $openAPIModelName = 'InnerContainersDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'container_count' => 'int',
-             'container_sequence_numbers' => '\SpApi\Model\vendor\shipments\v1\ContainerSequenceNumbers[]'    ];
+    protected static $openAPITypes = [
+        'container_count' => 'int',
+        'container_sequence_numbers' => '\SpApi\Model\vendor\shipments\v1\ContainerSequenceNumbers[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,9 +69,10 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'container_count' => null,
-            'container_sequence_numbers' => null    ];
+    protected static $openAPIFormats = [
+        'container_count' => null,
+        'container_sequence_numbers' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -80,8 +80,8 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'container_count' => true,
-        'container_sequence_numbers' => true
+        'container_count' => false,
+        'container_sequence_numbers' => false
     ];
 
     /**
@@ -96,7 +96,7 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -106,7 +106,7 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -169,10 +169,9 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'container_count' => 'containerCount',
-                'container_sequence_numbers' => 'containerSequenceNumbers'
-        
+        'container_sequence_numbers' => 'containerSequenceNumbers'
     ];
 
     /**
@@ -180,7 +179,7 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'container_count' => 'setContainerCount',
         'container_sequence_numbers' => 'setContainerSequenceNumbers'
     ];
@@ -190,7 +189,7 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'container_count' => 'getContainerCount',
         'container_sequence_numbers' => 'getContainerSequenceNumbers'
     ];
@@ -201,7 +200,7 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -211,7 +210,7 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -221,7 +220,7 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -231,7 +230,7 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -240,17 +239,17 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('container_count', $data ?? [], null);
         $this->setIfExists('container_sequence_numbers', $data ?? [], null);
@@ -279,7 +278,7 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -292,7 +291,7 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -303,7 +302,7 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return int|null
      */
-    public function getContainerCount(): ?int
+    public function getContainerCount()
     {
         return $this->container['container_count'];
     }
@@ -315,17 +314,10 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setContainerCount(?int $container_count): self
+    public function setContainerCount($container_count)
     {
         if (is_null($container_count)) {
-            array_push($this->openAPINullablesSetToNull, 'container_count');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('container_count', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable container_count cannot be null');
         }
         $this->container['container_count'] = $container_count;
 
@@ -335,9 +327,9 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets container_sequence_numbers
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\shipments\v1\ContainerSequenceNumbers[]|null
      */
-    public function getContainerSequenceNumbers(): ?array
+    public function getContainerSequenceNumbers()
     {
         return $this->container['container_sequence_numbers'];
     }
@@ -345,28 +337,19 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets container_sequence_numbers
      *
-     * @param array|null $container_sequence_numbers Container sequence numbers that are involved in this shipment.
+     * @param \SpApi\Model\vendor\shipments\v1\ContainerSequenceNumbers[]|null $container_sequence_numbers Container sequence numbers that are involved in this shipment.
      *
      * @return self
      */
-    public function setContainerSequenceNumbers(?array $container_sequence_numbers): self
+    public function setContainerSequenceNumbers($container_sequence_numbers)
     {
         if (is_null($container_sequence_numbers)) {
-            array_push($this->openAPINullablesSetToNull, 'container_sequence_numbers');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('container_sequence_numbers', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable container_sequence_numbers cannot be null');
         }
         $this->container['container_sequence_numbers'] = $container_sequence_numbers;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -387,7 +370,7 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -400,7 +383,7 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -429,7 +412,7 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -452,7 +435,7 @@ class InnerContainersDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * OrderMetricsInterval.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\sales\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'OrderMetricsInterval';
+    protected static $openAPIModelName = 'OrderMetricsInterval';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'interval' => 'string',
         'unit_count' => 'int',
         'order_item_count' => 'int',
         'order_count' => 'int',
         'average_unit_price' => '\SpApi\Model\sales\v1\Money',
-        'total_sales' => '\SpApi\Model\sales\v1\Money'];
+        'total_sales' => '\SpApi\Model\sales\v1\Money',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'interval' => null,
         'unit_count' => null,
         'order_item_count' => null,
         'order_count' => null,
         'average_unit_price' => null,
-        'total_sales' => null];
+        'total_sales' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -112,7 +115,7 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'interval' => 'interval',
         'unit_count' => 'unitCount',
         'order_item_count' => 'orderItemCount',
@@ -126,7 +129,7 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'interval' => 'setInterval',
         'unit_count' => 'setUnitCount',
         'order_item_count' => 'setOrderItemCount',
@@ -140,7 +143,7 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'interval' => 'getInterval',
         'unit_count' => 'getUnitCount',
         'order_item_count' => 'getOrderItemCount',
@@ -151,14 +154,16 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -285,15 +302,17 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets interval.
+     *
+     * @return string
      */
-    public function getInterval(): string
+    public function getInterval()
     {
         return $this->container['interval'];
     }
@@ -302,8 +321,10 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets interval.
      *
      * @param string $interval The interval of time based on requested granularity (ex. Hour, Day, etc.) If this is the first or the last interval from the list, it might contain incomplete data if the requested interval doesn't align with the requested granularity (ex. request interval 2018-09-01T02:00:00Z--2018-09-04T19:00:00Z and granularity day will result in Sept 1st UTC day and Sept 4th UTC days having partial data).
+     *
+     * @return self
      */
-    public function setInterval(string $interval): self
+    public function setInterval($interval)
     {
         if (is_null($interval)) {
             throw new \InvalidArgumentException('non-nullable interval cannot be null');
@@ -315,8 +336,10 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets unit_count.
+     *
+     * @return int
      */
-    public function getUnitCount(): int
+    public function getUnitCount()
     {
         return $this->container['unit_count'];
     }
@@ -325,8 +348,10 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets unit_count.
      *
      * @param int $unit_count the number of units in orders based on the specified filters
+     *
+     * @return self
      */
-    public function setUnitCount(int $unit_count): self
+    public function setUnitCount($unit_count)
     {
         if (is_null($unit_count)) {
             throw new \InvalidArgumentException('non-nullable unit_count cannot be null');
@@ -338,8 +363,10 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets order_item_count.
+     *
+     * @return int
      */
-    public function getOrderItemCount(): int
+    public function getOrderItemCount()
     {
         return $this->container['order_item_count'];
     }
@@ -348,8 +375,10 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets order_item_count.
      *
      * @param int $order_item_count the number of order items based on the specified filters
+     *
+     * @return self
      */
-    public function setOrderItemCount(int $order_item_count): self
+    public function setOrderItemCount($order_item_count)
     {
         if (is_null($order_item_count)) {
             throw new \InvalidArgumentException('non-nullable order_item_count cannot be null');
@@ -361,8 +390,10 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets order_count.
+     *
+     * @return int
      */
-    public function getOrderCount(): int
+    public function getOrderCount()
     {
         return $this->container['order_count'];
     }
@@ -371,8 +402,10 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets order_count.
      *
      * @param int $order_count the number of orders based on the specified filters
+     *
+     * @return self
      */
-    public function setOrderCount(int $order_count): self
+    public function setOrderCount($order_count)
     {
         if (is_null($order_count)) {
             throw new \InvalidArgumentException('non-nullable order_count cannot be null');
@@ -384,8 +417,10 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets average_unit_price.
+     *
+     * @return Money
      */
-    public function getAverageUnitPrice(): Money
+    public function getAverageUnitPrice()
     {
         return $this->container['average_unit_price'];
     }
@@ -394,8 +429,10 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets average_unit_price.
      *
      * @param Money $average_unit_price average_unit_price
+     *
+     * @return self
      */
-    public function setAverageUnitPrice(Money $average_unit_price): self
+    public function setAverageUnitPrice($average_unit_price)
     {
         if (is_null($average_unit_price)) {
             throw new \InvalidArgumentException('non-nullable average_unit_price cannot be null');
@@ -407,8 +444,10 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets total_sales.
+     *
+     * @return Money
      */
-    public function getTotalSales(): Money
+    public function getTotalSales()
     {
         return $this->container['total_sales'];
     }
@@ -417,8 +456,10 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets total_sales.
      *
      * @param Money $total_sales total_sales
+     *
+     * @return self
      */
-    public function setTotalSales(Money $total_sales): self
+    public function setTotalSales($total_sales)
     {
         if (is_null($total_sales)) {
             throw new \InvalidArgumentException('non-nullable total_sales cannot be null');
@@ -446,7 +487,7 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -457,7 +498,7 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -485,15 +526,17 @@ class OrderMetricsInterval implements ModelInterface, \ArrayAccess, \JsonSeriali
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * CompetitiveSummaryRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v2022_05_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CompetitiveSummaryRequest';
+    protected static $openAPIModelName = 'CompetitiveSummaryRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'asin' => 'string',
         'marketplace_id' => 'string',
         'included_data' => '\SpApi\Model\pricing\v2022_05_01\CompetitiveSummaryIncludedData[]',
         'lowest_priced_offers_inputs' => '\SpApi\Model\pricing\v2022_05_01\LowestPricedOffersInput[]',
         'method' => '\SpApi\Model\pricing\v2022_05_01\HttpMethod',
-        'uri' => 'string'];
+        'uri' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'asin' => null,
         'marketplace_id' => null,
         'included_data' => null,
         'lowest_priced_offers_inputs' => null,
         'method' => null,
-        'uri' => null];
+        'uri' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -94,7 +97,7 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
         'asin' => false,
         'marketplace_id' => false,
         'included_data' => false,
-        'lowest_priced_offers_inputs' => true,
+        'lowest_priced_offers_inputs' => false,
         'method' => false,
         'uri' => false,
     ];
@@ -112,7 +115,7 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'asin' => 'asin',
         'marketplace_id' => 'marketplaceId',
         'included_data' => 'includedData',
@@ -126,7 +129,7 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'asin' => 'setAsin',
         'marketplace_id' => 'setMarketplaceId',
         'included_data' => 'setIncludedData',
@@ -140,7 +143,7 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'asin' => 'getAsin',
         'marketplace_id' => 'getMarketplaceId',
         'included_data' => 'getIncludedData',
@@ -151,14 +154,16 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -301,15 +318,17 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets asin.
+     *
+     * @return string
      */
-    public function getAsin(): string
+    public function getAsin()
     {
         return $this->container['asin'];
     }
@@ -318,8 +337,10 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets asin.
      *
      * @param string $asin the ASIN of the item
+     *
+     * @return self
      */
-    public function setAsin(string $asin): self
+    public function setAsin($asin)
     {
         if (is_null($asin)) {
             throw new \InvalidArgumentException('non-nullable asin cannot be null');
@@ -331,8 +352,10 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
-    public function getMarketplaceId(): string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -341,8 +364,10 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets marketplace_id.
      *
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which data is returned.
+     *
+     * @return self
      */
-    public function setMarketplaceId(string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
             throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
@@ -354,8 +379,10 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets included_data.
+     *
+     * @return CompetitiveSummaryIncludedData[]
      */
-    public function getIncludedData(): array
+    public function getIncludedData()
     {
         return $this->container['included_data'];
     }
@@ -363,9 +390,11 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets included_data.
      *
-     * @param array $included_data the list of requested competitive pricing data for the product
+     * @param CompetitiveSummaryIncludedData[] $included_data the list of requested competitive pricing data for the product
+     *
+     * @return self
      */
-    public function setIncludedData(array $included_data): self
+    public function setIncludedData($included_data)
     {
         if (is_null($included_data)) {
             throw new \InvalidArgumentException('non-nullable included_data cannot be null');
@@ -381,8 +410,10 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets lowest_priced_offers_inputs.
+     *
+     * @return null|LowestPricedOffersInput[]
      */
-    public function getLowestPricedOffersInputs(): ?array
+    public function getLowestPricedOffersInputs()
     {
         return $this->container['lowest_priced_offers_inputs'];
     }
@@ -390,25 +421,20 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets lowest_priced_offers_inputs.
      *
-     * @param null|array $lowest_priced_offers_inputs The list of `lowestPricedOffersInput` parameters that are used to build `lowestPricedOffers` in the response. This attribute is only valid if `lowestPricedOffers` is requested in `includedData`
+     * @param null|LowestPricedOffersInput[] $lowest_priced_offers_inputs The list of `lowestPricedOffersInput` parameters that are used to build `lowestPricedOffers` in the response. This attribute is only valid if `lowestPricedOffers` is requested in `includedData`
+     *
+     * @return self
      */
-    public function setLowestPricedOffersInputs(?array $lowest_priced_offers_inputs): self
+    public function setLowestPricedOffersInputs($lowest_priced_offers_inputs)
     {
         if (is_null($lowest_priced_offers_inputs)) {
-            array_push($this->openAPINullablesSetToNull, 'lowest_priced_offers_inputs');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('lowest_priced_offers_inputs', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable lowest_priced_offers_inputs cannot be null');
         }
 
-        if (!is_null($lowest_priced_offers_inputs) && (count($lowest_priced_offers_inputs) > 5)) {
+        if (count($lowest_priced_offers_inputs) > 5) {
             throw new \InvalidArgumentException('invalid value for $lowest_priced_offers_inputs when calling CompetitiveSummaryRequest., number of items must be less than or equal to 5.');
         }
-        if (!is_null($lowest_priced_offers_inputs) && (count($lowest_priced_offers_inputs) < 0)) {
+        if (count($lowest_priced_offers_inputs) < 0) {
             throw new \InvalidArgumentException('invalid length for $lowest_priced_offers_inputs when calling CompetitiveSummaryRequest., number of items must be greater than or equal to 0.');
         }
         $this->container['lowest_priced_offers_inputs'] = $lowest_priced_offers_inputs;
@@ -418,8 +444,10 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets method.
+     *
+     * @return HttpMethod
      */
-    public function getMethod(): string
+    public function getMethod()
     {
         return $this->container['method'];
     }
@@ -427,9 +455,11 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets method.
      *
-     * @param string $method method
+     * @param HttpMethod $method method
+     *
+     * @return self
      */
-    public function setMethod(string $method): self
+    public function setMethod($method)
     {
         if (is_null($method)) {
             throw new \InvalidArgumentException('non-nullable method cannot be null');
@@ -441,8 +471,10 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets uri.
+     *
+     * @return string
      */
-    public function getUri(): string
+    public function getUri()
     {
         return $this->container['uri'];
     }
@@ -451,8 +483,10 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets uri.
      *
      * @param string $uri the URI associated with the individual APIs that are called as part of the batch request
+     *
+     * @return self
      */
-    public function setUri(string $uri): self
+    public function setUri($uri)
     {
         if (is_null($uri)) {
             throw new \InvalidArgumentException('non-nullable uri cannot be null');
@@ -487,7 +521,7 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -498,7 +532,7 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -526,15 +560,17 @@ class CompetitiveSummaryRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

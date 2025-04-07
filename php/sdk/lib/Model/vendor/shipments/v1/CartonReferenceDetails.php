@@ -2,7 +2,7 @@
 /**
  * CartonReferenceDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * CartonReferenceDetails Class Doc Comment
@@ -52,16 +50,17 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'CartonReferenceDetails';
+    protected static $openAPIModelName = 'CartonReferenceDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'carton_count' => 'int',
-             'carton_reference_numbers' => 'string[]'    ];
+    protected static $openAPITypes = [
+        'carton_count' => 'int',
+        'carton_reference_numbers' => 'string[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,9 +69,10 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'carton_count' => null,
-            'carton_reference_numbers' => null    ];
+    protected static $openAPIFormats = [
+        'carton_count' => null,
+        'carton_reference_numbers' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -80,7 +80,7 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'carton_count' => true,
+        'carton_count' => false,
         'carton_reference_numbers' => false
     ];
 
@@ -96,7 +96,7 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -106,7 +106,7 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -169,10 +169,9 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'carton_count' => 'cartonCount',
-                'carton_reference_numbers' => 'cartonReferenceNumbers'
-        
+        'carton_reference_numbers' => 'cartonReferenceNumbers'
     ];
 
     /**
@@ -180,7 +179,7 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'carton_count' => 'setCartonCount',
         'carton_reference_numbers' => 'setCartonReferenceNumbers'
     ];
@@ -190,7 +189,7 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'carton_count' => 'getCartonCount',
         'carton_reference_numbers' => 'getCartonReferenceNumbers'
     ];
@@ -201,7 +200,7 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -211,7 +210,7 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -221,7 +220,7 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -231,7 +230,7 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -240,17 +239,17 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('carton_count', $data ?? [], null);
         $this->setIfExists('carton_reference_numbers', $data ?? [], null);
@@ -279,7 +278,7 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -295,7 +294,7 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -306,7 +305,7 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return int|null
      */
-    public function getCartonCount(): ?int
+    public function getCartonCount()
     {
         return $this->container['carton_count'];
     }
@@ -318,17 +317,10 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setCartonCount(?int $carton_count): self
+    public function setCartonCount($carton_count)
     {
         if (is_null($carton_count)) {
-            array_push($this->openAPINullablesSetToNull, 'carton_count');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('carton_count', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable carton_count cannot be null');
         }
         $this->container['carton_count'] = $carton_count;
 
@@ -338,9 +330,9 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets carton_reference_numbers
      *
-     * @return array
+     * @return string[]
      */
-    public function getCartonReferenceNumbers(): array
+    public function getCartonReferenceNumbers()
     {
         return $this->container['carton_reference_numbers'];
     }
@@ -348,11 +340,11 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets carton_reference_numbers
      *
-     * @param array $carton_reference_numbers Array of reference numbers for the carton that are part of this pallet/shipment. Please provide the cartonSequenceNumber from the 'cartons' segment to refer to that carton's details here.
+     * @param string[] $carton_reference_numbers Array of reference numbers for the carton that are part of this pallet/shipment. Please provide the cartonSequenceNumber from the 'cartons' segment to refer to that carton's details here.
      *
      * @return self
      */
-    public function setCartonReferenceNumbers(array $carton_reference_numbers): self
+    public function setCartonReferenceNumbers($carton_reference_numbers)
     {
         if (is_null($carton_reference_numbers)) {
             throw new \InvalidArgumentException('non-nullable carton_reference_numbers cannot be null');
@@ -361,8 +353,6 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -383,7 +373,7 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -396,7 +386,7 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -425,7 +415,7 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -448,7 +438,7 @@ class CartonReferenceDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

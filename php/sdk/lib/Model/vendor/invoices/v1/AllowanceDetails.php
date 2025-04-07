@@ -2,7 +2,7 @@
 /**
  * AllowanceDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\invoices\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * AllowanceDetails Class Doc Comment
@@ -52,18 +50,19 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'AllowanceDetails';
+    protected static $openAPIModelName = 'AllowanceDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'type' => 'string',
-             'description' => 'string',
-             'allowance_amount' => '\SpApi\Model\vendor\invoices\v1\Money',
-             'tax_details' => '\SpApi\Model\vendor\invoices\v1\TaxDetails[]'    ];
+    protected static $openAPITypes = [
+        'type' => 'string',
+        'description' => 'string',
+        'allowance_amount' => '\SpApi\Model\vendor\invoices\v1\Money',
+        'tax_details' => '\SpApi\Model\vendor\invoices\v1\TaxDetails[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -72,11 +71,12 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'type' => null,
-            'description' => null,
-            'allowance_amount' => null,
-            'tax_details' => null    ];
+    protected static $openAPIFormats = [
+        'type' => null,
+        'description' => null,
+        'allowance_amount' => null,
+        'tax_details' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -85,9 +85,9 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'type' => false,
-        'description' => true,
+        'description' => false,
         'allowance_amount' => false,
-        'tax_details' => true
+        'tax_details' => false
     ];
 
     /**
@@ -102,7 +102,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -112,7 +112,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -175,12 +175,11 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'type' => 'type',
-                'description' => 'description',
-                'allowance_amount' => 'allowanceAmount',
-                'tax_details' => 'taxDetails'
-        
+        'description' => 'description',
+        'allowance_amount' => 'allowanceAmount',
+        'tax_details' => 'taxDetails'
     ];
 
     /**
@@ -188,7 +187,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'type' => 'setType',
         'description' => 'setDescription',
         'allowance_amount' => 'setAllowanceAmount',
@@ -200,7 +199,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'type' => 'getType',
         'description' => 'getDescription',
         'allowance_amount' => 'getAllowanceAmount',
@@ -213,7 +212,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -223,7 +222,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -233,7 +232,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -243,7 +242,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -260,7 +259,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array
+    public function getTypeAllowableValues()
     {
         return [
             self::TYPE_DISCOUNT,
@@ -275,17 +274,17 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
@@ -316,7 +315,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -344,7 +343,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -355,7 +354,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->container['type'];
     }
@@ -367,7 +366,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setType(string $type): self
+    public function setType($type)
     {
         if (is_null($type)) {
             throw new \InvalidArgumentException('non-nullable type cannot be null');
@@ -392,7 +391,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getDescription(): ?string
+    public function getDescription()
     {
         return $this->container['description'];
     }
@@ -404,17 +403,10 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDescription(?string $description): self
+    public function setDescription($description)
     {
         if (is_null($description)) {
-            array_push($this->openAPINullablesSetToNull, 'description');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('description', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable description cannot be null');
         }
         $this->container['description'] = $description;
 
@@ -426,7 +418,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\invoices\v1\Money
      */
-    public function getAllowanceAmount(): \SpApi\Model\vendor\invoices\v1\Money
+    public function getAllowanceAmount()
     {
         return $this->container['allowance_amount'];
     }
@@ -438,7 +430,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAllowanceAmount(\SpApi\Model\vendor\invoices\v1\Money $allowance_amount): self
+    public function setAllowanceAmount($allowance_amount)
     {
         if (is_null($allowance_amount)) {
             throw new \InvalidArgumentException('non-nullable allowance_amount cannot be null');
@@ -451,9 +443,9 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tax_details
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\invoices\v1\TaxDetails[]|null
      */
-    public function getTaxDetails(): ?array
+    public function getTaxDetails()
     {
         return $this->container['tax_details'];
     }
@@ -461,28 +453,19 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tax_details
      *
-     * @param array|null $tax_details Tax amount details applied on this allowance.
+     * @param \SpApi\Model\vendor\invoices\v1\TaxDetails[]|null $tax_details Tax amount details applied on this allowance.
      *
      * @return self
      */
-    public function setTaxDetails(?array $tax_details): self
+    public function setTaxDetails($tax_details)
     {
         if (is_null($tax_details)) {
-            array_push($this->openAPINullablesSetToNull, 'tax_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tax_details', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tax_details cannot be null');
         }
         $this->container['tax_details'] = $tax_details;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -503,7 +486,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -516,7 +499,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -545,7 +528,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -568,7 +551,7 @@ class AllowanceDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * FeatureSettings.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -55,17 +54,20 @@ class FeatureSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'FeatureSettings';
+    protected static $openAPIModelName = 'FeatureSettings';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'feature_name' => 'string',
-        'feature_fulfillment_policy' => 'string'];
+        'feature_fulfillment_policy' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,9 +78,10 @@ class FeatureSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'feature_name' => null,
-        'feature_fulfillment_policy' => null];
+        'feature_fulfillment_policy' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -86,8 +89,8 @@ class FeatureSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'feature_name' => true,
-        'feature_fulfillment_policy' => true,
+        'feature_name' => false,
+        'feature_fulfillment_policy' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class FeatureSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'feature_name' => 'featureName',
         'feature_fulfillment_policy' => 'featureFulfillmentPolicy',
     ];
@@ -113,7 +116,7 @@ class FeatureSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'feature_name' => 'setFeatureName',
         'feature_fulfillment_policy' => 'setFeatureFulfillmentPolicy',
     ];
@@ -123,21 +126,23 @@ class FeatureSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'feature_name' => 'getFeatureName',
         'feature_fulfillment_policy' => 'getFeatureFulfillmentPolicy',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -160,16 +165,20 @@ class FeatureSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -193,32 +202,40 @@ class FeatureSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -228,7 +245,7 @@ class FeatureSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getFeatureFulfillmentPolicyAllowableValues(): array
+    public function getFeatureFulfillmentPolicyAllowableValues()
     {
         return [
             self::FEATURE_FULFILLMENT_POLICY_REQUIRED,
@@ -241,7 +258,7 @@ class FeatureSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -263,15 +280,17 @@ class FeatureSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets feature_name.
+     *
+     * @return null|string
      */
-    public function getFeatureName(): ?string
+    public function getFeatureName()
     {
         return $this->container['feature_name'];
     }
@@ -280,18 +299,13 @@ class FeatureSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets feature_name.
      *
      * @param null|string $feature_name the name of the feature
+     *
+     * @return self
      */
-    public function setFeatureName(?string $feature_name): self
+    public function setFeatureName($feature_name)
     {
         if (is_null($feature_name)) {
-            array_push($this->openAPINullablesSetToNull, 'feature_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('feature_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable feature_name cannot be null');
         }
         $this->container['feature_name'] = $feature_name;
 
@@ -300,8 +314,10 @@ class FeatureSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets feature_fulfillment_policy.
+     *
+     * @return null|string
      */
-    public function getFeatureFulfillmentPolicy(): ?string
+    public function getFeatureFulfillmentPolicy()
     {
         return $this->container['feature_fulfillment_policy'];
     }
@@ -310,21 +326,16 @@ class FeatureSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets feature_fulfillment_policy.
      *
      * @param null|string $feature_fulfillment_policy specifies the policy to use when fulfilling an order
+     *
+     * @return self
      */
-    public function setFeatureFulfillmentPolicy(?string $feature_fulfillment_policy): self
+    public function setFeatureFulfillmentPolicy($feature_fulfillment_policy)
     {
         if (is_null($feature_fulfillment_policy)) {
-            array_push($this->openAPINullablesSetToNull, 'feature_fulfillment_policy');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('feature_fulfillment_policy', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable feature_fulfillment_policy cannot be null');
         }
         $allowedValues = $this->getFeatureFulfillmentPolicyAllowableValues();
-        if (!is_null($feature_fulfillment_policy) && !in_array($feature_fulfillment_policy, $allowedValues, true)) {
+        if (!in_array($feature_fulfillment_policy, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'feature_fulfillment_policy', must be one of '%s'",
@@ -356,7 +367,7 @@ class FeatureSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -367,7 +378,7 @@ class FeatureSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -395,15 +406,17 @@ class FeatureSettings implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * AvailableValueAddedServiceGroup.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,19 +52,22 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'AvailableValueAddedServiceGroup';
+    protected static $openAPIModelName = 'AvailableValueAddedServiceGroup';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'group_id' => 'string',
         'group_description' => 'string',
         'is_required' => 'bool',
-        'value_added_services' => '\SpApi\Model\shipping\v2\ValueAddedService[]'];
+        'value_added_services' => '\SpApi\Model\shipping\v2\ValueAddedService[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,11 +78,12 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'group_id' => null,
         'group_description' => null,
         'is_required' => null,
-        'value_added_services' => null];
+        'value_added_services' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -91,7 +94,7 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
         'group_id' => false,
         'group_description' => false,
         'is_required' => false,
-        'value_added_services' => true,
+        'value_added_services' => false,
     ];
 
     /**
@@ -107,7 +110,7 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'group_id' => 'groupId',
         'group_description' => 'groupDescription',
         'is_required' => 'isRequired',
@@ -119,7 +122,7 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'group_id' => 'setGroupId',
         'group_description' => 'setGroupDescription',
         'is_required' => 'setIsRequired',
@@ -131,7 +134,7 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'group_id' => 'getGroupId',
         'group_description' => 'getGroupDescription',
         'is_required' => 'getIsRequired',
@@ -140,14 +143,16 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -172,16 +177,20 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -205,32 +214,40 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -240,7 +257,7 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -263,15 +280,17 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets group_id.
+     *
+     * @return string
      */
-    public function getGroupId(): string
+    public function getGroupId()
     {
         return $this->container['group_id'];
     }
@@ -280,8 +299,10 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
      * Sets group_id.
      *
      * @param string $group_id the type of the value-added service group
+     *
+     * @return self
      */
-    public function setGroupId(string $group_id): self
+    public function setGroupId($group_id)
     {
         if (is_null($group_id)) {
             throw new \InvalidArgumentException('non-nullable group_id cannot be null');
@@ -293,8 +314,10 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
 
     /**
      * Gets group_description.
+     *
+     * @return string
      */
-    public function getGroupDescription(): string
+    public function getGroupDescription()
     {
         return $this->container['group_description'];
     }
@@ -303,8 +326,10 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
      * Sets group_description.
      *
      * @param string $group_description the name of the value-added service group
+     *
+     * @return self
      */
-    public function setGroupDescription(string $group_description): self
+    public function setGroupDescription($group_description)
     {
         if (is_null($group_description)) {
             throw new \InvalidArgumentException('non-nullable group_description cannot be null');
@@ -316,8 +341,10 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
 
     /**
      * Gets is_required.
+     *
+     * @return bool
      */
-    public function getIsRequired(): bool
+    public function getIsRequired()
     {
         return $this->container['is_required'];
     }
@@ -326,8 +353,10 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
      * Sets is_required.
      *
      * @param bool $is_required when true, one or more of the value-added services listed must be specified
+     *
+     * @return self
      */
-    public function setIsRequired(bool $is_required): self
+    public function setIsRequired($is_required)
     {
         if (is_null($is_required)) {
             throw new \InvalidArgumentException('non-nullable is_required cannot be null');
@@ -339,8 +368,10 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
 
     /**
      * Gets value_added_services.
+     *
+     * @return null|ValueAddedService[]
      */
-    public function getValueAddedServices(): ?array
+    public function getValueAddedServices()
     {
         return $this->container['value_added_services'];
     }
@@ -348,19 +379,14 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
     /**
      * Sets value_added_services.
      *
-     * @param null|array $value_added_services a list of optional value-added services available for purchase with a shipping service offering
+     * @param null|ValueAddedService[] $value_added_services a list of optional value-added services available for purchase with a shipping service offering
+     *
+     * @return self
      */
-    public function setValueAddedServices(?array $value_added_services): self
+    public function setValueAddedServices($value_added_services)
     {
         if (is_null($value_added_services)) {
-            array_push($this->openAPINullablesSetToNull, 'value_added_services');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('value_added_services', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable value_added_services cannot be null');
         }
         $this->container['value_added_services'] = $value_added_services;
 
@@ -385,7 +411,7 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -396,7 +422,7 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -424,15 +450,17 @@ class AvailableValueAddedServiceGroup implements ModelInterface, \ArrayAccess, \
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

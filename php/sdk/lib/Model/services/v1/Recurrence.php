@@ -3,7 +3,7 @@
 /**
  * Recurrence.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\services\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class Recurrence implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Recurrence';
+    protected static $openAPIModelName = 'Recurrence';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'end_time' => '\DateTime',
         'days_of_week' => '\SpApi\Model\services\v1\DayOfWeek[]',
-        'days_of_month' => 'int[]'];
+        'days_of_month' => 'int[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class Recurrence implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'end_time' => 'date-time',
         'days_of_week' => null,
-        'days_of_month' => null];
+        'days_of_month' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -86,8 +89,8 @@ class Recurrence implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'end_time' => false,
-        'days_of_week' => true,
-        'days_of_month' => true,
+        'days_of_week' => false,
+        'days_of_month' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class Recurrence implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'end_time' => 'endTime',
         'days_of_week' => 'daysOfWeek',
         'days_of_month' => 'daysOfMonth',
@@ -114,7 +117,7 @@ class Recurrence implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'end_time' => 'setEndTime',
         'days_of_week' => 'setDaysOfWeek',
         'days_of_month' => 'setDaysOfMonth',
@@ -125,7 +128,7 @@ class Recurrence implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'end_time' => 'getEndTime',
         'days_of_week' => 'getDaysOfWeek',
         'days_of_month' => 'getDaysOfMonth',
@@ -133,14 +136,16 @@ class Recurrence implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class Recurrence implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class Recurrence implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class Recurrence implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -249,15 +266,17 @@ class Recurrence implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets end_time.
+     *
+     * @return \DateTime
      */
-    public function getEndTime(): \DateTime
+    public function getEndTime()
     {
         return $this->container['end_time'];
     }
@@ -266,8 +285,10 @@ class Recurrence implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets end_time.
      *
      * @param \DateTime $end_time end time of the recurrence
+     *
+     * @return self
      */
-    public function setEndTime(\DateTime $end_time): self
+    public function setEndTime($end_time)
     {
         if (is_null($end_time)) {
             throw new \InvalidArgumentException('non-nullable end_time cannot be null');
@@ -279,8 +300,10 @@ class Recurrence implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets days_of_week.
+     *
+     * @return null|DayOfWeek[]
      */
-    public function getDaysOfWeek(): ?array
+    public function getDaysOfWeek()
     {
         return $this->container['days_of_week'];
     }
@@ -288,19 +311,14 @@ class Recurrence implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets days_of_week.
      *
-     * @param null|array $days_of_week Days of the week when recurrence is valid. If the schedule is valid every Monday, input will only contain `MONDAY` in the list.
+     * @param null|DayOfWeek[] $days_of_week Days of the week when recurrence is valid. If the schedule is valid every Monday, input will only contain `MONDAY` in the list.
+     *
+     * @return self
      */
-    public function setDaysOfWeek(?array $days_of_week): self
+    public function setDaysOfWeek($days_of_week)
     {
         if (is_null($days_of_week)) {
-            array_push($this->openAPINullablesSetToNull, 'days_of_week');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('days_of_week', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable days_of_week cannot be null');
         }
         $this->container['days_of_week'] = $days_of_week;
 
@@ -309,8 +327,10 @@ class Recurrence implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets days_of_month.
+     *
+     * @return null|int[]
      */
-    public function getDaysOfMonth(): ?array
+    public function getDaysOfMonth()
     {
         return $this->container['days_of_month'];
     }
@@ -318,19 +338,14 @@ class Recurrence implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets days_of_month.
      *
-     * @param null|array $days_of_month days of the month when recurrence is valid
+     * @param null|int[] $days_of_month days of the month when recurrence is valid
+     *
+     * @return self
      */
-    public function setDaysOfMonth(?array $days_of_month): self
+    public function setDaysOfMonth($days_of_month)
     {
         if (is_null($days_of_month)) {
-            array_push($this->openAPINullablesSetToNull, 'days_of_month');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('days_of_month', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable days_of_month cannot be null');
         }
         $this->container['days_of_month'] = $days_of_month;
 
@@ -355,7 +370,7 @@ class Recurrence implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -366,7 +381,7 @@ class Recurrence implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -394,15 +409,17 @@ class Recurrence implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

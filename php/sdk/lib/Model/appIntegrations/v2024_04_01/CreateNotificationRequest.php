@@ -3,7 +3,7 @@
 /**
  * CreateNotificationRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\appIntegrations\v2024_04_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class CreateNotificationRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CreateNotificationRequest';
+    protected static $openAPIModelName = 'CreateNotificationRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'template_id' => 'string',
         'notification_parameters' => 'array<string,object>',
-        'marketplace_id' => 'string'];
+        'marketplace_id' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class CreateNotificationRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'template_id' => null,
         'notification_parameters' => null,
-        'marketplace_id' => null];
+        'marketplace_id' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,7 +90,7 @@ class CreateNotificationRequest implements ModelInterface, \ArrayAccess, \JsonSe
     protected static array $openAPINullables = [
         'template_id' => false,
         'notification_parameters' => false,
-        'marketplace_id' => true,
+        'marketplace_id' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class CreateNotificationRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'template_id' => 'templateId',
         'notification_parameters' => 'notificationParameters',
         'marketplace_id' => 'marketplaceId',
@@ -114,7 +117,7 @@ class CreateNotificationRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'template_id' => 'setTemplateId',
         'notification_parameters' => 'setNotificationParameters',
         'marketplace_id' => 'setMarketplaceId',
@@ -125,7 +128,7 @@ class CreateNotificationRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'template_id' => 'getTemplateId',
         'notification_parameters' => 'getNotificationParameters',
         'marketplace_id' => 'getMarketplaceId',
@@ -133,14 +136,16 @@ class CreateNotificationRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class CreateNotificationRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class CreateNotificationRequest implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class CreateNotificationRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -252,15 +269,17 @@ class CreateNotificationRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets template_id.
+     *
+     * @return string
      */
-    public function getTemplateId(): string
+    public function getTemplateId()
     {
         return $this->container['template_id'];
     }
@@ -269,8 +288,10 @@ class CreateNotificationRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets template_id.
      *
      * @param string $template_id the unique identifier of the notification template you used to onboard your application
+     *
+     * @return self
      */
-    public function setTemplateId(string $template_id): self
+    public function setTemplateId($template_id)
     {
         if (is_null($template_id)) {
             throw new \InvalidArgumentException('non-nullable template_id cannot be null');
@@ -285,7 +306,7 @@ class CreateNotificationRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return array<string,object>
      */
-    public function getNotificationParameters(): array
+    public function getNotificationParameters()
     {
         return $this->container['notification_parameters'];
     }
@@ -294,8 +315,10 @@ class CreateNotificationRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets notification_parameters.
      *
      * @param array<string,object> $notification_parameters the dynamic parameters required by the notification templated specified by `templateId`
+     *
+     * @return self
      */
-    public function setNotificationParameters(array $notification_parameters): self
+    public function setNotificationParameters($notification_parameters)
     {
         if (is_null($notification_parameters)) {
             throw new \InvalidArgumentException('non-nullable notification_parameters cannot be null');
@@ -307,8 +330,10 @@ class CreateNotificationRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets marketplace_id.
+     *
+     * @return null|string
      */
-    public function getMarketplaceId(): ?string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -317,18 +342,13 @@ class CreateNotificationRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets marketplace_id.
      *
      * @param null|string $marketplace_id an encrypted marketplace identifier for the posted notification
+     *
+     * @return self
      */
-    public function setMarketplaceId(?string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
-            array_push($this->openAPINullablesSetToNull, 'marketplace_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('marketplace_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
         }
         $this->container['marketplace_id'] = $marketplace_id;
 
@@ -353,7 +373,7 @@ class CreateNotificationRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -364,7 +384,7 @@ class CreateNotificationRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -392,15 +412,17 @@ class CreateNotificationRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

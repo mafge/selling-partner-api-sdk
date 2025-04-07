@@ -3,7 +3,7 @@
 /**
  * ServiceFeeEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ServiceFeeEvent';
+    protected static $openAPIModelName = 'ServiceFeeEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'amazon_order_id' => 'string',
         'fee_reason' => 'string',
         'fee_list' => '\SpApi\Model\finances\v0\FeeComponent[]',
@@ -68,7 +69,8 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
         'fn_sku' => 'string',
         'fee_description' => 'string',
         'asin' => 'string',
-        'store_name' => 'string'];
+        'store_name' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -79,7 +81,7 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'amazon_order_id' => null,
         'fee_reason' => null,
         'fee_list' => null,
@@ -87,7 +89,8 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
         'fn_sku' => null,
         'fee_description' => null,
         'asin' => null,
-        'store_name' => null];
+        'store_name' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -95,14 +98,14 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'amazon_order_id' => true,
-        'fee_reason' => true,
-        'fee_list' => true,
-        'seller_sku' => true,
-        'fn_sku' => true,
-        'fee_description' => true,
-        'asin' => true,
-        'store_name' => true,
+        'amazon_order_id' => false,
+        'fee_reason' => false,
+        'fee_list' => false,
+        'seller_sku' => false,
+        'fn_sku' => false,
+        'fee_description' => false,
+        'asin' => false,
+        'store_name' => false,
     ];
 
     /**
@@ -118,7 +121,7 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'amazon_order_id' => 'AmazonOrderId',
         'fee_reason' => 'FeeReason',
         'fee_list' => 'FeeList',
@@ -134,7 +137,7 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'amazon_order_id' => 'setAmazonOrderId',
         'fee_reason' => 'setFeeReason',
         'fee_list' => 'setFeeList',
@@ -150,7 +153,7 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'amazon_order_id' => 'getAmazonOrderId',
         'fee_reason' => 'getFeeReason',
         'fee_list' => 'getFeeList',
@@ -163,14 +166,16 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -199,16 +204,20 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -232,32 +241,40 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -267,7 +284,7 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -278,15 +295,17 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets amazon_order_id.
+     *
+     * @return null|string
      */
-    public function getAmazonOrderId(): ?string
+    public function getAmazonOrderId()
     {
         return $this->container['amazon_order_id'];
     }
@@ -295,18 +314,13 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets amazon_order_id.
      *
      * @param null|string $amazon_order_id an Amazon-defined identifier for an order
+     *
+     * @return self
      */
-    public function setAmazonOrderId(?string $amazon_order_id): self
+    public function setAmazonOrderId($amazon_order_id)
     {
         if (is_null($amazon_order_id)) {
-            array_push($this->openAPINullablesSetToNull, 'amazon_order_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amazon_order_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable amazon_order_id cannot be null');
         }
         $this->container['amazon_order_id'] = $amazon_order_id;
 
@@ -315,8 +329,10 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets fee_reason.
+     *
+     * @return null|string
      */
-    public function getFeeReason(): ?string
+    public function getFeeReason()
     {
         return $this->container['fee_reason'];
     }
@@ -325,18 +341,13 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets fee_reason.
      *
      * @param null|string $fee_reason a short description of the service fee reason
+     *
+     * @return self
      */
-    public function setFeeReason(?string $fee_reason): self
+    public function setFeeReason($fee_reason)
     {
         if (is_null($fee_reason)) {
-            array_push($this->openAPINullablesSetToNull, 'fee_reason');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fee_reason', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fee_reason cannot be null');
         }
         $this->container['fee_reason'] = $fee_reason;
 
@@ -345,8 +356,10 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets fee_list.
+     *
+     * @return null|FeeComponent[]
      */
-    public function getFeeList(): ?array
+    public function getFeeList()
     {
         return $this->container['fee_list'];
     }
@@ -354,19 +367,14 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets fee_list.
      *
-     * @param null|array $fee_list a list of fee component information
+     * @param null|FeeComponent[] $fee_list a list of fee component information
+     *
+     * @return self
      */
-    public function setFeeList(?array $fee_list): self
+    public function setFeeList($fee_list)
     {
         if (is_null($fee_list)) {
-            array_push($this->openAPINullablesSetToNull, 'fee_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fee_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fee_list cannot be null');
         }
         $this->container['fee_list'] = $fee_list;
 
@@ -375,8 +383,10 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets seller_sku.
+     *
+     * @return null|string
      */
-    public function getSellerSku(): ?string
+    public function getSellerSku()
     {
         return $this->container['seller_sku'];
     }
@@ -385,18 +395,13 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets seller_sku.
      *
      * @param null|string $seller_sku The seller SKU of the item. The seller SKU is qualified by the seller's seller ID, which is included with every call to the Selling Partner API.
+     *
+     * @return self
      */
-    public function setSellerSku(?string $seller_sku): self
+    public function setSellerSku($seller_sku)
     {
         if (is_null($seller_sku)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_sku');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_sku', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_sku cannot be null');
         }
         $this->container['seller_sku'] = $seller_sku;
 
@@ -405,8 +410,10 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets fn_sku.
+     *
+     * @return null|string
      */
-    public function getFnSku(): ?string
+    public function getFnSku()
     {
         return $this->container['fn_sku'];
     }
@@ -415,18 +422,13 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets fn_sku.
      *
      * @param null|string $fn_sku a unique identifier assigned by Amazon to products stored in and fulfilled from an Amazon fulfillment center
+     *
+     * @return self
      */
-    public function setFnSku(?string $fn_sku): self
+    public function setFnSku($fn_sku)
     {
         if (is_null($fn_sku)) {
-            array_push($this->openAPINullablesSetToNull, 'fn_sku');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fn_sku', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fn_sku cannot be null');
         }
         $this->container['fn_sku'] = $fn_sku;
 
@@ -435,8 +437,10 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets fee_description.
+     *
+     * @return null|string
      */
-    public function getFeeDescription(): ?string
+    public function getFeeDescription()
     {
         return $this->container['fee_description'];
     }
@@ -445,18 +449,13 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets fee_description.
      *
      * @param null|string $fee_description a short description of the service fee event
+     *
+     * @return self
      */
-    public function setFeeDescription(?string $fee_description): self
+    public function setFeeDescription($fee_description)
     {
         if (is_null($fee_description)) {
-            array_push($this->openAPINullablesSetToNull, 'fee_description');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fee_description', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fee_description cannot be null');
         }
         $this->container['fee_description'] = $fee_description;
 
@@ -465,8 +464,10 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
-    public function getAsin(): ?string
+    public function getAsin()
     {
         return $this->container['asin'];
     }
@@ -475,18 +476,13 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number (ASIN) of the item
+     *
+     * @return self
      */
-    public function setAsin(?string $asin): self
+    public function setAsin($asin)
     {
         if (is_null($asin)) {
-            array_push($this->openAPINullablesSetToNull, 'asin');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('asin', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable asin cannot be null');
         }
         $this->container['asin'] = $asin;
 
@@ -495,8 +491,10 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets store_name.
+     *
+     * @return null|string
      */
-    public function getStoreName(): ?string
+    public function getStoreName()
     {
         return $this->container['store_name'];
     }
@@ -505,18 +503,13 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets store_name.
      *
      * @param null|string $store_name the name of the store where the event occurred
+     *
+     * @return self
      */
-    public function setStoreName(?string $store_name): self
+    public function setStoreName($store_name)
     {
         if (is_null($store_name)) {
-            array_push($this->openAPINullablesSetToNull, 'store_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('store_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable store_name cannot be null');
         }
         $this->container['store_name'] = $store_name;
 
@@ -541,7 +534,7 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -552,7 +545,7 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -580,15 +573,17 @@ class ServiceFeeEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

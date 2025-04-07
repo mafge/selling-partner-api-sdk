@@ -3,7 +3,7 @@
 /**
  * Carrier.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class Carrier implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Carrier';
+    protected static $openAPIModelName = 'Carrier';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'alpha_code' => 'string',
-        'name' => 'string'];
+        'name' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class Carrier implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'alpha_code' => null,
-        'name' => null];
+        'name' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class Carrier implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'alpha_code' => true,
-        'name' => true,
+        'alpha_code' => false,
+        'name' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class Carrier implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'alpha_code' => 'alphaCode',
         'name' => 'name',
     ];
@@ -110,7 +113,7 @@ class Carrier implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'alpha_code' => 'setAlphaCode',
         'name' => 'setName',
     ];
@@ -120,21 +123,23 @@ class Carrier implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'alpha_code' => 'getAlphaCode',
         'name' => 'getName',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class Carrier implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class Carrier implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class Carrier implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -254,15 +271,17 @@ class Carrier implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets alpha_code.
+     *
+     * @return null|string
      */
-    public function getAlphaCode(): ?string
+    public function getAlphaCode()
     {
         return $this->container['alpha_code'];
     }
@@ -271,23 +290,18 @@ class Carrier implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets alpha_code.
      *
      * @param null|string $alpha_code The carrier code. For example, USPS or DHLEX.
+     *
+     * @return self
      */
-    public function setAlphaCode(?string $alpha_code): self
+    public function setAlphaCode($alpha_code)
     {
         if (is_null($alpha_code)) {
-            array_push($this->openAPINullablesSetToNull, 'alpha_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('alpha_code', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable alpha_code cannot be null');
         }
-        if (!is_null($alpha_code) && (mb_strlen($alpha_code) > 1024)) {
+        if (mb_strlen($alpha_code) > 1024) {
             throw new \InvalidArgumentException('invalid length for $alpha_code when calling Carrier., must be smaller than or equal to 1024.');
         }
-        if (!is_null($alpha_code) && (mb_strlen($alpha_code) < 1)) {
+        if (mb_strlen($alpha_code) < 1) {
             throw new \InvalidArgumentException('invalid length for $alpha_code when calling Carrier., must be bigger than or equal to 1.');
         }
 
@@ -298,8 +312,10 @@ class Carrier implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets name.
+     *
+     * @return null|string
      */
-    public function getName(): ?string
+    public function getName()
     {
         return $this->container['name'];
     }
@@ -308,23 +324,18 @@ class Carrier implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets name.
      *
      * @param null|string $name the name of the carrier
+     *
+     * @return self
      */
-    public function setName(?string $name): self
+    public function setName($name)
     {
         if (is_null($name)) {
-            array_push($this->openAPINullablesSetToNull, 'name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
-        if (!is_null($name) && (mb_strlen($name) > 1024)) {
+        if (mb_strlen($name) > 1024) {
             throw new \InvalidArgumentException('invalid length for $name when calling Carrier., must be smaller than or equal to 1024.');
         }
-        if (!is_null($name) && (mb_strlen($name) < 1)) {
+        if (mb_strlen($name) < 1) {
             throw new \InvalidArgumentException('invalid length for $name when calling Carrier., must be bigger than or equal to 1.');
         }
 
@@ -351,7 +362,7 @@ class Carrier implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -362,7 +373,7 @@ class Carrier implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -390,15 +401,17 @@ class Carrier implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

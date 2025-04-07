@@ -3,7 +3,7 @@
 /**
  * ComplianceDetail.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ComplianceDetail';
+    protected static $openAPIModelName = 'ComplianceDetail';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'asin' => 'string',
         'fnsku' => 'string',
         'msku' => 'string',
-        'tax_details' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\TaxDetails'];
+        'tax_details' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\TaxDetails',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'asin' => null,
         'fnsku' => null,
         'msku' => null,
-        'tax_details' => null];
+        'tax_details' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,10 +90,10 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'asin' => true,
-        'fnsku' => true,
-        'msku' => true,
-        'tax_details' => true,
+        'asin' => false,
+        'fnsku' => false,
+        'msku' => false,
+        'tax_details' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'asin' => 'asin',
         'fnsku' => 'fnsku',
         'msku' => 'msku',
@@ -118,7 +121,7 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'asin' => 'setAsin',
         'fnsku' => 'setFnsku',
         'msku' => 'setMsku',
@@ -130,7 +133,7 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'asin' => 'getAsin',
         'fnsku' => 'getFnsku',
         'msku' => 'getMsku',
@@ -139,14 +142,16 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -276,15 +293,17 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
-    public function getAsin(): ?string
+    public function getAsin()
     {
         return $this->container['asin'];
     }
@@ -293,23 +312,18 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number, which identifies the detail page identifier
+     *
+     * @return self
      */
-    public function setAsin(?string $asin): self
+    public function setAsin($asin)
     {
         if (is_null($asin)) {
-            array_push($this->openAPINullablesSetToNull, 'asin');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('asin', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable asin cannot be null');
         }
-        if (!is_null($asin) && (mb_strlen($asin) > 10)) {
+        if (mb_strlen($asin) > 10) {
             throw new \InvalidArgumentException('invalid length for $asin when calling ComplianceDetail., must be smaller than or equal to 10.');
         }
-        if (!is_null($asin) && (mb_strlen($asin) < 1)) {
+        if (mb_strlen($asin) < 1) {
             throw new \InvalidArgumentException('invalid length for $asin when calling ComplianceDetail., must be bigger than or equal to 1.');
         }
 
@@ -320,8 +334,10 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets fnsku.
+     *
+     * @return null|string
      */
-    public function getFnsku(): ?string
+    public function getFnsku()
     {
         return $this->container['fnsku'];
     }
@@ -330,23 +346,18 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets fnsku.
      *
      * @param null|string $fnsku the Fulfillment Network SKU, which identifies a real fulfillable item with catalog data and condition
+     *
+     * @return self
      */
-    public function setFnsku(?string $fnsku): self
+    public function setFnsku($fnsku)
     {
         if (is_null($fnsku)) {
-            array_push($this->openAPINullablesSetToNull, 'fnsku');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fnsku', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fnsku cannot be null');
         }
-        if (!is_null($fnsku) && (mb_strlen($fnsku) > 10)) {
+        if (mb_strlen($fnsku) > 10) {
             throw new \InvalidArgumentException('invalid length for $fnsku when calling ComplianceDetail., must be smaller than or equal to 10.');
         }
-        if (!is_null($fnsku) && (mb_strlen($fnsku) < 1)) {
+        if (mb_strlen($fnsku) < 1) {
             throw new \InvalidArgumentException('invalid length for $fnsku when calling ComplianceDetail., must be bigger than or equal to 1.');
         }
 
@@ -357,8 +368,10 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets msku.
+     *
+     * @return null|string
      */
-    public function getMsku(): ?string
+    public function getMsku()
     {
         return $this->container['msku'];
     }
@@ -367,23 +380,18 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets msku.
      *
      * @param null|string $msku the merchant SKU, a merchant-supplied identifier for a specific SKU
+     *
+     * @return self
      */
-    public function setMsku(?string $msku): self
+    public function setMsku($msku)
     {
         if (is_null($msku)) {
-            array_push($this->openAPINullablesSetToNull, 'msku');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('msku', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable msku cannot be null');
         }
-        if (!is_null($msku) && (mb_strlen($msku) > 40)) {
+        if (mb_strlen($msku) > 40) {
             throw new \InvalidArgumentException('invalid length for $msku when calling ComplianceDetail., must be smaller than or equal to 40.');
         }
-        if (!is_null($msku) && (mb_strlen($msku) < 1)) {
+        if (mb_strlen($msku) < 1) {
             throw new \InvalidArgumentException('invalid length for $msku when calling ComplianceDetail., must be bigger than or equal to 1.');
         }
 
@@ -394,8 +402,10 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets tax_details.
+     *
+     * @return null|TaxDetails
      */
-    public function getTaxDetails(): ?TaxDetails
+    public function getTaxDetails()
     {
         return $this->container['tax_details'];
     }
@@ -404,18 +414,13 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets tax_details.
      *
      * @param null|TaxDetails $tax_details tax_details
+     *
+     * @return self
      */
-    public function setTaxDetails(?TaxDetails $tax_details): self
+    public function setTaxDetails($tax_details)
     {
         if (is_null($tax_details)) {
-            array_push($this->openAPINullablesSetToNull, 'tax_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tax_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tax_details cannot be null');
         }
         $this->container['tax_details'] = $tax_details;
 
@@ -440,7 +445,7 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -451,7 +456,7 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -479,15 +484,17 @@ class ComplianceDetail implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

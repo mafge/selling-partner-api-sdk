@@ -3,7 +3,7 @@
 /**
  * FBALiquidationEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'FBALiquidationEvent';
+    protected static $openAPIModelName = 'FBALiquidationEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'posted_date' => '\DateTime',
         'original_removal_order_id' => 'string',
         'liquidation_proceeds_amount' => '\SpApi\Model\finances\v0\Currency',
-        'liquidation_fee_amount' => '\SpApi\Model\finances\v0\Currency'];
+        'liquidation_fee_amount' => '\SpApi\Model\finances\v0\Currency',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'posted_date' => 'date-time',
         'original_removal_order_id' => null,
         'liquidation_proceeds_amount' => null,
-        'liquidation_fee_amount' => null];
+        'liquidation_fee_amount' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,10 +90,10 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'posted_date' => true,
-        'original_removal_order_id' => true,
-        'liquidation_proceeds_amount' => true,
-        'liquidation_fee_amount' => true,
+        'posted_date' => false,
+        'original_removal_order_id' => false,
+        'liquidation_proceeds_amount' => false,
+        'liquidation_fee_amount' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'posted_date' => 'PostedDate',
         'original_removal_order_id' => 'OriginalRemovalOrderId',
         'liquidation_proceeds_amount' => 'LiquidationProceedsAmount',
@@ -118,7 +121,7 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'posted_date' => 'setPostedDate',
         'original_removal_order_id' => 'setOriginalRemovalOrderId',
         'liquidation_proceeds_amount' => 'setLiquidationProceedsAmount',
@@ -130,7 +133,7 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'posted_date' => 'getPostedDate',
         'original_removal_order_id' => 'getOriginalRemovalOrderId',
         'liquidation_proceeds_amount' => 'getLiquidationProceedsAmount',
@@ -139,14 +142,16 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -250,15 +267,17 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTime
      */
-    public function getPostedDate(): ?\DateTime
+    public function getPostedDate()
     {
         return $this->container['posted_date'];
     }
@@ -267,18 +286,13 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets posted_date.
      *
      * @param null|\DateTime $posted_date fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate)
+     *
+     * @return self
      */
-    public function setPostedDate(?\DateTime $posted_date): self
+    public function setPostedDate($posted_date)
     {
         if (is_null($posted_date)) {
-            array_push($this->openAPINullablesSetToNull, 'posted_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('posted_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable posted_date cannot be null');
         }
         $this->container['posted_date'] = $posted_date;
 
@@ -287,8 +301,10 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets original_removal_order_id.
+     *
+     * @return null|string
      */
-    public function getOriginalRemovalOrderId(): ?string
+    public function getOriginalRemovalOrderId()
     {
         return $this->container['original_removal_order_id'];
     }
@@ -297,18 +313,13 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets original_removal_order_id.
      *
      * @param null|string $original_removal_order_id the identifier for the original removal order
+     *
+     * @return self
      */
-    public function setOriginalRemovalOrderId(?string $original_removal_order_id): self
+    public function setOriginalRemovalOrderId($original_removal_order_id)
     {
         if (is_null($original_removal_order_id)) {
-            array_push($this->openAPINullablesSetToNull, 'original_removal_order_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('original_removal_order_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable original_removal_order_id cannot be null');
         }
         $this->container['original_removal_order_id'] = $original_removal_order_id;
 
@@ -317,8 +328,10 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets liquidation_proceeds_amount.
+     *
+     * @return null|Currency
      */
-    public function getLiquidationProceedsAmount(): ?Currency
+    public function getLiquidationProceedsAmount()
     {
         return $this->container['liquidation_proceeds_amount'];
     }
@@ -327,18 +340,13 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets liquidation_proceeds_amount.
      *
      * @param null|Currency $liquidation_proceeds_amount liquidation_proceeds_amount
+     *
+     * @return self
      */
-    public function setLiquidationProceedsAmount(?Currency $liquidation_proceeds_amount): self
+    public function setLiquidationProceedsAmount($liquidation_proceeds_amount)
     {
         if (is_null($liquidation_proceeds_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'liquidation_proceeds_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('liquidation_proceeds_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable liquidation_proceeds_amount cannot be null');
         }
         $this->container['liquidation_proceeds_amount'] = $liquidation_proceeds_amount;
 
@@ -347,8 +355,10 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets liquidation_fee_amount.
+     *
+     * @return null|Currency
      */
-    public function getLiquidationFeeAmount(): ?Currency
+    public function getLiquidationFeeAmount()
     {
         return $this->container['liquidation_fee_amount'];
     }
@@ -357,18 +367,13 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets liquidation_fee_amount.
      *
      * @param null|Currency $liquidation_fee_amount liquidation_fee_amount
+     *
+     * @return self
      */
-    public function setLiquidationFeeAmount(?Currency $liquidation_fee_amount): self
+    public function setLiquidationFeeAmount($liquidation_fee_amount)
     {
         if (is_null($liquidation_fee_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'liquidation_fee_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('liquidation_fee_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable liquidation_fee_amount cannot be null');
         }
         $this->container['liquidation_fee_amount'] = $liquidation_fee_amount;
 
@@ -393,7 +398,7 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -404,7 +409,7 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -432,15 +437,17 @@ class FBALiquidationEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

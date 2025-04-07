@@ -2,7 +2,7 @@
 /**
  * OrderItem
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\df\orders\v2021_12_28;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * OrderItem Class Doc Comment
@@ -52,25 +50,26 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'OrderItem';
+    protected static $openAPIModelName = 'OrderItem';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'item_sequence_number' => 'string',
-             'buyer_product_identifier' => 'string',
-             'vendor_product_identifier' => 'string',
-             'title' => 'string',
-             'ordered_quantity' => '\SpApi\Model\vendor\df\orders\v2021_12_28\ItemQuantity',
-             'scheduled_delivery_shipment' => '\SpApi\Model\vendor\df\orders\v2021_12_28\ScheduledDeliveryShipment',
-             'gift_details' => '\SpApi\Model\vendor\df\orders\v2021_12_28\GiftDetails',
-             'net_price' => '\SpApi\Model\vendor\df\orders\v2021_12_28\Money',
-             'tax_details' => '\SpApi\Model\vendor\df\orders\v2021_12_28\TaxItemDetails',
-             'total_price' => '\SpApi\Model\vendor\df\orders\v2021_12_28\Money',
-             'buyer_customized_info' => '\SpApi\Model\vendor\df\orders\v2021_12_28\BuyerCustomizedInfoDetail'    ];
+    protected static $openAPITypes = [
+        'item_sequence_number' => 'string',
+        'buyer_product_identifier' => 'string',
+        'vendor_product_identifier' => 'string',
+        'title' => 'string',
+        'ordered_quantity' => '\SpApi\Model\vendor\df\orders\v2021_12_28\ItemQuantity',
+        'scheduled_delivery_shipment' => '\SpApi\Model\vendor\df\orders\v2021_12_28\ScheduledDeliveryShipment',
+        'gift_details' => '\SpApi\Model\vendor\df\orders\v2021_12_28\GiftDetails',
+        'net_price' => '\SpApi\Model\vendor\df\orders\v2021_12_28\Money',
+        'tax_details' => '\SpApi\Model\vendor\df\orders\v2021_12_28\TaxItemDetails',
+        'total_price' => '\SpApi\Model\vendor\df\orders\v2021_12_28\Money',
+        'buyer_customized_info' => '\SpApi\Model\vendor\df\orders\v2021_12_28\BuyerCustomizedInfoDetail'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -79,18 +78,19 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'item_sequence_number' => null,
-            'buyer_product_identifier' => null,
-            'vendor_product_identifier' => null,
-            'title' => null,
-            'ordered_quantity' => null,
-            'scheduled_delivery_shipment' => null,
-            'gift_details' => null,
-            'net_price' => null,
-            'tax_details' => null,
-            'total_price' => null,
-            'buyer_customized_info' => null    ];
+    protected static $openAPIFormats = [
+        'item_sequence_number' => null,
+        'buyer_product_identifier' => null,
+        'vendor_product_identifier' => null,
+        'title' => null,
+        'ordered_quantity' => null,
+        'scheduled_delivery_shipment' => null,
+        'gift_details' => null,
+        'net_price' => null,
+        'tax_details' => null,
+        'total_price' => null,
+        'buyer_customized_info' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -99,16 +99,16 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'item_sequence_number' => false,
-        'buyer_product_identifier' => true,
-        'vendor_product_identifier' => true,
-        'title' => true,
+        'buyer_product_identifier' => false,
+        'vendor_product_identifier' => false,
+        'title' => false,
         'ordered_quantity' => false,
-        'scheduled_delivery_shipment' => true,
-        'gift_details' => true,
+        'scheduled_delivery_shipment' => false,
+        'gift_details' => false,
         'net_price' => false,
-        'tax_details' => true,
-        'total_price' => true,
-        'buyer_customized_info' => true
+        'tax_details' => false,
+        'total_price' => false,
+        'buyer_customized_info' => false
     ];
 
     /**
@@ -123,7 +123,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -133,7 +133,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -196,19 +196,18 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'item_sequence_number' => 'itemSequenceNumber',
-                'buyer_product_identifier' => 'buyerProductIdentifier',
-                'vendor_product_identifier' => 'vendorProductIdentifier',
-                'title' => 'title',
-                'ordered_quantity' => 'orderedQuantity',
-                'scheduled_delivery_shipment' => 'scheduledDeliveryShipment',
-                'gift_details' => 'giftDetails',
-                'net_price' => 'netPrice',
-                'tax_details' => 'taxDetails',
-                'total_price' => 'totalPrice',
-                'buyer_customized_info' => 'buyerCustomizedInfo'
-        
+        'buyer_product_identifier' => 'buyerProductIdentifier',
+        'vendor_product_identifier' => 'vendorProductIdentifier',
+        'title' => 'title',
+        'ordered_quantity' => 'orderedQuantity',
+        'scheduled_delivery_shipment' => 'scheduledDeliveryShipment',
+        'gift_details' => 'giftDetails',
+        'net_price' => 'netPrice',
+        'tax_details' => 'taxDetails',
+        'total_price' => 'totalPrice',
+        'buyer_customized_info' => 'buyerCustomizedInfo'
     ];
 
     /**
@@ -216,7 +215,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'item_sequence_number' => 'setItemSequenceNumber',
         'buyer_product_identifier' => 'setBuyerProductIdentifier',
         'vendor_product_identifier' => 'setVendorProductIdentifier',
@@ -235,7 +234,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'item_sequence_number' => 'getItemSequenceNumber',
         'buyer_product_identifier' => 'getBuyerProductIdentifier',
         'vendor_product_identifier' => 'getVendorProductIdentifier',
@@ -255,7 +254,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -265,7 +264,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -275,7 +274,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -285,7 +284,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -294,17 +293,17 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('item_sequence_number', $data ?? [], null);
         $this->setIfExists('buyer_product_identifier', $data ?? [], null);
@@ -342,7 +341,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -364,7 +363,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -375,7 +374,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getItemSequenceNumber(): string
+    public function getItemSequenceNumber()
     {
         return $this->container['item_sequence_number'];
     }
@@ -387,7 +386,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setItemSequenceNumber(string $item_sequence_number): self
+    public function setItemSequenceNumber($item_sequence_number)
     {
         if (is_null($item_sequence_number)) {
             throw new \InvalidArgumentException('non-nullable item_sequence_number cannot be null');
@@ -402,7 +401,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getBuyerProductIdentifier(): ?string
+    public function getBuyerProductIdentifier()
     {
         return $this->container['buyer_product_identifier'];
     }
@@ -414,17 +413,10 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setBuyerProductIdentifier(?string $buyer_product_identifier): self
+    public function setBuyerProductIdentifier($buyer_product_identifier)
     {
         if (is_null($buyer_product_identifier)) {
-            array_push($this->openAPINullablesSetToNull, 'buyer_product_identifier');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('buyer_product_identifier', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable buyer_product_identifier cannot be null');
         }
         $this->container['buyer_product_identifier'] = $buyer_product_identifier;
 
@@ -436,7 +428,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getVendorProductIdentifier(): ?string
+    public function getVendorProductIdentifier()
     {
         return $this->container['vendor_product_identifier'];
     }
@@ -448,17 +440,10 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setVendorProductIdentifier(?string $vendor_product_identifier): self
+    public function setVendorProductIdentifier($vendor_product_identifier)
     {
         if (is_null($vendor_product_identifier)) {
-            array_push($this->openAPINullablesSetToNull, 'vendor_product_identifier');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('vendor_product_identifier', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable vendor_product_identifier cannot be null');
         }
         $this->container['vendor_product_identifier'] = $vendor_product_identifier;
 
@@ -470,7 +455,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getTitle(): ?string
+    public function getTitle()
     {
         return $this->container['title'];
     }
@@ -482,17 +467,10 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTitle(?string $title): self
+    public function setTitle($title)
     {
         if (is_null($title)) {
-            array_push($this->openAPINullablesSetToNull, 'title');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('title', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable title cannot be null');
         }
         $this->container['title'] = $title;
 
@@ -504,7 +482,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\df\orders\v2021_12_28\ItemQuantity
      */
-    public function getOrderedQuantity(): \SpApi\Model\vendor\df\orders\v2021_12_28\ItemQuantity
+    public function getOrderedQuantity()
     {
         return $this->container['ordered_quantity'];
     }
@@ -516,7 +494,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setOrderedQuantity(\SpApi\Model\vendor\df\orders\v2021_12_28\ItemQuantity $ordered_quantity): self
+    public function setOrderedQuantity($ordered_quantity)
     {
         if (is_null($ordered_quantity)) {
             throw new \InvalidArgumentException('non-nullable ordered_quantity cannot be null');
@@ -531,7 +509,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\df\orders\v2021_12_28\ScheduledDeliveryShipment|null
      */
-    public function getScheduledDeliveryShipment(): ?\SpApi\Model\vendor\df\orders\v2021_12_28\ScheduledDeliveryShipment
+    public function getScheduledDeliveryShipment()
     {
         return $this->container['scheduled_delivery_shipment'];
     }
@@ -543,17 +521,10 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setScheduledDeliveryShipment(?\SpApi\Model\vendor\df\orders\v2021_12_28\ScheduledDeliveryShipment $scheduled_delivery_shipment): self
+    public function setScheduledDeliveryShipment($scheduled_delivery_shipment)
     {
         if (is_null($scheduled_delivery_shipment)) {
-            array_push($this->openAPINullablesSetToNull, 'scheduled_delivery_shipment');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('scheduled_delivery_shipment', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable scheduled_delivery_shipment cannot be null');
         }
         $this->container['scheduled_delivery_shipment'] = $scheduled_delivery_shipment;
 
@@ -565,7 +536,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\df\orders\v2021_12_28\GiftDetails|null
      */
-    public function getGiftDetails(): ?\SpApi\Model\vendor\df\orders\v2021_12_28\GiftDetails
+    public function getGiftDetails()
     {
         return $this->container['gift_details'];
     }
@@ -577,17 +548,10 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setGiftDetails(?\SpApi\Model\vendor\df\orders\v2021_12_28\GiftDetails $gift_details): self
+    public function setGiftDetails($gift_details)
     {
         if (is_null($gift_details)) {
-            array_push($this->openAPINullablesSetToNull, 'gift_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('gift_details', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable gift_details cannot be null');
         }
         $this->container['gift_details'] = $gift_details;
 
@@ -599,7 +563,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\df\orders\v2021_12_28\Money
      */
-    public function getNetPrice(): \SpApi\Model\vendor\df\orders\v2021_12_28\Money
+    public function getNetPrice()
     {
         return $this->container['net_price'];
     }
@@ -611,7 +575,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setNetPrice(\SpApi\Model\vendor\df\orders\v2021_12_28\Money $net_price): self
+    public function setNetPrice($net_price)
     {
         if (is_null($net_price)) {
             throw new \InvalidArgumentException('non-nullable net_price cannot be null');
@@ -626,7 +590,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\df\orders\v2021_12_28\TaxItemDetails|null
      */
-    public function getTaxDetails(): ?\SpApi\Model\vendor\df\orders\v2021_12_28\TaxItemDetails
+    public function getTaxDetails()
     {
         return $this->container['tax_details'];
     }
@@ -638,17 +602,10 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTaxDetails(?\SpApi\Model\vendor\df\orders\v2021_12_28\TaxItemDetails $tax_details): self
+    public function setTaxDetails($tax_details)
     {
         if (is_null($tax_details)) {
-            array_push($this->openAPINullablesSetToNull, 'tax_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tax_details', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tax_details cannot be null');
         }
         $this->container['tax_details'] = $tax_details;
 
@@ -660,7 +617,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\df\orders\v2021_12_28\Money|null
      */
-    public function getTotalPrice(): ?\SpApi\Model\vendor\df\orders\v2021_12_28\Money
+    public function getTotalPrice()
     {
         return $this->container['total_price'];
     }
@@ -672,17 +629,10 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTotalPrice(?\SpApi\Model\vendor\df\orders\v2021_12_28\Money $total_price): self
+    public function setTotalPrice($total_price)
     {
         if (is_null($total_price)) {
-            array_push($this->openAPINullablesSetToNull, 'total_price');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_price', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable total_price cannot be null');
         }
         $this->container['total_price'] = $total_price;
 
@@ -694,7 +644,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\df\orders\v2021_12_28\BuyerCustomizedInfoDetail|null
      */
-    public function getBuyerCustomizedInfo(): ?\SpApi\Model\vendor\df\orders\v2021_12_28\BuyerCustomizedInfoDetail
+    public function getBuyerCustomizedInfo()
     {
         return $this->container['buyer_customized_info'];
     }
@@ -706,24 +656,15 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setBuyerCustomizedInfo(?\SpApi\Model\vendor\df\orders\v2021_12_28\BuyerCustomizedInfoDetail $buyer_customized_info): self
+    public function setBuyerCustomizedInfo($buyer_customized_info)
     {
         if (is_null($buyer_customized_info)) {
-            array_push($this->openAPINullablesSetToNull, 'buyer_customized_info');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('buyer_customized_info', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable buyer_customized_info cannot be null');
         }
         $this->container['buyer_customized_info'] = $buyer_customized_info;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -744,7 +685,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -757,7 +698,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -786,7 +727,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -809,7 +750,7 @@ class OrderItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

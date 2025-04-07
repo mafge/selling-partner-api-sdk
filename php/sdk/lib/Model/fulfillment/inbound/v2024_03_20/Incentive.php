@@ -3,7 +3,7 @@
 /**
  * Incentive.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class Incentive implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Incentive';
+    protected static $openAPIModelName = 'Incentive';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'description' => 'string',
         'target' => 'string',
         'type' => 'string',
-        'value' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Currency'];
+        'value' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Currency',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class Incentive implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'description' => null,
         'target' => null,
         'type' => null,
-        'value' => null];
+        'value' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -106,7 +109,7 @@ class Incentive implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'description' => 'description',
         'target' => 'target',
         'type' => 'type',
@@ -118,7 +121,7 @@ class Incentive implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'description' => 'setDescription',
         'target' => 'setTarget',
         'type' => 'setType',
@@ -130,7 +133,7 @@ class Incentive implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'description' => 'getDescription',
         'target' => 'getTarget',
         'type' => 'getType',
@@ -139,14 +142,16 @@ class Incentive implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class Incentive implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class Incentive implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class Incentive implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -289,15 +306,17 @@ class Incentive implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets description.
+     *
+     * @return string
      */
-    public function getDescription(): string
+    public function getDescription()
     {
         return $this->container['description'];
     }
@@ -306,8 +325,10 @@ class Incentive implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets description.
      *
      * @param string $description description of the incentive
+     *
+     * @return self
      */
-    public function setDescription(string $description): self
+    public function setDescription($description)
     {
         if (is_null($description)) {
             throw new \InvalidArgumentException('non-nullable description cannot be null');
@@ -326,8 +347,10 @@ class Incentive implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets target.
+     *
+     * @return string
      */
-    public function getTarget(): string
+    public function getTarget()
     {
         return $this->container['target'];
     }
@@ -336,8 +359,10 @@ class Incentive implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets target.
      *
      * @param string $target Target of the incentive. Possible values: 'Placement Services', 'Fulfillment Fee Discount'.
+     *
+     * @return self
      */
-    public function setTarget(string $target): self
+    public function setTarget($target)
     {
         if (is_null($target)) {
             throw new \InvalidArgumentException('non-nullable target cannot be null');
@@ -356,8 +381,10 @@ class Incentive implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets type.
+     *
+     * @return string
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->container['type'];
     }
@@ -366,8 +393,10 @@ class Incentive implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets type.
      *
      * @param string $type Type of incentive. Possible values: `FEE`, `DISCOUNT`.
+     *
+     * @return self
      */
-    public function setType(string $type): self
+    public function setType($type)
     {
         if (is_null($type)) {
             throw new \InvalidArgumentException('non-nullable type cannot be null');
@@ -386,8 +415,10 @@ class Incentive implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets value.
+     *
+     * @return Currency
      */
-    public function getValue(): Currency
+    public function getValue()
     {
         return $this->container['value'];
     }
@@ -396,8 +427,10 @@ class Incentive implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets value.
      *
      * @param Currency $value value
+     *
+     * @return self
      */
-    public function setValue(Currency $value): self
+    public function setValue($value)
     {
         if (is_null($value)) {
             throw new \InvalidArgumentException('non-nullable value cannot be null');
@@ -425,7 +458,7 @@ class Incentive implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -436,7 +469,7 @@ class Incentive implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -464,15 +497,17 @@ class Incentive implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

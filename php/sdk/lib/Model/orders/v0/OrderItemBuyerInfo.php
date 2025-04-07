@@ -3,7 +3,7 @@
 /**
  * OrderItemBuyerInfo.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\orders\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'OrderItemBuyerInfo';
+    protected static $openAPIModelName = 'OrderItemBuyerInfo';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'order_item_id' => 'string',
         'buyer_customized_info' => '\SpApi\Model\orders\v0\BuyerCustomizedInfoDetail',
         'gift_wrap_price' => '\SpApi\Model\orders\v0\Money',
         'gift_wrap_tax' => '\SpApi\Model\orders\v0\Money',
         'gift_message_text' => 'string',
-        'gift_wrap_level' => 'string'];
+        'gift_wrap_level' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'order_item_id' => null,
         'buyer_customized_info' => null,
         'gift_wrap_price' => null,
         'gift_wrap_tax' => null,
         'gift_message_text' => null,
-        'gift_wrap_level' => null];
+        'gift_wrap_level' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -92,11 +95,11 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
      */
     protected static array $openAPINullables = [
         'order_item_id' => false,
-        'buyer_customized_info' => true,
-        'gift_wrap_price' => true,
-        'gift_wrap_tax' => true,
-        'gift_message_text' => true,
-        'gift_wrap_level' => true,
+        'buyer_customized_info' => false,
+        'gift_wrap_price' => false,
+        'gift_wrap_tax' => false,
+        'gift_message_text' => false,
+        'gift_wrap_level' => false,
     ];
 
     /**
@@ -112,7 +115,7 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'order_item_id' => 'OrderItemId',
         'buyer_customized_info' => 'BuyerCustomizedInfo',
         'gift_wrap_price' => 'GiftWrapPrice',
@@ -126,7 +129,7 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'order_item_id' => 'setOrderItemId',
         'buyer_customized_info' => 'setBuyerCustomizedInfo',
         'gift_wrap_price' => 'setGiftWrapPrice',
@@ -140,7 +143,7 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'order_item_id' => 'getOrderItemId',
         'buyer_customized_info' => 'getBuyerCustomizedInfo',
         'gift_wrap_price' => 'getGiftWrapPrice',
@@ -151,14 +154,16 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -270,15 +287,17 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets order_item_id.
+     *
+     * @return string
      */
-    public function getOrderItemId(): string
+    public function getOrderItemId()
     {
         return $this->container['order_item_id'];
     }
@@ -287,8 +306,10 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets order_item_id.
      *
      * @param string $order_item_id an Amazon-defined order item identifier
+     *
+     * @return self
      */
-    public function setOrderItemId(string $order_item_id): self
+    public function setOrderItemId($order_item_id)
     {
         if (is_null($order_item_id)) {
             throw new \InvalidArgumentException('non-nullable order_item_id cannot be null');
@@ -300,8 +321,10 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets buyer_customized_info.
+     *
+     * @return null|BuyerCustomizedInfoDetail
      */
-    public function getBuyerCustomizedInfo(): ?BuyerCustomizedInfoDetail
+    public function getBuyerCustomizedInfo()
     {
         return $this->container['buyer_customized_info'];
     }
@@ -310,18 +333,13 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets buyer_customized_info.
      *
      * @param null|BuyerCustomizedInfoDetail $buyer_customized_info buyer_customized_info
+     *
+     * @return self
      */
-    public function setBuyerCustomizedInfo(?BuyerCustomizedInfoDetail $buyer_customized_info): self
+    public function setBuyerCustomizedInfo($buyer_customized_info)
     {
         if (is_null($buyer_customized_info)) {
-            array_push($this->openAPINullablesSetToNull, 'buyer_customized_info');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('buyer_customized_info', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable buyer_customized_info cannot be null');
         }
         $this->container['buyer_customized_info'] = $buyer_customized_info;
 
@@ -330,8 +348,10 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets gift_wrap_price.
+     *
+     * @return null|Money
      */
-    public function getGiftWrapPrice(): ?Money
+    public function getGiftWrapPrice()
     {
         return $this->container['gift_wrap_price'];
     }
@@ -340,18 +360,13 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets gift_wrap_price.
      *
      * @param null|Money $gift_wrap_price gift_wrap_price
+     *
+     * @return self
      */
-    public function setGiftWrapPrice(?Money $gift_wrap_price): self
+    public function setGiftWrapPrice($gift_wrap_price)
     {
         if (is_null($gift_wrap_price)) {
-            array_push($this->openAPINullablesSetToNull, 'gift_wrap_price');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('gift_wrap_price', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable gift_wrap_price cannot be null');
         }
         $this->container['gift_wrap_price'] = $gift_wrap_price;
 
@@ -360,8 +375,10 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets gift_wrap_tax.
+     *
+     * @return null|Money
      */
-    public function getGiftWrapTax(): ?Money
+    public function getGiftWrapTax()
     {
         return $this->container['gift_wrap_tax'];
     }
@@ -370,18 +387,13 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets gift_wrap_tax.
      *
      * @param null|Money $gift_wrap_tax gift_wrap_tax
+     *
+     * @return self
      */
-    public function setGiftWrapTax(?Money $gift_wrap_tax): self
+    public function setGiftWrapTax($gift_wrap_tax)
     {
         if (is_null($gift_wrap_tax)) {
-            array_push($this->openAPINullablesSetToNull, 'gift_wrap_tax');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('gift_wrap_tax', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable gift_wrap_tax cannot be null');
         }
         $this->container['gift_wrap_tax'] = $gift_wrap_tax;
 
@@ -390,8 +402,10 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets gift_message_text.
+     *
+     * @return null|string
      */
-    public function getGiftMessageText(): ?string
+    public function getGiftMessageText()
     {
         return $this->container['gift_message_text'];
     }
@@ -400,18 +414,13 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets gift_message_text.
      *
      * @param null|string $gift_message_text A gift message provided by the buyer.  **Note**: This attribute is only available for MFN (fulfilled by seller) orders.
+     *
+     * @return self
      */
-    public function setGiftMessageText(?string $gift_message_text): self
+    public function setGiftMessageText($gift_message_text)
     {
         if (is_null($gift_message_text)) {
-            array_push($this->openAPINullablesSetToNull, 'gift_message_text');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('gift_message_text', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable gift_message_text cannot be null');
         }
         $this->container['gift_message_text'] = $gift_message_text;
 
@@ -420,8 +429,10 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets gift_wrap_level.
+     *
+     * @return null|string
      */
-    public function getGiftWrapLevel(): ?string
+    public function getGiftWrapLevel()
     {
         return $this->container['gift_wrap_level'];
     }
@@ -430,18 +441,13 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets gift_wrap_level.
      *
      * @param null|string $gift_wrap_level the gift wrap level specified by the buyer
+     *
+     * @return self
      */
-    public function setGiftWrapLevel(?string $gift_wrap_level): self
+    public function setGiftWrapLevel($gift_wrap_level)
     {
         if (is_null($gift_wrap_level)) {
-            array_push($this->openAPINullablesSetToNull, 'gift_wrap_level');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('gift_wrap_level', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable gift_wrap_level cannot be null');
         }
         $this->container['gift_wrap_level'] = $gift_wrap_level;
 
@@ -466,7 +472,7 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -477,7 +483,7 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -505,15 +511,17 @@ class OrderItemBuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

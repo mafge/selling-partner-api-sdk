@@ -3,7 +3,7 @@
 /**
  * Item.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\easyship\v2022_03_23;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Item';
+    protected static $openAPIModelName = 'Item';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'order_item_id' => 'string',
-        'order_item_serial_numbers' => 'string[]'];
+        'order_item_serial_numbers' => 'string[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'order_item_id' => null,
-        'order_item_serial_numbers' => null];
+        'order_item_serial_numbers' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'order_item_id' => true,
-        'order_item_serial_numbers' => true,
+        'order_item_id' => false,
+        'order_item_serial_numbers' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'order_item_id' => 'orderItemId',
         'order_item_serial_numbers' => 'orderItemSerialNumbers',
     ];
@@ -110,7 +113,7 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'order_item_id' => 'setOrderItemId',
         'order_item_serial_numbers' => 'setOrderItemSerialNumbers',
     ];
@@ -120,21 +123,23 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'order_item_id' => 'getOrderItemId',
         'order_item_serial_numbers' => 'getOrderItemSerialNumbers',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -246,15 +263,17 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets order_item_id.
+     *
+     * @return null|string
      */
-    public function getOrderItemId(): ?string
+    public function getOrderItemId()
     {
         return $this->container['order_item_id'];
     }
@@ -263,20 +282,15 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets order_item_id.
      *
      * @param null|string $order_item_id the Amazon-defined order item identifier
+     *
+     * @return self
      */
-    public function setOrderItemId(?string $order_item_id): self
+    public function setOrderItemId($order_item_id)
     {
         if (is_null($order_item_id)) {
-            array_push($this->openAPINullablesSetToNull, 'order_item_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('order_item_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable order_item_id cannot be null');
         }
-        if (!is_null($order_item_id) && (mb_strlen($order_item_id) > 255)) {
+        if (mb_strlen($order_item_id) > 255) {
             throw new \InvalidArgumentException('invalid length for $order_item_id when calling Item., must be smaller than or equal to 255.');
         }
 
@@ -287,8 +301,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets order_item_serial_numbers.
+     *
+     * @return null|string[]
      */
-    public function getOrderItemSerialNumbers(): ?array
+    public function getOrderItemSerialNumbers()
     {
         return $this->container['order_item_serial_numbers'];
     }
@@ -296,22 +312,17 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets order_item_serial_numbers.
      *
-     * @param null|array $order_item_serial_numbers a list of serial numbers for the items associated with the `OrderItemId` value
+     * @param null|string[] $order_item_serial_numbers a list of serial numbers for the items associated with the `OrderItemId` value
+     *
+     * @return self
      */
-    public function setOrderItemSerialNumbers(?array $order_item_serial_numbers): self
+    public function setOrderItemSerialNumbers($order_item_serial_numbers)
     {
         if (is_null($order_item_serial_numbers)) {
-            array_push($this->openAPINullablesSetToNull, 'order_item_serial_numbers');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('order_item_serial_numbers', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable order_item_serial_numbers cannot be null');
         }
 
-        if (!is_null($order_item_serial_numbers) && (count($order_item_serial_numbers) > 100)) {
+        if (count($order_item_serial_numbers) > 100) {
             throw new \InvalidArgumentException('invalid value for $order_item_serial_numbers when calling Item., number of items must be less than or equal to 100.');
         }
         $this->container['order_item_serial_numbers'] = $order_item_serial_numbers;
@@ -337,7 +348,7 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -348,7 +359,7 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -376,15 +387,17 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

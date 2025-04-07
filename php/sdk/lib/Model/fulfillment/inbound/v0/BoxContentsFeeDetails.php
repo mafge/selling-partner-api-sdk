@@ -3,7 +3,7 @@
 /**
  * BoxContentsFeeDetails.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class BoxContentsFeeDetails implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'BoxContentsFeeDetails';
+    protected static $openAPIModelName = 'BoxContentsFeeDetails';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'total_units' => 'int',
         'fee_per_unit' => '\SpApi\Model\fulfillment\inbound\v0\Amount',
-        'total_fee' => '\SpApi\Model\fulfillment\inbound\v0\Amount'];
+        'total_fee' => '\SpApi\Model\fulfillment\inbound\v0\Amount',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class BoxContentsFeeDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'total_units' => 'int32',
         'fee_per_unit' => null,
-        'total_fee' => null];
+        'total_fee' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class BoxContentsFeeDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'total_units' => true,
-        'fee_per_unit' => true,
-        'total_fee' => true,
+        'total_units' => false,
+        'fee_per_unit' => false,
+        'total_fee' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class BoxContentsFeeDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'total_units' => 'TotalUnits',
         'fee_per_unit' => 'FeePerUnit',
         'total_fee' => 'TotalFee',
@@ -114,7 +117,7 @@ class BoxContentsFeeDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'total_units' => 'setTotalUnits',
         'fee_per_unit' => 'setFeePerUnit',
         'total_fee' => 'setTotalFee',
@@ -125,7 +128,7 @@ class BoxContentsFeeDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'total_units' => 'getTotalUnits',
         'fee_per_unit' => 'getFeePerUnit',
         'total_fee' => 'getTotalFee',
@@ -133,14 +136,16 @@ class BoxContentsFeeDetails implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class BoxContentsFeeDetails implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class BoxContentsFeeDetails implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class BoxContentsFeeDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -243,15 +260,17 @@ class BoxContentsFeeDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets total_units.
+     *
+     * @return null|int
      */
-    public function getTotalUnits(): ?int
+    public function getTotalUnits()
     {
         return $this->container['total_units'];
     }
@@ -260,18 +279,13 @@ class BoxContentsFeeDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets total_units.
      *
      * @param null|int $total_units the item quantity
+     *
+     * @return self
      */
-    public function setTotalUnits(?int $total_units): self
+    public function setTotalUnits($total_units)
     {
         if (is_null($total_units)) {
-            array_push($this->openAPINullablesSetToNull, 'total_units');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_units', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable total_units cannot be null');
         }
         $this->container['total_units'] = $total_units;
 
@@ -280,8 +294,10 @@ class BoxContentsFeeDetails implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets fee_per_unit.
+     *
+     * @return null|Amount
      */
-    public function getFeePerUnit(): ?Amount
+    public function getFeePerUnit()
     {
         return $this->container['fee_per_unit'];
     }
@@ -290,18 +306,13 @@ class BoxContentsFeeDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets fee_per_unit.
      *
      * @param null|Amount $fee_per_unit fee_per_unit
+     *
+     * @return self
      */
-    public function setFeePerUnit(?Amount $fee_per_unit): self
+    public function setFeePerUnit($fee_per_unit)
     {
         if (is_null($fee_per_unit)) {
-            array_push($this->openAPINullablesSetToNull, 'fee_per_unit');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fee_per_unit', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fee_per_unit cannot be null');
         }
         $this->container['fee_per_unit'] = $fee_per_unit;
 
@@ -310,8 +321,10 @@ class BoxContentsFeeDetails implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets total_fee.
+     *
+     * @return null|Amount
      */
-    public function getTotalFee(): ?Amount
+    public function getTotalFee()
     {
         return $this->container['total_fee'];
     }
@@ -320,18 +333,13 @@ class BoxContentsFeeDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets total_fee.
      *
      * @param null|Amount $total_fee total_fee
+     *
+     * @return self
      */
-    public function setTotalFee(?Amount $total_fee): self
+    public function setTotalFee($total_fee)
     {
         if (is_null($total_fee)) {
-            array_push($this->openAPINullablesSetToNull, 'total_fee');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_fee', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable total_fee cannot be null');
         }
         $this->container['total_fee'] = $total_fee;
 
@@ -356,7 +364,7 @@ class BoxContentsFeeDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -367,7 +375,7 @@ class BoxContentsFeeDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -395,15 +403,17 @@ class BoxContentsFeeDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * RemovalShipmentItem.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'RemovalShipmentItem';
+    protected static $openAPIModelName = 'RemovalShipmentItem';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'removal_shipment_item_id' => 'string',
         'tax_collection_model' => 'string',
         'fulfillment_network_sku' => 'string',
@@ -68,7 +69,8 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
         'revenue' => '\SpApi\Model\finances\v0\Currency',
         'fee_amount' => '\SpApi\Model\finances\v0\Currency',
         'tax_amount' => '\SpApi\Model\finances\v0\Currency',
-        'tax_withheld' => '\SpApi\Model\finances\v0\Currency'];
+        'tax_withheld' => '\SpApi\Model\finances\v0\Currency',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -79,7 +81,7 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'removal_shipment_item_id' => null,
         'tax_collection_model' => null,
         'fulfillment_network_sku' => null,
@@ -87,7 +89,8 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
         'revenue' => null,
         'fee_amount' => null,
         'tax_amount' => null,
-        'tax_withheld' => null];
+        'tax_withheld' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -95,14 +98,14 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'removal_shipment_item_id' => true,
-        'tax_collection_model' => true,
-        'fulfillment_network_sku' => true,
-        'quantity' => true,
-        'revenue' => true,
-        'fee_amount' => true,
-        'tax_amount' => true,
-        'tax_withheld' => true,
+        'removal_shipment_item_id' => false,
+        'tax_collection_model' => false,
+        'fulfillment_network_sku' => false,
+        'quantity' => false,
+        'revenue' => false,
+        'fee_amount' => false,
+        'tax_amount' => false,
+        'tax_withheld' => false,
     ];
 
     /**
@@ -118,7 +121,7 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'removal_shipment_item_id' => 'RemovalShipmentItemId',
         'tax_collection_model' => 'TaxCollectionModel',
         'fulfillment_network_sku' => 'FulfillmentNetworkSKU',
@@ -134,7 +137,7 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'removal_shipment_item_id' => 'setRemovalShipmentItemId',
         'tax_collection_model' => 'setTaxCollectionModel',
         'fulfillment_network_sku' => 'setFulfillmentNetworkSku',
@@ -150,7 +153,7 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'removal_shipment_item_id' => 'getRemovalShipmentItemId',
         'tax_collection_model' => 'getTaxCollectionModel',
         'fulfillment_network_sku' => 'getFulfillmentNetworkSku',
@@ -163,14 +166,16 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -199,16 +204,20 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -232,32 +241,40 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -267,7 +284,7 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -278,15 +295,17 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets removal_shipment_item_id.
+     *
+     * @return null|string
      */
-    public function getRemovalShipmentItemId(): ?string
+    public function getRemovalShipmentItemId()
     {
         return $this->container['removal_shipment_item_id'];
     }
@@ -295,18 +314,13 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets removal_shipment_item_id.
      *
      * @param null|string $removal_shipment_item_id an identifier for an item in a removal shipment
+     *
+     * @return self
      */
-    public function setRemovalShipmentItemId(?string $removal_shipment_item_id): self
+    public function setRemovalShipmentItemId($removal_shipment_item_id)
     {
         if (is_null($removal_shipment_item_id)) {
-            array_push($this->openAPINullablesSetToNull, 'removal_shipment_item_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('removal_shipment_item_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable removal_shipment_item_id cannot be null');
         }
         $this->container['removal_shipment_item_id'] = $removal_shipment_item_id;
 
@@ -315,8 +329,10 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets tax_collection_model.
+     *
+     * @return null|string
      */
-    public function getTaxCollectionModel(): ?string
+    public function getTaxCollectionModel()
     {
         return $this->container['tax_collection_model'];
     }
@@ -325,18 +341,13 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets tax_collection_model.
      *
      * @param null|string $tax_collection_model The tax collection model applied to the item.  Possible values:  * MarketplaceFacilitator - Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller.  * Standard - Tax is paid to the seller and not remitted to the taxing authority by Amazon.
+     *
+     * @return self
      */
-    public function setTaxCollectionModel(?string $tax_collection_model): self
+    public function setTaxCollectionModel($tax_collection_model)
     {
         if (is_null($tax_collection_model)) {
-            array_push($this->openAPINullablesSetToNull, 'tax_collection_model');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tax_collection_model', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tax_collection_model cannot be null');
         }
         $this->container['tax_collection_model'] = $tax_collection_model;
 
@@ -345,8 +356,10 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets fulfillment_network_sku.
+     *
+     * @return null|string
      */
-    public function getFulfillmentNetworkSku(): ?string
+    public function getFulfillmentNetworkSku()
     {
         return $this->container['fulfillment_network_sku'];
     }
@@ -355,18 +368,13 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets fulfillment_network_sku.
      *
      * @param null|string $fulfillment_network_sku the Amazon fulfillment network SKU for the item
+     *
+     * @return self
      */
-    public function setFulfillmentNetworkSku(?string $fulfillment_network_sku): self
+    public function setFulfillmentNetworkSku($fulfillment_network_sku)
     {
         if (is_null($fulfillment_network_sku)) {
-            array_push($this->openAPINullablesSetToNull, 'fulfillment_network_sku');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fulfillment_network_sku', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fulfillment_network_sku cannot be null');
         }
         $this->container['fulfillment_network_sku'] = $fulfillment_network_sku;
 
@@ -375,8 +383,10 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets quantity.
+     *
+     * @return null|int
      */
-    public function getQuantity(): ?int
+    public function getQuantity()
     {
         return $this->container['quantity'];
     }
@@ -385,18 +395,13 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets quantity.
      *
      * @param null|int $quantity the quantity of the item
+     *
+     * @return self
      */
-    public function setQuantity(?int $quantity): self
+    public function setQuantity($quantity)
     {
         if (is_null($quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable quantity cannot be null');
         }
         $this->container['quantity'] = $quantity;
 
@@ -405,8 +410,10 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets revenue.
+     *
+     * @return null|Currency
      */
-    public function getRevenue(): ?Currency
+    public function getRevenue()
     {
         return $this->container['revenue'];
     }
@@ -415,18 +422,13 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets revenue.
      *
      * @param null|Currency $revenue revenue
+     *
+     * @return self
      */
-    public function setRevenue(?Currency $revenue): self
+    public function setRevenue($revenue)
     {
         if (is_null($revenue)) {
-            array_push($this->openAPINullablesSetToNull, 'revenue');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('revenue', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable revenue cannot be null');
         }
         $this->container['revenue'] = $revenue;
 
@@ -435,8 +437,10 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets fee_amount.
+     *
+     * @return null|Currency
      */
-    public function getFeeAmount(): ?Currency
+    public function getFeeAmount()
     {
         return $this->container['fee_amount'];
     }
@@ -445,18 +449,13 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets fee_amount.
      *
      * @param null|Currency $fee_amount fee_amount
+     *
+     * @return self
      */
-    public function setFeeAmount(?Currency $fee_amount): self
+    public function setFeeAmount($fee_amount)
     {
         if (is_null($fee_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'fee_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fee_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fee_amount cannot be null');
         }
         $this->container['fee_amount'] = $fee_amount;
 
@@ -465,8 +464,10 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets tax_amount.
+     *
+     * @return null|Currency
      */
-    public function getTaxAmount(): ?Currency
+    public function getTaxAmount()
     {
         return $this->container['tax_amount'];
     }
@@ -475,18 +476,13 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets tax_amount.
      *
      * @param null|Currency $tax_amount tax_amount
+     *
+     * @return self
      */
-    public function setTaxAmount(?Currency $tax_amount): self
+    public function setTaxAmount($tax_amount)
     {
         if (is_null($tax_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'tax_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tax_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tax_amount cannot be null');
         }
         $this->container['tax_amount'] = $tax_amount;
 
@@ -495,8 +491,10 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets tax_withheld.
+     *
+     * @return null|Currency
      */
-    public function getTaxWithheld(): ?Currency
+    public function getTaxWithheld()
     {
         return $this->container['tax_withheld'];
     }
@@ -505,18 +503,13 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets tax_withheld.
      *
      * @param null|Currency $tax_withheld tax_withheld
+     *
+     * @return self
      */
-    public function setTaxWithheld(?Currency $tax_withheld): self
+    public function setTaxWithheld($tax_withheld)
     {
         if (is_null($tax_withheld)) {
-            array_push($this->openAPINullablesSetToNull, 'tax_withheld');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tax_withheld', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tax_withheld cannot be null');
         }
         $this->container['tax_withheld'] = $tax_withheld;
 
@@ -541,7 +534,7 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -552,7 +545,7 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -580,15 +573,17 @@ class RemovalShipmentItem implements ModelInterface, \ArrayAccess, \JsonSerializ
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

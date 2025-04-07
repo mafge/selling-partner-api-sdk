@@ -2,7 +2,7 @@
 /**
  * ShipmentStatusDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * ShipmentStatusDetails Class Doc Comment
@@ -52,16 +50,17 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'ShipmentStatusDetails';
+    protected static $openAPIModelName = 'ShipmentStatusDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'shipment_status' => 'string',
-             'shipment_status_date' => '\DateTime'    ];
+    protected static $openAPITypes = [
+        'shipment_status' => 'string',
+        'shipment_status_date' => '\DateTime'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,9 +69,10 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'shipment_status' => null,
-            'shipment_status_date' => 'date-time'    ];
+    protected static $openAPIFormats = [
+        'shipment_status' => null,
+        'shipment_status_date' => 'date-time'
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -80,8 +80,8 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'shipment_status' => true,
-        'shipment_status_date' => true
+        'shipment_status' => false,
+        'shipment_status_date' => false
     ];
 
     /**
@@ -96,7 +96,7 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -106,7 +106,7 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -169,10 +169,9 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'shipment_status' => 'shipmentStatus',
-                'shipment_status_date' => 'shipmentStatusDate'
-        
+        'shipment_status_date' => 'shipmentStatusDate'
     ];
 
     /**
@@ -180,7 +179,7 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'shipment_status' => 'setShipmentStatus',
         'shipment_status_date' => 'setShipmentStatusDate'
     ];
@@ -190,7 +189,7 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'shipment_status' => 'getShipmentStatus',
         'shipment_status_date' => 'getShipmentStatusDate'
     ];
@@ -201,7 +200,7 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -211,7 +210,7 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -221,7 +220,7 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -231,7 +230,7 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +245,7 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string[]
      */
-    public function getShipmentStatusAllowableValues(): array
+    public function getShipmentStatusAllowableValues()
     {
         return [
             self::SHIPMENT_STATUS_CREATED,
@@ -259,17 +258,17 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('shipment_status', $data ?? [], null);
         $this->setIfExists('shipment_status_date', $data ?? [], null);
@@ -298,7 +297,7 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -320,7 +319,7 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -331,7 +330,7 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
-    public function getShipmentStatus(): ?string
+    public function getShipmentStatus()
     {
         return $this->container['shipment_status'];
     }
@@ -343,20 +342,13 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setShipmentStatus(?string $shipment_status): self
+    public function setShipmentStatus($shipment_status)
     {
         if (is_null($shipment_status)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_status', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_status cannot be null');
         }
         $allowedValues = $this->getShipmentStatusAllowableValues();
-        if (!is_null($shipment_status) && !in_array($shipment_status, $allowedValues, true)) {
+        if (!in_array($shipment_status, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'shipment_status', must be one of '%s'",
@@ -375,7 +367,7 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return \DateTime|null
      */
-    public function getShipmentStatusDate(): ?\DateTime
+    public function getShipmentStatusDate()
     {
         return $this->container['shipment_status_date'];
     }
@@ -387,24 +379,15 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setShipmentStatusDate(?\DateTime $shipment_status_date): self
+    public function setShipmentStatusDate($shipment_status_date)
     {
         if (is_null($shipment_status_date)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_status_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_status_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_status_date cannot be null');
         }
         $this->container['shipment_status_date'] = $shipment_status_date;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -425,7 +408,7 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -438,7 +421,7 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -467,7 +450,7 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -490,7 +473,7 @@ class ShipmentStatusDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

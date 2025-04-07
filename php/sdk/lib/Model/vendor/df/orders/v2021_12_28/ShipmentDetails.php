@@ -2,7 +2,7 @@
 /**
  * ShipmentDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\df\orders\v2021_12_28;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * ShipmentDetails Class Doc Comment
@@ -52,21 +50,22 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'ShipmentDetails';
+    protected static $openAPIModelName = 'ShipmentDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'is_priority_shipment' => 'bool',
-             'is_scheduled_delivery_shipment' => 'bool',
-             'is_pslip_required' => 'bool',
-             'is_gift' => 'bool',
-             'ship_method' => 'string',
-             'shipment_dates' => '\SpApi\Model\vendor\df\orders\v2021_12_28\ShipmentDates',
-             'message_to_customer' => 'string'    ];
+    protected static $openAPITypes = [
+        'is_priority_shipment' => 'bool',
+        'is_scheduled_delivery_shipment' => 'bool',
+        'is_pslip_required' => 'bool',
+        'is_gift' => 'bool',
+        'ship_method' => 'string',
+        'shipment_dates' => '\SpApi\Model\vendor\df\orders\v2021_12_28\ShipmentDates',
+        'message_to_customer' => 'string'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -75,14 +74,15 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'is_priority_shipment' => null,
-            'is_scheduled_delivery_shipment' => null,
-            'is_pslip_required' => null,
-            'is_gift' => null,
-            'ship_method' => null,
-            'shipment_dates' => null,
-            'message_to_customer' => null    ];
+    protected static $openAPIFormats = [
+        'is_priority_shipment' => null,
+        'is_scheduled_delivery_shipment' => null,
+        'is_pslip_required' => null,
+        'is_gift' => null,
+        'ship_method' => null,
+        'shipment_dates' => null,
+        'message_to_customer' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -91,9 +91,9 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'is_priority_shipment' => false,
-        'is_scheduled_delivery_shipment' => true,
+        'is_scheduled_delivery_shipment' => false,
         'is_pslip_required' => false,
-        'is_gift' => true,
+        'is_gift' => false,
         'ship_method' => false,
         'shipment_dates' => false,
         'message_to_customer' => false
@@ -111,7 +111,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -121,7 +121,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -184,15 +184,14 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'is_priority_shipment' => 'isPriorityShipment',
-                'is_scheduled_delivery_shipment' => 'isScheduledDeliveryShipment',
-                'is_pslip_required' => 'isPslipRequired',
-                'is_gift' => 'isGift',
-                'ship_method' => 'shipMethod',
-                'shipment_dates' => 'shipmentDates',
-                'message_to_customer' => 'messageToCustomer'
-        
+        'is_scheduled_delivery_shipment' => 'isScheduledDeliveryShipment',
+        'is_pslip_required' => 'isPslipRequired',
+        'is_gift' => 'isGift',
+        'ship_method' => 'shipMethod',
+        'shipment_dates' => 'shipmentDates',
+        'message_to_customer' => 'messageToCustomer'
     ];
 
     /**
@@ -200,7 +199,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'is_priority_shipment' => 'setIsPriorityShipment',
         'is_scheduled_delivery_shipment' => 'setIsScheduledDeliveryShipment',
         'is_pslip_required' => 'setIsPslipRequired',
@@ -215,7 +214,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'is_priority_shipment' => 'getIsPriorityShipment',
         'is_scheduled_delivery_shipment' => 'getIsScheduledDeliveryShipment',
         'is_pslip_required' => 'getIsPslipRequired',
@@ -231,7 +230,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -241,7 +240,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -251,7 +250,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -261,7 +260,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -270,17 +269,17 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('is_priority_shipment', $data ?? [], null);
         $this->setIfExists('is_scheduled_delivery_shipment', $data ?? [], null);
@@ -314,7 +313,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -342,7 +341,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -353,7 +352,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool
      */
-    public function getIsPriorityShipment(): bool
+    public function getIsPriorityShipment()
     {
         return $this->container['is_priority_shipment'];
     }
@@ -365,7 +364,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setIsPriorityShipment(bool $is_priority_shipment): self
+    public function setIsPriorityShipment($is_priority_shipment)
     {
         if (is_null($is_priority_shipment)) {
             throw new \InvalidArgumentException('non-nullable is_priority_shipment cannot be null');
@@ -380,7 +379,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool|null
      */
-    public function getIsScheduledDeliveryShipment(): ?bool
+    public function getIsScheduledDeliveryShipment()
     {
         return $this->container['is_scheduled_delivery_shipment'];
     }
@@ -392,17 +391,10 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setIsScheduledDeliveryShipment(?bool $is_scheduled_delivery_shipment): self
+    public function setIsScheduledDeliveryShipment($is_scheduled_delivery_shipment)
     {
         if (is_null($is_scheduled_delivery_shipment)) {
-            array_push($this->openAPINullablesSetToNull, 'is_scheduled_delivery_shipment');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_scheduled_delivery_shipment', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_scheduled_delivery_shipment cannot be null');
         }
         $this->container['is_scheduled_delivery_shipment'] = $is_scheduled_delivery_shipment;
 
@@ -414,7 +406,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool
      */
-    public function getIsPslipRequired(): bool
+    public function getIsPslipRequired()
     {
         return $this->container['is_pslip_required'];
     }
@@ -426,7 +418,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setIsPslipRequired(bool $is_pslip_required): self
+    public function setIsPslipRequired($is_pslip_required)
     {
         if (is_null($is_pslip_required)) {
             throw new \InvalidArgumentException('non-nullable is_pslip_required cannot be null');
@@ -441,7 +433,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool|null
      */
-    public function getIsGift(): ?bool
+    public function getIsGift()
     {
         return $this->container['is_gift'];
     }
@@ -453,17 +445,10 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setIsGift(?bool $is_gift): self
+    public function setIsGift($is_gift)
     {
         if (is_null($is_gift)) {
-            array_push($this->openAPINullablesSetToNull, 'is_gift');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_gift', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_gift cannot be null');
         }
         $this->container['is_gift'] = $is_gift;
 
@@ -475,7 +460,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getShipMethod(): string
+    public function getShipMethod()
     {
         return $this->container['ship_method'];
     }
@@ -487,7 +472,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShipMethod(string $ship_method): self
+    public function setShipMethod($ship_method)
     {
         if (is_null($ship_method)) {
             throw new \InvalidArgumentException('non-nullable ship_method cannot be null');
@@ -502,7 +487,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\df\orders\v2021_12_28\ShipmentDates
      */
-    public function getShipmentDates(): \SpApi\Model\vendor\df\orders\v2021_12_28\ShipmentDates
+    public function getShipmentDates()
     {
         return $this->container['shipment_dates'];
     }
@@ -514,7 +499,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShipmentDates(\SpApi\Model\vendor\df\orders\v2021_12_28\ShipmentDates $shipment_dates): self
+    public function setShipmentDates($shipment_dates)
     {
         if (is_null($shipment_dates)) {
             throw new \InvalidArgumentException('non-nullable shipment_dates cannot be null');
@@ -529,7 +514,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getMessageToCustomer(): string
+    public function getMessageToCustomer()
     {
         return $this->container['message_to_customer'];
     }
@@ -541,7 +526,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMessageToCustomer(string $message_to_customer): self
+    public function setMessageToCustomer($message_to_customer)
     {
         if (is_null($message_to_customer)) {
             throw new \InvalidArgumentException('non-nullable message_to_customer cannot be null');
@@ -550,8 +535,6 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -572,7 +555,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -585,7 +568,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -614,7 +597,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -637,7 +620,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

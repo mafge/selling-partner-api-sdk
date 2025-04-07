@@ -3,7 +3,7 @@
 /**
  * LowestPriceType.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'LowestPriceType';
+    protected static $openAPIModelName = 'LowestPriceType';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'condition' => 'string',
         'fulfillment_channel' => 'string',
         'offer_type' => '\SpApi\Model\pricing\v0\OfferCustomerType',
@@ -69,7 +70,8 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
         'landed_price' => '\SpApi\Model\pricing\v0\MoneyType',
         'listing_price' => '\SpApi\Model\pricing\v0\MoneyType',
         'shipping' => '\SpApi\Model\pricing\v0\MoneyType',
-        'points' => '\SpApi\Model\pricing\v0\Points'];
+        'points' => '\SpApi\Model\pricing\v0\Points',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -80,7 +82,7 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'condition' => null,
         'fulfillment_channel' => null,
         'offer_type' => null,
@@ -89,7 +91,8 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
         'landed_price' => null,
         'listing_price' => null,
         'shipping' => null,
-        'points' => null];
+        'points' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -99,13 +102,13 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'condition' => false,
         'fulfillment_channel' => false,
-        'offer_type' => true,
-        'quantity_tier' => true,
-        'quantity_discount_type' => true,
-        'landed_price' => true,
+        'offer_type' => false,
+        'quantity_tier' => false,
+        'quantity_discount_type' => false,
+        'landed_price' => false,
         'listing_price' => false,
-        'shipping' => true,
-        'points' => true,
+        'shipping' => false,
+        'points' => false,
     ];
 
     /**
@@ -121,7 +124,7 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'condition' => 'condition',
         'fulfillment_channel' => 'fulfillmentChannel',
         'offer_type' => 'offerType',
@@ -138,7 +141,7 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'condition' => 'setCondition',
         'fulfillment_channel' => 'setFulfillmentChannel',
         'offer_type' => 'setOfferType',
@@ -155,7 +158,7 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'condition' => 'getCondition',
         'fulfillment_channel' => 'getFulfillmentChannel',
         'offer_type' => 'getOfferType',
@@ -169,14 +172,16 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -206,16 +211,20 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -239,32 +248,40 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -274,7 +291,7 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -297,15 +314,17 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets condition.
+     *
+     * @return string
      */
-    public function getCondition(): string
+    public function getCondition()
     {
         return $this->container['condition'];
     }
@@ -314,8 +333,10 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets condition.
      *
      * @param string $condition Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club.
+     *
+     * @return self
      */
-    public function setCondition(string $condition): self
+    public function setCondition($condition)
     {
         if (is_null($condition)) {
             throw new \InvalidArgumentException('non-nullable condition cannot be null');
@@ -327,8 +348,10 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets fulfillment_channel.
+     *
+     * @return string
      */
-    public function getFulfillmentChannel(): string
+    public function getFulfillmentChannel()
     {
         return $this->container['fulfillment_channel'];
     }
@@ -337,8 +360,10 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets fulfillment_channel.
      *
      * @param string $fulfillment_channel indicates whether the item is fulfilled by Amazon or by the seller
+     *
+     * @return self
      */
-    public function setFulfillmentChannel(string $fulfillment_channel): self
+    public function setFulfillmentChannel($fulfillment_channel)
     {
         if (is_null($fulfillment_channel)) {
             throw new \InvalidArgumentException('non-nullable fulfillment_channel cannot be null');
@@ -350,8 +375,10 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets offer_type.
+     *
+     * @return null|OfferCustomerType
      */
-    public function getOfferType(): ?string
+    public function getOfferType()
     {
         return $this->container['offer_type'];
     }
@@ -359,19 +386,14 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets offer_type.
      *
-     * @param null|string $offer_type offer_type
+     * @param null|OfferCustomerType $offer_type offer_type
+     *
+     * @return self
      */
-    public function setOfferType(?string $offer_type): self
+    public function setOfferType($offer_type)
     {
         if (is_null($offer_type)) {
-            array_push($this->openAPINullablesSetToNull, 'offer_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('offer_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable offer_type cannot be null');
         }
         $this->container['offer_type'] = $offer_type;
 
@@ -380,8 +402,10 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets quantity_tier.
+     *
+     * @return null|int
      */
-    public function getQuantityTier(): ?int
+    public function getQuantityTier()
     {
         return $this->container['quantity_tier'];
     }
@@ -390,18 +414,13 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets quantity_tier.
      *
      * @param null|int $quantity_tier indicates at what quantity this price becomes active
+     *
+     * @return self
      */
-    public function setQuantityTier(?int $quantity_tier): self
+    public function setQuantityTier($quantity_tier)
     {
         if (is_null($quantity_tier)) {
-            array_push($this->openAPINullablesSetToNull, 'quantity_tier');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('quantity_tier', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable quantity_tier cannot be null');
         }
         $this->container['quantity_tier'] = $quantity_tier;
 
@@ -410,8 +429,10 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets quantity_discount_type.
+     *
+     * @return null|QuantityDiscountType
      */
-    public function getQuantityDiscountType(): ?string
+    public function getQuantityDiscountType()
     {
         return $this->container['quantity_discount_type'];
     }
@@ -419,19 +440,14 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets quantity_discount_type.
      *
-     * @param null|string $quantity_discount_type quantity_discount_type
+     * @param null|QuantityDiscountType $quantity_discount_type quantity_discount_type
+     *
+     * @return self
      */
-    public function setQuantityDiscountType(?string $quantity_discount_type): self
+    public function setQuantityDiscountType($quantity_discount_type)
     {
         if (is_null($quantity_discount_type)) {
-            array_push($this->openAPINullablesSetToNull, 'quantity_discount_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('quantity_discount_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable quantity_discount_type cannot be null');
         }
         $this->container['quantity_discount_type'] = $quantity_discount_type;
 
@@ -440,8 +456,10 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets landed_price.
+     *
+     * @return null|MoneyType
      */
-    public function getLandedPrice(): ?MoneyType
+    public function getLandedPrice()
     {
         return $this->container['landed_price'];
     }
@@ -450,18 +468,13 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets landed_price.
      *
      * @param null|MoneyType $landed_price landed_price
+     *
+     * @return self
      */
-    public function setLandedPrice(?MoneyType $landed_price): self
+    public function setLandedPrice($landed_price)
     {
         if (is_null($landed_price)) {
-            array_push($this->openAPINullablesSetToNull, 'landed_price');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('landed_price', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable landed_price cannot be null');
         }
         $this->container['landed_price'] = $landed_price;
 
@@ -470,8 +483,10 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets listing_price.
+     *
+     * @return MoneyType
      */
-    public function getListingPrice(): MoneyType
+    public function getListingPrice()
     {
         return $this->container['listing_price'];
     }
@@ -480,8 +495,10 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets listing_price.
      *
      * @param MoneyType $listing_price listing_price
+     *
+     * @return self
      */
-    public function setListingPrice(MoneyType $listing_price): self
+    public function setListingPrice($listing_price)
     {
         if (is_null($listing_price)) {
             throw new \InvalidArgumentException('non-nullable listing_price cannot be null');
@@ -493,8 +510,10 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets shipping.
+     *
+     * @return null|MoneyType
      */
-    public function getShipping(): ?MoneyType
+    public function getShipping()
     {
         return $this->container['shipping'];
     }
@@ -503,18 +522,13 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets shipping.
      *
      * @param null|MoneyType $shipping shipping
+     *
+     * @return self
      */
-    public function setShipping(?MoneyType $shipping): self
+    public function setShipping($shipping)
     {
         if (is_null($shipping)) {
-            array_push($this->openAPINullablesSetToNull, 'shipping');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipping', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipping cannot be null');
         }
         $this->container['shipping'] = $shipping;
 
@@ -523,8 +537,10 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets points.
+     *
+     * @return null|Points
      */
-    public function getPoints(): ?Points
+    public function getPoints()
     {
         return $this->container['points'];
     }
@@ -533,18 +549,13 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets points.
      *
      * @param null|Points $points points
+     *
+     * @return self
      */
-    public function setPoints(?Points $points): self
+    public function setPoints($points)
     {
         if (is_null($points)) {
-            array_push($this->openAPINullablesSetToNull, 'points');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('points', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable points cannot be null');
         }
         $this->container['points'] = $points;
 
@@ -569,7 +580,7 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -580,7 +591,7 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -608,15 +619,17 @@ class LowestPriceType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

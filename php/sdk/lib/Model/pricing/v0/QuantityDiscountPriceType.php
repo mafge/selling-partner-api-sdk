@@ -3,7 +3,7 @@
 /**
  * QuantityDiscountPriceType.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class QuantityDiscountPriceType implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'QuantityDiscountPriceType';
+    protected static $openAPIModelName = 'QuantityDiscountPriceType';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'quantity_tier' => 'int',
         'quantity_discount_type' => '\SpApi\Model\pricing\v0\QuantityDiscountType',
-        'listing_price' => '\SpApi\Model\pricing\v0\MoneyType'];
+        'listing_price' => '\SpApi\Model\pricing\v0\MoneyType',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class QuantityDiscountPriceType implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'quantity_tier' => 'int32',
         'quantity_discount_type' => null,
-        'listing_price' => null];
+        'listing_price' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -103,7 +106,7 @@ class QuantityDiscountPriceType implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'quantity_tier' => 'quantityTier',
         'quantity_discount_type' => 'quantityDiscountType',
         'listing_price' => 'listingPrice',
@@ -114,7 +117,7 @@ class QuantityDiscountPriceType implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'quantity_tier' => 'setQuantityTier',
         'quantity_discount_type' => 'setQuantityDiscountType',
         'listing_price' => 'setListingPrice',
@@ -125,7 +128,7 @@ class QuantityDiscountPriceType implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'quantity_tier' => 'getQuantityTier',
         'quantity_discount_type' => 'getQuantityDiscountType',
         'listing_price' => 'getListingPrice',
@@ -133,14 +136,16 @@ class QuantityDiscountPriceType implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class QuantityDiscountPriceType implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class QuantityDiscountPriceType implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class QuantityDiscountPriceType implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -255,15 +272,17 @@ class QuantityDiscountPriceType implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets quantity_tier.
+     *
+     * @return int
      */
-    public function getQuantityTier(): int
+    public function getQuantityTier()
     {
         return $this->container['quantity_tier'];
     }
@@ -272,8 +291,10 @@ class QuantityDiscountPriceType implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets quantity_tier.
      *
      * @param int $quantity_tier indicates at what quantity this price becomes active
+     *
+     * @return self
      */
-    public function setQuantityTier(int $quantity_tier): self
+    public function setQuantityTier($quantity_tier)
     {
         if (is_null($quantity_tier)) {
             throw new \InvalidArgumentException('non-nullable quantity_tier cannot be null');
@@ -285,8 +306,10 @@ class QuantityDiscountPriceType implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets quantity_discount_type.
+     *
+     * @return QuantityDiscountType
      */
-    public function getQuantityDiscountType(): string
+    public function getQuantityDiscountType()
     {
         return $this->container['quantity_discount_type'];
     }
@@ -294,9 +317,11 @@ class QuantityDiscountPriceType implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets quantity_discount_type.
      *
-     * @param string $quantity_discount_type quantity_discount_type
+     * @param QuantityDiscountType $quantity_discount_type quantity_discount_type
+     *
+     * @return self
      */
-    public function setQuantityDiscountType(string $quantity_discount_type): self
+    public function setQuantityDiscountType($quantity_discount_type)
     {
         if (is_null($quantity_discount_type)) {
             throw new \InvalidArgumentException('non-nullable quantity_discount_type cannot be null');
@@ -308,8 +333,10 @@ class QuantityDiscountPriceType implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets listing_price.
+     *
+     * @return MoneyType
      */
-    public function getListingPrice(): MoneyType
+    public function getListingPrice()
     {
         return $this->container['listing_price'];
     }
@@ -318,8 +345,10 @@ class QuantityDiscountPriceType implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets listing_price.
      *
      * @param MoneyType $listing_price listing_price
+     *
+     * @return self
      */
-    public function setListingPrice(MoneyType $listing_price): self
+    public function setListingPrice($listing_price)
     {
         if (is_null($listing_price)) {
             throw new \InvalidArgumentException('non-nullable listing_price cannot be null');
@@ -347,7 +376,7 @@ class QuantityDiscountPriceType implements ModelInterface, \ArrayAccess, \JsonSe
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -358,7 +387,7 @@ class QuantityDiscountPriceType implements ModelInterface, \ArrayAccess, \JsonSe
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -386,15 +415,17 @@ class QuantityDiscountPriceType implements ModelInterface, \ArrayAccess, \JsonSe
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

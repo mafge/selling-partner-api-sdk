@@ -3,7 +3,7 @@
 /**
  * ItemRelationship.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\catalogItems\v2022_04_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -55,19 +54,22 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ItemRelationship';
+    protected static $openAPIModelName = 'ItemRelationship';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'child_asins' => 'string[]',
         'parent_asins' => 'string[]',
         'variation_theme' => '\SpApi\Model\catalogItems\v2022_04_01\ItemVariationTheme',
-        'type' => 'string'];
+        'type' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -78,11 +80,12 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'child_asins' => null,
         'parent_asins' => null,
         'variation_theme' => null,
-        'type' => null];
+        'type' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -90,9 +93,9 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'child_asins' => true,
-        'parent_asins' => true,
-        'variation_theme' => true,
+        'child_asins' => false,
+        'parent_asins' => false,
+        'variation_theme' => false,
         'type' => false,
     ];
 
@@ -109,7 +112,7 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'child_asins' => 'childAsins',
         'parent_asins' => 'parentAsins',
         'variation_theme' => 'variationTheme',
@@ -121,7 +124,7 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'child_asins' => 'setChildAsins',
         'parent_asins' => 'setParentAsins',
         'variation_theme' => 'setVariationTheme',
@@ -133,7 +136,7 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'child_asins' => 'getChildAsins',
         'parent_asins' => 'getParentAsins',
         'variation_theme' => 'getVariationTheme',
@@ -142,14 +145,16 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -174,16 +179,20 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -207,32 +216,40 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -242,7 +259,7 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array
+    public function getTypeAllowableValues()
     {
         return [
             self::TYPE_VARIATION,
@@ -255,7 +272,7 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -280,15 +297,17 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets child_asins.
+     *
+     * @return null|string[]
      */
-    public function getChildAsins(): ?array
+    public function getChildAsins()
     {
         return $this->container['child_asins'];
     }
@@ -296,19 +315,14 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Sets child_asins.
      *
-     * @param null|array $child_asins ASINs of the related items that are children of this item
+     * @param null|string[] $child_asins ASINs of the related items that are children of this item
+     *
+     * @return self
      */
-    public function setChildAsins(?array $child_asins): self
+    public function setChildAsins($child_asins)
     {
         if (is_null($child_asins)) {
-            array_push($this->openAPINullablesSetToNull, 'child_asins');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('child_asins', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable child_asins cannot be null');
         }
         $this->container['child_asins'] = $child_asins;
 
@@ -317,8 +331,10 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets parent_asins.
+     *
+     * @return null|string[]
      */
-    public function getParentAsins(): ?array
+    public function getParentAsins()
     {
         return $this->container['parent_asins'];
     }
@@ -326,19 +342,14 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Sets parent_asins.
      *
-     * @param null|array $parent_asins ASINs of the related items that are parents of this item
+     * @param null|string[] $parent_asins ASINs of the related items that are parents of this item
+     *
+     * @return self
      */
-    public function setParentAsins(?array $parent_asins): self
+    public function setParentAsins($parent_asins)
     {
         if (is_null($parent_asins)) {
-            array_push($this->openAPINullablesSetToNull, 'parent_asins');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('parent_asins', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable parent_asins cannot be null');
         }
         $this->container['parent_asins'] = $parent_asins;
 
@@ -347,8 +358,10 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets variation_theme.
+     *
+     * @return null|ItemVariationTheme
      */
-    public function getVariationTheme(): ?ItemVariationTheme
+    public function getVariationTheme()
     {
         return $this->container['variation_theme'];
     }
@@ -357,18 +370,13 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets variation_theme.
      *
      * @param null|ItemVariationTheme $variation_theme variation_theme
+     *
+     * @return self
      */
-    public function setVariationTheme(?ItemVariationTheme $variation_theme): self
+    public function setVariationTheme($variation_theme)
     {
         if (is_null($variation_theme)) {
-            array_push($this->openAPINullablesSetToNull, 'variation_theme');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('variation_theme', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable variation_theme cannot be null');
         }
         $this->container['variation_theme'] = $variation_theme;
 
@@ -377,8 +385,10 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets type.
+     *
+     * @return string
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->container['type'];
     }
@@ -387,8 +397,10 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets type.
      *
      * @param string $type type of relationship
+     *
+     * @return self
      */
-    public function setType(string $type): self
+    public function setType($type)
     {
         if (is_null($type)) {
             throw new \InvalidArgumentException('non-nullable type cannot be null');
@@ -426,7 +438,7 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -437,7 +449,7 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -465,15 +477,17 @@ class ItemRelationship implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -2,7 +2,7 @@
 /**
  * CarrierDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * CarrierDetails Class Doc Comment
@@ -52,19 +50,20 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'CarrierDetails';
+    protected static $openAPIModelName = 'CarrierDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'name' => 'string',
-             'code' => 'string',
-             'phone' => 'string',
-             'email' => 'string',
-             'shipment_reference_number' => 'string'    ];
+    protected static $openAPITypes = [
+        'name' => 'string',
+        'code' => 'string',
+        'phone' => 'string',
+        'email' => 'string',
+        'shipment_reference_number' => 'string'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -73,12 +72,13 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'name' => null,
-            'code' => null,
-            'phone' => null,
-            'email' => null,
-            'shipment_reference_number' => null    ];
+    protected static $openAPIFormats = [
+        'name' => null,
+        'code' => null,
+        'phone' => null,
+        'email' => null,
+        'shipment_reference_number' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -86,11 +86,11 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'name' => true,
-        'code' => true,
-        'phone' => true,
-        'email' => true,
-        'shipment_reference_number' => true
+        'name' => false,
+        'code' => false,
+        'phone' => false,
+        'email' => false,
+        'shipment_reference_number' => false
     ];
 
     /**
@@ -105,7 +105,7 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -115,7 +115,7 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -178,13 +178,12 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'name' => 'name',
-                'code' => 'code',
-                'phone' => 'phone',
-                'email' => 'email',
-                'shipment_reference_number' => 'shipmentReferenceNumber'
-        
+        'code' => 'code',
+        'phone' => 'phone',
+        'email' => 'email',
+        'shipment_reference_number' => 'shipmentReferenceNumber'
     ];
 
     /**
@@ -192,7 +191,7 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'name' => 'setName',
         'code' => 'setCode',
         'phone' => 'setPhone',
@@ -205,7 +204,7 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'name' => 'getName',
         'code' => 'getCode',
         'phone' => 'getPhone',
@@ -219,7 +218,7 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -229,7 +228,7 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -239,7 +238,7 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -249,7 +248,7 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -258,17 +257,17 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('name', $data ?? [], null);
         $this->setIfExists('code', $data ?? [], null);
@@ -300,7 +299,7 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -313,7 +312,7 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -324,7 +323,7 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getName(): ?string
+    public function getName()
     {
         return $this->container['name'];
     }
@@ -336,17 +335,10 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setName(?string $name): self
+    public function setName($name)
     {
         if (is_null($name)) {
-            array_push($this->openAPINullablesSetToNull, 'name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('name', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
         $this->container['name'] = $name;
 
@@ -358,7 +350,7 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getCode(): ?string
+    public function getCode()
     {
         return $this->container['code'];
     }
@@ -370,17 +362,10 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCode(?string $code): self
+    public function setCode($code)
     {
         if (is_null($code)) {
-            array_push($this->openAPINullablesSetToNull, 'code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('code', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable code cannot be null');
         }
         $this->container['code'] = $code;
 
@@ -392,7 +377,7 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getPhone(): ?string
+    public function getPhone()
     {
         return $this->container['phone'];
     }
@@ -404,17 +389,10 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setPhone(?string $phone): self
+    public function setPhone($phone)
     {
         if (is_null($phone)) {
-            array_push($this->openAPINullablesSetToNull, 'phone');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('phone', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable phone cannot be null');
         }
         $this->container['phone'] = $phone;
 
@@ -426,7 +404,7 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getEmail(): ?string
+    public function getEmail()
     {
         return $this->container['email'];
     }
@@ -438,17 +416,10 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setEmail(?string $email): self
+    public function setEmail($email)
     {
         if (is_null($email)) {
-            array_push($this->openAPINullablesSetToNull, 'email');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('email', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable email cannot be null');
         }
         $this->container['email'] = $email;
 
@@ -460,7 +431,7 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getShipmentReferenceNumber(): ?string
+    public function getShipmentReferenceNumber()
     {
         return $this->container['shipment_reference_number'];
     }
@@ -472,24 +443,15 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShipmentReferenceNumber(?string $shipment_reference_number): self
+    public function setShipmentReferenceNumber($shipment_reference_number)
     {
         if (is_null($shipment_reference_number)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_reference_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_reference_number', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_reference_number cannot be null');
         }
         $this->container['shipment_reference_number'] = $shipment_reference_number;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -510,7 +472,7 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -523,7 +485,7 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -552,7 +514,7 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -575,7 +537,7 @@ class CarrierDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

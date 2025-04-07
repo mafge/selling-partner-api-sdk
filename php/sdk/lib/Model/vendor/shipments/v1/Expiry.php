@@ -2,7 +2,7 @@
 /**
  * Expiry
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * Expiry Class Doc Comment
@@ -52,17 +50,18 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'Expiry';
+    protected static $openAPIModelName = 'Expiry';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'manufacturer_date' => '\DateTime',
-             'expiry_date' => '\DateTime',
-             'expiry_after_duration' => '\SpApi\Model\vendor\shipments\v1\Duration'    ];
+    protected static $openAPITypes = [
+        'manufacturer_date' => '\DateTime',
+        'expiry_date' => '\DateTime',
+        'expiry_after_duration' => '\SpApi\Model\vendor\shipments\v1\Duration'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,10 +70,11 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'manufacturer_date' => 'date-time',
-            'expiry_date' => 'date-time',
-            'expiry_after_duration' => null    ];
+    protected static $openAPIFormats = [
+        'manufacturer_date' => 'date-time',
+        'expiry_date' => 'date-time',
+        'expiry_after_duration' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -82,9 +82,9 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'manufacturer_date' => true,
-        'expiry_date' => true,
-        'expiry_after_duration' => true
+        'manufacturer_date' => false,
+        'expiry_date' => false,
+        'expiry_after_duration' => false
     ];
 
     /**
@@ -99,7 +99,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -109,7 +109,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -172,11 +172,10 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'manufacturer_date' => 'manufacturerDate',
-                'expiry_date' => 'expiryDate',
-                'expiry_after_duration' => 'expiryAfterDuration'
-        
+        'expiry_date' => 'expiryDate',
+        'expiry_after_duration' => 'expiryAfterDuration'
     ];
 
     /**
@@ -184,7 +183,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'manufacturer_date' => 'setManufacturerDate',
         'expiry_date' => 'setExpiryDate',
         'expiry_after_duration' => 'setExpiryAfterDuration'
@@ -195,7 +194,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'manufacturer_date' => 'getManufacturerDate',
         'expiry_date' => 'getExpiryDate',
         'expiry_after_duration' => 'getExpiryAfterDuration'
@@ -207,7 +206,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -217,7 +216,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -227,7 +226,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -237,7 +236,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,17 +245,17 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('manufacturer_date', $data ?? [], null);
         $this->setIfExists('expiry_date', $data ?? [], null);
@@ -286,7 +285,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -299,7 +298,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -310,7 +309,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime|null
      */
-    public function getManufacturerDate(): ?\DateTime
+    public function getManufacturerDate()
     {
         return $this->container['manufacturer_date'];
     }
@@ -322,17 +321,10 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setManufacturerDate(?\DateTime $manufacturer_date): self
+    public function setManufacturerDate($manufacturer_date)
     {
         if (is_null($manufacturer_date)) {
-            array_push($this->openAPINullablesSetToNull, 'manufacturer_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('manufacturer_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable manufacturer_date cannot be null');
         }
         $this->container['manufacturer_date'] = $manufacturer_date;
 
@@ -344,7 +336,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime|null
      */
-    public function getExpiryDate(): ?\DateTime
+    public function getExpiryDate()
     {
         return $this->container['expiry_date'];
     }
@@ -356,17 +348,10 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setExpiryDate(?\DateTime $expiry_date): self
+    public function setExpiryDate($expiry_date)
     {
         if (is_null($expiry_date)) {
-            array_push($this->openAPINullablesSetToNull, 'expiry_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expiry_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable expiry_date cannot be null');
         }
         $this->container['expiry_date'] = $expiry_date;
 
@@ -378,7 +363,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\shipments\v1\Duration|null
      */
-    public function getExpiryAfterDuration(): ?\SpApi\Model\vendor\shipments\v1\Duration
+    public function getExpiryAfterDuration()
     {
         return $this->container['expiry_after_duration'];
     }
@@ -390,24 +375,15 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setExpiryAfterDuration(?\SpApi\Model\vendor\shipments\v1\Duration $expiry_after_duration): self
+    public function setExpiryAfterDuration($expiry_after_duration)
     {
         if (is_null($expiry_after_duration)) {
-            array_push($this->openAPINullablesSetToNull, 'expiry_after_duration');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expiry_after_duration', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable expiry_after_duration cannot be null');
         }
         $this->container['expiry_after_duration'] = $expiry_after_duration;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -428,7 +404,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -441,7 +417,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -470,7 +446,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -493,7 +469,7 @@ class Expiry implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * CreateUnexpectedProblemRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\messaging\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,16 +51,19 @@ class CreateUnexpectedProblemRequest implements ModelInterface, \ArrayAccess, \J
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CreateUnexpectedProblemRequest';
+    protected static $openAPIModelName = 'CreateUnexpectedProblemRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
-        'text' => 'string'];
+    protected static $openAPITypes = [
+        'text' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -72,8 +74,9 @@ class CreateUnexpectedProblemRequest implements ModelInterface, \ArrayAccess, \J
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
-        'text' => null];
+    protected static $openAPIFormats = [
+        'text' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -81,7 +84,7 @@ class CreateUnexpectedProblemRequest implements ModelInterface, \ArrayAccess, \J
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'text' => true,
+        'text' => false,
     ];
 
     /**
@@ -97,7 +100,7 @@ class CreateUnexpectedProblemRequest implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'text' => 'text',
     ];
 
@@ -106,7 +109,7 @@ class CreateUnexpectedProblemRequest implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'text' => 'setText',
     ];
 
@@ -115,20 +118,22 @@ class CreateUnexpectedProblemRequest implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'text' => 'getText',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -150,16 +155,20 @@ class CreateUnexpectedProblemRequest implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -183,32 +192,40 @@ class CreateUnexpectedProblemRequest implements ModelInterface, \ArrayAccess, \J
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -218,7 +235,7 @@ class CreateUnexpectedProblemRequest implements ModelInterface, \ArrayAccess, \J
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -239,15 +256,17 @@ class CreateUnexpectedProblemRequest implements ModelInterface, \ArrayAccess, \J
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets text.
+     *
+     * @return null|string
      */
-    public function getText(): ?string
+    public function getText()
     {
         return $this->container['text'];
     }
@@ -256,23 +275,18 @@ class CreateUnexpectedProblemRequest implements ModelInterface, \ArrayAccess, \J
      * Sets text.
      *
      * @param null|string $text The text to be sent to the buyer. Only links related to unexpected problem calls are allowed. Do not include HTML or email addresses. The text must be written in the buyer's language of preference, which can be retrieved from the GetAttributes operation.
+     *
+     * @return self
      */
-    public function setText(?string $text): self
+    public function setText($text)
     {
         if (is_null($text)) {
-            array_push($this->openAPINullablesSetToNull, 'text');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('text', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable text cannot be null');
         }
-        if (!is_null($text) && (mb_strlen($text) > 2000)) {
+        if (mb_strlen($text) > 2000) {
             throw new \InvalidArgumentException('invalid length for $text when calling CreateUnexpectedProblemRequest., must be smaller than or equal to 2000.');
         }
-        if (!is_null($text) && (mb_strlen($text) < 1)) {
+        if (mb_strlen($text) < 1) {
             throw new \InvalidArgumentException('invalid length for $text when calling CreateUnexpectedProblemRequest., must be bigger than or equal to 1.');
         }
 
@@ -299,7 +313,7 @@ class CreateUnexpectedProblemRequest implements ModelInterface, \ArrayAccess, \J
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -310,7 +324,7 @@ class CreateUnexpectedProblemRequest implements ModelInterface, \ArrayAccess, \J
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -338,15 +352,17 @@ class CreateUnexpectedProblemRequest implements ModelInterface, \ArrayAccess, \J
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

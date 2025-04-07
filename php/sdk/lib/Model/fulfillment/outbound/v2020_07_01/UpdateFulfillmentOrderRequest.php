@@ -3,7 +3,7 @@
 /**
  * UpdateFulfillmentOrderRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'UpdateFulfillmentOrderRequest';
+    protected static $openAPIModelName = 'UpdateFulfillmentOrderRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'marketplace_id' => 'string',
         'displayable_order_id' => 'string',
         'displayable_order_date' => '\DateTime',
@@ -72,7 +73,8 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
         'ship_from_country_code' => 'string',
         'notification_emails' => 'string[]',
         'feature_constraints' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\FeatureSettings[]',
-        'items' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\UpdateFulfillmentOrderItem[]'];
+        'items' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\UpdateFulfillmentOrderItem[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -83,7 +85,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'marketplace_id' => null,
         'displayable_order_id' => null,
         'displayable_order_date' => 'date-time',
@@ -95,7 +97,8 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
         'ship_from_country_code' => null,
         'notification_emails' => null,
         'feature_constraints' => null,
-        'items' => null];
+        'items' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -103,18 +106,18 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'marketplace_id' => true,
-        'displayable_order_id' => true,
-        'displayable_order_date' => true,
-        'displayable_order_comment' => true,
-        'shipping_speed_category' => true,
-        'destination_address' => true,
-        'fulfillment_action' => true,
-        'fulfillment_policy' => true,
-        'ship_from_country_code' => true,
-        'notification_emails' => true,
-        'feature_constraints' => true,
-        'items' => true,
+        'marketplace_id' => false,
+        'displayable_order_id' => false,
+        'displayable_order_date' => false,
+        'displayable_order_comment' => false,
+        'shipping_speed_category' => false,
+        'destination_address' => false,
+        'fulfillment_action' => false,
+        'fulfillment_policy' => false,
+        'ship_from_country_code' => false,
+        'notification_emails' => false,
+        'feature_constraints' => false,
+        'items' => false,
     ];
 
     /**
@@ -130,7 +133,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'marketplace_id' => 'marketplaceId',
         'displayable_order_id' => 'displayableOrderId',
         'displayable_order_date' => 'displayableOrderDate',
@@ -150,7 +153,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
         'displayable_order_id' => 'setDisplayableOrderId',
         'displayable_order_date' => 'setDisplayableOrderDate',
@@ -170,7 +173,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
         'displayable_order_id' => 'getDisplayableOrderId',
         'displayable_order_date' => 'getDisplayableOrderDate',
@@ -187,14 +190,16 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -227,16 +232,20 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -260,32 +269,40 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -295,7 +312,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -316,15 +333,17 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets marketplace_id.
+     *
+     * @return null|string
      */
-    public function getMarketplaceId(): ?string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -333,18 +352,13 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
      * Sets marketplace_id.
      *
      * @param null|string $marketplace_id the marketplace the fulfillment order is placed against
+     *
+     * @return self
      */
-    public function setMarketplaceId(?string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
-            array_push($this->openAPINullablesSetToNull, 'marketplace_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('marketplace_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
         }
         $this->container['marketplace_id'] = $marketplace_id;
 
@@ -353,8 +367,10 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Gets displayable_order_id.
+     *
+     * @return null|string
      */
-    public function getDisplayableOrderId(): ?string
+    public function getDisplayableOrderId()
     {
         return $this->container['displayable_order_id'];
     }
@@ -363,20 +379,15 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
      * Sets displayable_order_id.
      *
      * @param null|string $displayable_order_id A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of `DisplayableOrderId` should match the order identifier that the seller provides to the recipient. The seller can use the `SellerFulfillmentOrderId` for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.
+     *
+     * @return self
      */
-    public function setDisplayableOrderId(?string $displayable_order_id): self
+    public function setDisplayableOrderId($displayable_order_id)
     {
         if (is_null($displayable_order_id)) {
-            array_push($this->openAPINullablesSetToNull, 'displayable_order_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('displayable_order_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable displayable_order_id cannot be null');
         }
-        if (!is_null($displayable_order_id) && (mb_strlen($displayable_order_id) > 40)) {
+        if (mb_strlen($displayable_order_id) > 40) {
             throw new \InvalidArgumentException('invalid length for $displayable_order_id when calling UpdateFulfillmentOrderRequest., must be smaller than or equal to 40.');
         }
 
@@ -387,8 +398,10 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Gets displayable_order_date.
+     *
+     * @return null|\DateTime
      */
-    public function getDisplayableOrderDate(): ?\DateTime
+    public function getDisplayableOrderDate()
     {
         return $this->container['displayable_order_date'];
     }
@@ -397,18 +410,13 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
      * Sets displayable_order_date.
      *
      * @param null|\DateTime $displayable_order_date Date timestamp
+     *
+     * @return self
      */
-    public function setDisplayableOrderDate(?\DateTime $displayable_order_date): self
+    public function setDisplayableOrderDate($displayable_order_date)
     {
         if (is_null($displayable_order_date)) {
-            array_push($this->openAPINullablesSetToNull, 'displayable_order_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('displayable_order_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable displayable_order_date cannot be null');
         }
         $this->container['displayable_order_date'] = $displayable_order_date;
 
@@ -417,8 +425,10 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Gets displayable_order_comment.
+     *
+     * @return null|string
      */
-    public function getDisplayableOrderComment(): ?string
+    public function getDisplayableOrderComment()
     {
         return $this->container['displayable_order_comment'];
     }
@@ -427,20 +437,15 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
      * Sets displayable_order_comment.
      *
      * @param null|string $displayable_order_comment order-specific text that appears in recipient-facing materials such as the outbound shipment packing slip
+     *
+     * @return self
      */
-    public function setDisplayableOrderComment(?string $displayable_order_comment): self
+    public function setDisplayableOrderComment($displayable_order_comment)
     {
         if (is_null($displayable_order_comment)) {
-            array_push($this->openAPINullablesSetToNull, 'displayable_order_comment');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('displayable_order_comment', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable displayable_order_comment cannot be null');
         }
-        if (!is_null($displayable_order_comment) && (mb_strlen($displayable_order_comment) > 750)) {
+        if (mb_strlen($displayable_order_comment) > 750) {
             throw new \InvalidArgumentException('invalid length for $displayable_order_comment when calling UpdateFulfillmentOrderRequest., must be smaller than or equal to 750.');
         }
 
@@ -451,8 +456,10 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Gets shipping_speed_category.
+     *
+     * @return null|ShippingSpeedCategory
      */
-    public function getShippingSpeedCategory(): ?string
+    public function getShippingSpeedCategory()
     {
         return $this->container['shipping_speed_category'];
     }
@@ -460,19 +467,14 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
     /**
      * Sets shipping_speed_category.
      *
-     * @param null|string $shipping_speed_category shipping_speed_category
+     * @param null|ShippingSpeedCategory $shipping_speed_category shipping_speed_category
+     *
+     * @return self
      */
-    public function setShippingSpeedCategory(?string $shipping_speed_category): self
+    public function setShippingSpeedCategory($shipping_speed_category)
     {
         if (is_null($shipping_speed_category)) {
-            array_push($this->openAPINullablesSetToNull, 'shipping_speed_category');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipping_speed_category', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipping_speed_category cannot be null');
         }
         $this->container['shipping_speed_category'] = $shipping_speed_category;
 
@@ -481,8 +483,10 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Gets destination_address.
+     *
+     * @return null|Address
      */
-    public function getDestinationAddress(): ?Address
+    public function getDestinationAddress()
     {
         return $this->container['destination_address'];
     }
@@ -491,18 +495,13 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
      * Sets destination_address.
      *
      * @param null|Address $destination_address destination_address
+     *
+     * @return self
      */
-    public function setDestinationAddress(?Address $destination_address): self
+    public function setDestinationAddress($destination_address)
     {
         if (is_null($destination_address)) {
-            array_push($this->openAPINullablesSetToNull, 'destination_address');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('destination_address', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable destination_address cannot be null');
         }
         $this->container['destination_address'] = $destination_address;
 
@@ -511,8 +510,10 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Gets fulfillment_action.
+     *
+     * @return null|FulfillmentAction
      */
-    public function getFulfillmentAction(): ?string
+    public function getFulfillmentAction()
     {
         return $this->container['fulfillment_action'];
     }
@@ -520,19 +521,14 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
     /**
      * Sets fulfillment_action.
      *
-     * @param null|string $fulfillment_action fulfillment_action
+     * @param null|FulfillmentAction $fulfillment_action fulfillment_action
+     *
+     * @return self
      */
-    public function setFulfillmentAction(?string $fulfillment_action): self
+    public function setFulfillmentAction($fulfillment_action)
     {
         if (is_null($fulfillment_action)) {
-            array_push($this->openAPINullablesSetToNull, 'fulfillment_action');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fulfillment_action', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fulfillment_action cannot be null');
         }
         $this->container['fulfillment_action'] = $fulfillment_action;
 
@@ -541,8 +537,10 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Gets fulfillment_policy.
+     *
+     * @return null|FulfillmentPolicy
      */
-    public function getFulfillmentPolicy(): ?string
+    public function getFulfillmentPolicy()
     {
         return $this->container['fulfillment_policy'];
     }
@@ -550,19 +548,14 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
     /**
      * Sets fulfillment_policy.
      *
-     * @param null|string $fulfillment_policy fulfillment_policy
+     * @param null|FulfillmentPolicy $fulfillment_policy fulfillment_policy
+     *
+     * @return self
      */
-    public function setFulfillmentPolicy(?string $fulfillment_policy): self
+    public function setFulfillmentPolicy($fulfillment_policy)
     {
         if (is_null($fulfillment_policy)) {
-            array_push($this->openAPINullablesSetToNull, 'fulfillment_policy');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fulfillment_policy', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fulfillment_policy cannot be null');
         }
         $this->container['fulfillment_policy'] = $fulfillment_policy;
 
@@ -571,8 +564,10 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Gets ship_from_country_code.
+     *
+     * @return null|string
      */
-    public function getShipFromCountryCode(): ?string
+    public function getShipFromCountryCode()
     {
         return $this->container['ship_from_country_code'];
     }
@@ -581,18 +576,13 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
      * Sets ship_from_country_code.
      *
      * @param null|string $ship_from_country_code The two-character country code for the country from which the fulfillment order ships. Must be in ISO 3166-1 alpha-2 format.
+     *
+     * @return self
      */
-    public function setShipFromCountryCode(?string $ship_from_country_code): self
+    public function setShipFromCountryCode($ship_from_country_code)
     {
         if (is_null($ship_from_country_code)) {
-            array_push($this->openAPINullablesSetToNull, 'ship_from_country_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ship_from_country_code', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ship_from_country_code cannot be null');
         }
         $this->container['ship_from_country_code'] = $ship_from_country_code;
 
@@ -601,8 +591,10 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Gets notification_emails.
+     *
+     * @return null|string[]
      */
-    public function getNotificationEmails(): ?array
+    public function getNotificationEmails()
     {
         return $this->container['notification_emails'];
     }
@@ -610,19 +602,14 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
     /**
      * Sets notification_emails.
      *
-     * @param null|array $notification_emails a list of email addresses that the seller provides that are used by Amazon to send ship-complete notifications to recipients on behalf of the seller
+     * @param null|string[] $notification_emails a list of email addresses that the seller provides that are used by Amazon to send ship-complete notifications to recipients on behalf of the seller
+     *
+     * @return self
      */
-    public function setNotificationEmails(?array $notification_emails): self
+    public function setNotificationEmails($notification_emails)
     {
         if (is_null($notification_emails)) {
-            array_push($this->openAPINullablesSetToNull, 'notification_emails');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('notification_emails', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable notification_emails cannot be null');
         }
         $this->container['notification_emails'] = $notification_emails;
 
@@ -631,8 +618,10 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Gets feature_constraints.
+     *
+     * @return null|FeatureSettings[]
      */
-    public function getFeatureConstraints(): ?array
+    public function getFeatureConstraints()
     {
         return $this->container['feature_constraints'];
     }
@@ -640,19 +629,14 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
     /**
      * Sets feature_constraints.
      *
-     * @param null|array $feature_constraints a list of features and their fulfillment policies to apply to the order
+     * @param null|FeatureSettings[] $feature_constraints a list of features and their fulfillment policies to apply to the order
+     *
+     * @return self
      */
-    public function setFeatureConstraints(?array $feature_constraints): self
+    public function setFeatureConstraints($feature_constraints)
     {
         if (is_null($feature_constraints)) {
-            array_push($this->openAPINullablesSetToNull, 'feature_constraints');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('feature_constraints', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable feature_constraints cannot be null');
         }
         $this->container['feature_constraints'] = $feature_constraints;
 
@@ -661,8 +645,10 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Gets items.
+     *
+     * @return null|UpdateFulfillmentOrderItem[]
      */
-    public function getItems(): ?array
+    public function getItems()
     {
         return $this->container['items'];
     }
@@ -670,19 +656,14 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
     /**
      * Sets items.
      *
-     * @param null|array $items an array of fulfillment order item information for updating a fulfillment order
+     * @param null|UpdateFulfillmentOrderItem[] $items an array of fulfillment order item information for updating a fulfillment order
+     *
+     * @return self
      */
-    public function setItems(?array $items): self
+    public function setItems($items)
     {
         if (is_null($items)) {
-            array_push($this->openAPINullablesSetToNull, 'items');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('items', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable items cannot be null');
         }
         $this->container['items'] = $items;
 
@@ -707,7 +688,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -718,7 +699,7 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -746,15 +727,17 @@ class UpdateFulfillmentOrderRequest implements ModelInterface, \ArrayAccess, \Js
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

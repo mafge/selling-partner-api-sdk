@@ -3,7 +3,7 @@
 /**
  * ContactInformation.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class ContactInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ContactInformation';
+    protected static $openAPIModelName = 'ContactInformation';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'email' => 'string',
         'name' => 'string',
-        'phone_number' => 'string'];
+        'phone_number' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class ContactInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'email' => null,
         'name' => null,
-        'phone_number' => null];
+        'phone_number' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,7 +88,7 @@ class ContactInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'email' => true,
+        'email' => false,
         'name' => false,
         'phone_number' => false,
     ];
@@ -103,7 +106,7 @@ class ContactInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'email' => 'email',
         'name' => 'name',
         'phone_number' => 'phoneNumber',
@@ -114,7 +117,7 @@ class ContactInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'email' => 'setEmail',
         'name' => 'setName',
         'phone_number' => 'setPhoneNumber',
@@ -125,7 +128,7 @@ class ContactInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'email' => 'getEmail',
         'name' => 'getName',
         'phone_number' => 'getPhoneNumber',
@@ -133,14 +136,16 @@ class ContactInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class ContactInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class ContactInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class ContactInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -275,15 +292,17 @@ class ContactInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets email.
+     *
+     * @return null|string
      */
-    public function getEmail(): ?string
+    public function getEmail()
     {
         return $this->container['email'];
     }
@@ -292,23 +311,18 @@ class ContactInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets email.
      *
      * @param null|string $email the email address
+     *
+     * @return self
      */
-    public function setEmail(?string $email): self
+    public function setEmail($email)
     {
         if (is_null($email)) {
-            array_push($this->openAPINullablesSetToNull, 'email');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('email', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable email cannot be null');
         }
-        if (!is_null($email) && (mb_strlen($email) > 1024)) {
+        if (mb_strlen($email) > 1024) {
             throw new \InvalidArgumentException('invalid length for $email when calling ContactInformation., must be smaller than or equal to 1024.');
         }
-        if (!is_null($email) && (mb_strlen($email) < 1)) {
+        if (mb_strlen($email) < 1) {
             throw new \InvalidArgumentException('invalid length for $email when calling ContactInformation., must be bigger than or equal to 1.');
         }
 
@@ -319,8 +333,10 @@ class ContactInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets name.
+     *
+     * @return string
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->container['name'];
     }
@@ -329,8 +345,10 @@ class ContactInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets name.
      *
      * @param string $name the contact's name
+     *
+     * @return self
      */
-    public function setName(string $name): self
+    public function setName($name)
     {
         if (is_null($name)) {
             throw new \InvalidArgumentException('non-nullable name cannot be null');
@@ -349,8 +367,10 @@ class ContactInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets phone_number.
+     *
+     * @return string
      */
-    public function getPhoneNumber(): string
+    public function getPhoneNumber()
     {
         return $this->container['phone_number'];
     }
@@ -359,8 +379,10 @@ class ContactInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets phone_number.
      *
      * @param string $phone_number the phone number
+     *
+     * @return self
      */
-    public function setPhoneNumber(string $phone_number): self
+    public function setPhoneNumber($phone_number)
     {
         if (is_null($phone_number)) {
             throw new \InvalidArgumentException('non-nullable phone_number cannot be null');
@@ -395,7 +417,7 @@ class ContactInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -406,7 +428,7 @@ class ContactInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -434,15 +456,17 @@ class ContactInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

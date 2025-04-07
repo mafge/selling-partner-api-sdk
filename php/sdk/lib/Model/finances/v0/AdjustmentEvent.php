@@ -3,7 +3,7 @@
 /**
  * AdjustmentEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'AdjustmentEvent';
+    protected static $openAPIModelName = 'AdjustmentEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'adjustment_type' => 'string',
         'posted_date' => '\DateTime',
         'store_name' => 'string',
         'adjustment_amount' => '\SpApi\Model\finances\v0\Currency',
-        'adjustment_item_list' => '\SpApi\Model\finances\v0\AdjustmentItem[]'];
+        'adjustment_item_list' => '\SpApi\Model\finances\v0\AdjustmentItem[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'adjustment_type' => null,
         'posted_date' => 'date-time',
         'store_name' => null,
         'adjustment_amount' => null,
-        'adjustment_item_list' => null];
+        'adjustment_item_list' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,11 +92,11 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'adjustment_type' => true,
-        'posted_date' => true,
-        'store_name' => true,
-        'adjustment_amount' => true,
-        'adjustment_item_list' => true,
+        'adjustment_type' => false,
+        'posted_date' => false,
+        'store_name' => false,
+        'adjustment_amount' => false,
+        'adjustment_item_list' => false,
     ];
 
     /**
@@ -109,7 +112,7 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'adjustment_type' => 'AdjustmentType',
         'posted_date' => 'PostedDate',
         'store_name' => 'StoreName',
@@ -122,7 +125,7 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'adjustment_type' => 'setAdjustmentType',
         'posted_date' => 'setPostedDate',
         'store_name' => 'setStoreName',
@@ -135,7 +138,7 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'adjustment_type' => 'getAdjustmentType',
         'posted_date' => 'getPostedDate',
         'store_name' => 'getStoreName',
@@ -145,14 +148,16 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -257,15 +274,17 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets adjustment_type.
+     *
+     * @return null|string
      */
-    public function getAdjustmentType(): ?string
+    public function getAdjustmentType()
     {
         return $this->container['adjustment_type'];
     }
@@ -274,18 +293,13 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets adjustment_type.
      *
      * @param null|string $adjustment_type The type of adjustment.  Possible values:  * FBAInventoryReimbursement - An FBA inventory reimbursement to a seller's account. This occurs if a seller's inventory is damaged.  * ReserveEvent - A reserve event that is generated at the time of a settlement period closing. This occurs when some money from a seller's account is held back.  * PostageBilling - The amount paid by a seller for shipping labels.  * PostageRefund - The reimbursement of shipping labels purchased for orders that were canceled or refunded.  * LostOrDamagedReimbursement - An Amazon Easy Ship reimbursement to a seller's account for a package that we lost or damaged.  * CanceledButPickedUpReimbursement - An Amazon Easy Ship reimbursement to a seller's account. This occurs when a package is picked up and the order is subsequently canceled. This value is used only in the India marketplace.  * ReimbursementClawback - An Amazon Easy Ship reimbursement clawback from a seller's account. This occurs when a prior reimbursement is reversed. This value is used only in the India marketplace.  * SellerRewards - An award credited to a seller's account for their participation in an offer in the Seller Rewards program. Applies only to the India marketplace.
+     *
+     * @return self
      */
-    public function setAdjustmentType(?string $adjustment_type): self
+    public function setAdjustmentType($adjustment_type)
     {
         if (is_null($adjustment_type)) {
-            array_push($this->openAPINullablesSetToNull, 'adjustment_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('adjustment_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable adjustment_type cannot be null');
         }
         $this->container['adjustment_type'] = $adjustment_type;
 
@@ -294,8 +308,10 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTime
      */
-    public function getPostedDate(): ?\DateTime
+    public function getPostedDate()
     {
         return $this->container['posted_date'];
     }
@@ -304,18 +320,13 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets posted_date.
      *
      * @param null|\DateTime $posted_date fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate)
+     *
+     * @return self
      */
-    public function setPostedDate(?\DateTime $posted_date): self
+    public function setPostedDate($posted_date)
     {
         if (is_null($posted_date)) {
-            array_push($this->openAPINullablesSetToNull, 'posted_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('posted_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable posted_date cannot be null');
         }
         $this->container['posted_date'] = $posted_date;
 
@@ -324,8 +335,10 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets store_name.
+     *
+     * @return null|string
      */
-    public function getStoreName(): ?string
+    public function getStoreName()
     {
         return $this->container['store_name'];
     }
@@ -334,18 +347,13 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets store_name.
      *
      * @param null|string $store_name the name of the store where the event occurred
+     *
+     * @return self
      */
-    public function setStoreName(?string $store_name): self
+    public function setStoreName($store_name)
     {
         if (is_null($store_name)) {
-            array_push($this->openAPINullablesSetToNull, 'store_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('store_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable store_name cannot be null');
         }
         $this->container['store_name'] = $store_name;
 
@@ -354,8 +362,10 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets adjustment_amount.
+     *
+     * @return null|Currency
      */
-    public function getAdjustmentAmount(): ?Currency
+    public function getAdjustmentAmount()
     {
         return $this->container['adjustment_amount'];
     }
@@ -364,18 +374,13 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets adjustment_amount.
      *
      * @param null|Currency $adjustment_amount adjustment_amount
+     *
+     * @return self
      */
-    public function setAdjustmentAmount(?Currency $adjustment_amount): self
+    public function setAdjustmentAmount($adjustment_amount)
     {
         if (is_null($adjustment_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'adjustment_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('adjustment_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable adjustment_amount cannot be null');
         }
         $this->container['adjustment_amount'] = $adjustment_amount;
 
@@ -384,8 +389,10 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets adjustment_item_list.
+     *
+     * @return null|AdjustmentItem[]
      */
-    public function getAdjustmentItemList(): ?array
+    public function getAdjustmentItemList()
     {
         return $this->container['adjustment_item_list'];
     }
@@ -393,19 +400,14 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets adjustment_item_list.
      *
-     * @param null|array $adjustment_item_list a list of information about items in an adjustment to the seller's account
+     * @param null|AdjustmentItem[] $adjustment_item_list a list of information about items in an adjustment to the seller's account
+     *
+     * @return self
      */
-    public function setAdjustmentItemList(?array $adjustment_item_list): self
+    public function setAdjustmentItemList($adjustment_item_list)
     {
         if (is_null($adjustment_item_list)) {
-            array_push($this->openAPINullablesSetToNull, 'adjustment_item_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('adjustment_item_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable adjustment_item_list cannot be null');
         }
         $this->container['adjustment_item_list'] = $adjustment_item_list;
 
@@ -430,7 +432,7 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -441,7 +443,7 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -469,15 +471,17 @@ class AdjustmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

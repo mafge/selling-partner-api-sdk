@@ -3,7 +3,7 @@
 /**
  * CreateSupplySourceResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\supplySources\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class CreateSupplySourceResponse implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CreateSupplySourceResponse';
+    protected static $openAPIModelName = 'CreateSupplySourceResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'supply_source_id' => 'string',
-        'supply_source_code' => 'string'];
+        'supply_source_code' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class CreateSupplySourceResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'supply_source_id' => null,
-        'supply_source_code' => null];
+        'supply_source_code' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -100,7 +103,7 @@ class CreateSupplySourceResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'supply_source_id' => 'supplySourceId',
         'supply_source_code' => 'supplySourceCode',
     ];
@@ -110,7 +113,7 @@ class CreateSupplySourceResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'supply_source_id' => 'setSupplySourceId',
         'supply_source_code' => 'setSupplySourceCode',
     ];
@@ -120,21 +123,23 @@ class CreateSupplySourceResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'supply_source_id' => 'getSupplySourceId',
         'supply_source_code' => 'getSupplySourceCode',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class CreateSupplySourceResponse implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class CreateSupplySourceResponse implements ModelInterface, \ArrayAccess, \JsonS
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class CreateSupplySourceResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -245,15 +262,17 @@ class CreateSupplySourceResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets supply_source_id.
+     *
+     * @return string
      */
-    public function getSupplySourceId(): string
+    public function getSupplySourceId()
     {
         return $this->container['supply_source_id'];
     }
@@ -262,8 +281,10 @@ class CreateSupplySourceResponse implements ModelInterface, \ArrayAccess, \JsonS
      * Sets supply_source_id.
      *
      * @param string $supply_source_id an Amazon generated unique supply source ID
+     *
+     * @return self
      */
-    public function setSupplySourceId(string $supply_source_id): self
+    public function setSupplySourceId($supply_source_id)
     {
         if (is_null($supply_source_id)) {
             throw new \InvalidArgumentException('non-nullable supply_source_id cannot be null');
@@ -275,8 +296,10 @@ class CreateSupplySourceResponse implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets supply_source_code.
+     *
+     * @return string
      */
-    public function getSupplySourceCode(): string
+    public function getSupplySourceCode()
     {
         return $this->container['supply_source_code'];
     }
@@ -285,8 +308,10 @@ class CreateSupplySourceResponse implements ModelInterface, \ArrayAccess, \JsonS
      * Sets supply_source_code.
      *
      * @param string $supply_source_code the seller-provided unique supply source code
+     *
+     * @return self
      */
-    public function setSupplySourceCode(string $supply_source_code): self
+    public function setSupplySourceCode($supply_source_code)
     {
         if (is_null($supply_source_code)) {
             throw new \InvalidArgumentException('non-nullable supply_source_code cannot be null');
@@ -314,7 +339,7 @@ class CreateSupplySourceResponse implements ModelInterface, \ArrayAccess, \JsonS
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -325,7 +350,7 @@ class CreateSupplySourceResponse implements ModelInterface, \ArrayAccess, \JsonS
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -353,15 +378,17 @@ class CreateSupplySourceResponse implements ModelInterface, \ArrayAccess, \JsonS
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * Points.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\productFees\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -50,17 +49,20 @@ class Points implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Points';
+    protected static $openAPIModelName = 'Points';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'points_number' => 'int',
-        'points_monetary_value' => '\SpApi\Model\productFees\v0\MoneyType'];
+        'points_monetary_value' => '\SpApi\Model\productFees\v0\MoneyType',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -71,9 +73,10 @@ class Points implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'points_number' => 'int32',
-        'points_monetary_value' => null];
+        'points_monetary_value' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -81,8 +84,8 @@ class Points implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'points_number' => true,
-        'points_monetary_value' => true,
+        'points_number' => false,
+        'points_monetary_value' => false,
     ];
 
     /**
@@ -98,7 +101,7 @@ class Points implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'points_number' => 'PointsNumber',
         'points_monetary_value' => 'PointsMonetaryValue',
     ];
@@ -108,7 +111,7 @@ class Points implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'points_number' => 'setPointsNumber',
         'points_monetary_value' => 'setPointsMonetaryValue',
     ];
@@ -118,21 +121,23 @@ class Points implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'points_number' => 'getPointsNumber',
         'points_monetary_value' => 'getPointsMonetaryValue',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -155,16 +160,20 @@ class Points implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -188,32 +197,40 @@ class Points implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -223,7 +240,7 @@ class Points implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -234,15 +251,17 @@ class Points implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets points_number.
+     *
+     * @return null|int
      */
-    public function getPointsNumber(): ?int
+    public function getPointsNumber()
     {
         return $this->container['points_number'];
     }
@@ -251,18 +270,13 @@ class Points implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets points_number.
      *
      * @param null|int $points_number points_number
+     *
+     * @return self
      */
-    public function setPointsNumber(?int $points_number): self
+    public function setPointsNumber($points_number)
     {
         if (is_null($points_number)) {
-            array_push($this->openAPINullablesSetToNull, 'points_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('points_number', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable points_number cannot be null');
         }
         $this->container['points_number'] = $points_number;
 
@@ -271,8 +285,10 @@ class Points implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets points_monetary_value.
+     *
+     * @return null|MoneyType
      */
-    public function getPointsMonetaryValue(): ?MoneyType
+    public function getPointsMonetaryValue()
     {
         return $this->container['points_monetary_value'];
     }
@@ -281,18 +297,13 @@ class Points implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets points_monetary_value.
      *
      * @param null|MoneyType $points_monetary_value points_monetary_value
+     *
+     * @return self
      */
-    public function setPointsMonetaryValue(?MoneyType $points_monetary_value): self
+    public function setPointsMonetaryValue($points_monetary_value)
     {
         if (is_null($points_monetary_value)) {
-            array_push($this->openAPINullablesSetToNull, 'points_monetary_value');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('points_monetary_value', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable points_monetary_value cannot be null');
         }
         $this->container['points_monetary_value'] = $points_monetary_value;
 
@@ -317,7 +328,7 @@ class Points implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -328,7 +339,7 @@ class Points implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -356,15 +367,17 @@ class Points implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

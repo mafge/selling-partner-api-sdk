@@ -3,7 +3,7 @@
 /**
  * Issue.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\listings\items\v2021_08_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -56,21 +55,24 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Issue';
+    protected static $openAPIModelName = 'Issue';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'code' => 'string',
         'message' => 'string',
         'severity' => 'string',
         'attribute_names' => 'string[]',
         'categories' => 'string[]',
-        'enforcements' => '\SpApi\Model\listings\items\v2021_08_01\IssueEnforcements'];
+        'enforcements' => '\SpApi\Model\listings\items\v2021_08_01\IssueEnforcements',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -81,13 +83,14 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'code' => null,
         'message' => null,
         'severity' => null,
         'attribute_names' => null,
         'categories' => null,
-        'enforcements' => null];
+        'enforcements' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -98,9 +101,9 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
         'code' => false,
         'message' => false,
         'severity' => false,
-        'attribute_names' => true,
+        'attribute_names' => false,
         'categories' => false,
-        'enforcements' => true,
+        'enforcements' => false,
     ];
 
     /**
@@ -116,7 +119,7 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'code' => 'code',
         'message' => 'message',
         'severity' => 'severity',
@@ -130,7 +133,7 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'code' => 'setCode',
         'message' => 'setMessage',
         'severity' => 'setSeverity',
@@ -144,7 +147,7 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'code' => 'getCode',
         'message' => 'getMessage',
         'severity' => 'getSeverity',
@@ -155,14 +158,16 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -189,16 +194,20 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -222,32 +231,40 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -257,7 +274,7 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getSeverityAllowableValues(): array
+    public function getSeverityAllowableValues()
     {
         return [
             self::SEVERITY_ERROR,
@@ -271,7 +288,7 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -306,15 +323,17 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets code.
+     *
+     * @return string
      */
-    public function getCode(): string
+    public function getCode()
     {
         return $this->container['code'];
     }
@@ -323,8 +342,10 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets code.
      *
      * @param string $code an issue code that identifies the type of issue
+     *
+     * @return self
      */
-    public function setCode(string $code): self
+    public function setCode($code)
     {
         if (is_null($code)) {
             throw new \InvalidArgumentException('non-nullable code cannot be null');
@@ -336,8 +357,10 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets message.
+     *
+     * @return string
      */
-    public function getMessage(): string
+    public function getMessage()
     {
         return $this->container['message'];
     }
@@ -346,8 +369,10 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets message.
      *
      * @param string $message a message that describes the issue
+     *
+     * @return self
      */
-    public function setMessage(string $message): self
+    public function setMessage($message)
     {
         if (is_null($message)) {
             throw new \InvalidArgumentException('non-nullable message cannot be null');
@@ -359,8 +384,10 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets severity.
+     *
+     * @return string
      */
-    public function getSeverity(): string
+    public function getSeverity()
     {
         return $this->container['severity'];
     }
@@ -369,8 +396,10 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets severity.
      *
      * @param string $severity the severity of the issue
+     *
+     * @return self
      */
-    public function setSeverity(string $severity): self
+    public function setSeverity($severity)
     {
         if (is_null($severity)) {
             throw new \InvalidArgumentException('non-nullable severity cannot be null');
@@ -392,8 +421,10 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets attribute_names.
+     *
+     * @return null|string[]
      */
-    public function getAttributeNames(): ?array
+    public function getAttributeNames()
     {
         return $this->container['attribute_names'];
     }
@@ -401,19 +432,14 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets attribute_names.
      *
-     * @param null|array $attribute_names the names of the attributes associated with the issue, if applicable
+     * @param null|string[] $attribute_names the names of the attributes associated with the issue, if applicable
+     *
+     * @return self
      */
-    public function setAttributeNames(?array $attribute_names): self
+    public function setAttributeNames($attribute_names)
     {
         if (is_null($attribute_names)) {
-            array_push($this->openAPINullablesSetToNull, 'attribute_names');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('attribute_names', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable attribute_names cannot be null');
         }
         $this->container['attribute_names'] = $attribute_names;
 
@@ -422,8 +448,10 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets categories.
+     *
+     * @return string[]
      */
-    public function getCategories(): array
+    public function getCategories()
     {
         return $this->container['categories'];
     }
@@ -431,9 +459,11 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets categories.
      *
-     * @param array $categories List of issue categories.   Possible vales:   * `INVALID_ATTRIBUTE` - Indicating an invalid attribute in the listing.   * `MISSING_ATTRIBUTE` - Highlighting a missing attribute in the listing.   * `INVALID_IMAGE` - Signifying an invalid image in the listing.   * `MISSING_IMAGE` - Noting the absence of an image in the listing.   * `INVALID_PRICE` - Pertaining to issues with the listing's price-related attributes.   * `MISSING_PRICE` - Pointing out the absence of a price attribute in the listing.   * `DUPLICATE` - Identifying listings with potential duplicate problems, such as this ASIN potentially being a duplicate of another ASIN.   * `QUALIFICATION_REQUIRED` - Indicating that the listing requires qualification-related approval.
+     * @param string[] $categories List of issue categories.   Possible vales:   * `INVALID_ATTRIBUTE` - Indicating an invalid attribute in the listing.   * `MISSING_ATTRIBUTE` - Highlighting a missing attribute in the listing.   * `INVALID_IMAGE` - Signifying an invalid image in the listing.   * `MISSING_IMAGE` - Noting the absence of an image in the listing.   * `INVALID_PRICE` - Pertaining to issues with the listing's price-related attributes.   * `MISSING_PRICE` - Pointing out the absence of a price attribute in the listing.   * `DUPLICATE` - Identifying listings with potential duplicate problems, such as this ASIN potentially being a duplicate of another ASIN.   * `QUALIFICATION_REQUIRED` - Indicating that the listing requires qualification-related approval.
+     *
+     * @return self
      */
-    public function setCategories(array $categories): self
+    public function setCategories($categories)
     {
         if (is_null($categories)) {
             throw new \InvalidArgumentException('non-nullable categories cannot be null');
@@ -445,8 +475,10 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets enforcements.
+     *
+     * @return null|IssueEnforcements
      */
-    public function getEnforcements(): ?IssueEnforcements
+    public function getEnforcements()
     {
         return $this->container['enforcements'];
     }
@@ -455,18 +487,13 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets enforcements.
      *
      * @param null|IssueEnforcements $enforcements enforcements
+     *
+     * @return self
      */
-    public function setEnforcements(?IssueEnforcements $enforcements): self
+    public function setEnforcements($enforcements)
     {
         if (is_null($enforcements)) {
-            array_push($this->openAPINullablesSetToNull, 'enforcements');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('enforcements', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable enforcements cannot be null');
         }
         $this->container['enforcements'] = $enforcements;
 
@@ -491,7 +518,7 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -502,7 +529,7 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -530,15 +557,17 @@ class Issue implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

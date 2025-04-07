@@ -2,7 +2,7 @@
 /**
  * ShipmentDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\df\shipping\v2021_12_28;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * ShipmentDetails Class Doc Comment
@@ -52,19 +50,20 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'ShipmentDetails';
+    protected static $openAPIModelName = 'ShipmentDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'shipped_date' => '\DateTime',
-             'shipment_status' => 'string',
-             'is_priority_shipment' => 'bool',
-             'vendor_order_number' => 'string',
-             'estimated_delivery_date' => '\DateTime'    ];
+    protected static $openAPITypes = [
+        'shipped_date' => '\DateTime',
+        'shipment_status' => 'string',
+        'is_priority_shipment' => 'bool',
+        'vendor_order_number' => 'string',
+        'estimated_delivery_date' => '\DateTime'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -73,12 +72,13 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'shipped_date' => 'date-time',
-            'shipment_status' => null,
-            'is_priority_shipment' => null,
-            'vendor_order_number' => null,
-            'estimated_delivery_date' => 'date-time'    ];
+    protected static $openAPIFormats = [
+        'shipped_date' => 'date-time',
+        'shipment_status' => null,
+        'is_priority_shipment' => null,
+        'vendor_order_number' => null,
+        'estimated_delivery_date' => 'date-time'
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -88,9 +88,9 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'shipped_date' => false,
         'shipment_status' => false,
-        'is_priority_shipment' => true,
-        'vendor_order_number' => true,
-        'estimated_delivery_date' => true
+        'is_priority_shipment' => false,
+        'vendor_order_number' => false,
+        'estimated_delivery_date' => false
     ];
 
     /**
@@ -105,7 +105,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -115,7 +115,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -178,13 +178,12 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'shipped_date' => 'shippedDate',
-                'shipment_status' => 'shipmentStatus',
-                'is_priority_shipment' => 'isPriorityShipment',
-                'vendor_order_number' => 'vendorOrderNumber',
-                'estimated_delivery_date' => 'estimatedDeliveryDate'
-        
+        'shipment_status' => 'shipmentStatus',
+        'is_priority_shipment' => 'isPriorityShipment',
+        'vendor_order_number' => 'vendorOrderNumber',
+        'estimated_delivery_date' => 'estimatedDeliveryDate'
     ];
 
     /**
@@ -192,7 +191,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'shipped_date' => 'setShippedDate',
         'shipment_status' => 'setShipmentStatus',
         'is_priority_shipment' => 'setIsPriorityShipment',
@@ -205,7 +204,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'shipped_date' => 'getShippedDate',
         'shipment_status' => 'getShipmentStatus',
         'is_priority_shipment' => 'getIsPriorityShipment',
@@ -219,7 +218,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -229,7 +228,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -239,7 +238,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -249,7 +248,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -262,7 +261,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getShipmentStatusAllowableValues(): array
+    public function getShipmentStatusAllowableValues()
     {
         return [
             self::SHIPMENT_STATUS_SHIPPED,
@@ -273,17 +272,17 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('shipped_date', $data ?? [], null);
         $this->setIfExists('shipment_status', $data ?? [], null);
@@ -315,7 +314,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -343,7 +342,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -354,7 +353,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime
      */
-    public function getShippedDate(): \DateTime
+    public function getShippedDate()
     {
         return $this->container['shipped_date'];
     }
@@ -366,7 +365,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShippedDate(\DateTime $shipped_date): self
+    public function setShippedDate($shipped_date)
     {
         if (is_null($shipped_date)) {
             throw new \InvalidArgumentException('non-nullable shipped_date cannot be null');
@@ -381,7 +380,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getShipmentStatus(): string
+    public function getShipmentStatus()
     {
         return $this->container['shipment_status'];
     }
@@ -393,7 +392,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShipmentStatus(string $shipment_status): self
+    public function setShipmentStatus($shipment_status)
     {
         if (is_null($shipment_status)) {
             throw new \InvalidArgumentException('non-nullable shipment_status cannot be null');
@@ -418,7 +417,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool|null
      */
-    public function getIsPriorityShipment(): ?bool
+    public function getIsPriorityShipment()
     {
         return $this->container['is_priority_shipment'];
     }
@@ -430,17 +429,10 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setIsPriorityShipment(?bool $is_priority_shipment): self
+    public function setIsPriorityShipment($is_priority_shipment)
     {
         if (is_null($is_priority_shipment)) {
-            array_push($this->openAPINullablesSetToNull, 'is_priority_shipment');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_priority_shipment', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_priority_shipment cannot be null');
         }
         $this->container['is_priority_shipment'] = $is_priority_shipment;
 
@@ -452,7 +444,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getVendorOrderNumber(): ?string
+    public function getVendorOrderNumber()
     {
         return $this->container['vendor_order_number'];
     }
@@ -464,17 +456,10 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setVendorOrderNumber(?string $vendor_order_number): self
+    public function setVendorOrderNumber($vendor_order_number)
     {
         if (is_null($vendor_order_number)) {
-            array_push($this->openAPINullablesSetToNull, 'vendor_order_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('vendor_order_number', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable vendor_order_number cannot be null');
         }
         $this->container['vendor_order_number'] = $vendor_order_number;
 
@@ -486,7 +471,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime|null
      */
-    public function getEstimatedDeliveryDate(): ?\DateTime
+    public function getEstimatedDeliveryDate()
     {
         return $this->container['estimated_delivery_date'];
     }
@@ -498,24 +483,15 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setEstimatedDeliveryDate(?\DateTime $estimated_delivery_date): self
+    public function setEstimatedDeliveryDate($estimated_delivery_date)
     {
         if (is_null($estimated_delivery_date)) {
-            array_push($this->openAPINullablesSetToNull, 'estimated_delivery_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('estimated_delivery_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable estimated_delivery_date cannot be null');
         }
         $this->container['estimated_delivery_date'] = $estimated_delivery_date;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -536,7 +512,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -549,7 +525,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -578,7 +554,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -601,7 +577,7 @@ class ShipmentDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -2,7 +2,7 @@
 /**
  * ContainerItem
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * ContainerItem Class Doc Comment
@@ -52,17 +50,18 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'ContainerItem';
+    protected static $openAPIModelName = 'ContainerItem';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'item_reference' => 'string',
-             'shipped_quantity' => '\SpApi\Model\vendor\shipments\v1\ItemQuantity',
-             'item_details' => '\SpApi\Model\vendor\shipments\v1\ItemDetails'    ];
+    protected static $openAPITypes = [
+        'item_reference' => 'string',
+        'shipped_quantity' => '\SpApi\Model\vendor\shipments\v1\ItemQuantity',
+        'item_details' => '\SpApi\Model\vendor\shipments\v1\ItemDetails'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,10 +70,11 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'item_reference' => null,
-            'shipped_quantity' => null,
-            'item_details' => null    ];
+    protected static $openAPIFormats = [
+        'item_reference' => null,
+        'shipped_quantity' => null,
+        'item_details' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -84,7 +84,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'item_reference' => false,
         'shipped_quantity' => false,
-        'item_details' => true
+        'item_details' => false
     ];
 
     /**
@@ -99,7 +99,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -109,7 +109,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -172,11 +172,10 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'item_reference' => 'itemReference',
-                'shipped_quantity' => 'shippedQuantity',
-                'item_details' => 'itemDetails'
-        
+        'shipped_quantity' => 'shippedQuantity',
+        'item_details' => 'itemDetails'
     ];
 
     /**
@@ -184,7 +183,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'item_reference' => 'setItemReference',
         'shipped_quantity' => 'setShippedQuantity',
         'item_details' => 'setItemDetails'
@@ -195,7 +194,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'item_reference' => 'getItemReference',
         'shipped_quantity' => 'getShippedQuantity',
         'item_details' => 'getItemDetails'
@@ -207,7 +206,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -217,7 +216,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -227,7 +226,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -237,7 +236,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,17 +245,17 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('item_reference', $data ?? [], null);
         $this->setIfExists('shipped_quantity', $data ?? [], null);
@@ -286,7 +285,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -305,7 +304,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -316,7 +315,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getItemReference(): string
+    public function getItemReference()
     {
         return $this->container['item_reference'];
     }
@@ -328,7 +327,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setItemReference(string $item_reference): self
+    public function setItemReference($item_reference)
     {
         if (is_null($item_reference)) {
             throw new \InvalidArgumentException('non-nullable item_reference cannot be null');
@@ -343,7 +342,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\shipments\v1\ItemQuantity
      */
-    public function getShippedQuantity(): \SpApi\Model\vendor\shipments\v1\ItemQuantity
+    public function getShippedQuantity()
     {
         return $this->container['shipped_quantity'];
     }
@@ -355,7 +354,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShippedQuantity(\SpApi\Model\vendor\shipments\v1\ItemQuantity $shipped_quantity): self
+    public function setShippedQuantity($shipped_quantity)
     {
         if (is_null($shipped_quantity)) {
             throw new \InvalidArgumentException('non-nullable shipped_quantity cannot be null');
@@ -370,7 +369,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\shipments\v1\ItemDetails|null
      */
-    public function getItemDetails(): ?\SpApi\Model\vendor\shipments\v1\ItemDetails
+    public function getItemDetails()
     {
         return $this->container['item_details'];
     }
@@ -382,24 +381,15 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setItemDetails(?\SpApi\Model\vendor\shipments\v1\ItemDetails $item_details): self
+    public function setItemDetails($item_details)
     {
         if (is_null($item_details)) {
-            array_push($this->openAPINullablesSetToNull, 'item_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('item_details', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable item_details cannot be null');
         }
         $this->container['item_details'] = $item_details;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -420,7 +410,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -433,7 +423,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -462,7 +452,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -485,7 +475,7 @@ class ContainerItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

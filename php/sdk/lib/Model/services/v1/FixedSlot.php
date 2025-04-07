@@ -3,7 +3,7 @@
 /**
  * FixedSlot.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\services\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'FixedSlot';
+    protected static $openAPIModelName = 'FixedSlot';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'start_date_time' => '\DateTime',
         'scheduled_capacity' => 'int',
         'available_capacity' => 'int',
         'encumbered_capacity' => 'int',
-        'reserved_capacity' => 'int'];
+        'reserved_capacity' => 'int',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'start_date_time' => 'date-time',
         'scheduled_capacity' => 'int32',
         'available_capacity' => 'int32',
         'encumbered_capacity' => 'int32',
-        'reserved_capacity' => 'int32'];
+        'reserved_capacity' => 'int32',
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,11 +92,11 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'start_date_time' => true,
-        'scheduled_capacity' => true,
-        'available_capacity' => true,
-        'encumbered_capacity' => true,
-        'reserved_capacity' => true,
+        'start_date_time' => false,
+        'scheduled_capacity' => false,
+        'available_capacity' => false,
+        'encumbered_capacity' => false,
+        'reserved_capacity' => false,
     ];
 
     /**
@@ -109,7 +112,7 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'start_date_time' => 'startDateTime',
         'scheduled_capacity' => 'scheduledCapacity',
         'available_capacity' => 'availableCapacity',
@@ -122,7 +125,7 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'start_date_time' => 'setStartDateTime',
         'scheduled_capacity' => 'setScheduledCapacity',
         'available_capacity' => 'setAvailableCapacity',
@@ -135,7 +138,7 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'start_date_time' => 'getStartDateTime',
         'scheduled_capacity' => 'getScheduledCapacity',
         'available_capacity' => 'getAvailableCapacity',
@@ -145,14 +148,16 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -257,15 +274,17 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets start_date_time.
+     *
+     * @return null|\DateTime
      */
-    public function getStartDateTime(): ?\DateTime
+    public function getStartDateTime()
     {
         return $this->container['start_date_time'];
     }
@@ -274,18 +293,13 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets start_date_time.
      *
      * @param null|\DateTime $start_date_time start date time of slot in ISO 8601 format with precision of seconds
+     *
+     * @return self
      */
-    public function setStartDateTime(?\DateTime $start_date_time): self
+    public function setStartDateTime($start_date_time)
     {
         if (is_null($start_date_time)) {
-            array_push($this->openAPINullablesSetToNull, 'start_date_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('start_date_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable start_date_time cannot be null');
         }
         $this->container['start_date_time'] = $start_date_time;
 
@@ -294,8 +308,10 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets scheduled_capacity.
+     *
+     * @return null|int
      */
-    public function getScheduledCapacity(): ?int
+    public function getScheduledCapacity()
     {
         return $this->container['scheduled_capacity'];
     }
@@ -304,18 +320,13 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets scheduled_capacity.
      *
      * @param null|int $scheduled_capacity Scheduled capacity corresponding to the slot. This capacity represents the originally allocated capacity as per resource schedule.
+     *
+     * @return self
      */
-    public function setScheduledCapacity(?int $scheduled_capacity): self
+    public function setScheduledCapacity($scheduled_capacity)
     {
         if (is_null($scheduled_capacity)) {
-            array_push($this->openAPINullablesSetToNull, 'scheduled_capacity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('scheduled_capacity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable scheduled_capacity cannot be null');
         }
         $this->container['scheduled_capacity'] = $scheduled_capacity;
 
@@ -324,8 +335,10 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets available_capacity.
+     *
+     * @return null|int
      */
-    public function getAvailableCapacity(): ?int
+    public function getAvailableCapacity()
     {
         return $this->container['available_capacity'];
     }
@@ -334,18 +347,13 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets available_capacity.
      *
      * @param null|int $available_capacity Available capacity corresponding to the slot. This capacity represents the capacity available for allocation to reservations.
+     *
+     * @return self
      */
-    public function setAvailableCapacity(?int $available_capacity): self
+    public function setAvailableCapacity($available_capacity)
     {
         if (is_null($available_capacity)) {
-            array_push($this->openAPINullablesSetToNull, 'available_capacity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('available_capacity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable available_capacity cannot be null');
         }
         $this->container['available_capacity'] = $available_capacity;
 
@@ -354,8 +362,10 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets encumbered_capacity.
+     *
+     * @return null|int
      */
-    public function getEncumberedCapacity(): ?int
+    public function getEncumberedCapacity()
     {
         return $this->container['encumbered_capacity'];
     }
@@ -364,18 +374,13 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets encumbered_capacity.
      *
      * @param null|int $encumbered_capacity Encumbered capacity corresponding to the slot. This capacity represents the capacity allocated for Amazon Jobs/Appointments/Orders.
+     *
+     * @return self
      */
-    public function setEncumberedCapacity(?int $encumbered_capacity): self
+    public function setEncumberedCapacity($encumbered_capacity)
     {
         if (is_null($encumbered_capacity)) {
-            array_push($this->openAPINullablesSetToNull, 'encumbered_capacity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('encumbered_capacity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable encumbered_capacity cannot be null');
         }
         $this->container['encumbered_capacity'] = $encumbered_capacity;
 
@@ -384,8 +389,10 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets reserved_capacity.
+     *
+     * @return null|int
      */
-    public function getReservedCapacity(): ?int
+    public function getReservedCapacity()
     {
         return $this->container['reserved_capacity'];
     }
@@ -394,18 +401,13 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets reserved_capacity.
      *
      * @param null|int $reserved_capacity Reserved capacity corresponding to the slot. This capacity represents the capacity made unavailable due to events like Breaks/Leaves/Lunch.
+     *
+     * @return self
      */
-    public function setReservedCapacity(?int $reserved_capacity): self
+    public function setReservedCapacity($reserved_capacity)
     {
         if (is_null($reserved_capacity)) {
-            array_push($this->openAPINullablesSetToNull, 'reserved_capacity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('reserved_capacity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable reserved_capacity cannot be null');
         }
         $this->container['reserved_capacity'] = $reserved_capacity;
 
@@ -430,7 +432,7 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -441,7 +443,7 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -469,15 +471,17 @@ class FixedSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

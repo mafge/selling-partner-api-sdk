@@ -3,7 +3,7 @@
 /**
  * OfferIdentifier.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v2022_05_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'OfferIdentifier';
+    protected static $openAPIModelName = 'OfferIdentifier';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'marketplace_id' => 'string',
         'seller_id' => 'string',
         'sku' => 'string',
         'asin' => 'string',
-        'fulfillment_type' => '\SpApi\Model\pricing\v2022_05_01\FulfillmentType'];
+        'fulfillment_type' => '\SpApi\Model\pricing\v2022_05_01\FulfillmentType',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'marketplace_id' => null,
         'seller_id' => null,
         'sku' => null,
         'asin' => null,
-        'fulfillment_type' => null];
+        'fulfillment_type' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -90,10 +93,10 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'marketplace_id' => false,
-        'seller_id' => true,
-        'sku' => true,
+        'seller_id' => false,
+        'sku' => false,
         'asin' => false,
-        'fulfillment_type' => true,
+        'fulfillment_type' => false,
     ];
 
     /**
@@ -109,7 +112,7 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'marketplace_id' => 'marketplaceId',
         'seller_id' => 'sellerId',
         'sku' => 'sku',
@@ -122,7 +125,7 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
         'seller_id' => 'setSellerId',
         'sku' => 'setSku',
@@ -135,7 +138,7 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
         'seller_id' => 'getSellerId',
         'sku' => 'getSku',
@@ -145,14 +148,16 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -266,15 +283,17 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
-    public function getMarketplaceId(): string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -283,8 +302,10 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets marketplace_id.
      *
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which data is returned.
+     *
+     * @return self
      */
-    public function setMarketplaceId(string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
             throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
@@ -296,8 +317,10 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets seller_id.
+     *
+     * @return null|string
      */
-    public function getSellerId(): ?string
+    public function getSellerId()
     {
         return $this->container['seller_id'];
     }
@@ -306,18 +329,13 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets seller_id.
      *
      * @param null|string $seller_id the seller identifier for the offer
+     *
+     * @return self
      */
-    public function setSellerId(?string $seller_id): self
+    public function setSellerId($seller_id)
     {
         if (is_null($seller_id)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_id cannot be null');
         }
         $this->container['seller_id'] = $seller_id;
 
@@ -326,8 +344,10 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets sku.
+     *
+     * @return null|string
      */
-    public function getSku(): ?string
+    public function getSku()
     {
         return $this->container['sku'];
     }
@@ -336,18 +356,13 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets sku.
      *
      * @param null|string $sku The seller SKU of the item. This will only be present for the target offer, which belongs to the requesting seller.
+     *
+     * @return self
      */
-    public function setSku(?string $sku): self
+    public function setSku($sku)
     {
         if (is_null($sku)) {
-            array_push($this->openAPINullablesSetToNull, 'sku');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sku', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable sku cannot be null');
         }
         $this->container['sku'] = $sku;
 
@@ -356,8 +371,10 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets asin.
+     *
+     * @return string
      */
-    public function getAsin(): string
+    public function getAsin()
     {
         return $this->container['asin'];
     }
@@ -366,8 +383,10 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets asin.
      *
      * @param string $asin the ASIN of the item
+     *
+     * @return self
      */
-    public function setAsin(string $asin): self
+    public function setAsin($asin)
     {
         if (is_null($asin)) {
             throw new \InvalidArgumentException('non-nullable asin cannot be null');
@@ -379,8 +398,10 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets fulfillment_type.
+     *
+     * @return null|FulfillmentType
      */
-    public function getFulfillmentType(): ?string
+    public function getFulfillmentType()
     {
         return $this->container['fulfillment_type'];
     }
@@ -388,19 +409,14 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets fulfillment_type.
      *
-     * @param null|string $fulfillment_type fulfillment_type
+     * @param null|FulfillmentType $fulfillment_type fulfillment_type
+     *
+     * @return self
      */
-    public function setFulfillmentType(?string $fulfillment_type): self
+    public function setFulfillmentType($fulfillment_type)
     {
         if (is_null($fulfillment_type)) {
-            array_push($this->openAPINullablesSetToNull, 'fulfillment_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fulfillment_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fulfillment_type cannot be null');
         }
         $this->container['fulfillment_type'] = $fulfillment_type;
 
@@ -425,7 +441,7 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -436,7 +452,7 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -464,15 +480,17 @@ class OfferIdentifier implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

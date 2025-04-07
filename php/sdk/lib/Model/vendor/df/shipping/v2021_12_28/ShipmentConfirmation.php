@@ -2,7 +2,7 @@
 /**
  * ShipmentConfirmation
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\df\shipping\v2021_12_28;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * ShipmentConfirmation Class Doc Comment
@@ -52,20 +50,21 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'ShipmentConfirmation';
+    protected static $openAPIModelName = 'ShipmentConfirmation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'purchase_order_number' => 'string',
-             'shipment_details' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\ShipmentDetails',
-             'selling_party' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\PartyIdentification',
-             'ship_from_party' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\PartyIdentification',
-             'items' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\Item[]',
-             'containers' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\Container[]'    ];
+    protected static $openAPITypes = [
+        'purchase_order_number' => 'string',
+        'shipment_details' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\ShipmentDetails',
+        'selling_party' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\PartyIdentification',
+        'ship_from_party' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\PartyIdentification',
+        'items' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\Item[]',
+        'containers' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\Container[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -74,13 +73,14 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'purchase_order_number' => null,
-            'shipment_details' => null,
-            'selling_party' => null,
-            'ship_from_party' => null,
-            'items' => null,
-            'containers' => null    ];
+    protected static $openAPIFormats = [
+        'purchase_order_number' => null,
+        'shipment_details' => null,
+        'selling_party' => null,
+        'ship_from_party' => null,
+        'items' => null,
+        'containers' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -93,7 +93,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
         'selling_party' => false,
         'ship_from_party' => false,
         'items' => false,
-        'containers' => true
+        'containers' => false
     ];
 
     /**
@@ -108,7 +108,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -118,7 +118,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -181,14 +181,13 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'purchase_order_number' => 'purchaseOrderNumber',
-                'shipment_details' => 'shipmentDetails',
-                'selling_party' => 'sellingParty',
-                'ship_from_party' => 'shipFromParty',
-                'items' => 'items',
-                'containers' => 'containers'
-        
+        'shipment_details' => 'shipmentDetails',
+        'selling_party' => 'sellingParty',
+        'ship_from_party' => 'shipFromParty',
+        'items' => 'items',
+        'containers' => 'containers'
     ];
 
     /**
@@ -196,7 +195,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'purchase_order_number' => 'setPurchaseOrderNumber',
         'shipment_details' => 'setShipmentDetails',
         'selling_party' => 'setSellingParty',
@@ -210,7 +209,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'purchase_order_number' => 'getPurchaseOrderNumber',
         'shipment_details' => 'getShipmentDetails',
         'selling_party' => 'getSellingParty',
@@ -225,7 +224,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -235,7 +234,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -245,7 +244,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -255,7 +254,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -264,17 +263,17 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('purchase_order_number', $data ?? [], null);
         $this->setIfExists('shipment_details', $data ?? [], null);
@@ -307,7 +306,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -339,7 +338,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -350,7 +349,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return string
      */
-    public function getPurchaseOrderNumber(): string
+    public function getPurchaseOrderNumber()
     {
         return $this->container['purchase_order_number'];
     }
@@ -362,7 +361,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setPurchaseOrderNumber(string $purchase_order_number): self
+    public function setPurchaseOrderNumber($purchase_order_number)
     {
         if (is_null($purchase_order_number)) {
             throw new \InvalidArgumentException('non-nullable purchase_order_number cannot be null');
@@ -382,7 +381,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return \SpApi\Model\vendor\df\shipping\v2021_12_28\ShipmentDetails
      */
-    public function getShipmentDetails(): \SpApi\Model\vendor\df\shipping\v2021_12_28\ShipmentDetails
+    public function getShipmentDetails()
     {
         return $this->container['shipment_details'];
     }
@@ -394,7 +393,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setShipmentDetails(\SpApi\Model\vendor\df\shipping\v2021_12_28\ShipmentDetails $shipment_details): self
+    public function setShipmentDetails($shipment_details)
     {
         if (is_null($shipment_details)) {
             throw new \InvalidArgumentException('non-nullable shipment_details cannot be null');
@@ -409,7 +408,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return \SpApi\Model\vendor\df\shipping\v2021_12_28\PartyIdentification
      */
-    public function getSellingParty(): \SpApi\Model\vendor\df\shipping\v2021_12_28\PartyIdentification
+    public function getSellingParty()
     {
         return $this->container['selling_party'];
     }
@@ -421,7 +420,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setSellingParty(\SpApi\Model\vendor\df\shipping\v2021_12_28\PartyIdentification $selling_party): self
+    public function setSellingParty($selling_party)
     {
         if (is_null($selling_party)) {
             throw new \InvalidArgumentException('non-nullable selling_party cannot be null');
@@ -436,7 +435,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return \SpApi\Model\vendor\df\shipping\v2021_12_28\PartyIdentification
      */
-    public function getShipFromParty(): \SpApi\Model\vendor\df\shipping\v2021_12_28\PartyIdentification
+    public function getShipFromParty()
     {
         return $this->container['ship_from_party'];
     }
@@ -448,7 +447,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setShipFromParty(\SpApi\Model\vendor\df\shipping\v2021_12_28\PartyIdentification $ship_from_party): self
+    public function setShipFromParty($ship_from_party)
     {
         if (is_null($ship_from_party)) {
             throw new \InvalidArgumentException('non-nullable ship_from_party cannot be null');
@@ -461,9 +460,9 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets items
      *
-     * @return array
+     * @return \SpApi\Model\vendor\df\shipping\v2021_12_28\Item[]
      */
-    public function getItems(): array
+    public function getItems()
     {
         return $this->container['items'];
     }
@@ -471,11 +470,11 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets items
      *
-     * @param array $items Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.
+     * @param \SpApi\Model\vendor\df\shipping\v2021_12_28\Item[] $items Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.
      *
      * @return self
      */
-    public function setItems(array $items): self
+    public function setItems($items)
     {
         if (is_null($items)) {
             throw new \InvalidArgumentException('non-nullable items cannot be null');
@@ -488,9 +487,9 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets containers
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\df\shipping\v2021_12_28\Container[]|null
      */
-    public function getContainers(): ?array
+    public function getContainers()
     {
         return $this->container['containers'];
     }
@@ -498,28 +497,19 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets containers
      *
-     * @param array|null $containers Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.
+     * @param \SpApi\Model\vendor\df\shipping\v2021_12_28\Container[]|null $containers Provide the details of the items in this shipment. If any of the item details field is common at a package or a pallet level, then provide them at the corresponding package.
      *
      * @return self
      */
-    public function setContainers(?array $containers): self
+    public function setContainers($containers)
     {
         if (is_null($containers)) {
-            array_push($this->openAPINullablesSetToNull, 'containers');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('containers', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable containers cannot be null');
         }
         $this->container['containers'] = $containers;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -540,7 +530,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -553,7 +543,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -582,7 +572,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -605,7 +595,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * IneligibleRate.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,20 +52,23 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'IneligibleRate';
+    protected static $openAPIModelName = 'IneligibleRate';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'service_id' => 'string',
         'service_name' => 'string',
         'carrier_name' => 'string',
         'carrier_id' => 'string',
-        'ineligibility_reasons' => '\SpApi\Model\shipping\v2\IneligibilityReason[]'];
+        'ineligibility_reasons' => '\SpApi\Model\shipping\v2\IneligibilityReason[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,12 +79,13 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'service_id' => null,
         'service_name' => null,
         'carrier_name' => null,
         'carrier_id' => null,
-        'ineligibility_reasons' => null];
+        'ineligibility_reasons' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -110,7 +113,7 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'service_id' => 'serviceId',
         'service_name' => 'serviceName',
         'carrier_name' => 'carrierName',
@@ -123,7 +126,7 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'service_id' => 'setServiceId',
         'service_name' => 'setServiceName',
         'carrier_name' => 'setCarrierName',
@@ -136,7 +139,7 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'service_id' => 'getServiceId',
         'service_name' => 'getServiceName',
         'carrier_name' => 'getCarrierName',
@@ -146,14 +149,16 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -179,16 +184,20 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -212,32 +221,40 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -247,7 +264,7 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -276,15 +293,17 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets service_id.
+     *
+     * @return string
      */
-    public function getServiceId(): string
+    public function getServiceId()
     {
         return $this->container['service_id'];
     }
@@ -293,8 +312,10 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets service_id.
      *
      * @param string $service_id an identifier for the shipping service
+     *
+     * @return self
      */
-    public function setServiceId(string $service_id): self
+    public function setServiceId($service_id)
     {
         if (is_null($service_id)) {
             throw new \InvalidArgumentException('non-nullable service_id cannot be null');
@@ -306,8 +327,10 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets service_name.
+     *
+     * @return string
      */
-    public function getServiceName(): string
+    public function getServiceName()
     {
         return $this->container['service_name'];
     }
@@ -316,8 +339,10 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets service_name.
      *
      * @param string $service_name the name of the shipping service
+     *
+     * @return self
      */
-    public function setServiceName(string $service_name): self
+    public function setServiceName($service_name)
     {
         if (is_null($service_name)) {
             throw new \InvalidArgumentException('non-nullable service_name cannot be null');
@@ -329,8 +354,10 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets carrier_name.
+     *
+     * @return string
      */
-    public function getCarrierName(): string
+    public function getCarrierName()
     {
         return $this->container['carrier_name'];
     }
@@ -339,8 +366,10 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets carrier_name.
      *
      * @param string $carrier_name the carrier name for the offering
+     *
+     * @return self
      */
-    public function setCarrierName(string $carrier_name): self
+    public function setCarrierName($carrier_name)
     {
         if (is_null($carrier_name)) {
             throw new \InvalidArgumentException('non-nullable carrier_name cannot be null');
@@ -352,8 +381,10 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets carrier_id.
+     *
+     * @return string
      */
-    public function getCarrierId(): string
+    public function getCarrierId()
     {
         return $this->container['carrier_id'];
     }
@@ -362,8 +393,10 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets carrier_id.
      *
      * @param string $carrier_id the carrier identifier for the offering, provided by the carrier
+     *
+     * @return self
      */
-    public function setCarrierId(string $carrier_id): self
+    public function setCarrierId($carrier_id)
     {
         if (is_null($carrier_id)) {
             throw new \InvalidArgumentException('non-nullable carrier_id cannot be null');
@@ -375,8 +408,10 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets ineligibility_reasons.
+     *
+     * @return IneligibilityReason[]
      */
-    public function getIneligibilityReasons(): array
+    public function getIneligibilityReasons()
     {
         return $this->container['ineligibility_reasons'];
     }
@@ -384,9 +419,11 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets ineligibility_reasons.
      *
-     * @param array $ineligibility_reasons a list of reasons why a shipping service offering is ineligible
+     * @param IneligibilityReason[] $ineligibility_reasons a list of reasons why a shipping service offering is ineligible
+     *
+     * @return self
      */
-    public function setIneligibilityReasons(array $ineligibility_reasons): self
+    public function setIneligibilityReasons($ineligibility_reasons)
     {
         if (is_null($ineligibility_reasons)) {
             throw new \InvalidArgumentException('non-nullable ineligibility_reasons cannot be null');
@@ -414,7 +451,7 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -425,7 +462,7 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -453,15 +490,17 @@ class IneligibleRate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

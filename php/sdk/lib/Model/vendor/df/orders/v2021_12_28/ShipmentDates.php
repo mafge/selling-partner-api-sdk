@@ -2,7 +2,7 @@
 /**
  * ShipmentDates
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\df\orders\v2021_12_28;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * ShipmentDates Class Doc Comment
@@ -52,16 +50,17 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'ShipmentDates';
+    protected static $openAPIModelName = 'ShipmentDates';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'required_ship_date' => '\DateTime',
-             'promised_delivery_date' => '\DateTime'    ];
+    protected static $openAPITypes = [
+        'required_ship_date' => '\DateTime',
+        'promised_delivery_date' => '\DateTime'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,9 +69,10 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'required_ship_date' => 'date-time',
-            'promised_delivery_date' => 'date-time'    ];
+    protected static $openAPIFormats = [
+        'required_ship_date' => 'date-time',
+        'promised_delivery_date' => 'date-time'
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -81,7 +81,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'required_ship_date' => false,
-        'promised_delivery_date' => true
+        'promised_delivery_date' => false
     ];
 
     /**
@@ -96,7 +96,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -106,7 +106,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -169,10 +169,9 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'required_ship_date' => 'requiredShipDate',
-                'promised_delivery_date' => 'promisedDeliveryDate'
-        
+        'promised_delivery_date' => 'promisedDeliveryDate'
     ];
 
     /**
@@ -180,7 +179,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'required_ship_date' => 'setRequiredShipDate',
         'promised_delivery_date' => 'setPromisedDeliveryDate'
     ];
@@ -190,7 +189,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'required_ship_date' => 'getRequiredShipDate',
         'promised_delivery_date' => 'getPromisedDeliveryDate'
     ];
@@ -201,7 +200,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -211,7 +210,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -221,7 +220,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -231,7 +230,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -240,17 +239,17 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('required_ship_date', $data ?? [], null);
         $this->setIfExists('promised_delivery_date', $data ?? [], null);
@@ -279,7 +278,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -295,7 +294,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -306,7 +305,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime
      */
-    public function getRequiredShipDate(): \DateTime
+    public function getRequiredShipDate()
     {
         return $this->container['required_ship_date'];
     }
@@ -318,7 +317,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setRequiredShipDate(\DateTime $required_ship_date): self
+    public function setRequiredShipDate($required_ship_date)
     {
         if (is_null($required_ship_date)) {
             throw new \InvalidArgumentException('non-nullable required_ship_date cannot be null');
@@ -333,7 +332,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime|null
      */
-    public function getPromisedDeliveryDate(): ?\DateTime
+    public function getPromisedDeliveryDate()
     {
         return $this->container['promised_delivery_date'];
     }
@@ -345,24 +344,15 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setPromisedDeliveryDate(?\DateTime $promised_delivery_date): self
+    public function setPromisedDeliveryDate($promised_delivery_date)
     {
         if (is_null($promised_delivery_date)) {
-            array_push($this->openAPINullablesSetToNull, 'promised_delivery_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('promised_delivery_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable promised_delivery_date cannot be null');
         }
         $this->container['promised_delivery_date'] = $promised_delivery_date;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -383,7 +373,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -396,7 +386,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -425,7 +415,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -448,7 +438,7 @@ class ShipmentDates implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

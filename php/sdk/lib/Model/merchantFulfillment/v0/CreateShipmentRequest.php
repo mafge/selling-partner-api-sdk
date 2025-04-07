@@ -3,7 +3,7 @@
 /**
  * CreateShipmentRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\merchantFulfillment\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CreateShipmentRequest';
+    protected static $openAPIModelName = 'CreateShipmentRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'shipment_request_details' => '\SpApi\Model\merchantFulfillment\v0\ShipmentRequestDetails',
         'shipping_service_id' => 'string',
         'shipping_service_offer_id' => 'string',
         'hazmat_type' => '\SpApi\Model\merchantFulfillment\v0\HazmatType',
         'label_format_option' => '\SpApi\Model\merchantFulfillment\v0\LabelFormatOptionRequest',
-        'shipment_level_seller_inputs_list' => '\SpApi\Model\merchantFulfillment\v0\AdditionalSellerInputs[]'];
+        'shipment_level_seller_inputs_list' => '\SpApi\Model\merchantFulfillment\v0\AdditionalSellerInputs[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'shipment_request_details' => null,
         'shipping_service_id' => null,
         'shipping_service_offer_id' => null,
         'hazmat_type' => null,
         'label_format_option' => null,
-        'shipment_level_seller_inputs_list' => null];
+        'shipment_level_seller_inputs_list' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -93,10 +96,10 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
     protected static array $openAPINullables = [
         'shipment_request_details' => false,
         'shipping_service_id' => false,
-        'shipping_service_offer_id' => true,
-        'hazmat_type' => true,
-        'label_format_option' => true,
-        'shipment_level_seller_inputs_list' => true,
+        'shipping_service_offer_id' => false,
+        'hazmat_type' => false,
+        'label_format_option' => false,
+        'shipment_level_seller_inputs_list' => false,
     ];
 
     /**
@@ -112,7 +115,7 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'shipment_request_details' => 'ShipmentRequestDetails',
         'shipping_service_id' => 'ShippingServiceId',
         'shipping_service_offer_id' => 'ShippingServiceOfferId',
@@ -126,7 +129,7 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'shipment_request_details' => 'setShipmentRequestDetails',
         'shipping_service_id' => 'setShippingServiceId',
         'shipping_service_offer_id' => 'setShippingServiceOfferId',
@@ -140,7 +143,7 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'shipment_request_details' => 'getShipmentRequestDetails',
         'shipping_service_id' => 'getShippingServiceId',
         'shipping_service_offer_id' => 'getShippingServiceOfferId',
@@ -151,14 +154,16 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -273,15 +290,17 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets shipment_request_details.
+     *
+     * @return ShipmentRequestDetails
      */
-    public function getShipmentRequestDetails(): ShipmentRequestDetails
+    public function getShipmentRequestDetails()
     {
         return $this->container['shipment_request_details'];
     }
@@ -290,8 +309,10 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets shipment_request_details.
      *
      * @param ShipmentRequestDetails $shipment_request_details shipment_request_details
+     *
+     * @return self
      */
-    public function setShipmentRequestDetails(ShipmentRequestDetails $shipment_request_details): self
+    public function setShipmentRequestDetails($shipment_request_details)
     {
         if (is_null($shipment_request_details)) {
             throw new \InvalidArgumentException('non-nullable shipment_request_details cannot be null');
@@ -303,8 +324,10 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets shipping_service_id.
+     *
+     * @return string
      */
-    public function getShippingServiceId(): string
+    public function getShippingServiceId()
     {
         return $this->container['shipping_service_id'];
     }
@@ -313,8 +336,10 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets shipping_service_id.
      *
      * @param string $shipping_service_id an Amazon-defined shipping service identifier
+     *
+     * @return self
      */
-    public function setShippingServiceId(string $shipping_service_id): self
+    public function setShippingServiceId($shipping_service_id)
     {
         if (is_null($shipping_service_id)) {
             throw new \InvalidArgumentException('non-nullable shipping_service_id cannot be null');
@@ -326,8 +351,10 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets shipping_service_offer_id.
+     *
+     * @return null|string
      */
-    public function getShippingServiceOfferId(): ?string
+    public function getShippingServiceOfferId()
     {
         return $this->container['shipping_service_offer_id'];
     }
@@ -336,18 +363,13 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets shipping_service_offer_id.
      *
      * @param null|string $shipping_service_offer_id identifies a shipping service order made by a carrier
+     *
+     * @return self
      */
-    public function setShippingServiceOfferId(?string $shipping_service_offer_id): self
+    public function setShippingServiceOfferId($shipping_service_offer_id)
     {
         if (is_null($shipping_service_offer_id)) {
-            array_push($this->openAPINullablesSetToNull, 'shipping_service_offer_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipping_service_offer_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipping_service_offer_id cannot be null');
         }
         $this->container['shipping_service_offer_id'] = $shipping_service_offer_id;
 
@@ -356,8 +378,10 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets hazmat_type.
+     *
+     * @return null|HazmatType
      */
-    public function getHazmatType(): ?string
+    public function getHazmatType()
     {
         return $this->container['hazmat_type'];
     }
@@ -365,19 +389,14 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Sets hazmat_type.
      *
-     * @param null|string $hazmat_type hazmat_type
+     * @param null|HazmatType $hazmat_type hazmat_type
+     *
+     * @return self
      */
-    public function setHazmatType(?string $hazmat_type): self
+    public function setHazmatType($hazmat_type)
     {
         if (is_null($hazmat_type)) {
-            array_push($this->openAPINullablesSetToNull, 'hazmat_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('hazmat_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable hazmat_type cannot be null');
         }
         $this->container['hazmat_type'] = $hazmat_type;
 
@@ -386,8 +405,10 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets label_format_option.
+     *
+     * @return null|LabelFormatOptionRequest
      */
-    public function getLabelFormatOption(): ?LabelFormatOptionRequest
+    public function getLabelFormatOption()
     {
         return $this->container['label_format_option'];
     }
@@ -396,18 +417,13 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets label_format_option.
      *
      * @param null|LabelFormatOptionRequest $label_format_option label_format_option
+     *
+     * @return self
      */
-    public function setLabelFormatOption(?LabelFormatOptionRequest $label_format_option): self
+    public function setLabelFormatOption($label_format_option)
     {
         if (is_null($label_format_option)) {
-            array_push($this->openAPINullablesSetToNull, 'label_format_option');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('label_format_option', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable label_format_option cannot be null');
         }
         $this->container['label_format_option'] = $label_format_option;
 
@@ -416,8 +432,10 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets shipment_level_seller_inputs_list.
+     *
+     * @return null|AdditionalSellerInputs[]
      */
-    public function getShipmentLevelSellerInputsList(): ?array
+    public function getShipmentLevelSellerInputsList()
     {
         return $this->container['shipment_level_seller_inputs_list'];
     }
@@ -425,19 +443,14 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Sets shipment_level_seller_inputs_list.
      *
-     * @param null|array $shipment_level_seller_inputs_list a list of additional seller input pairs required to purchase shipping
+     * @param null|AdditionalSellerInputs[] $shipment_level_seller_inputs_list a list of additional seller input pairs required to purchase shipping
+     *
+     * @return self
      */
-    public function setShipmentLevelSellerInputsList(?array $shipment_level_seller_inputs_list): self
+    public function setShipmentLevelSellerInputsList($shipment_level_seller_inputs_list)
     {
         if (is_null($shipment_level_seller_inputs_list)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_level_seller_inputs_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_level_seller_inputs_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_level_seller_inputs_list cannot be null');
         }
         $this->container['shipment_level_seller_inputs_list'] = $shipment_level_seller_inputs_list;
 
@@ -462,7 +475,7 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -473,7 +486,7 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -501,15 +514,17 @@ class CreateShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

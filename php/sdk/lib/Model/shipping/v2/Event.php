@@ -3,7 +3,7 @@
 /**
  * Event.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,19 +52,22 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Event';
+    protected static $openAPIModelName = 'Event';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'event_code' => '\SpApi\Model\shipping\v2\EventCode',
         'location' => '\SpApi\Model\shipping\v2\Location',
         'event_time' => '\DateTime',
-        'shipment_type' => '\SpApi\Model\shipping\v2\ShipmentType'];
+        'shipment_type' => '\SpApi\Model\shipping\v2\ShipmentType',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,11 +78,12 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'event_code' => null,
         'location' => null,
         'event_time' => 'date-time',
-        'shipment_type' => null];
+        'shipment_type' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,9 +92,9 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'event_code' => false,
-        'location' => true,
+        'location' => false,
         'event_time' => false,
-        'shipment_type' => true,
+        'shipment_type' => false,
     ];
 
     /**
@@ -107,7 +110,7 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'event_code' => 'eventCode',
         'location' => 'location',
         'event_time' => 'eventTime',
@@ -119,7 +122,7 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'event_code' => 'setEventCode',
         'location' => 'setLocation',
         'event_time' => 'setEventTime',
@@ -131,7 +134,7 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'event_code' => 'getEventCode',
         'location' => 'getLocation',
         'event_time' => 'getEventTime',
@@ -140,14 +143,16 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -172,16 +177,20 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -205,32 +214,40 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -240,7 +257,7 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -260,15 +277,17 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets event_code.
+     *
+     * @return EventCode
      */
-    public function getEventCode(): string
+    public function getEventCode()
     {
         return $this->container['event_code'];
     }
@@ -276,9 +295,11 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets event_code.
      *
-     * @param string $event_code event_code
+     * @param EventCode $event_code event_code
+     *
+     * @return self
      */
-    public function setEventCode(string $event_code): self
+    public function setEventCode($event_code)
     {
         if (is_null($event_code)) {
             throw new \InvalidArgumentException('non-nullable event_code cannot be null');
@@ -290,8 +311,10 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets location.
+     *
+     * @return null|Location
      */
-    public function getLocation(): ?Location
+    public function getLocation()
     {
         return $this->container['location'];
     }
@@ -300,18 +323,13 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets location.
      *
      * @param null|Location $location location
+     *
+     * @return self
      */
-    public function setLocation(?Location $location): self
+    public function setLocation($location)
     {
         if (is_null($location)) {
-            array_push($this->openAPINullablesSetToNull, 'location');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('location', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable location cannot be null');
         }
         $this->container['location'] = $location;
 
@@ -320,8 +338,10 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets event_time.
+     *
+     * @return \DateTime
      */
-    public function getEventTime(): \DateTime
+    public function getEventTime()
     {
         return $this->container['event_time'];
     }
@@ -330,8 +350,10 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets event_time.
      *
      * @param \DateTime $event_time the ISO 8601 formatted timestamp of the event
+     *
+     * @return self
      */
-    public function setEventTime(\DateTime $event_time): self
+    public function setEventTime($event_time)
     {
         if (is_null($event_time)) {
             throw new \InvalidArgumentException('non-nullable event_time cannot be null');
@@ -343,8 +365,10 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets shipment_type.
+     *
+     * @return null|ShipmentType
      */
-    public function getShipmentType(): ?string
+    public function getShipmentType()
     {
         return $this->container['shipment_type'];
     }
@@ -352,19 +376,14 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets shipment_type.
      *
-     * @param null|string $shipment_type shipment_type
+     * @param null|ShipmentType $shipment_type shipment_type
+     *
+     * @return self
      */
-    public function setShipmentType(?string $shipment_type): self
+    public function setShipmentType($shipment_type)
     {
         if (is_null($shipment_type)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_type cannot be null');
         }
         $this->container['shipment_type'] = $shipment_type;
 
@@ -389,7 +408,7 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -400,7 +419,7 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -428,15 +447,17 @@ class Event implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

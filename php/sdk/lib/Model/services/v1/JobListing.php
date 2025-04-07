@@ -3,7 +3,7 @@
 /**
  * JobListing.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\services\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'JobListing';
+    protected static $openAPIModelName = 'JobListing';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'total_result_size' => 'int',
         'next_page_token' => 'string',
         'previous_page_token' => 'string',
-        'jobs' => '\SpApi\Model\services\v1\ServiceJob[]'];
+        'jobs' => '\SpApi\Model\services\v1\ServiceJob[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'total_result_size' => null,
         'next_page_token' => null,
         'previous_page_token' => null,
-        'jobs' => null];
+        'jobs' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,10 +90,10 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'total_result_size' => true,
-        'next_page_token' => true,
-        'previous_page_token' => true,
-        'jobs' => true,
+        'total_result_size' => false,
+        'next_page_token' => false,
+        'previous_page_token' => false,
+        'jobs' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'total_result_size' => 'totalResultSize',
         'next_page_token' => 'nextPageToken',
         'previous_page_token' => 'previousPageToken',
@@ -118,7 +121,7 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'total_result_size' => 'setTotalResultSize',
         'next_page_token' => 'setNextPageToken',
         'previous_page_token' => 'setPreviousPageToken',
@@ -130,7 +133,7 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'total_result_size' => 'getTotalResultSize',
         'next_page_token' => 'getNextPageToken',
         'previous_page_token' => 'getPreviousPageToken',
@@ -139,14 +142,16 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -250,15 +267,17 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets total_result_size.
+     *
+     * @return null|int
      */
-    public function getTotalResultSize(): ?int
+    public function getTotalResultSize()
     {
         return $this->container['total_result_size'];
     }
@@ -267,18 +286,13 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets total_result_size.
      *
      * @param null|int $total_result_size total result size of the query result
+     *
+     * @return self
      */
-    public function setTotalResultSize(?int $total_result_size): self
+    public function setTotalResultSize($total_result_size)
     {
         if (is_null($total_result_size)) {
-            array_push($this->openAPINullablesSetToNull, 'total_result_size');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_result_size', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable total_result_size cannot be null');
         }
         $this->container['total_result_size'] = $total_result_size;
 
@@ -287,8 +301,10 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets next_page_token.
+     *
+     * @return null|string
      */
-    public function getNextPageToken(): ?string
+    public function getNextPageToken()
     {
         return $this->container['next_page_token'];
     }
@@ -297,18 +313,13 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets next_page_token.
      *
      * @param null|string $next_page_token A generated string used to pass information to your next request. If `nextPageToken` is returned, pass the value of `nextPageToken` to the `pageToken` to get next results.
+     *
+     * @return self
      */
-    public function setNextPageToken(?string $next_page_token): self
+    public function setNextPageToken($next_page_token)
     {
         if (is_null($next_page_token)) {
-            array_push($this->openAPINullablesSetToNull, 'next_page_token');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('next_page_token', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable next_page_token cannot be null');
         }
         $this->container['next_page_token'] = $next_page_token;
 
@@ -317,8 +328,10 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets previous_page_token.
+     *
+     * @return null|string
      */
-    public function getPreviousPageToken(): ?string
+    public function getPreviousPageToken()
     {
         return $this->container['previous_page_token'];
     }
@@ -327,18 +340,13 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets previous_page_token.
      *
      * @param null|string $previous_page_token A generated string used to pass information to your next request. If `previousPageToken` is returned, pass the value of `previousPageToken` to the `pageToken` to get previous page results.
+     *
+     * @return self
      */
-    public function setPreviousPageToken(?string $previous_page_token): self
+    public function setPreviousPageToken($previous_page_token)
     {
         if (is_null($previous_page_token)) {
-            array_push($this->openAPINullablesSetToNull, 'previous_page_token');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('previous_page_token', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable previous_page_token cannot be null');
         }
         $this->container['previous_page_token'] = $previous_page_token;
 
@@ -347,8 +355,10 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets jobs.
+     *
+     * @return null|ServiceJob[]
      */
-    public function getJobs(): ?array
+    public function getJobs()
     {
         return $this->container['jobs'];
     }
@@ -356,19 +366,14 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets jobs.
      *
-     * @param null|array $jobs list of job details for the given input
+     * @param null|ServiceJob[] $jobs list of job details for the given input
+     *
+     * @return self
      */
-    public function setJobs(?array $jobs): self
+    public function setJobs($jobs)
     {
         if (is_null($jobs)) {
-            array_push($this->openAPINullablesSetToNull, 'jobs');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('jobs', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable jobs cannot be null');
         }
         $this->container['jobs'] = $jobs;
 
@@ -393,7 +398,7 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -404,7 +409,7 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -432,15 +437,17 @@ class JobListing implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

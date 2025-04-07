@@ -3,7 +3,7 @@
 /**
  * TrialShipmentEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'TrialShipmentEvent';
+    protected static $openAPIModelName = 'TrialShipmentEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'amazon_order_id' => 'string',
         'financial_event_group_id' => 'string',
         'posted_date' => '\DateTime',
         'sku' => 'string',
-        'fee_list' => '\SpApi\Model\finances\v0\FeeComponent[]'];
+        'fee_list' => '\SpApi\Model\finances\v0\FeeComponent[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'amazon_order_id' => null,
         'financial_event_group_id' => null,
         'posted_date' => 'date-time',
         'sku' => null,
-        'fee_list' => null];
+        'fee_list' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,11 +92,11 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'amazon_order_id' => true,
-        'financial_event_group_id' => true,
-        'posted_date' => true,
-        'sku' => true,
-        'fee_list' => true,
+        'amazon_order_id' => false,
+        'financial_event_group_id' => false,
+        'posted_date' => false,
+        'sku' => false,
+        'fee_list' => false,
     ];
 
     /**
@@ -109,7 +112,7 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'amazon_order_id' => 'AmazonOrderId',
         'financial_event_group_id' => 'FinancialEventGroupId',
         'posted_date' => 'PostedDate',
@@ -122,7 +125,7 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'amazon_order_id' => 'setAmazonOrderId',
         'financial_event_group_id' => 'setFinancialEventGroupId',
         'posted_date' => 'setPostedDate',
@@ -135,7 +138,7 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'amazon_order_id' => 'getAmazonOrderId',
         'financial_event_group_id' => 'getFinancialEventGroupId',
         'posted_date' => 'getPostedDate',
@@ -145,14 +148,16 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -257,15 +274,17 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets amazon_order_id.
+     *
+     * @return null|string
      */
-    public function getAmazonOrderId(): ?string
+    public function getAmazonOrderId()
     {
         return $this->container['amazon_order_id'];
     }
@@ -274,18 +293,13 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets amazon_order_id.
      *
      * @param null|string $amazon_order_id an Amazon-defined identifier for an order
+     *
+     * @return self
      */
-    public function setAmazonOrderId(?string $amazon_order_id): self
+    public function setAmazonOrderId($amazon_order_id)
     {
         if (is_null($amazon_order_id)) {
-            array_push($this->openAPINullablesSetToNull, 'amazon_order_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amazon_order_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable amazon_order_id cannot be null');
         }
         $this->container['amazon_order_id'] = $amazon_order_id;
 
@@ -294,8 +308,10 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets financial_event_group_id.
+     *
+     * @return null|string
      */
-    public function getFinancialEventGroupId(): ?string
+    public function getFinancialEventGroupId()
     {
         return $this->container['financial_event_group_id'];
     }
@@ -304,18 +320,13 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets financial_event_group_id.
      *
      * @param null|string $financial_event_group_id the identifier of the financial event group
+     *
+     * @return self
      */
-    public function setFinancialEventGroupId(?string $financial_event_group_id): self
+    public function setFinancialEventGroupId($financial_event_group_id)
     {
         if (is_null($financial_event_group_id)) {
-            array_push($this->openAPINullablesSetToNull, 'financial_event_group_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('financial_event_group_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable financial_event_group_id cannot be null');
         }
         $this->container['financial_event_group_id'] = $financial_event_group_id;
 
@@ -324,8 +335,10 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTime
      */
-    public function getPostedDate(): ?\DateTime
+    public function getPostedDate()
     {
         return $this->container['posted_date'];
     }
@@ -334,18 +347,13 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets posted_date.
      *
      * @param null|\DateTime $posted_date fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate)
+     *
+     * @return self
      */
-    public function setPostedDate(?\DateTime $posted_date): self
+    public function setPostedDate($posted_date)
     {
         if (is_null($posted_date)) {
-            array_push($this->openAPINullablesSetToNull, 'posted_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('posted_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable posted_date cannot be null');
         }
         $this->container['posted_date'] = $posted_date;
 
@@ -354,8 +362,10 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets sku.
+     *
+     * @return null|string
      */
-    public function getSku(): ?string
+    public function getSku()
     {
         return $this->container['sku'];
     }
@@ -364,18 +374,13 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets sku.
      *
      * @param null|string $sku The seller SKU of the item. The seller SKU is qualified by the seller's seller ID, which is included with every call to the Selling Partner API.
+     *
+     * @return self
      */
-    public function setSku(?string $sku): self
+    public function setSku($sku)
     {
         if (is_null($sku)) {
-            array_push($this->openAPINullablesSetToNull, 'sku');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sku', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable sku cannot be null');
         }
         $this->container['sku'] = $sku;
 
@@ -384,8 +389,10 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets fee_list.
+     *
+     * @return null|FeeComponent[]
      */
-    public function getFeeList(): ?array
+    public function getFeeList()
     {
         return $this->container['fee_list'];
     }
@@ -393,19 +400,14 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Sets fee_list.
      *
-     * @param null|array $fee_list a list of fee component information
+     * @param null|FeeComponent[] $fee_list a list of fee component information
+     *
+     * @return self
      */
-    public function setFeeList(?array $fee_list): self
+    public function setFeeList($fee_list)
     {
         if (is_null($fee_list)) {
-            array_push($this->openAPINullablesSetToNull, 'fee_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fee_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fee_list cannot be null');
         }
         $this->container['fee_list'] = $fee_list;
 
@@ -430,7 +432,7 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -441,7 +443,7 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -469,15 +471,17 @@ class TrialShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

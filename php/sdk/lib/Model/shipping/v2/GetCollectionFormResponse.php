@@ -3,7 +3,7 @@
 /**
  * GetCollectionFormResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,16 +52,19 @@ class GetCollectionFormResponse implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetCollectionFormResponse';
+    protected static $openAPIModelName = 'GetCollectionFormResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
-        'collections_form_document' => '\SpApi\Model\shipping\v2\CollectionsFormDocument'];
+    protected static $openAPITypes = [
+        'collections_form_document' => '\SpApi\Model\shipping\v2\CollectionsFormDocument',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,8 +75,9 @@ class GetCollectionFormResponse implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
-        'collections_form_document' => null];
+    protected static $openAPIFormats = [
+        'collections_form_document' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -82,7 +85,7 @@ class GetCollectionFormResponse implements ModelInterface, \ArrayAccess, \JsonSe
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'collections_form_document' => true,
+        'collections_form_document' => false,
     ];
 
     /**
@@ -98,7 +101,7 @@ class GetCollectionFormResponse implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'collections_form_document' => 'collectionsFormDocument',
     ];
 
@@ -107,7 +110,7 @@ class GetCollectionFormResponse implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'collections_form_document' => 'setCollectionsFormDocument',
     ];
 
@@ -116,20 +119,22 @@ class GetCollectionFormResponse implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'collections_form_document' => 'getCollectionsFormDocument',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -151,16 +156,20 @@ class GetCollectionFormResponse implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -184,32 +193,40 @@ class GetCollectionFormResponse implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -219,7 +236,7 @@ class GetCollectionFormResponse implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -230,15 +247,17 @@ class GetCollectionFormResponse implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets collections_form_document.
+     *
+     * @return null|CollectionsFormDocument
      */
-    public function getCollectionsFormDocument(): ?CollectionsFormDocument
+    public function getCollectionsFormDocument()
     {
         return $this->container['collections_form_document'];
     }
@@ -247,18 +266,13 @@ class GetCollectionFormResponse implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets collections_form_document.
      *
      * @param null|CollectionsFormDocument $collections_form_document collections_form_document
+     *
+     * @return self
      */
-    public function setCollectionsFormDocument(?CollectionsFormDocument $collections_form_document): self
+    public function setCollectionsFormDocument($collections_form_document)
     {
         if (is_null($collections_form_document)) {
-            array_push($this->openAPINullablesSetToNull, 'collections_form_document');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('collections_form_document', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable collections_form_document cannot be null');
         }
         $this->container['collections_form_document'] = $collections_form_document;
 
@@ -283,7 +297,7 @@ class GetCollectionFormResponse implements ModelInterface, \ArrayAccess, \JsonSe
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -294,7 +308,7 @@ class GetCollectionFormResponse implements ModelInterface, \ArrayAccess, \JsonSe
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -322,15 +336,17 @@ class GetCollectionFormResponse implements ModelInterface, \ArrayAccess, \JsonSe
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

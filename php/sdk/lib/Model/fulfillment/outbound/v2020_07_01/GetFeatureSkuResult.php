@@ -3,7 +3,7 @@
 /**
  * GetFeatureSkuResult.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetFeatureSkuResult';
+    protected static $openAPIModelName = 'GetFeatureSkuResult';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'marketplace_id' => 'string',
         'feature_name' => 'string',
         'is_eligible' => 'bool',
         'ineligible_reasons' => 'string[]',
-        'sku_info' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\FeatureSku'];
+        'sku_info' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\FeatureSku',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'marketplace_id' => null,
         'feature_name' => null,
         'is_eligible' => null,
         'ineligible_reasons' => null,
-        'sku_info' => null];
+        'sku_info' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -92,8 +95,8 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
         'marketplace_id' => false,
         'feature_name' => false,
         'is_eligible' => false,
-        'ineligible_reasons' => true,
-        'sku_info' => true,
+        'ineligible_reasons' => false,
+        'sku_info' => false,
     ];
 
     /**
@@ -109,7 +112,7 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'marketplace_id' => 'marketplaceId',
         'feature_name' => 'featureName',
         'is_eligible' => 'isEligible',
@@ -122,7 +125,7 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
         'feature_name' => 'setFeatureName',
         'is_eligible' => 'setIsEligible',
@@ -135,7 +138,7 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
         'feature_name' => 'getFeatureName',
         'is_eligible' => 'getIsEligible',
@@ -145,14 +148,16 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -269,15 +286,17 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
-    public function getMarketplaceId(): string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -286,8 +305,10 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets marketplace_id.
      *
      * @param string $marketplace_id the requested marketplace
+     *
+     * @return self
      */
-    public function setMarketplaceId(string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
             throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
@@ -299,8 +320,10 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets feature_name.
+     *
+     * @return string
      */
-    public function getFeatureName(): string
+    public function getFeatureName()
     {
         return $this->container['feature_name'];
     }
@@ -309,8 +332,10 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets feature_name.
      *
      * @param string $feature_name the name of the feature
+     *
+     * @return self
      */
-    public function setFeatureName(string $feature_name): self
+    public function setFeatureName($feature_name)
     {
         if (is_null($feature_name)) {
             throw new \InvalidArgumentException('non-nullable feature_name cannot be null');
@@ -322,8 +347,10 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets is_eligible.
+     *
+     * @return bool
      */
-    public function getIsEligible(): bool
+    public function getIsEligible()
     {
         return $this->container['is_eligible'];
     }
@@ -332,8 +359,10 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets is_eligible.
      *
      * @param bool $is_eligible when true, the seller SKU is eligible for the requested feature
+     *
+     * @return self
      */
-    public function setIsEligible(bool $is_eligible): self
+    public function setIsEligible($is_eligible)
     {
         if (is_null($is_eligible)) {
             throw new \InvalidArgumentException('non-nullable is_eligible cannot be null');
@@ -345,8 +374,10 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets ineligible_reasons.
+     *
+     * @return null|string[]
      */
-    public function getIneligibleReasons(): ?array
+    public function getIneligibleReasons()
     {
         return $this->container['ineligible_reasons'];
     }
@@ -354,19 +385,14 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets ineligible_reasons.
      *
-     * @param null|array $ineligible_reasons A list of one or more reasons that the seller SKU is ineligibile for the feature.  Possible values: * `MERCHANT_NOT_ENROLLED` - The merchant isn't enrolled for the feature. * `SKU_NOT_ELIGIBLE` - The SKU doesn't reside in a warehouse that supports the feature. * `INVALID_SKU` - There is an issue with the SKU provided.
+     * @param null|string[] $ineligible_reasons A list of one or more reasons that the seller SKU is ineligibile for the feature.  Possible values: * `MERCHANT_NOT_ENROLLED` - The merchant isn't enrolled for the feature. * `SKU_NOT_ELIGIBLE` - The SKU doesn't reside in a warehouse that supports the feature. * `INVALID_SKU` - There is an issue with the SKU provided.
+     *
+     * @return self
      */
-    public function setIneligibleReasons(?array $ineligible_reasons): self
+    public function setIneligibleReasons($ineligible_reasons)
     {
         if (is_null($ineligible_reasons)) {
-            array_push($this->openAPINullablesSetToNull, 'ineligible_reasons');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ineligible_reasons', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ineligible_reasons cannot be null');
         }
         $this->container['ineligible_reasons'] = $ineligible_reasons;
 
@@ -375,8 +401,10 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets sku_info.
+     *
+     * @return null|FeatureSku
      */
-    public function getSkuInfo(): ?FeatureSku
+    public function getSkuInfo()
     {
         return $this->container['sku_info'];
     }
@@ -385,18 +413,13 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets sku_info.
      *
      * @param null|FeatureSku $sku_info sku_info
+     *
+     * @return self
      */
-    public function setSkuInfo(?FeatureSku $sku_info): self
+    public function setSkuInfo($sku_info)
     {
         if (is_null($sku_info)) {
-            array_push($this->openAPINullablesSetToNull, 'sku_info');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sku_info', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable sku_info cannot be null');
         }
         $this->container['sku_info'] = $sku_info;
 
@@ -421,7 +444,7 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -432,7 +455,7 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -460,15 +483,17 @@ class GetFeatureSkuResult implements ModelInterface, \ArrayAccess, \JsonSerializ
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

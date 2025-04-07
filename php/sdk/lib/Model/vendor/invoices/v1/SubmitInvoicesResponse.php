@@ -2,7 +2,7 @@
 /**
  * SubmitInvoicesResponse
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\invoices\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * SubmitInvoicesResponse Class Doc Comment
@@ -52,16 +50,17 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'SubmitInvoicesResponse';
+    protected static $openAPIModelName = 'SubmitInvoicesResponse';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'payload' => '\SpApi\Model\vendor\invoices\v1\TransactionId',
-             'errors' => '\SpApi\Model\vendor\invoices\v1\Error[]'    ];
+    protected static $openAPITypes = [
+        'payload' => '\SpApi\Model\vendor\invoices\v1\TransactionId',
+        'errors' => '\SpApi\Model\vendor\invoices\v1\Error[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,9 +69,10 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'payload' => null,
-            'errors' => null    ];
+    protected static $openAPIFormats = [
+        'payload' => null,
+        'errors' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -80,8 +80,8 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'payload' => true,
-        'errors' => true
+        'payload' => false,
+        'errors' => false
     ];
 
     /**
@@ -96,7 +96,7 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -106,7 +106,7 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -169,10 +169,9 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'payload' => 'payload',
-                'errors' => 'errors'
-        
+        'errors' => 'errors'
     ];
 
     /**
@@ -180,7 +179,7 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'payload' => 'setPayload',
         'errors' => 'setErrors'
     ];
@@ -190,7 +189,7 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'payload' => 'getPayload',
         'errors' => 'getErrors'
     ];
@@ -201,7 +200,7 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -211,7 +210,7 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -221,7 +220,7 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -231,7 +230,7 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -240,17 +239,17 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('payload', $data ?? [], null);
         $this->setIfExists('errors', $data ?? [], null);
@@ -279,7 +278,7 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -292,7 +291,7 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -303,7 +302,7 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return \SpApi\Model\vendor\invoices\v1\TransactionId|null
      */
-    public function getPayload(): ?\SpApi\Model\vendor\invoices\v1\TransactionId
+    public function getPayload()
     {
         return $this->container['payload'];
     }
@@ -315,17 +314,10 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setPayload(?\SpApi\Model\vendor\invoices\v1\TransactionId $payload): self
+    public function setPayload($payload)
     {
         if (is_null($payload)) {
-            array_push($this->openAPINullablesSetToNull, 'payload');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('payload', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable payload cannot be null');
         }
         $this->container['payload'] = $payload;
 
@@ -335,9 +327,9 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Gets errors
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\invoices\v1\Error[]|null
      */
-    public function getErrors(): ?array
+    public function getErrors()
     {
         return $this->container['errors'];
     }
@@ -345,28 +337,19 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Sets errors
      *
-     * @param array|null $errors A list of error responses returned when a request is unsuccessful.
+     * @param \SpApi\Model\vendor\invoices\v1\Error[]|null $errors A list of error responses returned when a request is unsuccessful.
      *
      * @return self
      */
-    public function setErrors(?array $errors): self
+    public function setErrors($errors)
     {
         if (is_null($errors)) {
-            array_push($this->openAPINullablesSetToNull, 'errors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('errors', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable errors cannot be null');
         }
         $this->container['errors'] = $errors;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -387,7 +370,7 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -400,7 +383,7 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -429,7 +412,7 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -452,7 +435,7 @@ class SubmitInvoicesResponse implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

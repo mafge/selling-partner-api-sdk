@@ -2,7 +2,7 @@
 /**
  * OrderItemStatusOrderedQuantity
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\orders\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * OrderItemStatusOrderedQuantity Class Doc Comment
@@ -52,16 +50,17 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'OrderItemStatus_orderedQuantity';
+    protected static $openAPIModelName = 'OrderItemStatus_orderedQuantity';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'ordered_quantity' => '\SpApi\Model\vendor\orders\v1\ItemQuantity',
-             'ordered_quantity_details' => '\SpApi\Model\vendor\orders\v1\OrderedQuantityDetails[]'    ];
+    protected static $openAPITypes = [
+        'ordered_quantity' => '\SpApi\Model\vendor\orders\v1\ItemQuantity',
+        'ordered_quantity_details' => '\SpApi\Model\vendor\orders\v1\OrderedQuantityDetails[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,9 +69,10 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'ordered_quantity' => null,
-            'ordered_quantity_details' => null    ];
+    protected static $openAPIFormats = [
+        'ordered_quantity' => null,
+        'ordered_quantity_details' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -80,8 +80,8 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'ordered_quantity' => true,
-        'ordered_quantity_details' => true
+        'ordered_quantity' => false,
+        'ordered_quantity_details' => false
     ];
 
     /**
@@ -96,7 +96,7 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -106,7 +106,7 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -169,10 +169,9 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'ordered_quantity' => 'orderedQuantity',
-                'ordered_quantity_details' => 'orderedQuantityDetails'
-        
+        'ordered_quantity_details' => 'orderedQuantityDetails'
     ];
 
     /**
@@ -180,7 +179,7 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'ordered_quantity' => 'setOrderedQuantity',
         'ordered_quantity_details' => 'setOrderedQuantityDetails'
     ];
@@ -190,7 +189,7 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'ordered_quantity' => 'getOrderedQuantity',
         'ordered_quantity_details' => 'getOrderedQuantityDetails'
     ];
@@ -201,7 +200,7 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -211,7 +210,7 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -221,7 +220,7 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -231,7 +230,7 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -240,17 +239,17 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('ordered_quantity', $data ?? [], null);
         $this->setIfExists('ordered_quantity_details', $data ?? [], null);
@@ -279,7 +278,7 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -292,7 +291,7 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -303,7 +302,7 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
      *
      * @return \SpApi\Model\vendor\orders\v1\ItemQuantity|null
      */
-    public function getOrderedQuantity(): ?\SpApi\Model\vendor\orders\v1\ItemQuantity
+    public function getOrderedQuantity()
     {
         return $this->container['ordered_quantity'];
     }
@@ -315,17 +314,10 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setOrderedQuantity(?\SpApi\Model\vendor\orders\v1\ItemQuantity $ordered_quantity): self
+    public function setOrderedQuantity($ordered_quantity)
     {
         if (is_null($ordered_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'ordered_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ordered_quantity', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ordered_quantity cannot be null');
         }
         $this->container['ordered_quantity'] = $ordered_quantity;
 
@@ -335,9 +327,9 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
     /**
      * Gets ordered_quantity_details
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\orders\v1\OrderedQuantityDetails[]|null
      */
-    public function getOrderedQuantityDetails(): ?array
+    public function getOrderedQuantityDetails()
     {
         return $this->container['ordered_quantity_details'];
     }
@@ -345,28 +337,19 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
     /**
      * Sets ordered_quantity_details
      *
-     * @param array|null $ordered_quantity_details Details of item quantity ordered.
+     * @param \SpApi\Model\vendor\orders\v1\OrderedQuantityDetails[]|null $ordered_quantity_details Details of item quantity ordered.
      *
      * @return self
      */
-    public function setOrderedQuantityDetails(?array $ordered_quantity_details): self
+    public function setOrderedQuantityDetails($ordered_quantity_details)
     {
         if (is_null($ordered_quantity_details)) {
-            array_push($this->openAPINullablesSetToNull, 'ordered_quantity_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ordered_quantity_details', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ordered_quantity_details cannot be null');
         }
         $this->container['ordered_quantity_details'] = $ordered_quantity_details;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -387,7 +370,7 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -400,7 +383,7 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -429,7 +412,7 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -452,7 +435,7 @@ class OrderItemStatusOrderedQuantity implements ModelInterface, ArrayAccess, \Js
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

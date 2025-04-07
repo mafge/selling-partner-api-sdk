@@ -3,7 +3,7 @@
 /**
  * PackingConfiguration.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class PackingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'PackingConfiguration';
+    protected static $openAPIModelName = 'PackingConfiguration';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'box_packing_methods' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\BoxContentInformationSource[]',
         'box_requirements' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\BoxRequirements',
-        'shipping_requirements' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\ShippingRequirements[]'];
+        'shipping_requirements' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\ShippingRequirements[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class PackingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'box_packing_methods' => null,
         'box_requirements' => null,
-        'shipping_requirements' => null];
+        'shipping_requirements' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class PackingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'box_packing_methods' => true,
-        'box_requirements' => true,
-        'shipping_requirements' => true,
+        'box_packing_methods' => false,
+        'box_requirements' => false,
+        'shipping_requirements' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class PackingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'box_packing_methods' => 'boxPackingMethods',
         'box_requirements' => 'boxRequirements',
         'shipping_requirements' => 'shippingRequirements',
@@ -114,7 +117,7 @@ class PackingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'box_packing_methods' => 'setBoxPackingMethods',
         'box_requirements' => 'setBoxRequirements',
         'shipping_requirements' => 'setShippingRequirements',
@@ -125,7 +128,7 @@ class PackingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'box_packing_methods' => 'getBoxPackingMethods',
         'box_requirements' => 'getBoxRequirements',
         'shipping_requirements' => 'getShippingRequirements',
@@ -133,14 +136,16 @@ class PackingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class PackingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class PackingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class PackingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -243,15 +260,17 @@ class PackingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets box_packing_methods.
+     *
+     * @return null|BoxContentInformationSource[]
      */
-    public function getBoxPackingMethods(): ?array
+    public function getBoxPackingMethods()
     {
         return $this->container['box_packing_methods'];
     }
@@ -259,19 +278,14 @@ class PackingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Sets box_packing_methods.
      *
-     * @param null|array $box_packing_methods the box content information sources that are allowed
+     * @param null|BoxContentInformationSource[] $box_packing_methods the box content information sources that are allowed
+     *
+     * @return self
      */
-    public function setBoxPackingMethods(?array $box_packing_methods): self
+    public function setBoxPackingMethods($box_packing_methods)
     {
         if (is_null($box_packing_methods)) {
-            array_push($this->openAPINullablesSetToNull, 'box_packing_methods');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('box_packing_methods', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable box_packing_methods cannot be null');
         }
         $this->container['box_packing_methods'] = $box_packing_methods;
 
@@ -280,8 +294,10 @@ class PackingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets box_requirements.
+     *
+     * @return null|BoxRequirements
      */
-    public function getBoxRequirements(): ?BoxRequirements
+    public function getBoxRequirements()
     {
         return $this->container['box_requirements'];
     }
@@ -290,18 +306,13 @@ class PackingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets box_requirements.
      *
      * @param null|BoxRequirements $box_requirements box_requirements
+     *
+     * @return self
      */
-    public function setBoxRequirements(?BoxRequirements $box_requirements): self
+    public function setBoxRequirements($box_requirements)
     {
         if (is_null($box_requirements)) {
-            array_push($this->openAPINullablesSetToNull, 'box_requirements');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('box_requirements', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable box_requirements cannot be null');
         }
         $this->container['box_requirements'] = $box_requirements;
 
@@ -310,8 +321,10 @@ class PackingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets shipping_requirements.
+     *
+     * @return null|ShippingRequirements[]
      */
-    public function getShippingRequirements(): ?array
+    public function getShippingRequirements()
     {
         return $this->container['shipping_requirements'];
     }
@@ -319,19 +332,14 @@ class PackingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Sets shipping_requirements.
      *
-     * @param null|array $shipping_requirements a list of supported shipping requirements for this packing configuration
+     * @param null|ShippingRequirements[] $shipping_requirements a list of supported shipping requirements for this packing configuration
+     *
+     * @return self
      */
-    public function setShippingRequirements(?array $shipping_requirements): self
+    public function setShippingRequirements($shipping_requirements)
     {
         if (is_null($shipping_requirements)) {
-            array_push($this->openAPINullablesSetToNull, 'shipping_requirements');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipping_requirements', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipping_requirements cannot be null');
         }
         $this->container['shipping_requirements'] = $shipping_requirements;
 
@@ -356,7 +364,7 @@ class PackingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -367,7 +375,7 @@ class PackingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -395,15 +403,17 @@ class PackingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

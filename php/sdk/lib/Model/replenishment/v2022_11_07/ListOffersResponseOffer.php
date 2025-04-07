@@ -3,7 +3,7 @@
 /**
  * ListOffersResponseOffer.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\replenishment\v2022_11_07;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,22 +51,25 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ListOffersResponseOffer';
+    protected static $openAPIModelName = 'ListOffersResponseOffer';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'sku' => 'string',
         'asin' => 'string',
         'marketplace_id' => 'string',
         'eligibility' => '\SpApi\Model\replenishment\v2022_11_07\EligibilityStatus',
         'offer_program_configuration' => '\SpApi\Model\replenishment\v2022_11_07\OfferProgramConfiguration',
         'program_type' => '\SpApi\Model\replenishment\v2022_11_07\ProgramType',
-        'vendor_codes' => 'string[]'];
+        'vendor_codes' => 'string[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -78,14 +80,15 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'sku' => null,
         'asin' => null,
         'marketplace_id' => null,
         'eligibility' => null,
         'offer_program_configuration' => null,
         'program_type' => null,
-        'vendor_codes' => null];
+        'vendor_codes' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -93,13 +96,13 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'sku' => true,
-        'asin' => true,
-        'marketplace_id' => true,
-        'eligibility' => true,
-        'offer_program_configuration' => true,
-        'program_type' => true,
-        'vendor_codes' => true,
+        'sku' => false,
+        'asin' => false,
+        'marketplace_id' => false,
+        'eligibility' => false,
+        'offer_program_configuration' => false,
+        'program_type' => false,
+        'vendor_codes' => false,
     ];
 
     /**
@@ -115,7 +118,7 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'sku' => 'sku',
         'asin' => 'asin',
         'marketplace_id' => 'marketplaceId',
@@ -130,7 +133,7 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'sku' => 'setSku',
         'asin' => 'setAsin',
         'marketplace_id' => 'setMarketplaceId',
@@ -145,7 +148,7 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'sku' => 'getSku',
         'asin' => 'getAsin',
         'marketplace_id' => 'getMarketplaceId',
@@ -157,14 +160,16 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -192,16 +197,20 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -225,32 +234,40 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -260,7 +277,7 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -271,15 +288,17 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets sku.
+     *
+     * @return null|string
      */
-    public function getSku(): ?string
+    public function getSku()
     {
         return $this->container['sku'];
     }
@@ -288,18 +307,13 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets sku.
      *
      * @param null|string $sku The SKU. This property is only supported for sellers and not for vendors.
+     *
+     * @return self
      */
-    public function setSku(?string $sku): self
+    public function setSku($sku)
     {
         if (is_null($sku)) {
-            array_push($this->openAPINullablesSetToNull, 'sku');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sku', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable sku cannot be null');
         }
         $this->container['sku'] = $sku;
 
@@ -308,8 +322,10 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
-    public function getAsin(): ?string
+    public function getAsin()
     {
         return $this->container['asin'];
     }
@@ -318,18 +334,13 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number (ASIN)
+     *
+     * @return self
      */
-    public function setAsin(?string $asin): self
+    public function setAsin($asin)
     {
         if (is_null($asin)) {
-            array_push($this->openAPINullablesSetToNull, 'asin');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('asin', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable asin cannot be null');
         }
         $this->container['asin'] = $asin;
 
@@ -338,8 +349,10 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets marketplace_id.
+     *
+     * @return null|string
      */
-    public function getMarketplaceId(): ?string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -348,18 +361,13 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets marketplace_id.
      *
      * @param null|string $marketplace_id The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
+     *
+     * @return self
      */
-    public function setMarketplaceId(?string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
-            array_push($this->openAPINullablesSetToNull, 'marketplace_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('marketplace_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
         }
         $this->container['marketplace_id'] = $marketplace_id;
 
@@ -368,8 +376,10 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets eligibility.
+     *
+     * @return null|EligibilityStatus
      */
-    public function getEligibility(): ?string
+    public function getEligibility()
     {
         return $this->container['eligibility'];
     }
@@ -377,19 +387,14 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Sets eligibility.
      *
-     * @param null|string $eligibility eligibility
+     * @param null|EligibilityStatus $eligibility eligibility
+     *
+     * @return self
      */
-    public function setEligibility(?string $eligibility): self
+    public function setEligibility($eligibility)
     {
         if (is_null($eligibility)) {
-            array_push($this->openAPINullablesSetToNull, 'eligibility');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('eligibility', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable eligibility cannot be null');
         }
         $this->container['eligibility'] = $eligibility;
 
@@ -398,8 +403,10 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets offer_program_configuration.
+     *
+     * @return null|OfferProgramConfiguration
      */
-    public function getOfferProgramConfiguration(): ?OfferProgramConfiguration
+    public function getOfferProgramConfiguration()
     {
         return $this->container['offer_program_configuration'];
     }
@@ -408,18 +415,13 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets offer_program_configuration.
      *
      * @param null|OfferProgramConfiguration $offer_program_configuration offer_program_configuration
+     *
+     * @return self
      */
-    public function setOfferProgramConfiguration(?OfferProgramConfiguration $offer_program_configuration): self
+    public function setOfferProgramConfiguration($offer_program_configuration)
     {
         if (is_null($offer_program_configuration)) {
-            array_push($this->openAPINullablesSetToNull, 'offer_program_configuration');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('offer_program_configuration', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable offer_program_configuration cannot be null');
         }
         $this->container['offer_program_configuration'] = $offer_program_configuration;
 
@@ -428,8 +430,10 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets program_type.
+     *
+     * @return null|ProgramType
      */
-    public function getProgramType(): ?string
+    public function getProgramType()
     {
         return $this->container['program_type'];
     }
@@ -437,19 +441,14 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Sets program_type.
      *
-     * @param null|string $program_type program_type
+     * @param null|ProgramType $program_type program_type
+     *
+     * @return self
      */
-    public function setProgramType(?string $program_type): self
+    public function setProgramType($program_type)
     {
         if (is_null($program_type)) {
-            array_push($this->openAPINullablesSetToNull, 'program_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('program_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable program_type cannot be null');
         }
         $this->container['program_type'] = $program_type;
 
@@ -458,8 +457,10 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets vendor_codes.
+     *
+     * @return null|string[]
      */
-    public function getVendorCodes(): ?array
+    public function getVendorCodes()
     {
         return $this->container['vendor_codes'];
     }
@@ -467,19 +468,14 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Sets vendor_codes.
      *
-     * @param null|array $vendor_codes a list of vendor codes associated with the offer
+     * @param null|string[] $vendor_codes a list of vendor codes associated with the offer
+     *
+     * @return self
      */
-    public function setVendorCodes(?array $vendor_codes): self
+    public function setVendorCodes($vendor_codes)
     {
         if (is_null($vendor_codes)) {
-            array_push($this->openAPINullablesSetToNull, 'vendor_codes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('vendor_codes', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable vendor_codes cannot be null');
         }
         $this->container['vendor_codes'] = $vendor_codes;
 
@@ -504,7 +500,7 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -515,7 +511,7 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -543,15 +539,17 @@ class ListOffersResponseOffer implements ModelInterface, \ArrayAccess, \JsonSeri
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

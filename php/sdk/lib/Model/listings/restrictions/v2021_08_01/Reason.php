@@ -3,7 +3,7 @@
 /**
  * Reason.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\listings\restrictions\v2021_08_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -56,18 +55,21 @@ class Reason implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Reason';
+    protected static $openAPIModelName = 'Reason';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'message' => 'string',
         'reason_code' => 'string',
-        'links' => '\SpApi\Model\listings\restrictions\v2021_08_01\Link[]'];
+        'links' => '\SpApi\Model\listings\restrictions\v2021_08_01\Link[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -78,10 +80,11 @@ class Reason implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'message' => null,
         'reason_code' => null,
-        'links' => null];
+        'links' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -90,8 +93,8 @@ class Reason implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'message' => false,
-        'reason_code' => true,
-        'links' => true,
+        'reason_code' => false,
+        'links' => false,
     ];
 
     /**
@@ -107,7 +110,7 @@ class Reason implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'message' => 'message',
         'reason_code' => 'reasonCode',
         'links' => 'links',
@@ -118,7 +121,7 @@ class Reason implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'message' => 'setMessage',
         'reason_code' => 'setReasonCode',
         'links' => 'setLinks',
@@ -129,7 +132,7 @@ class Reason implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'message' => 'getMessage',
         'reason_code' => 'getReasonCode',
         'links' => 'getLinks',
@@ -137,14 +140,16 @@ class Reason implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -168,16 +173,20 @@ class Reason implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -201,32 +210,40 @@ class Reason implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -236,7 +253,7 @@ class Reason implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getReasonCodeAllowableValues(): array
+    public function getReasonCodeAllowableValues()
     {
         return [
             self::REASON_CODE_APPROVAL_REQUIRED,
@@ -250,7 +267,7 @@ class Reason implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -275,15 +292,17 @@ class Reason implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets message.
+     *
+     * @return string
      */
-    public function getMessage(): string
+    public function getMessage()
     {
         return $this->container['message'];
     }
@@ -292,8 +311,10 @@ class Reason implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets message.
      *
      * @param string $message a message describing the reason for the restriction
+     *
+     * @return self
      */
-    public function setMessage(string $message): self
+    public function setMessage($message)
     {
         if (is_null($message)) {
             throw new \InvalidArgumentException('non-nullable message cannot be null');
@@ -305,8 +326,10 @@ class Reason implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets reason_code.
+     *
+     * @return null|string
      */
-    public function getReasonCode(): ?string
+    public function getReasonCode()
     {
         return $this->container['reason_code'];
     }
@@ -315,21 +338,16 @@ class Reason implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets reason_code.
      *
      * @param null|string $reason_code a code indicating why the listing is restricted
+     *
+     * @return self
      */
-    public function setReasonCode(?string $reason_code): self
+    public function setReasonCode($reason_code)
     {
         if (is_null($reason_code)) {
-            array_push($this->openAPINullablesSetToNull, 'reason_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('reason_code', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable reason_code cannot be null');
         }
         $allowedValues = $this->getReasonCodeAllowableValues();
-        if (!is_null($reason_code) && !in_array($reason_code, $allowedValues, true)) {
+        if (!in_array($reason_code, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'reason_code', must be one of '%s'",
@@ -345,8 +363,10 @@ class Reason implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets links.
+     *
+     * @return null|Link[]
      */
-    public function getLinks(): ?array
+    public function getLinks()
     {
         return $this->container['links'];
     }
@@ -354,19 +374,14 @@ class Reason implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets links.
      *
-     * @param null|array $links a list of path forward links that may allow Selling Partners to remove the restriction
+     * @param null|Link[] $links a list of path forward links that may allow Selling Partners to remove the restriction
+     *
+     * @return self
      */
-    public function setLinks(?array $links): self
+    public function setLinks($links)
     {
         if (is_null($links)) {
-            array_push($this->openAPINullablesSetToNull, 'links');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('links', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable links cannot be null');
         }
         $this->container['links'] = $links;
 
@@ -391,7 +406,7 @@ class Reason implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -402,7 +417,7 @@ class Reason implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -430,15 +445,17 @@ class Reason implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

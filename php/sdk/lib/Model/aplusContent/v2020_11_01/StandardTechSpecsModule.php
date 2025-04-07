@@ -3,7 +3,7 @@
 /**
  * StandardTechSpecsModule.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\aplusContent\v2020_11_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class StandardTechSpecsModule implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'StandardTechSpecsModule';
+    protected static $openAPIModelName = 'StandardTechSpecsModule';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'headline' => '\SpApi\Model\aplusContent\v2020_11_01\TextComponent',
         'specification_list' => '\SpApi\Model\aplusContent\v2020_11_01\StandardTextPairBlock[]',
-        'table_count' => 'int'];
+        'table_count' => 'int',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class StandardTechSpecsModule implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'headline' => null,
         'specification_list' => null,
-        'table_count' => null];
+        'table_count' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class StandardTechSpecsModule implements ModelInterface, \ArrayAccess, \JsonSeri
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'headline' => true,
+        'headline' => false,
         'specification_list' => false,
-        'table_count' => true,
+        'table_count' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class StandardTechSpecsModule implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'headline' => 'headline',
         'specification_list' => 'specificationList',
         'table_count' => 'tableCount',
@@ -114,7 +117,7 @@ class StandardTechSpecsModule implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'headline' => 'setHeadline',
         'specification_list' => 'setSpecificationList',
         'table_count' => 'setTableCount',
@@ -125,7 +128,7 @@ class StandardTechSpecsModule implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'headline' => 'getHeadline',
         'specification_list' => 'getSpecificationList',
         'table_count' => 'getTableCount',
@@ -133,14 +136,16 @@ class StandardTechSpecsModule implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class StandardTechSpecsModule implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class StandardTechSpecsModule implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class StandardTechSpecsModule implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -264,15 +281,17 @@ class StandardTechSpecsModule implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets headline.
+     *
+     * @return null|TextComponent
      */
-    public function getHeadline(): ?TextComponent
+    public function getHeadline()
     {
         return $this->container['headline'];
     }
@@ -281,18 +300,13 @@ class StandardTechSpecsModule implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets headline.
      *
      * @param null|TextComponent $headline headline
+     *
+     * @return self
      */
-    public function setHeadline(?TextComponent $headline): self
+    public function setHeadline($headline)
     {
         if (is_null($headline)) {
-            array_push($this->openAPINullablesSetToNull, 'headline');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('headline', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable headline cannot be null');
         }
         $this->container['headline'] = $headline;
 
@@ -301,8 +315,10 @@ class StandardTechSpecsModule implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets specification_list.
+     *
+     * @return StandardTextPairBlock[]
      */
-    public function getSpecificationList(): array
+    public function getSpecificationList()
     {
         return $this->container['specification_list'];
     }
@@ -310,9 +326,11 @@ class StandardTechSpecsModule implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Sets specification_list.
      *
-     * @param array $specification_list the specification list
+     * @param StandardTextPairBlock[] $specification_list the specification list
+     *
+     * @return self
      */
-    public function setSpecificationList(array $specification_list): self
+    public function setSpecificationList($specification_list)
     {
         if (is_null($specification_list)) {
             throw new \InvalidArgumentException('non-nullable specification_list cannot be null');
@@ -331,8 +349,10 @@ class StandardTechSpecsModule implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets table_count.
+     *
+     * @return null|int
      */
-    public function getTableCount(): ?int
+    public function getTableCount()
     {
         return $this->container['table_count'];
     }
@@ -341,24 +361,19 @@ class StandardTechSpecsModule implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets table_count.
      *
      * @param null|int $table_count The number of tables you want present. Features are evenly divided between the tables.
+     *
+     * @return self
      */
-    public function setTableCount(?int $table_count): self
+    public function setTableCount($table_count)
     {
         if (is_null($table_count)) {
-            array_push($this->openAPINullablesSetToNull, 'table_count');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('table_count', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable table_count cannot be null');
         }
 
-        if (!is_null($table_count) && ($table_count > 2)) {
+        if ($table_count > 2) {
             throw new \InvalidArgumentException('invalid value for $table_count when calling StandardTechSpecsModule., must be smaller than or equal to 2.');
         }
-        if (!is_null($table_count) && ($table_count < 1)) {
+        if ($table_count < 1) {
             throw new \InvalidArgumentException('invalid value for $table_count when calling StandardTechSpecsModule., must be bigger than or equal to 1.');
         }
 
@@ -385,7 +400,7 @@ class StandardTechSpecsModule implements ModelInterface, \ArrayAccess, \JsonSeri
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -396,7 +411,7 @@ class StandardTechSpecsModule implements ModelInterface, \ArrayAccess, \JsonSeri
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -424,15 +439,17 @@ class StandardTechSpecsModule implements ModelInterface, \ArrayAccess, \JsonSeri
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -2,7 +2,7 @@
 /**
  * ShipmentSchedule
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\df\shipping\v2021_12_28;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * ShipmentSchedule Class Doc Comment
@@ -52,17 +50,18 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'ShipmentSchedule';
+    protected static $openAPIModelName = 'ShipmentSchedule';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'estimated_delivery_date_time' => '\DateTime',
-             'appt_window_start_date_time' => '\DateTime',
-             'appt_window_end_date_time' => '\DateTime'    ];
+    protected static $openAPITypes = [
+        'estimated_delivery_date_time' => '\DateTime',
+        'appt_window_start_date_time' => '\DateTime',
+        'appt_window_end_date_time' => '\DateTime'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,10 +70,11 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'estimated_delivery_date_time' => 'date-time',
-            'appt_window_start_date_time' => 'date-time',
-            'appt_window_end_date_time' => 'date-time'    ];
+    protected static $openAPIFormats = [
+        'estimated_delivery_date_time' => 'date-time',
+        'appt_window_start_date_time' => 'date-time',
+        'appt_window_end_date_time' => 'date-time'
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -82,9 +82,9 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'estimated_delivery_date_time' => true,
-        'appt_window_start_date_time' => true,
-        'appt_window_end_date_time' => true
+        'estimated_delivery_date_time' => false,
+        'appt_window_start_date_time' => false,
+        'appt_window_end_date_time' => false
     ];
 
     /**
@@ -99,7 +99,7 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -109,7 +109,7 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -172,11 +172,10 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'estimated_delivery_date_time' => 'estimatedDeliveryDateTime',
-                'appt_window_start_date_time' => 'apptWindowStartDateTime',
-                'appt_window_end_date_time' => 'apptWindowEndDateTime'
-        
+        'appt_window_start_date_time' => 'apptWindowStartDateTime',
+        'appt_window_end_date_time' => 'apptWindowEndDateTime'
     ];
 
     /**
@@ -184,7 +183,7 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'estimated_delivery_date_time' => 'setEstimatedDeliveryDateTime',
         'appt_window_start_date_time' => 'setApptWindowStartDateTime',
         'appt_window_end_date_time' => 'setApptWindowEndDateTime'
@@ -195,7 +194,7 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'estimated_delivery_date_time' => 'getEstimatedDeliveryDateTime',
         'appt_window_start_date_time' => 'getApptWindowStartDateTime',
         'appt_window_end_date_time' => 'getApptWindowEndDateTime'
@@ -207,7 +206,7 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -217,7 +216,7 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -227,7 +226,7 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -237,7 +236,7 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,17 +245,17 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('estimated_delivery_date_time', $data ?? [], null);
         $this->setIfExists('appt_window_start_date_time', $data ?? [], null);
@@ -286,7 +285,7 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -299,7 +298,7 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -310,7 +309,7 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime|null
      */
-    public function getEstimatedDeliveryDateTime(): ?\DateTime
+    public function getEstimatedDeliveryDateTime()
     {
         return $this->container['estimated_delivery_date_time'];
     }
@@ -322,17 +321,10 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setEstimatedDeliveryDateTime(?\DateTime $estimated_delivery_date_time): self
+    public function setEstimatedDeliveryDateTime($estimated_delivery_date_time)
     {
         if (is_null($estimated_delivery_date_time)) {
-            array_push($this->openAPINullablesSetToNull, 'estimated_delivery_date_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('estimated_delivery_date_time', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable estimated_delivery_date_time cannot be null');
         }
         $this->container['estimated_delivery_date_time'] = $estimated_delivery_date_time;
 
@@ -344,7 +336,7 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime|null
      */
-    public function getApptWindowStartDateTime(): ?\DateTime
+    public function getApptWindowStartDateTime()
     {
         return $this->container['appt_window_start_date_time'];
     }
@@ -356,17 +348,10 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApptWindowStartDateTime(?\DateTime $appt_window_start_date_time): self
+    public function setApptWindowStartDateTime($appt_window_start_date_time)
     {
         if (is_null($appt_window_start_date_time)) {
-            array_push($this->openAPINullablesSetToNull, 'appt_window_start_date_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('appt_window_start_date_time', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable appt_window_start_date_time cannot be null');
         }
         $this->container['appt_window_start_date_time'] = $appt_window_start_date_time;
 
@@ -378,7 +363,7 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime|null
      */
-    public function getApptWindowEndDateTime(): ?\DateTime
+    public function getApptWindowEndDateTime()
     {
         return $this->container['appt_window_end_date_time'];
     }
@@ -390,24 +375,15 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setApptWindowEndDateTime(?\DateTime $appt_window_end_date_time): self
+    public function setApptWindowEndDateTime($appt_window_end_date_time)
     {
         if (is_null($appt_window_end_date_time)) {
-            array_push($this->openAPINullablesSetToNull, 'appt_window_end_date_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('appt_window_end_date_time', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable appt_window_end_date_time cannot be null');
         }
         $this->container['appt_window_end_date_time'] = $appt_window_end_date_time;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -428,7 +404,7 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -441,7 +417,7 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -470,7 +446,7 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -493,7 +469,7 @@ class ShipmentSchedule implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

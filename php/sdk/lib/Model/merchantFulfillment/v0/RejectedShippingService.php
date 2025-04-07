@@ -3,7 +3,7 @@
 /**
  * RejectedShippingService.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\merchantFulfillment\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'RejectedShippingService';
+    protected static $openAPIModelName = 'RejectedShippingService';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'carrier_name' => 'string',
         'shipping_service_name' => 'string',
         'shipping_service_id' => 'string',
         'rejection_reason_code' => 'string',
-        'rejection_reason_message' => 'string'];
+        'rejection_reason_message' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'carrier_name' => null,
         'shipping_service_name' => null,
         'shipping_service_id' => null,
         'rejection_reason_code' => null,
-        'rejection_reason_message' => null];
+        'rejection_reason_message' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -93,7 +96,7 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
         'shipping_service_name' => false,
         'shipping_service_id' => false,
         'rejection_reason_code' => false,
-        'rejection_reason_message' => true,
+        'rejection_reason_message' => false,
     ];
 
     /**
@@ -109,7 +112,7 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'carrier_name' => 'CarrierName',
         'shipping_service_name' => 'ShippingServiceName',
         'shipping_service_id' => 'ShippingServiceId',
@@ -122,7 +125,7 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'carrier_name' => 'setCarrierName',
         'shipping_service_name' => 'setShippingServiceName',
         'shipping_service_id' => 'setShippingServiceId',
@@ -135,7 +138,7 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'carrier_name' => 'getCarrierName',
         'shipping_service_name' => 'getShippingServiceName',
         'shipping_service_id' => 'getShippingServiceId',
@@ -145,14 +148,16 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -272,15 +289,17 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets carrier_name.
+     *
+     * @return string
      */
-    public function getCarrierName(): string
+    public function getCarrierName()
     {
         return $this->container['carrier_name'];
     }
@@ -289,8 +308,10 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets carrier_name.
      *
      * @param string $carrier_name The rejected shipping carrier name. For example, USPS.
+     *
+     * @return self
      */
-    public function setCarrierName(string $carrier_name): self
+    public function setCarrierName($carrier_name)
     {
         if (is_null($carrier_name)) {
             throw new \InvalidArgumentException('non-nullable carrier_name cannot be null');
@@ -302,8 +323,10 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets shipping_service_name.
+     *
+     * @return string
      */
-    public function getShippingServiceName(): string
+    public function getShippingServiceName()
     {
         return $this->container['shipping_service_name'];
     }
@@ -312,8 +335,10 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets shipping_service_name.
      *
      * @param string $shipping_service_name The rejected shipping service localized name. For example, FedEx Standard Overnight.
+     *
+     * @return self
      */
-    public function setShippingServiceName(string $shipping_service_name): self
+    public function setShippingServiceName($shipping_service_name)
     {
         if (is_null($shipping_service_name)) {
             throw new \InvalidArgumentException('non-nullable shipping_service_name cannot be null');
@@ -325,8 +350,10 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets shipping_service_id.
+     *
+     * @return string
      */
-    public function getShippingServiceId(): string
+    public function getShippingServiceId()
     {
         return $this->container['shipping_service_id'];
     }
@@ -335,8 +362,10 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets shipping_service_id.
      *
      * @param string $shipping_service_id an Amazon-defined shipping service identifier
+     *
+     * @return self
      */
-    public function setShippingServiceId(string $shipping_service_id): self
+    public function setShippingServiceId($shipping_service_id)
     {
         if (is_null($shipping_service_id)) {
             throw new \InvalidArgumentException('non-nullable shipping_service_id cannot be null');
@@ -348,8 +377,10 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets rejection_reason_code.
+     *
+     * @return string
      */
-    public function getRejectionReasonCode(): string
+    public function getRejectionReasonCode()
     {
         return $this->container['rejection_reason_code'];
     }
@@ -358,8 +389,10 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets rejection_reason_code.
      *
      * @param string $rejection_reason_code A reason code meant to be consumed programatically. For example, `CARRIER_CANNOT_SHIP_TO_POBOX`.
+     *
+     * @return self
      */
-    public function setRejectionReasonCode(string $rejection_reason_code): self
+    public function setRejectionReasonCode($rejection_reason_code)
     {
         if (is_null($rejection_reason_code)) {
             throw new \InvalidArgumentException('non-nullable rejection_reason_code cannot be null');
@@ -371,8 +404,10 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets rejection_reason_message.
+     *
+     * @return null|string
      */
-    public function getRejectionReasonMessage(): ?string
+    public function getRejectionReasonMessage()
     {
         return $this->container['rejection_reason_message'];
     }
@@ -381,18 +416,13 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets rejection_reason_message.
      *
      * @param null|string $rejection_reason_message a localized human readable description of the rejected reason
+     *
+     * @return self
      */
-    public function setRejectionReasonMessage(?string $rejection_reason_message): self
+    public function setRejectionReasonMessage($rejection_reason_message)
     {
         if (is_null($rejection_reason_message)) {
-            array_push($this->openAPINullablesSetToNull, 'rejection_reason_message');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rejection_reason_message', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable rejection_reason_message cannot be null');
         }
         $this->container['rejection_reason_message'] = $rejection_reason_message;
 
@@ -417,7 +447,7 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -428,7 +458,7 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -456,15 +486,17 @@ class RejectedShippingService implements ModelInterface, \ArrayAccess, \JsonSeri
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

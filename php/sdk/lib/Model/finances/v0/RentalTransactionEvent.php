@@ -3,7 +3,7 @@
 /**
  * RentalTransactionEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'RentalTransactionEvent';
+    protected static $openAPIModelName = 'RentalTransactionEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'amazon_order_id' => 'string',
         'rental_event_type' => 'string',
         'extension_length' => 'int',
@@ -70,7 +71,8 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
         'marketplace_name' => 'string',
         'rental_initial_value' => '\SpApi\Model\finances\v0\Currency',
         'rental_reimbursement' => '\SpApi\Model\finances\v0\Currency',
-        'rental_tax_withheld_list' => '\SpApi\Model\finances\v0\TaxWithheldComponent[]'];
+        'rental_tax_withheld_list' => '\SpApi\Model\finances\v0\TaxWithheldComponent[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -81,7 +83,7 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'amazon_order_id' => null,
         'rental_event_type' => null,
         'extension_length' => 'int32',
@@ -91,7 +93,8 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
         'marketplace_name' => null,
         'rental_initial_value' => null,
         'rental_reimbursement' => null,
-        'rental_tax_withheld_list' => null];
+        'rental_tax_withheld_list' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -99,16 +102,16 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'amazon_order_id' => true,
-        'rental_event_type' => true,
-        'extension_length' => true,
-        'posted_date' => true,
-        'rental_charge_list' => true,
-        'rental_fee_list' => true,
-        'marketplace_name' => true,
-        'rental_initial_value' => true,
-        'rental_reimbursement' => true,
-        'rental_tax_withheld_list' => true,
+        'amazon_order_id' => false,
+        'rental_event_type' => false,
+        'extension_length' => false,
+        'posted_date' => false,
+        'rental_charge_list' => false,
+        'rental_fee_list' => false,
+        'marketplace_name' => false,
+        'rental_initial_value' => false,
+        'rental_reimbursement' => false,
+        'rental_tax_withheld_list' => false,
     ];
 
     /**
@@ -124,7 +127,7 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'amazon_order_id' => 'AmazonOrderId',
         'rental_event_type' => 'RentalEventType',
         'extension_length' => 'ExtensionLength',
@@ -142,7 +145,7 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'amazon_order_id' => 'setAmazonOrderId',
         'rental_event_type' => 'setRentalEventType',
         'extension_length' => 'setExtensionLength',
@@ -160,7 +163,7 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'amazon_order_id' => 'getAmazonOrderId',
         'rental_event_type' => 'getRentalEventType',
         'extension_length' => 'getExtensionLength',
@@ -175,14 +178,16 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -213,16 +218,20 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -246,32 +255,40 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -281,7 +298,7 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -292,15 +309,17 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets amazon_order_id.
+     *
+     * @return null|string
      */
-    public function getAmazonOrderId(): ?string
+    public function getAmazonOrderId()
     {
         return $this->container['amazon_order_id'];
     }
@@ -309,18 +328,13 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets amazon_order_id.
      *
      * @param null|string $amazon_order_id an Amazon-defined identifier for an order
+     *
+     * @return self
      */
-    public function setAmazonOrderId(?string $amazon_order_id): self
+    public function setAmazonOrderId($amazon_order_id)
     {
         if (is_null($amazon_order_id)) {
-            array_push($this->openAPINullablesSetToNull, 'amazon_order_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amazon_order_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable amazon_order_id cannot be null');
         }
         $this->container['amazon_order_id'] = $amazon_order_id;
 
@@ -329,8 +343,10 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets rental_event_type.
+     *
+     * @return null|string
      */
-    public function getRentalEventType(): ?string
+    public function getRentalEventType()
     {
         return $this->container['rental_event_type'];
     }
@@ -339,18 +355,13 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets rental_event_type.
      *
      * @param null|string $rental_event_type The type of rental event.  Possible values:  * RentalCustomerPayment-Buyout - Transaction type that represents when the customer wants to buy out a rented item.  * RentalCustomerPayment-Extension - Transaction type that represents when the customer wants to extend the rental period.  * RentalCustomerRefund-Buyout - Transaction type that represents when the customer requests a refund for the buyout of the rented item.  * RentalCustomerRefund-Extension - Transaction type that represents when the customer requests a refund over the extension on the rented item.  * RentalHandlingFee - Transaction type that represents the fee that Amazon charges sellers who rent through Amazon.  * RentalChargeFailureReimbursement - Transaction type that represents when Amazon sends money to the seller to compensate for a failed charge.  * RentalLostItemReimbursement - Transaction type that represents when Amazon sends money to the seller to compensate for a lost item.
+     *
+     * @return self
      */
-    public function setRentalEventType(?string $rental_event_type): self
+    public function setRentalEventType($rental_event_type)
     {
         if (is_null($rental_event_type)) {
-            array_push($this->openAPINullablesSetToNull, 'rental_event_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rental_event_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable rental_event_type cannot be null');
         }
         $this->container['rental_event_type'] = $rental_event_type;
 
@@ -359,8 +370,10 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets extension_length.
+     *
+     * @return null|int
      */
-    public function getExtensionLength(): ?int
+    public function getExtensionLength()
     {
         return $this->container['extension_length'];
     }
@@ -369,18 +382,13 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets extension_length.
      *
      * @param null|int $extension_length The number of days that the buyer extended an already rented item. This value is only returned for RentalCustomerPayment-Extension and RentalCustomerRefund-Extension events.
+     *
+     * @return self
      */
-    public function setExtensionLength(?int $extension_length): self
+    public function setExtensionLength($extension_length)
     {
         if (is_null($extension_length)) {
-            array_push($this->openAPINullablesSetToNull, 'extension_length');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('extension_length', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable extension_length cannot be null');
         }
         $this->container['extension_length'] = $extension_length;
 
@@ -389,8 +397,10 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTime
      */
-    public function getPostedDate(): ?\DateTime
+    public function getPostedDate()
     {
         return $this->container['posted_date'];
     }
@@ -399,18 +409,13 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets posted_date.
      *
      * @param null|\DateTime $posted_date fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate)
+     *
+     * @return self
      */
-    public function setPostedDate(?\DateTime $posted_date): self
+    public function setPostedDate($posted_date)
     {
         if (is_null($posted_date)) {
-            array_push($this->openAPINullablesSetToNull, 'posted_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('posted_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable posted_date cannot be null');
         }
         $this->container['posted_date'] = $posted_date;
 
@@ -419,8 +424,10 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets rental_charge_list.
+     *
+     * @return null|ChargeComponent[]
      */
-    public function getRentalChargeList(): ?array
+    public function getRentalChargeList()
     {
         return $this->container['rental_charge_list'];
     }
@@ -428,19 +435,14 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Sets rental_charge_list.
      *
-     * @param null|array $rental_charge_list a list of charge information on the seller's account
+     * @param null|ChargeComponent[] $rental_charge_list a list of charge information on the seller's account
+     *
+     * @return self
      */
-    public function setRentalChargeList(?array $rental_charge_list): self
+    public function setRentalChargeList($rental_charge_list)
     {
         if (is_null($rental_charge_list)) {
-            array_push($this->openAPINullablesSetToNull, 'rental_charge_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rental_charge_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable rental_charge_list cannot be null');
         }
         $this->container['rental_charge_list'] = $rental_charge_list;
 
@@ -449,8 +451,10 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets rental_fee_list.
+     *
+     * @return null|FeeComponent[]
      */
-    public function getRentalFeeList(): ?array
+    public function getRentalFeeList()
     {
         return $this->container['rental_fee_list'];
     }
@@ -458,19 +462,14 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Sets rental_fee_list.
      *
-     * @param null|array $rental_fee_list a list of fee component information
+     * @param null|FeeComponent[] $rental_fee_list a list of fee component information
+     *
+     * @return self
      */
-    public function setRentalFeeList(?array $rental_fee_list): self
+    public function setRentalFeeList($rental_fee_list)
     {
         if (is_null($rental_fee_list)) {
-            array_push($this->openAPINullablesSetToNull, 'rental_fee_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rental_fee_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable rental_fee_list cannot be null');
         }
         $this->container['rental_fee_list'] = $rental_fee_list;
 
@@ -479,8 +478,10 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets marketplace_name.
+     *
+     * @return null|string
      */
-    public function getMarketplaceName(): ?string
+    public function getMarketplaceName()
     {
         return $this->container['marketplace_name'];
     }
@@ -489,18 +490,13 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets marketplace_name.
      *
      * @param null|string $marketplace_name the name of the marketplace
+     *
+     * @return self
      */
-    public function setMarketplaceName(?string $marketplace_name): self
+    public function setMarketplaceName($marketplace_name)
     {
         if (is_null($marketplace_name)) {
-            array_push($this->openAPINullablesSetToNull, 'marketplace_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('marketplace_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable marketplace_name cannot be null');
         }
         $this->container['marketplace_name'] = $marketplace_name;
 
@@ -509,8 +505,10 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets rental_initial_value.
+     *
+     * @return null|Currency
      */
-    public function getRentalInitialValue(): ?Currency
+    public function getRentalInitialValue()
     {
         return $this->container['rental_initial_value'];
     }
@@ -519,18 +517,13 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets rental_initial_value.
      *
      * @param null|Currency $rental_initial_value rental_initial_value
+     *
+     * @return self
      */
-    public function setRentalInitialValue(?Currency $rental_initial_value): self
+    public function setRentalInitialValue($rental_initial_value)
     {
         if (is_null($rental_initial_value)) {
-            array_push($this->openAPINullablesSetToNull, 'rental_initial_value');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rental_initial_value', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable rental_initial_value cannot be null');
         }
         $this->container['rental_initial_value'] = $rental_initial_value;
 
@@ -539,8 +532,10 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets rental_reimbursement.
+     *
+     * @return null|Currency
      */
-    public function getRentalReimbursement(): ?Currency
+    public function getRentalReimbursement()
     {
         return $this->container['rental_reimbursement'];
     }
@@ -549,18 +544,13 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets rental_reimbursement.
      *
      * @param null|Currency $rental_reimbursement rental_reimbursement
+     *
+     * @return self
      */
-    public function setRentalReimbursement(?Currency $rental_reimbursement): self
+    public function setRentalReimbursement($rental_reimbursement)
     {
         if (is_null($rental_reimbursement)) {
-            array_push($this->openAPINullablesSetToNull, 'rental_reimbursement');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rental_reimbursement', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable rental_reimbursement cannot be null');
         }
         $this->container['rental_reimbursement'] = $rental_reimbursement;
 
@@ -569,8 +559,10 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets rental_tax_withheld_list.
+     *
+     * @return null|TaxWithheldComponent[]
      */
-    public function getRentalTaxWithheldList(): ?array
+    public function getRentalTaxWithheldList()
     {
         return $this->container['rental_tax_withheld_list'];
     }
@@ -578,19 +570,14 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Sets rental_tax_withheld_list.
      *
-     * @param null|array $rental_tax_withheld_list a list of information about taxes withheld
+     * @param null|TaxWithheldComponent[] $rental_tax_withheld_list a list of information about taxes withheld
+     *
+     * @return self
      */
-    public function setRentalTaxWithheldList(?array $rental_tax_withheld_list): self
+    public function setRentalTaxWithheldList($rental_tax_withheld_list)
     {
         if (is_null($rental_tax_withheld_list)) {
-            array_push($this->openAPINullablesSetToNull, 'rental_tax_withheld_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rental_tax_withheld_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable rental_tax_withheld_list cannot be null');
         }
         $this->container['rental_tax_withheld_list'] = $rental_tax_withheld_list;
 
@@ -615,7 +602,7 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -626,7 +613,7 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -654,15 +641,17 @@ class RentalTransactionEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

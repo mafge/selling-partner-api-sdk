@@ -3,7 +3,7 @@
 /**
  * TimeOfDay.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,18 +52,21 @@ class TimeOfDay implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'TimeOfDay';
+    protected static $openAPIModelName = 'TimeOfDay';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'hour_of_day' => 'int',
         'minute_of_hour' => 'int',
-        'second_of_minute' => 'int'];
+        'second_of_minute' => 'int',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,10 +77,11 @@ class TimeOfDay implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'hour_of_day' => null,
         'minute_of_hour' => null,
-        'second_of_minute' => null];
+        'second_of_minute' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -86,9 +89,9 @@ class TimeOfDay implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'hour_of_day' => true,
-        'minute_of_hour' => true,
-        'second_of_minute' => true,
+        'hour_of_day' => false,
+        'minute_of_hour' => false,
+        'second_of_minute' => false,
     ];
 
     /**
@@ -104,7 +107,7 @@ class TimeOfDay implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'hour_of_day' => 'hourOfDay',
         'minute_of_hour' => 'minuteOfHour',
         'second_of_minute' => 'secondOfMinute',
@@ -115,7 +118,7 @@ class TimeOfDay implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'hour_of_day' => 'setHourOfDay',
         'minute_of_hour' => 'setMinuteOfHour',
         'second_of_minute' => 'setSecondOfMinute',
@@ -126,7 +129,7 @@ class TimeOfDay implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'hour_of_day' => 'getHourOfDay',
         'minute_of_hour' => 'getMinuteOfHour',
         'second_of_minute' => 'getSecondOfMinute',
@@ -134,14 +137,16 @@ class TimeOfDay implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -165,16 +170,20 @@ class TimeOfDay implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -198,32 +207,40 @@ class TimeOfDay implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -233,7 +250,7 @@ class TimeOfDay implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -244,15 +261,17 @@ class TimeOfDay implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets hour_of_day.
+     *
+     * @return null|int
      */
-    public function getHourOfDay(): ?int
+    public function getHourOfDay()
     {
         return $this->container['hour_of_day'];
     }
@@ -261,18 +280,13 @@ class TimeOfDay implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets hour_of_day.
      *
      * @param null|int $hour_of_day Denotes hour of the day, used for defining opening or closing time of access points
+     *
+     * @return self
      */
-    public function setHourOfDay(?int $hour_of_day): self
+    public function setHourOfDay($hour_of_day)
     {
         if (is_null($hour_of_day)) {
-            array_push($this->openAPINullablesSetToNull, 'hour_of_day');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('hour_of_day', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable hour_of_day cannot be null');
         }
         $this->container['hour_of_day'] = $hour_of_day;
 
@@ -281,8 +295,10 @@ class TimeOfDay implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets minute_of_hour.
+     *
+     * @return null|int
      */
-    public function getMinuteOfHour(): ?int
+    public function getMinuteOfHour()
     {
         return $this->container['minute_of_hour'];
     }
@@ -291,18 +307,13 @@ class TimeOfDay implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets minute_of_hour.
      *
      * @param null|int $minute_of_hour Denotes minute of the hour, used for defining opening or closing time of access points
+     *
+     * @return self
      */
-    public function setMinuteOfHour(?int $minute_of_hour): self
+    public function setMinuteOfHour($minute_of_hour)
     {
         if (is_null($minute_of_hour)) {
-            array_push($this->openAPINullablesSetToNull, 'minute_of_hour');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('minute_of_hour', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable minute_of_hour cannot be null');
         }
         $this->container['minute_of_hour'] = $minute_of_hour;
 
@@ -311,8 +322,10 @@ class TimeOfDay implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets second_of_minute.
+     *
+     * @return null|int
      */
-    public function getSecondOfMinute(): ?int
+    public function getSecondOfMinute()
     {
         return $this->container['second_of_minute'];
     }
@@ -321,18 +334,13 @@ class TimeOfDay implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets second_of_minute.
      *
      * @param null|int $second_of_minute Denotes second of the minute, used for defining opening or closing time of access points
+     *
+     * @return self
      */
-    public function setSecondOfMinute(?int $second_of_minute): self
+    public function setSecondOfMinute($second_of_minute)
     {
         if (is_null($second_of_minute)) {
-            array_push($this->openAPINullablesSetToNull, 'second_of_minute');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('second_of_minute', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable second_of_minute cannot be null');
         }
         $this->container['second_of_minute'] = $second_of_minute;
 
@@ -357,7 +365,7 @@ class TimeOfDay implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -368,7 +376,7 @@ class TimeOfDay implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -396,15 +404,17 @@ class TimeOfDay implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

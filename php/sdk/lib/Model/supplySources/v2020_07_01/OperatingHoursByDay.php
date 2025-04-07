@@ -3,7 +3,7 @@
 /**
  * OperatingHoursByDay.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\supplySources\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,22 +51,25 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'OperatingHoursByDay';
+    protected static $openAPIModelName = 'OperatingHoursByDay';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'monday' => '\SpApi\Model\supplySources\v2020_07_01\OperatingHour[]',
         'tuesday' => '\SpApi\Model\supplySources\v2020_07_01\OperatingHour[]',
         'wednesday' => '\SpApi\Model\supplySources\v2020_07_01\OperatingHour[]',
         'thursday' => '\SpApi\Model\supplySources\v2020_07_01\OperatingHour[]',
         'friday' => '\SpApi\Model\supplySources\v2020_07_01\OperatingHour[]',
         'saturday' => '\SpApi\Model\supplySources\v2020_07_01\OperatingHour[]',
-        'sunday' => '\SpApi\Model\supplySources\v2020_07_01\OperatingHour[]'];
+        'sunday' => '\SpApi\Model\supplySources\v2020_07_01\OperatingHour[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -78,14 +80,15 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'monday' => null,
         'tuesday' => null,
         'wednesday' => null,
         'thursday' => null,
         'friday' => null,
         'saturday' => null,
-        'sunday' => null];
+        'sunday' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -93,13 +96,13 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'monday' => true,
-        'tuesday' => true,
-        'wednesday' => true,
-        'thursday' => true,
-        'friday' => true,
-        'saturday' => true,
-        'sunday' => true,
+        'monday' => false,
+        'tuesday' => false,
+        'wednesday' => false,
+        'thursday' => false,
+        'friday' => false,
+        'saturday' => false,
+        'sunday' => false,
     ];
 
     /**
@@ -115,7 +118,7 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'monday' => 'monday',
         'tuesday' => 'tuesday',
         'wednesday' => 'wednesday',
@@ -130,7 +133,7 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'monday' => 'setMonday',
         'tuesday' => 'setTuesday',
         'wednesday' => 'setWednesday',
@@ -145,7 +148,7 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'monday' => 'getMonday',
         'tuesday' => 'getTuesday',
         'wednesday' => 'getWednesday',
@@ -157,14 +160,16 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -192,16 +197,20 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -225,32 +234,40 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -260,7 +277,7 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -271,15 +288,17 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets monday.
+     *
+     * @return null|OperatingHour[]
      */
-    public function getMonday(): ?array
+    public function getMonday()
     {
         return $this->container['monday'];
     }
@@ -287,19 +306,14 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets monday.
      *
-     * @param null|array $monday a list of Operating Hours
+     * @param null|OperatingHour[] $monday a list of Operating Hours
+     *
+     * @return self
      */
-    public function setMonday(?array $monday): self
+    public function setMonday($monday)
     {
         if (is_null($monday)) {
-            array_push($this->openAPINullablesSetToNull, 'monday');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('monday', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable monday cannot be null');
         }
         $this->container['monday'] = $monday;
 
@@ -308,8 +322,10 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets tuesday.
+     *
+     * @return null|OperatingHour[]
      */
-    public function getTuesday(): ?array
+    public function getTuesday()
     {
         return $this->container['tuesday'];
     }
@@ -317,19 +333,14 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets tuesday.
      *
-     * @param null|array $tuesday a list of Operating Hours
+     * @param null|OperatingHour[] $tuesday a list of Operating Hours
+     *
+     * @return self
      */
-    public function setTuesday(?array $tuesday): self
+    public function setTuesday($tuesday)
     {
         if (is_null($tuesday)) {
-            array_push($this->openAPINullablesSetToNull, 'tuesday');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tuesday', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tuesday cannot be null');
         }
         $this->container['tuesday'] = $tuesday;
 
@@ -338,8 +349,10 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets wednesday.
+     *
+     * @return null|OperatingHour[]
      */
-    public function getWednesday(): ?array
+    public function getWednesday()
     {
         return $this->container['wednesday'];
     }
@@ -347,19 +360,14 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets wednesday.
      *
-     * @param null|array $wednesday a list of Operating Hours
+     * @param null|OperatingHour[] $wednesday a list of Operating Hours
+     *
+     * @return self
      */
-    public function setWednesday(?array $wednesday): self
+    public function setWednesday($wednesday)
     {
         if (is_null($wednesday)) {
-            array_push($this->openAPINullablesSetToNull, 'wednesday');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('wednesday', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable wednesday cannot be null');
         }
         $this->container['wednesday'] = $wednesday;
 
@@ -368,8 +376,10 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets thursday.
+     *
+     * @return null|OperatingHour[]
      */
-    public function getThursday(): ?array
+    public function getThursday()
     {
         return $this->container['thursday'];
     }
@@ -377,19 +387,14 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets thursday.
      *
-     * @param null|array $thursday a list of Operating Hours
+     * @param null|OperatingHour[] $thursday a list of Operating Hours
+     *
+     * @return self
      */
-    public function setThursday(?array $thursday): self
+    public function setThursday($thursday)
     {
         if (is_null($thursday)) {
-            array_push($this->openAPINullablesSetToNull, 'thursday');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('thursday', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable thursday cannot be null');
         }
         $this->container['thursday'] = $thursday;
 
@@ -398,8 +403,10 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets friday.
+     *
+     * @return null|OperatingHour[]
      */
-    public function getFriday(): ?array
+    public function getFriday()
     {
         return $this->container['friday'];
     }
@@ -407,19 +414,14 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets friday.
      *
-     * @param null|array $friday a list of Operating Hours
+     * @param null|OperatingHour[] $friday a list of Operating Hours
+     *
+     * @return self
      */
-    public function setFriday(?array $friday): self
+    public function setFriday($friday)
     {
         if (is_null($friday)) {
-            array_push($this->openAPINullablesSetToNull, 'friday');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('friday', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable friday cannot be null');
         }
         $this->container['friday'] = $friday;
 
@@ -428,8 +430,10 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets saturday.
+     *
+     * @return null|OperatingHour[]
      */
-    public function getSaturday(): ?array
+    public function getSaturday()
     {
         return $this->container['saturday'];
     }
@@ -437,19 +441,14 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets saturday.
      *
-     * @param null|array $saturday a list of Operating Hours
+     * @param null|OperatingHour[] $saturday a list of Operating Hours
+     *
+     * @return self
      */
-    public function setSaturday(?array $saturday): self
+    public function setSaturday($saturday)
     {
         if (is_null($saturday)) {
-            array_push($this->openAPINullablesSetToNull, 'saturday');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('saturday', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable saturday cannot be null');
         }
         $this->container['saturday'] = $saturday;
 
@@ -458,8 +457,10 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets sunday.
+     *
+     * @return null|OperatingHour[]
      */
-    public function getSunday(): ?array
+    public function getSunday()
     {
         return $this->container['sunday'];
     }
@@ -467,19 +468,14 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets sunday.
      *
-     * @param null|array $sunday a list of Operating Hours
+     * @param null|OperatingHour[] $sunday a list of Operating Hours
+     *
+     * @return self
      */
-    public function setSunday(?array $sunday): self
+    public function setSunday($sunday)
     {
         if (is_null($sunday)) {
-            array_push($this->openAPINullablesSetToNull, 'sunday');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sunday', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable sunday cannot be null');
         }
         $this->container['sunday'] = $sunday;
 
@@ -504,7 +500,7 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -515,7 +511,7 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -543,15 +539,17 @@ class OperatingHoursByDay implements ModelInterface, \ArrayAccess, \JsonSerializ
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -2,7 +2,7 @@
 /**
  * OrderItemAcknowledgement
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\orders\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * OrderItemAcknowledgement Class Doc Comment
@@ -52,19 +50,20 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'OrderItemAcknowledgement';
+    protected static $openAPIModelName = 'OrderItemAcknowledgement';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'acknowledgement_code' => 'string',
-             'acknowledged_quantity' => '\SpApi\Model\vendor\orders\v1\ItemQuantity',
-             'scheduled_ship_date' => '\DateTime',
-             'scheduled_delivery_date' => '\DateTime',
-             'rejection_reason' => 'string'    ];
+    protected static $openAPITypes = [
+        'acknowledgement_code' => 'string',
+        'acknowledged_quantity' => '\SpApi\Model\vendor\orders\v1\ItemQuantity',
+        'scheduled_ship_date' => '\DateTime',
+        'scheduled_delivery_date' => '\DateTime',
+        'rejection_reason' => 'string'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -73,12 +72,13 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'acknowledgement_code' => null,
-            'acknowledged_quantity' => null,
-            'scheduled_ship_date' => 'date-time',
-            'scheduled_delivery_date' => 'date-time',
-            'rejection_reason' => null    ];
+    protected static $openAPIFormats = [
+        'acknowledgement_code' => null,
+        'acknowledged_quantity' => null,
+        'scheduled_ship_date' => 'date-time',
+        'scheduled_delivery_date' => 'date-time',
+        'rejection_reason' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -88,9 +88,9 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
     protected static array $openAPINullables = [
         'acknowledgement_code' => false,
         'acknowledged_quantity' => false,
-        'scheduled_ship_date' => true,
-        'scheduled_delivery_date' => true,
-        'rejection_reason' => true
+        'scheduled_ship_date' => false,
+        'scheduled_delivery_date' => false,
+        'rejection_reason' => false
     ];
 
     /**
@@ -105,7 +105,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -115,7 +115,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -178,13 +178,12 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'acknowledgement_code' => 'acknowledgementCode',
-                'acknowledged_quantity' => 'acknowledgedQuantity',
-                'scheduled_ship_date' => 'scheduledShipDate',
-                'scheduled_delivery_date' => 'scheduledDeliveryDate',
-                'rejection_reason' => 'rejectionReason'
-        
+        'acknowledged_quantity' => 'acknowledgedQuantity',
+        'scheduled_ship_date' => 'scheduledShipDate',
+        'scheduled_delivery_date' => 'scheduledDeliveryDate',
+        'rejection_reason' => 'rejectionReason'
     ];
 
     /**
@@ -192,7 +191,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'acknowledgement_code' => 'setAcknowledgementCode',
         'acknowledged_quantity' => 'setAcknowledgedQuantity',
         'scheduled_ship_date' => 'setScheduledShipDate',
@@ -205,7 +204,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'acknowledgement_code' => 'getAcknowledgementCode',
         'acknowledged_quantity' => 'getAcknowledgedQuantity',
         'scheduled_ship_date' => 'getScheduledShipDate',
@@ -219,7 +218,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -229,7 +228,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -239,7 +238,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -249,7 +248,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -266,7 +265,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return string[]
      */
-    public function getAcknowledgementCodeAllowableValues(): array
+    public function getAcknowledgementCodeAllowableValues()
     {
         return [
             self::ACKNOWLEDGEMENT_CODE_ACCEPTED,
@@ -280,7 +279,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return string[]
      */
-    public function getRejectionReasonAllowableValues(): array
+    public function getRejectionReasonAllowableValues()
     {
         return [
             self::REJECTION_REASON_TEMPORARILY_UNAVAILABLE,
@@ -292,17 +291,17 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('acknowledgement_code', $data ?? [], null);
         $this->setIfExists('acknowledged_quantity', $data ?? [], null);
@@ -334,7 +333,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -371,7 +370,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -382,7 +381,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return string
      */
-    public function getAcknowledgementCode(): string
+    public function getAcknowledgementCode()
     {
         return $this->container['acknowledgement_code'];
     }
@@ -394,7 +393,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setAcknowledgementCode(string $acknowledgement_code): self
+    public function setAcknowledgementCode($acknowledgement_code)
     {
         if (is_null($acknowledgement_code)) {
             throw new \InvalidArgumentException('non-nullable acknowledgement_code cannot be null');
@@ -419,7 +418,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return \SpApi\Model\vendor\orders\v1\ItemQuantity
      */
-    public function getAcknowledgedQuantity(): \SpApi\Model\vendor\orders\v1\ItemQuantity
+    public function getAcknowledgedQuantity()
     {
         return $this->container['acknowledged_quantity'];
     }
@@ -431,7 +430,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setAcknowledgedQuantity(\SpApi\Model\vendor\orders\v1\ItemQuantity $acknowledged_quantity): self
+    public function setAcknowledgedQuantity($acknowledged_quantity)
     {
         if (is_null($acknowledged_quantity)) {
             throw new \InvalidArgumentException('non-nullable acknowledged_quantity cannot be null');
@@ -446,7 +445,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return \DateTime|null
      */
-    public function getScheduledShipDate(): ?\DateTime
+    public function getScheduledShipDate()
     {
         return $this->container['scheduled_ship_date'];
     }
@@ -458,17 +457,10 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setScheduledShipDate(?\DateTime $scheduled_ship_date): self
+    public function setScheduledShipDate($scheduled_ship_date)
     {
         if (is_null($scheduled_ship_date)) {
-            array_push($this->openAPINullablesSetToNull, 'scheduled_ship_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('scheduled_ship_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable scheduled_ship_date cannot be null');
         }
         $this->container['scheduled_ship_date'] = $scheduled_ship_date;
 
@@ -480,7 +472,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return \DateTime|null
      */
-    public function getScheduledDeliveryDate(): ?\DateTime
+    public function getScheduledDeliveryDate()
     {
         return $this->container['scheduled_delivery_date'];
     }
@@ -492,17 +484,10 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setScheduledDeliveryDate(?\DateTime $scheduled_delivery_date): self
+    public function setScheduledDeliveryDate($scheduled_delivery_date)
     {
         if (is_null($scheduled_delivery_date)) {
-            array_push($this->openAPINullablesSetToNull, 'scheduled_delivery_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('scheduled_delivery_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable scheduled_delivery_date cannot be null');
         }
         $this->container['scheduled_delivery_date'] = $scheduled_delivery_date;
 
@@ -514,7 +499,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return string|null
      */
-    public function getRejectionReason(): ?string
+    public function getRejectionReason()
     {
         return $this->container['rejection_reason'];
     }
@@ -526,20 +511,13 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setRejectionReason(?string $rejection_reason): self
+    public function setRejectionReason($rejection_reason)
     {
         if (is_null($rejection_reason)) {
-            array_push($this->openAPINullablesSetToNull, 'rejection_reason');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rejection_reason', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable rejection_reason cannot be null');
         }
         $allowedValues = $this->getRejectionReasonAllowableValues();
-        if (!is_null($rejection_reason) && !in_array($rejection_reason, $allowedValues, true)) {
+        if (!in_array($rejection_reason, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'rejection_reason', must be one of '%s'",
@@ -552,8 +530,6 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -574,7 +550,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -587,7 +563,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -616,7 +592,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -639,7 +615,7 @@ class OrderItemAcknowledgement implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

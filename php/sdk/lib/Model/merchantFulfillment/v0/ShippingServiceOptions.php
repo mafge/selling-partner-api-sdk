@@ -3,7 +3,7 @@
 /**
  * ShippingServiceOptions.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\merchantFulfillment\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ShippingServiceOptions';
+    protected static $openAPIModelName = 'ShippingServiceOptions';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'delivery_experience' => '\SpApi\Model\merchantFulfillment\v0\DeliveryExperienceType',
         'declared_value' => '\SpApi\Model\merchantFulfillment\v0\CurrencyAmount',
         'carrier_will_pick_up' => 'bool',
         'carrier_will_pick_up_option' => '\SpApi\Model\merchantFulfillment\v0\CarrierWillPickUpOption',
-        'label_format' => '\SpApi\Model\merchantFulfillment\v0\LabelFormat'];
+        'label_format' => '\SpApi\Model\merchantFulfillment\v0\LabelFormat',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'delivery_experience' => null,
         'declared_value' => null,
         'carrier_will_pick_up' => null,
         'carrier_will_pick_up_option' => null,
-        'label_format' => null];
+        'label_format' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -90,10 +93,10 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
      */
     protected static array $openAPINullables = [
         'delivery_experience' => false,
-        'declared_value' => true,
+        'declared_value' => false,
         'carrier_will_pick_up' => false,
-        'carrier_will_pick_up_option' => true,
-        'label_format' => true,
+        'carrier_will_pick_up_option' => false,
+        'label_format' => false,
     ];
 
     /**
@@ -109,7 +112,7 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'delivery_experience' => 'DeliveryExperience',
         'declared_value' => 'DeclaredValue',
         'carrier_will_pick_up' => 'CarrierWillPickUp',
@@ -122,7 +125,7 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'delivery_experience' => 'setDeliveryExperience',
         'declared_value' => 'setDeclaredValue',
         'carrier_will_pick_up' => 'setCarrierWillPickUp',
@@ -135,7 +138,7 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'delivery_experience' => 'getDeliveryExperience',
         'declared_value' => 'getDeclaredValue',
         'carrier_will_pick_up' => 'getCarrierWillPickUp',
@@ -145,14 +148,16 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -266,15 +283,17 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets delivery_experience.
+     *
+     * @return DeliveryExperienceType
      */
-    public function getDeliveryExperience(): string
+    public function getDeliveryExperience()
     {
         return $this->container['delivery_experience'];
     }
@@ -282,9 +301,11 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Sets delivery_experience.
      *
-     * @param string $delivery_experience delivery_experience
+     * @param DeliveryExperienceType $delivery_experience delivery_experience
+     *
+     * @return self
      */
-    public function setDeliveryExperience(string $delivery_experience): self
+    public function setDeliveryExperience($delivery_experience)
     {
         if (is_null($delivery_experience)) {
             throw new \InvalidArgumentException('non-nullable delivery_experience cannot be null');
@@ -296,8 +317,10 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets declared_value.
+     *
+     * @return null|CurrencyAmount
      */
-    public function getDeclaredValue(): ?CurrencyAmount
+    public function getDeclaredValue()
     {
         return $this->container['declared_value'];
     }
@@ -306,18 +329,13 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets declared_value.
      *
      * @param null|CurrencyAmount $declared_value declared_value
+     *
+     * @return self
      */
-    public function setDeclaredValue(?CurrencyAmount $declared_value): self
+    public function setDeclaredValue($declared_value)
     {
         if (is_null($declared_value)) {
-            array_push($this->openAPINullablesSetToNull, 'declared_value');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('declared_value', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable declared_value cannot be null');
         }
         $this->container['declared_value'] = $declared_value;
 
@@ -326,8 +344,10 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets carrier_will_pick_up.
+     *
+     * @return bool
      */
-    public function getCarrierWillPickUp(): bool
+    public function getCarrierWillPickUp()
     {
         return $this->container['carrier_will_pick_up'];
     }
@@ -336,8 +356,10 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets carrier_will_pick_up.
      *
      * @param bool $carrier_will_pick_up When true, the carrier will pick up the package. Note: Scheduled carrier pickup is available only using Dynamex (US), DPD (UK), and Royal Mail (UK).
+     *
+     * @return self
      */
-    public function setCarrierWillPickUp(bool $carrier_will_pick_up): self
+    public function setCarrierWillPickUp($carrier_will_pick_up)
     {
         if (is_null($carrier_will_pick_up)) {
             throw new \InvalidArgumentException('non-nullable carrier_will_pick_up cannot be null');
@@ -349,8 +371,10 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets carrier_will_pick_up_option.
+     *
+     * @return null|CarrierWillPickUpOption
      */
-    public function getCarrierWillPickUpOption(): ?string
+    public function getCarrierWillPickUpOption()
     {
         return $this->container['carrier_will_pick_up_option'];
     }
@@ -358,19 +382,14 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Sets carrier_will_pick_up_option.
      *
-     * @param null|string $carrier_will_pick_up_option carrier_will_pick_up_option
+     * @param null|CarrierWillPickUpOption $carrier_will_pick_up_option carrier_will_pick_up_option
+     *
+     * @return self
      */
-    public function setCarrierWillPickUpOption(?string $carrier_will_pick_up_option): self
+    public function setCarrierWillPickUpOption($carrier_will_pick_up_option)
     {
         if (is_null($carrier_will_pick_up_option)) {
-            array_push($this->openAPINullablesSetToNull, 'carrier_will_pick_up_option');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('carrier_will_pick_up_option', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable carrier_will_pick_up_option cannot be null');
         }
         $this->container['carrier_will_pick_up_option'] = $carrier_will_pick_up_option;
 
@@ -379,8 +398,10 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets label_format.
+     *
+     * @return null|LabelFormat
      */
-    public function getLabelFormat(): ?string
+    public function getLabelFormat()
     {
         return $this->container['label_format'];
     }
@@ -388,19 +409,14 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Sets label_format.
      *
-     * @param null|string $label_format label_format
+     * @param null|LabelFormat $label_format label_format
+     *
+     * @return self
      */
-    public function setLabelFormat(?string $label_format): self
+    public function setLabelFormat($label_format)
     {
         if (is_null($label_format)) {
-            array_push($this->openAPINullablesSetToNull, 'label_format');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('label_format', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable label_format cannot be null');
         }
         $this->container['label_format'] = $label_format;
 
@@ -425,7 +441,7 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -436,7 +452,7 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -464,15 +480,17 @@ class ShippingServiceOptions implements ModelInterface, \ArrayAccess, \JsonSeria
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

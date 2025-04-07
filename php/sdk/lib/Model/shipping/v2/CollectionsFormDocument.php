@@ -3,7 +3,7 @@
 /**
  * CollectionsFormDocument.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,17 +52,20 @@ class CollectionsFormDocument implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CollectionsFormDocument';
+    protected static $openAPIModelName = 'CollectionsFormDocument';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'base64_encoded_content' => 'string',
-        'document_format' => 'string'];
+        'document_format' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,9 +76,10 @@ class CollectionsFormDocument implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'base64_encoded_content' => null,
-        'document_format' => 'application/pdf'];
+        'document_format' => 'application/pdf',
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -84,8 +87,8 @@ class CollectionsFormDocument implements ModelInterface, \ArrayAccess, \JsonSeri
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'base64_encoded_content' => true,
-        'document_format' => true,
+        'base64_encoded_content' => false,
+        'document_format' => false,
     ];
 
     /**
@@ -101,7 +104,7 @@ class CollectionsFormDocument implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'base64_encoded_content' => 'base64EncodedContent',
         'document_format' => 'documentFormat',
     ];
@@ -111,7 +114,7 @@ class CollectionsFormDocument implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'base64_encoded_content' => 'setBase64EncodedContent',
         'document_format' => 'setDocumentFormat',
     ];
@@ -121,21 +124,23 @@ class CollectionsFormDocument implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'base64_encoded_content' => 'getBase64EncodedContent',
         'document_format' => 'getDocumentFormat',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -158,16 +163,20 @@ class CollectionsFormDocument implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -191,32 +200,40 @@ class CollectionsFormDocument implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -226,7 +243,7 @@ class CollectionsFormDocument implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -237,15 +254,17 @@ class CollectionsFormDocument implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets base64_encoded_content.
+     *
+     * @return null|string
      */
-    public function getBase64EncodedContent(): ?string
+    public function getBase64EncodedContent()
     {
         return $this->container['base64_encoded_content'];
     }
@@ -254,18 +273,13 @@ class CollectionsFormDocument implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets base64_encoded_content.
      *
      * @param null|string $base64_encoded_content base64 document Value of Collection
+     *
+     * @return self
      */
-    public function setBase64EncodedContent(?string $base64_encoded_content): self
+    public function setBase64EncodedContent($base64_encoded_content)
     {
         if (is_null($base64_encoded_content)) {
-            array_push($this->openAPINullablesSetToNull, 'base64_encoded_content');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('base64_encoded_content', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable base64_encoded_content cannot be null');
         }
         $this->container['base64_encoded_content'] = $base64_encoded_content;
 
@@ -274,8 +288,10 @@ class CollectionsFormDocument implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets document_format.
+     *
+     * @return null|string
      */
-    public function getDocumentFormat(): ?string
+    public function getDocumentFormat()
     {
         return $this->container['document_format'];
     }
@@ -284,18 +300,13 @@ class CollectionsFormDocument implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets document_format.
      *
      * @param null|string $document_format collection Document format is PDF
+     *
+     * @return self
      */
-    public function setDocumentFormat(?string $document_format): self
+    public function setDocumentFormat($document_format)
     {
         if (is_null($document_format)) {
-            array_push($this->openAPINullablesSetToNull, 'document_format');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('document_format', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable document_format cannot be null');
         }
         $this->container['document_format'] = $document_format;
 
@@ -320,7 +331,7 @@ class CollectionsFormDocument implements ModelInterface, \ArrayAccess, \JsonSeri
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -331,7 +342,7 @@ class CollectionsFormDocument implements ModelInterface, \ArrayAccess, \JsonSeri
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -359,15 +370,17 @@ class CollectionsFormDocument implements ModelInterface, \ArrayAccess, \JsonSeri
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

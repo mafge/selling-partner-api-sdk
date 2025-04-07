@@ -3,7 +3,7 @@
 /**
  * AdjustmentItem.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'AdjustmentItem';
+    protected static $openAPIModelName = 'AdjustmentItem';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'quantity' => 'string',
         'per_unit_amount' => '\SpApi\Model\finances\v0\Currency',
         'total_amount' => '\SpApi\Model\finances\v0\Currency',
@@ -68,7 +69,8 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
         'fn_sku' => 'string',
         'product_description' => 'string',
         'asin' => 'string',
-        'transaction_number' => 'string'];
+        'transaction_number' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -79,7 +81,7 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'quantity' => null,
         'per_unit_amount' => null,
         'total_amount' => null,
@@ -87,7 +89,8 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
         'fn_sku' => null,
         'product_description' => null,
         'asin' => null,
-        'transaction_number' => null];
+        'transaction_number' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -95,14 +98,14 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'quantity' => true,
-        'per_unit_amount' => true,
-        'total_amount' => true,
-        'seller_sku' => true,
-        'fn_sku' => true,
-        'product_description' => true,
-        'asin' => true,
-        'transaction_number' => true,
+        'quantity' => false,
+        'per_unit_amount' => false,
+        'total_amount' => false,
+        'seller_sku' => false,
+        'fn_sku' => false,
+        'product_description' => false,
+        'asin' => false,
+        'transaction_number' => false,
     ];
 
     /**
@@ -118,7 +121,7 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'quantity' => 'Quantity',
         'per_unit_amount' => 'PerUnitAmount',
         'total_amount' => 'TotalAmount',
@@ -134,7 +137,7 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'quantity' => 'setQuantity',
         'per_unit_amount' => 'setPerUnitAmount',
         'total_amount' => 'setTotalAmount',
@@ -150,7 +153,7 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'quantity' => 'getQuantity',
         'per_unit_amount' => 'getPerUnitAmount',
         'total_amount' => 'getTotalAmount',
@@ -163,14 +166,16 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -199,16 +204,20 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -232,32 +241,40 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -267,7 +284,7 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -278,15 +295,17 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets quantity.
+     *
+     * @return null|string
      */
-    public function getQuantity(): ?string
+    public function getQuantity()
     {
         return $this->container['quantity'];
     }
@@ -295,18 +314,13 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets quantity.
      *
      * @param null|string $quantity represents the number of units in the seller's inventory when the AdustmentType is FBAInventoryReimbursement
+     *
+     * @return self
      */
-    public function setQuantity(?string $quantity): self
+    public function setQuantity($quantity)
     {
         if (is_null($quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable quantity cannot be null');
         }
         $this->container['quantity'] = $quantity;
 
@@ -315,8 +329,10 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets per_unit_amount.
+     *
+     * @return null|Currency
      */
-    public function getPerUnitAmount(): ?Currency
+    public function getPerUnitAmount()
     {
         return $this->container['per_unit_amount'];
     }
@@ -325,18 +341,13 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets per_unit_amount.
      *
      * @param null|Currency $per_unit_amount per_unit_amount
+     *
+     * @return self
      */
-    public function setPerUnitAmount(?Currency $per_unit_amount): self
+    public function setPerUnitAmount($per_unit_amount)
     {
         if (is_null($per_unit_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'per_unit_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('per_unit_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable per_unit_amount cannot be null');
         }
         $this->container['per_unit_amount'] = $per_unit_amount;
 
@@ -345,8 +356,10 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets total_amount.
+     *
+     * @return null|Currency
      */
-    public function getTotalAmount(): ?Currency
+    public function getTotalAmount()
     {
         return $this->container['total_amount'];
     }
@@ -355,18 +368,13 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets total_amount.
      *
      * @param null|Currency $total_amount total_amount
+     *
+     * @return self
      */
-    public function setTotalAmount(?Currency $total_amount): self
+    public function setTotalAmount($total_amount)
     {
         if (is_null($total_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'total_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable total_amount cannot be null');
         }
         $this->container['total_amount'] = $total_amount;
 
@@ -375,8 +383,10 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets seller_sku.
+     *
+     * @return null|string
      */
-    public function getSellerSku(): ?string
+    public function getSellerSku()
     {
         return $this->container['seller_sku'];
     }
@@ -385,18 +395,13 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets seller_sku.
      *
      * @param null|string $seller_sku The seller SKU of the item. The seller SKU is qualified by the seller's seller ID, which is included with every call to the Selling Partner API.
+     *
+     * @return self
      */
-    public function setSellerSku(?string $seller_sku): self
+    public function setSellerSku($seller_sku)
     {
         if (is_null($seller_sku)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_sku');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_sku', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_sku cannot be null');
         }
         $this->container['seller_sku'] = $seller_sku;
 
@@ -405,8 +410,10 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets fn_sku.
+     *
+     * @return null|string
      */
-    public function getFnSku(): ?string
+    public function getFnSku()
     {
         return $this->container['fn_sku'];
     }
@@ -415,18 +422,13 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets fn_sku.
      *
      * @param null|string $fn_sku a unique identifier assigned to products stored in and fulfilled from a fulfillment center
+     *
+     * @return self
      */
-    public function setFnSku(?string $fn_sku): self
+    public function setFnSku($fn_sku)
     {
         if (is_null($fn_sku)) {
-            array_push($this->openAPINullablesSetToNull, 'fn_sku');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fn_sku', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fn_sku cannot be null');
         }
         $this->container['fn_sku'] = $fn_sku;
 
@@ -435,8 +437,10 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets product_description.
+     *
+     * @return null|string
      */
-    public function getProductDescription(): ?string
+    public function getProductDescription()
     {
         return $this->container['product_description'];
     }
@@ -445,18 +449,13 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets product_description.
      *
      * @param null|string $product_description a short description of the item
+     *
+     * @return self
      */
-    public function setProductDescription(?string $product_description): self
+    public function setProductDescription($product_description)
     {
         if (is_null($product_description)) {
-            array_push($this->openAPINullablesSetToNull, 'product_description');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('product_description', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable product_description cannot be null');
         }
         $this->container['product_description'] = $product_description;
 
@@ -465,8 +464,10 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
-    public function getAsin(): ?string
+    public function getAsin()
     {
         return $this->container['asin'];
     }
@@ -475,18 +476,13 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number (ASIN) of the item
+     *
+     * @return self
      */
-    public function setAsin(?string $asin): self
+    public function setAsin($asin)
     {
         if (is_null($asin)) {
-            array_push($this->openAPINullablesSetToNull, 'asin');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('asin', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable asin cannot be null');
         }
         $this->container['asin'] = $asin;
 
@@ -495,8 +491,10 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets transaction_number.
+     *
+     * @return null|string
      */
-    public function getTransactionNumber(): ?string
+    public function getTransactionNumber()
     {
         return $this->container['transaction_number'];
     }
@@ -505,18 +503,13 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets transaction_number.
      *
      * @param null|string $transaction_number the transaction number that is related to the adjustment
+     *
+     * @return self
      */
-    public function setTransactionNumber(?string $transaction_number): self
+    public function setTransactionNumber($transaction_number)
     {
         if (is_null($transaction_number)) {
-            array_push($this->openAPINullablesSetToNull, 'transaction_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transaction_number', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transaction_number cannot be null');
         }
         $this->container['transaction_number'] = $transaction_number;
 
@@ -541,7 +534,7 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -552,7 +545,7 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -580,15 +573,17 @@ class AdjustmentItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

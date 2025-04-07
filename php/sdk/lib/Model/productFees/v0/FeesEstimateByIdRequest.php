@@ -3,7 +3,7 @@
 /**
  * FeesEstimateByIdRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\productFees\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class FeesEstimateByIdRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'FeesEstimateByIdRequest';
+    protected static $openAPIModelName = 'FeesEstimateByIdRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'fees_estimate_request' => '\SpApi\Model\productFees\v0\FeesEstimateRequest',
         'id_type' => '\SpApi\Model\productFees\v0\IdType',
-        'id_value' => 'string'];
+        'id_value' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class FeesEstimateByIdRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'fees_estimate_request' => null,
         'id_type' => null,
-        'id_value' => null];
+        'id_value' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,7 +88,7 @@ class FeesEstimateByIdRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'fees_estimate_request' => true,
+        'fees_estimate_request' => false,
         'id_type' => false,
         'id_value' => false,
     ];
@@ -103,7 +106,7 @@ class FeesEstimateByIdRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'fees_estimate_request' => 'FeesEstimateRequest',
         'id_type' => 'IdType',
         'id_value' => 'IdValue',
@@ -114,7 +117,7 @@ class FeesEstimateByIdRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'fees_estimate_request' => 'setFeesEstimateRequest',
         'id_type' => 'setIdType',
         'id_value' => 'setIdValue',
@@ -125,7 +128,7 @@ class FeesEstimateByIdRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'fees_estimate_request' => 'getFeesEstimateRequest',
         'id_type' => 'getIdType',
         'id_value' => 'getIdValue',
@@ -133,14 +136,16 @@ class FeesEstimateByIdRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class FeesEstimateByIdRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class FeesEstimateByIdRequest implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class FeesEstimateByIdRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -252,15 +269,17 @@ class FeesEstimateByIdRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets fees_estimate_request.
+     *
+     * @return null|FeesEstimateRequest
      */
-    public function getFeesEstimateRequest(): ?FeesEstimateRequest
+    public function getFeesEstimateRequest()
     {
         return $this->container['fees_estimate_request'];
     }
@@ -269,18 +288,13 @@ class FeesEstimateByIdRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets fees_estimate_request.
      *
      * @param null|FeesEstimateRequest $fees_estimate_request fees_estimate_request
+     *
+     * @return self
      */
-    public function setFeesEstimateRequest(?FeesEstimateRequest $fees_estimate_request): self
+    public function setFeesEstimateRequest($fees_estimate_request)
     {
         if (is_null($fees_estimate_request)) {
-            array_push($this->openAPINullablesSetToNull, 'fees_estimate_request');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fees_estimate_request', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fees_estimate_request cannot be null');
         }
         $this->container['fees_estimate_request'] = $fees_estimate_request;
 
@@ -289,8 +303,10 @@ class FeesEstimateByIdRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets id_type.
+     *
+     * @return IdType
      */
-    public function getIdType(): string
+    public function getIdType()
     {
         return $this->container['id_type'];
     }
@@ -298,9 +314,11 @@ class FeesEstimateByIdRequest implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Sets id_type.
      *
-     * @param string $id_type id_type
+     * @param IdType $id_type id_type
+     *
+     * @return self
      */
-    public function setIdType(string $id_type): self
+    public function setIdType($id_type)
     {
         if (is_null($id_type)) {
             throw new \InvalidArgumentException('non-nullable id_type cannot be null');
@@ -312,8 +330,10 @@ class FeesEstimateByIdRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets id_value.
+     *
+     * @return string
      */
-    public function getIdValue(): string
+    public function getIdValue()
     {
         return $this->container['id_value'];
     }
@@ -322,8 +342,10 @@ class FeesEstimateByIdRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets id_value.
      *
      * @param string $id_value the item identifier
+     *
+     * @return self
      */
-    public function setIdValue(string $id_value): self
+    public function setIdValue($id_value)
     {
         if (is_null($id_value)) {
             throw new \InvalidArgumentException('non-nullable id_value cannot be null');
@@ -351,7 +373,7 @@ class FeesEstimateByIdRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -362,7 +384,7 @@ class FeesEstimateByIdRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -390,15 +412,17 @@ class FeesEstimateByIdRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

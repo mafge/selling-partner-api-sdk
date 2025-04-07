@@ -2,7 +2,7 @@
 /**
  * Carton
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * Carton Class Doc Comment
@@ -52,20 +50,21 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'Carton';
+    protected static $openAPIModelName = 'Carton';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'carton_identifiers' => '\SpApi\Model\vendor\shipments\v1\ContainerIdentification[]',
-             'carton_sequence_number' => 'string',
-             'dimensions' => '\SpApi\Model\vendor\shipments\v1\Dimensions',
-             'weight' => '\SpApi\Model\vendor\shipments\v1\Weight',
-             'tracking_number' => 'string',
-             'items' => '\SpApi\Model\vendor\shipments\v1\ContainerItem[]'    ];
+    protected static $openAPITypes = [
+        'carton_identifiers' => '\SpApi\Model\vendor\shipments\v1\ContainerIdentification[]',
+        'carton_sequence_number' => 'string',
+        'dimensions' => '\SpApi\Model\vendor\shipments\v1\Dimensions',
+        'weight' => '\SpApi\Model\vendor\shipments\v1\Weight',
+        'tracking_number' => 'string',
+        'items' => '\SpApi\Model\vendor\shipments\v1\ContainerItem[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -74,13 +73,14 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'carton_identifiers' => null,
-            'carton_sequence_number' => null,
-            'dimensions' => null,
-            'weight' => null,
-            'tracking_number' => null,
-            'items' => null    ];
+    protected static $openAPIFormats = [
+        'carton_identifiers' => null,
+        'carton_sequence_number' => null,
+        'dimensions' => null,
+        'weight' => null,
+        'tracking_number' => null,
+        'items' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -88,11 +88,11 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'carton_identifiers' => true,
+        'carton_identifiers' => false,
         'carton_sequence_number' => false,
-        'dimensions' => true,
-        'weight' => true,
-        'tracking_number' => true,
+        'dimensions' => false,
+        'weight' => false,
+        'tracking_number' => false,
         'items' => false
     ];
 
@@ -108,7 +108,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -118,7 +118,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -181,14 +181,13 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'carton_identifiers' => 'cartonIdentifiers',
-                'carton_sequence_number' => 'cartonSequenceNumber',
-                'dimensions' => 'dimensions',
-                'weight' => 'weight',
-                'tracking_number' => 'trackingNumber',
-                'items' => 'items'
-        
+        'carton_sequence_number' => 'cartonSequenceNumber',
+        'dimensions' => 'dimensions',
+        'weight' => 'weight',
+        'tracking_number' => 'trackingNumber',
+        'items' => 'items'
     ];
 
     /**
@@ -196,7 +195,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'carton_identifiers' => 'setCartonIdentifiers',
         'carton_sequence_number' => 'setCartonSequenceNumber',
         'dimensions' => 'setDimensions',
@@ -210,7 +209,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'carton_identifiers' => 'getCartonIdentifiers',
         'carton_sequence_number' => 'getCartonSequenceNumber',
         'dimensions' => 'getDimensions',
@@ -225,7 +224,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -235,7 +234,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -245,7 +244,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -255,7 +254,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -264,17 +263,17 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('carton_identifiers', $data ?? [], null);
         $this->setIfExists('carton_sequence_number', $data ?? [], null);
@@ -307,7 +306,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -326,7 +325,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -335,9 +334,9 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets carton_identifiers
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\shipments\v1\ContainerIdentification[]|null
      */
-    public function getCartonIdentifiers(): ?array
+    public function getCartonIdentifiers()
     {
         return $this->container['carton_identifiers'];
     }
@@ -345,21 +344,14 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets carton_identifiers
      *
-     * @param array|null $carton_identifiers A list of carton identifiers.
+     * @param \SpApi\Model\vendor\shipments\v1\ContainerIdentification[]|null $carton_identifiers A list of carton identifiers.
      *
      * @return self
      */
-    public function setCartonIdentifiers(?array $carton_identifiers): self
+    public function setCartonIdentifiers($carton_identifiers)
     {
         if (is_null($carton_identifiers)) {
-            array_push($this->openAPINullablesSetToNull, 'carton_identifiers');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('carton_identifiers', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable carton_identifiers cannot be null');
         }
         $this->container['carton_identifiers'] = $carton_identifiers;
 
@@ -371,7 +363,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getCartonSequenceNumber(): string
+    public function getCartonSequenceNumber()
     {
         return $this->container['carton_sequence_number'];
     }
@@ -383,7 +375,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCartonSequenceNumber(string $carton_sequence_number): self
+    public function setCartonSequenceNumber($carton_sequence_number)
     {
         if (is_null($carton_sequence_number)) {
             throw new \InvalidArgumentException('non-nullable carton_sequence_number cannot be null');
@@ -398,7 +390,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\shipments\v1\Dimensions|null
      */
-    public function getDimensions(): ?\SpApi\Model\vendor\shipments\v1\Dimensions
+    public function getDimensions()
     {
         return $this->container['dimensions'];
     }
@@ -410,17 +402,10 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDimensions(?\SpApi\Model\vendor\shipments\v1\Dimensions $dimensions): self
+    public function setDimensions($dimensions)
     {
         if (is_null($dimensions)) {
-            array_push($this->openAPINullablesSetToNull, 'dimensions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('dimensions', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable dimensions cannot be null');
         }
         $this->container['dimensions'] = $dimensions;
 
@@ -432,7 +417,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\shipments\v1\Weight|null
      */
-    public function getWeight(): ?\SpApi\Model\vendor\shipments\v1\Weight
+    public function getWeight()
     {
         return $this->container['weight'];
     }
@@ -444,17 +429,10 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setWeight(?\SpApi\Model\vendor\shipments\v1\Weight $weight): self
+    public function setWeight($weight)
     {
         if (is_null($weight)) {
-            array_push($this->openAPINullablesSetToNull, 'weight');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('weight', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable weight cannot be null');
         }
         $this->container['weight'] = $weight;
 
@@ -466,7 +444,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getTrackingNumber(): ?string
+    public function getTrackingNumber()
     {
         return $this->container['tracking_number'];
     }
@@ -478,17 +456,10 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTrackingNumber(?string $tracking_number): self
+    public function setTrackingNumber($tracking_number)
     {
         if (is_null($tracking_number)) {
-            array_push($this->openAPINullablesSetToNull, 'tracking_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tracking_number', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tracking_number cannot be null');
         }
         $this->container['tracking_number'] = $tracking_number;
 
@@ -498,9 +469,9 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets items
      *
-     * @return array
+     * @return \SpApi\Model\vendor\shipments\v1\ContainerItem[]
      */
-    public function getItems(): array
+    public function getItems()
     {
         return $this->container['items'];
     }
@@ -508,11 +479,11 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets items
      *
-     * @param array $items A list of container item details.
+     * @param \SpApi\Model\vendor\shipments\v1\ContainerItem[] $items A list of container item details.
      *
      * @return self
      */
-    public function setItems(array $items): self
+    public function setItems($items)
     {
         if (is_null($items)) {
             throw new \InvalidArgumentException('non-nullable items cannot be null');
@@ -521,8 +492,6 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -543,7 +512,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -556,7 +525,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -585,7 +554,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -608,7 +577,7 @@ class Carton implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * NetworkComminglingTransactionEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'NetworkComminglingTransactionEvent';
+    protected static $openAPIModelName = 'NetworkComminglingTransactionEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'transaction_type' => 'string',
         'posted_date' => '\DateTime',
         'net_co_transaction_id' => 'string',
@@ -68,7 +69,8 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
         'asin' => 'string',
         'marketplace_id' => 'string',
         'tax_exclusive_amount' => '\SpApi\Model\finances\v0\Currency',
-        'tax_amount' => '\SpApi\Model\finances\v0\Currency'];
+        'tax_amount' => '\SpApi\Model\finances\v0\Currency',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -79,7 +81,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'transaction_type' => null,
         'posted_date' => 'date-time',
         'net_co_transaction_id' => null,
@@ -87,7 +89,8 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
         'asin' => null,
         'marketplace_id' => null,
         'tax_exclusive_amount' => null,
-        'tax_amount' => null];
+        'tax_amount' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -95,14 +98,14 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'transaction_type' => true,
-        'posted_date' => true,
-        'net_co_transaction_id' => true,
-        'swap_reason' => true,
-        'asin' => true,
-        'marketplace_id' => true,
-        'tax_exclusive_amount' => true,
-        'tax_amount' => true,
+        'transaction_type' => false,
+        'posted_date' => false,
+        'net_co_transaction_id' => false,
+        'swap_reason' => false,
+        'asin' => false,
+        'marketplace_id' => false,
+        'tax_exclusive_amount' => false,
+        'tax_amount' => false,
     ];
 
     /**
@@ -118,7 +121,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'transaction_type' => 'TransactionType',
         'posted_date' => 'PostedDate',
         'net_co_transaction_id' => 'NetCoTransactionID',
@@ -134,7 +137,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'transaction_type' => 'setTransactionType',
         'posted_date' => 'setPostedDate',
         'net_co_transaction_id' => 'setNetCoTransactionId',
@@ -150,7 +153,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'transaction_type' => 'getTransactionType',
         'posted_date' => 'getPostedDate',
         'net_co_transaction_id' => 'getNetCoTransactionId',
@@ -163,14 +166,16 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -199,16 +204,20 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -232,32 +241,40 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -267,7 +284,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -278,15 +295,17 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets transaction_type.
+     *
+     * @return null|string
      */
-    public function getTransactionType(): ?string
+    public function getTransactionType()
     {
         return $this->container['transaction_type'];
     }
@@ -295,18 +314,13 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
      * Sets transaction_type.
      *
      * @param null|string $transaction_type The type of network item swap.  Possible values:  * NetCo - A Fulfillment by Amazon inventory pooling transaction. Available only in the India marketplace.  * ComminglingVAT - A commingling VAT transaction. Available only in the UK, Spain, France, Germany, and Italy marketplaces.
+     *
+     * @return self
      */
-    public function setTransactionType(?string $transaction_type): self
+    public function setTransactionType($transaction_type)
     {
         if (is_null($transaction_type)) {
-            array_push($this->openAPINullablesSetToNull, 'transaction_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transaction_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transaction_type cannot be null');
         }
         $this->container['transaction_type'] = $transaction_type;
 
@@ -315,8 +329,10 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTime
      */
-    public function getPostedDate(): ?\DateTime
+    public function getPostedDate()
     {
         return $this->container['posted_date'];
     }
@@ -325,18 +341,13 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
      * Sets posted_date.
      *
      * @param null|\DateTime $posted_date fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate)
+     *
+     * @return self
      */
-    public function setPostedDate(?\DateTime $posted_date): self
+    public function setPostedDate($posted_date)
     {
         if (is_null($posted_date)) {
-            array_push($this->openAPINullablesSetToNull, 'posted_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('posted_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable posted_date cannot be null');
         }
         $this->container['posted_date'] = $posted_date;
 
@@ -345,8 +356,10 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
 
     /**
      * Gets net_co_transaction_id.
+     *
+     * @return null|string
      */
-    public function getNetCoTransactionId(): ?string
+    public function getNetCoTransactionId()
     {
         return $this->container['net_co_transaction_id'];
     }
@@ -355,18 +368,13 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
      * Sets net_co_transaction_id.
      *
      * @param null|string $net_co_transaction_id the identifier for the network item swap
+     *
+     * @return self
      */
-    public function setNetCoTransactionId(?string $net_co_transaction_id): self
+    public function setNetCoTransactionId($net_co_transaction_id)
     {
         if (is_null($net_co_transaction_id)) {
-            array_push($this->openAPINullablesSetToNull, 'net_co_transaction_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('net_co_transaction_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable net_co_transaction_id cannot be null');
         }
         $this->container['net_co_transaction_id'] = $net_co_transaction_id;
 
@@ -375,8 +383,10 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
 
     /**
      * Gets swap_reason.
+     *
+     * @return null|string
      */
-    public function getSwapReason(): ?string
+    public function getSwapReason()
     {
         return $this->container['swap_reason'];
     }
@@ -385,18 +395,13 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
      * Sets swap_reason.
      *
      * @param null|string $swap_reason the reason for the network item swap
+     *
+     * @return self
      */
-    public function setSwapReason(?string $swap_reason): self
+    public function setSwapReason($swap_reason)
     {
         if (is_null($swap_reason)) {
-            array_push($this->openAPINullablesSetToNull, 'swap_reason');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('swap_reason', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable swap_reason cannot be null');
         }
         $this->container['swap_reason'] = $swap_reason;
 
@@ -405,8 +410,10 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
-    public function getAsin(): ?string
+    public function getAsin()
     {
         return $this->container['asin'];
     }
@@ -415,18 +422,13 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number (ASIN) of the swapped item
+     *
+     * @return self
      */
-    public function setAsin(?string $asin): self
+    public function setAsin($asin)
     {
         if (is_null($asin)) {
-            array_push($this->openAPINullablesSetToNull, 'asin');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('asin', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable asin cannot be null');
         }
         $this->container['asin'] = $asin;
 
@@ -435,8 +437,10 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
 
     /**
      * Gets marketplace_id.
+     *
+     * @return null|string
      */
-    public function getMarketplaceId(): ?string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -445,18 +449,13 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
      * Sets marketplace_id.
      *
      * @param null|string $marketplace_id the marketplace in which the event took place
+     *
+     * @return self
      */
-    public function setMarketplaceId(?string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
-            array_push($this->openAPINullablesSetToNull, 'marketplace_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('marketplace_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
         }
         $this->container['marketplace_id'] = $marketplace_id;
 
@@ -465,8 +464,10 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
 
     /**
      * Gets tax_exclusive_amount.
+     *
+     * @return null|Currency
      */
-    public function getTaxExclusiveAmount(): ?Currency
+    public function getTaxExclusiveAmount()
     {
         return $this->container['tax_exclusive_amount'];
     }
@@ -475,18 +476,13 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
      * Sets tax_exclusive_amount.
      *
      * @param null|Currency $tax_exclusive_amount tax_exclusive_amount
+     *
+     * @return self
      */
-    public function setTaxExclusiveAmount(?Currency $tax_exclusive_amount): self
+    public function setTaxExclusiveAmount($tax_exclusive_amount)
     {
         if (is_null($tax_exclusive_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'tax_exclusive_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tax_exclusive_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tax_exclusive_amount cannot be null');
         }
         $this->container['tax_exclusive_amount'] = $tax_exclusive_amount;
 
@@ -495,8 +491,10 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
 
     /**
      * Gets tax_amount.
+     *
+     * @return null|Currency
      */
-    public function getTaxAmount(): ?Currency
+    public function getTaxAmount()
     {
         return $this->container['tax_amount'];
     }
@@ -505,18 +503,13 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
      * Sets tax_amount.
      *
      * @param null|Currency $tax_amount tax_amount
+     *
+     * @return self
      */
-    public function setTaxAmount(?Currency $tax_amount): self
+    public function setTaxAmount($tax_amount)
     {
         if (is_null($tax_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'tax_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tax_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tax_amount cannot be null');
         }
         $this->container['tax_amount'] = $tax_amount;
 
@@ -541,7 +534,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -552,7 +545,7 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -580,15 +573,17 @@ class NetworkComminglingTransactionEvent implements ModelInterface, \ArrayAccess
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

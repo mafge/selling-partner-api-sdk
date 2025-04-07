@@ -3,7 +3,7 @@
 /**
  * ShipmentInvoiceStatusInfo.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\invoicing\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class ShipmentInvoiceStatusInfo implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ShipmentInvoiceStatusInfo';
+    protected static $openAPIModelName = 'ShipmentInvoiceStatusInfo';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'amazon_shipment_id' => 'string',
-        'invoice_status' => '\SpApi\Model\invoicing\v0\ShipmentInvoiceStatus'];
+        'invoice_status' => '\SpApi\Model\invoicing\v0\ShipmentInvoiceStatus',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class ShipmentInvoiceStatusInfo implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'amazon_shipment_id' => null,
-        'invoice_status' => null];
+        'invoice_status' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class ShipmentInvoiceStatusInfo implements ModelInterface, \ArrayAccess, \JsonSe
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'amazon_shipment_id' => true,
-        'invoice_status' => true,
+        'amazon_shipment_id' => false,
+        'invoice_status' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class ShipmentInvoiceStatusInfo implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'amazon_shipment_id' => 'AmazonShipmentId',
         'invoice_status' => 'InvoiceStatus',
     ];
@@ -110,7 +113,7 @@ class ShipmentInvoiceStatusInfo implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'amazon_shipment_id' => 'setAmazonShipmentId',
         'invoice_status' => 'setInvoiceStatus',
     ];
@@ -120,21 +123,23 @@ class ShipmentInvoiceStatusInfo implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'amazon_shipment_id' => 'getAmazonShipmentId',
         'invoice_status' => 'getInvoiceStatus',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class ShipmentInvoiceStatusInfo implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class ShipmentInvoiceStatusInfo implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class ShipmentInvoiceStatusInfo implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -236,15 +253,17 @@ class ShipmentInvoiceStatusInfo implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets amazon_shipment_id.
+     *
+     * @return null|string
      */
-    public function getAmazonShipmentId(): ?string
+    public function getAmazonShipmentId()
     {
         return $this->container['amazon_shipment_id'];
     }
@@ -253,18 +272,13 @@ class ShipmentInvoiceStatusInfo implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets amazon_shipment_id.
      *
      * @param null|string $amazon_shipment_id the Amazon-defined shipment identifier
+     *
+     * @return self
      */
-    public function setAmazonShipmentId(?string $amazon_shipment_id): self
+    public function setAmazonShipmentId($amazon_shipment_id)
     {
         if (is_null($amazon_shipment_id)) {
-            array_push($this->openAPINullablesSetToNull, 'amazon_shipment_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amazon_shipment_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable amazon_shipment_id cannot be null');
         }
         $this->container['amazon_shipment_id'] = $amazon_shipment_id;
 
@@ -273,8 +287,10 @@ class ShipmentInvoiceStatusInfo implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets invoice_status.
+     *
+     * @return null|ShipmentInvoiceStatus
      */
-    public function getInvoiceStatus(): ?string
+    public function getInvoiceStatus()
     {
         return $this->container['invoice_status'];
     }
@@ -282,19 +298,14 @@ class ShipmentInvoiceStatusInfo implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets invoice_status.
      *
-     * @param null|string $invoice_status invoice_status
+     * @param null|ShipmentInvoiceStatus $invoice_status invoice_status
+     *
+     * @return self
      */
-    public function setInvoiceStatus(?string $invoice_status): self
+    public function setInvoiceStatus($invoice_status)
     {
         if (is_null($invoice_status)) {
-            array_push($this->openAPINullablesSetToNull, 'invoice_status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('invoice_status', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable invoice_status cannot be null');
         }
         $this->container['invoice_status'] = $invoice_status;
 
@@ -319,7 +330,7 @@ class ShipmentInvoiceStatusInfo implements ModelInterface, \ArrayAccess, \JsonSe
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +341,7 @@ class ShipmentInvoiceStatusInfo implements ModelInterface, \ArrayAccess, \JsonSe
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +369,17 @@ class ShipmentInvoiceStatusInfo implements ModelInterface, \ArrayAccess, \JsonSe
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

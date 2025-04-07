@@ -3,7 +3,7 @@
 /**
  * DebtRecoveryEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'DebtRecoveryEvent';
+    protected static $openAPIModelName = 'DebtRecoveryEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'debt_recovery_type' => 'string',
         'recovery_amount' => '\SpApi\Model\finances\v0\Currency',
         'over_payment_credit' => '\SpApi\Model\finances\v0\Currency',
         'debt_recovery_item_list' => '\SpApi\Model\finances\v0\DebtRecoveryItem[]',
-        'charge_instrument_list' => '\SpApi\Model\finances\v0\ChargeInstrument[]'];
+        'charge_instrument_list' => '\SpApi\Model\finances\v0\ChargeInstrument[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'debt_recovery_type' => null,
         'recovery_amount' => null,
         'over_payment_credit' => null,
         'debt_recovery_item_list' => null,
-        'charge_instrument_list' => null];
+        'charge_instrument_list' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,11 +92,11 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'debt_recovery_type' => true,
-        'recovery_amount' => true,
-        'over_payment_credit' => true,
-        'debt_recovery_item_list' => true,
-        'charge_instrument_list' => true,
+        'debt_recovery_type' => false,
+        'recovery_amount' => false,
+        'over_payment_credit' => false,
+        'debt_recovery_item_list' => false,
+        'charge_instrument_list' => false,
     ];
 
     /**
@@ -109,7 +112,7 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'debt_recovery_type' => 'DebtRecoveryType',
         'recovery_amount' => 'RecoveryAmount',
         'over_payment_credit' => 'OverPaymentCredit',
@@ -122,7 +125,7 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'debt_recovery_type' => 'setDebtRecoveryType',
         'recovery_amount' => 'setRecoveryAmount',
         'over_payment_credit' => 'setOverPaymentCredit',
@@ -135,7 +138,7 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'debt_recovery_type' => 'getDebtRecoveryType',
         'recovery_amount' => 'getRecoveryAmount',
         'over_payment_credit' => 'getOverPaymentCredit',
@@ -145,14 +148,16 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -257,15 +274,17 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets debt_recovery_type.
+     *
+     * @return null|string
      */
-    public function getDebtRecoveryType(): ?string
+    public function getDebtRecoveryType()
     {
         return $this->container['debt_recovery_type'];
     }
@@ -274,18 +293,13 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets debt_recovery_type.
      *
      * @param null|string $debt_recovery_type The debt recovery type.  Possible values:  * DebtPayment  * DebtPaymentFailure  * DebtAdjustment
+     *
+     * @return self
      */
-    public function setDebtRecoveryType(?string $debt_recovery_type): self
+    public function setDebtRecoveryType($debt_recovery_type)
     {
         if (is_null($debt_recovery_type)) {
-            array_push($this->openAPINullablesSetToNull, 'debt_recovery_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('debt_recovery_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable debt_recovery_type cannot be null');
         }
         $this->container['debt_recovery_type'] = $debt_recovery_type;
 
@@ -294,8 +308,10 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets recovery_amount.
+     *
+     * @return null|Currency
      */
-    public function getRecoveryAmount(): ?Currency
+    public function getRecoveryAmount()
     {
         return $this->container['recovery_amount'];
     }
@@ -304,18 +320,13 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets recovery_amount.
      *
      * @param null|Currency $recovery_amount recovery_amount
+     *
+     * @return self
      */
-    public function setRecoveryAmount(?Currency $recovery_amount): self
+    public function setRecoveryAmount($recovery_amount)
     {
         if (is_null($recovery_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'recovery_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('recovery_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable recovery_amount cannot be null');
         }
         $this->container['recovery_amount'] = $recovery_amount;
 
@@ -324,8 +335,10 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets over_payment_credit.
+     *
+     * @return null|Currency
      */
-    public function getOverPaymentCredit(): ?Currency
+    public function getOverPaymentCredit()
     {
         return $this->container['over_payment_credit'];
     }
@@ -334,18 +347,13 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets over_payment_credit.
      *
      * @param null|Currency $over_payment_credit over_payment_credit
+     *
+     * @return self
      */
-    public function setOverPaymentCredit(?Currency $over_payment_credit): self
+    public function setOverPaymentCredit($over_payment_credit)
     {
         if (is_null($over_payment_credit)) {
-            array_push($this->openAPINullablesSetToNull, 'over_payment_credit');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('over_payment_credit', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable over_payment_credit cannot be null');
         }
         $this->container['over_payment_credit'] = $over_payment_credit;
 
@@ -354,8 +362,10 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets debt_recovery_item_list.
+     *
+     * @return null|DebtRecoveryItem[]
      */
-    public function getDebtRecoveryItemList(): ?array
+    public function getDebtRecoveryItemList()
     {
         return $this->container['debt_recovery_item_list'];
     }
@@ -363,19 +373,14 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Sets debt_recovery_item_list.
      *
-     * @param null|array $debt_recovery_item_list a list of debt recovery item information
+     * @param null|DebtRecoveryItem[] $debt_recovery_item_list a list of debt recovery item information
+     *
+     * @return self
      */
-    public function setDebtRecoveryItemList(?array $debt_recovery_item_list): self
+    public function setDebtRecoveryItemList($debt_recovery_item_list)
     {
         if (is_null($debt_recovery_item_list)) {
-            array_push($this->openAPINullablesSetToNull, 'debt_recovery_item_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('debt_recovery_item_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable debt_recovery_item_list cannot be null');
         }
         $this->container['debt_recovery_item_list'] = $debt_recovery_item_list;
 
@@ -384,8 +389,10 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets charge_instrument_list.
+     *
+     * @return null|ChargeInstrument[]
      */
-    public function getChargeInstrumentList(): ?array
+    public function getChargeInstrumentList()
     {
         return $this->container['charge_instrument_list'];
     }
@@ -393,19 +400,14 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Sets charge_instrument_list.
      *
-     * @param null|array $charge_instrument_list a list of payment instruments
+     * @param null|ChargeInstrument[] $charge_instrument_list a list of payment instruments
+     *
+     * @return self
      */
-    public function setChargeInstrumentList(?array $charge_instrument_list): self
+    public function setChargeInstrumentList($charge_instrument_list)
     {
         if (is_null($charge_instrument_list)) {
-            array_push($this->openAPINullablesSetToNull, 'charge_instrument_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('charge_instrument_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable charge_instrument_list cannot be null');
         }
         $this->container['charge_instrument_list'] = $charge_instrument_list;
 
@@ -430,7 +432,7 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -441,7 +443,7 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -469,15 +471,17 @@ class DebtRecoveryEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

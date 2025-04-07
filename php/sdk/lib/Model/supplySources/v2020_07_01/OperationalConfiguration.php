@@ -3,7 +3,7 @@
 /**
  * OperationalConfiguration.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\supplySources\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'OperationalConfiguration';
+    protected static $openAPIModelName = 'OperationalConfiguration';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'contact_details' => '\SpApi\Model\supplySources\v2020_07_01\ContactDetails',
         'throughput_config' => '\SpApi\Model\supplySources\v2020_07_01\ThroughputConfig',
         'operating_hours_by_day' => '\SpApi\Model\supplySources\v2020_07_01\OperatingHoursByDay',
-        'handling_time' => '\SpApi\Model\supplySources\v2020_07_01\Duration'];
+        'handling_time' => '\SpApi\Model\supplySources\v2020_07_01\Duration',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'contact_details' => null,
         'throughput_config' => null,
         'operating_hours_by_day' => null,
-        'handling_time' => null];
+        'handling_time' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,10 +90,10 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'contact_details' => true,
-        'throughput_config' => true,
-        'operating_hours_by_day' => true,
-        'handling_time' => true,
+        'contact_details' => false,
+        'throughput_config' => false,
+        'operating_hours_by_day' => false,
+        'handling_time' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'contact_details' => 'contactDetails',
         'throughput_config' => 'throughputConfig',
         'operating_hours_by_day' => 'operatingHoursByDay',
@@ -118,7 +121,7 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'contact_details' => 'setContactDetails',
         'throughput_config' => 'setThroughputConfig',
         'operating_hours_by_day' => 'setOperatingHoursByDay',
@@ -130,7 +133,7 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'contact_details' => 'getContactDetails',
         'throughput_config' => 'getThroughputConfig',
         'operating_hours_by_day' => 'getOperatingHoursByDay',
@@ -139,14 +142,16 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -250,15 +267,17 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets contact_details.
+     *
+     * @return null|ContactDetails
      */
-    public function getContactDetails(): ?ContactDetails
+    public function getContactDetails()
     {
         return $this->container['contact_details'];
     }
@@ -267,18 +286,13 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets contact_details.
      *
      * @param null|ContactDetails $contact_details contact_details
+     *
+     * @return self
      */
-    public function setContactDetails(?ContactDetails $contact_details): self
+    public function setContactDetails($contact_details)
     {
         if (is_null($contact_details)) {
-            array_push($this->openAPINullablesSetToNull, 'contact_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('contact_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable contact_details cannot be null');
         }
         $this->container['contact_details'] = $contact_details;
 
@@ -287,8 +301,10 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets throughput_config.
+     *
+     * @return null|ThroughputConfig
      */
-    public function getThroughputConfig(): ?ThroughputConfig
+    public function getThroughputConfig()
     {
         return $this->container['throughput_config'];
     }
@@ -297,18 +313,13 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets throughput_config.
      *
      * @param null|ThroughputConfig $throughput_config throughput_config
+     *
+     * @return self
      */
-    public function setThroughputConfig(?ThroughputConfig $throughput_config): self
+    public function setThroughputConfig($throughput_config)
     {
         if (is_null($throughput_config)) {
-            array_push($this->openAPINullablesSetToNull, 'throughput_config');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('throughput_config', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable throughput_config cannot be null');
         }
         $this->container['throughput_config'] = $throughput_config;
 
@@ -317,8 +328,10 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets operating_hours_by_day.
+     *
+     * @return null|OperatingHoursByDay
      */
-    public function getOperatingHoursByDay(): ?OperatingHoursByDay
+    public function getOperatingHoursByDay()
     {
         return $this->container['operating_hours_by_day'];
     }
@@ -327,18 +340,13 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets operating_hours_by_day.
      *
      * @param null|OperatingHoursByDay $operating_hours_by_day operating_hours_by_day
+     *
+     * @return self
      */
-    public function setOperatingHoursByDay(?OperatingHoursByDay $operating_hours_by_day): self
+    public function setOperatingHoursByDay($operating_hours_by_day)
     {
         if (is_null($operating_hours_by_day)) {
-            array_push($this->openAPINullablesSetToNull, 'operating_hours_by_day');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('operating_hours_by_day', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable operating_hours_by_day cannot be null');
         }
         $this->container['operating_hours_by_day'] = $operating_hours_by_day;
 
@@ -347,8 +355,10 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets handling_time.
+     *
+     * @return null|Duration
      */
-    public function getHandlingTime(): ?Duration
+    public function getHandlingTime()
     {
         return $this->container['handling_time'];
     }
@@ -357,18 +367,13 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets handling_time.
      *
      * @param null|Duration $handling_time handling_time
+     *
+     * @return self
      */
-    public function setHandlingTime(?Duration $handling_time): self
+    public function setHandlingTime($handling_time)
     {
         if (is_null($handling_time)) {
-            array_push($this->openAPINullablesSetToNull, 'handling_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('handling_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable handling_time cannot be null');
         }
         $this->container['handling_time'] = $handling_time;
 
@@ -393,7 +398,7 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -404,7 +409,7 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -432,15 +437,17 @@ class OperationalConfiguration implements ModelInterface, \ArrayAccess, \JsonSer
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

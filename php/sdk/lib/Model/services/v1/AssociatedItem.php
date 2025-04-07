@@ -3,7 +3,7 @@
 /**
  * AssociatedItem.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\services\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -57,22 +56,25 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'AssociatedItem';
+    protected static $openAPIModelName = 'AssociatedItem';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'asin' => 'string',
         'title' => 'string',
         'quantity' => 'int',
         'order_id' => 'string',
         'item_status' => 'string',
         'brand_name' => 'string',
-        'item_delivery' => '\SpApi\Model\services\v1\ItemDelivery'];
+        'item_delivery' => '\SpApi\Model\services\v1\ItemDelivery',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -83,14 +85,15 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'asin' => null,
         'title' => null,
         'quantity' => null,
         'order_id' => null,
         'item_status' => null,
         'brand_name' => null,
-        'item_delivery' => null];
+        'item_delivery' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -98,13 +101,13 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'asin' => true,
-        'title' => true,
-        'quantity' => true,
-        'order_id' => true,
-        'item_status' => true,
-        'brand_name' => true,
-        'item_delivery' => true,
+        'asin' => false,
+        'title' => false,
+        'quantity' => false,
+        'order_id' => false,
+        'item_status' => false,
+        'brand_name' => false,
+        'item_delivery' => false,
     ];
 
     /**
@@ -120,7 +123,7 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'asin' => 'asin',
         'title' => 'title',
         'quantity' => 'quantity',
@@ -135,7 +138,7 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'asin' => 'setAsin',
         'title' => 'setTitle',
         'quantity' => 'setQuantity',
@@ -150,7 +153,7 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'asin' => 'getAsin',
         'title' => 'getTitle',
         'quantity' => 'getQuantity',
@@ -162,14 +165,16 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -197,16 +202,20 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -230,32 +239,40 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -265,7 +282,7 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getItemStatusAllowableValues(): array
+    public function getItemStatusAllowableValues()
     {
         return [
             self::ITEM_STATUS_ACTIVE,
@@ -280,7 +297,7 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -310,15 +327,17 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
-    public function getAsin(): ?string
+    public function getAsin()
     {
         return $this->container['asin'];
     }
@@ -327,18 +346,13 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number (ASIN) of the item
+     *
+     * @return self
      */
-    public function setAsin(?string $asin): self
+    public function setAsin($asin)
     {
         if (is_null($asin)) {
-            array_push($this->openAPINullablesSetToNull, 'asin');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('asin', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable asin cannot be null');
         }
         $this->container['asin'] = $asin;
 
@@ -347,8 +361,10 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets title.
+     *
+     * @return null|string
      */
-    public function getTitle(): ?string
+    public function getTitle()
     {
         return $this->container['title'];
     }
@@ -357,18 +373,13 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets title.
      *
      * @param null|string $title the title of the item
+     *
+     * @return self
      */
-    public function setTitle(?string $title): self
+    public function setTitle($title)
     {
         if (is_null($title)) {
-            array_push($this->openAPINullablesSetToNull, 'title');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('title', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable title cannot be null');
         }
         $this->container['title'] = $title;
 
@@ -377,8 +388,10 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets quantity.
+     *
+     * @return null|int
      */
-    public function getQuantity(): ?int
+    public function getQuantity()
     {
         return $this->container['quantity'];
     }
@@ -387,18 +400,13 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets quantity.
      *
      * @param null|int $quantity the total number of items included in the order
+     *
+     * @return self
      */
-    public function setQuantity(?int $quantity): self
+    public function setQuantity($quantity)
     {
         if (is_null($quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable quantity cannot be null');
         }
         $this->container['quantity'] = $quantity;
 
@@ -407,8 +415,10 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets order_id.
+     *
+     * @return null|string
      */
-    public function getOrderId(): ?string
+    public function getOrderId()
     {
         return $this->container['order_id'];
     }
@@ -417,23 +427,18 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets order_id.
      *
      * @param null|string $order_id the Amazon-defined identifier for an order placed by the buyer, in 3-7-7 format
+     *
+     * @return self
      */
-    public function setOrderId(?string $order_id): self
+    public function setOrderId($order_id)
     {
         if (is_null($order_id)) {
-            array_push($this->openAPINullablesSetToNull, 'order_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('order_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable order_id cannot be null');
         }
-        if (!is_null($order_id) && (mb_strlen($order_id) > 20)) {
+        if (mb_strlen($order_id) > 20) {
             throw new \InvalidArgumentException('invalid length for $order_id when calling AssociatedItem., must be smaller than or equal to 20.');
         }
-        if (!is_null($order_id) && (mb_strlen($order_id) < 5)) {
+        if (mb_strlen($order_id) < 5) {
             throw new \InvalidArgumentException('invalid length for $order_id when calling AssociatedItem., must be bigger than or equal to 5.');
         }
 
@@ -444,8 +449,10 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets item_status.
+     *
+     * @return null|string
      */
-    public function getItemStatus(): ?string
+    public function getItemStatus()
     {
         return $this->container['item_status'];
     }
@@ -454,21 +461,16 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets item_status.
      *
      * @param null|string $item_status the status of the item
+     *
+     * @return self
      */
-    public function setItemStatus(?string $item_status): self
+    public function setItemStatus($item_status)
     {
         if (is_null($item_status)) {
-            array_push($this->openAPINullablesSetToNull, 'item_status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('item_status', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable item_status cannot be null');
         }
         $allowedValues = $this->getItemStatusAllowableValues();
-        if (!is_null($item_status) && !in_array($item_status, $allowedValues, true)) {
+        if (!in_array($item_status, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'item_status', must be one of '%s'",
@@ -484,8 +486,10 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets brand_name.
+     *
+     * @return null|string
      */
-    public function getBrandName(): ?string
+    public function getBrandName()
     {
         return $this->container['brand_name'];
     }
@@ -494,18 +498,13 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets brand_name.
      *
      * @param null|string $brand_name the brand name of the item
+     *
+     * @return self
      */
-    public function setBrandName(?string $brand_name): self
+    public function setBrandName($brand_name)
     {
         if (is_null($brand_name)) {
-            array_push($this->openAPINullablesSetToNull, 'brand_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('brand_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable brand_name cannot be null');
         }
         $this->container['brand_name'] = $brand_name;
 
@@ -514,8 +513,10 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets item_delivery.
+     *
+     * @return null|ItemDelivery
      */
-    public function getItemDelivery(): ?ItemDelivery
+    public function getItemDelivery()
     {
         return $this->container['item_delivery'];
     }
@@ -524,18 +525,13 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets item_delivery.
      *
      * @param null|ItemDelivery $item_delivery item_delivery
+     *
+     * @return self
      */
-    public function setItemDelivery(?ItemDelivery $item_delivery): self
+    public function setItemDelivery($item_delivery)
     {
         if (is_null($item_delivery)) {
-            array_push($this->openAPINullablesSetToNull, 'item_delivery');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('item_delivery', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable item_delivery cannot be null');
         }
         $this->container['item_delivery'] = $item_delivery;
 
@@ -560,7 +556,7 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -571,7 +567,7 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -599,15 +595,17 @@ class AssociatedItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

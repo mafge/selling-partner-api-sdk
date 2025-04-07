@@ -3,7 +3,7 @@
 /**
  * BusinessHours.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\orders\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -60,17 +59,20 @@ class BusinessHours implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'BusinessHours';
+    protected static $openAPIModelName = 'BusinessHours';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'day_of_week' => 'string',
-        'open_intervals' => '\SpApi\Model\orders\v0\OpenInterval[]'];
+        'open_intervals' => '\SpApi\Model\orders\v0\OpenInterval[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -81,9 +83,10 @@ class BusinessHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'day_of_week' => null,
-        'open_intervals' => null];
+        'open_intervals' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -91,8 +94,8 @@ class BusinessHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'day_of_week' => true,
-        'open_intervals' => true,
+        'day_of_week' => false,
+        'open_intervals' => false,
     ];
 
     /**
@@ -108,7 +111,7 @@ class BusinessHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'day_of_week' => 'DayOfWeek',
         'open_intervals' => 'OpenIntervals',
     ];
@@ -118,7 +121,7 @@ class BusinessHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'day_of_week' => 'setDayOfWeek',
         'open_intervals' => 'setOpenIntervals',
     ];
@@ -128,21 +131,23 @@ class BusinessHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'day_of_week' => 'getDayOfWeek',
         'open_intervals' => 'getOpenIntervals',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -165,16 +170,20 @@ class BusinessHours implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -198,32 +207,40 @@ class BusinessHours implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -233,7 +250,7 @@ class BusinessHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getDayOfWeekAllowableValues(): array
+    public function getDayOfWeekAllowableValues()
     {
         return [
             self::DAY_OF_WEEK_SUN,
@@ -251,7 +268,7 @@ class BusinessHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -273,15 +290,17 @@ class BusinessHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets day_of_week.
+     *
+     * @return null|string
      */
-    public function getDayOfWeek(): ?string
+    public function getDayOfWeek()
     {
         return $this->container['day_of_week'];
     }
@@ -290,21 +309,16 @@ class BusinessHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets day_of_week.
      *
      * @param null|string $day_of_week day of the week
+     *
+     * @return self
      */
-    public function setDayOfWeek(?string $day_of_week): self
+    public function setDayOfWeek($day_of_week)
     {
         if (is_null($day_of_week)) {
-            array_push($this->openAPINullablesSetToNull, 'day_of_week');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('day_of_week', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable day_of_week cannot be null');
         }
         $allowedValues = $this->getDayOfWeekAllowableValues();
-        if (!is_null($day_of_week) && !in_array($day_of_week, $allowedValues, true)) {
+        if (!in_array($day_of_week, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'day_of_week', must be one of '%s'",
@@ -320,8 +334,10 @@ class BusinessHours implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets open_intervals.
+     *
+     * @return null|OpenInterval[]
      */
-    public function getOpenIntervals(): ?array
+    public function getOpenIntervals()
     {
         return $this->container['open_intervals'];
     }
@@ -329,19 +345,14 @@ class BusinessHours implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets open_intervals.
      *
-     * @param null|array $open_intervals time window during the day when the business is open
+     * @param null|OpenInterval[] $open_intervals time window during the day when the business is open
+     *
+     * @return self
      */
-    public function setOpenIntervals(?array $open_intervals): self
+    public function setOpenIntervals($open_intervals)
     {
         if (is_null($open_intervals)) {
-            array_push($this->openAPINullablesSetToNull, 'open_intervals');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('open_intervals', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable open_intervals cannot be null');
         }
         $this->container['open_intervals'] = $open_intervals;
 
@@ -366,7 +377,7 @@ class BusinessHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -377,7 +388,7 @@ class BusinessHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -405,15 +416,17 @@ class BusinessHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

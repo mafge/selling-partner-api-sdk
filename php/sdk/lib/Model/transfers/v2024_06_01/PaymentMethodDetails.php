@@ -3,7 +3,7 @@
 /**
  * PaymentMethodDetails.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\transfers\v2024_06_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,22 +51,25 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'PaymentMethodDetails';
+    protected static $openAPIModelName = 'PaymentMethodDetails';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'account_holder_name' => 'string',
         'payment_method_id' => 'string',
         'tail' => 'string',
         'expiry_date' => '\SpApi\Model\transfers\v2024_06_01\ExpiryDate',
         'country_code' => 'string',
         'payment_method_type' => '\SpApi\Model\transfers\v2024_06_01\PaymentMethodType',
-        'assignment_type' => '\SpApi\Model\transfers\v2024_06_01\AssignmentType'];
+        'assignment_type' => '\SpApi\Model\transfers\v2024_06_01\AssignmentType',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -78,14 +80,15 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'account_holder_name' => null,
         'payment_method_id' => null,
         'tail' => null,
         'expiry_date' => null,
         'country_code' => null,
         'payment_method_type' => null,
-        'assignment_type' => null];
+        'assignment_type' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -93,13 +96,13 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'account_holder_name' => true,
-        'payment_method_id' => true,
-        'tail' => true,
-        'expiry_date' => true,
-        'country_code' => true,
-        'payment_method_type' => true,
-        'assignment_type' => true,
+        'account_holder_name' => false,
+        'payment_method_id' => false,
+        'tail' => false,
+        'expiry_date' => false,
+        'country_code' => false,
+        'payment_method_type' => false,
+        'assignment_type' => false,
     ];
 
     /**
@@ -115,7 +118,7 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'account_holder_name' => 'accountHolderName',
         'payment_method_id' => 'paymentMethodId',
         'tail' => 'tail',
@@ -130,7 +133,7 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'account_holder_name' => 'setAccountHolderName',
         'payment_method_id' => 'setPaymentMethodId',
         'tail' => 'setTail',
@@ -145,7 +148,7 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'account_holder_name' => 'getAccountHolderName',
         'payment_method_id' => 'getPaymentMethodId',
         'tail' => 'getTail',
@@ -157,14 +160,16 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -192,16 +197,20 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -225,32 +234,40 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -260,7 +277,7 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -271,15 +288,17 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets account_holder_name.
+     *
+     * @return null|string
      */
-    public function getAccountHolderName(): ?string
+    public function getAccountHolderName()
     {
         return $this->container['account_holder_name'];
     }
@@ -288,18 +307,13 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets account_holder_name.
      *
      * @param null|string $account_holder_name the name of the account holder who is registered for the payment method
+     *
+     * @return self
      */
-    public function setAccountHolderName(?string $account_holder_name): self
+    public function setAccountHolderName($account_holder_name)
     {
         if (is_null($account_holder_name)) {
-            array_push($this->openAPINullablesSetToNull, 'account_holder_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('account_holder_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable account_holder_name cannot be null');
         }
         $this->container['account_holder_name'] = $account_holder_name;
 
@@ -308,8 +322,10 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets payment_method_id.
+     *
+     * @return null|string
      */
-    public function getPaymentMethodId(): ?string
+    public function getPaymentMethodId()
     {
         return $this->container['payment_method_id'];
     }
@@ -318,18 +334,13 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets payment_method_id.
      *
      * @param null|string $payment_method_id the payment method identifier
+     *
+     * @return self
      */
-    public function setPaymentMethodId(?string $payment_method_id): self
+    public function setPaymentMethodId($payment_method_id)
     {
         if (is_null($payment_method_id)) {
-            array_push($this->openAPINullablesSetToNull, 'payment_method_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('payment_method_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable payment_method_id cannot be null');
         }
         $this->container['payment_method_id'] = $payment_method_id;
 
@@ -338,8 +349,10 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets tail.
+     *
+     * @return null|string
      */
-    public function getTail(): ?string
+    public function getTail()
     {
         return $this->container['tail'];
     }
@@ -348,18 +361,13 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets tail.
      *
      * @param null|string $tail the last three or four digits of the payment method
+     *
+     * @return self
      */
-    public function setTail(?string $tail): self
+    public function setTail($tail)
     {
         if (is_null($tail)) {
-            array_push($this->openAPINullablesSetToNull, 'tail');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tail', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tail cannot be null');
         }
         $this->container['tail'] = $tail;
 
@@ -368,8 +376,10 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets expiry_date.
+     *
+     * @return null|ExpiryDate
      */
-    public function getExpiryDate(): ?ExpiryDate
+    public function getExpiryDate()
     {
         return $this->container['expiry_date'];
     }
@@ -378,18 +388,13 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets expiry_date.
      *
      * @param null|ExpiryDate $expiry_date expiry_date
+     *
+     * @return self
      */
-    public function setExpiryDate(?ExpiryDate $expiry_date): self
+    public function setExpiryDate($expiry_date)
     {
         if (is_null($expiry_date)) {
-            array_push($this->openAPINullablesSetToNull, 'expiry_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expiry_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable expiry_date cannot be null');
         }
         $this->container['expiry_date'] = $expiry_date;
 
@@ -398,8 +403,10 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets country_code.
+     *
+     * @return null|string
      */
-    public function getCountryCode(): ?string
+    public function getCountryCode()
     {
         return $this->container['country_code'];
     }
@@ -408,18 +415,13 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets country_code.
      *
      * @param null|string $country_code The two-letter country code in ISO 3166-1 alpha-2 format. For payment methods in the `card` category, the code is for the country where the card was issued. For payment methods in the `bank account` category, the code is for the country where the account is located.
+     *
+     * @return self
      */
-    public function setCountryCode(?string $country_code): self
+    public function setCountryCode($country_code)
     {
         if (is_null($country_code)) {
-            array_push($this->openAPINullablesSetToNull, 'country_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('country_code', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable country_code cannot be null');
         }
         $this->container['country_code'] = $country_code;
 
@@ -428,8 +430,10 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets payment_method_type.
+     *
+     * @return null|PaymentMethodType
      */
-    public function getPaymentMethodType(): ?string
+    public function getPaymentMethodType()
     {
         return $this->container['payment_method_type'];
     }
@@ -437,19 +441,14 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Sets payment_method_type.
      *
-     * @param null|string $payment_method_type payment_method_type
+     * @param null|PaymentMethodType $payment_method_type payment_method_type
+     *
+     * @return self
      */
-    public function setPaymentMethodType(?string $payment_method_type): self
+    public function setPaymentMethodType($payment_method_type)
     {
         if (is_null($payment_method_type)) {
-            array_push($this->openAPINullablesSetToNull, 'payment_method_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('payment_method_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable payment_method_type cannot be null');
         }
         $this->container['payment_method_type'] = $payment_method_type;
 
@@ -458,8 +457,10 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets assignment_type.
+     *
+     * @return null|AssignmentType
      */
-    public function getAssignmentType(): ?string
+    public function getAssignmentType()
     {
         return $this->container['assignment_type'];
     }
@@ -467,19 +468,14 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Sets assignment_type.
      *
-     * @param null|string $assignment_type assignment_type
+     * @param null|AssignmentType $assignment_type assignment_type
+     *
+     * @return self
      */
-    public function setAssignmentType(?string $assignment_type): self
+    public function setAssignmentType($assignment_type)
     {
         if (is_null($assignment_type)) {
-            array_push($this->openAPINullablesSetToNull, 'assignment_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('assignment_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable assignment_type cannot be null');
         }
         $this->container['assignment_type'] = $assignment_type;
 
@@ -504,7 +500,7 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -515,7 +511,7 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -543,15 +539,17 @@ class PaymentMethodDetails implements ModelInterface, \ArrayAccess, \JsonSeriali
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

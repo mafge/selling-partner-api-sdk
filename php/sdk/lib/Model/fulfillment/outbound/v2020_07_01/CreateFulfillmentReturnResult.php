@@ -3,7 +3,7 @@
 /**
  * CreateFulfillmentReturnResult.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class CreateFulfillmentReturnResult implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CreateFulfillmentReturnResult';
+    protected static $openAPIModelName = 'CreateFulfillmentReturnResult';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'return_items' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\ReturnItem[]',
         'invalid_return_items' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\InvalidReturnItem[]',
-        'return_authorizations' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\ReturnAuthorization[]'];
+        'return_authorizations' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\ReturnAuthorization[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class CreateFulfillmentReturnResult implements ModelInterface, \ArrayAccess, \Js
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'return_items' => null,
         'invalid_return_items' => null,
-        'return_authorizations' => null];
+        'return_authorizations' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class CreateFulfillmentReturnResult implements ModelInterface, \ArrayAccess, \Js
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'return_items' => true,
-        'invalid_return_items' => true,
-        'return_authorizations' => true,
+        'return_items' => false,
+        'invalid_return_items' => false,
+        'return_authorizations' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, \ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'return_items' => 'returnItems',
         'invalid_return_items' => 'invalidReturnItems',
         'return_authorizations' => 'returnAuthorizations',
@@ -114,7 +117,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, \ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'return_items' => 'setReturnItems',
         'invalid_return_items' => 'setInvalidReturnItems',
         'return_authorizations' => 'setReturnAuthorizations',
@@ -125,7 +128,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, \ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'return_items' => 'getReturnItems',
         'invalid_return_items' => 'getInvalidReturnItems',
         'return_authorizations' => 'getReturnAuthorizations',
@@ -133,14 +136,16 @@ class CreateFulfillmentReturnResult implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class CreateFulfillmentReturnResult implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class CreateFulfillmentReturnResult implements ModelInterface, \ArrayAccess, \Js
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, \ArrayAccess, \Js
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -243,15 +260,17 @@ class CreateFulfillmentReturnResult implements ModelInterface, \ArrayAccess, \Js
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets return_items.
+     *
+     * @return null|ReturnItem[]
      */
-    public function getReturnItems(): ?array
+    public function getReturnItems()
     {
         return $this->container['return_items'];
     }
@@ -259,19 +278,14 @@ class CreateFulfillmentReturnResult implements ModelInterface, \ArrayAccess, \Js
     /**
      * Sets return_items.
      *
-     * @param null|array $return_items An array of items that Amazon accepted for return. Returns empty if no items were accepted for return.
+     * @param null|ReturnItem[] $return_items An array of items that Amazon accepted for return. Returns empty if no items were accepted for return.
+     *
+     * @return self
      */
-    public function setReturnItems(?array $return_items): self
+    public function setReturnItems($return_items)
     {
         if (is_null($return_items)) {
-            array_push($this->openAPINullablesSetToNull, 'return_items');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('return_items', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable return_items cannot be null');
         }
         $this->container['return_items'] = $return_items;
 
@@ -280,8 +294,10 @@ class CreateFulfillmentReturnResult implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Gets invalid_return_items.
+     *
+     * @return null|InvalidReturnItem[]
      */
-    public function getInvalidReturnItems(): ?array
+    public function getInvalidReturnItems()
     {
         return $this->container['invalid_return_items'];
     }
@@ -289,19 +305,14 @@ class CreateFulfillmentReturnResult implements ModelInterface, \ArrayAccess, \Js
     /**
      * Sets invalid_return_items.
      *
-     * @param null|array $invalid_return_items an array of invalid return item information
+     * @param null|InvalidReturnItem[] $invalid_return_items an array of invalid return item information
+     *
+     * @return self
      */
-    public function setInvalidReturnItems(?array $invalid_return_items): self
+    public function setInvalidReturnItems($invalid_return_items)
     {
         if (is_null($invalid_return_items)) {
-            array_push($this->openAPINullablesSetToNull, 'invalid_return_items');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('invalid_return_items', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable invalid_return_items cannot be null');
         }
         $this->container['invalid_return_items'] = $invalid_return_items;
 
@@ -310,8 +321,10 @@ class CreateFulfillmentReturnResult implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Gets return_authorizations.
+     *
+     * @return null|ReturnAuthorization[]
      */
-    public function getReturnAuthorizations(): ?array
+    public function getReturnAuthorizations()
     {
         return $this->container['return_authorizations'];
     }
@@ -319,19 +332,14 @@ class CreateFulfillmentReturnResult implements ModelInterface, \ArrayAccess, \Js
     /**
      * Sets return_authorizations.
      *
-     * @param null|array $return_authorizations an array of return authorization information
+     * @param null|ReturnAuthorization[] $return_authorizations an array of return authorization information
+     *
+     * @return self
      */
-    public function setReturnAuthorizations(?array $return_authorizations): self
+    public function setReturnAuthorizations($return_authorizations)
     {
         if (is_null($return_authorizations)) {
-            array_push($this->openAPINullablesSetToNull, 'return_authorizations');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('return_authorizations', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable return_authorizations cannot be null');
         }
         $this->container['return_authorizations'] = $return_authorizations;
 
@@ -356,7 +364,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, \ArrayAccess, \Js
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -367,7 +375,7 @@ class CreateFulfillmentReturnResult implements ModelInterface, \ArrayAccess, \Js
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -395,15 +403,17 @@ class CreateFulfillmentReturnResult implements ModelInterface, \ArrayAccess, \Js
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

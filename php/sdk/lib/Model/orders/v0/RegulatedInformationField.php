@@ -3,7 +3,7 @@
 /**
  * RegulatedInformationField.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\orders\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -55,19 +54,22 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'RegulatedInformationField';
+    protected static $openAPIModelName = 'RegulatedInformationField';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'field_id' => 'string',
         'field_label' => 'string',
         'field_type' => 'string',
-        'field_value' => 'string'];
+        'field_value' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -78,11 +80,12 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'field_id' => null,
         'field_label' => null,
         'field_type' => null,
-        'field_value' => null];
+        'field_value' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -109,7 +112,7 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'field_id' => 'FieldId',
         'field_label' => 'FieldLabel',
         'field_type' => 'FieldType',
@@ -121,7 +124,7 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'field_id' => 'setFieldId',
         'field_label' => 'setFieldLabel',
         'field_type' => 'setFieldType',
@@ -133,7 +136,7 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'field_id' => 'getFieldId',
         'field_label' => 'getFieldLabel',
         'field_type' => 'getFieldType',
@@ -142,14 +145,16 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -174,16 +179,20 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -207,32 +216,40 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -242,7 +259,7 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return string[]
      */
-    public function getFieldTypeAllowableValues(): array
+    public function getFieldTypeAllowableValues()
     {
         return [
             self::FIELD_TYPE_TEXT,
@@ -255,7 +272,7 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -290,15 +307,17 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets field_id.
+     *
+     * @return string
      */
-    public function getFieldId(): string
+    public function getFieldId()
     {
         return $this->container['field_id'];
     }
@@ -307,8 +326,10 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets field_id.
      *
      * @param string $field_id the unique identifier of the field
+     *
+     * @return self
      */
-    public function setFieldId(string $field_id): self
+    public function setFieldId($field_id)
     {
         if (is_null($field_id)) {
             throw new \InvalidArgumentException('non-nullable field_id cannot be null');
@@ -320,8 +341,10 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets field_label.
+     *
+     * @return string
      */
-    public function getFieldLabel(): string
+    public function getFieldLabel()
     {
         return $this->container['field_label'];
     }
@@ -330,8 +353,10 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets field_label.
      *
      * @param string $field_label the name of the field
+     *
+     * @return self
      */
-    public function setFieldLabel(string $field_label): self
+    public function setFieldLabel($field_label)
     {
         if (is_null($field_label)) {
             throw new \InvalidArgumentException('non-nullable field_label cannot be null');
@@ -343,8 +368,10 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets field_type.
+     *
+     * @return string
      */
-    public function getFieldType(): string
+    public function getFieldType()
     {
         return $this->container['field_type'];
     }
@@ -353,8 +380,10 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets field_type.
      *
      * @param string $field_type the type of field
+     *
+     * @return self
      */
-    public function setFieldType(string $field_type): self
+    public function setFieldType($field_type)
     {
         if (is_null($field_type)) {
             throw new \InvalidArgumentException('non-nullable field_type cannot be null');
@@ -376,8 +405,10 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets field_value.
+     *
+     * @return string
      */
-    public function getFieldValue(): string
+    public function getFieldValue()
     {
         return $this->container['field_value'];
     }
@@ -386,8 +417,10 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets field_value.
      *
      * @param string $field_value The content of the field as collected in regulatory form. Note that `FileAttachment` type fields contain a URL where you can download the attachment.
+     *
+     * @return self
      */
-    public function setFieldValue(string $field_value): self
+    public function setFieldValue($field_value)
     {
         if (is_null($field_value)) {
             throw new \InvalidArgumentException('non-nullable field_value cannot be null');
@@ -415,7 +448,7 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -426,7 +459,7 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -454,15 +487,17 @@ class RegulatedInformationField implements ModelInterface, \ArrayAccess, \JsonSe
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

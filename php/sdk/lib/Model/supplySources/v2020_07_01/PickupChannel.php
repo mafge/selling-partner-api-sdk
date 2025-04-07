@@ -3,7 +3,7 @@
 /**
  * PickupChannel.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\supplySources\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'PickupChannel';
+    protected static $openAPIModelName = 'PickupChannel';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'inventory_hold_period' => '\SpApi\Model\supplySources\v2020_07_01\Duration',
         'is_supported' => 'bool',
         'operational_configuration' => '\SpApi\Model\supplySources\v2020_07_01\OperationalConfiguration',
         'in_store_pickup_configuration' => '\SpApi\Model\supplySources\v2020_07_01\InStorePickupConfiguration',
-        'curbside_pickup_configuration' => '\SpApi\Model\supplySources\v2020_07_01\CurbsidePickupConfiguration'];
+        'curbside_pickup_configuration' => '\SpApi\Model\supplySources\v2020_07_01\CurbsidePickupConfiguration',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'inventory_hold_period' => null,
         'is_supported' => null,
         'operational_configuration' => null,
         'in_store_pickup_configuration' => null,
-        'curbside_pickup_configuration' => null];
+        'curbside_pickup_configuration' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,11 +92,11 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'inventory_hold_period' => true,
-        'is_supported' => true,
-        'operational_configuration' => true,
-        'in_store_pickup_configuration' => true,
-        'curbside_pickup_configuration' => true,
+        'inventory_hold_period' => false,
+        'is_supported' => false,
+        'operational_configuration' => false,
+        'in_store_pickup_configuration' => false,
+        'curbside_pickup_configuration' => false,
     ];
 
     /**
@@ -109,7 +112,7 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'inventory_hold_period' => 'inventoryHoldPeriod',
         'is_supported' => 'isSupported',
         'operational_configuration' => 'operationalConfiguration',
@@ -122,7 +125,7 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'inventory_hold_period' => 'setInventoryHoldPeriod',
         'is_supported' => 'setIsSupported',
         'operational_configuration' => 'setOperationalConfiguration',
@@ -135,7 +138,7 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'inventory_hold_period' => 'getInventoryHoldPeriod',
         'is_supported' => 'getIsSupported',
         'operational_configuration' => 'getOperationalConfiguration',
@@ -145,14 +148,16 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -257,15 +274,17 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets inventory_hold_period.
+     *
+     * @return null|Duration
      */
-    public function getInventoryHoldPeriod(): ?Duration
+    public function getInventoryHoldPeriod()
     {
         return $this->container['inventory_hold_period'];
     }
@@ -274,18 +293,13 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets inventory_hold_period.
      *
      * @param null|Duration $inventory_hold_period inventory_hold_period
+     *
+     * @return self
      */
-    public function setInventoryHoldPeriod(?Duration $inventory_hold_period): self
+    public function setInventoryHoldPeriod($inventory_hold_period)
     {
         if (is_null($inventory_hold_period)) {
-            array_push($this->openAPINullablesSetToNull, 'inventory_hold_period');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('inventory_hold_period', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable inventory_hold_period cannot be null');
         }
         $this->container['inventory_hold_period'] = $inventory_hold_period;
 
@@ -294,8 +308,10 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets is_supported.
+     *
+     * @return null|bool
      */
-    public function getIsSupported(): ?bool
+    public function getIsSupported()
     {
         return $this->container['is_supported'];
     }
@@ -304,18 +320,13 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets is_supported.
      *
      * @param null|bool $is_supported is_supported
+     *
+     * @return self
      */
-    public function setIsSupported(?bool $is_supported): self
+    public function setIsSupported($is_supported)
     {
         if (is_null($is_supported)) {
-            array_push($this->openAPINullablesSetToNull, 'is_supported');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_supported', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_supported cannot be null');
         }
         $this->container['is_supported'] = $is_supported;
 
@@ -324,8 +335,10 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets operational_configuration.
+     *
+     * @return null|OperationalConfiguration
      */
-    public function getOperationalConfiguration(): ?OperationalConfiguration
+    public function getOperationalConfiguration()
     {
         return $this->container['operational_configuration'];
     }
@@ -334,18 +347,13 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets operational_configuration.
      *
      * @param null|OperationalConfiguration $operational_configuration operational_configuration
+     *
+     * @return self
      */
-    public function setOperationalConfiguration(?OperationalConfiguration $operational_configuration): self
+    public function setOperationalConfiguration($operational_configuration)
     {
         if (is_null($operational_configuration)) {
-            array_push($this->openAPINullablesSetToNull, 'operational_configuration');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('operational_configuration', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable operational_configuration cannot be null');
         }
         $this->container['operational_configuration'] = $operational_configuration;
 
@@ -354,8 +362,10 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets in_store_pickup_configuration.
+     *
+     * @return null|InStorePickupConfiguration
      */
-    public function getInStorePickupConfiguration(): ?InStorePickupConfiguration
+    public function getInStorePickupConfiguration()
     {
         return $this->container['in_store_pickup_configuration'];
     }
@@ -364,18 +374,13 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets in_store_pickup_configuration.
      *
      * @param null|InStorePickupConfiguration $in_store_pickup_configuration in_store_pickup_configuration
+     *
+     * @return self
      */
-    public function setInStorePickupConfiguration(?InStorePickupConfiguration $in_store_pickup_configuration): self
+    public function setInStorePickupConfiguration($in_store_pickup_configuration)
     {
         if (is_null($in_store_pickup_configuration)) {
-            array_push($this->openAPINullablesSetToNull, 'in_store_pickup_configuration');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('in_store_pickup_configuration', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable in_store_pickup_configuration cannot be null');
         }
         $this->container['in_store_pickup_configuration'] = $in_store_pickup_configuration;
 
@@ -384,8 +389,10 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets curbside_pickup_configuration.
+     *
+     * @return null|CurbsidePickupConfiguration
      */
-    public function getCurbsidePickupConfiguration(): ?CurbsidePickupConfiguration
+    public function getCurbsidePickupConfiguration()
     {
         return $this->container['curbside_pickup_configuration'];
     }
@@ -394,18 +401,13 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets curbside_pickup_configuration.
      *
      * @param null|CurbsidePickupConfiguration $curbside_pickup_configuration curbside_pickup_configuration
+     *
+     * @return self
      */
-    public function setCurbsidePickupConfiguration(?CurbsidePickupConfiguration $curbside_pickup_configuration): self
+    public function setCurbsidePickupConfiguration($curbside_pickup_configuration)
     {
         if (is_null($curbside_pickup_configuration)) {
-            array_push($this->openAPINullablesSetToNull, 'curbside_pickup_configuration');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('curbside_pickup_configuration', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable curbside_pickup_configuration cannot be null');
         }
         $this->container['curbside_pickup_configuration'] = $curbside_pickup_configuration;
 
@@ -430,7 +432,7 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -441,7 +443,7 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -469,15 +471,17 @@ class PickupChannel implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

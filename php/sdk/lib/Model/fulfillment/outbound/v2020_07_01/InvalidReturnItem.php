@@ -3,7 +3,7 @@
 /**
  * InvalidReturnItem.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class InvalidReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'InvalidReturnItem';
+    protected static $openAPIModelName = 'InvalidReturnItem';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'seller_return_item_id' => 'string',
         'seller_fulfillment_order_item_id' => 'string',
-        'invalid_item_reason' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\InvalidItemReason'];
+        'invalid_item_reason' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\InvalidItemReason',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class InvalidReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'seller_return_item_id' => null,
         'seller_fulfillment_order_item_id' => null,
-        'invalid_item_reason' => null];
+        'invalid_item_reason' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -103,7 +106,7 @@ class InvalidReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'seller_return_item_id' => 'sellerReturnItemId',
         'seller_fulfillment_order_item_id' => 'sellerFulfillmentOrderItemId',
         'invalid_item_reason' => 'invalidItemReason',
@@ -114,7 +117,7 @@ class InvalidReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'seller_return_item_id' => 'setSellerReturnItemId',
         'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
         'invalid_item_reason' => 'setInvalidItemReason',
@@ -125,7 +128,7 @@ class InvalidReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'seller_return_item_id' => 'getSellerReturnItemId',
         'seller_fulfillment_order_item_id' => 'getSellerFulfillmentOrderItemId',
         'invalid_item_reason' => 'getInvalidItemReason',
@@ -133,14 +136,16 @@ class InvalidReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class InvalidReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class InvalidReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class InvalidReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -255,15 +272,17 @@ class InvalidReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets seller_return_item_id.
+     *
+     * @return string
      */
-    public function getSellerReturnItemId(): string
+    public function getSellerReturnItemId()
     {
         return $this->container['seller_return_item_id'];
     }
@@ -272,8 +291,10 @@ class InvalidReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets seller_return_item_id.
      *
      * @param string $seller_return_item_id an identifier assigned by the seller to the return item
+     *
+     * @return self
      */
-    public function setSellerReturnItemId(string $seller_return_item_id): self
+    public function setSellerReturnItemId($seller_return_item_id)
     {
         if (is_null($seller_return_item_id)) {
             throw new \InvalidArgumentException('non-nullable seller_return_item_id cannot be null');
@@ -285,8 +306,10 @@ class InvalidReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets seller_fulfillment_order_item_id.
+     *
+     * @return string
      */
-    public function getSellerFulfillmentOrderItemId(): string
+    public function getSellerFulfillmentOrderItemId()
     {
         return $this->container['seller_fulfillment_order_item_id'];
     }
@@ -295,8 +318,10 @@ class InvalidReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets seller_fulfillment_order_item_id.
      *
      * @param string $seller_fulfillment_order_item_id the identifier assigned to the item by the seller when the fulfillment order was created
+     *
+     * @return self
      */
-    public function setSellerFulfillmentOrderItemId(string $seller_fulfillment_order_item_id): self
+    public function setSellerFulfillmentOrderItemId($seller_fulfillment_order_item_id)
     {
         if (is_null($seller_fulfillment_order_item_id)) {
             throw new \InvalidArgumentException('non-nullable seller_fulfillment_order_item_id cannot be null');
@@ -308,8 +333,10 @@ class InvalidReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets invalid_item_reason.
+     *
+     * @return InvalidItemReason
      */
-    public function getInvalidItemReason(): InvalidItemReason
+    public function getInvalidItemReason()
     {
         return $this->container['invalid_item_reason'];
     }
@@ -318,8 +345,10 @@ class InvalidReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets invalid_item_reason.
      *
      * @param InvalidItemReason $invalid_item_reason invalid_item_reason
+     *
+     * @return self
      */
-    public function setInvalidItemReason(InvalidItemReason $invalid_item_reason): self
+    public function setInvalidItemReason($invalid_item_reason)
     {
         if (is_null($invalid_item_reason)) {
             throw new \InvalidArgumentException('non-nullable invalid_item_reason cannot be null');
@@ -347,7 +376,7 @@ class InvalidReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -358,7 +387,7 @@ class InvalidReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -386,15 +415,17 @@ class InvalidReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializab
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

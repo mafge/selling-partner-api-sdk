@@ -3,7 +3,7 @@
 /**
  * InventoryDetails.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\awd\v2024_05_09;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class InventoryDetails implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'InventoryDetails';
+    protected static $openAPIModelName = 'InventoryDetails';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'available_distributable_quantity' => 'int',
         'replenishment_quantity' => 'int',
-        'reserved_distributable_quantity' => 'int'];
+        'reserved_distributable_quantity' => 'int',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class InventoryDetails implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'available_distributable_quantity' => 'int64',
         'replenishment_quantity' => 'int64',
-        'reserved_distributable_quantity' => 'int64'];
+        'reserved_distributable_quantity' => 'int64',
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class InventoryDetails implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'available_distributable_quantity' => true,
-        'replenishment_quantity' => true,
-        'reserved_distributable_quantity' => true,
+        'available_distributable_quantity' => false,
+        'replenishment_quantity' => false,
+        'reserved_distributable_quantity' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class InventoryDetails implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'available_distributable_quantity' => 'availableDistributableQuantity',
         'replenishment_quantity' => 'replenishmentQuantity',
         'reserved_distributable_quantity' => 'reservedDistributableQuantity',
@@ -114,7 +117,7 @@ class InventoryDetails implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'available_distributable_quantity' => 'setAvailableDistributableQuantity',
         'replenishment_quantity' => 'setReplenishmentQuantity',
         'reserved_distributable_quantity' => 'setReservedDistributableQuantity',
@@ -125,7 +128,7 @@ class InventoryDetails implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'available_distributable_quantity' => 'getAvailableDistributableQuantity',
         'replenishment_quantity' => 'getReplenishmentQuantity',
         'reserved_distributable_quantity' => 'getReservedDistributableQuantity',
@@ -133,14 +136,16 @@ class InventoryDetails implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class InventoryDetails implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class InventoryDetails implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class InventoryDetails implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -243,15 +260,17 @@ class InventoryDetails implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets available_distributable_quantity.
+     *
+     * @return null|int
      */
-    public function getAvailableDistributableQuantity(): ?int
+    public function getAvailableDistributableQuantity()
     {
         return $this->container['available_distributable_quantity'];
     }
@@ -260,18 +279,13 @@ class InventoryDetails implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets available_distributable_quantity.
      *
      * @param null|int $available_distributable_quantity quantity that is available for downstream channel replenishment
+     *
+     * @return self
      */
-    public function setAvailableDistributableQuantity(?int $available_distributable_quantity): self
+    public function setAvailableDistributableQuantity($available_distributable_quantity)
     {
         if (is_null($available_distributable_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'available_distributable_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('available_distributable_quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable available_distributable_quantity cannot be null');
         }
         $this->container['available_distributable_quantity'] = $available_distributable_quantity;
 
@@ -280,8 +294,10 @@ class InventoryDetails implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets replenishment_quantity.
+     *
+     * @return null|int
      */
-    public function getReplenishmentQuantity(): ?int
+    public function getReplenishmentQuantity()
     {
         return $this->container['replenishment_quantity'];
     }
@@ -290,18 +306,13 @@ class InventoryDetails implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets replenishment_quantity.
      *
      * @param null|int $replenishment_quantity quantity that is in transit from AWD and has not yet been received at FBA
+     *
+     * @return self
      */
-    public function setReplenishmentQuantity(?int $replenishment_quantity): self
+    public function setReplenishmentQuantity($replenishment_quantity)
     {
         if (is_null($replenishment_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'replenishment_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('replenishment_quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable replenishment_quantity cannot be null');
         }
         $this->container['replenishment_quantity'] = $replenishment_quantity;
 
@@ -310,8 +321,10 @@ class InventoryDetails implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets reserved_distributable_quantity.
+     *
+     * @return null|int
      */
-    public function getReservedDistributableQuantity(): ?int
+    public function getReservedDistributableQuantity()
     {
         return $this->container['reserved_distributable_quantity'];
     }
@@ -320,18 +333,13 @@ class InventoryDetails implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets reserved_distributable_quantity.
      *
      * @param null|int $reserved_distributable_quantity quantity that is reserved for a downstream channel replenishment order that is being prepared for shipment
+     *
+     * @return self
      */
-    public function setReservedDistributableQuantity(?int $reserved_distributable_quantity): self
+    public function setReservedDistributableQuantity($reserved_distributable_quantity)
     {
         if (is_null($reserved_distributable_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'reserved_distributable_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('reserved_distributable_quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable reserved_distributable_quantity cannot be null');
         }
         $this->container['reserved_distributable_quantity'] = $reserved_distributable_quantity;
 
@@ -356,7 +364,7 @@ class InventoryDetails implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -367,7 +375,7 @@ class InventoryDetails implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -395,15 +403,17 @@ class InventoryDetails implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

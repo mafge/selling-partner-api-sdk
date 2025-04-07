@@ -3,7 +3,7 @@
 /**
  * DropOffLocation.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -61,17 +60,20 @@ class DropOffLocation implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'DropOffLocation';
+    protected static $openAPIModelName = 'DropOffLocation';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'type' => 'string',
-        'attributes' => 'array<string,string>'];
+        'attributes' => 'array<string,string>',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -82,9 +84,10 @@ class DropOffLocation implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'type' => null,
-        'attributes' => null];
+        'attributes' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -93,7 +96,7 @@ class DropOffLocation implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'type' => false,
-        'attributes' => true,
+        'attributes' => false,
     ];
 
     /**
@@ -109,7 +112,7 @@ class DropOffLocation implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'type' => 'type',
         'attributes' => 'attributes',
     ];
@@ -119,7 +122,7 @@ class DropOffLocation implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'type' => 'setType',
         'attributes' => 'setAttributes',
     ];
@@ -129,21 +132,23 @@ class DropOffLocation implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'type' => 'getType',
         'attributes' => 'getAttributes',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -166,16 +171,20 @@ class DropOffLocation implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -199,32 +208,40 @@ class DropOffLocation implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -234,7 +251,7 @@ class DropOffLocation implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array
+    public function getTypeAllowableValues()
     {
         return [
             self::TYPE_FRONT_DOOR,
@@ -253,7 +270,7 @@ class DropOffLocation implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -278,15 +295,17 @@ class DropOffLocation implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets type.
+     *
+     * @return string
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->container['type'];
     }
@@ -295,8 +314,10 @@ class DropOffLocation implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets type.
      *
      * @param string $type specifies the preferred location to leave the package at the destination address
+     *
+     * @return self
      */
-    public function setType(string $type): self
+    public function setType($type)
     {
         if (is_null($type)) {
             throw new \InvalidArgumentException('non-nullable type cannot be null');
@@ -321,7 +342,7 @@ class DropOffLocation implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return null|array<string,string>
      */
-    public function getAttributes(): ?array
+    public function getAttributes()
     {
         return $this->container['attributes'];
     }
@@ -330,18 +351,13 @@ class DropOffLocation implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets attributes.
      *
      * @param null|array<string,string> $attributes Additional information about the drop-off location that can vary depending on the type of drop-off location specified in the `type` field. If the `type` is set to `FALLBACK_NEIGHBOR_DELIVERY`, the `attributes` object should include the exact keys `neighborName` and `houseNumber` to provide the name and house number of the designated neighbor.
+     *
+     * @return self
      */
-    public function setAttributes(?array $attributes): self
+    public function setAttributes($attributes)
     {
         if (is_null($attributes)) {
-            array_push($this->openAPINullablesSetToNull, 'attributes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('attributes', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable attributes cannot be null');
         }
         $this->container['attributes'] = $attributes;
 
@@ -366,7 +382,7 @@ class DropOffLocation implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -377,7 +393,7 @@ class DropOffLocation implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -405,15 +421,17 @@ class DropOffLocation implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

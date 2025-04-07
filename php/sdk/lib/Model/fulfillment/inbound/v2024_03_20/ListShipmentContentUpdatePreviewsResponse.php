@@ -3,7 +3,7 @@
 /**
  * ListShipmentContentUpdatePreviewsResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class ListShipmentContentUpdatePreviewsResponse implements ModelInterface, \Arra
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ListShipmentContentUpdatePreviewsResponse';
+    protected static $openAPIModelName = 'ListShipmentContentUpdatePreviewsResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'content_update_previews' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\ContentUpdatePreview[]',
-        'pagination' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Pagination'];
+        'pagination' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Pagination',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class ListShipmentContentUpdatePreviewsResponse implements ModelInterface, \Arra
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'content_update_previews' => null,
-        'pagination' => null];
+        'pagination' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -84,7 +87,7 @@ class ListShipmentContentUpdatePreviewsResponse implements ModelInterface, \Arra
      */
     protected static array $openAPINullables = [
         'content_update_previews' => false,
-        'pagination' => true,
+        'pagination' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class ListShipmentContentUpdatePreviewsResponse implements ModelInterface, \Arra
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'content_update_previews' => 'contentUpdatePreviews',
         'pagination' => 'pagination',
     ];
@@ -110,7 +113,7 @@ class ListShipmentContentUpdatePreviewsResponse implements ModelInterface, \Arra
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'content_update_previews' => 'setContentUpdatePreviews',
         'pagination' => 'setPagination',
     ];
@@ -120,21 +123,23 @@ class ListShipmentContentUpdatePreviewsResponse implements ModelInterface, \Arra
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'content_update_previews' => 'getContentUpdatePreviews',
         'pagination' => 'getPagination',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class ListShipmentContentUpdatePreviewsResponse implements ModelInterface, \Arra
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class ListShipmentContentUpdatePreviewsResponse implements ModelInterface, \Arra
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class ListShipmentContentUpdatePreviewsResponse implements ModelInterface, \Arra
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -242,15 +259,17 @@ class ListShipmentContentUpdatePreviewsResponse implements ModelInterface, \Arra
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets content_update_previews.
+     *
+     * @return ContentUpdatePreview[]
      */
-    public function getContentUpdatePreviews(): array
+    public function getContentUpdatePreviews()
     {
         return $this->container['content_update_previews'];
     }
@@ -258,9 +277,11 @@ class ListShipmentContentUpdatePreviewsResponse implements ModelInterface, \Arra
     /**
      * Sets content_update_previews.
      *
-     * @param array $content_update_previews a list of content update previews in a shipment
+     * @param ContentUpdatePreview[] $content_update_previews a list of content update previews in a shipment
+     *
+     * @return self
      */
-    public function setContentUpdatePreviews(array $content_update_previews): self
+    public function setContentUpdatePreviews($content_update_previews)
     {
         if (is_null($content_update_previews)) {
             throw new \InvalidArgumentException('non-nullable content_update_previews cannot be null');
@@ -272,8 +293,10 @@ class ListShipmentContentUpdatePreviewsResponse implements ModelInterface, \Arra
 
     /**
      * Gets pagination.
+     *
+     * @return null|Pagination
      */
-    public function getPagination(): ?Pagination
+    public function getPagination()
     {
         return $this->container['pagination'];
     }
@@ -282,18 +305,13 @@ class ListShipmentContentUpdatePreviewsResponse implements ModelInterface, \Arra
      * Sets pagination.
      *
      * @param null|Pagination $pagination pagination
+     *
+     * @return self
      */
-    public function setPagination(?Pagination $pagination): self
+    public function setPagination($pagination)
     {
         if (is_null($pagination)) {
-            array_push($this->openAPINullablesSetToNull, 'pagination');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('pagination', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable pagination cannot be null');
         }
         $this->container['pagination'] = $pagination;
 
@@ -318,7 +336,7 @@ class ListShipmentContentUpdatePreviewsResponse implements ModelInterface, \Arra
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -329,7 +347,7 @@ class ListShipmentContentUpdatePreviewsResponse implements ModelInterface, \Arra
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -357,15 +375,17 @@ class ListShipmentContentUpdatePreviewsResponse implements ModelInterface, \Arra
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

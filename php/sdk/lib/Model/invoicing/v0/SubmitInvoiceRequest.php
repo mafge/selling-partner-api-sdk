@@ -3,7 +3,7 @@
 /**
  * SubmitInvoiceRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\invoicing\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class SubmitInvoiceRequest implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'SubmitInvoiceRequest';
+    protected static $openAPIModelName = 'SubmitInvoiceRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'invoice_content' => 'string',
         'marketplace_id' => 'string',
-        'content_md5_value' => 'string'];
+        'content_md5_value' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class SubmitInvoiceRequest implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'invoice_content' => 'byte',
         'marketplace_id' => null,
-        'content_md5_value' => null];
+        'content_md5_value' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -86,7 +89,7 @@ class SubmitInvoiceRequest implements ModelInterface, \ArrayAccess, \JsonSeriali
      */
     protected static array $openAPINullables = [
         'invoice_content' => false,
-        'marketplace_id' => true,
+        'marketplace_id' => false,
         'content_md5_value' => false,
     ];
 
@@ -103,7 +106,7 @@ class SubmitInvoiceRequest implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'invoice_content' => 'InvoiceContent',
         'marketplace_id' => 'MarketplaceId',
         'content_md5_value' => 'ContentMD5Value',
@@ -114,7 +117,7 @@ class SubmitInvoiceRequest implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'invoice_content' => 'setInvoiceContent',
         'marketplace_id' => 'setMarketplaceId',
         'content_md5_value' => 'setContentMd5Value',
@@ -125,7 +128,7 @@ class SubmitInvoiceRequest implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'invoice_content' => 'getInvoiceContent',
         'marketplace_id' => 'getMarketplaceId',
         'content_md5_value' => 'getContentMd5Value',
@@ -133,14 +136,16 @@ class SubmitInvoiceRequest implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class SubmitInvoiceRequest implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class SubmitInvoiceRequest implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class SubmitInvoiceRequest implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -252,15 +269,17 @@ class SubmitInvoiceRequest implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets invoice_content.
+     *
+     * @return string
      */
-    public function getInvoiceContent(): string
+    public function getInvoiceContent()
     {
         return $this->container['invoice_content'];
     }
@@ -269,8 +288,10 @@ class SubmitInvoiceRequest implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets invoice_content.
      *
      * @param string $invoice_content shipment invoice document content
+     *
+     * @return self
      */
-    public function setInvoiceContent(string $invoice_content): self
+    public function setInvoiceContent($invoice_content)
     {
         if (is_null($invoice_content)) {
             throw new \InvalidArgumentException('non-nullable invoice_content cannot be null');
@@ -282,8 +303,10 @@ class SubmitInvoiceRequest implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets marketplace_id.
+     *
+     * @return null|string
      */
-    public function getMarketplaceId(): ?string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -292,18 +315,13 @@ class SubmitInvoiceRequest implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets marketplace_id.
      *
      * @param null|string $marketplace_id an Amazon marketplace identifier
+     *
+     * @return self
      */
-    public function setMarketplaceId(?string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
-            array_push($this->openAPINullablesSetToNull, 'marketplace_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('marketplace_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
         }
         $this->container['marketplace_id'] = $marketplace_id;
 
@@ -312,8 +330,10 @@ class SubmitInvoiceRequest implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets content_md5_value.
+     *
+     * @return string
      */
-    public function getContentMd5Value(): string
+    public function getContentMd5Value()
     {
         return $this->container['content_md5_value'];
     }
@@ -322,8 +342,10 @@ class SubmitInvoiceRequest implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets content_md5_value.
      *
      * @param string $content_md5_value MD5 sum for validating the invoice data. For more information about calculating this value, see [Working with Content-MD5 Checksums](https://docs.developer.amazonservices.com/en_US/dev_guide/DG_MD5.html).
+     *
+     * @return self
      */
-    public function setContentMd5Value(string $content_md5_value): self
+    public function setContentMd5Value($content_md5_value)
     {
         if (is_null($content_md5_value)) {
             throw new \InvalidArgumentException('non-nullable content_md5_value cannot be null');
@@ -351,7 +373,7 @@ class SubmitInvoiceRequest implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -362,7 +384,7 @@ class SubmitInvoiceRequest implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -390,15 +412,17 @@ class SubmitInvoiceRequest implements ModelInterface, \ArrayAccess, \JsonSeriali
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

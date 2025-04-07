@@ -3,7 +3,7 @@
 /**
  * ItemOfferByMarketplace.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\listings\items\v2021_08_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -55,20 +54,23 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ItemOfferByMarketplace';
+    protected static $openAPIModelName = 'ItemOfferByMarketplace';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'marketplace_id' => 'string',
         'offer_type' => 'string',
         'price' => '\SpApi\Model\listings\items\v2021_08_01\Money',
         'points' => '\SpApi\Model\listings\items\v2021_08_01\Points',
-        'audience' => '\SpApi\Model\listings\items\v2021_08_01\Audience'];
+        'audience' => '\SpApi\Model\listings\items\v2021_08_01\Audience',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -79,12 +81,13 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'marketplace_id' => null,
         'offer_type' => null,
         'price' => null,
         'points' => null,
-        'audience' => null];
+        'audience' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -95,8 +98,8 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
         'marketplace_id' => false,
         'offer_type' => false,
         'price' => false,
-        'points' => true,
-        'audience' => true,
+        'points' => false,
+        'audience' => false,
     ];
 
     /**
@@ -112,7 +115,7 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'marketplace_id' => 'marketplaceId',
         'offer_type' => 'offerType',
         'price' => 'price',
@@ -125,7 +128,7 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
         'offer_type' => 'setOfferType',
         'price' => 'setPrice',
@@ -138,7 +141,7 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
         'offer_type' => 'getOfferType',
         'price' => 'getPrice',
@@ -148,14 +151,16 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -181,16 +186,20 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -214,32 +223,40 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -249,7 +266,7 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return string[]
      */
-    public function getOfferTypeAllowableValues(): array
+    public function getOfferTypeAllowableValues()
     {
         return [
             self::OFFER_TYPE_B2_C,
@@ -262,7 +279,7 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -294,15 +311,17 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
-    public function getMarketplaceId(): string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -311,8 +330,10 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets marketplace_id.
      *
      * @param string $marketplace_id the Amazon marketplace identifier
+     *
+     * @return self
      */
-    public function setMarketplaceId(string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
             throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
@@ -324,8 +345,10 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets offer_type.
+     *
+     * @return string
      */
-    public function getOfferType(): string
+    public function getOfferType()
     {
         return $this->container['offer_type'];
     }
@@ -334,8 +357,10 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets offer_type.
      *
      * @param string $offer_type type of offer for the listings item
+     *
+     * @return self
      */
-    public function setOfferType(string $offer_type): self
+    public function setOfferType($offer_type)
     {
         if (is_null($offer_type)) {
             throw new \InvalidArgumentException('non-nullable offer_type cannot be null');
@@ -357,8 +382,10 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets price.
+     *
+     * @return Money
      */
-    public function getPrice(): Money
+    public function getPrice()
     {
         return $this->container['price'];
     }
@@ -367,8 +394,10 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets price.
      *
      * @param Money $price price
+     *
+     * @return self
      */
-    public function setPrice(Money $price): self
+    public function setPrice($price)
     {
         if (is_null($price)) {
             throw new \InvalidArgumentException('non-nullable price cannot be null');
@@ -380,8 +409,10 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets points.
+     *
+     * @return null|Points
      */
-    public function getPoints(): ?Points
+    public function getPoints()
     {
         return $this->container['points'];
     }
@@ -390,18 +421,13 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets points.
      *
      * @param null|Points $points points
+     *
+     * @return self
      */
-    public function setPoints(?Points $points): self
+    public function setPoints($points)
     {
         if (is_null($points)) {
-            array_push($this->openAPINullablesSetToNull, 'points');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('points', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable points cannot be null');
         }
         $this->container['points'] = $points;
 
@@ -410,8 +436,10 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets audience.
+     *
+     * @return null|Audience
      */
-    public function getAudience(): ?Audience
+    public function getAudience()
     {
         return $this->container['audience'];
     }
@@ -420,18 +448,13 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets audience.
      *
      * @param null|Audience $audience audience
+     *
+     * @return self
      */
-    public function setAudience(?Audience $audience): self
+    public function setAudience($audience)
     {
         if (is_null($audience)) {
-            array_push($this->openAPINullablesSetToNull, 'audience');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('audience', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable audience cannot be null');
         }
         $this->container['audience'] = $audience;
 
@@ -456,7 +479,7 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -467,7 +490,7 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -495,15 +518,17 @@ class ItemOfferByMarketplace implements ModelInterface, \ArrayAccess, \JsonSeria
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

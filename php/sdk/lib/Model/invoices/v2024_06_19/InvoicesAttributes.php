@@ -3,7 +3,7 @@
 /**
  * InvoicesAttributes.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\invoices\v2024_06_19;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'InvoicesAttributes';
+    protected static $openAPIModelName = 'InvoicesAttributes';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'invoice_status_options' => '\SpApi\Model\invoices\v2024_06_19\AttributeOption[]',
         'invoice_type_options' => '\SpApi\Model\invoices\v2024_06_19\AttributeOption[]',
         'transaction_identifier_name_options' => '\SpApi\Model\invoices\v2024_06_19\AttributeOption[]',
-        'transaction_type_options' => '\SpApi\Model\invoices\v2024_06_19\AttributeOption[]'];
+        'transaction_type_options' => '\SpApi\Model\invoices\v2024_06_19\AttributeOption[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'invoice_status_options' => null,
         'invoice_type_options' => null,
         'transaction_identifier_name_options' => null,
-        'transaction_type_options' => null];
+        'transaction_type_options' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,10 +90,10 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'invoice_status_options' => true,
-        'invoice_type_options' => true,
-        'transaction_identifier_name_options' => true,
-        'transaction_type_options' => true,
+        'invoice_status_options' => false,
+        'invoice_type_options' => false,
+        'transaction_identifier_name_options' => false,
+        'transaction_type_options' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'invoice_status_options' => 'invoiceStatusOptions',
         'invoice_type_options' => 'invoiceTypeOptions',
         'transaction_identifier_name_options' => 'transactionIdentifierNameOptions',
@@ -118,7 +121,7 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'invoice_status_options' => 'setInvoiceStatusOptions',
         'invoice_type_options' => 'setInvoiceTypeOptions',
         'transaction_identifier_name_options' => 'setTransactionIdentifierNameOptions',
@@ -130,7 +133,7 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'invoice_status_options' => 'getInvoiceStatusOptions',
         'invoice_type_options' => 'getInvoiceTypeOptions',
         'transaction_identifier_name_options' => 'getTransactionIdentifierNameOptions',
@@ -139,14 +142,16 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -250,15 +267,17 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets invoice_status_options.
+     *
+     * @return null|AttributeOption[]
      */
-    public function getInvoiceStatusOptions(): ?array
+    public function getInvoiceStatusOptions()
     {
         return $this->container['invoice_status_options'];
     }
@@ -266,19 +285,14 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Sets invoice_status_options.
      *
-     * @param null|array $invoice_status_options a list of all the options that are available for the invoice status attribute
+     * @param null|AttributeOption[] $invoice_status_options a list of all the options that are available for the invoice status attribute
+     *
+     * @return self
      */
-    public function setInvoiceStatusOptions(?array $invoice_status_options): self
+    public function setInvoiceStatusOptions($invoice_status_options)
     {
         if (is_null($invoice_status_options)) {
-            array_push($this->openAPINullablesSetToNull, 'invoice_status_options');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('invoice_status_options', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable invoice_status_options cannot be null');
         }
         $this->container['invoice_status_options'] = $invoice_status_options;
 
@@ -287,8 +301,10 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets invoice_type_options.
+     *
+     * @return null|AttributeOption[]
      */
-    public function getInvoiceTypeOptions(): ?array
+    public function getInvoiceTypeOptions()
     {
         return $this->container['invoice_type_options'];
     }
@@ -296,19 +312,14 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Sets invoice_type_options.
      *
-     * @param null|array $invoice_type_options a list of all the options that are available for the invoice type attribute
+     * @param null|AttributeOption[] $invoice_type_options a list of all the options that are available for the invoice type attribute
+     *
+     * @return self
      */
-    public function setInvoiceTypeOptions(?array $invoice_type_options): self
+    public function setInvoiceTypeOptions($invoice_type_options)
     {
         if (is_null($invoice_type_options)) {
-            array_push($this->openAPINullablesSetToNull, 'invoice_type_options');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('invoice_type_options', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable invoice_type_options cannot be null');
         }
         $this->container['invoice_type_options'] = $invoice_type_options;
 
@@ -317,8 +328,10 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets transaction_identifier_name_options.
+     *
+     * @return null|AttributeOption[]
      */
-    public function getTransactionIdentifierNameOptions(): ?array
+    public function getTransactionIdentifierNameOptions()
     {
         return $this->container['transaction_identifier_name_options'];
     }
@@ -326,19 +339,14 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Sets transaction_identifier_name_options.
      *
-     * @param null|array $transaction_identifier_name_options a list of all the options that are available for the transaction identifier name attribute
+     * @param null|AttributeOption[] $transaction_identifier_name_options a list of all the options that are available for the transaction identifier name attribute
+     *
+     * @return self
      */
-    public function setTransactionIdentifierNameOptions(?array $transaction_identifier_name_options): self
+    public function setTransactionIdentifierNameOptions($transaction_identifier_name_options)
     {
         if (is_null($transaction_identifier_name_options)) {
-            array_push($this->openAPINullablesSetToNull, 'transaction_identifier_name_options');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transaction_identifier_name_options', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transaction_identifier_name_options cannot be null');
         }
         $this->container['transaction_identifier_name_options'] = $transaction_identifier_name_options;
 
@@ -347,8 +355,10 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets transaction_type_options.
+     *
+     * @return null|AttributeOption[]
      */
-    public function getTransactionTypeOptions(): ?array
+    public function getTransactionTypeOptions()
     {
         return $this->container['transaction_type_options'];
     }
@@ -356,19 +366,14 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Sets transaction_type_options.
      *
-     * @param null|array $transaction_type_options a list of all the options that are available for the transaction type attribute
+     * @param null|AttributeOption[] $transaction_type_options a list of all the options that are available for the transaction type attribute
+     *
+     * @return self
      */
-    public function setTransactionTypeOptions(?array $transaction_type_options): self
+    public function setTransactionTypeOptions($transaction_type_options)
     {
         if (is_null($transaction_type_options)) {
-            array_push($this->openAPINullablesSetToNull, 'transaction_type_options');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transaction_type_options', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transaction_type_options cannot be null');
         }
         $this->container['transaction_type_options'] = $transaction_type_options;
 
@@ -393,7 +398,7 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -404,7 +409,7 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -432,15 +437,17 @@ class InvoicesAttributes implements ModelInterface, \ArrayAccess, \JsonSerializa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

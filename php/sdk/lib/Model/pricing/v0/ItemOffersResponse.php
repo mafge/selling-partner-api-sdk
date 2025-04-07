@@ -3,7 +3,7 @@
 /**
  * ItemOffersResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ItemOffersResponse';
+    protected static $openAPIModelName = 'ItemOffersResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'headers' => '\SpApi\Model\pricing\v0\HttpResponseHeaders',
         'status' => '\SpApi\Model\pricing\v0\GetOffersHttpStatusLine',
         'body' => '\SpApi\Model\pricing\v0\GetOffersResponse',
-        'request' => '\SpApi\Model\pricing\v0\ItemOffersRequestParams'];
+        'request' => '\SpApi\Model\pricing\v0\ItemOffersRequestParams',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'headers' => null,
         'status' => null,
         'body' => null,
-        'request' => null];
+        'request' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,8 +90,8 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'headers' => true,
-        'status' => true,
+        'headers' => false,
+        'status' => false,
         'body' => false,
         'request' => false,
     ];
@@ -106,7 +109,7 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'headers' => 'headers',
         'status' => 'status',
         'body' => 'body',
@@ -118,7 +121,7 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'headers' => 'setHeaders',
         'status' => 'setStatus',
         'body' => 'setBody',
@@ -130,7 +133,7 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'headers' => 'getHeaders',
         'status' => 'getStatus',
         'body' => 'getBody',
@@ -139,14 +142,16 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -259,15 +276,17 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets headers.
+     *
+     * @return null|HttpResponseHeaders
      */
-    public function getHeaders(): ?HttpResponseHeaders
+    public function getHeaders()
     {
         return $this->container['headers'];
     }
@@ -276,18 +295,13 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets headers.
      *
      * @param null|HttpResponseHeaders $headers headers
+     *
+     * @return self
      */
-    public function setHeaders(?HttpResponseHeaders $headers): self
+    public function setHeaders($headers)
     {
         if (is_null($headers)) {
-            array_push($this->openAPINullablesSetToNull, 'headers');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('headers', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable headers cannot be null');
         }
         $this->container['headers'] = $headers;
 
@@ -296,8 +310,10 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets status.
+     *
+     * @return null|GetOffersHttpStatusLine
      */
-    public function getStatus(): ?GetOffersHttpStatusLine
+    public function getStatus()
     {
         return $this->container['status'];
     }
@@ -306,18 +322,13 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets status.
      *
      * @param null|GetOffersHttpStatusLine $status status
+     *
+     * @return self
      */
-    public function setStatus(?GetOffersHttpStatusLine $status): self
+    public function setStatus($status)
     {
         if (is_null($status)) {
-            array_push($this->openAPINullablesSetToNull, 'status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('status', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable status cannot be null');
         }
         $this->container['status'] = $status;
 
@@ -326,8 +337,10 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets body.
+     *
+     * @return GetOffersResponse
      */
-    public function getBody(): GetOffersResponse
+    public function getBody()
     {
         return $this->container['body'];
     }
@@ -336,8 +349,10 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets body.
      *
      * @param GetOffersResponse $body body
+     *
+     * @return self
      */
-    public function setBody(GetOffersResponse $body): self
+    public function setBody($body)
     {
         if (is_null($body)) {
             throw new \InvalidArgumentException('non-nullable body cannot be null');
@@ -349,8 +364,10 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets request.
+     *
+     * @return ItemOffersRequestParams
      */
-    public function getRequest(): ItemOffersRequestParams
+    public function getRequest()
     {
         return $this->container['request'];
     }
@@ -359,8 +376,10 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets request.
      *
      * @param ItemOffersRequestParams $request request
+     *
+     * @return self
      */
-    public function setRequest(ItemOffersRequestParams $request): self
+    public function setRequest($request)
     {
         if (is_null($request)) {
             throw new \InvalidArgumentException('non-nullable request cannot be null');
@@ -388,7 +407,7 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -399,7 +418,7 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -427,15 +446,17 @@ class ItemOffersResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

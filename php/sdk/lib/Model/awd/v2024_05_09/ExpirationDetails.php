@@ -3,7 +3,7 @@
 /**
  * ExpirationDetails.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\awd\v2024_05_09;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class ExpirationDetails implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ExpirationDetails';
+    protected static $openAPIModelName = 'ExpirationDetails';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'expiration' => '\DateTime',
-        'onhand_quantity' => 'int'];
+        'onhand_quantity' => 'int',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class ExpirationDetails implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'expiration' => 'date-time',
-        'onhand_quantity' => 'int64'];
+        'onhand_quantity' => 'int64',
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class ExpirationDetails implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'expiration' => true,
-        'onhand_quantity' => true,
+        'expiration' => false,
+        'onhand_quantity' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class ExpirationDetails implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'expiration' => 'expiration',
         'onhand_quantity' => 'onhandQuantity',
     ];
@@ -110,7 +113,7 @@ class ExpirationDetails implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'expiration' => 'setExpiration',
         'onhand_quantity' => 'setOnhandQuantity',
     ];
@@ -120,21 +123,23 @@ class ExpirationDetails implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'expiration' => 'getExpiration',
         'onhand_quantity' => 'getOnhandQuantity',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class ExpirationDetails implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class ExpirationDetails implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class ExpirationDetails implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -236,15 +253,17 @@ class ExpirationDetails implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets expiration.
+     *
+     * @return null|\DateTime
      */
-    public function getExpiration(): ?\DateTime
+    public function getExpiration()
     {
         return $this->container['expiration'];
     }
@@ -253,18 +272,13 @@ class ExpirationDetails implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets expiration.
      *
      * @param null|\DateTime $expiration the expiration date of the SKU
+     *
+     * @return self
      */
-    public function setExpiration(?\DateTime $expiration): self
+    public function setExpiration($expiration)
     {
         if (is_null($expiration)) {
-            array_push($this->openAPINullablesSetToNull, 'expiration');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expiration', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable expiration cannot be null');
         }
         $this->container['expiration'] = $expiration;
 
@@ -273,8 +287,10 @@ class ExpirationDetails implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets onhand_quantity.
+     *
+     * @return null|int
      */
-    public function getOnhandQuantity(): ?int
+    public function getOnhandQuantity()
     {
         return $this->container['onhand_quantity'];
     }
@@ -283,18 +299,13 @@ class ExpirationDetails implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets onhand_quantity.
      *
      * @param null|int $onhand_quantity the quantity that is present in AWD
+     *
+     * @return self
      */
-    public function setOnhandQuantity(?int $onhand_quantity): self
+    public function setOnhandQuantity($onhand_quantity)
     {
         if (is_null($onhand_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'onhand_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('onhand_quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable onhand_quantity cannot be null');
         }
         $this->container['onhand_quantity'] = $onhand_quantity;
 
@@ -319,7 +330,7 @@ class ExpirationDetails implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +341,7 @@ class ExpirationDetails implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +369,17 @@ class ExpirationDetails implements ModelInterface, \ArrayAccess, \JsonSerializab
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * OneClickShipmentRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,15 +52,17 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'OneClickShipmentRequest';
+    protected static $openAPIModelName = 'OneClickShipmentRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'ship_to' => '\SpApi\Model\shipping\v2\Address',
         'ship_from' => '\SpApi\Model\shipping\v2\Address',
         'return_to' => '\SpApi\Model\shipping\v2\Address',
@@ -74,7 +75,8 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
         'label_specifications' => '\SpApi\Model\shipping\v2\RequestedDocumentSpecification',
         'service_selection' => '\SpApi\Model\shipping\v2\ServiceSelection',
         'shipper_instruction' => '\SpApi\Model\shipping\v2\ShipperInstruction',
-        'destination_access_point_details' => '\SpApi\Model\shipping\v2\AccessPointDetails'];
+        'destination_access_point_details' => '\SpApi\Model\shipping\v2\AccessPointDetails',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -85,7 +87,7 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'ship_to' => null,
         'ship_from' => null,
         'return_to' => null,
@@ -98,7 +100,8 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
         'label_specifications' => null,
         'service_selection' => null,
         'shipper_instruction' => null,
-        'destination_access_point_details' => null];
+        'destination_access_point_details' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -106,19 +109,19 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'ship_to' => true,
+        'ship_to' => false,
         'ship_from' => false,
-        'return_to' => true,
-        'ship_date' => true,
-        'goods_owner' => true,
+        'return_to' => false,
+        'ship_date' => false,
+        'goods_owner' => false,
         'packages' => false,
-        'value_added_services_details' => true,
-        'tax_details' => true,
+        'value_added_services_details' => false,
+        'tax_details' => false,
         'channel_details' => false,
         'label_specifications' => false,
         'service_selection' => false,
-        'shipper_instruction' => true,
-        'destination_access_point_details' => true,
+        'shipper_instruction' => false,
+        'destination_access_point_details' => false,
     ];
 
     /**
@@ -134,7 +137,7 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'ship_to' => 'shipTo',
         'ship_from' => 'shipFrom',
         'return_to' => 'returnTo',
@@ -155,7 +158,7 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'ship_to' => 'setShipTo',
         'ship_from' => 'setShipFrom',
         'return_to' => 'setReturnTo',
@@ -176,7 +179,7 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'ship_to' => 'getShipTo',
         'ship_from' => 'getShipFrom',
         'return_to' => 'getReturnTo',
@@ -194,14 +197,16 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -235,16 +240,20 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -268,32 +277,40 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -303,7 +320,7 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -332,15 +349,17 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets ship_to.
+     *
+     * @return null|Address
      */
-    public function getShipTo(): ?Address
+    public function getShipTo()
     {
         return $this->container['ship_to'];
     }
@@ -349,18 +368,13 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets ship_to.
      *
      * @param null|Address $ship_to ship_to
+     *
+     * @return self
      */
-    public function setShipTo(?Address $ship_to): self
+    public function setShipTo($ship_to)
     {
         if (is_null($ship_to)) {
-            array_push($this->openAPINullablesSetToNull, 'ship_to');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ship_to', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ship_to cannot be null');
         }
         $this->container['ship_to'] = $ship_to;
 
@@ -369,8 +383,10 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets ship_from.
+     *
+     * @return Address
      */
-    public function getShipFrom(): Address
+    public function getShipFrom()
     {
         return $this->container['ship_from'];
     }
@@ -379,8 +395,10 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets ship_from.
      *
      * @param Address $ship_from ship_from
+     *
+     * @return self
      */
-    public function setShipFrom(Address $ship_from): self
+    public function setShipFrom($ship_from)
     {
         if (is_null($ship_from)) {
             throw new \InvalidArgumentException('non-nullable ship_from cannot be null');
@@ -392,8 +410,10 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets return_to.
+     *
+     * @return null|Address
      */
-    public function getReturnTo(): ?Address
+    public function getReturnTo()
     {
         return $this->container['return_to'];
     }
@@ -402,18 +422,13 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets return_to.
      *
      * @param null|Address $return_to return_to
+     *
+     * @return self
      */
-    public function setReturnTo(?Address $return_to): self
+    public function setReturnTo($return_to)
     {
         if (is_null($return_to)) {
-            array_push($this->openAPINullablesSetToNull, 'return_to');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('return_to', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable return_to cannot be null');
         }
         $this->container['return_to'] = $return_to;
 
@@ -422,8 +437,10 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets ship_date.
+     *
+     * @return null|\DateTime
      */
-    public function getShipDate(): ?\DateTime
+    public function getShipDate()
     {
         return $this->container['ship_date'];
     }
@@ -432,18 +449,13 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets ship_date.
      *
      * @param null|\DateTime $ship_date The ship date and time (the requested pickup). This defaults to the current date and time.
+     *
+     * @return self
      */
-    public function setShipDate(?\DateTime $ship_date): self
+    public function setShipDate($ship_date)
     {
         if (is_null($ship_date)) {
-            array_push($this->openAPINullablesSetToNull, 'ship_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ship_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ship_date cannot be null');
         }
         $this->container['ship_date'] = $ship_date;
 
@@ -452,8 +464,10 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets goods_owner.
+     *
+     * @return null|GoodsOwner
      */
-    public function getGoodsOwner(): ?GoodsOwner
+    public function getGoodsOwner()
     {
         return $this->container['goods_owner'];
     }
@@ -462,18 +476,13 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets goods_owner.
      *
      * @param null|GoodsOwner $goods_owner goods_owner
+     *
+     * @return self
      */
-    public function setGoodsOwner(?GoodsOwner $goods_owner): self
+    public function setGoodsOwner($goods_owner)
     {
         if (is_null($goods_owner)) {
-            array_push($this->openAPINullablesSetToNull, 'goods_owner');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('goods_owner', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable goods_owner cannot be null');
         }
         $this->container['goods_owner'] = $goods_owner;
 
@@ -482,8 +491,10 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets packages.
+     *
+     * @return Package[]
      */
-    public function getPackages(): array
+    public function getPackages()
     {
         return $this->container['packages'];
     }
@@ -491,9 +502,11 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Sets packages.
      *
-     * @param array $packages a list of packages to be shipped through a shipping service offering
+     * @param Package[] $packages a list of packages to be shipped through a shipping service offering
+     *
+     * @return self
      */
-    public function setPackages(array $packages): self
+    public function setPackages($packages)
     {
         if (is_null($packages)) {
             throw new \InvalidArgumentException('non-nullable packages cannot be null');
@@ -505,8 +518,10 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets value_added_services_details.
+     *
+     * @return null|OneClickShipmentValueAddedService[]
      */
-    public function getValueAddedServicesDetails(): ?array
+    public function getValueAddedServicesDetails()
     {
         return $this->container['value_added_services_details'];
     }
@@ -514,19 +529,14 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Sets value_added_services_details.
      *
-     * @param null|array $value_added_services_details the value-added services to be added to a shipping service purchase
+     * @param null|OneClickShipmentValueAddedService[] $value_added_services_details the value-added services to be added to a shipping service purchase
+     *
+     * @return self
      */
-    public function setValueAddedServicesDetails(?array $value_added_services_details): self
+    public function setValueAddedServicesDetails($value_added_services_details)
     {
         if (is_null($value_added_services_details)) {
-            array_push($this->openAPINullablesSetToNull, 'value_added_services_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('value_added_services_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable value_added_services_details cannot be null');
         }
         $this->container['value_added_services_details'] = $value_added_services_details;
 
@@ -535,8 +545,10 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets tax_details.
+     *
+     * @return null|TaxDetail[]
      */
-    public function getTaxDetails(): ?array
+    public function getTaxDetails()
     {
         return $this->container['tax_details'];
     }
@@ -544,19 +556,14 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Sets tax_details.
      *
-     * @param null|array $tax_details a list of tax detail information
+     * @param null|TaxDetail[] $tax_details a list of tax detail information
+     *
+     * @return self
      */
-    public function setTaxDetails(?array $tax_details): self
+    public function setTaxDetails($tax_details)
     {
         if (is_null($tax_details)) {
-            array_push($this->openAPINullablesSetToNull, 'tax_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tax_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tax_details cannot be null');
         }
         $this->container['tax_details'] = $tax_details;
 
@@ -565,8 +572,10 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets channel_details.
+     *
+     * @return ChannelDetails
      */
-    public function getChannelDetails(): ChannelDetails
+    public function getChannelDetails()
     {
         return $this->container['channel_details'];
     }
@@ -575,8 +584,10 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets channel_details.
      *
      * @param ChannelDetails $channel_details channel_details
+     *
+     * @return self
      */
-    public function setChannelDetails(ChannelDetails $channel_details): self
+    public function setChannelDetails($channel_details)
     {
         if (is_null($channel_details)) {
             throw new \InvalidArgumentException('non-nullable channel_details cannot be null');
@@ -588,8 +599,10 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets label_specifications.
+     *
+     * @return RequestedDocumentSpecification
      */
-    public function getLabelSpecifications(): RequestedDocumentSpecification
+    public function getLabelSpecifications()
     {
         return $this->container['label_specifications'];
     }
@@ -598,8 +611,10 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets label_specifications.
      *
      * @param RequestedDocumentSpecification $label_specifications label_specifications
+     *
+     * @return self
      */
-    public function setLabelSpecifications(RequestedDocumentSpecification $label_specifications): self
+    public function setLabelSpecifications($label_specifications)
     {
         if (is_null($label_specifications)) {
             throw new \InvalidArgumentException('non-nullable label_specifications cannot be null');
@@ -611,8 +626,10 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets service_selection.
+     *
+     * @return ServiceSelection
      */
-    public function getServiceSelection(): ServiceSelection
+    public function getServiceSelection()
     {
         return $this->container['service_selection'];
     }
@@ -621,8 +638,10 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets service_selection.
      *
      * @param ServiceSelection $service_selection service_selection
+     *
+     * @return self
      */
-    public function setServiceSelection(ServiceSelection $service_selection): self
+    public function setServiceSelection($service_selection)
     {
         if (is_null($service_selection)) {
             throw new \InvalidArgumentException('non-nullable service_selection cannot be null');
@@ -634,8 +653,10 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets shipper_instruction.
+     *
+     * @return null|ShipperInstruction
      */
-    public function getShipperInstruction(): ?ShipperInstruction
+    public function getShipperInstruction()
     {
         return $this->container['shipper_instruction'];
     }
@@ -644,18 +665,13 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets shipper_instruction.
      *
      * @param null|ShipperInstruction $shipper_instruction shipper_instruction
+     *
+     * @return self
      */
-    public function setShipperInstruction(?ShipperInstruction $shipper_instruction): self
+    public function setShipperInstruction($shipper_instruction)
     {
         if (is_null($shipper_instruction)) {
-            array_push($this->openAPINullablesSetToNull, 'shipper_instruction');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipper_instruction', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipper_instruction cannot be null');
         }
         $this->container['shipper_instruction'] = $shipper_instruction;
 
@@ -664,8 +680,10 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets destination_access_point_details.
+     *
+     * @return null|AccessPointDetails
      */
-    public function getDestinationAccessPointDetails(): ?AccessPointDetails
+    public function getDestinationAccessPointDetails()
     {
         return $this->container['destination_access_point_details'];
     }
@@ -674,18 +692,13 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets destination_access_point_details.
      *
      * @param null|AccessPointDetails $destination_access_point_details destination_access_point_details
+     *
+     * @return self
      */
-    public function setDestinationAccessPointDetails(?AccessPointDetails $destination_access_point_details): self
+    public function setDestinationAccessPointDetails($destination_access_point_details)
     {
         if (is_null($destination_access_point_details)) {
-            array_push($this->openAPINullablesSetToNull, 'destination_access_point_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('destination_access_point_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable destination_access_point_details cannot be null');
         }
         $this->container['destination_access_point_details'] = $destination_access_point_details;
 
@@ -710,7 +723,7 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -721,7 +734,7 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -749,15 +762,17 @@ class OneClickShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

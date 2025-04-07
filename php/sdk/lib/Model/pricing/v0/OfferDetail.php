@@ -3,7 +3,7 @@
 /**
  * OfferDetail.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'OfferDetail';
+    protected static $openAPIModelName = 'OfferDetail';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'my_offer' => 'bool',
         'offer_type' => '\SpApi\Model\pricing\v0\OfferCustomerType',
         'sub_condition' => 'string',
@@ -76,7 +77,8 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
         'is_fulfilled_by_amazon' => 'bool',
         'prime_information' => '\SpApi\Model\pricing\v0\PrimeInformationType',
         'is_buy_box_winner' => 'bool',
-        'is_featured_merchant' => 'bool'];
+        'is_featured_merchant' => 'bool',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -87,7 +89,7 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'my_offer' => null,
         'offer_type' => null,
         'sub_condition' => null,
@@ -103,7 +105,8 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
         'is_fulfilled_by_amazon' => null,
         'prime_information' => null,
         'is_buy_box_winner' => null,
-        'is_featured_merchant' => null];
+        'is_featured_merchant' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -111,22 +114,22 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'my_offer' => true,
-        'offer_type' => true,
+        'my_offer' => false,
+        'offer_type' => false,
         'sub_condition' => false,
-        'seller_id' => true,
-        'condition_notes' => true,
-        'seller_feedback_rating' => true,
+        'seller_id' => false,
+        'condition_notes' => false,
+        'seller_feedback_rating' => false,
         'shipping_time' => false,
         'listing_price' => false,
-        'quantity_discount_prices' => true,
-        'points' => true,
+        'quantity_discount_prices' => false,
+        'points' => false,
         'shipping' => false,
-        'ships_from' => true,
+        'ships_from' => false,
         'is_fulfilled_by_amazon' => false,
-        'prime_information' => true,
-        'is_buy_box_winner' => true,
-        'is_featured_merchant' => true,
+        'prime_information' => false,
+        'is_buy_box_winner' => false,
+        'is_featured_merchant' => false,
     ];
 
     /**
@@ -142,7 +145,7 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'my_offer' => 'MyOffer',
         'offer_type' => 'offerType',
         'sub_condition' => 'SubCondition',
@@ -166,7 +169,7 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'my_offer' => 'setMyOffer',
         'offer_type' => 'setOfferType',
         'sub_condition' => 'setSubCondition',
@@ -190,7 +193,7 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'my_offer' => 'getMyOffer',
         'offer_type' => 'getOfferType',
         'sub_condition' => 'getSubCondition',
@@ -211,14 +214,16 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -255,16 +260,20 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -288,32 +297,40 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -323,7 +340,7 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -352,15 +369,17 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets my_offer.
+     *
+     * @return null|bool
      */
-    public function getMyOffer(): ?bool
+    public function getMyOffer()
     {
         return $this->container['my_offer'];
     }
@@ -369,18 +388,13 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets my_offer.
      *
      * @param null|bool $my_offer when true, this is the seller's offer
+     *
+     * @return self
      */
-    public function setMyOffer(?bool $my_offer): self
+    public function setMyOffer($my_offer)
     {
         if (is_null($my_offer)) {
-            array_push($this->openAPINullablesSetToNull, 'my_offer');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('my_offer', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable my_offer cannot be null');
         }
         $this->container['my_offer'] = $my_offer;
 
@@ -389,8 +403,10 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets offer_type.
+     *
+     * @return null|OfferCustomerType
      */
-    public function getOfferType(): ?string
+    public function getOfferType()
     {
         return $this->container['offer_type'];
     }
@@ -398,19 +414,14 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets offer_type.
      *
-     * @param null|string $offer_type offer_type
+     * @param null|OfferCustomerType $offer_type offer_type
+     *
+     * @return self
      */
-    public function setOfferType(?string $offer_type): self
+    public function setOfferType($offer_type)
     {
         if (is_null($offer_type)) {
-            array_push($this->openAPINullablesSetToNull, 'offer_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('offer_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable offer_type cannot be null');
         }
         $this->container['offer_type'] = $offer_type;
 
@@ -419,8 +430,10 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets sub_condition.
+     *
+     * @return string
      */
-    public function getSubCondition(): string
+    public function getSubCondition()
     {
         return $this->container['sub_condition'];
     }
@@ -429,8 +442,10 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets sub_condition.
      *
      * @param string $sub_condition The subcondition of the item. Subcondition values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
+     *
+     * @return self
      */
-    public function setSubCondition(string $sub_condition): self
+    public function setSubCondition($sub_condition)
     {
         if (is_null($sub_condition)) {
             throw new \InvalidArgumentException('non-nullable sub_condition cannot be null');
@@ -442,8 +457,10 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets seller_id.
+     *
+     * @return null|string
      */
-    public function getSellerId(): ?string
+    public function getSellerId()
     {
         return $this->container['seller_id'];
     }
@@ -452,18 +469,13 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets seller_id.
      *
      * @param null|string $seller_id the seller identifier for the offer
+     *
+     * @return self
      */
-    public function setSellerId(?string $seller_id): self
+    public function setSellerId($seller_id)
     {
         if (is_null($seller_id)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_id cannot be null');
         }
         $this->container['seller_id'] = $seller_id;
 
@@ -472,8 +484,10 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets condition_notes.
+     *
+     * @return null|string
      */
-    public function getConditionNotes(): ?string
+    public function getConditionNotes()
     {
         return $this->container['condition_notes'];
     }
@@ -482,18 +496,13 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets condition_notes.
      *
      * @param null|string $condition_notes information about the condition of the item
+     *
+     * @return self
      */
-    public function setConditionNotes(?string $condition_notes): self
+    public function setConditionNotes($condition_notes)
     {
         if (is_null($condition_notes)) {
-            array_push($this->openAPINullablesSetToNull, 'condition_notes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('condition_notes', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable condition_notes cannot be null');
         }
         $this->container['condition_notes'] = $condition_notes;
 
@@ -502,8 +511,10 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets seller_feedback_rating.
+     *
+     * @return null|SellerFeedbackType
      */
-    public function getSellerFeedbackRating(): ?SellerFeedbackType
+    public function getSellerFeedbackRating()
     {
         return $this->container['seller_feedback_rating'];
     }
@@ -512,18 +523,13 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets seller_feedback_rating.
      *
      * @param null|SellerFeedbackType $seller_feedback_rating seller_feedback_rating
+     *
+     * @return self
      */
-    public function setSellerFeedbackRating(?SellerFeedbackType $seller_feedback_rating): self
+    public function setSellerFeedbackRating($seller_feedback_rating)
     {
         if (is_null($seller_feedback_rating)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_feedback_rating');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_feedback_rating', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_feedback_rating cannot be null');
         }
         $this->container['seller_feedback_rating'] = $seller_feedback_rating;
 
@@ -532,8 +538,10 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets shipping_time.
+     *
+     * @return DetailedShippingTimeType
      */
-    public function getShippingTime(): DetailedShippingTimeType
+    public function getShippingTime()
     {
         return $this->container['shipping_time'];
     }
@@ -542,8 +550,10 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets shipping_time.
      *
      * @param DetailedShippingTimeType $shipping_time shipping_time
+     *
+     * @return self
      */
-    public function setShippingTime(DetailedShippingTimeType $shipping_time): self
+    public function setShippingTime($shipping_time)
     {
         if (is_null($shipping_time)) {
             throw new \InvalidArgumentException('non-nullable shipping_time cannot be null');
@@ -555,8 +565,10 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets listing_price.
+     *
+     * @return MoneyType
      */
-    public function getListingPrice(): MoneyType
+    public function getListingPrice()
     {
         return $this->container['listing_price'];
     }
@@ -565,8 +577,10 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets listing_price.
      *
      * @param MoneyType $listing_price listing_price
+     *
+     * @return self
      */
-    public function setListingPrice(MoneyType $listing_price): self
+    public function setListingPrice($listing_price)
     {
         if (is_null($listing_price)) {
             throw new \InvalidArgumentException('non-nullable listing_price cannot be null');
@@ -578,8 +592,10 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets quantity_discount_prices.
+     *
+     * @return null|QuantityDiscountPriceType[]
      */
-    public function getQuantityDiscountPrices(): ?array
+    public function getQuantityDiscountPrices()
     {
         return $this->container['quantity_discount_prices'];
     }
@@ -587,19 +603,14 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets quantity_discount_prices.
      *
-     * @param null|array $quantity_discount_prices list of `QuantityDiscountPrice` that contains item's pricing information when buy in bulk
+     * @param null|QuantityDiscountPriceType[] $quantity_discount_prices list of `QuantityDiscountPrice` that contains item's pricing information when buy in bulk
+     *
+     * @return self
      */
-    public function setQuantityDiscountPrices(?array $quantity_discount_prices): self
+    public function setQuantityDiscountPrices($quantity_discount_prices)
     {
         if (is_null($quantity_discount_prices)) {
-            array_push($this->openAPINullablesSetToNull, 'quantity_discount_prices');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('quantity_discount_prices', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable quantity_discount_prices cannot be null');
         }
         $this->container['quantity_discount_prices'] = $quantity_discount_prices;
 
@@ -608,8 +619,10 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets points.
+     *
+     * @return null|Points
      */
-    public function getPoints(): ?Points
+    public function getPoints()
     {
         return $this->container['points'];
     }
@@ -618,18 +631,13 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets points.
      *
      * @param null|Points $points points
+     *
+     * @return self
      */
-    public function setPoints(?Points $points): self
+    public function setPoints($points)
     {
         if (is_null($points)) {
-            array_push($this->openAPINullablesSetToNull, 'points');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('points', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable points cannot be null');
         }
         $this->container['points'] = $points;
 
@@ -638,8 +646,10 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets shipping.
+     *
+     * @return MoneyType
      */
-    public function getShipping(): MoneyType
+    public function getShipping()
     {
         return $this->container['shipping'];
     }
@@ -648,8 +658,10 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets shipping.
      *
      * @param MoneyType $shipping shipping
+     *
+     * @return self
      */
-    public function setShipping(MoneyType $shipping): self
+    public function setShipping($shipping)
     {
         if (is_null($shipping)) {
             throw new \InvalidArgumentException('non-nullable shipping cannot be null');
@@ -661,8 +673,10 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets ships_from.
+     *
+     * @return null|ShipsFromType
      */
-    public function getShipsFrom(): ?ShipsFromType
+    public function getShipsFrom()
     {
         return $this->container['ships_from'];
     }
@@ -671,18 +685,13 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets ships_from.
      *
      * @param null|ShipsFromType $ships_from ships_from
+     *
+     * @return self
      */
-    public function setShipsFrom(?ShipsFromType $ships_from): self
+    public function setShipsFrom($ships_from)
     {
         if (is_null($ships_from)) {
-            array_push($this->openAPINullablesSetToNull, 'ships_from');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ships_from', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ships_from cannot be null');
         }
         $this->container['ships_from'] = $ships_from;
 
@@ -691,8 +700,10 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets is_fulfilled_by_amazon.
+     *
+     * @return bool
      */
-    public function getIsFulfilledByAmazon(): bool
+    public function getIsFulfilledByAmazon()
     {
         return $this->container['is_fulfilled_by_amazon'];
     }
@@ -701,8 +712,10 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets is_fulfilled_by_amazon.
      *
      * @param bool $is_fulfilled_by_amazon when true, the offer is fulfilled by Amazon
+     *
+     * @return self
      */
-    public function setIsFulfilledByAmazon(bool $is_fulfilled_by_amazon): self
+    public function setIsFulfilledByAmazon($is_fulfilled_by_amazon)
     {
         if (is_null($is_fulfilled_by_amazon)) {
             throw new \InvalidArgumentException('non-nullable is_fulfilled_by_amazon cannot be null');
@@ -714,8 +727,10 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets prime_information.
+     *
+     * @return null|PrimeInformationType
      */
-    public function getPrimeInformation(): ?PrimeInformationType
+    public function getPrimeInformation()
     {
         return $this->container['prime_information'];
     }
@@ -724,18 +739,13 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets prime_information.
      *
      * @param null|PrimeInformationType $prime_information prime_information
+     *
+     * @return self
      */
-    public function setPrimeInformation(?PrimeInformationType $prime_information): self
+    public function setPrimeInformation($prime_information)
     {
         if (is_null($prime_information)) {
-            array_push($this->openAPINullablesSetToNull, 'prime_information');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('prime_information', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable prime_information cannot be null');
         }
         $this->container['prime_information'] = $prime_information;
 
@@ -744,8 +754,10 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets is_buy_box_winner.
+     *
+     * @return null|bool
      */
-    public function getIsBuyBoxWinner(): ?bool
+    public function getIsBuyBoxWinner()
     {
         return $this->container['is_buy_box_winner'];
     }
@@ -754,18 +766,13 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets is_buy_box_winner.
      *
      * @param null|bool $is_buy_box_winner When true, the offer is currently in the Buy Box. There can be up to two Buy Box winners at any time per ASIN, one that is eligible for Prime and one that is not eligible for Prime.
+     *
+     * @return self
      */
-    public function setIsBuyBoxWinner(?bool $is_buy_box_winner): self
+    public function setIsBuyBoxWinner($is_buy_box_winner)
     {
         if (is_null($is_buy_box_winner)) {
-            array_push($this->openAPINullablesSetToNull, 'is_buy_box_winner');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_buy_box_winner', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_buy_box_winner cannot be null');
         }
         $this->container['is_buy_box_winner'] = $is_buy_box_winner;
 
@@ -774,8 +781,10 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets is_featured_merchant.
+     *
+     * @return null|bool
      */
-    public function getIsFeaturedMerchant(): ?bool
+    public function getIsFeaturedMerchant()
     {
         return $this->container['is_featured_merchant'];
     }
@@ -784,18 +793,13 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets is_featured_merchant.
      *
      * @param null|bool $is_featured_merchant when true, the seller of the item is eligible to win the Buy Box
+     *
+     * @return self
      */
-    public function setIsFeaturedMerchant(?bool $is_featured_merchant): self
+    public function setIsFeaturedMerchant($is_featured_merchant)
     {
         if (is_null($is_featured_merchant)) {
-            array_push($this->openAPINullablesSetToNull, 'is_featured_merchant');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_featured_merchant', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_featured_merchant cannot be null');
         }
         $this->container['is_featured_merchant'] = $is_featured_merchant;
 
@@ -820,7 +824,7 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -831,7 +835,7 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -859,15 +863,17 @@ class OfferDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * GenerateCollectionFormRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,18 +52,21 @@ class GenerateCollectionFormRequest implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GenerateCollectionFormRequest';
+    protected static $openAPIModelName = 'GenerateCollectionFormRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'client_reference_details' => '\SpApi\Model\shipping\v2\ClientReferenceDetail[]',
         'carrier_id' => 'string',
-        'ship_from_address' => '\SpApi\Model\shipping\v2\Address'];
+        'ship_from_address' => '\SpApi\Model\shipping\v2\Address',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,10 +77,11 @@ class GenerateCollectionFormRequest implements ModelInterface, \ArrayAccess, \Js
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'client_reference_details' => null,
         'carrier_id' => null,
-        'ship_from_address' => null];
+        'ship_from_address' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -86,9 +89,9 @@ class GenerateCollectionFormRequest implements ModelInterface, \ArrayAccess, \Js
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'client_reference_details' => true,
+        'client_reference_details' => false,
         'carrier_id' => false,
-        'ship_from_address' => true,
+        'ship_from_address' => false,
     ];
 
     /**
@@ -104,7 +107,7 @@ class GenerateCollectionFormRequest implements ModelInterface, \ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'client_reference_details' => 'clientReferenceDetails',
         'carrier_id' => 'carrierId',
         'ship_from_address' => 'shipFromAddress',
@@ -115,7 +118,7 @@ class GenerateCollectionFormRequest implements ModelInterface, \ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'client_reference_details' => 'setClientReferenceDetails',
         'carrier_id' => 'setCarrierId',
         'ship_from_address' => 'setShipFromAddress',
@@ -126,7 +129,7 @@ class GenerateCollectionFormRequest implements ModelInterface, \ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'client_reference_details' => 'getClientReferenceDetails',
         'carrier_id' => 'getCarrierId',
         'ship_from_address' => 'getShipFromAddress',
@@ -134,14 +137,16 @@ class GenerateCollectionFormRequest implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -165,16 +170,20 @@ class GenerateCollectionFormRequest implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -198,32 +207,40 @@ class GenerateCollectionFormRequest implements ModelInterface, \ArrayAccess, \Js
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -233,7 +250,7 @@ class GenerateCollectionFormRequest implements ModelInterface, \ArrayAccess, \Js
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -250,15 +267,17 @@ class GenerateCollectionFormRequest implements ModelInterface, \ArrayAccess, \Js
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets client_reference_details.
+     *
+     * @return null|ClientReferenceDetail[]
      */
-    public function getClientReferenceDetails(): ?array
+    public function getClientReferenceDetails()
     {
         return $this->container['client_reference_details'];
     }
@@ -266,19 +285,14 @@ class GenerateCollectionFormRequest implements ModelInterface, \ArrayAccess, \Js
     /**
      * Sets client_reference_details.
      *
-     * @param null|array $client_reference_details Object to pass additional information about the MCI Integrator shipperType: List of ClientReferenceDetail
+     * @param null|ClientReferenceDetail[] $client_reference_details Object to pass additional information about the MCI Integrator shipperType: List of ClientReferenceDetail
+     *
+     * @return self
      */
-    public function setClientReferenceDetails(?array $client_reference_details): self
+    public function setClientReferenceDetails($client_reference_details)
     {
         if (is_null($client_reference_details)) {
-            array_push($this->openAPINullablesSetToNull, 'client_reference_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('client_reference_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable client_reference_details cannot be null');
         }
         $this->container['client_reference_details'] = $client_reference_details;
 
@@ -287,8 +301,10 @@ class GenerateCollectionFormRequest implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Gets carrier_id.
+     *
+     * @return string
      */
-    public function getCarrierId(): string
+    public function getCarrierId()
     {
         return $this->container['carrier_id'];
     }
@@ -297,8 +313,10 @@ class GenerateCollectionFormRequest implements ModelInterface, \ArrayAccess, \Js
      * Sets carrier_id.
      *
      * @param string $carrier_id the carrier identifier for the offering, provided by the carrier
+     *
+     * @return self
      */
-    public function setCarrierId(string $carrier_id): self
+    public function setCarrierId($carrier_id)
     {
         if (is_null($carrier_id)) {
             throw new \InvalidArgumentException('non-nullable carrier_id cannot be null');
@@ -310,8 +328,10 @@ class GenerateCollectionFormRequest implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Gets ship_from_address.
+     *
+     * @return null|Address
      */
-    public function getShipFromAddress(): ?Address
+    public function getShipFromAddress()
     {
         return $this->container['ship_from_address'];
     }
@@ -320,18 +340,13 @@ class GenerateCollectionFormRequest implements ModelInterface, \ArrayAccess, \Js
      * Sets ship_from_address.
      *
      * @param null|Address $ship_from_address ship_from_address
+     *
+     * @return self
      */
-    public function setShipFromAddress(?Address $ship_from_address): self
+    public function setShipFromAddress($ship_from_address)
     {
         if (is_null($ship_from_address)) {
-            array_push($this->openAPINullablesSetToNull, 'ship_from_address');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ship_from_address', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ship_from_address cannot be null');
         }
         $this->container['ship_from_address'] = $ship_from_address;
 
@@ -356,7 +371,7 @@ class GenerateCollectionFormRequest implements ModelInterface, \ArrayAccess, \Js
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -367,7 +382,7 @@ class GenerateCollectionFormRequest implements ModelInterface, \ArrayAccess, \Js
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -395,15 +410,17 @@ class GenerateCollectionFormRequest implements ModelInterface, \ArrayAccess, \Js
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

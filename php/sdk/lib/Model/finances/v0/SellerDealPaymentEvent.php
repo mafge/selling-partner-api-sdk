@@ -3,7 +3,7 @@
 /**
  * SellerDealPaymentEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'SellerDealPaymentEvent';
+    protected static $openAPIModelName = 'SellerDealPaymentEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'posted_date' => '\DateTime',
         'deal_id' => 'string',
         'deal_description' => 'string',
@@ -68,7 +69,8 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
         'fee_type' => 'string',
         'fee_amount' => '\SpApi\Model\finances\v0\Currency',
         'tax_amount' => '\SpApi\Model\finances\v0\Currency',
-        'total_amount' => '\SpApi\Model\finances\v0\Currency'];
+        'total_amount' => '\SpApi\Model\finances\v0\Currency',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -79,7 +81,7 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'posted_date' => 'date-time',
         'deal_id' => null,
         'deal_description' => null,
@@ -87,7 +89,8 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
         'fee_type' => null,
         'fee_amount' => null,
         'tax_amount' => null,
-        'total_amount' => null];
+        'total_amount' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -95,14 +98,14 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'posted_date' => true,
-        'deal_id' => true,
-        'deal_description' => true,
-        'event_type' => true,
-        'fee_type' => true,
-        'fee_amount' => true,
-        'tax_amount' => true,
-        'total_amount' => true,
+        'posted_date' => false,
+        'deal_id' => false,
+        'deal_description' => false,
+        'event_type' => false,
+        'fee_type' => false,
+        'fee_amount' => false,
+        'tax_amount' => false,
+        'total_amount' => false,
     ];
 
     /**
@@ -118,7 +121,7 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'posted_date' => 'postedDate',
         'deal_id' => 'dealId',
         'deal_description' => 'dealDescription',
@@ -134,7 +137,7 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'posted_date' => 'setPostedDate',
         'deal_id' => 'setDealId',
         'deal_description' => 'setDealDescription',
@@ -150,7 +153,7 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'posted_date' => 'getPostedDate',
         'deal_id' => 'getDealId',
         'deal_description' => 'getDealDescription',
@@ -163,14 +166,16 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -199,16 +204,20 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -232,32 +241,40 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -267,7 +284,7 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -278,15 +295,17 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTime
      */
-    public function getPostedDate(): ?\DateTime
+    public function getPostedDate()
     {
         return $this->container['posted_date'];
     }
@@ -295,18 +314,13 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets posted_date.
      *
      * @param null|\DateTime $posted_date fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate)
+     *
+     * @return self
      */
-    public function setPostedDate(?\DateTime $posted_date): self
+    public function setPostedDate($posted_date)
     {
         if (is_null($posted_date)) {
-            array_push($this->openAPINullablesSetToNull, 'posted_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('posted_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable posted_date cannot be null');
         }
         $this->container['posted_date'] = $posted_date;
 
@@ -315,8 +329,10 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets deal_id.
+     *
+     * @return null|string
      */
-    public function getDealId(): ?string
+    public function getDealId()
     {
         return $this->container['deal_id'];
     }
@@ -325,18 +341,13 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets deal_id.
      *
      * @param null|string $deal_id the unique identifier of the deal
+     *
+     * @return self
      */
-    public function setDealId(?string $deal_id): self
+    public function setDealId($deal_id)
     {
         if (is_null($deal_id)) {
-            array_push($this->openAPINullablesSetToNull, 'deal_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('deal_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable deal_id cannot be null');
         }
         $this->container['deal_id'] = $deal_id;
 
@@ -345,8 +356,10 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets deal_description.
+     *
+     * @return null|string
      */
-    public function getDealDescription(): ?string
+    public function getDealDescription()
     {
         return $this->container['deal_description'];
     }
@@ -355,18 +368,13 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets deal_description.
      *
      * @param null|string $deal_description the internal description of the deal
+     *
+     * @return self
      */
-    public function setDealDescription(?string $deal_description): self
+    public function setDealDescription($deal_description)
     {
         if (is_null($deal_description)) {
-            array_push($this->openAPINullablesSetToNull, 'deal_description');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('deal_description', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable deal_description cannot be null');
         }
         $this->container['deal_description'] = $deal_description;
 
@@ -375,8 +383,10 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets event_type.
+     *
+     * @return null|string
      */
-    public function getEventType(): ?string
+    public function getEventType()
     {
         return $this->container['event_type'];
     }
@@ -385,18 +395,13 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets event_type.
      *
      * @param null|string $event_type the type of event: SellerDealComplete
+     *
+     * @return self
      */
-    public function setEventType(?string $event_type): self
+    public function setEventType($event_type)
     {
         if (is_null($event_type)) {
-            array_push($this->openAPINullablesSetToNull, 'event_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('event_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable event_type cannot be null');
         }
         $this->container['event_type'] = $event_type;
 
@@ -405,8 +410,10 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets fee_type.
+     *
+     * @return null|string
      */
-    public function getFeeType(): ?string
+    public function getFeeType()
     {
         return $this->container['fee_type'];
     }
@@ -415,18 +422,13 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets fee_type.
      *
      * @param null|string $fee_type the type of fee: RunLightningDealFee
+     *
+     * @return self
      */
-    public function setFeeType(?string $fee_type): self
+    public function setFeeType($fee_type)
     {
         if (is_null($fee_type)) {
-            array_push($this->openAPINullablesSetToNull, 'fee_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fee_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fee_type cannot be null');
         }
         $this->container['fee_type'] = $fee_type;
 
@@ -435,8 +437,10 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets fee_amount.
+     *
+     * @return null|Currency
      */
-    public function getFeeAmount(): ?Currency
+    public function getFeeAmount()
     {
         return $this->container['fee_amount'];
     }
@@ -445,18 +449,13 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets fee_amount.
      *
      * @param null|Currency $fee_amount fee_amount
+     *
+     * @return self
      */
-    public function setFeeAmount(?Currency $fee_amount): self
+    public function setFeeAmount($fee_amount)
     {
         if (is_null($fee_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'fee_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fee_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fee_amount cannot be null');
         }
         $this->container['fee_amount'] = $fee_amount;
 
@@ -465,8 +464,10 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets tax_amount.
+     *
+     * @return null|Currency
      */
-    public function getTaxAmount(): ?Currency
+    public function getTaxAmount()
     {
         return $this->container['tax_amount'];
     }
@@ -475,18 +476,13 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets tax_amount.
      *
      * @param null|Currency $tax_amount tax_amount
+     *
+     * @return self
      */
-    public function setTaxAmount(?Currency $tax_amount): self
+    public function setTaxAmount($tax_amount)
     {
         if (is_null($tax_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'tax_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tax_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tax_amount cannot be null');
         }
         $this->container['tax_amount'] = $tax_amount;
 
@@ -495,8 +491,10 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets total_amount.
+     *
+     * @return null|Currency
      */
-    public function getTotalAmount(): ?Currency
+    public function getTotalAmount()
     {
         return $this->container['total_amount'];
     }
@@ -505,18 +503,13 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets total_amount.
      *
      * @param null|Currency $total_amount total_amount
+     *
+     * @return self
      */
-    public function setTotalAmount(?Currency $total_amount): self
+    public function setTotalAmount($total_amount)
     {
         if (is_null($total_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'total_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable total_amount cannot be null');
         }
         $this->container['total_amount'] = $total_amount;
 
@@ -541,7 +534,7 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -552,7 +545,7 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -580,15 +573,17 @@ class SellerDealPaymentEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

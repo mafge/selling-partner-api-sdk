@@ -3,7 +3,7 @@
 /**
  * NdrRequestData.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,17 +52,20 @@ class NdrRequestData implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'NdrRequestData';
+    protected static $openAPIModelName = 'NdrRequestData';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'reschedule_date' => '\DateTime',
-        'additional_address_notes' => 'string'];
+        'additional_address_notes' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,9 +76,10 @@ class NdrRequestData implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'reschedule_date' => 'date-time',
-        'additional_address_notes' => null];
+        'additional_address_notes' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -84,8 +87,8 @@ class NdrRequestData implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'reschedule_date' => true,
-        'additional_address_notes' => true,
+        'reschedule_date' => false,
+        'additional_address_notes' => false,
     ];
 
     /**
@@ -101,7 +104,7 @@ class NdrRequestData implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'reschedule_date' => 'rescheduleDate',
         'additional_address_notes' => 'additionalAddressNotes',
     ];
@@ -111,7 +114,7 @@ class NdrRequestData implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'reschedule_date' => 'setRescheduleDate',
         'additional_address_notes' => 'setAdditionalAddressNotes',
     ];
@@ -121,21 +124,23 @@ class NdrRequestData implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'reschedule_date' => 'getRescheduleDate',
         'additional_address_notes' => 'getAdditionalAddressNotes',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -158,16 +163,20 @@ class NdrRequestData implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -191,32 +200,40 @@ class NdrRequestData implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -226,7 +243,7 @@ class NdrRequestData implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -243,15 +260,17 @@ class NdrRequestData implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets reschedule_date.
+     *
+     * @return null|\DateTime
      */
-    public function getRescheduleDate(): ?\DateTime
+    public function getRescheduleDate()
     {
         return $this->container['reschedule_date'];
     }
@@ -260,18 +279,13 @@ class NdrRequestData implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets reschedule_date.
      *
      * @param null|\DateTime $reschedule_date The date on which the Seller wants to reschedule shipment delivery, in ISO-8601 date/time format
+     *
+     * @return self
      */
-    public function setRescheduleDate(?\DateTime $reschedule_date): self
+    public function setRescheduleDate($reschedule_date)
     {
         if (is_null($reschedule_date)) {
-            array_push($this->openAPINullablesSetToNull, 'reschedule_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('reschedule_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable reschedule_date cannot be null');
         }
         $this->container['reschedule_date'] = $reschedule_date;
 
@@ -280,8 +294,10 @@ class NdrRequestData implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets additional_address_notes.
+     *
+     * @return null|string
      */
-    public function getAdditionalAddressNotes(): ?string
+    public function getAdditionalAddressNotes()
     {
         return $this->container['additional_address_notes'];
     }
@@ -290,20 +306,15 @@ class NdrRequestData implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets additional_address_notes.
      *
      * @param null|string $additional_address_notes address notes to re-attempt delivery with
+     *
+     * @return self
      */
-    public function setAdditionalAddressNotes(?string $additional_address_notes): self
+    public function setAdditionalAddressNotes($additional_address_notes)
     {
         if (is_null($additional_address_notes)) {
-            array_push($this->openAPINullablesSetToNull, 'additional_address_notes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('additional_address_notes', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable additional_address_notes cannot be null');
         }
-        if (!is_null($additional_address_notes) && (mb_strlen($additional_address_notes) > 256)) {
+        if (mb_strlen($additional_address_notes) > 256) {
             throw new \InvalidArgumentException('invalid length for $additional_address_notes when calling NdrRequestData., must be smaller than or equal to 256.');
         }
 
@@ -330,7 +341,7 @@ class NdrRequestData implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -341,7 +352,7 @@ class NdrRequestData implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -369,15 +380,17 @@ class NdrRequestData implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

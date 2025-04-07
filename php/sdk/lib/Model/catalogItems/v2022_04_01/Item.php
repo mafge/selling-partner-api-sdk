@@ -3,7 +3,7 @@
 /**
  * Item.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\catalogItems\v2022_04_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Item';
+    protected static $openAPIModelName = 'Item';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'asin' => 'string',
         'attributes' => 'array<string,mixed>',
         'classifications' => '\SpApi\Model\catalogItems\v2022_04_01\ItemBrowseClassificationsByMarketplace[]',
@@ -71,7 +72,8 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
         'relationships' => '\SpApi\Model\catalogItems\v2022_04_01\ItemRelationshipsByMarketplace[]',
         'sales_ranks' => '\SpApi\Model\catalogItems\v2022_04_01\ItemSalesRanksByMarketplace[]',
         'summaries' => '\SpApi\Model\catalogItems\v2022_04_01\ItemSummaryByMarketplace[]',
-        'vendor_details' => '\SpApi\Model\catalogItems\v2022_04_01\ItemVendorDetailsByMarketplace[]'];
+        'vendor_details' => '\SpApi\Model\catalogItems\v2022_04_01\ItemVendorDetailsByMarketplace[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -82,7 +84,7 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'asin' => null,
         'attributes' => null,
         'classifications' => null,
@@ -93,7 +95,8 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
         'relationships' => null,
         'sales_ranks' => null,
         'summaries' => null,
-        'vendor_details' => null];
+        'vendor_details' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -102,16 +105,16 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'asin' => false,
-        'attributes' => true,
-        'classifications' => true,
-        'dimensions' => true,
-        'identifiers' => true,
-        'images' => true,
-        'product_types' => true,
-        'relationships' => true,
-        'sales_ranks' => true,
-        'summaries' => true,
-        'vendor_details' => true,
+        'attributes' => false,
+        'classifications' => false,
+        'dimensions' => false,
+        'identifiers' => false,
+        'images' => false,
+        'product_types' => false,
+        'relationships' => false,
+        'sales_ranks' => false,
+        'summaries' => false,
+        'vendor_details' => false,
     ];
 
     /**
@@ -127,7 +130,7 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'asin' => 'asin',
         'attributes' => 'attributes',
         'classifications' => 'classifications',
@@ -146,7 +149,7 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'asin' => 'setAsin',
         'attributes' => 'setAttributes',
         'classifications' => 'setClassifications',
@@ -165,7 +168,7 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'asin' => 'getAsin',
         'attributes' => 'getAttributes',
         'classifications' => 'getClassifications',
@@ -181,14 +184,16 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -220,16 +225,20 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -253,32 +262,40 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -288,7 +305,7 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -305,15 +322,17 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets asin.
+     *
+     * @return string
      */
-    public function getAsin(): string
+    public function getAsin()
     {
         return $this->container['asin'];
     }
@@ -322,8 +341,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets asin.
      *
      * @param string $asin the unique identifier of an item in the Amazon catalog
+     *
+     * @return self
      */
-    public function setAsin(string $asin): self
+    public function setAsin($asin)
     {
         if (is_null($asin)) {
             throw new \InvalidArgumentException('non-nullable asin cannot be null');
@@ -338,7 +359,7 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return null|array<string,mixed>
      */
-    public function getAttributes(): ?array
+    public function getAttributes()
     {
         return $this->container['attributes'];
     }
@@ -347,18 +368,13 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets attributes.
      *
      * @param null|array<string,mixed> $attributes A JSON object containing structured item attribute data that is keyed by attribute name. Catalog item attributes conform to the related Amazon product type definitions that you can get from the [Product Type Definitions API](https://developer-docs.amazon.com/sp-api/docs/product-type-definitions-api-v2020-09-01-reference).
+     *
+     * @return self
      */
-    public function setAttributes(?array $attributes): self
+    public function setAttributes($attributes)
     {
         if (is_null($attributes)) {
-            array_push($this->openAPINullablesSetToNull, 'attributes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('attributes', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable attributes cannot be null');
         }
         $this->container['attributes'] = $attributes;
 
@@ -367,8 +383,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets classifications.
+     *
+     * @return null|ItemBrowseClassificationsByMarketplace[]
      */
-    public function getClassifications(): ?array
+    public function getClassifications()
     {
         return $this->container['classifications'];
     }
@@ -376,19 +394,14 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets classifications.
      *
-     * @param null|array $classifications an array of classifications (browse nodes) that is associated with the item in the Amazon catalog, grouped by `marketplaceId`
+     * @param null|ItemBrowseClassificationsByMarketplace[] $classifications an array of classifications (browse nodes) that is associated with the item in the Amazon catalog, grouped by `marketplaceId`
+     *
+     * @return self
      */
-    public function setClassifications(?array $classifications): self
+    public function setClassifications($classifications)
     {
         if (is_null($classifications)) {
-            array_push($this->openAPINullablesSetToNull, 'classifications');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('classifications', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable classifications cannot be null');
         }
         $this->container['classifications'] = $classifications;
 
@@ -397,8 +410,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets dimensions.
+     *
+     * @return null|ItemDimensionsByMarketplace[]
      */
-    public function getDimensions(): ?array
+    public function getDimensions()
     {
         return $this->container['dimensions'];
     }
@@ -406,19 +421,14 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets dimensions.
      *
-     * @param null|array $dimensions an array of dimensions that are associated with the item in the Amazon catalog, grouped by `marketplaceId`
+     * @param null|ItemDimensionsByMarketplace[] $dimensions an array of dimensions that are associated with the item in the Amazon catalog, grouped by `marketplaceId`
+     *
+     * @return self
      */
-    public function setDimensions(?array $dimensions): self
+    public function setDimensions($dimensions)
     {
         if (is_null($dimensions)) {
-            array_push($this->openAPINullablesSetToNull, 'dimensions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('dimensions', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable dimensions cannot be null');
         }
         $this->container['dimensions'] = $dimensions;
 
@@ -427,8 +437,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets identifiers.
+     *
+     * @return null|ItemIdentifiersByMarketplace[]
      */
-    public function getIdentifiers(): ?array
+    public function getIdentifiers()
     {
         return $this->container['identifiers'];
     }
@@ -436,19 +448,14 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets identifiers.
      *
-     * @param null|array $identifiers identifiers associated with the item in the Amazon catalog, such as UPC and EAN identifiers
+     * @param null|ItemIdentifiersByMarketplace[] $identifiers identifiers associated with the item in the Amazon catalog, such as UPC and EAN identifiers
+     *
+     * @return self
      */
-    public function setIdentifiers(?array $identifiers): self
+    public function setIdentifiers($identifiers)
     {
         if (is_null($identifiers)) {
-            array_push($this->openAPINullablesSetToNull, 'identifiers');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('identifiers', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable identifiers cannot be null');
         }
         $this->container['identifiers'] = $identifiers;
 
@@ -457,8 +464,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets images.
+     *
+     * @return null|ItemImagesByMarketplace[]
      */
-    public function getImages(): ?array
+    public function getImages()
     {
         return $this->container['images'];
     }
@@ -466,19 +475,14 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets images.
      *
-     * @param null|array $images the images for an item in the Amazon catalog
+     * @param null|ItemImagesByMarketplace[] $images the images for an item in the Amazon catalog
+     *
+     * @return self
      */
-    public function setImages(?array $images): self
+    public function setImages($images)
     {
         if (is_null($images)) {
-            array_push($this->openAPINullablesSetToNull, 'images');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('images', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable images cannot be null');
         }
         $this->container['images'] = $images;
 
@@ -487,8 +491,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets product_types.
+     *
+     * @return null|ItemProductTypeByMarketplace[]
      */
-    public function getProductTypes(): ?array
+    public function getProductTypes()
     {
         return $this->container['product_types'];
     }
@@ -496,19 +502,14 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets product_types.
      *
-     * @param null|array $product_types product types that are associated with the Amazon catalog item
+     * @param null|ItemProductTypeByMarketplace[] $product_types product types that are associated with the Amazon catalog item
+     *
+     * @return self
      */
-    public function setProductTypes(?array $product_types): self
+    public function setProductTypes($product_types)
     {
         if (is_null($product_types)) {
-            array_push($this->openAPINullablesSetToNull, 'product_types');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('product_types', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable product_types cannot be null');
         }
         $this->container['product_types'] = $product_types;
 
@@ -517,8 +518,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets relationships.
+     *
+     * @return null|ItemRelationshipsByMarketplace[]
      */
-    public function getRelationships(): ?array
+    public function getRelationships()
     {
         return $this->container['relationships'];
     }
@@ -526,19 +529,14 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets relationships.
      *
-     * @param null|array $relationships relationships grouped by `marketplaceId` for an Amazon catalog item (for example, variations)
+     * @param null|ItemRelationshipsByMarketplace[] $relationships relationships grouped by `marketplaceId` for an Amazon catalog item (for example, variations)
+     *
+     * @return self
      */
-    public function setRelationships(?array $relationships): self
+    public function setRelationships($relationships)
     {
         if (is_null($relationships)) {
-            array_push($this->openAPINullablesSetToNull, 'relationships');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('relationships', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable relationships cannot be null');
         }
         $this->container['relationships'] = $relationships;
 
@@ -547,8 +545,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets sales_ranks.
+     *
+     * @return null|ItemSalesRanksByMarketplace[]
      */
-    public function getSalesRanks(): ?array
+    public function getSalesRanks()
     {
         return $this->container['sales_ranks'];
     }
@@ -556,19 +556,14 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets sales_ranks.
      *
-     * @param null|array $sales_ranks sales ranks of an Amazon catalog item
+     * @param null|ItemSalesRanksByMarketplace[] $sales_ranks sales ranks of an Amazon catalog item
+     *
+     * @return self
      */
-    public function setSalesRanks(?array $sales_ranks): self
+    public function setSalesRanks($sales_ranks)
     {
         if (is_null($sales_ranks)) {
-            array_push($this->openAPINullablesSetToNull, 'sales_ranks');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sales_ranks', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable sales_ranks cannot be null');
         }
         $this->container['sales_ranks'] = $sales_ranks;
 
@@ -577,8 +572,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets summaries.
+     *
+     * @return null|ItemSummaryByMarketplace[]
      */
-    public function getSummaries(): ?array
+    public function getSummaries()
     {
         return $this->container['summaries'];
     }
@@ -586,19 +583,14 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets summaries.
      *
-     * @param null|array $summaries summaries of Amazon catalog items
+     * @param null|ItemSummaryByMarketplace[] $summaries summaries of Amazon catalog items
+     *
+     * @return self
      */
-    public function setSummaries(?array $summaries): self
+    public function setSummaries($summaries)
     {
         if (is_null($summaries)) {
-            array_push($this->openAPINullablesSetToNull, 'summaries');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('summaries', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable summaries cannot be null');
         }
         $this->container['summaries'] = $summaries;
 
@@ -607,8 +599,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets vendor_details.
+     *
+     * @return null|ItemVendorDetailsByMarketplace[]
      */
-    public function getVendorDetails(): ?array
+    public function getVendorDetails()
     {
         return $this->container['vendor_details'];
     }
@@ -616,19 +610,14 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets vendor_details.
      *
-     * @param null|array $vendor_details The vendor details that are associated with an Amazon catalog item. Vendor details are only available to vendors.
+     * @param null|ItemVendorDetailsByMarketplace[] $vendor_details The vendor details that are associated with an Amazon catalog item. Vendor details are only available to vendors.
+     *
+     * @return self
      */
-    public function setVendorDetails(?array $vendor_details): self
+    public function setVendorDetails($vendor_details)
     {
         if (is_null($vendor_details)) {
-            array_push($this->openAPINullablesSetToNull, 'vendor_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('vendor_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable vendor_details cannot be null');
         }
         $this->container['vendor_details'] = $vendor_details;
 
@@ -653,7 +642,7 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -664,7 +653,7 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -692,15 +681,17 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -2,7 +2,7 @@
 /**
  * OrderDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\df\orders\v2021_12_28;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * OrderDetails Class Doc Comment
@@ -52,24 +50,25 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'OrderDetails';
+    protected static $openAPIModelName = 'OrderDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'customer_order_number' => 'string',
-             'order_date' => '\DateTime',
-             'order_status' => 'string',
-             'shipment_details' => '\SpApi\Model\vendor\df\orders\v2021_12_28\ShipmentDetails',
-             'tax_total' => '\SpApi\Model\vendor\df\orders\v2021_12_28\TaxItemDetails',
-             'selling_party' => '\SpApi\Model\vendor\df\orders\v2021_12_28\PartyIdentification',
-             'ship_from_party' => '\SpApi\Model\vendor\df\orders\v2021_12_28\PartyIdentification',
-             'ship_to_party' => '\SpApi\Model\vendor\df\orders\v2021_12_28\Address',
-             'bill_to_party' => '\SpApi\Model\vendor\df\orders\v2021_12_28\PartyIdentification',
-             'items' => '\SpApi\Model\vendor\df\orders\v2021_12_28\OrderItem[]'    ];
+    protected static $openAPITypes = [
+        'customer_order_number' => 'string',
+        'order_date' => '\DateTime',
+        'order_status' => 'string',
+        'shipment_details' => '\SpApi\Model\vendor\df\orders\v2021_12_28\ShipmentDetails',
+        'tax_total' => '\SpApi\Model\vendor\df\orders\v2021_12_28\TaxItemDetails',
+        'selling_party' => '\SpApi\Model\vendor\df\orders\v2021_12_28\PartyIdentification',
+        'ship_from_party' => '\SpApi\Model\vendor\df\orders\v2021_12_28\PartyIdentification',
+        'ship_to_party' => '\SpApi\Model\vendor\df\orders\v2021_12_28\Address',
+        'bill_to_party' => '\SpApi\Model\vendor\df\orders\v2021_12_28\PartyIdentification',
+        'items' => '\SpApi\Model\vendor\df\orders\v2021_12_28\OrderItem[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -78,17 +77,18 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'customer_order_number' => null,
-            'order_date' => 'date-time',
-            'order_status' => null,
-            'shipment_details' => null,
-            'tax_total' => null,
-            'selling_party' => null,
-            'ship_from_party' => null,
-            'ship_to_party' => null,
-            'bill_to_party' => null,
-            'items' => null    ];
+    protected static $openAPIFormats = [
+        'customer_order_number' => null,
+        'order_date' => 'date-time',
+        'order_status' => null,
+        'shipment_details' => null,
+        'tax_total' => null,
+        'selling_party' => null,
+        'ship_from_party' => null,
+        'ship_to_party' => null,
+        'bill_to_party' => null,
+        'items' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -98,9 +98,9 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'customer_order_number' => false,
         'order_date' => false,
-        'order_status' => true,
+        'order_status' => false,
         'shipment_details' => false,
-        'tax_total' => true,
+        'tax_total' => false,
         'selling_party' => false,
         'ship_from_party' => false,
         'ship_to_party' => false,
@@ -120,7 +120,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -130,7 +130,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -193,18 +193,17 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'customer_order_number' => 'customerOrderNumber',
-                'order_date' => 'orderDate',
-                'order_status' => 'orderStatus',
-                'shipment_details' => 'shipmentDetails',
-                'tax_total' => 'taxTotal',
-                'selling_party' => 'sellingParty',
-                'ship_from_party' => 'shipFromParty',
-                'ship_to_party' => 'shipToParty',
-                'bill_to_party' => 'billToParty',
-                'items' => 'items'
-        
+        'order_date' => 'orderDate',
+        'order_status' => 'orderStatus',
+        'shipment_details' => 'shipmentDetails',
+        'tax_total' => 'taxTotal',
+        'selling_party' => 'sellingParty',
+        'ship_from_party' => 'shipFromParty',
+        'ship_to_party' => 'shipToParty',
+        'bill_to_party' => 'billToParty',
+        'items' => 'items'
     ];
 
     /**
@@ -212,7 +211,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'customer_order_number' => 'setCustomerOrderNumber',
         'order_date' => 'setOrderDate',
         'order_status' => 'setOrderStatus',
@@ -230,7 +229,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'customer_order_number' => 'getCustomerOrderNumber',
         'order_date' => 'getOrderDate',
         'order_status' => 'getOrderStatus',
@@ -249,7 +248,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -259,7 +258,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -269,7 +268,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -279,7 +278,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -294,7 +293,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getOrderStatusAllowableValues(): array
+    public function getOrderStatusAllowableValues()
     {
         return [
             self::ORDER_STATUS__NEW,
@@ -307,17 +306,17 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('customer_order_number', $data ?? [], null);
         $this->setIfExists('order_date', $data ?? [], null);
@@ -354,7 +353,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -400,7 +399,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -411,7 +410,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getCustomerOrderNumber(): string
+    public function getCustomerOrderNumber()
     {
         return $this->container['customer_order_number'];
     }
@@ -423,7 +422,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCustomerOrderNumber(string $customer_order_number): self
+    public function setCustomerOrderNumber($customer_order_number)
     {
         if (is_null($customer_order_number)) {
             throw new \InvalidArgumentException('non-nullable customer_order_number cannot be null');
@@ -438,7 +437,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime
      */
-    public function getOrderDate(): \DateTime
+    public function getOrderDate()
     {
         return $this->container['order_date'];
     }
@@ -450,7 +449,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setOrderDate(\DateTime $order_date): self
+    public function setOrderDate($order_date)
     {
         if (is_null($order_date)) {
             throw new \InvalidArgumentException('non-nullable order_date cannot be null');
@@ -465,7 +464,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getOrderStatus(): ?string
+    public function getOrderStatus()
     {
         return $this->container['order_status'];
     }
@@ -477,20 +476,13 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setOrderStatus(?string $order_status): self
+    public function setOrderStatus($order_status)
     {
         if (is_null($order_status)) {
-            array_push($this->openAPINullablesSetToNull, 'order_status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('order_status', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable order_status cannot be null');
         }
         $allowedValues = $this->getOrderStatusAllowableValues();
-        if (!is_null($order_status) && !in_array($order_status, $allowedValues, true)) {
+        if (!in_array($order_status, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'order_status', must be one of '%s'",
@@ -509,7 +501,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\df\orders\v2021_12_28\ShipmentDetails
      */
-    public function getShipmentDetails(): \SpApi\Model\vendor\df\orders\v2021_12_28\ShipmentDetails
+    public function getShipmentDetails()
     {
         return $this->container['shipment_details'];
     }
@@ -521,7 +513,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShipmentDetails(\SpApi\Model\vendor\df\orders\v2021_12_28\ShipmentDetails $shipment_details): self
+    public function setShipmentDetails($shipment_details)
     {
         if (is_null($shipment_details)) {
             throw new \InvalidArgumentException('non-nullable shipment_details cannot be null');
@@ -536,7 +528,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\df\orders\v2021_12_28\TaxItemDetails|null
      */
-    public function getTaxTotal(): ?\SpApi\Model\vendor\df\orders\v2021_12_28\TaxItemDetails
+    public function getTaxTotal()
     {
         return $this->container['tax_total'];
     }
@@ -548,17 +540,10 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTaxTotal(?\SpApi\Model\vendor\df\orders\v2021_12_28\TaxItemDetails $tax_total): self
+    public function setTaxTotal($tax_total)
     {
         if (is_null($tax_total)) {
-            array_push($this->openAPINullablesSetToNull, 'tax_total');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tax_total', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tax_total cannot be null');
         }
         $this->container['tax_total'] = $tax_total;
 
@@ -570,7 +555,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\df\orders\v2021_12_28\PartyIdentification
      */
-    public function getSellingParty(): \SpApi\Model\vendor\df\orders\v2021_12_28\PartyIdentification
+    public function getSellingParty()
     {
         return $this->container['selling_party'];
     }
@@ -582,7 +567,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSellingParty(\SpApi\Model\vendor\df\orders\v2021_12_28\PartyIdentification $selling_party): self
+    public function setSellingParty($selling_party)
     {
         if (is_null($selling_party)) {
             throw new \InvalidArgumentException('non-nullable selling_party cannot be null');
@@ -597,7 +582,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\df\orders\v2021_12_28\PartyIdentification
      */
-    public function getShipFromParty(): \SpApi\Model\vendor\df\orders\v2021_12_28\PartyIdentification
+    public function getShipFromParty()
     {
         return $this->container['ship_from_party'];
     }
@@ -609,7 +594,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShipFromParty(\SpApi\Model\vendor\df\orders\v2021_12_28\PartyIdentification $ship_from_party): self
+    public function setShipFromParty($ship_from_party)
     {
         if (is_null($ship_from_party)) {
             throw new \InvalidArgumentException('non-nullable ship_from_party cannot be null');
@@ -624,7 +609,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\df\orders\v2021_12_28\Address
      */
-    public function getShipToParty(): \SpApi\Model\vendor\df\orders\v2021_12_28\Address
+    public function getShipToParty()
     {
         return $this->container['ship_to_party'];
     }
@@ -636,7 +621,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShipToParty(\SpApi\Model\vendor\df\orders\v2021_12_28\Address $ship_to_party): self
+    public function setShipToParty($ship_to_party)
     {
         if (is_null($ship_to_party)) {
             throw new \InvalidArgumentException('non-nullable ship_to_party cannot be null');
@@ -651,7 +636,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\df\orders\v2021_12_28\PartyIdentification
      */
-    public function getBillToParty(): \SpApi\Model\vendor\df\orders\v2021_12_28\PartyIdentification
+    public function getBillToParty()
     {
         return $this->container['bill_to_party'];
     }
@@ -663,7 +648,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setBillToParty(\SpApi\Model\vendor\df\orders\v2021_12_28\PartyIdentification $bill_to_party): self
+    public function setBillToParty($bill_to_party)
     {
         if (is_null($bill_to_party)) {
             throw new \InvalidArgumentException('non-nullable bill_to_party cannot be null');
@@ -676,9 +661,9 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets items
      *
-     * @return array
+     * @return \SpApi\Model\vendor\df\orders\v2021_12_28\OrderItem[]
      */
-    public function getItems(): array
+    public function getItems()
     {
         return $this->container['items'];
     }
@@ -686,11 +671,11 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets items
      *
-     * @param array $items A list of items in this purchase order.
+     * @param \SpApi\Model\vendor\df\orders\v2021_12_28\OrderItem[] $items A list of items in this purchase order.
      *
      * @return self
      */
-    public function setItems(array $items): self
+    public function setItems($items)
     {
         if (is_null($items)) {
             throw new \InvalidArgumentException('non-nullable items cannot be null');
@@ -699,8 +684,6 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -721,7 +704,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -734,7 +717,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -763,7 +746,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -786,7 +769,7 @@ class OrderDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

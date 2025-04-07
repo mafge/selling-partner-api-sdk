@@ -3,7 +3,7 @@
 /**
  * LinkCarrierAccountRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,19 +52,22 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'LinkCarrierAccountRequest';
+    protected static $openAPIModelName = 'LinkCarrierAccountRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'client_reference_details' => '\SpApi\Model\shipping\v2\ClientReferenceDetail[]',
         'carrier_account_type' => 'string',
         'carrier_account_attributes' => '\SpApi\Model\shipping\v2\CarrierAccountAttribute[]',
-        'encrypted_carrier_account_attributes' => '\SpApi\Model\shipping\v2\CarrierAccountAttribute[]'];
+        'encrypted_carrier_account_attributes' => '\SpApi\Model\shipping\v2\CarrierAccountAttribute[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,11 +78,12 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'client_reference_details' => null,
         'carrier_account_type' => null,
         'carrier_account_attributes' => null,
-        'encrypted_carrier_account_attributes' => null];
+        'encrypted_carrier_account_attributes' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -88,10 +91,10 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'client_reference_details' => true,
+        'client_reference_details' => false,
         'carrier_account_type' => false,
         'carrier_account_attributes' => false,
-        'encrypted_carrier_account_attributes' => true,
+        'encrypted_carrier_account_attributes' => false,
     ];
 
     /**
@@ -107,7 +110,7 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'client_reference_details' => 'clientReferenceDetails',
         'carrier_account_type' => 'carrierAccountType',
         'carrier_account_attributes' => 'carrierAccountAttributes',
@@ -119,7 +122,7 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'client_reference_details' => 'setClientReferenceDetails',
         'carrier_account_type' => 'setCarrierAccountType',
         'carrier_account_attributes' => 'setCarrierAccountAttributes',
@@ -131,7 +134,7 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'client_reference_details' => 'getClientReferenceDetails',
         'carrier_account_type' => 'getCarrierAccountType',
         'carrier_account_attributes' => 'getCarrierAccountAttributes',
@@ -140,14 +143,16 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -172,16 +177,20 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -205,32 +214,40 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -240,7 +257,7 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -260,15 +277,17 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets client_reference_details.
+     *
+     * @return null|ClientReferenceDetail[]
      */
-    public function getClientReferenceDetails(): ?array
+    public function getClientReferenceDetails()
     {
         return $this->container['client_reference_details'];
     }
@@ -276,19 +295,14 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets client_reference_details.
      *
-     * @param null|array $client_reference_details Object to pass additional information about the MCI Integrator shipperType: List of ClientReferenceDetail
+     * @param null|ClientReferenceDetail[] $client_reference_details Object to pass additional information about the MCI Integrator shipperType: List of ClientReferenceDetail
+     *
+     * @return self
      */
-    public function setClientReferenceDetails(?array $client_reference_details): self
+    public function setClientReferenceDetails($client_reference_details)
     {
         if (is_null($client_reference_details)) {
-            array_push($this->openAPINullablesSetToNull, 'client_reference_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('client_reference_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable client_reference_details cannot be null');
         }
         $this->container['client_reference_details'] = $client_reference_details;
 
@@ -297,8 +311,10 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets carrier_account_type.
+     *
+     * @return string
      */
-    public function getCarrierAccountType(): string
+    public function getCarrierAccountType()
     {
         return $this->container['carrier_account_type'];
     }
@@ -307,8 +323,10 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets carrier_account_type.
      *
      * @param string $carrier_account_type carrierAccountType  associated with account
+     *
+     * @return self
      */
-    public function setCarrierAccountType(string $carrier_account_type): self
+    public function setCarrierAccountType($carrier_account_type)
     {
         if (is_null($carrier_account_type)) {
             throw new \InvalidArgumentException('non-nullable carrier_account_type cannot be null');
@@ -320,8 +338,10 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets carrier_account_attributes.
+     *
+     * @return CarrierAccountAttribute[]
      */
-    public function getCarrierAccountAttributes(): array
+    public function getCarrierAccountAttributes()
     {
         return $this->container['carrier_account_attributes'];
     }
@@ -329,9 +349,11 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets carrier_account_attributes.
      *
-     * @param array $carrier_account_attributes A list of all attributes required by the carrier in order to successfully link the merchant's account
+     * @param CarrierAccountAttribute[] $carrier_account_attributes A list of all attributes required by the carrier in order to successfully link the merchant's account
+     *
+     * @return self
      */
-    public function setCarrierAccountAttributes(array $carrier_account_attributes): self
+    public function setCarrierAccountAttributes($carrier_account_attributes)
     {
         if (is_null($carrier_account_attributes)) {
             throw new \InvalidArgumentException('non-nullable carrier_account_attributes cannot be null');
@@ -343,8 +365,10 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets encrypted_carrier_account_attributes.
+     *
+     * @return null|CarrierAccountAttribute[]
      */
-    public function getEncryptedCarrierAccountAttributes(): ?array
+    public function getEncryptedCarrierAccountAttributes()
     {
         return $this->container['encrypted_carrier_account_attributes'];
     }
@@ -352,19 +376,14 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets encrypted_carrier_account_attributes.
      *
-     * @param null|array $encrypted_carrier_account_attributes A list of all attributes required by the carrier in order to successfully link the merchant's account
+     * @param null|CarrierAccountAttribute[] $encrypted_carrier_account_attributes A list of all attributes required by the carrier in order to successfully link the merchant's account
+     *
+     * @return self
      */
-    public function setEncryptedCarrierAccountAttributes(?array $encrypted_carrier_account_attributes): self
+    public function setEncryptedCarrierAccountAttributes($encrypted_carrier_account_attributes)
     {
         if (is_null($encrypted_carrier_account_attributes)) {
-            array_push($this->openAPINullablesSetToNull, 'encrypted_carrier_account_attributes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('encrypted_carrier_account_attributes', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable encrypted_carrier_account_attributes cannot be null');
         }
         $this->container['encrypted_carrier_account_attributes'] = $encrypted_carrier_account_attributes;
 
@@ -389,7 +408,7 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -400,7 +419,7 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -428,15 +447,17 @@ class LinkCarrierAccountRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

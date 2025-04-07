@@ -3,7 +3,7 @@
 /**
  * StandardImageSidebarModule.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\aplusContent\v2020_11_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'StandardImageSidebarModule';
+    protected static $openAPIModelName = 'StandardImageSidebarModule';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'headline' => '\SpApi\Model\aplusContent\v2020_11_01\TextComponent',
         'image_caption_block' => '\SpApi\Model\aplusContent\v2020_11_01\StandardImageCaptionBlock',
         'description_text_block' => '\SpApi\Model\aplusContent\v2020_11_01\StandardTextBlock',
         'description_list_block' => '\SpApi\Model\aplusContent\v2020_11_01\StandardTextListBlock',
         'sidebar_image_text_block' => '\SpApi\Model\aplusContent\v2020_11_01\StandardImageTextBlock',
-        'sidebar_list_block' => '\SpApi\Model\aplusContent\v2020_11_01\StandardTextListBlock'];
+        'sidebar_list_block' => '\SpApi\Model\aplusContent\v2020_11_01\StandardTextListBlock',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'headline' => null,
         'image_caption_block' => null,
         'description_text_block' => null,
         'description_list_block' => null,
         'sidebar_image_text_block' => null,
-        'sidebar_list_block' => null];
+        'sidebar_list_block' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -91,12 +94,12 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'headline' => true,
-        'image_caption_block' => true,
-        'description_text_block' => true,
-        'description_list_block' => true,
-        'sidebar_image_text_block' => true,
-        'sidebar_list_block' => true,
+        'headline' => false,
+        'image_caption_block' => false,
+        'description_text_block' => false,
+        'description_list_block' => false,
+        'sidebar_image_text_block' => false,
+        'sidebar_list_block' => false,
     ];
 
     /**
@@ -112,7 +115,7 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'headline' => 'headline',
         'image_caption_block' => 'imageCaptionBlock',
         'description_text_block' => 'descriptionTextBlock',
@@ -126,7 +129,7 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'headline' => 'setHeadline',
         'image_caption_block' => 'setImageCaptionBlock',
         'description_text_block' => 'setDescriptionTextBlock',
@@ -140,7 +143,7 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'headline' => 'getHeadline',
         'image_caption_block' => 'getImageCaptionBlock',
         'description_text_block' => 'getDescriptionTextBlock',
@@ -151,14 +154,16 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -264,15 +281,17 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets headline.
+     *
+     * @return null|TextComponent
      */
-    public function getHeadline(): ?TextComponent
+    public function getHeadline()
     {
         return $this->container['headline'];
     }
@@ -281,18 +300,13 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
      * Sets headline.
      *
      * @param null|TextComponent $headline headline
+     *
+     * @return self
      */
-    public function setHeadline(?TextComponent $headline): self
+    public function setHeadline($headline)
     {
         if (is_null($headline)) {
-            array_push($this->openAPINullablesSetToNull, 'headline');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('headline', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable headline cannot be null');
         }
         $this->container['headline'] = $headline;
 
@@ -301,8 +315,10 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets image_caption_block.
+     *
+     * @return null|StandardImageCaptionBlock
      */
-    public function getImageCaptionBlock(): ?StandardImageCaptionBlock
+    public function getImageCaptionBlock()
     {
         return $this->container['image_caption_block'];
     }
@@ -311,18 +327,13 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
      * Sets image_caption_block.
      *
      * @param null|StandardImageCaptionBlock $image_caption_block image_caption_block
+     *
+     * @return self
      */
-    public function setImageCaptionBlock(?StandardImageCaptionBlock $image_caption_block): self
+    public function setImageCaptionBlock($image_caption_block)
     {
         if (is_null($image_caption_block)) {
-            array_push($this->openAPINullablesSetToNull, 'image_caption_block');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('image_caption_block', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable image_caption_block cannot be null');
         }
         $this->container['image_caption_block'] = $image_caption_block;
 
@@ -331,8 +342,10 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets description_text_block.
+     *
+     * @return null|StandardTextBlock
      */
-    public function getDescriptionTextBlock(): ?StandardTextBlock
+    public function getDescriptionTextBlock()
     {
         return $this->container['description_text_block'];
     }
@@ -341,18 +354,13 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
      * Sets description_text_block.
      *
      * @param null|StandardTextBlock $description_text_block description_text_block
+     *
+     * @return self
      */
-    public function setDescriptionTextBlock(?StandardTextBlock $description_text_block): self
+    public function setDescriptionTextBlock($description_text_block)
     {
         if (is_null($description_text_block)) {
-            array_push($this->openAPINullablesSetToNull, 'description_text_block');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('description_text_block', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable description_text_block cannot be null');
         }
         $this->container['description_text_block'] = $description_text_block;
 
@@ -361,8 +369,10 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets description_list_block.
+     *
+     * @return null|StandardTextListBlock
      */
-    public function getDescriptionListBlock(): ?StandardTextListBlock
+    public function getDescriptionListBlock()
     {
         return $this->container['description_list_block'];
     }
@@ -371,18 +381,13 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
      * Sets description_list_block.
      *
      * @param null|StandardTextListBlock $description_list_block description_list_block
+     *
+     * @return self
      */
-    public function setDescriptionListBlock(?StandardTextListBlock $description_list_block): self
+    public function setDescriptionListBlock($description_list_block)
     {
         if (is_null($description_list_block)) {
-            array_push($this->openAPINullablesSetToNull, 'description_list_block');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('description_list_block', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable description_list_block cannot be null');
         }
         $this->container['description_list_block'] = $description_list_block;
 
@@ -391,8 +396,10 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets sidebar_image_text_block.
+     *
+     * @return null|StandardImageTextBlock
      */
-    public function getSidebarImageTextBlock(): ?StandardImageTextBlock
+    public function getSidebarImageTextBlock()
     {
         return $this->container['sidebar_image_text_block'];
     }
@@ -401,18 +408,13 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
      * Sets sidebar_image_text_block.
      *
      * @param null|StandardImageTextBlock $sidebar_image_text_block sidebar_image_text_block
+     *
+     * @return self
      */
-    public function setSidebarImageTextBlock(?StandardImageTextBlock $sidebar_image_text_block): self
+    public function setSidebarImageTextBlock($sidebar_image_text_block)
     {
         if (is_null($sidebar_image_text_block)) {
-            array_push($this->openAPINullablesSetToNull, 'sidebar_image_text_block');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sidebar_image_text_block', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable sidebar_image_text_block cannot be null');
         }
         $this->container['sidebar_image_text_block'] = $sidebar_image_text_block;
 
@@ -421,8 +423,10 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets sidebar_list_block.
+     *
+     * @return null|StandardTextListBlock
      */
-    public function getSidebarListBlock(): ?StandardTextListBlock
+    public function getSidebarListBlock()
     {
         return $this->container['sidebar_list_block'];
     }
@@ -431,18 +435,13 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
      * Sets sidebar_list_block.
      *
      * @param null|StandardTextListBlock $sidebar_list_block sidebar_list_block
+     *
+     * @return self
      */
-    public function setSidebarListBlock(?StandardTextListBlock $sidebar_list_block): self
+    public function setSidebarListBlock($sidebar_list_block)
     {
         if (is_null($sidebar_list_block)) {
-            array_push($this->openAPINullablesSetToNull, 'sidebar_list_block');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sidebar_list_block', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable sidebar_list_block cannot be null');
         }
         $this->container['sidebar_list_block'] = $sidebar_list_block;
 
@@ -467,7 +466,7 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -478,7 +477,7 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -506,15 +505,17 @@ class StandardImageSidebarModule implements ModelInterface, \ArrayAccess, \JsonS
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

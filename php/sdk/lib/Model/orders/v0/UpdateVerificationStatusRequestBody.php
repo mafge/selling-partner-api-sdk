@@ -3,7 +3,7 @@
 /**
  * UpdateVerificationStatusRequestBody.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\orders\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'UpdateVerificationStatusRequestBody';
+    protected static $openAPIModelName = 'UpdateVerificationStatusRequestBody';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'status' => '\SpApi\Model\orders\v0\VerificationStatus',
         'external_reviewer_id' => 'string',
         'rejection_reason_id' => 'string',
-        'verification_details' => '\SpApi\Model\orders\v0\VerificationDetails'];
+        'verification_details' => '\SpApi\Model\orders\v0\VerificationDetails',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'status' => null,
         'external_reviewer_id' => null,
         'rejection_reason_id' => null,
-        'verification_details' => null];
+        'verification_details' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,10 +90,10 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'status' => true,
+        'status' => false,
         'external_reviewer_id' => false,
-        'rejection_reason_id' => true,
-        'verification_details' => true,
+        'rejection_reason_id' => false,
+        'verification_details' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'status' => 'status',
         'external_reviewer_id' => 'externalReviewerId',
         'rejection_reason_id' => 'rejectionReasonId',
@@ -118,7 +121,7 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'status' => 'setStatus',
         'external_reviewer_id' => 'setExternalReviewerId',
         'rejection_reason_id' => 'setRejectionReasonId',
@@ -130,7 +133,7 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'status' => 'getStatus',
         'external_reviewer_id' => 'getExternalReviewerId',
         'rejection_reason_id' => 'getRejectionReasonId',
@@ -139,14 +142,16 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -256,15 +273,17 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets status.
+     *
+     * @return null|VerificationStatus
      */
-    public function getStatus(): ?string
+    public function getStatus()
     {
         return $this->container['status'];
     }
@@ -272,19 +291,14 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
     /**
      * Sets status.
      *
-     * @param null|string $status status
+     * @param null|VerificationStatus $status status
+     *
+     * @return self
      */
-    public function setStatus(?string $status): self
+    public function setStatus($status)
     {
         if (is_null($status)) {
-            array_push($this->openAPINullablesSetToNull, 'status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('status', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable status cannot be null');
         }
         $this->container['status'] = $status;
 
@@ -293,8 +307,10 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
 
     /**
      * Gets external_reviewer_id.
+     *
+     * @return string
      */
-    public function getExternalReviewerId(): string
+    public function getExternalReviewerId()
     {
         return $this->container['external_reviewer_id'];
     }
@@ -303,8 +319,10 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
      * Sets external_reviewer_id.
      *
      * @param string $external_reviewer_id the identifier of the order's regulated information reviewer
+     *
+     * @return self
      */
-    public function setExternalReviewerId(string $external_reviewer_id): self
+    public function setExternalReviewerId($external_reviewer_id)
     {
         if (is_null($external_reviewer_id)) {
             throw new \InvalidArgumentException('non-nullable external_reviewer_id cannot be null');
@@ -316,8 +334,10 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
 
     /**
      * Gets rejection_reason_id.
+     *
+     * @return null|string
      */
-    public function getRejectionReasonId(): ?string
+    public function getRejectionReasonId()
     {
         return $this->container['rejection_reason_id'];
     }
@@ -326,18 +346,13 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
      * Sets rejection_reason_id.
      *
      * @param null|string $rejection_reason_id The unique identifier of the rejection reason used for rejecting the order's regulated information. Only required if the new status is rejected.
+     *
+     * @return self
      */
-    public function setRejectionReasonId(?string $rejection_reason_id): self
+    public function setRejectionReasonId($rejection_reason_id)
     {
         if (is_null($rejection_reason_id)) {
-            array_push($this->openAPINullablesSetToNull, 'rejection_reason_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rejection_reason_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable rejection_reason_id cannot be null');
         }
         $this->container['rejection_reason_id'] = $rejection_reason_id;
 
@@ -346,8 +361,10 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
 
     /**
      * Gets verification_details.
+     *
+     * @return null|VerificationDetails
      */
-    public function getVerificationDetails(): ?VerificationDetails
+    public function getVerificationDetails()
     {
         return $this->container['verification_details'];
     }
@@ -356,18 +373,13 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
      * Sets verification_details.
      *
      * @param null|VerificationDetails $verification_details verification_details
+     *
+     * @return self
      */
-    public function setVerificationDetails(?VerificationDetails $verification_details): self
+    public function setVerificationDetails($verification_details)
     {
         if (is_null($verification_details)) {
-            array_push($this->openAPINullablesSetToNull, 'verification_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('verification_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable verification_details cannot be null');
         }
         $this->container['verification_details'] = $verification_details;
 
@@ -392,7 +404,7 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -403,7 +415,7 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -431,15 +443,17 @@ class UpdateVerificationStatusRequestBody implements ModelInterface, \ArrayAcces
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

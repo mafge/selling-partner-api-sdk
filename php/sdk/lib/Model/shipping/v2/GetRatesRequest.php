@@ -3,7 +3,7 @@
 /**
  * GetRatesRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,15 +52,17 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetRatesRequest';
+    protected static $openAPIModelName = 'GetRatesRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'ship_to' => '\SpApi\Model\shipping\v2\Address',
         'ship_from' => '\SpApi\Model\shipping\v2\Address',
         'return_to' => '\SpApi\Model\shipping\v2\Address',
@@ -74,7 +75,8 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
         'client_reference_details' => '\SpApi\Model\shipping\v2\ClientReferenceDetail[]',
         'shipment_type' => '\SpApi\Model\shipping\v2\ShipmentType',
         'destination_access_point_details' => '\SpApi\Model\shipping\v2\AccessPointDetails',
-        'carrier_accounts' => '\SpApi\Model\shipping\v2\CarrierAccount[]'];
+        'carrier_accounts' => '\SpApi\Model\shipping\v2\CarrierAccount[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -85,7 +87,7 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'ship_to' => null,
         'ship_from' => null,
         'return_to' => null,
@@ -98,7 +100,8 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
         'client_reference_details' => null,
         'shipment_type' => null,
         'destination_access_point_details' => null,
-        'carrier_accounts' => null];
+        'carrier_accounts' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -106,19 +109,19 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'ship_to' => true,
+        'ship_to' => false,
         'ship_from' => false,
-        'return_to' => true,
-        'ship_date' => true,
-        'shipper_instruction' => true,
+        'return_to' => false,
+        'ship_date' => false,
+        'shipper_instruction' => false,
         'packages' => false,
-        'value_added_services' => true,
-        'tax_details' => true,
+        'value_added_services' => false,
+        'tax_details' => false,
         'channel_details' => false,
-        'client_reference_details' => true,
-        'shipment_type' => true,
-        'destination_access_point_details' => true,
-        'carrier_accounts' => true,
+        'client_reference_details' => false,
+        'shipment_type' => false,
+        'destination_access_point_details' => false,
+        'carrier_accounts' => false,
     ];
 
     /**
@@ -134,7 +137,7 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'ship_to' => 'shipTo',
         'ship_from' => 'shipFrom',
         'return_to' => 'returnTo',
@@ -155,7 +158,7 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'ship_to' => 'setShipTo',
         'ship_from' => 'setShipFrom',
         'return_to' => 'setReturnTo',
@@ -176,7 +179,7 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'ship_to' => 'getShipTo',
         'ship_from' => 'getShipFrom',
         'return_to' => 'getReturnTo',
@@ -194,14 +197,16 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -235,16 +240,20 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -268,32 +277,40 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -303,7 +320,7 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -326,15 +343,17 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets ship_to.
+     *
+     * @return null|Address
      */
-    public function getShipTo(): ?Address
+    public function getShipTo()
     {
         return $this->container['ship_to'];
     }
@@ -343,18 +362,13 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets ship_to.
      *
      * @param null|Address $ship_to ship_to
+     *
+     * @return self
      */
-    public function setShipTo(?Address $ship_to): self
+    public function setShipTo($ship_to)
     {
         if (is_null($ship_to)) {
-            array_push($this->openAPINullablesSetToNull, 'ship_to');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ship_to', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ship_to cannot be null');
         }
         $this->container['ship_to'] = $ship_to;
 
@@ -363,8 +377,10 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets ship_from.
+     *
+     * @return Address
      */
-    public function getShipFrom(): Address
+    public function getShipFrom()
     {
         return $this->container['ship_from'];
     }
@@ -373,8 +389,10 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets ship_from.
      *
      * @param Address $ship_from ship_from
+     *
+     * @return self
      */
-    public function setShipFrom(Address $ship_from): self
+    public function setShipFrom($ship_from)
     {
         if (is_null($ship_from)) {
             throw new \InvalidArgumentException('non-nullable ship_from cannot be null');
@@ -386,8 +404,10 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets return_to.
+     *
+     * @return null|Address
      */
-    public function getReturnTo(): ?Address
+    public function getReturnTo()
     {
         return $this->container['return_to'];
     }
@@ -396,18 +416,13 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets return_to.
      *
      * @param null|Address $return_to return_to
+     *
+     * @return self
      */
-    public function setReturnTo(?Address $return_to): self
+    public function setReturnTo($return_to)
     {
         if (is_null($return_to)) {
-            array_push($this->openAPINullablesSetToNull, 'return_to');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('return_to', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable return_to cannot be null');
         }
         $this->container['return_to'] = $return_to;
 
@@ -416,8 +431,10 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets ship_date.
+     *
+     * @return null|\DateTime
      */
-    public function getShipDate(): ?\DateTime
+    public function getShipDate()
     {
         return $this->container['ship_date'];
     }
@@ -426,18 +443,13 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets ship_date.
      *
      * @param null|\DateTime $ship_date The ship date and time (the requested pickup). This defaults to the current date and time.
+     *
+     * @return self
      */
-    public function setShipDate(?\DateTime $ship_date): self
+    public function setShipDate($ship_date)
     {
         if (is_null($ship_date)) {
-            array_push($this->openAPINullablesSetToNull, 'ship_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ship_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ship_date cannot be null');
         }
         $this->container['ship_date'] = $ship_date;
 
@@ -446,8 +458,10 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets shipper_instruction.
+     *
+     * @return null|ShipperInstruction
      */
-    public function getShipperInstruction(): ?ShipperInstruction
+    public function getShipperInstruction()
     {
         return $this->container['shipper_instruction'];
     }
@@ -456,18 +470,13 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets shipper_instruction.
      *
      * @param null|ShipperInstruction $shipper_instruction shipper_instruction
+     *
+     * @return self
      */
-    public function setShipperInstruction(?ShipperInstruction $shipper_instruction): self
+    public function setShipperInstruction($shipper_instruction)
     {
         if (is_null($shipper_instruction)) {
-            array_push($this->openAPINullablesSetToNull, 'shipper_instruction');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipper_instruction', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipper_instruction cannot be null');
         }
         $this->container['shipper_instruction'] = $shipper_instruction;
 
@@ -476,8 +485,10 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets packages.
+     *
+     * @return Package[]
      */
-    public function getPackages(): array
+    public function getPackages()
     {
         return $this->container['packages'];
     }
@@ -485,9 +496,11 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets packages.
      *
-     * @param array $packages a list of packages to be shipped through a shipping service offering
+     * @param Package[] $packages a list of packages to be shipped through a shipping service offering
+     *
+     * @return self
      */
-    public function setPackages(array $packages): self
+    public function setPackages($packages)
     {
         if (is_null($packages)) {
             throw new \InvalidArgumentException('non-nullable packages cannot be null');
@@ -499,8 +512,10 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets value_added_services.
+     *
+     * @return null|ValueAddedServiceDetails
      */
-    public function getValueAddedServices(): ?ValueAddedServiceDetails
+    public function getValueAddedServices()
     {
         return $this->container['value_added_services'];
     }
@@ -509,18 +524,13 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets value_added_services.
      *
      * @param null|ValueAddedServiceDetails $value_added_services value_added_services
+     *
+     * @return self
      */
-    public function setValueAddedServices(?ValueAddedServiceDetails $value_added_services): self
+    public function setValueAddedServices($value_added_services)
     {
         if (is_null($value_added_services)) {
-            array_push($this->openAPINullablesSetToNull, 'value_added_services');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('value_added_services', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable value_added_services cannot be null');
         }
         $this->container['value_added_services'] = $value_added_services;
 
@@ -529,8 +539,10 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets tax_details.
+     *
+     * @return null|TaxDetail[]
      */
-    public function getTaxDetails(): ?array
+    public function getTaxDetails()
     {
         return $this->container['tax_details'];
     }
@@ -538,19 +550,14 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets tax_details.
      *
-     * @param null|array $tax_details a list of tax detail information
+     * @param null|TaxDetail[] $tax_details a list of tax detail information
+     *
+     * @return self
      */
-    public function setTaxDetails(?array $tax_details): self
+    public function setTaxDetails($tax_details)
     {
         if (is_null($tax_details)) {
-            array_push($this->openAPINullablesSetToNull, 'tax_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tax_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tax_details cannot be null');
         }
         $this->container['tax_details'] = $tax_details;
 
@@ -559,8 +566,10 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets channel_details.
+     *
+     * @return ChannelDetails
      */
-    public function getChannelDetails(): ChannelDetails
+    public function getChannelDetails()
     {
         return $this->container['channel_details'];
     }
@@ -569,8 +578,10 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets channel_details.
      *
      * @param ChannelDetails $channel_details channel_details
+     *
+     * @return self
      */
-    public function setChannelDetails(ChannelDetails $channel_details): self
+    public function setChannelDetails($channel_details)
     {
         if (is_null($channel_details)) {
             throw new \InvalidArgumentException('non-nullable channel_details cannot be null');
@@ -582,8 +593,10 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets client_reference_details.
+     *
+     * @return null|ClientReferenceDetail[]
      */
-    public function getClientReferenceDetails(): ?array
+    public function getClientReferenceDetails()
     {
         return $this->container['client_reference_details'];
     }
@@ -591,19 +604,14 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets client_reference_details.
      *
-     * @param null|array $client_reference_details Object to pass additional information about the MCI Integrator shipperType: List of ClientReferenceDetail
+     * @param null|ClientReferenceDetail[] $client_reference_details Object to pass additional information about the MCI Integrator shipperType: List of ClientReferenceDetail
+     *
+     * @return self
      */
-    public function setClientReferenceDetails(?array $client_reference_details): self
+    public function setClientReferenceDetails($client_reference_details)
     {
         if (is_null($client_reference_details)) {
-            array_push($this->openAPINullablesSetToNull, 'client_reference_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('client_reference_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable client_reference_details cannot be null');
         }
         $this->container['client_reference_details'] = $client_reference_details;
 
@@ -612,8 +620,10 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets shipment_type.
+     *
+     * @return null|ShipmentType
      */
-    public function getShipmentType(): ?string
+    public function getShipmentType()
     {
         return $this->container['shipment_type'];
     }
@@ -621,19 +631,14 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets shipment_type.
      *
-     * @param null|string $shipment_type shipment_type
+     * @param null|ShipmentType $shipment_type shipment_type
+     *
+     * @return self
      */
-    public function setShipmentType(?string $shipment_type): self
+    public function setShipmentType($shipment_type)
     {
         if (is_null($shipment_type)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_type cannot be null');
         }
         $this->container['shipment_type'] = $shipment_type;
 
@@ -642,8 +647,10 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets destination_access_point_details.
+     *
+     * @return null|AccessPointDetails
      */
-    public function getDestinationAccessPointDetails(): ?AccessPointDetails
+    public function getDestinationAccessPointDetails()
     {
         return $this->container['destination_access_point_details'];
     }
@@ -652,18 +659,13 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets destination_access_point_details.
      *
      * @param null|AccessPointDetails $destination_access_point_details destination_access_point_details
+     *
+     * @return self
      */
-    public function setDestinationAccessPointDetails(?AccessPointDetails $destination_access_point_details): self
+    public function setDestinationAccessPointDetails($destination_access_point_details)
     {
         if (is_null($destination_access_point_details)) {
-            array_push($this->openAPINullablesSetToNull, 'destination_access_point_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('destination_access_point_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable destination_access_point_details cannot be null');
         }
         $this->container['destination_access_point_details'] = $destination_access_point_details;
 
@@ -672,8 +674,10 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets carrier_accounts.
+     *
+     * @return null|CarrierAccount[]
      */
-    public function getCarrierAccounts(): ?array
+    public function getCarrierAccounts()
     {
         return $this->container['carrier_accounts'];
     }
@@ -681,19 +685,14 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets carrier_accounts.
      *
-     * @param null|array $carrier_accounts A list of CarrierAccounts
+     * @param null|CarrierAccount[] $carrier_accounts A list of CarrierAccounts
+     *
+     * @return self
      */
-    public function setCarrierAccounts(?array $carrier_accounts): self
+    public function setCarrierAccounts($carrier_accounts)
     {
         if (is_null($carrier_accounts)) {
-            array_push($this->openAPINullablesSetToNull, 'carrier_accounts');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('carrier_accounts', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable carrier_accounts cannot be null');
         }
         $this->container['carrier_accounts'] = $carrier_accounts;
 
@@ -718,7 +717,7 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -729,7 +728,7 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -757,15 +756,17 @@ class GetRatesRequest implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

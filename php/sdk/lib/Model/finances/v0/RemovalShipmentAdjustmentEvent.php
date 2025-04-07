@@ -3,7 +3,7 @@
 /**
  * RemovalShipmentAdjustmentEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'RemovalShipmentAdjustmentEvent';
+    protected static $openAPIModelName = 'RemovalShipmentAdjustmentEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'posted_date' => '\DateTime',
         'adjustment_event_id' => 'string',
         'merchant_order_id' => 'string',
         'order_id' => 'string',
         'transaction_type' => 'string',
-        'removal_shipment_item_adjustment_list' => '\SpApi\Model\finances\v0\RemovalShipmentItemAdjustment[]'];
+        'removal_shipment_item_adjustment_list' => '\SpApi\Model\finances\v0\RemovalShipmentItemAdjustment[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'posted_date' => 'date-time',
         'adjustment_event_id' => null,
         'merchant_order_id' => null,
         'order_id' => null,
         'transaction_type' => null,
-        'removal_shipment_item_adjustment_list' => null];
+        'removal_shipment_item_adjustment_list' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -91,12 +94,12 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'posted_date' => true,
-        'adjustment_event_id' => true,
-        'merchant_order_id' => true,
-        'order_id' => true,
-        'transaction_type' => true,
-        'removal_shipment_item_adjustment_list' => true,
+        'posted_date' => false,
+        'adjustment_event_id' => false,
+        'merchant_order_id' => false,
+        'order_id' => false,
+        'transaction_type' => false,
+        'removal_shipment_item_adjustment_list' => false,
     ];
 
     /**
@@ -112,7 +115,7 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'posted_date' => 'PostedDate',
         'adjustment_event_id' => 'AdjustmentEventId',
         'merchant_order_id' => 'MerchantOrderId',
@@ -126,7 +129,7 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'posted_date' => 'setPostedDate',
         'adjustment_event_id' => 'setAdjustmentEventId',
         'merchant_order_id' => 'setMerchantOrderId',
@@ -140,7 +143,7 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'posted_date' => 'getPostedDate',
         'adjustment_event_id' => 'getAdjustmentEventId',
         'merchant_order_id' => 'getMerchantOrderId',
@@ -151,14 +154,16 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -264,15 +281,17 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTime
      */
-    public function getPostedDate(): ?\DateTime
+    public function getPostedDate()
     {
         return $this->container['posted_date'];
     }
@@ -281,18 +300,13 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
      * Sets posted_date.
      *
      * @param null|\DateTime $posted_date fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate)
+     *
+     * @return self
      */
-    public function setPostedDate(?\DateTime $posted_date): self
+    public function setPostedDate($posted_date)
     {
         if (is_null($posted_date)) {
-            array_push($this->openAPINullablesSetToNull, 'posted_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('posted_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable posted_date cannot be null');
         }
         $this->container['posted_date'] = $posted_date;
 
@@ -301,8 +315,10 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets adjustment_event_id.
+     *
+     * @return null|string
      */
-    public function getAdjustmentEventId(): ?string
+    public function getAdjustmentEventId()
     {
         return $this->container['adjustment_event_id'];
     }
@@ -311,18 +327,13 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
      * Sets adjustment_event_id.
      *
      * @param null|string $adjustment_event_id the unique identifier for the adjustment event
+     *
+     * @return self
      */
-    public function setAdjustmentEventId(?string $adjustment_event_id): self
+    public function setAdjustmentEventId($adjustment_event_id)
     {
         if (is_null($adjustment_event_id)) {
-            array_push($this->openAPINullablesSetToNull, 'adjustment_event_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('adjustment_event_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable adjustment_event_id cannot be null');
         }
         $this->container['adjustment_event_id'] = $adjustment_event_id;
 
@@ -331,8 +342,10 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets merchant_order_id.
+     *
+     * @return null|string
      */
-    public function getMerchantOrderId(): ?string
+    public function getMerchantOrderId()
     {
         return $this->container['merchant_order_id'];
     }
@@ -341,18 +354,13 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
      * Sets merchant_order_id.
      *
      * @param null|string $merchant_order_id the merchant removal orderId
+     *
+     * @return self
      */
-    public function setMerchantOrderId(?string $merchant_order_id): self
+    public function setMerchantOrderId($merchant_order_id)
     {
         if (is_null($merchant_order_id)) {
-            array_push($this->openAPINullablesSetToNull, 'merchant_order_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('merchant_order_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable merchant_order_id cannot be null');
         }
         $this->container['merchant_order_id'] = $merchant_order_id;
 
@@ -361,8 +369,10 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets order_id.
+     *
+     * @return null|string
      */
-    public function getOrderId(): ?string
+    public function getOrderId()
     {
         return $this->container['order_id'];
     }
@@ -371,18 +381,13 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
      * Sets order_id.
      *
      * @param null|string $order_id the orderId for shipping inventory
+     *
+     * @return self
      */
-    public function setOrderId(?string $order_id): self
+    public function setOrderId($order_id)
     {
         if (is_null($order_id)) {
-            array_push($this->openAPINullablesSetToNull, 'order_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('order_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable order_id cannot be null');
         }
         $this->container['order_id'] = $order_id;
 
@@ -391,8 +396,10 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets transaction_type.
+     *
+     * @return null|string
      */
-    public function getTransactionType(): ?string
+    public function getTransactionType()
     {
         return $this->container['transaction_type'];
     }
@@ -401,18 +408,13 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
      * Sets transaction_type.
      *
      * @param null|string $transaction_type The type of removal order.  Possible values:  * WHOLESALE_LIQUIDATION.
+     *
+     * @return self
      */
-    public function setTransactionType(?string $transaction_type): self
+    public function setTransactionType($transaction_type)
     {
         if (is_null($transaction_type)) {
-            array_push($this->openAPINullablesSetToNull, 'transaction_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transaction_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transaction_type cannot be null');
         }
         $this->container['transaction_type'] = $transaction_type;
 
@@ -421,8 +423,10 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets removal_shipment_item_adjustment_list.
+     *
+     * @return null|RemovalShipmentItemAdjustment[]
      */
-    public function getRemovalShipmentItemAdjustmentList(): ?array
+    public function getRemovalShipmentItemAdjustmentList()
     {
         return $this->container['removal_shipment_item_adjustment_list'];
     }
@@ -430,19 +434,14 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
     /**
      * Sets removal_shipment_item_adjustment_list.
      *
-     * @param null|array $removal_shipment_item_adjustment_list a comma-delimited list of Removal shipmentItemAdjustment details for FBA inventory
+     * @param null|RemovalShipmentItemAdjustment[] $removal_shipment_item_adjustment_list a comma-delimited list of Removal shipmentItemAdjustment details for FBA inventory
+     *
+     * @return self
      */
-    public function setRemovalShipmentItemAdjustmentList(?array $removal_shipment_item_adjustment_list): self
+    public function setRemovalShipmentItemAdjustmentList($removal_shipment_item_adjustment_list)
     {
         if (is_null($removal_shipment_item_adjustment_list)) {
-            array_push($this->openAPINullablesSetToNull, 'removal_shipment_item_adjustment_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('removal_shipment_item_adjustment_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable removal_shipment_item_adjustment_list cannot be null');
         }
         $this->container['removal_shipment_item_adjustment_list'] = $removal_shipment_item_adjustment_list;
 
@@ -467,7 +466,7 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -478,7 +477,7 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -506,15 +505,17 @@ class RemovalShipmentAdjustmentEvent implements ModelInterface, \ArrayAccess, \J
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

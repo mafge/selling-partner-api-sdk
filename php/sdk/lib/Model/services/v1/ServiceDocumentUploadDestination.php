@@ -3,7 +3,7 @@
 /**
  * ServiceDocumentUploadDestination.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\services\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ServiceDocumentUploadDestination';
+    protected static $openAPIModelName = 'ServiceDocumentUploadDestination';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'upload_destination_id' => 'string',
         'url' => 'string',
         'encryption_details' => '\SpApi\Model\services\v1\EncryptionDetails',
-        'headers' => 'object'];
+        'headers' => 'object',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'upload_destination_id' => null,
         'url' => null,
         'encryption_details' => null,
-        'headers' => null];
+        'headers' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -90,7 +93,7 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
         'upload_destination_id' => false,
         'url' => false,
         'encryption_details' => false,
-        'headers' => true,
+        'headers' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'upload_destination_id' => 'uploadDestinationId',
         'url' => 'url',
         'encryption_details' => 'encryptionDetails',
@@ -118,7 +121,7 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'upload_destination_id' => 'setUploadDestinationId',
         'url' => 'setUrl',
         'encryption_details' => 'setEncryptionDetails',
@@ -130,7 +133,7 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'upload_destination_id' => 'getUploadDestinationId',
         'url' => 'getUrl',
         'encryption_details' => 'getEncryptionDetails',
@@ -139,14 +142,16 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -262,15 +279,17 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets upload_destination_id.
+     *
+     * @return string
      */
-    public function getUploadDestinationId(): string
+    public function getUploadDestinationId()
     {
         return $this->container['upload_destination_id'];
     }
@@ -279,8 +298,10 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
      * Sets upload_destination_id.
      *
      * @param string $upload_destination_id the unique identifier to be used by APIs that reference the upload destination
+     *
+     * @return self
      */
-    public function setUploadDestinationId(string $upload_destination_id): self
+    public function setUploadDestinationId($upload_destination_id)
     {
         if (is_null($upload_destination_id)) {
             throw new \InvalidArgumentException('non-nullable upload_destination_id cannot be null');
@@ -292,8 +313,10 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
 
     /**
      * Gets url.
+     *
+     * @return string
      */
-    public function getUrl(): string
+    public function getUrl()
     {
         return $this->container['url'];
     }
@@ -302,8 +325,10 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
      * Sets url.
      *
      * @param string $url the URL to which to upload the file
+     *
+     * @return self
      */
-    public function setUrl(string $url): self
+    public function setUrl($url)
     {
         if (is_null($url)) {
             throw new \InvalidArgumentException('non-nullable url cannot be null');
@@ -315,8 +340,10 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
 
     /**
      * Gets encryption_details.
+     *
+     * @return EncryptionDetails
      */
-    public function getEncryptionDetails(): EncryptionDetails
+    public function getEncryptionDetails()
     {
         return $this->container['encryption_details'];
     }
@@ -325,8 +352,10 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
      * Sets encryption_details.
      *
      * @param EncryptionDetails $encryption_details encryption_details
+     *
+     * @return self
      */
-    public function setEncryptionDetails(EncryptionDetails $encryption_details): self
+    public function setEncryptionDetails($encryption_details)
     {
         if (is_null($encryption_details)) {
             throw new \InvalidArgumentException('non-nullable encryption_details cannot be null');
@@ -338,8 +367,10 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
 
     /**
      * Gets headers.
+     *
+     * @return null|object
      */
-    public function getHeaders(): ?object
+    public function getHeaders()
     {
         return $this->container['headers'];
     }
@@ -348,18 +379,13 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
      * Sets headers.
      *
      * @param null|object $headers the headers to include in the upload request
+     *
+     * @return self
      */
-    public function setHeaders(?object $headers): self
+    public function setHeaders($headers)
     {
         if (is_null($headers)) {
-            array_push($this->openAPINullablesSetToNull, 'headers');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('headers', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable headers cannot be null');
         }
         $this->container['headers'] = $headers;
 
@@ -384,7 +410,7 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -395,7 +421,7 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -423,15 +449,17 @@ class ServiceDocumentUploadDestination implements ModelInterface, \ArrayAccess, 
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

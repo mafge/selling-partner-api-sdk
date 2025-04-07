@@ -2,7 +2,7 @@
 /**
  * Duration
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * Duration Class Doc Comment
@@ -52,16 +50,17 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'Duration';
+    protected static $openAPIModelName = 'Duration';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'duration_unit' => 'string',
-             'duration_value' => 'int'    ];
+    protected static $openAPITypes = [
+        'duration_unit' => 'string',
+        'duration_value' => 'int'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,9 +69,10 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'duration_unit' => null,
-            'duration_value' => null    ];
+    protected static $openAPIFormats = [
+        'duration_unit' => null,
+        'duration_value' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -96,7 +96,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -106,7 +106,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -169,10 +169,9 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'duration_unit' => 'durationUnit',
-                'duration_value' => 'durationValue'
-        
+        'duration_value' => 'durationValue'
     ];
 
     /**
@@ -180,7 +179,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'duration_unit' => 'setDurationUnit',
         'duration_value' => 'setDurationValue'
     ];
@@ -190,7 +189,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'duration_unit' => 'getDurationUnit',
         'duration_value' => 'getDurationValue'
     ];
@@ -201,7 +200,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -211,7 +210,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -221,7 +220,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -231,7 +230,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -244,7 +243,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getDurationUnitAllowableValues(): array
+    public function getDurationUnitAllowableValues()
     {
         return [
             self::DURATION_UNIT_DAYS,
@@ -255,17 +254,17 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('duration_unit', $data ?? [], null);
         $this->setIfExists('duration_value', $data ?? [], null);
@@ -294,7 +293,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -322,7 +321,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -333,7 +332,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getDurationUnit(): string
+    public function getDurationUnit()
     {
         return $this->container['duration_unit'];
     }
@@ -345,7 +344,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDurationUnit(string $duration_unit): self
+    public function setDurationUnit($duration_unit)
     {
         if (is_null($duration_unit)) {
             throw new \InvalidArgumentException('non-nullable duration_unit cannot be null');
@@ -370,7 +369,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return int
      */
-    public function getDurationValue(): int
+    public function getDurationValue()
     {
         return $this->container['duration_value'];
     }
@@ -382,7 +381,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDurationValue(int $duration_value): self
+    public function setDurationValue($duration_value)
     {
         if (is_null($duration_value)) {
             throw new \InvalidArgumentException('non-nullable duration_value cannot be null');
@@ -391,8 +390,6 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -413,7 +410,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -426,7 +423,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -455,7 +452,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -478,7 +475,7 @@ class Duration implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

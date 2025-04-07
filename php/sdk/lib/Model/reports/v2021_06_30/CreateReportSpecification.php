@@ -3,7 +3,7 @@
 /**
  * CreateReportSpecification.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\reports\v2021_06_30;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CreateReportSpecification';
+    protected static $openAPIModelName = 'CreateReportSpecification';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'report_options' => 'array<string,string>',
         'report_type' => 'string',
         'data_start_time' => '\DateTime',
         'data_end_time' => '\DateTime',
-        'marketplace_ids' => 'string[]'];
+        'marketplace_ids' => 'string[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'report_options' => null,
         'report_type' => null,
         'data_start_time' => 'date-time',
         'data_end_time' => 'date-time',
-        'marketplace_ids' => null];
+        'marketplace_ids' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,10 +92,10 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'report_options' => true,
+        'report_options' => false,
         'report_type' => false,
-        'data_start_time' => true,
-        'data_end_time' => true,
+        'data_start_time' => false,
+        'data_end_time' => false,
         'marketplace_ids' => false,
     ];
 
@@ -109,7 +112,7 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'report_options' => 'reportOptions',
         'report_type' => 'reportType',
         'data_start_time' => 'dataStartTime',
@@ -122,7 +125,7 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'report_options' => 'setReportOptions',
         'report_type' => 'setReportType',
         'data_start_time' => 'setDataStartTime',
@@ -135,7 +138,7 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'report_options' => 'getReportOptions',
         'report_type' => 'getReportType',
         'data_start_time' => 'getDataStartTime',
@@ -145,14 +148,16 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -273,7 +290,7 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
@@ -283,7 +300,7 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return null|array<string,string>
      */
-    public function getReportOptions(): ?array
+    public function getReportOptions()
     {
         return $this->container['report_options'];
     }
@@ -292,18 +309,13 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets report_options.
      *
      * @param null|array<string,string> $report_options Additional information passed to reports. This varies by report type.
+     *
+     * @return self
      */
-    public function setReportOptions(?array $report_options): self
+    public function setReportOptions($report_options)
     {
         if (is_null($report_options)) {
-            array_push($this->openAPINullablesSetToNull, 'report_options');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('report_options', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable report_options cannot be null');
         }
         $this->container['report_options'] = $report_options;
 
@@ -312,8 +324,10 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets report_type.
+     *
+     * @return string
      */
-    public function getReportType(): string
+    public function getReportType()
     {
         return $this->container['report_type'];
     }
@@ -322,8 +336,10 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets report_type.
      *
      * @param string $report_type The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
+     *
+     * @return self
      */
-    public function setReportType(string $report_type): self
+    public function setReportType($report_type)
     {
         if (is_null($report_type)) {
             throw new \InvalidArgumentException('non-nullable report_type cannot be null');
@@ -335,8 +351,10 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets data_start_time.
+     *
+     * @return null|\DateTime
      */
-    public function getDataStartTime(): ?\DateTime
+    public function getDataStartTime()
     {
         return $this->container['data_start_time'];
     }
@@ -345,18 +363,13 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets data_start_time.
      *
      * @param null|\DateTime $data_start_time The start of a date and time range, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
+     *
+     * @return self
      */
-    public function setDataStartTime(?\DateTime $data_start_time): self
+    public function setDataStartTime($data_start_time)
     {
         if (is_null($data_start_time)) {
-            array_push($this->openAPINullablesSetToNull, 'data_start_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('data_start_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable data_start_time cannot be null');
         }
         $this->container['data_start_time'] = $data_start_time;
 
@@ -365,8 +378,10 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets data_end_time.
+     *
+     * @return null|\DateTime
      */
-    public function getDataEndTime(): ?\DateTime
+    public function getDataEndTime()
     {
         return $this->container['data_end_time'];
     }
@@ -375,18 +390,13 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets data_end_time.
      *
      * @param null|\DateTime $data_end_time The end of a date and time range, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
+     *
+     * @return self
      */
-    public function setDataEndTime(?\DateTime $data_end_time): self
+    public function setDataEndTime($data_end_time)
     {
         if (is_null($data_end_time)) {
-            array_push($this->openAPINullablesSetToNull, 'data_end_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('data_end_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable data_end_time cannot be null');
         }
         $this->container['data_end_time'] = $data_end_time;
 
@@ -395,8 +405,10 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets marketplace_ids.
+     *
+     * @return string[]
      */
-    public function getMarketplaceIds(): array
+    public function getMarketplaceIds()
     {
         return $this->container['marketplace_ids'];
     }
@@ -404,9 +416,11 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets marketplace_ids.
      *
-     * @param array $marketplace_ids A list of marketplace identifiers. The report document's contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise.
+     * @param string[] $marketplace_ids A list of marketplace identifiers. The report document's contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise.
+     *
+     * @return self
      */
-    public function setMarketplaceIds(array $marketplace_ids): self
+    public function setMarketplaceIds($marketplace_ids)
     {
         if (is_null($marketplace_ids)) {
             throw new \InvalidArgumentException('non-nullable marketplace_ids cannot be null');
@@ -441,7 +455,7 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -452,7 +466,7 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -480,15 +494,17 @@ class CreateReportSpecification implements ModelInterface, \ArrayAccess, \JsonSe
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

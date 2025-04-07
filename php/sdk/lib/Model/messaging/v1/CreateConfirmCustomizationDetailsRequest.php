@@ -3,7 +3,7 @@
 /**
  * CreateConfirmCustomizationDetailsRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\messaging\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class CreateConfirmCustomizationDetailsRequest implements ModelInterface, \Array
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CreateConfirmCustomizationDetailsRequest';
+    protected static $openAPIModelName = 'CreateConfirmCustomizationDetailsRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'text' => 'string',
-        'attachments' => '\SpApi\Model\messaging\v1\Attachment[]'];
+        'attachments' => '\SpApi\Model\messaging\v1\Attachment[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class CreateConfirmCustomizationDetailsRequest implements ModelInterface, \Array
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'text' => null,
-        'attachments' => null];
+        'attachments' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class CreateConfirmCustomizationDetailsRequest implements ModelInterface, \Array
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'text' => true,
-        'attachments' => true,
+        'text' => false,
+        'attachments' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class CreateConfirmCustomizationDetailsRequest implements ModelInterface, \Array
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'text' => 'text',
         'attachments' => 'attachments',
     ];
@@ -110,7 +113,7 @@ class CreateConfirmCustomizationDetailsRequest implements ModelInterface, \Array
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'text' => 'setText',
         'attachments' => 'setAttachments',
     ];
@@ -120,21 +123,23 @@ class CreateConfirmCustomizationDetailsRequest implements ModelInterface, \Array
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'text' => 'getText',
         'attachments' => 'getAttachments',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class CreateConfirmCustomizationDetailsRequest implements ModelInterface, \Array
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class CreateConfirmCustomizationDetailsRequest implements ModelInterface, \Array
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class CreateConfirmCustomizationDetailsRequest implements ModelInterface, \Array
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -246,15 +263,17 @@ class CreateConfirmCustomizationDetailsRequest implements ModelInterface, \Array
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets text.
+     *
+     * @return null|string
      */
-    public function getText(): ?string
+    public function getText()
     {
         return $this->container['text'];
     }
@@ -263,23 +282,18 @@ class CreateConfirmCustomizationDetailsRequest implements ModelInterface, \Array
      * Sets text.
      *
      * @param null|string $text The text to be sent to the buyer. Only links related to customization details are allowed. Do not include HTML or email addresses. The text must be written in the buyer's language of preference, which can be retrieved from the GetAttributes operation.
+     *
+     * @return self
      */
-    public function setText(?string $text): self
+    public function setText($text)
     {
         if (is_null($text)) {
-            array_push($this->openAPINullablesSetToNull, 'text');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('text', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable text cannot be null');
         }
-        if (!is_null($text) && (mb_strlen($text) > 800)) {
+        if (mb_strlen($text) > 800) {
             throw new \InvalidArgumentException('invalid length for $text when calling CreateConfirmCustomizationDetailsRequest., must be smaller than or equal to 800.');
         }
-        if (!is_null($text) && (mb_strlen($text) < 1)) {
+        if (mb_strlen($text) < 1) {
             throw new \InvalidArgumentException('invalid length for $text when calling CreateConfirmCustomizationDetailsRequest., must be bigger than or equal to 1.');
         }
 
@@ -290,8 +304,10 @@ class CreateConfirmCustomizationDetailsRequest implements ModelInterface, \Array
 
     /**
      * Gets attachments.
+     *
+     * @return null|Attachment[]
      */
-    public function getAttachments(): ?array
+    public function getAttachments()
     {
         return $this->container['attachments'];
     }
@@ -299,19 +315,14 @@ class CreateConfirmCustomizationDetailsRequest implements ModelInterface, \Array
     /**
      * Sets attachments.
      *
-     * @param null|array $attachments attachments to include in the message to the buyer
+     * @param null|Attachment[] $attachments attachments to include in the message to the buyer
+     *
+     * @return self
      */
-    public function setAttachments(?array $attachments): self
+    public function setAttachments($attachments)
     {
         if (is_null($attachments)) {
-            array_push($this->openAPINullablesSetToNull, 'attachments');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('attachments', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable attachments cannot be null');
         }
         $this->container['attachments'] = $attachments;
 
@@ -336,7 +347,7 @@ class CreateConfirmCustomizationDetailsRequest implements ModelInterface, \Array
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -347,7 +358,7 @@ class CreateConfirmCustomizationDetailsRequest implements ModelInterface, \Array
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -375,15 +386,17 @@ class CreateConfirmCustomizationDetailsRequest implements ModelInterface, \Array
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

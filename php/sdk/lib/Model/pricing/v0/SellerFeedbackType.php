@@ -3,7 +3,7 @@
 /**
  * SellerFeedbackType.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class SellerFeedbackType implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'SellerFeedbackType';
+    protected static $openAPIModelName = 'SellerFeedbackType';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'seller_positive_feedback_rating' => 'float',
-        'feedback_count' => 'int'];
+        'feedback_count' => 'int',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class SellerFeedbackType implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'seller_positive_feedback_rating' => 'double',
-        'feedback_count' => 'int64'];
+        'feedback_count' => 'int64',
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,7 +86,7 @@ class SellerFeedbackType implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'seller_positive_feedback_rating' => true,
+        'seller_positive_feedback_rating' => false,
         'feedback_count' => false,
     ];
 
@@ -100,7 +103,7 @@ class SellerFeedbackType implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'seller_positive_feedback_rating' => 'SellerPositiveFeedbackRating',
         'feedback_count' => 'FeedbackCount',
     ];
@@ -110,7 +113,7 @@ class SellerFeedbackType implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'seller_positive_feedback_rating' => 'setSellerPositiveFeedbackRating',
         'feedback_count' => 'setFeedbackCount',
     ];
@@ -120,21 +123,23 @@ class SellerFeedbackType implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'seller_positive_feedback_rating' => 'getSellerPositiveFeedbackRating',
         'feedback_count' => 'getFeedbackCount',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class SellerFeedbackType implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class SellerFeedbackType implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class SellerFeedbackType implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -242,15 +259,17 @@ class SellerFeedbackType implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets seller_positive_feedback_rating.
+     *
+     * @return null|float
      */
-    public function getSellerPositiveFeedbackRating(): ?float
+    public function getSellerPositiveFeedbackRating()
     {
         return $this->container['seller_positive_feedback_rating'];
     }
@@ -259,18 +278,13 @@ class SellerFeedbackType implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets seller_positive_feedback_rating.
      *
      * @param null|float $seller_positive_feedback_rating the percentage of positive feedback for the seller in the past 365 days
+     *
+     * @return self
      */
-    public function setSellerPositiveFeedbackRating(?float $seller_positive_feedback_rating): self
+    public function setSellerPositiveFeedbackRating($seller_positive_feedback_rating)
     {
         if (is_null($seller_positive_feedback_rating)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_positive_feedback_rating');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_positive_feedback_rating', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_positive_feedback_rating cannot be null');
         }
         $this->container['seller_positive_feedback_rating'] = $seller_positive_feedback_rating;
 
@@ -279,8 +293,10 @@ class SellerFeedbackType implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets feedback_count.
+     *
+     * @return int
      */
-    public function getFeedbackCount(): int
+    public function getFeedbackCount()
     {
         return $this->container['feedback_count'];
     }
@@ -289,8 +305,10 @@ class SellerFeedbackType implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets feedback_count.
      *
      * @param int $feedback_count the number of ratings received about the seller
+     *
+     * @return self
      */
-    public function setFeedbackCount(int $feedback_count): self
+    public function setFeedbackCount($feedback_count)
     {
         if (is_null($feedback_count)) {
             throw new \InvalidArgumentException('non-nullable feedback_count cannot be null');
@@ -318,7 +336,7 @@ class SellerFeedbackType implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -329,7 +347,7 @@ class SellerFeedbackType implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -357,15 +375,17 @@ class SellerFeedbackType implements ModelInterface, \ArrayAccess, \JsonSerializa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

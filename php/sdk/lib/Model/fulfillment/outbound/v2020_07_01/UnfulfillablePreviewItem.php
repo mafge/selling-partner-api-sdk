@@ -3,7 +3,7 @@
 /**
  * UnfulfillablePreviewItem.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'UnfulfillablePreviewItem';
+    protected static $openAPIModelName = 'UnfulfillablePreviewItem';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'seller_sku' => 'string',
         'quantity' => 'int',
         'seller_fulfillment_order_item_id' => 'string',
-        'item_unfulfillable_reasons' => 'string[]'];
+        'item_unfulfillable_reasons' => 'string[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'seller_sku' => null,
         'quantity' => 'int32',
         'seller_fulfillment_order_item_id' => null,
-        'item_unfulfillable_reasons' => null];
+        'item_unfulfillable_reasons' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -90,7 +93,7 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
         'seller_sku' => false,
         'quantity' => false,
         'seller_fulfillment_order_item_id' => false,
-        'item_unfulfillable_reasons' => true,
+        'item_unfulfillable_reasons' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'seller_sku' => 'sellerSku',
         'quantity' => 'quantity',
         'seller_fulfillment_order_item_id' => 'sellerFulfillmentOrderItemId',
@@ -118,7 +121,7 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'seller_sku' => 'setSellerSku',
         'quantity' => 'setQuantity',
         'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
@@ -130,7 +133,7 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'seller_sku' => 'getSellerSku',
         'quantity' => 'getQuantity',
         'seller_fulfillment_order_item_id' => 'getSellerFulfillmentOrderItemId',
@@ -139,14 +142,16 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -269,15 +286,17 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets seller_sku.
+     *
+     * @return string
      */
-    public function getSellerSku(): string
+    public function getSellerSku()
     {
         return $this->container['seller_sku'];
     }
@@ -286,8 +305,10 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets seller_sku.
      *
      * @param string $seller_sku the seller SKU of the item
+     *
+     * @return self
      */
-    public function setSellerSku(string $seller_sku): self
+    public function setSellerSku($seller_sku)
     {
         if (is_null($seller_sku)) {
             throw new \InvalidArgumentException('non-nullable seller_sku cannot be null');
@@ -303,8 +324,10 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets quantity.
+     *
+     * @return int
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->container['quantity'];
     }
@@ -313,8 +336,10 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets quantity.
      *
      * @param int $quantity the item quantity
+     *
+     * @return self
      */
-    public function setQuantity(int $quantity): self
+    public function setQuantity($quantity)
     {
         if (is_null($quantity)) {
             throw new \InvalidArgumentException('non-nullable quantity cannot be null');
@@ -326,8 +351,10 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets seller_fulfillment_order_item_id.
+     *
+     * @return string
      */
-    public function getSellerFulfillmentOrderItemId(): string
+    public function getSellerFulfillmentOrderItemId()
     {
         return $this->container['seller_fulfillment_order_item_id'];
     }
@@ -336,8 +363,10 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets seller_fulfillment_order_item_id.
      *
      * @param string $seller_fulfillment_order_item_id a fulfillment order item identifier created with a call to the `getFulfillmentPreview` operation
+     *
+     * @return self
      */
-    public function setSellerFulfillmentOrderItemId(string $seller_fulfillment_order_item_id): self
+    public function setSellerFulfillmentOrderItemId($seller_fulfillment_order_item_id)
     {
         if (is_null($seller_fulfillment_order_item_id)) {
             throw new \InvalidArgumentException('non-nullable seller_fulfillment_order_item_id cannot be null');
@@ -353,8 +382,10 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets item_unfulfillable_reasons.
+     *
+     * @return null|string[]
      */
-    public function getItemUnfulfillableReasons(): ?array
+    public function getItemUnfulfillableReasons()
     {
         return $this->container['item_unfulfillable_reasons'];
     }
@@ -362,19 +393,14 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Sets item_unfulfillable_reasons.
      *
-     * @param null|array $item_unfulfillable_reasons String list
+     * @param null|string[] $item_unfulfillable_reasons String list
+     *
+     * @return self
      */
-    public function setItemUnfulfillableReasons(?array $item_unfulfillable_reasons): self
+    public function setItemUnfulfillableReasons($item_unfulfillable_reasons)
     {
         if (is_null($item_unfulfillable_reasons)) {
-            array_push($this->openAPINullablesSetToNull, 'item_unfulfillable_reasons');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('item_unfulfillable_reasons', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable item_unfulfillable_reasons cannot be null');
         }
         $this->container['item_unfulfillable_reasons'] = $item_unfulfillable_reasons;
 
@@ -399,7 +425,7 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -410,7 +436,7 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -438,15 +464,17 @@ class UnfulfillablePreviewItem implements ModelInterface, \ArrayAccess, \JsonSer
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

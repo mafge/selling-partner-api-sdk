@@ -3,7 +3,7 @@
 /**
  * Status.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -72,7 +72,7 @@ class Status
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues(): array
+    public static function getAllowableEnumValues()
     {
         return [
             self::PRE_TRANSIT,

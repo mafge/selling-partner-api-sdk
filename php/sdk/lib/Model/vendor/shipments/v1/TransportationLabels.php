@@ -2,7 +2,7 @@
 /**
  * TransportationLabels
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * TransportationLabels Class Doc Comment
@@ -52,16 +50,17 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'TransportationLabels';
+    protected static $openAPIModelName = 'TransportationLabels';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'pagination' => '\SpApi\Model\vendor\shipments\v1\Pagination',
-             'transport_labels' => '\SpApi\Model\vendor\shipments\v1\TransportLabel[]'    ];
+    protected static $openAPITypes = [
+        'pagination' => '\SpApi\Model\vendor\shipments\v1\Pagination',
+        'transport_labels' => '\SpApi\Model\vendor\shipments\v1\TransportLabel[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,9 +69,10 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'pagination' => null,
-            'transport_labels' => null    ];
+    protected static $openAPIFormats = [
+        'pagination' => null,
+        'transport_labels' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -80,8 +80,8 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'pagination' => true,
-        'transport_labels' => true
+        'pagination' => false,
+        'transport_labels' => false
     ];
 
     /**
@@ -96,7 +96,7 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -106,7 +106,7 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -169,10 +169,9 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'pagination' => 'pagination',
-                'transport_labels' => 'transportLabels'
-        
+        'transport_labels' => 'transportLabels'
     ];
 
     /**
@@ -180,7 +179,7 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'pagination' => 'setPagination',
         'transport_labels' => 'setTransportLabels'
     ];
@@ -190,7 +189,7 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'pagination' => 'getPagination',
         'transport_labels' => 'getTransportLabels'
     ];
@@ -201,7 +200,7 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -211,7 +210,7 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -221,7 +220,7 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -231,7 +230,7 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -240,17 +239,17 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('pagination', $data ?? [], null);
         $this->setIfExists('transport_labels', $data ?? [], null);
@@ -279,7 +278,7 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -292,7 +291,7 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -303,7 +302,7 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return \SpApi\Model\vendor\shipments\v1\Pagination|null
      */
-    public function getPagination(): ?\SpApi\Model\vendor\shipments\v1\Pagination
+    public function getPagination()
     {
         return $this->container['pagination'];
     }
@@ -315,17 +314,10 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setPagination(?\SpApi\Model\vendor\shipments\v1\Pagination $pagination): self
+    public function setPagination($pagination)
     {
         if (is_null($pagination)) {
-            array_push($this->openAPINullablesSetToNull, 'pagination');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('pagination', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable pagination cannot be null');
         }
         $this->container['pagination'] = $pagination;
 
@@ -335,9 +327,9 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets transport_labels
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\shipments\v1\TransportLabel[]|null
      */
-    public function getTransportLabels(): ?array
+    public function getTransportLabels()
     {
         return $this->container['transport_labels'];
     }
@@ -345,28 +337,19 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets transport_labels
      *
-     * @param array|null $transport_labels A list of one or more ShipmentLabels.
+     * @param \SpApi\Model\vendor\shipments\v1\TransportLabel[]|null $transport_labels A list of one or more ShipmentLabels.
      *
      * @return self
      */
-    public function setTransportLabels(?array $transport_labels): self
+    public function setTransportLabels($transport_labels)
     {
         if (is_null($transport_labels)) {
-            array_push($this->openAPINullablesSetToNull, 'transport_labels');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transport_labels', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transport_labels cannot be null');
         }
         $this->container['transport_labels'] = $transport_labels;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -387,7 +370,7 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -400,7 +383,7 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -429,7 +412,7 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -452,7 +435,7 @@ class TransportationLabels implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

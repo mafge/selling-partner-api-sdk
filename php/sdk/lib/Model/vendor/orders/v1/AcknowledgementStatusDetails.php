@@ -2,7 +2,7 @@
 /**
  * AcknowledgementStatusDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\orders\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * AcknowledgementStatusDetails Class Doc Comment
@@ -52,17 +50,18 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'AcknowledgementStatusDetails';
+    protected static $openAPIModelName = 'AcknowledgementStatusDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'acknowledgement_date' => '\DateTime',
-             'accepted_quantity' => '\SpApi\Model\vendor\orders\v1\ItemQuantity',
-             'rejected_quantity' => '\SpApi\Model\vendor\orders\v1\ItemQuantity'    ];
+    protected static $openAPITypes = [
+        'acknowledgement_date' => '\DateTime',
+        'accepted_quantity' => '\SpApi\Model\vendor\orders\v1\ItemQuantity',
+        'rejected_quantity' => '\SpApi\Model\vendor\orders\v1\ItemQuantity'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,10 +70,11 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'acknowledgement_date' => 'date-time',
-            'accepted_quantity' => null,
-            'rejected_quantity' => null    ];
+    protected static $openAPIFormats = [
+        'acknowledgement_date' => 'date-time',
+        'accepted_quantity' => null,
+        'rejected_quantity' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -82,9 +82,9 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'acknowledgement_date' => true,
-        'accepted_quantity' => true,
-        'rejected_quantity' => true
+        'acknowledgement_date' => false,
+        'accepted_quantity' => false,
+        'rejected_quantity' => false
     ];
 
     /**
@@ -99,7 +99,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -109,7 +109,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -172,11 +172,10 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'acknowledgement_date' => 'acknowledgementDate',
-                'accepted_quantity' => 'acceptedQuantity',
-                'rejected_quantity' => 'rejectedQuantity'
-        
+        'accepted_quantity' => 'acceptedQuantity',
+        'rejected_quantity' => 'rejectedQuantity'
     ];
 
     /**
@@ -184,7 +183,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'acknowledgement_date' => 'setAcknowledgementDate',
         'accepted_quantity' => 'setAcceptedQuantity',
         'rejected_quantity' => 'setRejectedQuantity'
@@ -195,7 +194,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'acknowledgement_date' => 'getAcknowledgementDate',
         'accepted_quantity' => 'getAcceptedQuantity',
         'rejected_quantity' => 'getRejectedQuantity'
@@ -207,7 +206,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -217,7 +216,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -227,7 +226,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -237,7 +236,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,17 +245,17 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('acknowledgement_date', $data ?? [], null);
         $this->setIfExists('accepted_quantity', $data ?? [], null);
@@ -286,7 +285,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -299,7 +298,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -310,7 +309,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      *
      * @return \DateTime|null
      */
-    public function getAcknowledgementDate(): ?\DateTime
+    public function getAcknowledgementDate()
     {
         return $this->container['acknowledgement_date'];
     }
@@ -322,17 +321,10 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      *
      * @return self
      */
-    public function setAcknowledgementDate(?\DateTime $acknowledgement_date): self
+    public function setAcknowledgementDate($acknowledgement_date)
     {
         if (is_null($acknowledgement_date)) {
-            array_push($this->openAPINullablesSetToNull, 'acknowledgement_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('acknowledgement_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable acknowledgement_date cannot be null');
         }
         $this->container['acknowledgement_date'] = $acknowledgement_date;
 
@@ -344,7 +336,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      *
      * @return \SpApi\Model\vendor\orders\v1\ItemQuantity|null
      */
-    public function getAcceptedQuantity(): ?\SpApi\Model\vendor\orders\v1\ItemQuantity
+    public function getAcceptedQuantity()
     {
         return $this->container['accepted_quantity'];
     }
@@ -356,17 +348,10 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      *
      * @return self
      */
-    public function setAcceptedQuantity(?\SpApi\Model\vendor\orders\v1\ItemQuantity $accepted_quantity): self
+    public function setAcceptedQuantity($accepted_quantity)
     {
         if (is_null($accepted_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'accepted_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('accepted_quantity', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable accepted_quantity cannot be null');
         }
         $this->container['accepted_quantity'] = $accepted_quantity;
 
@@ -378,7 +363,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      *
      * @return \SpApi\Model\vendor\orders\v1\ItemQuantity|null
      */
-    public function getRejectedQuantity(): ?\SpApi\Model\vendor\orders\v1\ItemQuantity
+    public function getRejectedQuantity()
     {
         return $this->container['rejected_quantity'];
     }
@@ -390,24 +375,15 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      *
      * @return self
      */
-    public function setRejectedQuantity(?\SpApi\Model\vendor\orders\v1\ItemQuantity $rejected_quantity): self
+    public function setRejectedQuantity($rejected_quantity)
     {
         if (is_null($rejected_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'rejected_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rejected_quantity', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable rejected_quantity cannot be null');
         }
         $this->container['rejected_quantity'] = $rejected_quantity;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -428,7 +404,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -441,7 +417,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -470,7 +446,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -493,7 +469,7 @@ class AcknowledgementStatusDetails implements ModelInterface, ArrayAccess, \Json
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

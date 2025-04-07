@@ -2,7 +2,7 @@
 /**
  * AdditionalDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\invoices\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * AdditionalDetails Class Doc Comment
@@ -52,17 +50,18 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'AdditionalDetails';
+    protected static $openAPIModelName = 'AdditionalDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'type' => 'string',
-             'detail' => 'string',
-             'language_code' => 'string'    ];
+    protected static $openAPITypes = [
+        'type' => 'string',
+        'detail' => 'string',
+        'language_code' => 'string'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,10 +70,11 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'type' => null,
-            'detail' => null,
-            'language_code' => null    ];
+    protected static $openAPIFormats = [
+        'type' => null,
+        'detail' => null,
+        'language_code' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -84,7 +84,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static array $openAPINullables = [
         'type' => false,
         'detail' => false,
-        'language_code' => true
+        'language_code' => false
     ];
 
     /**
@@ -99,7 +99,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -109,7 +109,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -172,11 +172,10 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'type' => 'type',
-                'detail' => 'detail',
-                'language_code' => 'languageCode'
-        
+        'detail' => 'detail',
+        'language_code' => 'languageCode'
     ];
 
     /**
@@ -184,7 +183,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'type' => 'setType',
         'detail' => 'setDetail',
         'language_code' => 'setLanguageCode'
@@ -195,7 +194,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'type' => 'getType',
         'detail' => 'getDetail',
         'language_code' => 'getLanguageCode'
@@ -207,7 +206,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -217,7 +216,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -227,7 +226,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -237,7 +236,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -251,7 +250,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array
+    public function getTypeAllowableValues()
     {
         return [
             self::TYPE_SUR,
@@ -263,17 +262,17 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('detail', $data ?? [], null);
@@ -303,7 +302,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -331,7 +330,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -342,7 +341,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return string
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->container['type'];
     }
@@ -354,7 +353,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setType(string $type): self
+    public function setType($type)
     {
         if (is_null($type)) {
             throw new \InvalidArgumentException('non-nullable type cannot be null');
@@ -379,7 +378,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return string
      */
-    public function getDetail(): string
+    public function getDetail()
     {
         return $this->container['detail'];
     }
@@ -391,7 +390,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setDetail(string $detail): self
+    public function setDetail($detail)
     {
         if (is_null($detail)) {
             throw new \InvalidArgumentException('non-nullable detail cannot be null');
@@ -406,7 +405,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return string|null
      */
-    public function getLanguageCode(): ?string
+    public function getLanguageCode()
     {
         return $this->container['language_code'];
     }
@@ -418,24 +417,15 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setLanguageCode(?string $language_code): self
+    public function setLanguageCode($language_code)
     {
         if (is_null($language_code)) {
-            array_push($this->openAPINullablesSetToNull, 'language_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('language_code', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable language_code cannot be null');
         }
         $this->container['language_code'] = $language_code;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -456,7 +446,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -469,7 +459,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -498,7 +488,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -521,7 +511,7 @@ class AdditionalDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

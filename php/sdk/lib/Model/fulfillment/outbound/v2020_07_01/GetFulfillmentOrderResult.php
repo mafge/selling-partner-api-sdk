@@ -3,7 +3,7 @@
 /**
  * GetFulfillmentOrderResult.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetFulfillmentOrderResult';
+    protected static $openAPIModelName = 'GetFulfillmentOrderResult';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'fulfillment_order' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\FulfillmentOrder',
         'fulfillment_order_items' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\FulfillmentOrderItem[]',
         'fulfillment_shipments' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\FulfillmentShipment[]',
         'return_items' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\ReturnItem[]',
         'return_authorizations' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\ReturnAuthorization[]',
-        'payment_information' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\PaymentInformation[]'];
+        'payment_information' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\PaymentInformation[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'fulfillment_order' => null,
         'fulfillment_order_items' => null,
         'fulfillment_shipments' => null,
         'return_items' => null,
         'return_authorizations' => null,
-        'payment_information' => null];
+        'payment_information' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -93,10 +96,10 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
     protected static array $openAPINullables = [
         'fulfillment_order' => false,
         'fulfillment_order_items' => false,
-        'fulfillment_shipments' => true,
+        'fulfillment_shipments' => false,
         'return_items' => false,
         'return_authorizations' => false,
-        'payment_information' => true,
+        'payment_information' => false,
     ];
 
     /**
@@ -112,7 +115,7 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'fulfillment_order' => 'fulfillmentOrder',
         'fulfillment_order_items' => 'fulfillmentOrderItems',
         'fulfillment_shipments' => 'fulfillmentShipments',
@@ -126,7 +129,7 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'fulfillment_order' => 'setFulfillmentOrder',
         'fulfillment_order_items' => 'setFulfillmentOrderItems',
         'fulfillment_shipments' => 'setFulfillmentShipments',
@@ -140,7 +143,7 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'fulfillment_order' => 'getFulfillmentOrder',
         'fulfillment_order_items' => 'getFulfillmentOrderItems',
         'fulfillment_shipments' => 'getFulfillmentShipments',
@@ -151,14 +154,16 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -279,15 +296,17 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets fulfillment_order.
+     *
+     * @return FulfillmentOrder
      */
-    public function getFulfillmentOrder(): FulfillmentOrder
+    public function getFulfillmentOrder()
     {
         return $this->container['fulfillment_order'];
     }
@@ -296,8 +315,10 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets fulfillment_order.
      *
      * @param FulfillmentOrder $fulfillment_order fulfillment_order
+     *
+     * @return self
      */
-    public function setFulfillmentOrder(FulfillmentOrder $fulfillment_order): self
+    public function setFulfillmentOrder($fulfillment_order)
     {
         if (is_null($fulfillment_order)) {
             throw new \InvalidArgumentException('non-nullable fulfillment_order cannot be null');
@@ -309,8 +330,10 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets fulfillment_order_items.
+     *
+     * @return FulfillmentOrderItem[]
      */
-    public function getFulfillmentOrderItems(): array
+    public function getFulfillmentOrderItems()
     {
         return $this->container['fulfillment_order_items'];
     }
@@ -318,9 +341,11 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets fulfillment_order_items.
      *
-     * @param array $fulfillment_order_items an array of fulfillment order item information
+     * @param FulfillmentOrderItem[] $fulfillment_order_items an array of fulfillment order item information
+     *
+     * @return self
      */
-    public function setFulfillmentOrderItems(array $fulfillment_order_items): self
+    public function setFulfillmentOrderItems($fulfillment_order_items)
     {
         if (is_null($fulfillment_order_items)) {
             throw new \InvalidArgumentException('non-nullable fulfillment_order_items cannot be null');
@@ -332,8 +357,10 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets fulfillment_shipments.
+     *
+     * @return null|FulfillmentShipment[]
      */
-    public function getFulfillmentShipments(): ?array
+    public function getFulfillmentShipments()
     {
         return $this->container['fulfillment_shipments'];
     }
@@ -341,19 +368,14 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets fulfillment_shipments.
      *
-     * @param null|array $fulfillment_shipments an array of fulfillment shipment information
+     * @param null|FulfillmentShipment[] $fulfillment_shipments an array of fulfillment shipment information
+     *
+     * @return self
      */
-    public function setFulfillmentShipments(?array $fulfillment_shipments): self
+    public function setFulfillmentShipments($fulfillment_shipments)
     {
         if (is_null($fulfillment_shipments)) {
-            array_push($this->openAPINullablesSetToNull, 'fulfillment_shipments');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fulfillment_shipments', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fulfillment_shipments cannot be null');
         }
         $this->container['fulfillment_shipments'] = $fulfillment_shipments;
 
@@ -362,8 +384,10 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets return_items.
+     *
+     * @return ReturnItem[]
      */
-    public function getReturnItems(): array
+    public function getReturnItems()
     {
         return $this->container['return_items'];
     }
@@ -371,9 +395,11 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets return_items.
      *
-     * @param array $return_items An array of items that Amazon accepted for return. Returns empty if no items were accepted for return.
+     * @param ReturnItem[] $return_items An array of items that Amazon accepted for return. Returns empty if no items were accepted for return.
+     *
+     * @return self
      */
-    public function setReturnItems(array $return_items): self
+    public function setReturnItems($return_items)
     {
         if (is_null($return_items)) {
             throw new \InvalidArgumentException('non-nullable return_items cannot be null');
@@ -385,8 +411,10 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets return_authorizations.
+     *
+     * @return ReturnAuthorization[]
      */
-    public function getReturnAuthorizations(): array
+    public function getReturnAuthorizations()
     {
         return $this->container['return_authorizations'];
     }
@@ -394,9 +422,11 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets return_authorizations.
      *
-     * @param array $return_authorizations an array of return authorization information
+     * @param ReturnAuthorization[] $return_authorizations an array of return authorization information
+     *
+     * @return self
      */
-    public function setReturnAuthorizations(array $return_authorizations): self
+    public function setReturnAuthorizations($return_authorizations)
     {
         if (is_null($return_authorizations)) {
             throw new \InvalidArgumentException('non-nullable return_authorizations cannot be null');
@@ -408,8 +438,10 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets payment_information.
+     *
+     * @return null|PaymentInformation[]
      */
-    public function getPaymentInformation(): ?array
+    public function getPaymentInformation()
     {
         return $this->container['payment_information'];
     }
@@ -417,19 +449,14 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets payment_information.
      *
-     * @param null|array $payment_information an array of various payment attributes related to this fulfillment order
+     * @param null|PaymentInformation[] $payment_information an array of various payment attributes related to this fulfillment order
+     *
+     * @return self
      */
-    public function setPaymentInformation(?array $payment_information): self
+    public function setPaymentInformation($payment_information)
     {
         if (is_null($payment_information)) {
-            array_push($this->openAPINullablesSetToNull, 'payment_information');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('payment_information', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable payment_information cannot be null');
         }
         $this->container['payment_information'] = $payment_information;
 
@@ -454,7 +481,7 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -465,7 +492,7 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -493,15 +520,17 @@ class GetFulfillmentOrderResult implements ModelInterface, \ArrayAccess, \JsonSe
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

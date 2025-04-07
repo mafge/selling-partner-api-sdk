@@ -3,7 +3,7 @@
 /**
  * CreateFeedDocumentResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\feeds\v2021_06_30;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class CreateFeedDocumentResponse implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CreateFeedDocumentResponse';
+    protected static $openAPIModelName = 'CreateFeedDocumentResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'feed_document_id' => 'string',
-        'url' => 'string'];
+        'url' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class CreateFeedDocumentResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'feed_document_id' => null,
-        'url' => null];
+        'url' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -100,7 +103,7 @@ class CreateFeedDocumentResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'feed_document_id' => 'feedDocumentId',
         'url' => 'url',
     ];
@@ -110,7 +113,7 @@ class CreateFeedDocumentResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'feed_document_id' => 'setFeedDocumentId',
         'url' => 'setUrl',
     ];
@@ -120,21 +123,23 @@ class CreateFeedDocumentResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'feed_document_id' => 'getFeedDocumentId',
         'url' => 'getUrl',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class CreateFeedDocumentResponse implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class CreateFeedDocumentResponse implements ModelInterface, \ArrayAccess, \JsonS
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class CreateFeedDocumentResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -245,15 +262,17 @@ class CreateFeedDocumentResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets feed_document_id.
+     *
+     * @return string
      */
-    public function getFeedDocumentId(): string
+    public function getFeedDocumentId()
     {
         return $this->container['feed_document_id'];
     }
@@ -262,8 +281,10 @@ class CreateFeedDocumentResponse implements ModelInterface, \ArrayAccess, \JsonS
      * Sets feed_document_id.
      *
      * @param string $feed_document_id the identifier of the feed document
+     *
+     * @return self
      */
-    public function setFeedDocumentId(string $feed_document_id): self
+    public function setFeedDocumentId($feed_document_id)
     {
         if (is_null($feed_document_id)) {
             throw new \InvalidArgumentException('non-nullable feed_document_id cannot be null');
@@ -275,8 +296,10 @@ class CreateFeedDocumentResponse implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets url.
+     *
+     * @return string
      */
-    public function getUrl(): string
+    public function getUrl()
     {
         return $this->container['url'];
     }
@@ -285,8 +308,10 @@ class CreateFeedDocumentResponse implements ModelInterface, \ArrayAccess, \JsonS
      * Sets url.
      *
      * @param string $url The presigned URL for uploading the feed contents. This URL expires after 5 minutes.
+     *
+     * @return self
      */
-    public function setUrl(string $url): self
+    public function setUrl($url)
     {
         if (is_null($url)) {
             throw new \InvalidArgumentException('non-nullable url cannot be null');
@@ -314,7 +339,7 @@ class CreateFeedDocumentResponse implements ModelInterface, \ArrayAccess, \JsonS
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -325,7 +350,7 @@ class CreateFeedDocumentResponse implements ModelInterface, \ArrayAccess, \JsonS
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -353,15 +378,17 @@ class CreateFeedDocumentResponse implements ModelInterface, \ArrayAccess, \JsonS
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

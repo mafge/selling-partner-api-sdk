@@ -3,7 +3,7 @@
 /**
  * PaymentInformation.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class PaymentInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'PaymentInformation';
+    protected static $openAPIModelName = 'PaymentInformation';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'payment_transaction_id' => 'string',
         'payment_mode' => 'string',
-        'payment_date' => '\DateTime'];
+        'payment_date' => '\DateTime',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class PaymentInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'payment_transaction_id' => null,
         'payment_mode' => null,
-        'payment_date' => 'date-time'];
+        'payment_date' => 'date-time',
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -103,7 +106,7 @@ class PaymentInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'payment_transaction_id' => 'paymentTransactionId',
         'payment_mode' => 'paymentMode',
         'payment_date' => 'paymentDate',
@@ -114,7 +117,7 @@ class PaymentInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'payment_transaction_id' => 'setPaymentTransactionId',
         'payment_mode' => 'setPaymentMode',
         'payment_date' => 'setPaymentDate',
@@ -125,7 +128,7 @@ class PaymentInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'payment_transaction_id' => 'getPaymentTransactionId',
         'payment_mode' => 'getPaymentMode',
         'payment_date' => 'getPaymentDate',
@@ -133,14 +136,16 @@ class PaymentInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class PaymentInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class PaymentInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class PaymentInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -255,15 +272,17 @@ class PaymentInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets payment_transaction_id.
+     *
+     * @return string
      */
-    public function getPaymentTransactionId(): string
+    public function getPaymentTransactionId()
     {
         return $this->container['payment_transaction_id'];
     }
@@ -272,8 +291,10 @@ class PaymentInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets payment_transaction_id.
      *
      * @param string $payment_transaction_id the transaction identifier of this payment
+     *
+     * @return self
      */
-    public function setPaymentTransactionId(string $payment_transaction_id): self
+    public function setPaymentTransactionId($payment_transaction_id)
     {
         if (is_null($payment_transaction_id)) {
             throw new \InvalidArgumentException('non-nullable payment_transaction_id cannot be null');
@@ -285,8 +306,10 @@ class PaymentInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets payment_mode.
+     *
+     * @return string
      */
-    public function getPaymentMode(): string
+    public function getPaymentMode()
     {
         return $this->container['payment_mode'];
     }
@@ -295,8 +318,10 @@ class PaymentInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets payment_mode.
      *
      * @param string $payment_mode the transaction mode of this payment
+     *
+     * @return self
      */
-    public function setPaymentMode(string $payment_mode): self
+    public function setPaymentMode($payment_mode)
     {
         if (is_null($payment_mode)) {
             throw new \InvalidArgumentException('non-nullable payment_mode cannot be null');
@@ -308,8 +333,10 @@ class PaymentInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets payment_date.
+     *
+     * @return \DateTime
      */
-    public function getPaymentDate(): \DateTime
+    public function getPaymentDate()
     {
         return $this->container['payment_date'];
     }
@@ -318,8 +345,10 @@ class PaymentInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets payment_date.
      *
      * @param \DateTime $payment_date Date timestamp
+     *
+     * @return self
      */
-    public function setPaymentDate(\DateTime $payment_date): self
+    public function setPaymentDate($payment_date)
     {
         if (is_null($payment_date)) {
             throw new \InvalidArgumentException('non-nullable payment_date cannot be null');
@@ -347,7 +376,7 @@ class PaymentInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -358,7 +387,7 @@ class PaymentInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -386,15 +415,17 @@ class PaymentInformation implements ModelInterface, \ArrayAccess, \JsonSerializa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

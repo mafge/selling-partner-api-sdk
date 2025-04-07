@@ -3,7 +3,7 @@
 /**
  * DirectPurchaseRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,21 +52,24 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'DirectPurchaseRequest';
+    protected static $openAPIModelName = 'DirectPurchaseRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'ship_to' => '\SpApi\Model\shipping\v2\Address',
         'ship_from' => '\SpApi\Model\shipping\v2\Address',
         'return_to' => '\SpApi\Model\shipping\v2\Address',
         'packages' => '\SpApi\Model\shipping\v2\Package[]',
         'channel_details' => '\SpApi\Model\shipping\v2\ChannelDetails',
-        'label_specifications' => '\SpApi\Model\shipping\v2\RequestedDocumentSpecification'];
+        'label_specifications' => '\SpApi\Model\shipping\v2\RequestedDocumentSpecification',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -78,13 +80,14 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'ship_to' => null,
         'ship_from' => null,
         'return_to' => null,
         'packages' => null,
         'channel_details' => null,
-        'label_specifications' => null];
+        'label_specifications' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -92,12 +95,12 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'ship_to' => true,
-        'ship_from' => true,
-        'return_to' => true,
-        'packages' => true,
+        'ship_to' => false,
+        'ship_from' => false,
+        'return_to' => false,
+        'packages' => false,
         'channel_details' => false,
-        'label_specifications' => true,
+        'label_specifications' => false,
     ];
 
     /**
@@ -113,7 +116,7 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'ship_to' => 'shipTo',
         'ship_from' => 'shipFrom',
         'return_to' => 'returnTo',
@@ -127,7 +130,7 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'ship_to' => 'setShipTo',
         'ship_from' => 'setShipFrom',
         'return_to' => 'setReturnTo',
@@ -141,7 +144,7 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'ship_to' => 'getShipTo',
         'ship_from' => 'getShipFrom',
         'return_to' => 'getReturnTo',
@@ -152,14 +155,16 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -186,16 +191,20 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -219,32 +228,40 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -254,7 +271,7 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -271,15 +288,17 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets ship_to.
+     *
+     * @return null|Address
      */
-    public function getShipTo(): ?Address
+    public function getShipTo()
     {
         return $this->container['ship_to'];
     }
@@ -288,18 +307,13 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets ship_to.
      *
      * @param null|Address $ship_to ship_to
+     *
+     * @return self
      */
-    public function setShipTo(?Address $ship_to): self
+    public function setShipTo($ship_to)
     {
         if (is_null($ship_to)) {
-            array_push($this->openAPINullablesSetToNull, 'ship_to');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ship_to', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ship_to cannot be null');
         }
         $this->container['ship_to'] = $ship_to;
 
@@ -308,8 +322,10 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets ship_from.
+     *
+     * @return null|Address
      */
-    public function getShipFrom(): ?Address
+    public function getShipFrom()
     {
         return $this->container['ship_from'];
     }
@@ -318,18 +334,13 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets ship_from.
      *
      * @param null|Address $ship_from ship_from
+     *
+     * @return self
      */
-    public function setShipFrom(?Address $ship_from): self
+    public function setShipFrom($ship_from)
     {
         if (is_null($ship_from)) {
-            array_push($this->openAPINullablesSetToNull, 'ship_from');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ship_from', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ship_from cannot be null');
         }
         $this->container['ship_from'] = $ship_from;
 
@@ -338,8 +349,10 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets return_to.
+     *
+     * @return null|Address
      */
-    public function getReturnTo(): ?Address
+    public function getReturnTo()
     {
         return $this->container['return_to'];
     }
@@ -348,18 +361,13 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets return_to.
      *
      * @param null|Address $return_to return_to
+     *
+     * @return self
      */
-    public function setReturnTo(?Address $return_to): self
+    public function setReturnTo($return_to)
     {
         if (is_null($return_to)) {
-            array_push($this->openAPINullablesSetToNull, 'return_to');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('return_to', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable return_to cannot be null');
         }
         $this->container['return_to'] = $return_to;
 
@@ -368,8 +376,10 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets packages.
+     *
+     * @return null|Package[]
      */
-    public function getPackages(): ?array
+    public function getPackages()
     {
         return $this->container['packages'];
     }
@@ -377,19 +387,14 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Sets packages.
      *
-     * @param null|array $packages a list of packages to be shipped through a shipping service offering
+     * @param null|Package[] $packages a list of packages to be shipped through a shipping service offering
+     *
+     * @return self
      */
-    public function setPackages(?array $packages): self
+    public function setPackages($packages)
     {
         if (is_null($packages)) {
-            array_push($this->openAPINullablesSetToNull, 'packages');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('packages', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable packages cannot be null');
         }
         $this->container['packages'] = $packages;
 
@@ -398,8 +403,10 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets channel_details.
+     *
+     * @return ChannelDetails
      */
-    public function getChannelDetails(): ChannelDetails
+    public function getChannelDetails()
     {
         return $this->container['channel_details'];
     }
@@ -408,8 +415,10 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets channel_details.
      *
      * @param ChannelDetails $channel_details channel_details
+     *
+     * @return self
      */
-    public function setChannelDetails(ChannelDetails $channel_details): self
+    public function setChannelDetails($channel_details)
     {
         if (is_null($channel_details)) {
             throw new \InvalidArgumentException('non-nullable channel_details cannot be null');
@@ -421,8 +430,10 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets label_specifications.
+     *
+     * @return null|RequestedDocumentSpecification
      */
-    public function getLabelSpecifications(): ?RequestedDocumentSpecification
+    public function getLabelSpecifications()
     {
         return $this->container['label_specifications'];
     }
@@ -431,18 +442,13 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets label_specifications.
      *
      * @param null|RequestedDocumentSpecification $label_specifications label_specifications
+     *
+     * @return self
      */
-    public function setLabelSpecifications(?RequestedDocumentSpecification $label_specifications): self
+    public function setLabelSpecifications($label_specifications)
     {
         if (is_null($label_specifications)) {
-            array_push($this->openAPINullablesSetToNull, 'label_specifications');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('label_specifications', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable label_specifications cannot be null');
         }
         $this->container['label_specifications'] = $label_specifications;
 
@@ -467,7 +473,7 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -478,7 +484,7 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -506,15 +512,17 @@ class DirectPurchaseRequest implements ModelInterface, \ArrayAccess, \JsonSerial
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

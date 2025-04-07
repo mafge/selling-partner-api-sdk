@@ -3,7 +3,7 @@
 /**
  * Location.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,19 +52,22 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Location';
+    protected static $openAPIModelName = 'Location';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'state_or_region' => 'string',
         'city' => 'string',
         'country_code' => 'string',
-        'postal_code' => 'string'];
+        'postal_code' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,11 +78,12 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'state_or_region' => null,
         'city' => null,
         'country_code' => null,
-        'postal_code' => null];
+        'postal_code' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -88,10 +91,10 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'state_or_region' => true,
-        'city' => true,
-        'country_code' => true,
-        'postal_code' => true,
+        'state_or_region' => false,
+        'city' => false,
+        'country_code' => false,
+        'postal_code' => false,
     ];
 
     /**
@@ -107,7 +110,7 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'state_or_region' => 'stateOrRegion',
         'city' => 'city',
         'country_code' => 'countryCode',
@@ -119,7 +122,7 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'state_or_region' => 'setStateOrRegion',
         'city' => 'setCity',
         'country_code' => 'setCountryCode',
@@ -131,7 +134,7 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'state_or_region' => 'getStateOrRegion',
         'city' => 'getCity',
         'country_code' => 'getCountryCode',
@@ -140,14 +143,16 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -172,16 +177,20 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -205,32 +214,40 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -240,7 +257,7 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -251,15 +268,17 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets state_or_region.
+     *
+     * @return null|string
      */
-    public function getStateOrRegion(): ?string
+    public function getStateOrRegion()
     {
         return $this->container['state_or_region'];
     }
@@ -268,18 +287,13 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets state_or_region.
      *
      * @param null|string $state_or_region the state, county or region where the person, business or institution is located
+     *
+     * @return self
      */
-    public function setStateOrRegion(?string $state_or_region): self
+    public function setStateOrRegion($state_or_region)
     {
         if (is_null($state_or_region)) {
-            array_push($this->openAPINullablesSetToNull, 'state_or_region');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('state_or_region', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable state_or_region cannot be null');
         }
         $this->container['state_or_region'] = $state_or_region;
 
@@ -288,8 +302,10 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets city.
+     *
+     * @return null|string
      */
-    public function getCity(): ?string
+    public function getCity()
     {
         return $this->container['city'];
     }
@@ -298,18 +314,13 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets city.
      *
      * @param null|string $city the city or town where the person, business or institution is located
+     *
+     * @return self
      */
-    public function setCity(?string $city): self
+    public function setCity($city)
     {
         if (is_null($city)) {
-            array_push($this->openAPINullablesSetToNull, 'city');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('city', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable city cannot be null');
         }
         $this->container['city'] = $city;
 
@@ -318,8 +329,10 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets country_code.
+     *
+     * @return null|string
      */
-    public function getCountryCode(): ?string
+    public function getCountryCode()
     {
         return $this->container['country_code'];
     }
@@ -328,18 +341,13 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets country_code.
      *
      * @param null|string $country_code The two digit country code. Follows ISO 3166-1 alpha-2 format.
+     *
+     * @return self
      */
-    public function setCountryCode(?string $country_code): self
+    public function setCountryCode($country_code)
     {
         if (is_null($country_code)) {
-            array_push($this->openAPINullablesSetToNull, 'country_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('country_code', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable country_code cannot be null');
         }
         $this->container['country_code'] = $country_code;
 
@@ -348,8 +356,10 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets postal_code.
+     *
+     * @return null|string
      */
-    public function getPostalCode(): ?string
+    public function getPostalCode()
     {
         return $this->container['postal_code'];
     }
@@ -358,18 +368,13 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets postal_code.
      *
      * @param null|string $postal_code The postal code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation.
+     *
+     * @return self
      */
-    public function setPostalCode(?string $postal_code): self
+    public function setPostalCode($postal_code)
     {
         if (is_null($postal_code)) {
-            array_push($this->openAPINullablesSetToNull, 'postal_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('postal_code', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable postal_code cannot be null');
         }
         $this->container['postal_code'] = $postal_code;
 
@@ -394,7 +399,7 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -405,7 +410,7 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -433,15 +438,17 @@ class Location implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

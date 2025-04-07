@@ -3,7 +3,7 @@
 /**
  * ItemSalesRanksByMarketplace.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\catalogItems\v2022_04_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class ItemSalesRanksByMarketplace implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ItemSalesRanksByMarketplace';
+    protected static $openAPIModelName = 'ItemSalesRanksByMarketplace';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'marketplace_id' => 'string',
         'classification_ranks' => '\SpApi\Model\catalogItems\v2022_04_01\ItemClassificationSalesRank[]',
-        'display_group_ranks' => '\SpApi\Model\catalogItems\v2022_04_01\ItemDisplayGroupSalesRank[]'];
+        'display_group_ranks' => '\SpApi\Model\catalogItems\v2022_04_01\ItemDisplayGroupSalesRank[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class ItemSalesRanksByMarketplace implements ModelInterface, \ArrayAccess, \Json
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'marketplace_id' => null,
         'classification_ranks' => null,
-        'display_group_ranks' => null];
+        'display_group_ranks' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -86,8 +89,8 @@ class ItemSalesRanksByMarketplace implements ModelInterface, \ArrayAccess, \Json
      */
     protected static array $openAPINullables = [
         'marketplace_id' => false,
-        'classification_ranks' => true,
-        'display_group_ranks' => true,
+        'classification_ranks' => false,
+        'display_group_ranks' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class ItemSalesRanksByMarketplace implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'marketplace_id' => 'marketplaceId',
         'classification_ranks' => 'classificationRanks',
         'display_group_ranks' => 'displayGroupRanks',
@@ -114,7 +117,7 @@ class ItemSalesRanksByMarketplace implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
         'classification_ranks' => 'setClassificationRanks',
         'display_group_ranks' => 'setDisplayGroupRanks',
@@ -125,7 +128,7 @@ class ItemSalesRanksByMarketplace implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
         'classification_ranks' => 'getClassificationRanks',
         'display_group_ranks' => 'getDisplayGroupRanks',
@@ -133,14 +136,16 @@ class ItemSalesRanksByMarketplace implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class ItemSalesRanksByMarketplace implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class ItemSalesRanksByMarketplace implements ModelInterface, \ArrayAccess, \Json
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class ItemSalesRanksByMarketplace implements ModelInterface, \ArrayAccess, \Json
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -249,15 +266,17 @@ class ItemSalesRanksByMarketplace implements ModelInterface, \ArrayAccess, \Json
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
-    public function getMarketplaceId(): string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -266,8 +285,10 @@ class ItemSalesRanksByMarketplace implements ModelInterface, \ArrayAccess, \Json
      * Sets marketplace_id.
      *
      * @param string $marketplace_id Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     *
+     * @return self
      */
-    public function setMarketplaceId(string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
             throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
@@ -279,8 +300,10 @@ class ItemSalesRanksByMarketplace implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Gets classification_ranks.
+     *
+     * @return null|ItemClassificationSalesRank[]
      */
-    public function getClassificationRanks(): ?array
+    public function getClassificationRanks()
     {
         return $this->container['classification_ranks'];
     }
@@ -288,19 +311,14 @@ class ItemSalesRanksByMarketplace implements ModelInterface, \ArrayAccess, \Json
     /**
      * Sets classification_ranks.
      *
-     * @param null|array $classification_ranks sales ranks of an Amazon catalog item for a `marketplaceId`, grouped by classification
+     * @param null|ItemClassificationSalesRank[] $classification_ranks sales ranks of an Amazon catalog item for a `marketplaceId`, grouped by classification
+     *
+     * @return self
      */
-    public function setClassificationRanks(?array $classification_ranks): self
+    public function setClassificationRanks($classification_ranks)
     {
         if (is_null($classification_ranks)) {
-            array_push($this->openAPINullablesSetToNull, 'classification_ranks');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('classification_ranks', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable classification_ranks cannot be null');
         }
         $this->container['classification_ranks'] = $classification_ranks;
 
@@ -309,8 +327,10 @@ class ItemSalesRanksByMarketplace implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Gets display_group_ranks.
+     *
+     * @return null|ItemDisplayGroupSalesRank[]
      */
-    public function getDisplayGroupRanks(): ?array
+    public function getDisplayGroupRanks()
     {
         return $this->container['display_group_ranks'];
     }
@@ -318,19 +338,14 @@ class ItemSalesRanksByMarketplace implements ModelInterface, \ArrayAccess, \Json
     /**
      * Sets display_group_ranks.
      *
-     * @param null|array $display_group_ranks sales ranks of an Amazon catalog item for a `marketplaceId`, grouped by website display group
+     * @param null|ItemDisplayGroupSalesRank[] $display_group_ranks sales ranks of an Amazon catalog item for a `marketplaceId`, grouped by website display group
+     *
+     * @return self
      */
-    public function setDisplayGroupRanks(?array $display_group_ranks): self
+    public function setDisplayGroupRanks($display_group_ranks)
     {
         if (is_null($display_group_ranks)) {
-            array_push($this->openAPINullablesSetToNull, 'display_group_ranks');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('display_group_ranks', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable display_group_ranks cannot be null');
         }
         $this->container['display_group_ranks'] = $display_group_ranks;
 
@@ -355,7 +370,7 @@ class ItemSalesRanksByMarketplace implements ModelInterface, \ArrayAccess, \Json
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -366,7 +381,7 @@ class ItemSalesRanksByMarketplace implements ModelInterface, \ArrayAccess, \Json
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -394,15 +409,17 @@ class ItemSalesRanksByMarketplace implements ModelInterface, \ArrayAccess, \Json
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * CompetitivePricingType.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class CompetitivePricingType implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CompetitivePricingType';
+    protected static $openAPIModelName = 'CompetitivePricingType';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'competitive_prices' => '\SpApi\Model\pricing\v0\CompetitivePriceType[]',
         'number_of_offer_listings' => '\SpApi\Model\pricing\v0\OfferListingCountType[]',
-        'trade_in_value' => '\SpApi\Model\pricing\v0\MoneyType'];
+        'trade_in_value' => '\SpApi\Model\pricing\v0\MoneyType',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class CompetitivePricingType implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'competitive_prices' => null,
         'number_of_offer_listings' => null,
-        'trade_in_value' => null];
+        'trade_in_value' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,7 +90,7 @@ class CompetitivePricingType implements ModelInterface, \ArrayAccess, \JsonSeria
     protected static array $openAPINullables = [
         'competitive_prices' => false,
         'number_of_offer_listings' => false,
-        'trade_in_value' => true,
+        'trade_in_value' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class CompetitivePricingType implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'competitive_prices' => 'CompetitivePrices',
         'number_of_offer_listings' => 'NumberOfOfferListings',
         'trade_in_value' => 'TradeInValue',
@@ -114,7 +117,7 @@ class CompetitivePricingType implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'competitive_prices' => 'setCompetitivePrices',
         'number_of_offer_listings' => 'setNumberOfOfferListings',
         'trade_in_value' => 'setTradeInValue',
@@ -125,7 +128,7 @@ class CompetitivePricingType implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'competitive_prices' => 'getCompetitivePrices',
         'number_of_offer_listings' => 'getNumberOfOfferListings',
         'trade_in_value' => 'getTradeInValue',
@@ -133,14 +136,16 @@ class CompetitivePricingType implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class CompetitivePricingType implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class CompetitivePricingType implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class CompetitivePricingType implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -252,15 +269,17 @@ class CompetitivePricingType implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets competitive_prices.
+     *
+     * @return CompetitivePriceType[]
      */
-    public function getCompetitivePrices(): array
+    public function getCompetitivePrices()
     {
         return $this->container['competitive_prices'];
     }
@@ -268,9 +287,11 @@ class CompetitivePricingType implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Sets competitive_prices.
      *
-     * @param array $competitive_prices a list of competitive pricing information
+     * @param CompetitivePriceType[] $competitive_prices a list of competitive pricing information
+     *
+     * @return self
      */
-    public function setCompetitivePrices(array $competitive_prices): self
+    public function setCompetitivePrices($competitive_prices)
     {
         if (is_null($competitive_prices)) {
             throw new \InvalidArgumentException('non-nullable competitive_prices cannot be null');
@@ -282,8 +303,10 @@ class CompetitivePricingType implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets number_of_offer_listings.
+     *
+     * @return OfferListingCountType[]
      */
-    public function getNumberOfOfferListings(): array
+    public function getNumberOfOfferListings()
     {
         return $this->container['number_of_offer_listings'];
     }
@@ -291,9 +314,11 @@ class CompetitivePricingType implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Sets number_of_offer_listings.
      *
-     * @param array $number_of_offer_listings The number of active offer listings for the item that was submitted. The listing count is returned by condition, one for each listing condition value that is returned.
+     * @param OfferListingCountType[] $number_of_offer_listings The number of active offer listings for the item that was submitted. The listing count is returned by condition, one for each listing condition value that is returned.
+     *
+     * @return self
      */
-    public function setNumberOfOfferListings(array $number_of_offer_listings): self
+    public function setNumberOfOfferListings($number_of_offer_listings)
     {
         if (is_null($number_of_offer_listings)) {
             throw new \InvalidArgumentException('non-nullable number_of_offer_listings cannot be null');
@@ -305,8 +330,10 @@ class CompetitivePricingType implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets trade_in_value.
+     *
+     * @return null|MoneyType
      */
-    public function getTradeInValue(): ?MoneyType
+    public function getTradeInValue()
     {
         return $this->container['trade_in_value'];
     }
@@ -315,18 +342,13 @@ class CompetitivePricingType implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets trade_in_value.
      *
      * @param null|MoneyType $trade_in_value trade_in_value
+     *
+     * @return self
      */
-    public function setTradeInValue(?MoneyType $trade_in_value): self
+    public function setTradeInValue($trade_in_value)
     {
         if (is_null($trade_in_value)) {
-            array_push($this->openAPINullablesSetToNull, 'trade_in_value');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('trade_in_value', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable trade_in_value cannot be null');
         }
         $this->container['trade_in_value'] = $trade_in_value;
 
@@ -351,7 +373,7 @@ class CompetitivePricingType implements ModelInterface, \ArrayAccess, \JsonSeria
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -362,7 +384,7 @@ class CompetitivePricingType implements ModelInterface, \ArrayAccess, \JsonSeria
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -390,15 +412,17 @@ class CompetitivePricingType implements ModelInterface, \ArrayAccess, \JsonSeria
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

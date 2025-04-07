@@ -3,7 +3,7 @@
 /**
  * AvailableShippingServiceOptions.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\merchantFulfillment\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class AvailableShippingServiceOptions implements ModelInterface, \ArrayAccess, \
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'AvailableShippingServiceOptions';
+    protected static $openAPIModelName = 'AvailableShippingServiceOptions';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'available_carrier_will_pick_up_options' => '\SpApi\Model\merchantFulfillment\v0\AvailableCarrierWillPickUpOption[]',
-        'available_delivery_experience_options' => '\SpApi\Model\merchantFulfillment\v0\AvailableDeliveryExperienceOption[]'];
+        'available_delivery_experience_options' => '\SpApi\Model\merchantFulfillment\v0\AvailableDeliveryExperienceOption[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class AvailableShippingServiceOptions implements ModelInterface, \ArrayAccess, \
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'available_carrier_will_pick_up_options' => null,
-        'available_delivery_experience_options' => null];
+        'available_delivery_experience_options' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -100,7 +103,7 @@ class AvailableShippingServiceOptions implements ModelInterface, \ArrayAccess, \
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'available_carrier_will_pick_up_options' => 'AvailableCarrierWillPickUpOptions',
         'available_delivery_experience_options' => 'AvailableDeliveryExperienceOptions',
     ];
@@ -110,7 +113,7 @@ class AvailableShippingServiceOptions implements ModelInterface, \ArrayAccess, \
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'available_carrier_will_pick_up_options' => 'setAvailableCarrierWillPickUpOptions',
         'available_delivery_experience_options' => 'setAvailableDeliveryExperienceOptions',
     ];
@@ -120,21 +123,23 @@ class AvailableShippingServiceOptions implements ModelInterface, \ArrayAccess, \
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'available_carrier_will_pick_up_options' => 'getAvailableCarrierWillPickUpOptions',
         'available_delivery_experience_options' => 'getAvailableDeliveryExperienceOptions',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class AvailableShippingServiceOptions implements ModelInterface, \ArrayAccess, \
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class AvailableShippingServiceOptions implements ModelInterface, \ArrayAccess, \
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class AvailableShippingServiceOptions implements ModelInterface, \ArrayAccess, \
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -245,15 +262,17 @@ class AvailableShippingServiceOptions implements ModelInterface, \ArrayAccess, \
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets available_carrier_will_pick_up_options.
+     *
+     * @return AvailableCarrierWillPickUpOption[]
      */
-    public function getAvailableCarrierWillPickUpOptions(): array
+    public function getAvailableCarrierWillPickUpOptions()
     {
         return $this->container['available_carrier_will_pick_up_options'];
     }
@@ -261,9 +280,11 @@ class AvailableShippingServiceOptions implements ModelInterface, \ArrayAccess, \
     /**
      * Sets available_carrier_will_pick_up_options.
      *
-     * @param array $available_carrier_will_pick_up_options list of available carrier pickup options
+     * @param AvailableCarrierWillPickUpOption[] $available_carrier_will_pick_up_options list of available carrier pickup options
+     *
+     * @return self
      */
-    public function setAvailableCarrierWillPickUpOptions(array $available_carrier_will_pick_up_options): self
+    public function setAvailableCarrierWillPickUpOptions($available_carrier_will_pick_up_options)
     {
         if (is_null($available_carrier_will_pick_up_options)) {
             throw new \InvalidArgumentException('non-nullable available_carrier_will_pick_up_options cannot be null');
@@ -275,8 +296,10 @@ class AvailableShippingServiceOptions implements ModelInterface, \ArrayAccess, \
 
     /**
      * Gets available_delivery_experience_options.
+     *
+     * @return AvailableDeliveryExperienceOption[]
      */
-    public function getAvailableDeliveryExperienceOptions(): array
+    public function getAvailableDeliveryExperienceOptions()
     {
         return $this->container['available_delivery_experience_options'];
     }
@@ -284,9 +307,11 @@ class AvailableShippingServiceOptions implements ModelInterface, \ArrayAccess, \
     /**
      * Sets available_delivery_experience_options.
      *
-     * @param array $available_delivery_experience_options list of available delivery experience options
+     * @param AvailableDeliveryExperienceOption[] $available_delivery_experience_options list of available delivery experience options
+     *
+     * @return self
      */
-    public function setAvailableDeliveryExperienceOptions(array $available_delivery_experience_options): self
+    public function setAvailableDeliveryExperienceOptions($available_delivery_experience_options)
     {
         if (is_null($available_delivery_experience_options)) {
             throw new \InvalidArgumentException('non-nullable available_delivery_experience_options cannot be null');
@@ -314,7 +339,7 @@ class AvailableShippingServiceOptions implements ModelInterface, \ArrayAccess, \
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -325,7 +350,7 @@ class AvailableShippingServiceOptions implements ModelInterface, \ArrayAccess, \
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -353,15 +378,17 @@ class AvailableShippingServiceOptions implements ModelInterface, \ArrayAccess, \
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * CreateMarketplaceItemLabelsRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,22 +51,25 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CreateMarketplaceItemLabelsRequest';
+    protected static $openAPIModelName = 'CreateMarketplaceItemLabelsRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'height' => 'float',
         'label_type' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\LabelPrintType',
         'locale_code' => 'string',
         'marketplace_id' => 'string',
         'msku_quantities' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\MskuQuantity[]',
         'page_type' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\ItemLabelPageType',
-        'width' => 'float'];
+        'width' => 'float',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -78,14 +80,15 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'height' => null,
         'label_type' => null,
         'locale_code' => null,
         'marketplace_id' => null,
         'msku_quantities' => null,
         'page_type' => null,
-        'width' => null];
+        'width' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -93,13 +96,13 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'height' => true,
+        'height' => false,
         'label_type' => false,
-        'locale_code' => true,
+        'locale_code' => false,
         'marketplace_id' => false,
         'msku_quantities' => false,
-        'page_type' => true,
-        'width' => true,
+        'page_type' => false,
+        'width' => false,
     ];
 
     /**
@@ -115,7 +118,7 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'height' => 'height',
         'label_type' => 'labelType',
         'locale_code' => 'localeCode',
@@ -130,7 +133,7 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'height' => 'setHeight',
         'label_type' => 'setLabelType',
         'locale_code' => 'setLocaleCode',
@@ -145,7 +148,7 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'height' => 'getHeight',
         'label_type' => 'getLabelType',
         'locale_code' => 'getLocaleCode',
@@ -157,14 +160,16 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -192,16 +197,20 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -225,32 +234,40 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -260,7 +277,7 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -318,15 +335,17 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets height.
+     *
+     * @return null|float
      */
-    public function getHeight(): ?float
+    public function getHeight()
     {
         return $this->container['height'];
     }
@@ -335,24 +354,19 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
      * Sets height.
      *
      * @param null|float $height the height of the item label
+     *
+     * @return self
      */
-    public function setHeight(?float $height): self
+    public function setHeight($height)
     {
         if (is_null($height)) {
-            array_push($this->openAPINullablesSetToNull, 'height');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('height', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable height cannot be null');
         }
 
-        if (!is_null($height) && ($height > 1E+2)) {
+        if ($height > 1E+2) {
             throw new \InvalidArgumentException('invalid value for $height when calling CreateMarketplaceItemLabelsRequest., must be smaller than or equal to 1E+2.');
         }
-        if (!is_null($height) && ($height < 25)) {
+        if ($height < 25) {
             throw new \InvalidArgumentException('invalid value for $height when calling CreateMarketplaceItemLabelsRequest., must be bigger than or equal to 25.');
         }
 
@@ -363,8 +377,10 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
 
     /**
      * Gets label_type.
+     *
+     * @return LabelPrintType
      */
-    public function getLabelType(): string
+    public function getLabelType()
     {
         return $this->container['label_type'];
     }
@@ -372,9 +388,11 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
     /**
      * Sets label_type.
      *
-     * @param string $label_type label_type
+     * @param LabelPrintType $label_type label_type
+     *
+     * @return self
      */
-    public function setLabelType(string $label_type): self
+    public function setLabelType($label_type)
     {
         if (is_null($label_type)) {
             throw new \InvalidArgumentException('non-nullable label_type cannot be null');
@@ -386,8 +404,10 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
 
     /**
      * Gets locale_code.
+     *
+     * @return null|string
      */
-    public function getLocaleCode(): ?string
+    public function getLocaleCode()
     {
         return $this->container['locale_code'];
     }
@@ -396,21 +416,16 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
      * Sets locale_code.
      *
      * @param null|string $locale_code the locale code constructed from ISO 639 language code and ISO 3166-1 alpha-2 standard of country codes separated by an underscore character
+     *
+     * @return self
      */
-    public function setLocaleCode(?string $locale_code): self
+    public function setLocaleCode($locale_code)
     {
         if (is_null($locale_code)) {
-            array_push($this->openAPINullablesSetToNull, 'locale_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('locale_code', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable locale_code cannot be null');
         }
 
-        if (!is_null($locale_code) && (!preg_match('/^[a-z]{2}_[A-Z]{2}$/', ObjectSerializer::toString($locale_code)))) {
+        if (!preg_match('/^[a-z]{2}_[A-Z]{2}$/', ObjectSerializer::toString($locale_code))) {
             throw new \InvalidArgumentException('invalid value for $locale_code when calling CreateMarketplaceItemLabelsRequest., must conform to the pattern /^[a-z]{2}_[A-Z]{2}$/.');
         }
 
@@ -421,8 +436,10 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
-    public function getMarketplaceId(): string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -431,8 +448,10 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
      * Sets marketplace_id.
      *
      * @param string $marketplace_id The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     *
+     * @return self
      */
-    public function setMarketplaceId(string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
             throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
@@ -451,8 +470,10 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
 
     /**
      * Gets msku_quantities.
+     *
+     * @return MskuQuantity[]
      */
-    public function getMskuQuantities(): array
+    public function getMskuQuantities()
     {
         return $this->container['msku_quantities'];
     }
@@ -460,9 +481,11 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
     /**
      * Sets msku_quantities.
      *
-     * @param array $msku_quantities represents the quantity of an MSKU to print item labels for
+     * @param MskuQuantity[] $msku_quantities represents the quantity of an MSKU to print item labels for
+     *
+     * @return self
      */
-    public function setMskuQuantities(array $msku_quantities): self
+    public function setMskuQuantities($msku_quantities)
     {
         if (is_null($msku_quantities)) {
             throw new \InvalidArgumentException('non-nullable msku_quantities cannot be null');
@@ -481,8 +504,10 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
 
     /**
      * Gets page_type.
+     *
+     * @return null|ItemLabelPageType
      */
-    public function getPageType(): ?string
+    public function getPageType()
     {
         return $this->container['page_type'];
     }
@@ -490,19 +515,14 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
     /**
      * Sets page_type.
      *
-     * @param null|string $page_type page_type
+     * @param null|ItemLabelPageType $page_type page_type
+     *
+     * @return self
      */
-    public function setPageType(?string $page_type): self
+    public function setPageType($page_type)
     {
         if (is_null($page_type)) {
-            array_push($this->openAPINullablesSetToNull, 'page_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('page_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable page_type cannot be null');
         }
         $this->container['page_type'] = $page_type;
 
@@ -511,8 +531,10 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
 
     /**
      * Gets width.
+     *
+     * @return null|float
      */
-    public function getWidth(): ?float
+    public function getWidth()
     {
         return $this->container['width'];
     }
@@ -521,24 +543,19 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
      * Sets width.
      *
      * @param null|float $width the width of the item label
+     *
+     * @return self
      */
-    public function setWidth(?float $width): self
+    public function setWidth($width)
     {
         if (is_null($width)) {
-            array_push($this->openAPINullablesSetToNull, 'width');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('width', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable width cannot be null');
         }
 
-        if (!is_null($width) && ($width > 1E+2)) {
+        if ($width > 1E+2) {
             throw new \InvalidArgumentException('invalid value for $width when calling CreateMarketplaceItemLabelsRequest., must be smaller than or equal to 1E+2.');
         }
-        if (!is_null($width) && ($width < 25)) {
+        if ($width < 25) {
             throw new \InvalidArgumentException('invalid value for $width when calling CreateMarketplaceItemLabelsRequest., must be bigger than or equal to 25.');
         }
 
@@ -565,7 +582,7 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -576,7 +593,7 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -604,15 +621,17 @@ class CreateMarketplaceItemLabelsRequest implements ModelInterface, \ArrayAccess
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

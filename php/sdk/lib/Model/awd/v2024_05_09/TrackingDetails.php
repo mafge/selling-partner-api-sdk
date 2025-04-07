@@ -3,7 +3,7 @@
 /**
  * TrackingDetails.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\awd\v2024_05_09;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class TrackingDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'TrackingDetails';
+    protected static $openAPIModelName = 'TrackingDetails';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'carrier_code' => '\SpApi\Model\awd\v2024_05_09\CarrierCode',
-        'booking_id' => 'string'];
+        'booking_id' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class TrackingDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'carrier_code' => null,
-        'booking_id' => null];
+        'booking_id' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,7 +86,7 @@ class TrackingDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'carrier_code' => true,
+        'carrier_code' => false,
         'booking_id' => false,
     ];
 
@@ -100,7 +103,7 @@ class TrackingDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'carrier_code' => 'carrierCode',
         'booking_id' => 'bookingId',
     ];
@@ -110,7 +113,7 @@ class TrackingDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'carrier_code' => 'setCarrierCode',
         'booking_id' => 'setBookingId',
     ];
@@ -120,21 +123,23 @@ class TrackingDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'carrier_code' => 'getCarrierCode',
         'booking_id' => 'getBookingId',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class TrackingDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class TrackingDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class TrackingDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -245,15 +262,17 @@ class TrackingDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets carrier_code.
+     *
+     * @return null|CarrierCode
      */
-    public function getCarrierCode(): ?CarrierCode
+    public function getCarrierCode()
     {
         return $this->container['carrier_code'];
     }
@@ -262,18 +281,13 @@ class TrackingDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets carrier_code.
      *
      * @param null|CarrierCode $carrier_code carrier_code
+     *
+     * @return self
      */
-    public function setCarrierCode(?CarrierCode $carrier_code): self
+    public function setCarrierCode($carrier_code)
     {
         if (is_null($carrier_code)) {
-            array_push($this->openAPINullablesSetToNull, 'carrier_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('carrier_code', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable carrier_code cannot be null');
         }
         $this->container['carrier_code'] = $carrier_code;
 
@@ -282,8 +296,10 @@ class TrackingDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets booking_id.
+     *
+     * @return string
      */
-    public function getBookingId(): string
+    public function getBookingId()
     {
         return $this->container['booking_id'];
     }
@@ -292,8 +308,10 @@ class TrackingDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets booking_id.
      *
      * @param string $booking_id the identifier that is received from transportation to uniquely identify a booking
+     *
+     * @return self
      */
-    public function setBookingId(string $booking_id): self
+    public function setBookingId($booking_id)
     {
         if (is_null($booking_id)) {
             throw new \InvalidArgumentException('non-nullable booking_id cannot be null');
@@ -326,7 +344,7 @@ class TrackingDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -337,7 +355,7 @@ class TrackingDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -365,15 +383,17 @@ class TrackingDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

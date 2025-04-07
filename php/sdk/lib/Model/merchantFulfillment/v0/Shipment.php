@@ -3,7 +3,7 @@
 /**
  * Shipment.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\merchantFulfillment\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Shipment';
+    protected static $openAPIModelName = 'Shipment';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'shipment_id' => 'string',
         'amazon_order_id' => 'string',
         'seller_order_id' => 'string',
@@ -75,7 +76,8 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
         'status' => '\SpApi\Model\merchantFulfillment\v0\ShipmentStatus',
         'tracking_id' => 'string',
         'created_date' => '\DateTime',
-        'last_updated_date' => '\DateTime'];
+        'last_updated_date' => '\DateTime',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -86,7 +88,7 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'shipment_id' => null,
         'amazon_order_id' => null,
         'seller_order_id' => null,
@@ -101,7 +103,8 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
         'status' => null,
         'tracking_id' => null,
         'created_date' => 'date-time',
-        'last_updated_date' => 'date-time'];
+        'last_updated_date' => 'date-time',
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -111,7 +114,7 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'shipment_id' => false,
         'amazon_order_id' => false,
-        'seller_order_id' => true,
+        'seller_order_id' => false,
         'item_list' => false,
         'ship_from_address' => false,
         'ship_to_address' => false,
@@ -121,9 +124,9 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
         'shipping_service' => false,
         'label' => false,
         'status' => false,
-        'tracking_id' => true,
+        'tracking_id' => false,
         'created_date' => false,
-        'last_updated_date' => true,
+        'last_updated_date' => false,
     ];
 
     /**
@@ -139,7 +142,7 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'shipment_id' => 'ShipmentId',
         'amazon_order_id' => 'AmazonOrderId',
         'seller_order_id' => 'SellerOrderId',
@@ -162,7 +165,7 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'shipment_id' => 'setShipmentId',
         'amazon_order_id' => 'setAmazonOrderId',
         'seller_order_id' => 'setSellerOrderId',
@@ -185,7 +188,7 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'shipment_id' => 'getShipmentId',
         'amazon_order_id' => 'getAmazonOrderId',
         'seller_order_id' => 'getSellerOrderId',
@@ -205,14 +208,16 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -248,16 +253,20 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -281,32 +290,40 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -316,7 +333,7 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -370,15 +387,17 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets shipment_id.
+     *
+     * @return string
      */
-    public function getShipmentId(): string
+    public function getShipmentId()
     {
         return $this->container['shipment_id'];
     }
@@ -387,8 +406,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets shipment_id.
      *
      * @param string $shipment_id an Amazon-defined shipment identifier
+     *
+     * @return self
      */
-    public function setShipmentId(string $shipment_id): self
+    public function setShipmentId($shipment_id)
     {
         if (is_null($shipment_id)) {
             throw new \InvalidArgumentException('non-nullable shipment_id cannot be null');
@@ -400,8 +421,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets amazon_order_id.
+     *
+     * @return string
      */
-    public function getAmazonOrderId(): string
+    public function getAmazonOrderId()
     {
         return $this->container['amazon_order_id'];
     }
@@ -410,8 +433,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets amazon_order_id.
      *
      * @param string $amazon_order_id an Amazon-defined order identifier, in 3-7-7 format
+     *
+     * @return self
      */
-    public function setAmazonOrderId(string $amazon_order_id): self
+    public function setAmazonOrderId($amazon_order_id)
     {
         if (is_null($amazon_order_id)) {
             throw new \InvalidArgumentException('non-nullable amazon_order_id cannot be null');
@@ -423,8 +448,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets seller_order_id.
+     *
+     * @return null|string
      */
-    public function getSellerOrderId(): ?string
+    public function getSellerOrderId()
     {
         return $this->container['seller_order_id'];
     }
@@ -433,20 +460,15 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets seller_order_id.
      *
      * @param null|string $seller_order_id a seller-defined order identifier
+     *
+     * @return self
      */
-    public function setSellerOrderId(?string $seller_order_id): self
+    public function setSellerOrderId($seller_order_id)
     {
         if (is_null($seller_order_id)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_order_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_order_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_order_id cannot be null');
         }
-        if (!is_null($seller_order_id) && (mb_strlen($seller_order_id) > 64)) {
+        if (mb_strlen($seller_order_id) > 64) {
             throw new \InvalidArgumentException('invalid length for $seller_order_id when calling Shipment., must be smaller than or equal to 64.');
         }
 
@@ -457,8 +479,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets item_list.
+     *
+     * @return Item[]
      */
-    public function getItemList(): array
+    public function getItemList()
     {
         return $this->container['item_list'];
     }
@@ -466,9 +490,11 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets item_list.
      *
-     * @param array $item_list the list of items you want to include in a shipment
+     * @param Item[] $item_list the list of items you want to include in a shipment
+     *
+     * @return self
      */
-    public function setItemList(array $item_list): self
+    public function setItemList($item_list)
     {
         if (is_null($item_list)) {
             throw new \InvalidArgumentException('non-nullable item_list cannot be null');
@@ -480,8 +506,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets ship_from_address.
+     *
+     * @return Address
      */
-    public function getShipFromAddress(): Address
+    public function getShipFromAddress()
     {
         return $this->container['ship_from_address'];
     }
@@ -490,8 +518,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets ship_from_address.
      *
      * @param Address $ship_from_address ship_from_address
+     *
+     * @return self
      */
-    public function setShipFromAddress(Address $ship_from_address): self
+    public function setShipFromAddress($ship_from_address)
     {
         if (is_null($ship_from_address)) {
             throw new \InvalidArgumentException('non-nullable ship_from_address cannot be null');
@@ -503,8 +533,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets ship_to_address.
+     *
+     * @return Address
      */
-    public function getShipToAddress(): Address
+    public function getShipToAddress()
     {
         return $this->container['ship_to_address'];
     }
@@ -513,8 +545,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets ship_to_address.
      *
      * @param Address $ship_to_address ship_to_address
+     *
+     * @return self
      */
-    public function setShipToAddress(Address $ship_to_address): self
+    public function setShipToAddress($ship_to_address)
     {
         if (is_null($ship_to_address)) {
             throw new \InvalidArgumentException('non-nullable ship_to_address cannot be null');
@@ -526,8 +560,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets package_dimensions.
+     *
+     * @return PackageDimensions
      */
-    public function getPackageDimensions(): PackageDimensions
+    public function getPackageDimensions()
     {
         return $this->container['package_dimensions'];
     }
@@ -536,8 +572,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets package_dimensions.
      *
      * @param PackageDimensions $package_dimensions package_dimensions
+     *
+     * @return self
      */
-    public function setPackageDimensions(PackageDimensions $package_dimensions): self
+    public function setPackageDimensions($package_dimensions)
     {
         if (is_null($package_dimensions)) {
             throw new \InvalidArgumentException('non-nullable package_dimensions cannot be null');
@@ -549,8 +587,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets weight.
+     *
+     * @return Weight
      */
-    public function getWeight(): Weight
+    public function getWeight()
     {
         return $this->container['weight'];
     }
@@ -559,8 +599,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets weight.
      *
      * @param Weight $weight weight
+     *
+     * @return self
      */
-    public function setWeight(Weight $weight): self
+    public function setWeight($weight)
     {
         if (is_null($weight)) {
             throw new \InvalidArgumentException('non-nullable weight cannot be null');
@@ -572,8 +614,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets insurance.
+     *
+     * @return CurrencyAmount
      */
-    public function getInsurance(): CurrencyAmount
+    public function getInsurance()
     {
         return $this->container['insurance'];
     }
@@ -582,8 +626,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets insurance.
      *
      * @param CurrencyAmount $insurance insurance
+     *
+     * @return self
      */
-    public function setInsurance(CurrencyAmount $insurance): self
+    public function setInsurance($insurance)
     {
         if (is_null($insurance)) {
             throw new \InvalidArgumentException('non-nullable insurance cannot be null');
@@ -595,8 +641,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets shipping_service.
+     *
+     * @return ShippingService
      */
-    public function getShippingService(): ShippingService
+    public function getShippingService()
     {
         return $this->container['shipping_service'];
     }
@@ -605,8 +653,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets shipping_service.
      *
      * @param ShippingService $shipping_service shipping_service
+     *
+     * @return self
      */
-    public function setShippingService(ShippingService $shipping_service): self
+    public function setShippingService($shipping_service)
     {
         if (is_null($shipping_service)) {
             throw new \InvalidArgumentException('non-nullable shipping_service cannot be null');
@@ -618,8 +668,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets label.
+     *
+     * @return Label
      */
-    public function getLabel(): Label
+    public function getLabel()
     {
         return $this->container['label'];
     }
@@ -628,8 +680,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets label.
      *
      * @param Label $label label
+     *
+     * @return self
      */
-    public function setLabel(Label $label): self
+    public function setLabel($label)
     {
         if (is_null($label)) {
             throw new \InvalidArgumentException('non-nullable label cannot be null');
@@ -641,8 +695,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets status.
+     *
+     * @return ShipmentStatus
      */
-    public function getStatus(): string
+    public function getStatus()
     {
         return $this->container['status'];
     }
@@ -650,9 +706,11 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets status.
      *
-     * @param string $status status
+     * @param ShipmentStatus $status status
+     *
+     * @return self
      */
-    public function setStatus(string $status): self
+    public function setStatus($status)
     {
         if (is_null($status)) {
             throw new \InvalidArgumentException('non-nullable status cannot be null');
@@ -664,8 +722,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets tracking_id.
+     *
+     * @return null|string
      */
-    public function getTrackingId(): ?string
+    public function getTrackingId()
     {
         return $this->container['tracking_id'];
     }
@@ -674,18 +734,13 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets tracking_id.
      *
      * @param null|string $tracking_id the shipment tracking identifier provided by the carrier
+     *
+     * @return self
      */
-    public function setTrackingId(?string $tracking_id): self
+    public function setTrackingId($tracking_id)
     {
         if (is_null($tracking_id)) {
-            array_push($this->openAPINullablesSetToNull, 'tracking_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tracking_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tracking_id cannot be null');
         }
         $this->container['tracking_id'] = $tracking_id;
 
@@ -694,8 +749,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets created_date.
+     *
+     * @return \DateTime
      */
-    public function getCreatedDate(): \DateTime
+    public function getCreatedDate()
     {
         return $this->container['created_date'];
     }
@@ -704,8 +761,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets created_date.
      *
      * @param \DateTime $created_date date-time formatted timestamp
+     *
+     * @return self
      */
-    public function setCreatedDate(\DateTime $created_date): self
+    public function setCreatedDate($created_date)
     {
         if (is_null($created_date)) {
             throw new \InvalidArgumentException('non-nullable created_date cannot be null');
@@ -717,8 +776,10 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets last_updated_date.
+     *
+     * @return null|\DateTime
      */
-    public function getLastUpdatedDate(): ?\DateTime
+    public function getLastUpdatedDate()
     {
         return $this->container['last_updated_date'];
     }
@@ -727,18 +788,13 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets last_updated_date.
      *
      * @param null|\DateTime $last_updated_date date-time formatted timestamp
+     *
+     * @return self
      */
-    public function setLastUpdatedDate(?\DateTime $last_updated_date): self
+    public function setLastUpdatedDate($last_updated_date)
     {
         if (is_null($last_updated_date)) {
-            array_push($this->openAPINullablesSetToNull, 'last_updated_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('last_updated_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable last_updated_date cannot be null');
         }
         $this->container['last_updated_date'] = $last_updated_date;
 
@@ -763,7 +819,7 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -774,7 +830,7 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -802,15 +858,17 @@ class Shipment implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

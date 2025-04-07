@@ -3,7 +3,7 @@
 /**
  * Item.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Item';
+    protected static $openAPIModelName = 'Item';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'asin' => 'string',
         'expiration' => 'string',
         'fnsku' => 'string',
@@ -68,7 +69,8 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
         'manufacturing_lot_code' => 'string',
         'msku' => 'string',
         'prep_instructions' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\PrepInstruction[]',
-        'quantity' => 'int'];
+        'quantity' => 'int',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -79,7 +81,7 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'asin' => null,
         'expiration' => null,
         'fnsku' => null,
@@ -87,7 +89,8 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
         'manufacturing_lot_code' => null,
         'msku' => null,
         'prep_instructions' => null,
-        'quantity' => null];
+        'quantity' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -96,10 +99,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'asin' => false,
-        'expiration' => true,
+        'expiration' => false,
         'fnsku' => false,
         'label_owner' => false,
-        'manufacturing_lot_code' => true,
+        'manufacturing_lot_code' => false,
         'msku' => false,
         'prep_instructions' => false,
         'quantity' => false,
@@ -118,7 +121,7 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'asin' => 'asin',
         'expiration' => 'expiration',
         'fnsku' => 'fnsku',
@@ -134,7 +137,7 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'asin' => 'setAsin',
         'expiration' => 'setExpiration',
         'fnsku' => 'setFnsku',
@@ -150,7 +153,7 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'asin' => 'getAsin',
         'expiration' => 'getExpiration',
         'fnsku' => 'getFnsku',
@@ -163,14 +166,16 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -199,16 +204,20 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -232,32 +241,40 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -267,7 +284,7 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -350,15 +367,17 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets asin.
+     *
+     * @return string
      */
-    public function getAsin(): string
+    public function getAsin()
     {
         return $this->container['asin'];
     }
@@ -367,8 +386,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets asin.
      *
      * @param string $asin the Amazon Standard Identification Number (ASIN) of the item
+     *
+     * @return self
      */
-    public function setAsin(string $asin): self
+    public function setAsin($asin)
     {
         if (is_null($asin)) {
             throw new \InvalidArgumentException('non-nullable asin cannot be null');
@@ -387,8 +408,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets expiration.
+     *
+     * @return null|string
      */
-    public function getExpiration(): ?string
+    public function getExpiration()
     {
         return $this->container['expiration'];
     }
@@ -397,21 +420,16 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets expiration.
      *
      * @param null|string $expiration The expiration date of the MSKU. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern`YYYY-MM-DD`. The same MSKU with different expiration dates cannot go into the same box.
+     *
+     * @return self
      */
-    public function setExpiration(?string $expiration): self
+    public function setExpiration($expiration)
     {
         if (is_null($expiration)) {
-            array_push($this->openAPINullablesSetToNull, 'expiration');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expiration', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable expiration cannot be null');
         }
 
-        if (!is_null($expiration) && (!preg_match('/^([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/', ObjectSerializer::toString($expiration)))) {
+        if (!preg_match('/^([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/', ObjectSerializer::toString($expiration))) {
             throw new \InvalidArgumentException('invalid value for $expiration when calling Item., must conform to the pattern /^([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/.');
         }
 
@@ -422,8 +440,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets fnsku.
+     *
+     * @return string
      */
-    public function getFnsku(): string
+    public function getFnsku()
     {
         return $this->container['fnsku'];
     }
@@ -432,8 +452,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets fnsku.
      *
      * @param string $fnsku a unique identifier assigned by Amazon to products stored in and fulfilled from an Amazon fulfillment center
+     *
+     * @return self
      */
-    public function setFnsku(string $fnsku): self
+    public function setFnsku($fnsku)
     {
         if (is_null($fnsku)) {
             throw new \InvalidArgumentException('non-nullable fnsku cannot be null');
@@ -452,8 +474,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets label_owner.
+     *
+     * @return string
      */
-    public function getLabelOwner(): string
+    public function getLabelOwner()
     {
         return $this->container['label_owner'];
     }
@@ -462,8 +486,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets label_owner.
      *
      * @param string $label_owner Specifies who will label the items. Options include `AMAZON`, `SELLER`, and `NONE`.
+     *
+     * @return self
      */
-    public function setLabelOwner(string $label_owner): self
+    public function setLabelOwner($label_owner)
     {
         if (is_null($label_owner)) {
             throw new \InvalidArgumentException('non-nullable label_owner cannot be null');
@@ -482,8 +508,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets manufacturing_lot_code.
+     *
+     * @return null|string
      */
-    public function getManufacturingLotCode(): ?string
+    public function getManufacturingLotCode()
     {
         return $this->container['manufacturing_lot_code'];
     }
@@ -492,23 +520,18 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets manufacturing_lot_code.
      *
      * @param null|string $manufacturing_lot_code the manufacturing lot code
+     *
+     * @return self
      */
-    public function setManufacturingLotCode(?string $manufacturing_lot_code): self
+    public function setManufacturingLotCode($manufacturing_lot_code)
     {
         if (is_null($manufacturing_lot_code)) {
-            array_push($this->openAPINullablesSetToNull, 'manufacturing_lot_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('manufacturing_lot_code', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable manufacturing_lot_code cannot be null');
         }
-        if (!is_null($manufacturing_lot_code) && (mb_strlen($manufacturing_lot_code) > 256)) {
+        if (mb_strlen($manufacturing_lot_code) > 256) {
             throw new \InvalidArgumentException('invalid length for $manufacturing_lot_code when calling Item., must be smaller than or equal to 256.');
         }
-        if (!is_null($manufacturing_lot_code) && (mb_strlen($manufacturing_lot_code) < 1)) {
+        if (mb_strlen($manufacturing_lot_code) < 1) {
             throw new \InvalidArgumentException('invalid length for $manufacturing_lot_code when calling Item., must be bigger than or equal to 1.');
         }
 
@@ -519,8 +542,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets msku.
+     *
+     * @return string
      */
-    public function getMsku(): string
+    public function getMsku()
     {
         return $this->container['msku'];
     }
@@ -529,8 +554,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets msku.
      *
      * @param string $msku the merchant SKU, a merchant-supplied identifier of a specific SKU
+     *
+     * @return self
      */
-    public function setMsku(string $msku): self
+    public function setMsku($msku)
     {
         if (is_null($msku)) {
             throw new \InvalidArgumentException('non-nullable msku cannot be null');
@@ -549,8 +576,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets prep_instructions.
+     *
+     * @return PrepInstruction[]
      */
-    public function getPrepInstructions(): array
+    public function getPrepInstructions()
     {
         return $this->container['prep_instructions'];
     }
@@ -558,9 +587,11 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets prep_instructions.
      *
-     * @param array $prep_instructions special preparations that are required for an item
+     * @param PrepInstruction[] $prep_instructions special preparations that are required for an item
+     *
+     * @return self
      */
-    public function setPrepInstructions(array $prep_instructions): self
+    public function setPrepInstructions($prep_instructions)
     {
         if (is_null($prep_instructions)) {
             throw new \InvalidArgumentException('non-nullable prep_instructions cannot be null');
@@ -572,8 +603,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets quantity.
+     *
+     * @return int
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->container['quantity'];
     }
@@ -582,8 +615,10 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets quantity.
      *
      * @param int $quantity the number of the specified MSKU
+     *
+     * @return self
      */
-    public function setQuantity(int $quantity): self
+    public function setQuantity($quantity)
     {
         if (is_null($quantity)) {
             throw new \InvalidArgumentException('non-nullable quantity cannot be null');
@@ -619,7 +654,7 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -630,7 +665,7 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -658,15 +693,17 @@ class Item implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

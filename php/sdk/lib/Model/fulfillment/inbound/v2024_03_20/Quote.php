@@ -3,7 +3,7 @@
 /**
  * Quote.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class Quote implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Quote';
+    protected static $openAPIModelName = 'Quote';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'cost' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Currency',
         'expiration' => '\DateTime',
-        'voidable_until' => '\DateTime'];
+        'voidable_until' => '\DateTime',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class Quote implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'cost' => null,
         'expiration' => 'date-time',
-        'voidable_until' => 'date-time'];
+        'voidable_until' => 'date-time',
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -86,8 +89,8 @@ class Quote implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'cost' => false,
-        'expiration' => true,
-        'voidable_until' => true,
+        'expiration' => false,
+        'voidable_until' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class Quote implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'cost' => 'cost',
         'expiration' => 'expiration',
         'voidable_until' => 'voidableUntil',
@@ -114,7 +117,7 @@ class Quote implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'cost' => 'setCost',
         'expiration' => 'setExpiration',
         'voidable_until' => 'setVoidableUntil',
@@ -125,7 +128,7 @@ class Quote implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'cost' => 'getCost',
         'expiration' => 'getExpiration',
         'voidable_until' => 'getVoidableUntil',
@@ -133,14 +136,16 @@ class Quote implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class Quote implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class Quote implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class Quote implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -249,15 +266,17 @@ class Quote implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets cost.
+     *
+     * @return Currency
      */
-    public function getCost(): Currency
+    public function getCost()
     {
         return $this->container['cost'];
     }
@@ -266,8 +285,10 @@ class Quote implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets cost.
      *
      * @param Currency $cost cost
+     *
+     * @return self
      */
-    public function setCost(Currency $cost): self
+    public function setCost($cost)
     {
         if (is_null($cost)) {
             throw new \InvalidArgumentException('non-nullable cost cannot be null');
@@ -279,8 +300,10 @@ class Quote implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets expiration.
+     *
+     * @return null|\DateTime
      */
-    public function getExpiration(): ?\DateTime
+    public function getExpiration()
     {
         return $this->container['expiration'];
     }
@@ -289,18 +312,13 @@ class Quote implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets expiration.
      *
      * @param null|\DateTime $expiration The time at which this transportation option quote expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     *
+     * @return self
      */
-    public function setExpiration(?\DateTime $expiration): self
+    public function setExpiration($expiration)
     {
         if (is_null($expiration)) {
-            array_push($this->openAPINullablesSetToNull, 'expiration');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expiration', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable expiration cannot be null');
         }
         $this->container['expiration'] = $expiration;
 
@@ -309,8 +327,10 @@ class Quote implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets voidable_until.
+     *
+     * @return null|\DateTime
      */
-    public function getVoidableUntil(): ?\DateTime
+    public function getVoidableUntil()
     {
         return $this->container['voidable_until'];
     }
@@ -319,18 +339,13 @@ class Quote implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets voidable_until.
      *
      * @param null|\DateTime $voidable_until voidable until timestamp
+     *
+     * @return self
      */
-    public function setVoidableUntil(?\DateTime $voidable_until): self
+    public function setVoidableUntil($voidable_until)
     {
         if (is_null($voidable_until)) {
-            array_push($this->openAPINullablesSetToNull, 'voidable_until');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('voidable_until', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable voidable_until cannot be null');
         }
         $this->container['voidable_until'] = $voidable_until;
 
@@ -355,7 +370,7 @@ class Quote implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -366,7 +381,7 @@ class Quote implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -394,15 +409,17 @@ class Quote implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

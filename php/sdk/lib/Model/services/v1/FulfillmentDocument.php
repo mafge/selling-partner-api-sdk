@@ -3,7 +3,7 @@
 /**
  * FulfillmentDocument.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\services\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class FulfillmentDocument implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'FulfillmentDocument';
+    protected static $openAPIModelName = 'FulfillmentDocument';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'upload_destination_id' => 'string',
-        'content_sha256' => 'string'];
+        'content_sha256' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class FulfillmentDocument implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'upload_destination_id' => null,
-        'content_sha256' => null];
+        'content_sha256' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class FulfillmentDocument implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'upload_destination_id' => true,
-        'content_sha256' => true,
+        'upload_destination_id' => false,
+        'content_sha256' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class FulfillmentDocument implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'upload_destination_id' => 'uploadDestinationId',
         'content_sha256' => 'contentSha256',
     ];
@@ -110,7 +113,7 @@ class FulfillmentDocument implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'upload_destination_id' => 'setUploadDestinationId',
         'content_sha256' => 'setContentSha256',
     ];
@@ -120,21 +123,23 @@ class FulfillmentDocument implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'upload_destination_id' => 'getUploadDestinationId',
         'content_sha256' => 'getContentSha256',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class FulfillmentDocument implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class FulfillmentDocument implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class FulfillmentDocument implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -236,15 +253,17 @@ class FulfillmentDocument implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets upload_destination_id.
+     *
+     * @return null|string
      */
-    public function getUploadDestinationId(): ?string
+    public function getUploadDestinationId()
     {
         return $this->container['upload_destination_id'];
     }
@@ -253,18 +272,13 @@ class FulfillmentDocument implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets upload_destination_id.
      *
      * @param null|string $upload_destination_id The identifier of the upload destination. Get this value by calling the `createServiceDocumentUploadDestination` operation of the Services API.
+     *
+     * @return self
      */
-    public function setUploadDestinationId(?string $upload_destination_id): self
+    public function setUploadDestinationId($upload_destination_id)
     {
         if (is_null($upload_destination_id)) {
-            array_push($this->openAPINullablesSetToNull, 'upload_destination_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('upload_destination_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable upload_destination_id cannot be null');
         }
         $this->container['upload_destination_id'] = $upload_destination_id;
 
@@ -273,8 +287,10 @@ class FulfillmentDocument implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets content_sha256.
+     *
+     * @return null|string
      */
-    public function getContentSha256(): ?string
+    public function getContentSha256()
     {
         return $this->container['content_sha256'];
     }
@@ -283,18 +299,13 @@ class FulfillmentDocument implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets content_sha256.
      *
      * @param null|string $content_sha256 Sha256 hash of the file content. This value is used to determine if the file has been corrupted or tampered with during transit.
+     *
+     * @return self
      */
-    public function setContentSha256(?string $content_sha256): self
+    public function setContentSha256($content_sha256)
     {
         if (is_null($content_sha256)) {
-            array_push($this->openAPINullablesSetToNull, 'content_sha256');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('content_sha256', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable content_sha256 cannot be null');
         }
         $this->container['content_sha256'] = $content_sha256;
 
@@ -319,7 +330,7 @@ class FulfillmentDocument implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +341,7 @@ class FulfillmentDocument implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +369,17 @@ class FulfillmentDocument implements ModelInterface, \ArrayAccess, \JsonSerializ
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * PrepInstruction.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class PrepInstruction implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'PrepInstruction';
+    protected static $openAPIModelName = 'PrepInstruction';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'fee' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Currency',
         'prep_owner' => 'string',
-        'prep_type' => 'string'];
+        'prep_type' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class PrepInstruction implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'fee' => null,
         'prep_owner' => null,
-        'prep_type' => null];
+        'prep_type' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class PrepInstruction implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'fee' => true,
-        'prep_owner' => true,
-        'prep_type' => true,
+        'fee' => false,
+        'prep_owner' => false,
+        'prep_type' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class PrepInstruction implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'fee' => 'fee',
         'prep_owner' => 'prepOwner',
         'prep_type' => 'prepType',
@@ -114,7 +117,7 @@ class PrepInstruction implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'fee' => 'setFee',
         'prep_owner' => 'setPrepOwner',
         'prep_type' => 'setPrepType',
@@ -125,7 +128,7 @@ class PrepInstruction implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'fee' => 'getFee',
         'prep_owner' => 'getPrepOwner',
         'prep_type' => 'getPrepType',
@@ -133,14 +136,16 @@ class PrepInstruction implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class PrepInstruction implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class PrepInstruction implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class PrepInstruction implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -261,15 +278,17 @@ class PrepInstruction implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets fee.
+     *
+     * @return null|Currency
      */
-    public function getFee(): ?Currency
+    public function getFee()
     {
         return $this->container['fee'];
     }
@@ -278,18 +297,13 @@ class PrepInstruction implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets fee.
      *
      * @param null|Currency $fee fee
+     *
+     * @return self
      */
-    public function setFee(?Currency $fee): self
+    public function setFee($fee)
     {
         if (is_null($fee)) {
-            array_push($this->openAPINullablesSetToNull, 'fee');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fee', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fee cannot be null');
         }
         $this->container['fee'] = $fee;
 
@@ -298,8 +312,10 @@ class PrepInstruction implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets prep_owner.
+     *
+     * @return null|string
      */
-    public function getPrepOwner(): ?string
+    public function getPrepOwner()
     {
         return $this->container['prep_owner'];
     }
@@ -308,23 +324,18 @@ class PrepInstruction implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets prep_owner.
      *
      * @param null|string $prep_owner In some situations, special preparations are required for items and this field reflects the owner of the preparations. Options include `AMAZON`, `SELLER` or `NONE`.
+     *
+     * @return self
      */
-    public function setPrepOwner(?string $prep_owner): self
+    public function setPrepOwner($prep_owner)
     {
         if (is_null($prep_owner)) {
-            array_push($this->openAPINullablesSetToNull, 'prep_owner');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('prep_owner', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable prep_owner cannot be null');
         }
-        if (!is_null($prep_owner) && (mb_strlen($prep_owner) > 1024)) {
+        if (mb_strlen($prep_owner) > 1024) {
             throw new \InvalidArgumentException('invalid length for $prep_owner when calling PrepInstruction., must be smaller than or equal to 1024.');
         }
-        if (!is_null($prep_owner) && (mb_strlen($prep_owner) < 1)) {
+        if (mb_strlen($prep_owner) < 1) {
             throw new \InvalidArgumentException('invalid length for $prep_owner when calling PrepInstruction., must be bigger than or equal to 1.');
         }
 
@@ -335,8 +346,10 @@ class PrepInstruction implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets prep_type.
+     *
+     * @return null|string
      */
-    public function getPrepType(): ?string
+    public function getPrepType()
     {
         return $this->container['prep_type'];
     }
@@ -345,23 +358,18 @@ class PrepInstruction implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets prep_type.
      *
      * @param null|string $prep_type Type of preparation that should be done.  Possible values: `ITEM_LABELING`, `ITEM_BUBBLEWRAP`, `ITEM_POLYBAGGING`, `ITEM_TAPING`, `ITEM_BLACK_SHRINKWRAP`, `ITEM_HANG_GARMENT`, `ITEM_BOXING`, `ITEM_SETCREAT`, `ITEM_RMOVHANG`, `ITEM_SUFFOSTK`, `ITEM_CAP_SEALING`, `ITEM_DEBUNDLE`, `ITEM_SETSTK`, `ITEM_SIOC`, `ITEM_NO_PREP`, `ADULT`, `BABY`, `TEXTILE`, `HANGER`, `FRAGILE`, `LIQUID`, `SHARP`, `SMALL`, `PERFORATED`, `GRANULAR`, `SET`, `FC_PROVIDED`, `UNKNOWN`, `NONE`.
+     *
+     * @return self
      */
-    public function setPrepType(?string $prep_type): self
+    public function setPrepType($prep_type)
     {
         if (is_null($prep_type)) {
-            array_push($this->openAPINullablesSetToNull, 'prep_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('prep_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable prep_type cannot be null');
         }
-        if (!is_null($prep_type) && (mb_strlen($prep_type) > 1024)) {
+        if (mb_strlen($prep_type) > 1024) {
             throw new \InvalidArgumentException('invalid length for $prep_type when calling PrepInstruction., must be smaller than or equal to 1024.');
         }
-        if (!is_null($prep_type) && (mb_strlen($prep_type) < 1)) {
+        if (mb_strlen($prep_type) < 1) {
             throw new \InvalidArgumentException('invalid length for $prep_type when calling PrepInstruction., must be bigger than or equal to 1.');
         }
 
@@ -388,7 +396,7 @@ class PrepInstruction implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -399,7 +407,7 @@ class PrepInstruction implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -427,15 +435,17 @@ class PrepInstruction implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

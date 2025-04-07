@@ -3,7 +3,7 @@
 /**
  * MeasurementData.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\awd\v2024_05_09;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class MeasurementData implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'MeasurementData';
+    protected static $openAPIModelName = 'MeasurementData';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'dimensions' => '\SpApi\Model\awd\v2024_05_09\PackageDimensions',
         'volume' => '\SpApi\Model\awd\v2024_05_09\PackageVolume',
-        'weight' => '\SpApi\Model\awd\v2024_05_09\PackageWeight'];
+        'weight' => '\SpApi\Model\awd\v2024_05_09\PackageWeight',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class MeasurementData implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'dimensions' => null,
         'volume' => null,
-        'weight' => null];
+        'weight' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,8 +88,8 @@ class MeasurementData implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'dimensions' => true,
-        'volume' => true,
+        'dimensions' => false,
+        'volume' => false,
         'weight' => false,
     ];
 
@@ -103,7 +106,7 @@ class MeasurementData implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'dimensions' => 'dimensions',
         'volume' => 'volume',
         'weight' => 'weight',
@@ -114,7 +117,7 @@ class MeasurementData implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'dimensions' => 'setDimensions',
         'volume' => 'setVolume',
         'weight' => 'setWeight',
@@ -125,7 +128,7 @@ class MeasurementData implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'dimensions' => 'getDimensions',
         'volume' => 'getVolume',
         'weight' => 'getWeight',
@@ -133,14 +136,16 @@ class MeasurementData implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class MeasurementData implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class MeasurementData implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class MeasurementData implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -249,15 +266,17 @@ class MeasurementData implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets dimensions.
+     *
+     * @return null|PackageDimensions
      */
-    public function getDimensions(): ?PackageDimensions
+    public function getDimensions()
     {
         return $this->container['dimensions'];
     }
@@ -266,18 +285,13 @@ class MeasurementData implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets dimensions.
      *
      * @param null|PackageDimensions $dimensions dimensions
+     *
+     * @return self
      */
-    public function setDimensions(?PackageDimensions $dimensions): self
+    public function setDimensions($dimensions)
     {
         if (is_null($dimensions)) {
-            array_push($this->openAPINullablesSetToNull, 'dimensions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('dimensions', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable dimensions cannot be null');
         }
         $this->container['dimensions'] = $dimensions;
 
@@ -286,8 +300,10 @@ class MeasurementData implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets volume.
+     *
+     * @return null|PackageVolume
      */
-    public function getVolume(): ?PackageVolume
+    public function getVolume()
     {
         return $this->container['volume'];
     }
@@ -296,18 +312,13 @@ class MeasurementData implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets volume.
      *
      * @param null|PackageVolume $volume volume
+     *
+     * @return self
      */
-    public function setVolume(?PackageVolume $volume): self
+    public function setVolume($volume)
     {
         if (is_null($volume)) {
-            array_push($this->openAPINullablesSetToNull, 'volume');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('volume', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable volume cannot be null');
         }
         $this->container['volume'] = $volume;
 
@@ -316,8 +327,10 @@ class MeasurementData implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets weight.
+     *
+     * @return PackageWeight
      */
-    public function getWeight(): PackageWeight
+    public function getWeight()
     {
         return $this->container['weight'];
     }
@@ -326,8 +339,10 @@ class MeasurementData implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets weight.
      *
      * @param PackageWeight $weight weight
+     *
+     * @return self
      */
-    public function setWeight(PackageWeight $weight): self
+    public function setWeight($weight)
     {
         if (is_null($weight)) {
             throw new \InvalidArgumentException('non-nullable weight cannot be null');
@@ -355,7 +370,7 @@ class MeasurementData implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -366,7 +381,7 @@ class MeasurementData implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -394,15 +409,17 @@ class MeasurementData implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

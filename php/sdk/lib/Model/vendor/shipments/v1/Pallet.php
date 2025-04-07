@@ -2,7 +2,7 @@
 /**
  * Pallet
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * Pallet Class Doc Comment
@@ -52,21 +50,22 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'Pallet';
+    protected static $openAPIModelName = 'Pallet';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'pallet_identifiers' => '\SpApi\Model\vendor\shipments\v1\ContainerIdentification[]',
-             'tier' => 'int',
-             'block' => 'int',
-             'dimensions' => '\SpApi\Model\vendor\shipments\v1\Dimensions',
-             'weight' => '\SpApi\Model\vendor\shipments\v1\Weight',
-             'carton_reference_details' => '\SpApi\Model\vendor\shipments\v1\CartonReferenceDetails',
-             'items' => '\SpApi\Model\vendor\shipments\v1\ContainerItem[]'    ];
+    protected static $openAPITypes = [
+        'pallet_identifiers' => '\SpApi\Model\vendor\shipments\v1\ContainerIdentification[]',
+        'tier' => 'int',
+        'block' => 'int',
+        'dimensions' => '\SpApi\Model\vendor\shipments\v1\Dimensions',
+        'weight' => '\SpApi\Model\vendor\shipments\v1\Weight',
+        'carton_reference_details' => '\SpApi\Model\vendor\shipments\v1\CartonReferenceDetails',
+        'items' => '\SpApi\Model\vendor\shipments\v1\ContainerItem[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -75,14 +74,15 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'pallet_identifiers' => null,
-            'tier' => null,
-            'block' => null,
-            'dimensions' => null,
-            'weight' => null,
-            'carton_reference_details' => null,
-            'items' => null    ];
+    protected static $openAPIFormats = [
+        'pallet_identifiers' => null,
+        'tier' => null,
+        'block' => null,
+        'dimensions' => null,
+        'weight' => null,
+        'carton_reference_details' => null,
+        'items' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -91,12 +91,12 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'pallet_identifiers' => false,
-        'tier' => true,
-        'block' => true,
-        'dimensions' => true,
-        'weight' => true,
-        'carton_reference_details' => true,
-        'items' => true
+        'tier' => false,
+        'block' => false,
+        'dimensions' => false,
+        'weight' => false,
+        'carton_reference_details' => false,
+        'items' => false
     ];
 
     /**
@@ -111,7 +111,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -121,7 +121,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -184,15 +184,14 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'pallet_identifiers' => 'palletIdentifiers',
-                'tier' => 'tier',
-                'block' => 'block',
-                'dimensions' => 'dimensions',
-                'weight' => 'weight',
-                'carton_reference_details' => 'cartonReferenceDetails',
-                'items' => 'items'
-        
+        'tier' => 'tier',
+        'block' => 'block',
+        'dimensions' => 'dimensions',
+        'weight' => 'weight',
+        'carton_reference_details' => 'cartonReferenceDetails',
+        'items' => 'items'
     ];
 
     /**
@@ -200,7 +199,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'pallet_identifiers' => 'setPalletIdentifiers',
         'tier' => 'setTier',
         'block' => 'setBlock',
@@ -215,7 +214,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'pallet_identifiers' => 'getPalletIdentifiers',
         'tier' => 'getTier',
         'block' => 'getBlock',
@@ -231,7 +230,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -241,7 +240,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -251,7 +250,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -261,7 +260,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -270,17 +269,17 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('pallet_identifiers', $data ?? [], null);
         $this->setIfExists('tier', $data ?? [], null);
@@ -314,7 +313,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -330,7 +329,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -339,9 +338,9 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets pallet_identifiers
      *
-     * @return array
+     * @return \SpApi\Model\vendor\shipments\v1\ContainerIdentification[]
      */
-    public function getPalletIdentifiers(): array
+    public function getPalletIdentifiers()
     {
         return $this->container['pallet_identifiers'];
     }
@@ -349,11 +348,11 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets pallet_identifiers
      *
-     * @param array $pallet_identifiers A list of pallet identifiers.
+     * @param \SpApi\Model\vendor\shipments\v1\ContainerIdentification[] $pallet_identifiers A list of pallet identifiers.
      *
      * @return self
      */
-    public function setPalletIdentifiers(array $pallet_identifiers): self
+    public function setPalletIdentifiers($pallet_identifiers)
     {
         if (is_null($pallet_identifiers)) {
             throw new \InvalidArgumentException('non-nullable pallet_identifiers cannot be null');
@@ -368,7 +367,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return int|null
      */
-    public function getTier(): ?int
+    public function getTier()
     {
         return $this->container['tier'];
     }
@@ -380,17 +379,10 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTier(?int $tier): self
+    public function setTier($tier)
     {
         if (is_null($tier)) {
-            array_push($this->openAPINullablesSetToNull, 'tier');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tier', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tier cannot be null');
         }
         $this->container['tier'] = $tier;
 
@@ -402,7 +394,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return int|null
      */
-    public function getBlock(): ?int
+    public function getBlock()
     {
         return $this->container['block'];
     }
@@ -414,17 +406,10 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setBlock(?int $block): self
+    public function setBlock($block)
     {
         if (is_null($block)) {
-            array_push($this->openAPINullablesSetToNull, 'block');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('block', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable block cannot be null');
         }
         $this->container['block'] = $block;
 
@@ -436,7 +421,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\shipments\v1\Dimensions|null
      */
-    public function getDimensions(): ?\SpApi\Model\vendor\shipments\v1\Dimensions
+    public function getDimensions()
     {
         return $this->container['dimensions'];
     }
@@ -448,17 +433,10 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDimensions(?\SpApi\Model\vendor\shipments\v1\Dimensions $dimensions): self
+    public function setDimensions($dimensions)
     {
         if (is_null($dimensions)) {
-            array_push($this->openAPINullablesSetToNull, 'dimensions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('dimensions', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable dimensions cannot be null');
         }
         $this->container['dimensions'] = $dimensions;
 
@@ -470,7 +448,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\shipments\v1\Weight|null
      */
-    public function getWeight(): ?\SpApi\Model\vendor\shipments\v1\Weight
+    public function getWeight()
     {
         return $this->container['weight'];
     }
@@ -482,17 +460,10 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setWeight(?\SpApi\Model\vendor\shipments\v1\Weight $weight): self
+    public function setWeight($weight)
     {
         if (is_null($weight)) {
-            array_push($this->openAPINullablesSetToNull, 'weight');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('weight', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable weight cannot be null');
         }
         $this->container['weight'] = $weight;
 
@@ -504,7 +475,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\shipments\v1\CartonReferenceDetails|null
      */
-    public function getCartonReferenceDetails(): ?\SpApi\Model\vendor\shipments\v1\CartonReferenceDetails
+    public function getCartonReferenceDetails()
     {
         return $this->container['carton_reference_details'];
     }
@@ -516,17 +487,10 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCartonReferenceDetails(?\SpApi\Model\vendor\shipments\v1\CartonReferenceDetails $carton_reference_details): self
+    public function setCartonReferenceDetails($carton_reference_details)
     {
         if (is_null($carton_reference_details)) {
-            array_push($this->openAPINullablesSetToNull, 'carton_reference_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('carton_reference_details', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable carton_reference_details cannot be null');
         }
         $this->container['carton_reference_details'] = $carton_reference_details;
 
@@ -536,9 +500,9 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets items
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\shipments\v1\ContainerItem[]|null
      */
-    public function getItems(): ?array
+    public function getItems()
     {
         return $this->container['items'];
     }
@@ -546,28 +510,19 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets items
      *
-     * @param array|null $items A list of container item details.
+     * @param \SpApi\Model\vendor\shipments\v1\ContainerItem[]|null $items A list of container item details.
      *
      * @return self
      */
-    public function setItems(?array $items): self
+    public function setItems($items)
     {
         if (is_null($items)) {
-            array_push($this->openAPINullablesSetToNull, 'items');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('items', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable items cannot be null');
         }
         $this->container['items'] = $items;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -588,7 +543,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -601,7 +556,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -630,7 +585,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -653,7 +608,7 @@ class Pallet implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

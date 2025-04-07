@@ -3,7 +3,7 @@
 /**
  * FulfillmentPreviewShipment.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'FulfillmentPreviewShipment';
+    protected static $openAPIModelName = 'FulfillmentPreviewShipment';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'earliest_ship_date' => '\DateTime',
         'latest_ship_date' => '\DateTime',
         'earliest_arrival_date' => '\DateTime',
         'latest_arrival_date' => '\DateTime',
         'shipping_notes' => 'string[]',
-        'fulfillment_preview_items' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\FulfillmentPreviewItem[]'];
+        'fulfillment_preview_items' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\FulfillmentPreviewItem[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'earliest_ship_date' => 'date-time',
         'latest_ship_date' => 'date-time',
         'earliest_arrival_date' => 'date-time',
         'latest_arrival_date' => 'date-time',
         'shipping_notes' => null,
-        'fulfillment_preview_items' => null];
+        'fulfillment_preview_items' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -91,11 +94,11 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'earliest_ship_date' => true,
-        'latest_ship_date' => true,
-        'earliest_arrival_date' => true,
-        'latest_arrival_date' => true,
-        'shipping_notes' => true,
+        'earliest_ship_date' => false,
+        'latest_ship_date' => false,
+        'earliest_arrival_date' => false,
+        'latest_arrival_date' => false,
+        'shipping_notes' => false,
         'fulfillment_preview_items' => false,
     ];
 
@@ -112,7 +115,7 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'earliest_ship_date' => 'earliestShipDate',
         'latest_ship_date' => 'latestShipDate',
         'earliest_arrival_date' => 'earliestArrivalDate',
@@ -126,7 +129,7 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'earliest_ship_date' => 'setEarliestShipDate',
         'latest_ship_date' => 'setLatestShipDate',
         'earliest_arrival_date' => 'setEarliestArrivalDate',
@@ -140,7 +143,7 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'earliest_ship_date' => 'getEarliestShipDate',
         'latest_ship_date' => 'getLatestShipDate',
         'earliest_arrival_date' => 'getEarliestArrivalDate',
@@ -151,14 +154,16 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -270,15 +287,17 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets earliest_ship_date.
+     *
+     * @return null|\DateTime
      */
-    public function getEarliestShipDate(): ?\DateTime
+    public function getEarliestShipDate()
     {
         return $this->container['earliest_ship_date'];
     }
@@ -287,18 +306,13 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
      * Sets earliest_ship_date.
      *
      * @param null|\DateTime $earliest_ship_date Date timestamp
+     *
+     * @return self
      */
-    public function setEarliestShipDate(?\DateTime $earliest_ship_date): self
+    public function setEarliestShipDate($earliest_ship_date)
     {
         if (is_null($earliest_ship_date)) {
-            array_push($this->openAPINullablesSetToNull, 'earliest_ship_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('earliest_ship_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable earliest_ship_date cannot be null');
         }
         $this->container['earliest_ship_date'] = $earliest_ship_date;
 
@@ -307,8 +321,10 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets latest_ship_date.
+     *
+     * @return null|\DateTime
      */
-    public function getLatestShipDate(): ?\DateTime
+    public function getLatestShipDate()
     {
         return $this->container['latest_ship_date'];
     }
@@ -317,18 +333,13 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
      * Sets latest_ship_date.
      *
      * @param null|\DateTime $latest_ship_date Date timestamp
+     *
+     * @return self
      */
-    public function setLatestShipDate(?\DateTime $latest_ship_date): self
+    public function setLatestShipDate($latest_ship_date)
     {
         if (is_null($latest_ship_date)) {
-            array_push($this->openAPINullablesSetToNull, 'latest_ship_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('latest_ship_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable latest_ship_date cannot be null');
         }
         $this->container['latest_ship_date'] = $latest_ship_date;
 
@@ -337,8 +348,10 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets earliest_arrival_date.
+     *
+     * @return null|\DateTime
      */
-    public function getEarliestArrivalDate(): ?\DateTime
+    public function getEarliestArrivalDate()
     {
         return $this->container['earliest_arrival_date'];
     }
@@ -347,18 +360,13 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
      * Sets earliest_arrival_date.
      *
      * @param null|\DateTime $earliest_arrival_date Date timestamp
+     *
+     * @return self
      */
-    public function setEarliestArrivalDate(?\DateTime $earliest_arrival_date): self
+    public function setEarliestArrivalDate($earliest_arrival_date)
     {
         if (is_null($earliest_arrival_date)) {
-            array_push($this->openAPINullablesSetToNull, 'earliest_arrival_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('earliest_arrival_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable earliest_arrival_date cannot be null');
         }
         $this->container['earliest_arrival_date'] = $earliest_arrival_date;
 
@@ -367,8 +375,10 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets latest_arrival_date.
+     *
+     * @return null|\DateTime
      */
-    public function getLatestArrivalDate(): ?\DateTime
+    public function getLatestArrivalDate()
     {
         return $this->container['latest_arrival_date'];
     }
@@ -377,18 +387,13 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
      * Sets latest_arrival_date.
      *
      * @param null|\DateTime $latest_arrival_date Date timestamp
+     *
+     * @return self
      */
-    public function setLatestArrivalDate(?\DateTime $latest_arrival_date): self
+    public function setLatestArrivalDate($latest_arrival_date)
     {
         if (is_null($latest_arrival_date)) {
-            array_push($this->openAPINullablesSetToNull, 'latest_arrival_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('latest_arrival_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable latest_arrival_date cannot be null');
         }
         $this->container['latest_arrival_date'] = $latest_arrival_date;
 
@@ -397,8 +402,10 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets shipping_notes.
+     *
+     * @return null|string[]
      */
-    public function getShippingNotes(): ?array
+    public function getShippingNotes()
     {
         return $this->container['shipping_notes'];
     }
@@ -406,19 +413,14 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
     /**
      * Sets shipping_notes.
      *
-     * @param null|array $shipping_notes provides additional insight into the shipment timeline when exact delivery dates are not able to be precomputed
+     * @param null|string[] $shipping_notes provides additional insight into the shipment timeline when exact delivery dates are not able to be precomputed
+     *
+     * @return self
      */
-    public function setShippingNotes(?array $shipping_notes): self
+    public function setShippingNotes($shipping_notes)
     {
         if (is_null($shipping_notes)) {
-            array_push($this->openAPINullablesSetToNull, 'shipping_notes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipping_notes', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipping_notes cannot be null');
         }
         $this->container['shipping_notes'] = $shipping_notes;
 
@@ -427,8 +429,10 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets fulfillment_preview_items.
+     *
+     * @return FulfillmentPreviewItem[]
      */
-    public function getFulfillmentPreviewItems(): array
+    public function getFulfillmentPreviewItems()
     {
         return $this->container['fulfillment_preview_items'];
     }
@@ -436,9 +440,11 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
     /**
      * Sets fulfillment_preview_items.
      *
-     * @param array $fulfillment_preview_items an array of fulfillment preview item information
+     * @param FulfillmentPreviewItem[] $fulfillment_preview_items an array of fulfillment preview item information
+     *
+     * @return self
      */
-    public function setFulfillmentPreviewItems(array $fulfillment_preview_items): self
+    public function setFulfillmentPreviewItems($fulfillment_preview_items)
     {
         if (is_null($fulfillment_preview_items)) {
             throw new \InvalidArgumentException('non-nullable fulfillment_preview_items cannot be null');
@@ -466,7 +472,7 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -477,7 +483,7 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -505,15 +511,17 @@ class FulfillmentPreviewShipment implements ModelInterface, \ArrayAccess, \JsonS
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

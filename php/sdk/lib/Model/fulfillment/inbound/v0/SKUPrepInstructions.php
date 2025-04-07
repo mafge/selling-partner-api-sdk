@@ -3,7 +3,7 @@
 /**
  * SKUPrepInstructions.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'SKUPrepInstructions';
+    protected static $openAPIModelName = 'SKUPrepInstructions';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'seller_sku' => 'string',
         'asin' => 'string',
         'barcode_instruction' => '\SpApi\Model\fulfillment\inbound\v0\BarcodeInstruction',
         'prep_guidance' => '\SpApi\Model\fulfillment\inbound\v0\PrepGuidance',
         'prep_instruction_list' => '\SpApi\Model\fulfillment\inbound\v0\PrepInstruction[]',
-        'amazon_prep_fees_details_list' => '\SpApi\Model\fulfillment\inbound\v0\AmazonPrepFeesDetails[]'];
+        'amazon_prep_fees_details_list' => '\SpApi\Model\fulfillment\inbound\v0\AmazonPrepFeesDetails[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'seller_sku' => null,
         'asin' => null,
         'barcode_instruction' => null,
         'prep_guidance' => null,
         'prep_instruction_list' => null,
-        'amazon_prep_fees_details_list' => null];
+        'amazon_prep_fees_details_list' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -91,12 +94,12 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'seller_sku' => true,
-        'asin' => true,
-        'barcode_instruction' => true,
-        'prep_guidance' => true,
-        'prep_instruction_list' => true,
-        'amazon_prep_fees_details_list' => true,
+        'seller_sku' => false,
+        'asin' => false,
+        'barcode_instruction' => false,
+        'prep_guidance' => false,
+        'prep_instruction_list' => false,
+        'amazon_prep_fees_details_list' => false,
     ];
 
     /**
@@ -112,7 +115,7 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'seller_sku' => 'SellerSKU',
         'asin' => 'ASIN',
         'barcode_instruction' => 'BarcodeInstruction',
@@ -126,7 +129,7 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'seller_sku' => 'setSellerSku',
         'asin' => 'setAsin',
         'barcode_instruction' => 'setBarcodeInstruction',
@@ -140,7 +143,7 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'seller_sku' => 'getSellerSku',
         'asin' => 'getAsin',
         'barcode_instruction' => 'getBarcodeInstruction',
@@ -151,14 +154,16 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -264,15 +281,17 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets seller_sku.
+     *
+     * @return null|string
      */
-    public function getSellerSku(): ?string
+    public function getSellerSku()
     {
         return $this->container['seller_sku'];
     }
@@ -281,18 +300,13 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets seller_sku.
      *
      * @param null|string $seller_sku the seller SKU of the item
+     *
+     * @return self
      */
-    public function setSellerSku(?string $seller_sku): self
+    public function setSellerSku($seller_sku)
     {
         if (is_null($seller_sku)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_sku');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_sku', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_sku cannot be null');
         }
         $this->container['seller_sku'] = $seller_sku;
 
@@ -301,8 +315,10 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
-    public function getAsin(): ?string
+    public function getAsin()
     {
         return $this->container['asin'];
     }
@@ -311,18 +327,13 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number (ASIN) of the item
+     *
+     * @return self
      */
-    public function setAsin(?string $asin): self
+    public function setAsin($asin)
     {
         if (is_null($asin)) {
-            array_push($this->openAPINullablesSetToNull, 'asin');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('asin', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable asin cannot be null');
         }
         $this->container['asin'] = $asin;
 
@@ -331,8 +342,10 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets barcode_instruction.
+     *
+     * @return null|BarcodeInstruction
      */
-    public function getBarcodeInstruction(): ?string
+    public function getBarcodeInstruction()
     {
         return $this->container['barcode_instruction'];
     }
@@ -340,19 +353,14 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets barcode_instruction.
      *
-     * @param null|string $barcode_instruction barcode_instruction
+     * @param null|BarcodeInstruction $barcode_instruction barcode_instruction
+     *
+     * @return self
      */
-    public function setBarcodeInstruction(?string $barcode_instruction): self
+    public function setBarcodeInstruction($barcode_instruction)
     {
         if (is_null($barcode_instruction)) {
-            array_push($this->openAPINullablesSetToNull, 'barcode_instruction');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('barcode_instruction', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable barcode_instruction cannot be null');
         }
         $this->container['barcode_instruction'] = $barcode_instruction;
 
@@ -361,8 +369,10 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets prep_guidance.
+     *
+     * @return null|PrepGuidance
      */
-    public function getPrepGuidance(): ?string
+    public function getPrepGuidance()
     {
         return $this->container['prep_guidance'];
     }
@@ -370,19 +380,14 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets prep_guidance.
      *
-     * @param null|string $prep_guidance prep_guidance
+     * @param null|PrepGuidance $prep_guidance prep_guidance
+     *
+     * @return self
      */
-    public function setPrepGuidance(?string $prep_guidance): self
+    public function setPrepGuidance($prep_guidance)
     {
         if (is_null($prep_guidance)) {
-            array_push($this->openAPINullablesSetToNull, 'prep_guidance');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('prep_guidance', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable prep_guidance cannot be null');
         }
         $this->container['prep_guidance'] = $prep_guidance;
 
@@ -391,8 +396,10 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets prep_instruction_list.
+     *
+     * @return null|PrepInstruction[]
      */
-    public function getPrepInstructionList(): ?array
+    public function getPrepInstructionList()
     {
         return $this->container['prep_instruction_list'];
     }
@@ -400,19 +407,14 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets prep_instruction_list.
      *
-     * @param null|array $prep_instruction_list a list of preparation instructions to help with item sourcing decisions
+     * @param null|PrepInstruction[] $prep_instruction_list a list of preparation instructions to help with item sourcing decisions
+     *
+     * @return self
      */
-    public function setPrepInstructionList(?array $prep_instruction_list): self
+    public function setPrepInstructionList($prep_instruction_list)
     {
         if (is_null($prep_instruction_list)) {
-            array_push($this->openAPINullablesSetToNull, 'prep_instruction_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('prep_instruction_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable prep_instruction_list cannot be null');
         }
         $this->container['prep_instruction_list'] = $prep_instruction_list;
 
@@ -421,8 +423,10 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets amazon_prep_fees_details_list.
+     *
+     * @return null|AmazonPrepFeesDetails[]
      */
-    public function getAmazonPrepFeesDetailsList(): ?array
+    public function getAmazonPrepFeesDetailsList()
     {
         return $this->container['amazon_prep_fees_details_list'];
     }
@@ -430,19 +434,14 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets amazon_prep_fees_details_list.
      *
-     * @param null|array $amazon_prep_fees_details_list a list of preparation instructions and fees for Amazon to prep goods for shipment
+     * @param null|AmazonPrepFeesDetails[] $amazon_prep_fees_details_list a list of preparation instructions and fees for Amazon to prep goods for shipment
+     *
+     * @return self
      */
-    public function setAmazonPrepFeesDetailsList(?array $amazon_prep_fees_details_list): self
+    public function setAmazonPrepFeesDetailsList($amazon_prep_fees_details_list)
     {
         if (is_null($amazon_prep_fees_details_list)) {
-            array_push($this->openAPINullablesSetToNull, 'amazon_prep_fees_details_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amazon_prep_fees_details_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable amazon_prep_fees_details_list cannot be null');
         }
         $this->container['amazon_prep_fees_details_list'] = $amazon_prep_fees_details_list;
 
@@ -467,7 +466,7 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -478,7 +477,7 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -506,15 +505,17 @@ class SKUPrepInstructions implements ModelInterface, \ArrayAccess, \JsonSerializ
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

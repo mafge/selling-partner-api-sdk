@@ -3,7 +3,7 @@
 /**
  * StandardComparisonProductBlock.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\aplusContent\v2020_11_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'StandardComparisonProductBlock';
+    protected static $openAPIModelName = 'StandardComparisonProductBlock';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'position' => 'int',
         'image' => '\SpApi\Model\aplusContent\v2020_11_01\ImageComponent',
         'title' => 'string',
         'asin' => 'string',
         'highlight' => 'bool',
-        'metrics' => '\SpApi\Model\aplusContent\v2020_11_01\PlainTextItem[]'];
+        'metrics' => '\SpApi\Model\aplusContent\v2020_11_01\PlainTextItem[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'position' => null,
         'image' => null,
         'title' => null,
         'asin' => null,
         'highlight' => null,
-        'metrics' => null];
+        'metrics' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -92,11 +95,11 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
      */
     protected static array $openAPINullables = [
         'position' => false,
-        'image' => true,
-        'title' => true,
-        'asin' => true,
-        'highlight' => true,
-        'metrics' => true,
+        'image' => false,
+        'title' => false,
+        'asin' => false,
+        'highlight' => false,
+        'metrics' => false,
     ];
 
     /**
@@ -112,7 +115,7 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'position' => 'position',
         'image' => 'image',
         'title' => 'title',
@@ -126,7 +129,7 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'position' => 'setPosition',
         'image' => 'setImage',
         'title' => 'setTitle',
@@ -140,7 +143,7 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'position' => 'getPosition',
         'image' => 'getImage',
         'title' => 'getTitle',
@@ -151,14 +154,16 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -297,15 +314,17 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets position.
+     *
+     * @return int
      */
-    public function getPosition(): int
+    public function getPosition()
     {
         return $this->container['position'];
     }
@@ -314,8 +333,10 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
      * Sets position.
      *
      * @param int $position The rank or index of this comparison product block within the module. Different blocks cannot occupy the same position within a single module.
+     *
+     * @return self
      */
-    public function setPosition(int $position): self
+    public function setPosition($position)
     {
         if (is_null($position)) {
             throw new \InvalidArgumentException('non-nullable position cannot be null');
@@ -335,8 +356,10 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets image.
+     *
+     * @return null|ImageComponent
      */
-    public function getImage(): ?ImageComponent
+    public function getImage()
     {
         return $this->container['image'];
     }
@@ -345,18 +368,13 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
      * Sets image.
      *
      * @param null|ImageComponent $image image
+     *
+     * @return self
      */
-    public function setImage(?ImageComponent $image): self
+    public function setImage($image)
     {
         if (is_null($image)) {
-            array_push($this->openAPINullablesSetToNull, 'image');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('image', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable image cannot be null');
         }
         $this->container['image'] = $image;
 
@@ -365,8 +383,10 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets title.
+     *
+     * @return null|string
      */
-    public function getTitle(): ?string
+    public function getTitle()
     {
         return $this->container['title'];
     }
@@ -375,23 +395,18 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
      * Sets title.
      *
      * @param null|string $title the comparison product title
+     *
+     * @return self
      */
-    public function setTitle(?string $title): self
+    public function setTitle($title)
     {
         if (is_null($title)) {
-            array_push($this->openAPINullablesSetToNull, 'title');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('title', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable title cannot be null');
         }
-        if (!is_null($title) && (mb_strlen($title) > 80)) {
+        if (mb_strlen($title) > 80) {
             throw new \InvalidArgumentException('invalid length for $title when calling StandardComparisonProductBlock., must be smaller than or equal to 80.');
         }
-        if (!is_null($title) && (mb_strlen($title) < 1)) {
+        if (mb_strlen($title) < 1) {
             throw new \InvalidArgumentException('invalid length for $title when calling StandardComparisonProductBlock., must be bigger than or equal to 1.');
         }
 
@@ -402,8 +417,10 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
-    public function getAsin(): ?string
+    public function getAsin()
     {
         return $this->container['asin'];
     }
@@ -412,21 +429,16 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number (ASIN)
+     *
+     * @return self
      */
-    public function setAsin(?string $asin): self
+    public function setAsin($asin)
     {
         if (is_null($asin)) {
-            array_push($this->openAPINullablesSetToNull, 'asin');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('asin', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable asin cannot be null');
         }
 
-        if (!is_null($asin) && (mb_strlen($asin) < 10)) {
+        if (mb_strlen($asin) < 10) {
             throw new \InvalidArgumentException('invalid length for $asin when calling StandardComparisonProductBlock., must be bigger than or equal to 10.');
         }
 
@@ -437,8 +449,10 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets highlight.
+     *
+     * @return null|bool
      */
-    public function getHighlight(): ?bool
+    public function getHighlight()
     {
         return $this->container['highlight'];
     }
@@ -447,18 +461,13 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
      * Sets highlight.
      *
      * @param null|bool $highlight when true, indicates that this content block is visually highlighted
+     *
+     * @return self
      */
-    public function setHighlight(?bool $highlight): self
+    public function setHighlight($highlight)
     {
         if (is_null($highlight)) {
-            array_push($this->openAPINullablesSetToNull, 'highlight');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('highlight', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable highlight cannot be null');
         }
         $this->container['highlight'] = $highlight;
 
@@ -467,8 +476,10 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets metrics.
+     *
+     * @return null|PlainTextItem[]
      */
-    public function getMetrics(): ?array
+    public function getMetrics()
     {
         return $this->container['metrics'];
     }
@@ -476,25 +487,20 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
     /**
      * Sets metrics.
      *
-     * @param null|array $metrics comparison metrics for the product
+     * @param null|PlainTextItem[] $metrics comparison metrics for the product
+     *
+     * @return self
      */
-    public function setMetrics(?array $metrics): self
+    public function setMetrics($metrics)
     {
         if (is_null($metrics)) {
-            array_push($this->openAPINullablesSetToNull, 'metrics');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('metrics', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable metrics cannot be null');
         }
 
-        if (!is_null($metrics) && (count($metrics) > 10)) {
+        if (count($metrics) > 10) {
             throw new \InvalidArgumentException('invalid value for $metrics when calling StandardComparisonProductBlock., number of items must be less than or equal to 10.');
         }
-        if (!is_null($metrics) && (count($metrics) < 0)) {
+        if (count($metrics) < 0) {
             throw new \InvalidArgumentException('invalid length for $metrics when calling StandardComparisonProductBlock., number of items must be greater than or equal to 0.');
         }
         $this->container['metrics'] = $metrics;
@@ -520,7 +526,7 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -531,7 +537,7 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -559,15 +565,17 @@ class StandardComparisonProductBlock implements ModelInterface, \ArrayAccess, \J
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

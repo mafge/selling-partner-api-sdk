@@ -3,7 +3,7 @@
 /**
  * Rate.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,15 +52,17 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Rate';
+    protected static $openAPIModelName = 'Rate';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'rate_id' => 'string',
         'carrier_id' => 'string',
         'carrier_name' => 'string',
@@ -75,7 +76,8 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
         'requires_additional_inputs' => 'bool',
         'rate_item_list' => '\SpApi\Model\shipping\v2\RateItem[]',
         'payment_type' => '\SpApi\Model\shipping\v2\PaymentType',
-        'benefits' => '\SpApi\Model\shipping\v2\Benefits'];
+        'benefits' => '\SpApi\Model\shipping\v2\Benefits',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -86,7 +88,7 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'rate_id' => null,
         'carrier_id' => null,
         'carrier_name' => null,
@@ -100,7 +102,8 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
         'requires_additional_inputs' => null,
         'rate_item_list' => null,
         'payment_type' => null,
-        'benefits' => null];
+        'benefits' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -113,15 +116,15 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
         'carrier_name' => false,
         'service_id' => false,
         'service_name' => false,
-        'billed_weight' => true,
+        'billed_weight' => false,
         'total_charge' => false,
         'promise' => false,
         'supported_document_specifications' => false,
-        'available_value_added_service_groups' => true,
+        'available_value_added_service_groups' => false,
         'requires_additional_inputs' => false,
-        'rate_item_list' => true,
-        'payment_type' => true,
-        'benefits' => true,
+        'rate_item_list' => false,
+        'payment_type' => false,
+        'benefits' => false,
     ];
 
     /**
@@ -137,7 +140,7 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'rate_id' => 'rateId',
         'carrier_id' => 'carrierId',
         'carrier_name' => 'carrierName',
@@ -159,7 +162,7 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'rate_id' => 'setRateId',
         'carrier_id' => 'setCarrierId',
         'carrier_name' => 'setCarrierName',
@@ -181,7 +184,7 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'rate_id' => 'getRateId',
         'carrier_id' => 'getCarrierId',
         'carrier_name' => 'getCarrierName',
@@ -200,14 +203,16 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -242,16 +247,20 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -275,32 +284,40 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -310,7 +327,7 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -351,15 +368,17 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets rate_id.
+     *
+     * @return string
      */
-    public function getRateId(): string
+    public function getRateId()
     {
         return $this->container['rate_id'];
     }
@@ -368,8 +387,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets rate_id.
      *
      * @param string $rate_id an identifier for the rate (shipment offering) provided by a shipping service provider
+     *
+     * @return self
      */
-    public function setRateId(string $rate_id): self
+    public function setRateId($rate_id)
     {
         if (is_null($rate_id)) {
             throw new \InvalidArgumentException('non-nullable rate_id cannot be null');
@@ -381,8 +402,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets carrier_id.
+     *
+     * @return string
      */
-    public function getCarrierId(): string
+    public function getCarrierId()
     {
         return $this->container['carrier_id'];
     }
@@ -391,8 +414,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets carrier_id.
      *
      * @param string $carrier_id the carrier identifier for the offering, provided by the carrier
+     *
+     * @return self
      */
-    public function setCarrierId(string $carrier_id): self
+    public function setCarrierId($carrier_id)
     {
         if (is_null($carrier_id)) {
             throw new \InvalidArgumentException('non-nullable carrier_id cannot be null');
@@ -404,8 +429,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets carrier_name.
+     *
+     * @return string
      */
-    public function getCarrierName(): string
+    public function getCarrierName()
     {
         return $this->container['carrier_name'];
     }
@@ -414,8 +441,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets carrier_name.
      *
      * @param string $carrier_name the carrier name for the offering
+     *
+     * @return self
      */
-    public function setCarrierName(string $carrier_name): self
+    public function setCarrierName($carrier_name)
     {
         if (is_null($carrier_name)) {
             throw new \InvalidArgumentException('non-nullable carrier_name cannot be null');
@@ -427,8 +456,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets service_id.
+     *
+     * @return string
      */
-    public function getServiceId(): string
+    public function getServiceId()
     {
         return $this->container['service_id'];
     }
@@ -437,8 +468,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets service_id.
      *
      * @param string $service_id an identifier for the shipping service
+     *
+     * @return self
      */
-    public function setServiceId(string $service_id): self
+    public function setServiceId($service_id)
     {
         if (is_null($service_id)) {
             throw new \InvalidArgumentException('non-nullable service_id cannot be null');
@@ -450,8 +483,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets service_name.
+     *
+     * @return string
      */
-    public function getServiceName(): string
+    public function getServiceName()
     {
         return $this->container['service_name'];
     }
@@ -460,8 +495,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets service_name.
      *
      * @param string $service_name the name of the shipping service
+     *
+     * @return self
      */
-    public function setServiceName(string $service_name): self
+    public function setServiceName($service_name)
     {
         if (is_null($service_name)) {
             throw new \InvalidArgumentException('non-nullable service_name cannot be null');
@@ -473,8 +510,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets billed_weight.
+     *
+     * @return null|Weight
      */
-    public function getBilledWeight(): ?Weight
+    public function getBilledWeight()
     {
         return $this->container['billed_weight'];
     }
@@ -483,18 +522,13 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets billed_weight.
      *
      * @param null|Weight $billed_weight billed_weight
+     *
+     * @return self
      */
-    public function setBilledWeight(?Weight $billed_weight): self
+    public function setBilledWeight($billed_weight)
     {
         if (is_null($billed_weight)) {
-            array_push($this->openAPINullablesSetToNull, 'billed_weight');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('billed_weight', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable billed_weight cannot be null');
         }
         $this->container['billed_weight'] = $billed_weight;
 
@@ -503,8 +537,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets total_charge.
+     *
+     * @return Currency
      */
-    public function getTotalCharge(): Currency
+    public function getTotalCharge()
     {
         return $this->container['total_charge'];
     }
@@ -513,8 +549,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets total_charge.
      *
      * @param Currency $total_charge total_charge
+     *
+     * @return self
      */
-    public function setTotalCharge(Currency $total_charge): self
+    public function setTotalCharge($total_charge)
     {
         if (is_null($total_charge)) {
             throw new \InvalidArgumentException('non-nullable total_charge cannot be null');
@@ -526,8 +564,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets promise.
+     *
+     * @return Promise
      */
-    public function getPromise(): Promise
+    public function getPromise()
     {
         return $this->container['promise'];
     }
@@ -536,8 +576,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets promise.
      *
      * @param Promise $promise promise
+     *
+     * @return self
      */
-    public function setPromise(Promise $promise): self
+    public function setPromise($promise)
     {
         if (is_null($promise)) {
             throw new \InvalidArgumentException('non-nullable promise cannot be null');
@@ -549,8 +591,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets supported_document_specifications.
+     *
+     * @return SupportedDocumentSpecification[]
      */
-    public function getSupportedDocumentSpecifications(): array
+    public function getSupportedDocumentSpecifications()
     {
         return $this->container['supported_document_specifications'];
     }
@@ -558,9 +602,11 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets supported_document_specifications.
      *
-     * @param array $supported_document_specifications a list of the document specifications supported for a shipment service offering
+     * @param SupportedDocumentSpecification[] $supported_document_specifications a list of the document specifications supported for a shipment service offering
+     *
+     * @return self
      */
-    public function setSupportedDocumentSpecifications(array $supported_document_specifications): self
+    public function setSupportedDocumentSpecifications($supported_document_specifications)
     {
         if (is_null($supported_document_specifications)) {
             throw new \InvalidArgumentException('non-nullable supported_document_specifications cannot be null');
@@ -572,8 +618,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets available_value_added_service_groups.
+     *
+     * @return null|AvailableValueAddedServiceGroup[]
      */
-    public function getAvailableValueAddedServiceGroups(): ?array
+    public function getAvailableValueAddedServiceGroups()
     {
         return $this->container['available_value_added_service_groups'];
     }
@@ -581,19 +629,14 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets available_value_added_service_groups.
      *
-     * @param null|array $available_value_added_service_groups a list of value-added services available for a shipping service offering
+     * @param null|AvailableValueAddedServiceGroup[] $available_value_added_service_groups a list of value-added services available for a shipping service offering
+     *
+     * @return self
      */
-    public function setAvailableValueAddedServiceGroups(?array $available_value_added_service_groups): self
+    public function setAvailableValueAddedServiceGroups($available_value_added_service_groups)
     {
         if (is_null($available_value_added_service_groups)) {
-            array_push($this->openAPINullablesSetToNull, 'available_value_added_service_groups');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('available_value_added_service_groups', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable available_value_added_service_groups cannot be null');
         }
         $this->container['available_value_added_service_groups'] = $available_value_added_service_groups;
 
@@ -602,8 +645,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets requires_additional_inputs.
+     *
+     * @return bool
      */
-    public function getRequiresAdditionalInputs(): bool
+    public function getRequiresAdditionalInputs()
     {
         return $this->container['requires_additional_inputs'];
     }
@@ -612,8 +657,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets requires_additional_inputs.
      *
      * @param bool $requires_additional_inputs When true, indicates that additional inputs are required to purchase this shipment service. You must then call the getAdditionalInputs operation to return the JSON schema to use when providing the additional inputs to the purchaseShipment operation.
+     *
+     * @return self
      */
-    public function setRequiresAdditionalInputs(bool $requires_additional_inputs): self
+    public function setRequiresAdditionalInputs($requires_additional_inputs)
     {
         if (is_null($requires_additional_inputs)) {
             throw new \InvalidArgumentException('non-nullable requires_additional_inputs cannot be null');
@@ -625,8 +672,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets rate_item_list.
+     *
+     * @return null|RateItem[]
      */
-    public function getRateItemList(): ?array
+    public function getRateItemList()
     {
         return $this->container['rate_item_list'];
     }
@@ -634,19 +683,14 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets rate_item_list.
      *
-     * @param null|array $rate_item_list A list of RateItem
+     * @param null|RateItem[] $rate_item_list A list of RateItem
+     *
+     * @return self
      */
-    public function setRateItemList(?array $rate_item_list): self
+    public function setRateItemList($rate_item_list)
     {
         if (is_null($rate_item_list)) {
-            array_push($this->openAPINullablesSetToNull, 'rate_item_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rate_item_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable rate_item_list cannot be null');
         }
         $this->container['rate_item_list'] = $rate_item_list;
 
@@ -655,8 +699,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets payment_type.
+     *
+     * @return null|PaymentType
      */
-    public function getPaymentType(): ?string
+    public function getPaymentType()
     {
         return $this->container['payment_type'];
     }
@@ -664,19 +710,14 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets payment_type.
      *
-     * @param null|string $payment_type payment_type
+     * @param null|PaymentType $payment_type payment_type
+     *
+     * @return self
      */
-    public function setPaymentType(?string $payment_type): self
+    public function setPaymentType($payment_type)
     {
         if (is_null($payment_type)) {
-            array_push($this->openAPINullablesSetToNull, 'payment_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('payment_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable payment_type cannot be null');
         }
         $this->container['payment_type'] = $payment_type;
 
@@ -685,8 +726,10 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets benefits.
+     *
+     * @return null|Benefits
      */
-    public function getBenefits(): ?Benefits
+    public function getBenefits()
     {
         return $this->container['benefits'];
     }
@@ -695,18 +738,13 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets benefits.
      *
      * @param null|Benefits $benefits benefits
+     *
+     * @return self
      */
-    public function setBenefits(?Benefits $benefits): self
+    public function setBenefits($benefits)
     {
         if (is_null($benefits)) {
-            array_push($this->openAPINullablesSetToNull, 'benefits');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('benefits', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable benefits cannot be null');
         }
         $this->container['benefits'] = $benefits;
 
@@ -731,7 +769,7 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -742,7 +780,7 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -770,15 +808,17 @@ class Rate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

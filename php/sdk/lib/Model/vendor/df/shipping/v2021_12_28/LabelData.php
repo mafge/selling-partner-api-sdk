@@ -2,7 +2,7 @@
 /**
  * LabelData
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\df\shipping\v2021_12_28;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * LabelData Class Doc Comment
@@ -52,19 +50,20 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'LabelData';
+    protected static $openAPIModelName = 'LabelData';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'package_identifier' => 'string',
-             'tracking_number' => 'string',
-             'ship_method' => 'string',
-             'ship_method_name' => 'string',
-             'content' => 'string'    ];
+    protected static $openAPITypes = [
+        'package_identifier' => 'string',
+        'tracking_number' => 'string',
+        'ship_method' => 'string',
+        'ship_method_name' => 'string',
+        'content' => 'string'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -73,12 +72,13 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'package_identifier' => null,
-            'tracking_number' => null,
-            'ship_method' => null,
-            'ship_method_name' => null,
-            'content' => null    ];
+    protected static $openAPIFormats = [
+        'package_identifier' => null,
+        'tracking_number' => null,
+        'ship_method' => null,
+        'ship_method_name' => null,
+        'content' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -86,10 +86,10 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'package_identifier' => true,
-        'tracking_number' => true,
-        'ship_method' => true,
-        'ship_method_name' => true,
+        'package_identifier' => false,
+        'tracking_number' => false,
+        'ship_method' => false,
+        'ship_method_name' => false,
         'content' => false
     ];
 
@@ -105,7 +105,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -115,7 +115,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -178,13 +178,12 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'package_identifier' => 'packageIdentifier',
-                'tracking_number' => 'trackingNumber',
-                'ship_method' => 'shipMethod',
-                'ship_method_name' => 'shipMethodName',
-                'content' => 'content'
-        
+        'tracking_number' => 'trackingNumber',
+        'ship_method' => 'shipMethod',
+        'ship_method_name' => 'shipMethodName',
+        'content' => 'content'
     ];
 
     /**
@@ -192,7 +191,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'package_identifier' => 'setPackageIdentifier',
         'tracking_number' => 'setTrackingNumber',
         'ship_method' => 'setShipMethod',
@@ -205,7 +204,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'package_identifier' => 'getPackageIdentifier',
         'tracking_number' => 'getTrackingNumber',
         'ship_method' => 'getShipMethod',
@@ -219,7 +218,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -229,7 +228,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -239,7 +238,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -249,7 +248,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -258,17 +257,17 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('package_identifier', $data ?? [], null);
         $this->setIfExists('tracking_number', $data ?? [], null);
@@ -300,7 +299,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -316,7 +315,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -327,7 +326,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getPackageIdentifier(): ?string
+    public function getPackageIdentifier()
     {
         return $this->container['package_identifier'];
     }
@@ -339,17 +338,10 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setPackageIdentifier(?string $package_identifier): self
+    public function setPackageIdentifier($package_identifier)
     {
         if (is_null($package_identifier)) {
-            array_push($this->openAPINullablesSetToNull, 'package_identifier');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('package_identifier', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable package_identifier cannot be null');
         }
         $this->container['package_identifier'] = $package_identifier;
 
@@ -361,7 +353,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getTrackingNumber(): ?string
+    public function getTrackingNumber()
     {
         return $this->container['tracking_number'];
     }
@@ -373,17 +365,10 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTrackingNumber(?string $tracking_number): self
+    public function setTrackingNumber($tracking_number)
     {
         if (is_null($tracking_number)) {
-            array_push($this->openAPINullablesSetToNull, 'tracking_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tracking_number', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tracking_number cannot be null');
         }
         $this->container['tracking_number'] = $tracking_number;
 
@@ -395,7 +380,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getShipMethod(): ?string
+    public function getShipMethod()
     {
         return $this->container['ship_method'];
     }
@@ -407,17 +392,10 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShipMethod(?string $ship_method): self
+    public function setShipMethod($ship_method)
     {
         if (is_null($ship_method)) {
-            array_push($this->openAPINullablesSetToNull, 'ship_method');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ship_method', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ship_method cannot be null');
         }
         $this->container['ship_method'] = $ship_method;
 
@@ -429,7 +407,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getShipMethodName(): ?string
+    public function getShipMethodName()
     {
         return $this->container['ship_method_name'];
     }
@@ -441,17 +419,10 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShipMethodName(?string $ship_method_name): self
+    public function setShipMethodName($ship_method_name)
     {
         if (is_null($ship_method_name)) {
-            array_push($this->openAPINullablesSetToNull, 'ship_method_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ship_method_name', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ship_method_name cannot be null');
         }
         $this->container['ship_method_name'] = $ship_method_name;
 
@@ -463,7 +434,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getContent(): string
+    public function getContent()
     {
         return $this->container['content'];
     }
@@ -475,7 +446,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setContent(string $content): self
+    public function setContent($content)
     {
         if (is_null($content)) {
             throw new \InvalidArgumentException('non-nullable content cannot be null');
@@ -484,8 +455,6 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -506,7 +475,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -519,7 +488,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -548,7 +517,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -571,7 +540,7 @@ class LabelData implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

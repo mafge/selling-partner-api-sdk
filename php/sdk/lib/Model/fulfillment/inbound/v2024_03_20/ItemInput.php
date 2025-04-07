@@ -3,7 +3,7 @@
 /**
  * ItemInput.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ItemInput';
+    protected static $openAPIModelName = 'ItemInput';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'expiration' => 'string',
         'label_owner' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\LabelOwner',
         'manufacturing_lot_code' => 'string',
         'msku' => 'string',
         'prep_owner' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\PrepOwner',
-        'quantity' => 'int'];
+        'quantity' => 'int',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'expiration' => null,
         'label_owner' => null,
         'manufacturing_lot_code' => null,
         'msku' => null,
         'prep_owner' => null,
-        'quantity' => null];
+        'quantity' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -91,9 +94,9 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'expiration' => true,
+        'expiration' => false,
         'label_owner' => false,
-        'manufacturing_lot_code' => true,
+        'manufacturing_lot_code' => false,
         'msku' => false,
         'prep_owner' => false,
         'quantity' => false,
@@ -112,7 +115,7 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'expiration' => 'expiration',
         'label_owner' => 'labelOwner',
         'manufacturing_lot_code' => 'manufacturingLotCode',
@@ -126,7 +129,7 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'expiration' => 'setExpiration',
         'label_owner' => 'setLabelOwner',
         'manufacturing_lot_code' => 'setManufacturingLotCode',
@@ -140,7 +143,7 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'expiration' => 'getExpiration',
         'label_owner' => 'getLabelOwner',
         'manufacturing_lot_code' => 'getManufacturingLotCode',
@@ -151,14 +154,16 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -306,15 +323,17 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets expiration.
+     *
+     * @return null|string
      */
-    public function getExpiration(): ?string
+    public function getExpiration()
     {
         return $this->container['expiration'];
     }
@@ -323,21 +342,16 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets expiration.
      *
      * @param null|string $expiration The expiration date of the MSKU. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `YYYY-MM-DD`. Items with the same MSKU but different expiration dates cannot go into the same box.
+     *
+     * @return self
      */
-    public function setExpiration(?string $expiration): self
+    public function setExpiration($expiration)
     {
         if (is_null($expiration)) {
-            array_push($this->openAPINullablesSetToNull, 'expiration');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expiration', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable expiration cannot be null');
         }
 
-        if (!is_null($expiration) && (!preg_match('/^([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/', ObjectSerializer::toString($expiration)))) {
+        if (!preg_match('/^([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/', ObjectSerializer::toString($expiration))) {
             throw new \InvalidArgumentException('invalid value for $expiration when calling ItemInput., must conform to the pattern /^([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/.');
         }
 
@@ -348,8 +362,10 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets label_owner.
+     *
+     * @return LabelOwner
      */
-    public function getLabelOwner(): string
+    public function getLabelOwner()
     {
         return $this->container['label_owner'];
     }
@@ -357,9 +373,11 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets label_owner.
      *
-     * @param string $label_owner label_owner
+     * @param LabelOwner $label_owner label_owner
+     *
+     * @return self
      */
-    public function setLabelOwner(string $label_owner): self
+    public function setLabelOwner($label_owner)
     {
         if (is_null($label_owner)) {
             throw new \InvalidArgumentException('non-nullable label_owner cannot be null');
@@ -371,8 +389,10 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets manufacturing_lot_code.
+     *
+     * @return null|string
      */
-    public function getManufacturingLotCode(): ?string
+    public function getManufacturingLotCode()
     {
         return $this->container['manufacturing_lot_code'];
     }
@@ -381,23 +401,18 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets manufacturing_lot_code.
      *
      * @param null|string $manufacturing_lot_code the manufacturing lot code
+     *
+     * @return self
      */
-    public function setManufacturingLotCode(?string $manufacturing_lot_code): self
+    public function setManufacturingLotCode($manufacturing_lot_code)
     {
         if (is_null($manufacturing_lot_code)) {
-            array_push($this->openAPINullablesSetToNull, 'manufacturing_lot_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('manufacturing_lot_code', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable manufacturing_lot_code cannot be null');
         }
-        if (!is_null($manufacturing_lot_code) && (mb_strlen($manufacturing_lot_code) > 256)) {
+        if (mb_strlen($manufacturing_lot_code) > 256) {
             throw new \InvalidArgumentException('invalid length for $manufacturing_lot_code when calling ItemInput., must be smaller than or equal to 256.');
         }
-        if (!is_null($manufacturing_lot_code) && (mb_strlen($manufacturing_lot_code) < 1)) {
+        if (mb_strlen($manufacturing_lot_code) < 1) {
             throw new \InvalidArgumentException('invalid length for $manufacturing_lot_code when calling ItemInput., must be bigger than or equal to 1.');
         }
 
@@ -408,8 +423,10 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets msku.
+     *
+     * @return string
      */
-    public function getMsku(): string
+    public function getMsku()
     {
         return $this->container['msku'];
     }
@@ -418,8 +435,10 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets msku.
      *
      * @param string $msku the merchant SKU, a merchant-supplied identifier of a specific SKU
+     *
+     * @return self
      */
-    public function setMsku(string $msku): self
+    public function setMsku($msku)
     {
         if (is_null($msku)) {
             throw new \InvalidArgumentException('non-nullable msku cannot be null');
@@ -438,8 +457,10 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets prep_owner.
+     *
+     * @return PrepOwner
      */
-    public function getPrepOwner(): string
+    public function getPrepOwner()
     {
         return $this->container['prep_owner'];
     }
@@ -447,9 +468,11 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets prep_owner.
      *
-     * @param string $prep_owner prep_owner
+     * @param PrepOwner $prep_owner prep_owner
+     *
+     * @return self
      */
-    public function setPrepOwner(string $prep_owner): self
+    public function setPrepOwner($prep_owner)
     {
         if (is_null($prep_owner)) {
             throw new \InvalidArgumentException('non-nullable prep_owner cannot be null');
@@ -461,8 +484,10 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets quantity.
+     *
+     * @return int
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->container['quantity'];
     }
@@ -471,8 +496,10 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets quantity.
      *
      * @param int $quantity the number of units of the specified MSKU that will be shipped
+     *
+     * @return self
      */
-    public function setQuantity(int $quantity): self
+    public function setQuantity($quantity)
     {
         if (is_null($quantity)) {
             throw new \InvalidArgumentException('non-nullable quantity cannot be null');
@@ -508,7 +535,7 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -519,7 +546,7 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -547,15 +574,17 @@ class ItemInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

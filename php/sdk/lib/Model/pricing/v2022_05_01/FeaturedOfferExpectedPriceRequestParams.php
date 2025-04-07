@@ -3,7 +3,7 @@
 /**
  * FeaturedOfferExpectedPriceRequestParams.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v2022_05_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class FeaturedOfferExpectedPriceRequestParams implements ModelInterface, \ArrayA
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'FeaturedOfferExpectedPriceRequestParams';
+    protected static $openAPIModelName = 'FeaturedOfferExpectedPriceRequestParams';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'marketplace_id' => 'string',
         'sku' => 'string',
-        'segment' => '\SpApi\Model\pricing\v2022_05_01\Segment'];
+        'segment' => '\SpApi\Model\pricing\v2022_05_01\Segment',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class FeaturedOfferExpectedPriceRequestParams implements ModelInterface, \ArrayA
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'marketplace_id' => null,
         'sku' => null,
-        'segment' => null];
+        'segment' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,7 +90,7 @@ class FeaturedOfferExpectedPriceRequestParams implements ModelInterface, \ArrayA
     protected static array $openAPINullables = [
         'marketplace_id' => false,
         'sku' => false,
-        'segment' => true,
+        'segment' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class FeaturedOfferExpectedPriceRequestParams implements ModelInterface, \ArrayA
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'marketplace_id' => 'marketplaceId',
         'sku' => 'sku',
         'segment' => 'segment',
@@ -114,7 +117,7 @@ class FeaturedOfferExpectedPriceRequestParams implements ModelInterface, \ArrayA
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
         'sku' => 'setSku',
         'segment' => 'setSegment',
@@ -125,7 +128,7 @@ class FeaturedOfferExpectedPriceRequestParams implements ModelInterface, \ArrayA
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
         'sku' => 'getSku',
         'segment' => 'getSegment',
@@ -133,14 +136,16 @@ class FeaturedOfferExpectedPriceRequestParams implements ModelInterface, \ArrayA
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class FeaturedOfferExpectedPriceRequestParams implements ModelInterface, \ArrayA
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class FeaturedOfferExpectedPriceRequestParams implements ModelInterface, \ArrayA
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class FeaturedOfferExpectedPriceRequestParams implements ModelInterface, \ArrayA
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -252,15 +269,17 @@ class FeaturedOfferExpectedPriceRequestParams implements ModelInterface, \ArrayA
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
-    public function getMarketplaceId(): string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -269,8 +288,10 @@ class FeaturedOfferExpectedPriceRequestParams implements ModelInterface, \ArrayA
      * Sets marketplace_id.
      *
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which data is returned.
+     *
+     * @return self
      */
-    public function setMarketplaceId(string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
             throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
@@ -282,8 +303,10 @@ class FeaturedOfferExpectedPriceRequestParams implements ModelInterface, \ArrayA
 
     /**
      * Gets sku.
+     *
+     * @return string
      */
-    public function getSku(): string
+    public function getSku()
     {
         return $this->container['sku'];
     }
@@ -292,8 +315,10 @@ class FeaturedOfferExpectedPriceRequestParams implements ModelInterface, \ArrayA
      * Sets sku.
      *
      * @param string $sku the seller SKU of the item
+     *
+     * @return self
      */
-    public function setSku(string $sku): self
+    public function setSku($sku)
     {
         if (is_null($sku)) {
             throw new \InvalidArgumentException('non-nullable sku cannot be null');
@@ -305,8 +330,10 @@ class FeaturedOfferExpectedPriceRequestParams implements ModelInterface, \ArrayA
 
     /**
      * Gets segment.
+     *
+     * @return null|Segment
      */
-    public function getSegment(): ?Segment
+    public function getSegment()
     {
         return $this->container['segment'];
     }
@@ -315,18 +342,13 @@ class FeaturedOfferExpectedPriceRequestParams implements ModelInterface, \ArrayA
      * Sets segment.
      *
      * @param null|Segment $segment segment
+     *
+     * @return self
      */
-    public function setSegment(?Segment $segment): self
+    public function setSegment($segment)
     {
         if (is_null($segment)) {
-            array_push($this->openAPINullablesSetToNull, 'segment');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('segment', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable segment cannot be null');
         }
         $this->container['segment'] = $segment;
 
@@ -351,7 +373,7 @@ class FeaturedOfferExpectedPriceRequestParams implements ModelInterface, \ArrayA
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -362,7 +384,7 @@ class FeaturedOfferExpectedPriceRequestParams implements ModelInterface, \ArrayA
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -390,15 +412,17 @@ class FeaturedOfferExpectedPriceRequestParams implements ModelInterface, \ArrayA
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

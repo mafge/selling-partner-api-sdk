@@ -3,7 +3,7 @@
 /**
  * PackageGroupingInput.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class PackageGroupingInput implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'PackageGroupingInput';
+    protected static $openAPIModelName = 'PackageGroupingInput';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'boxes' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\BoxInput[]',
         'packing_group_id' => 'string',
-        'shipment_id' => 'string'];
+        'shipment_id' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class PackageGroupingInput implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'boxes' => null,
         'packing_group_id' => null,
-        'shipment_id' => null];
+        'shipment_id' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -86,8 +89,8 @@ class PackageGroupingInput implements ModelInterface, \ArrayAccess, \JsonSeriali
      */
     protected static array $openAPINullables = [
         'boxes' => false,
-        'packing_group_id' => true,
-        'shipment_id' => true,
+        'packing_group_id' => false,
+        'shipment_id' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class PackageGroupingInput implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'boxes' => 'boxes',
         'packing_group_id' => 'packingGroupId',
         'shipment_id' => 'shipmentId',
@@ -114,7 +117,7 @@ class PackageGroupingInput implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'boxes' => 'setBoxes',
         'packing_group_id' => 'setPackingGroupId',
         'shipment_id' => 'setShipmentId',
@@ -125,7 +128,7 @@ class PackageGroupingInput implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'boxes' => 'getBoxes',
         'packing_group_id' => 'getPackingGroupId',
         'shipment_id' => 'getShipmentId',
@@ -133,14 +136,16 @@ class PackageGroupingInput implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class PackageGroupingInput implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class PackageGroupingInput implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class PackageGroupingInput implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -280,15 +297,17 @@ class PackageGroupingInput implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets boxes.
+     *
+     * @return BoxInput[]
      */
-    public function getBoxes(): array
+    public function getBoxes()
     {
         return $this->container['boxes'];
     }
@@ -296,9 +315,11 @@ class PackageGroupingInput implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Sets boxes.
      *
-     * @param array $boxes box level information being provided
+     * @param BoxInput[] $boxes box level information being provided
+     *
+     * @return self
      */
-    public function setBoxes(array $boxes): self
+    public function setBoxes($boxes)
     {
         if (is_null($boxes)) {
             throw new \InvalidArgumentException('non-nullable boxes cannot be null');
@@ -317,8 +338,10 @@ class PackageGroupingInput implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets packing_group_id.
+     *
+     * @return null|string
      */
-    public function getPackingGroupId(): ?string
+    public function getPackingGroupId()
     {
         return $this->container['packing_group_id'];
     }
@@ -327,26 +350,21 @@ class PackageGroupingInput implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets packing_group_id.
      *
      * @param null|string $packing_group_id The ID of the `packingGroup` that packages are grouped according to. The `PackingGroupId` can only be provided before placement confirmation, and it must belong to the confirmed `PackingOption`. One of `ShipmentId` or `PackingGroupId` must be provided with every request.
+     *
+     * @return self
      */
-    public function setPackingGroupId(?string $packing_group_id): self
+    public function setPackingGroupId($packing_group_id)
     {
         if (is_null($packing_group_id)) {
-            array_push($this->openAPINullablesSetToNull, 'packing_group_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('packing_group_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable packing_group_id cannot be null');
         }
-        if (!is_null($packing_group_id) && (mb_strlen($packing_group_id) > 38)) {
+        if (mb_strlen($packing_group_id) > 38) {
             throw new \InvalidArgumentException('invalid length for $packing_group_id when calling PackageGroupingInput., must be smaller than or equal to 38.');
         }
-        if (!is_null($packing_group_id) && (mb_strlen($packing_group_id) < 38)) {
+        if (mb_strlen($packing_group_id) < 38) {
             throw new \InvalidArgumentException('invalid length for $packing_group_id when calling PackageGroupingInput., must be bigger than or equal to 38.');
         }
-        if (!is_null($packing_group_id) && (!preg_match('/^[a-zA-Z0-9-]*$/', ObjectSerializer::toString($packing_group_id)))) {
+        if (!preg_match('/^[a-zA-Z0-9-]*$/', ObjectSerializer::toString($packing_group_id))) {
             throw new \InvalidArgumentException('invalid value for $packing_group_id when calling PackageGroupingInput., must conform to the pattern /^[a-zA-Z0-9-]*$/.');
         }
 
@@ -357,8 +375,10 @@ class PackageGroupingInput implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets shipment_id.
+     *
+     * @return null|string
      */
-    public function getShipmentId(): ?string
+    public function getShipmentId()
     {
         return $this->container['shipment_id'];
     }
@@ -367,26 +387,21 @@ class PackageGroupingInput implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets shipment_id.
      *
      * @param null|string $shipment_id The ID of the shipment that packages are grouped according to. The `ShipmentId` can only be provided after placement confirmation, and the shipment must belong to the confirmed placement option. One of `ShipmentId` or `PackingGroupId` must be provided with every request.
+     *
+     * @return self
      */
-    public function setShipmentId(?string $shipment_id): self
+    public function setShipmentId($shipment_id)
     {
         if (is_null($shipment_id)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_id cannot be null');
         }
-        if (!is_null($shipment_id) && (mb_strlen($shipment_id) > 38)) {
+        if (mb_strlen($shipment_id) > 38) {
             throw new \InvalidArgumentException('invalid length for $shipment_id when calling PackageGroupingInput., must be smaller than or equal to 38.');
         }
-        if (!is_null($shipment_id) && (mb_strlen($shipment_id) < 38)) {
+        if (mb_strlen($shipment_id) < 38) {
             throw new \InvalidArgumentException('invalid length for $shipment_id when calling PackageGroupingInput., must be bigger than or equal to 38.');
         }
-        if (!is_null($shipment_id) && (!preg_match('/^[a-zA-Z0-9-]*$/', ObjectSerializer::toString($shipment_id)))) {
+        if (!preg_match('/^[a-zA-Z0-9-]*$/', ObjectSerializer::toString($shipment_id))) {
             throw new \InvalidArgumentException('invalid value for $shipment_id when calling PackageGroupingInput., must conform to the pattern /^[a-zA-Z0-9-]*$/.');
         }
 
@@ -413,7 +428,7 @@ class PackageGroupingInput implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -424,7 +439,7 @@ class PackageGroupingInput implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -452,15 +467,17 @@ class PackageGroupingInput implements ModelInterface, \ArrayAccess, \JsonSeriali
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * SAFETReimbursementItem.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class SAFETReimbursementItem implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'SAFETReimbursementItem';
+    protected static $openAPIModelName = 'SAFETReimbursementItem';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'item_charge_list' => '\SpApi\Model\finances\v0\ChargeComponent[]',
         'product_description' => 'string',
-        'quantity' => 'string'];
+        'quantity' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class SAFETReimbursementItem implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'item_charge_list' => null,
         'product_description' => null,
-        'quantity' => null];
+        'quantity' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class SAFETReimbursementItem implements ModelInterface, \ArrayAccess, \JsonSeria
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'item_charge_list' => true,
-        'product_description' => true,
-        'quantity' => true,
+        'item_charge_list' => false,
+        'product_description' => false,
+        'quantity' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class SAFETReimbursementItem implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'item_charge_list' => 'itemChargeList',
         'product_description' => 'productDescription',
         'quantity' => 'quantity',
@@ -114,7 +117,7 @@ class SAFETReimbursementItem implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'item_charge_list' => 'setItemChargeList',
         'product_description' => 'setProductDescription',
         'quantity' => 'setQuantity',
@@ -125,7 +128,7 @@ class SAFETReimbursementItem implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'item_charge_list' => 'getItemChargeList',
         'product_description' => 'getProductDescription',
         'quantity' => 'getQuantity',
@@ -133,14 +136,16 @@ class SAFETReimbursementItem implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class SAFETReimbursementItem implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class SAFETReimbursementItem implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class SAFETReimbursementItem implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -243,15 +260,17 @@ class SAFETReimbursementItem implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets item_charge_list.
+     *
+     * @return null|ChargeComponent[]
      */
-    public function getItemChargeList(): ?array
+    public function getItemChargeList()
     {
         return $this->container['item_charge_list'];
     }
@@ -259,19 +278,14 @@ class SAFETReimbursementItem implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Sets item_charge_list.
      *
-     * @param null|array $item_charge_list a list of charge information on the seller's account
+     * @param null|ChargeComponent[] $item_charge_list a list of charge information on the seller's account
+     *
+     * @return self
      */
-    public function setItemChargeList(?array $item_charge_list): self
+    public function setItemChargeList($item_charge_list)
     {
         if (is_null($item_charge_list)) {
-            array_push($this->openAPINullablesSetToNull, 'item_charge_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('item_charge_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable item_charge_list cannot be null');
         }
         $this->container['item_charge_list'] = $item_charge_list;
 
@@ -280,8 +294,10 @@ class SAFETReimbursementItem implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets product_description.
+     *
+     * @return null|string
      */
-    public function getProductDescription(): ?string
+    public function getProductDescription()
     {
         return $this->container['product_description'];
     }
@@ -290,18 +306,13 @@ class SAFETReimbursementItem implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets product_description.
      *
      * @param null|string $product_description the description of the item as shown on the product detail page on the retail website
+     *
+     * @return self
      */
-    public function setProductDescription(?string $product_description): self
+    public function setProductDescription($product_description)
     {
         if (is_null($product_description)) {
-            array_push($this->openAPINullablesSetToNull, 'product_description');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('product_description', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable product_description cannot be null');
         }
         $this->container['product_description'] = $product_description;
 
@@ -310,8 +321,10 @@ class SAFETReimbursementItem implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets quantity.
+     *
+     * @return null|string
      */
-    public function getQuantity(): ?string
+    public function getQuantity()
     {
         return $this->container['quantity'];
     }
@@ -320,18 +333,13 @@ class SAFETReimbursementItem implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets quantity.
      *
      * @param null|string $quantity the number of units of the item being reimbursed
+     *
+     * @return self
      */
-    public function setQuantity(?string $quantity): self
+    public function setQuantity($quantity)
     {
         if (is_null($quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable quantity cannot be null');
         }
         $this->container['quantity'] = $quantity;
 
@@ -356,7 +364,7 @@ class SAFETReimbursementItem implements ModelInterface, \ArrayAccess, \JsonSeria
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -367,7 +375,7 @@ class SAFETReimbursementItem implements ModelInterface, \ArrayAccess, \JsonSeria
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -395,15 +403,17 @@ class SAFETReimbursementItem implements ModelInterface, \ArrayAccess, \JsonSeria
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

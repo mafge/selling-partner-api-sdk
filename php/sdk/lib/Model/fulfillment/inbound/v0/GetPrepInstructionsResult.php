@@ -3,7 +3,7 @@
 /**
  * GetPrepInstructionsResult.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetPrepInstructionsResult';
+    protected static $openAPIModelName = 'GetPrepInstructionsResult';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'sku_prep_instructions_list' => '\SpApi\Model\fulfillment\inbound\v0\SKUPrepInstructions[]',
         'invalid_sku_list' => '\SpApi\Model\fulfillment\inbound\v0\InvalidSKU[]',
         'asin_prep_instructions_list' => '\SpApi\Model\fulfillment\inbound\v0\ASINPrepInstructions[]',
-        'invalid_asin_list' => '\SpApi\Model\fulfillment\inbound\v0\InvalidASIN[]'];
+        'invalid_asin_list' => '\SpApi\Model\fulfillment\inbound\v0\InvalidASIN[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'sku_prep_instructions_list' => null,
         'invalid_sku_list' => null,
         'asin_prep_instructions_list' => null,
-        'invalid_asin_list' => null];
+        'invalid_asin_list' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,10 +90,10 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'sku_prep_instructions_list' => true,
-        'invalid_sku_list' => true,
-        'asin_prep_instructions_list' => true,
-        'invalid_asin_list' => true,
+        'sku_prep_instructions_list' => false,
+        'invalid_sku_list' => false,
+        'asin_prep_instructions_list' => false,
+        'invalid_asin_list' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'sku_prep_instructions_list' => 'SKUPrepInstructionsList',
         'invalid_sku_list' => 'InvalidSKUList',
         'asin_prep_instructions_list' => 'ASINPrepInstructionsList',
@@ -118,7 +121,7 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'sku_prep_instructions_list' => 'setSkuPrepInstructionsList',
         'invalid_sku_list' => 'setInvalidSkuList',
         'asin_prep_instructions_list' => 'setAsinPrepInstructionsList',
@@ -130,7 +133,7 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'sku_prep_instructions_list' => 'getSkuPrepInstructionsList',
         'invalid_sku_list' => 'getInvalidSkuList',
         'asin_prep_instructions_list' => 'getAsinPrepInstructionsList',
@@ -139,14 +142,16 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -250,15 +267,17 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets sku_prep_instructions_list.
+     *
+     * @return null|SKUPrepInstructions[]
      */
-    public function getSkuPrepInstructionsList(): ?array
+    public function getSkuPrepInstructionsList()
     {
         return $this->container['sku_prep_instructions_list'];
     }
@@ -266,19 +285,14 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets sku_prep_instructions_list.
      *
-     * @param null|array $sku_prep_instructions_list a list of SKU labeling requirements and item preparation instructions
+     * @param null|SKUPrepInstructions[] $sku_prep_instructions_list a list of SKU labeling requirements and item preparation instructions
+     *
+     * @return self
      */
-    public function setSkuPrepInstructionsList(?array $sku_prep_instructions_list): self
+    public function setSkuPrepInstructionsList($sku_prep_instructions_list)
     {
         if (is_null($sku_prep_instructions_list)) {
-            array_push($this->openAPINullablesSetToNull, 'sku_prep_instructions_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sku_prep_instructions_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable sku_prep_instructions_list cannot be null');
         }
         $this->container['sku_prep_instructions_list'] = $sku_prep_instructions_list;
 
@@ -287,8 +301,10 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets invalid_sku_list.
+     *
+     * @return null|InvalidSKU[]
      */
-    public function getInvalidSkuList(): ?array
+    public function getInvalidSkuList()
     {
         return $this->container['invalid_sku_list'];
     }
@@ -296,19 +312,14 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets invalid_sku_list.
      *
-     * @param null|array $invalid_sku_list a list of invalid SKU values and the reason they are invalid
+     * @param null|InvalidSKU[] $invalid_sku_list a list of invalid SKU values and the reason they are invalid
+     *
+     * @return self
      */
-    public function setInvalidSkuList(?array $invalid_sku_list): self
+    public function setInvalidSkuList($invalid_sku_list)
     {
         if (is_null($invalid_sku_list)) {
-            array_push($this->openAPINullablesSetToNull, 'invalid_sku_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('invalid_sku_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable invalid_sku_list cannot be null');
         }
         $this->container['invalid_sku_list'] = $invalid_sku_list;
 
@@ -317,8 +328,10 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets asin_prep_instructions_list.
+     *
+     * @return null|ASINPrepInstructions[]
      */
-    public function getAsinPrepInstructionsList(): ?array
+    public function getAsinPrepInstructionsList()
     {
         return $this->container['asin_prep_instructions_list'];
     }
@@ -326,19 +339,14 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets asin_prep_instructions_list.
      *
-     * @param null|array $asin_prep_instructions_list a list of item preparation instructions
+     * @param null|ASINPrepInstructions[] $asin_prep_instructions_list a list of item preparation instructions
+     *
+     * @return self
      */
-    public function setAsinPrepInstructionsList(?array $asin_prep_instructions_list): self
+    public function setAsinPrepInstructionsList($asin_prep_instructions_list)
     {
         if (is_null($asin_prep_instructions_list)) {
-            array_push($this->openAPINullablesSetToNull, 'asin_prep_instructions_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('asin_prep_instructions_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable asin_prep_instructions_list cannot be null');
         }
         $this->container['asin_prep_instructions_list'] = $asin_prep_instructions_list;
 
@@ -347,8 +355,10 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets invalid_asin_list.
+     *
+     * @return null|InvalidASIN[]
      */
-    public function getInvalidAsinList(): ?array
+    public function getInvalidAsinList()
     {
         return $this->container['invalid_asin_list'];
     }
@@ -356,19 +366,14 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets invalid_asin_list.
      *
-     * @param null|array $invalid_asin_list a list of invalid ASIN values and the reasons they are invalid
+     * @param null|InvalidASIN[] $invalid_asin_list a list of invalid ASIN values and the reasons they are invalid
+     *
+     * @return self
      */
-    public function setInvalidAsinList(?array $invalid_asin_list): self
+    public function setInvalidAsinList($invalid_asin_list)
     {
         if (is_null($invalid_asin_list)) {
-            array_push($this->openAPINullablesSetToNull, 'invalid_asin_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('invalid_asin_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable invalid_asin_list cannot be null');
         }
         $this->container['invalid_asin_list'] = $invalid_asin_list;
 
@@ -393,7 +398,7 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -404,7 +409,7 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -432,15 +437,17 @@ class GetPrepInstructionsResult implements ModelInterface, \ArrayAccess, \JsonSe
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

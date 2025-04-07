@@ -3,7 +3,7 @@
 /**
  * ChannelDetails.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,18 +52,21 @@ class ChannelDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ChannelDetails';
+    protected static $openAPIModelName = 'ChannelDetails';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'channel_type' => '\SpApi\Model\shipping\v2\ChannelType',
         'amazon_order_details' => '\SpApi\Model\shipping\v2\AmazonOrderDetails',
-        'amazon_shipment_details' => '\SpApi\Model\shipping\v2\AmazonShipmentDetails'];
+        'amazon_shipment_details' => '\SpApi\Model\shipping\v2\AmazonShipmentDetails',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,10 +77,11 @@ class ChannelDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'channel_type' => null,
         'amazon_order_details' => null,
-        'amazon_shipment_details' => null];
+        'amazon_shipment_details' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,8 +90,8 @@ class ChannelDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'channel_type' => false,
-        'amazon_order_details' => true,
-        'amazon_shipment_details' => true,
+        'amazon_order_details' => false,
+        'amazon_shipment_details' => false,
     ];
 
     /**
@@ -104,7 +107,7 @@ class ChannelDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'channel_type' => 'channelType',
         'amazon_order_details' => 'amazonOrderDetails',
         'amazon_shipment_details' => 'amazonShipmentDetails',
@@ -115,7 +118,7 @@ class ChannelDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'channel_type' => 'setChannelType',
         'amazon_order_details' => 'setAmazonOrderDetails',
         'amazon_shipment_details' => 'setAmazonShipmentDetails',
@@ -126,7 +129,7 @@ class ChannelDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'channel_type' => 'getChannelType',
         'amazon_order_details' => 'getAmazonOrderDetails',
         'amazon_shipment_details' => 'getAmazonShipmentDetails',
@@ -134,14 +137,16 @@ class ChannelDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -165,16 +170,20 @@ class ChannelDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -198,32 +207,40 @@ class ChannelDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -233,7 +250,7 @@ class ChannelDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -250,15 +267,17 @@ class ChannelDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets channel_type.
+     *
+     * @return ChannelType
      */
-    public function getChannelType(): string
+    public function getChannelType()
     {
         return $this->container['channel_type'];
     }
@@ -266,9 +285,11 @@ class ChannelDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets channel_type.
      *
-     * @param string $channel_type channel_type
+     * @param ChannelType $channel_type channel_type
+     *
+     * @return self
      */
-    public function setChannelType(string $channel_type): self
+    public function setChannelType($channel_type)
     {
         if (is_null($channel_type)) {
             throw new \InvalidArgumentException('non-nullable channel_type cannot be null');
@@ -280,8 +301,10 @@ class ChannelDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets amazon_order_details.
+     *
+     * @return null|AmazonOrderDetails
      */
-    public function getAmazonOrderDetails(): ?AmazonOrderDetails
+    public function getAmazonOrderDetails()
     {
         return $this->container['amazon_order_details'];
     }
@@ -290,18 +313,13 @@ class ChannelDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets amazon_order_details.
      *
      * @param null|AmazonOrderDetails $amazon_order_details amazon_order_details
+     *
+     * @return self
      */
-    public function setAmazonOrderDetails(?AmazonOrderDetails $amazon_order_details): self
+    public function setAmazonOrderDetails($amazon_order_details)
     {
         if (is_null($amazon_order_details)) {
-            array_push($this->openAPINullablesSetToNull, 'amazon_order_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amazon_order_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable amazon_order_details cannot be null');
         }
         $this->container['amazon_order_details'] = $amazon_order_details;
 
@@ -310,8 +328,10 @@ class ChannelDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets amazon_shipment_details.
+     *
+     * @return null|AmazonShipmentDetails
      */
-    public function getAmazonShipmentDetails(): ?AmazonShipmentDetails
+    public function getAmazonShipmentDetails()
     {
         return $this->container['amazon_shipment_details'];
     }
@@ -320,18 +340,13 @@ class ChannelDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets amazon_shipment_details.
      *
      * @param null|AmazonShipmentDetails $amazon_shipment_details amazon_shipment_details
+     *
+     * @return self
      */
-    public function setAmazonShipmentDetails(?AmazonShipmentDetails $amazon_shipment_details): self
+    public function setAmazonShipmentDetails($amazon_shipment_details)
     {
         if (is_null($amazon_shipment_details)) {
-            array_push($this->openAPINullablesSetToNull, 'amazon_shipment_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amazon_shipment_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable amazon_shipment_details cannot be null');
         }
         $this->container['amazon_shipment_details'] = $amazon_shipment_details;
 
@@ -356,7 +371,7 @@ class ChannelDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -367,7 +382,7 @@ class ChannelDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -395,15 +410,17 @@ class ChannelDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

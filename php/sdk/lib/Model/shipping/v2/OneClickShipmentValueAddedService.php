@@ -3,7 +3,7 @@
 /**
  * OneClickShipmentValueAddedService.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,17 +52,20 @@ class OneClickShipmentValueAddedService implements ModelInterface, \ArrayAccess,
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'OneClickShipmentValueAddedService';
+    protected static $openAPIModelName = 'OneClickShipmentValueAddedService';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'id' => 'string',
-        'amount' => '\SpApi\Model\shipping\v2\Currency'];
+        'amount' => '\SpApi\Model\shipping\v2\Currency',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,9 +76,10 @@ class OneClickShipmentValueAddedService implements ModelInterface, \ArrayAccess,
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'id' => null,
-        'amount' => null];
+        'amount' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,7 +88,7 @@ class OneClickShipmentValueAddedService implements ModelInterface, \ArrayAccess,
      */
     protected static array $openAPINullables = [
         'id' => false,
-        'amount' => true,
+        'amount' => false,
     ];
 
     /**
@@ -101,7 +104,7 @@ class OneClickShipmentValueAddedService implements ModelInterface, \ArrayAccess,
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'id' => 'id',
         'amount' => 'amount',
     ];
@@ -111,7 +114,7 @@ class OneClickShipmentValueAddedService implements ModelInterface, \ArrayAccess,
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'id' => 'setId',
         'amount' => 'setAmount',
     ];
@@ -121,21 +124,23 @@ class OneClickShipmentValueAddedService implements ModelInterface, \ArrayAccess,
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'id' => 'getId',
         'amount' => 'getAmount',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -158,16 +163,20 @@ class OneClickShipmentValueAddedService implements ModelInterface, \ArrayAccess,
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -191,32 +200,40 @@ class OneClickShipmentValueAddedService implements ModelInterface, \ArrayAccess,
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -226,7 +243,7 @@ class OneClickShipmentValueAddedService implements ModelInterface, \ArrayAccess,
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -243,15 +260,17 @@ class OneClickShipmentValueAddedService implements ModelInterface, \ArrayAccess,
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets id.
+     *
+     * @return string
      */
-    public function getId(): string
+    public function getId()
     {
         return $this->container['id'];
     }
@@ -260,8 +279,10 @@ class OneClickShipmentValueAddedService implements ModelInterface, \ArrayAccess,
      * Sets id.
      *
      * @param string $id the identifier of the selected value-added service
+     *
+     * @return self
      */
-    public function setId(string $id): self
+    public function setId($id)
     {
         if (is_null($id)) {
             throw new \InvalidArgumentException('non-nullable id cannot be null');
@@ -273,8 +294,10 @@ class OneClickShipmentValueAddedService implements ModelInterface, \ArrayAccess,
 
     /**
      * Gets amount.
+     *
+     * @return null|Currency
      */
-    public function getAmount(): ?Currency
+    public function getAmount()
     {
         return $this->container['amount'];
     }
@@ -283,18 +306,13 @@ class OneClickShipmentValueAddedService implements ModelInterface, \ArrayAccess,
      * Sets amount.
      *
      * @param null|Currency $amount amount
+     *
+     * @return self
      */
-    public function setAmount(?Currency $amount): self
+    public function setAmount($amount)
     {
         if (is_null($amount)) {
-            array_push($this->openAPINullablesSetToNull, 'amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable amount cannot be null');
         }
         $this->container['amount'] = $amount;
 
@@ -319,7 +337,7 @@ class OneClickShipmentValueAddedService implements ModelInterface, \ArrayAccess,
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +348,7 @@ class OneClickShipmentValueAddedService implements ModelInterface, \ArrayAccess,
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +376,17 @@ class OneClickShipmentValueAddedService implements ModelInterface, \ArrayAccess,
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

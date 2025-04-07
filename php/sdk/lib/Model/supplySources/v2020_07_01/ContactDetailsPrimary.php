@@ -3,7 +3,7 @@
 /**
  * ContactDetailsPrimary.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\supplySources\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -50,17 +49,20 @@ class ContactDetailsPrimary implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ContactDetails_primary';
+    protected static $openAPIModelName = 'ContactDetails_primary';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'email' => 'string',
-        'phone' => 'string'];
+        'phone' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -71,9 +73,10 @@ class ContactDetailsPrimary implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'email' => null,
-        'phone' => null];
+        'phone' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -81,8 +84,8 @@ class ContactDetailsPrimary implements ModelInterface, \ArrayAccess, \JsonSerial
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'email' => true,
-        'phone' => true,
+        'email' => false,
+        'phone' => false,
     ];
 
     /**
@@ -98,7 +101,7 @@ class ContactDetailsPrimary implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'email' => 'email',
         'phone' => 'phone',
     ];
@@ -108,7 +111,7 @@ class ContactDetailsPrimary implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'email' => 'setEmail',
         'phone' => 'setPhone',
     ];
@@ -118,21 +121,23 @@ class ContactDetailsPrimary implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'email' => 'getEmail',
         'phone' => 'getPhone',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -155,16 +160,20 @@ class ContactDetailsPrimary implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -188,32 +197,40 @@ class ContactDetailsPrimary implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -223,7 +240,7 @@ class ContactDetailsPrimary implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -240,15 +257,17 @@ class ContactDetailsPrimary implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets email.
+     *
+     * @return null|string
      */
-    public function getEmail(): ?string
+    public function getEmail()
     {
         return $this->container['email'];
     }
@@ -257,21 +276,16 @@ class ContactDetailsPrimary implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets email.
      *
      * @param null|string $email the email address to which email messages are delivered
+     *
+     * @return self
      */
-    public function setEmail(?string $email): self
+    public function setEmail($email)
     {
         if (is_null($email)) {
-            array_push($this->openAPINullablesSetToNull, 'email');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('email', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable email cannot be null');
         }
 
-        if (!is_null($email) && (!preg_match('/^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$/', ObjectSerializer::toString($email)))) {
+        if (!preg_match('/^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$/', ObjectSerializer::toString($email))) {
             throw new \InvalidArgumentException('invalid value for $email when calling ContactDetailsPrimary., must conform to the pattern /^([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\-\\.]+)\\.([a-zA-Z]{2,5})$/.');
         }
 
@@ -282,8 +296,10 @@ class ContactDetailsPrimary implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets phone.
+     *
+     * @return null|string
      */
-    public function getPhone(): ?string
+    public function getPhone()
     {
         return $this->container['phone'];
     }
@@ -292,18 +308,13 @@ class ContactDetailsPrimary implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets phone.
      *
      * @param null|string $phone the phone number of the person, business or institution
+     *
+     * @return self
      */
-    public function setPhone(?string $phone): self
+    public function setPhone($phone)
     {
         if (is_null($phone)) {
-            array_push($this->openAPINullablesSetToNull, 'phone');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('phone', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable phone cannot be null');
         }
         $this->container['phone'] = $phone;
 
@@ -328,7 +339,7 @@ class ContactDetailsPrimary implements ModelInterface, \ArrayAccess, \JsonSerial
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -339,7 +350,7 @@ class ContactDetailsPrimary implements ModelInterface, \ArrayAccess, \JsonSerial
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -367,15 +378,17 @@ class ContactDetailsPrimary implements ModelInterface, \ArrayAccess, \JsonSerial
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

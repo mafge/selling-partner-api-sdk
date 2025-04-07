@@ -3,7 +3,7 @@
 /**
  * DeliveryOffer.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class DeliveryOffer implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'DeliveryOffer';
+    protected static $openAPIModelName = 'DeliveryOffer';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'expires_at' => '\DateTime',
         'date_range' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\DateRange',
-        'policy' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\DeliveryPolicy'];
+        'policy' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\DeliveryPolicy',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class DeliveryOffer implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'expires_at' => 'date-time',
         'date_range' => null,
-        'policy' => null];
+        'policy' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class DeliveryOffer implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'expires_at' => true,
-        'date_range' => true,
-        'policy' => true,
+        'expires_at' => false,
+        'date_range' => false,
+        'policy' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class DeliveryOffer implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'expires_at' => 'expiresAt',
         'date_range' => 'dateRange',
         'policy' => 'policy',
@@ -114,7 +117,7 @@ class DeliveryOffer implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'expires_at' => 'setExpiresAt',
         'date_range' => 'setDateRange',
         'policy' => 'setPolicy',
@@ -125,7 +128,7 @@ class DeliveryOffer implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'expires_at' => 'getExpiresAt',
         'date_range' => 'getDateRange',
         'policy' => 'getPolicy',
@@ -133,14 +136,16 @@ class DeliveryOffer implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class DeliveryOffer implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class DeliveryOffer implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class DeliveryOffer implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -243,15 +260,17 @@ class DeliveryOffer implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets expires_at.
+     *
+     * @return null|\DateTime
      */
-    public function getExpiresAt(): ?\DateTime
+    public function getExpiresAt()
     {
         return $this->container['expires_at'];
     }
@@ -260,18 +279,13 @@ class DeliveryOffer implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets expires_at.
      *
      * @param null|\DateTime $expires_at Date timestamp
+     *
+     * @return self
      */
-    public function setExpiresAt(?\DateTime $expires_at): self
+    public function setExpiresAt($expires_at)
     {
         if (is_null($expires_at)) {
-            array_push($this->openAPINullablesSetToNull, 'expires_at');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expires_at', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable expires_at cannot be null');
         }
         $this->container['expires_at'] = $expires_at;
 
@@ -280,8 +294,10 @@ class DeliveryOffer implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets date_range.
+     *
+     * @return null|DateRange
      */
-    public function getDateRange(): ?DateRange
+    public function getDateRange()
     {
         return $this->container['date_range'];
     }
@@ -290,18 +306,13 @@ class DeliveryOffer implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets date_range.
      *
      * @param null|DateRange $date_range date_range
+     *
+     * @return self
      */
-    public function setDateRange(?DateRange $date_range): self
+    public function setDateRange($date_range)
     {
         if (is_null($date_range)) {
-            array_push($this->openAPINullablesSetToNull, 'date_range');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('date_range', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable date_range cannot be null');
         }
         $this->container['date_range'] = $date_range;
 
@@ -310,8 +321,10 @@ class DeliveryOffer implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets policy.
+     *
+     * @return null|DeliveryPolicy
      */
-    public function getPolicy(): ?DeliveryPolicy
+    public function getPolicy()
     {
         return $this->container['policy'];
     }
@@ -320,18 +333,13 @@ class DeliveryOffer implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets policy.
      *
      * @param null|DeliveryPolicy $policy policy
+     *
+     * @return self
      */
-    public function setPolicy(?DeliveryPolicy $policy): self
+    public function setPolicy($policy)
     {
         if (is_null($policy)) {
-            array_push($this->openAPINullablesSetToNull, 'policy');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('policy', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable policy cannot be null');
         }
         $this->container['policy'] = $policy;
 
@@ -356,7 +364,7 @@ class DeliveryOffer implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -367,7 +375,7 @@ class DeliveryOffer implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -395,15 +403,17 @@ class DeliveryOffer implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

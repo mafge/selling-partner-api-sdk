@@ -3,7 +3,7 @@
 /**
  * ListOffersRequestFilters.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\replenishment\v2022_11_07;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,22 +51,25 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ListOffersRequestFilters';
+    protected static $openAPIModelName = 'ListOffersRequestFilters';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'marketplace_id' => 'string',
         'skus' => 'string[]',
         'asins' => 'string[]',
         'eligibilities' => '\SpApi\Model\replenishment\v2022_11_07\EligibilityStatus[]',
         'preferences' => '\SpApi\Model\replenishment\v2022_11_07\Preference',
         'promotions' => '\SpApi\Model\replenishment\v2022_11_07\Promotion',
-        'program_types' => '\SpApi\Model\replenishment\v2022_11_07\ProgramType[]'];
+        'program_types' => '\SpApi\Model\replenishment\v2022_11_07\ProgramType[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -78,14 +80,15 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'marketplace_id' => null,
         'skus' => null,
         'asins' => null,
         'eligibilities' => null,
         'preferences' => null,
         'promotions' => null,
-        'program_types' => null];
+        'program_types' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -94,11 +97,11 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
      */
     protected static array $openAPINullables = [
         'marketplace_id' => false,
-        'skus' => true,
-        'asins' => true,
-        'eligibilities' => true,
-        'preferences' => true,
-        'promotions' => true,
+        'skus' => false,
+        'asins' => false,
+        'eligibilities' => false,
+        'preferences' => false,
+        'promotions' => false,
         'program_types' => false,
     ];
 
@@ -115,7 +118,7 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'marketplace_id' => 'marketplaceId',
         'skus' => 'skus',
         'asins' => 'asins',
@@ -130,7 +133,7 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
         'skus' => 'setSkus',
         'asins' => 'setAsins',
@@ -145,7 +148,7 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
         'skus' => 'getSkus',
         'asins' => 'getAsins',
@@ -157,14 +160,16 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -192,16 +197,20 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -225,32 +234,40 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -260,7 +277,7 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -303,15 +320,17 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
-    public function getMarketplaceId(): string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -320,8 +339,10 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets marketplace_id.
      *
      * @param string $marketplace_id The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
+     *
+     * @return self
      */
-    public function setMarketplaceId(string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
             throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
@@ -333,8 +354,10 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets skus.
+     *
+     * @return null|string[]
      */
-    public function getSkus(): ?array
+    public function getSkus()
     {
         return $this->container['skus'];
     }
@@ -342,25 +365,20 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Sets skus.
      *
-     * @param null|array $skus A list of SKUs to filter. This filter is only supported for sellers and not for vendors.
+     * @param null|string[] $skus A list of SKUs to filter. This filter is only supported for sellers and not for vendors.
+     *
+     * @return self
      */
-    public function setSkus(?array $skus): self
+    public function setSkus($skus)
     {
         if (is_null($skus)) {
-            array_push($this->openAPINullablesSetToNull, 'skus');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('skus', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable skus cannot be null');
         }
 
-        if (!is_null($skus) && (count($skus) > 20)) {
+        if (count($skus) > 20) {
             throw new \InvalidArgumentException('invalid value for $skus when calling ListOffersRequestFilters., number of items must be less than or equal to 20.');
         }
-        if (!is_null($skus) && (count($skus) < 1)) {
+        if (count($skus) < 1) {
             throw new \InvalidArgumentException('invalid length for $skus when calling ListOffersRequestFilters., number of items must be greater than or equal to 1.');
         }
         $this->container['skus'] = $skus;
@@ -370,8 +388,10 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets asins.
+     *
+     * @return null|string[]
      */
-    public function getAsins(): ?array
+    public function getAsins()
     {
         return $this->container['asins'];
     }
@@ -379,25 +399,20 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Sets asins.
      *
-     * @param null|array $asins a list of Amazon Standard Identification Numbers (ASINs)
+     * @param null|string[] $asins a list of Amazon Standard Identification Numbers (ASINs)
+     *
+     * @return self
      */
-    public function setAsins(?array $asins): self
+    public function setAsins($asins)
     {
         if (is_null($asins)) {
-            array_push($this->openAPINullablesSetToNull, 'asins');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('asins', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable asins cannot be null');
         }
 
-        if (!is_null($asins) && (count($asins) > 20)) {
+        if (count($asins) > 20) {
             throw new \InvalidArgumentException('invalid value for $asins when calling ListOffersRequestFilters., number of items must be less than or equal to 20.');
         }
-        if (!is_null($asins) && (count($asins) < 1)) {
+        if (count($asins) < 1) {
             throw new \InvalidArgumentException('invalid length for $asins when calling ListOffersRequestFilters., number of items must be greater than or equal to 1.');
         }
         $this->container['asins'] = $asins;
@@ -407,8 +422,10 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets eligibilities.
+     *
+     * @return null|EligibilityStatus[]
      */
-    public function getEligibilities(): ?array
+    public function getEligibilities()
     {
         return $this->container['eligibilities'];
     }
@@ -416,22 +433,17 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Sets eligibilities.
      *
-     * @param null|array $eligibilities a list of eligibilities associated with an offer
+     * @param null|EligibilityStatus[] $eligibilities a list of eligibilities associated with an offer
+     *
+     * @return self
      */
-    public function setEligibilities(?array $eligibilities): self
+    public function setEligibilities($eligibilities)
     {
         if (is_null($eligibilities)) {
-            array_push($this->openAPINullablesSetToNull, 'eligibilities');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('eligibilities', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable eligibilities cannot be null');
         }
 
-        if (!is_null($eligibilities) && (count($eligibilities) < 1)) {
+        if (count($eligibilities) < 1) {
             throw new \InvalidArgumentException('invalid length for $eligibilities when calling ListOffersRequestFilters., number of items must be greater than or equal to 1.');
         }
         $this->container['eligibilities'] = $eligibilities;
@@ -441,8 +453,10 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets preferences.
+     *
+     * @return null|Preference
      */
-    public function getPreferences(): ?Preference
+    public function getPreferences()
     {
         return $this->container['preferences'];
     }
@@ -451,18 +465,13 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets preferences.
      *
      * @param null|Preference $preferences preferences
+     *
+     * @return self
      */
-    public function setPreferences(?Preference $preferences): self
+    public function setPreferences($preferences)
     {
         if (is_null($preferences)) {
-            array_push($this->openAPINullablesSetToNull, 'preferences');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('preferences', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable preferences cannot be null');
         }
         $this->container['preferences'] = $preferences;
 
@@ -471,8 +480,10 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets promotions.
+     *
+     * @return null|Promotion
      */
-    public function getPromotions(): ?Promotion
+    public function getPromotions()
     {
         return $this->container['promotions'];
     }
@@ -481,18 +492,13 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets promotions.
      *
      * @param null|Promotion $promotions promotions
+     *
+     * @return self
      */
-    public function setPromotions(?Promotion $promotions): self
+    public function setPromotions($promotions)
     {
         if (is_null($promotions)) {
-            array_push($this->openAPINullablesSetToNull, 'promotions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('promotions', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable promotions cannot be null');
         }
         $this->container['promotions'] = $promotions;
 
@@ -501,8 +507,10 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets program_types.
+     *
+     * @return ProgramType[]
      */
-    public function getProgramTypes(): array
+    public function getProgramTypes()
     {
         return $this->container['program_types'];
     }
@@ -510,9 +518,11 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Sets program_types.
      *
-     * @param array $program_types a list of replenishment program types
+     * @param ProgramType[] $program_types a list of replenishment program types
+     *
+     * @return self
      */
-    public function setProgramTypes(array $program_types): self
+    public function setProgramTypes($program_types)
     {
         if (is_null($program_types)) {
             throw new \InvalidArgumentException('non-nullable program_types cannot be null');
@@ -544,7 +554,7 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -555,7 +565,7 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -583,15 +593,17 @@ class ListOffersRequestFilters implements ModelInterface, \ArrayAccess, \JsonSer
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

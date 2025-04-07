@@ -3,7 +3,7 @@
 /**
  * DeleteNotificationsRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\appIntegrations\v2024_04_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -55,17 +54,20 @@ class DeleteNotificationsRequest implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'DeleteNotificationsRequest';
+    protected static $openAPIModelName = 'DeleteNotificationsRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'template_id' => 'string',
-        'deletion_reason' => 'string'];
+        'deletion_reason' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,9 +78,10 @@ class DeleteNotificationsRequest implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'template_id' => null,
-        'deletion_reason' => null];
+        'deletion_reason' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -103,7 +106,7 @@ class DeleteNotificationsRequest implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'template_id' => 'templateId',
         'deletion_reason' => 'deletionReason',
     ];
@@ -113,7 +116,7 @@ class DeleteNotificationsRequest implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'template_id' => 'setTemplateId',
         'deletion_reason' => 'setDeletionReason',
     ];
@@ -123,21 +126,23 @@ class DeleteNotificationsRequest implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'template_id' => 'getTemplateId',
         'deletion_reason' => 'getDeletionReason',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -160,16 +165,20 @@ class DeleteNotificationsRequest implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -193,32 +202,40 @@ class DeleteNotificationsRequest implements ModelInterface, \ArrayAccess, \JsonS
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -228,7 +245,7 @@ class DeleteNotificationsRequest implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return string[]
      */
-    public function getDeletionReasonAllowableValues(): array
+    public function getDeletionReasonAllowableValues()
     {
         return [
             self::DELETION_REASON_CONTENT,
@@ -241,7 +258,7 @@ class DeleteNotificationsRequest implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -269,15 +286,17 @@ class DeleteNotificationsRequest implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets template_id.
+     *
+     * @return string
      */
-    public function getTemplateId(): string
+    public function getTemplateId()
     {
         return $this->container['template_id'];
     }
@@ -286,8 +305,10 @@ class DeleteNotificationsRequest implements ModelInterface, \ArrayAccess, \JsonS
      * Sets template_id.
      *
      * @param string $template_id the unique identifier of the notification template you used to onboard your application
+     *
+     * @return self
      */
-    public function setTemplateId(string $template_id): self
+    public function setTemplateId($template_id)
     {
         if (is_null($template_id)) {
             throw new \InvalidArgumentException('non-nullable template_id cannot be null');
@@ -299,8 +320,10 @@ class DeleteNotificationsRequest implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets deletion_reason.
+     *
+     * @return string
      */
-    public function getDeletionReason(): string
+    public function getDeletionReason()
     {
         return $this->container['deletion_reason'];
     }
@@ -309,8 +332,10 @@ class DeleteNotificationsRequest implements ModelInterface, \ArrayAccess, \JsonS
      * Sets deletion_reason.
      *
      * @param string $deletion_reason the unique identifier that maps each notification status to a reason code
+     *
+     * @return self
      */
-    public function setDeletionReason(string $deletion_reason): self
+    public function setDeletionReason($deletion_reason)
     {
         if (is_null($deletion_reason)) {
             throw new \InvalidArgumentException('non-nullable deletion_reason cannot be null');
@@ -348,7 +373,7 @@ class DeleteNotificationsRequest implements ModelInterface, \ArrayAccess, \JsonS
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -359,7 +384,7 @@ class DeleteNotificationsRequest implements ModelInterface, \ArrayAccess, \JsonS
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -387,15 +412,17 @@ class DeleteNotificationsRequest implements ModelInterface, \ArrayAccess, \JsonS
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

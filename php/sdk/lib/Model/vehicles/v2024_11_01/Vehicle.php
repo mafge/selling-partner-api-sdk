@@ -3,7 +3,7 @@
 /**
  * Vehicle.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\vehicles\v2024_11_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Vehicle';
+    protected static $openAPIModelName = 'Vehicle';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'make' => 'string',
         'model' => 'string',
         'variant_name' => 'string',
@@ -72,7 +73,8 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
         'manufacturing_stop_date' => '\SpApi\Model\vehicles\v2024_11_01\MonthAndYear',
         'last_processed_date' => 'string',
         'status' => '\SpApi\Model\vehicles\v2024_11_01\VehicleStatusInCatalog',
-        'identifiers' => '\SpApi\Model\vehicles\v2024_11_01\VehicleIdentifiers[]'];
+        'identifiers' => '\SpApi\Model\vehicles\v2024_11_01\VehicleIdentifiers[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -83,7 +85,7 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'make' => null,
         'model' => null,
         'variant_name' => null,
@@ -95,7 +97,8 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
         'manufacturing_stop_date' => null,
         'last_processed_date' => null,
         'status' => null,
-        'identifiers' => null];
+        'identifiers' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -105,15 +108,15 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'make' => false,
         'model' => false,
-        'variant_name' => true,
-        'body_style' => true,
-        'drive_type' => true,
-        'energy' => true,
-        'engine_output' => true,
-        'manufacturing_start_date' => true,
-        'manufacturing_stop_date' => true,
-        'last_processed_date' => true,
-        'status' => true,
+        'variant_name' => false,
+        'body_style' => false,
+        'drive_type' => false,
+        'energy' => false,
+        'engine_output' => false,
+        'manufacturing_start_date' => false,
+        'manufacturing_stop_date' => false,
+        'last_processed_date' => false,
+        'status' => false,
         'identifiers' => false,
     ];
 
@@ -130,7 +133,7 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'make' => 'make',
         'model' => 'model',
         'variant_name' => 'variantName',
@@ -150,7 +153,7 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'make' => 'setMake',
         'model' => 'setModel',
         'variant_name' => 'setVariantName',
@@ -170,7 +173,7 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'make' => 'getMake',
         'model' => 'getModel',
         'variant_name' => 'getVariantName',
@@ -187,14 +190,16 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -227,16 +232,20 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -260,32 +269,40 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -295,7 +312,7 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -325,15 +342,17 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets make.
+     *
+     * @return string
      */
-    public function getMake(): string
+    public function getMake()
     {
         return $this->container['make'];
     }
@@ -342,8 +361,10 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets make.
      *
      * @param string $make vehicle Brand
+     *
+     * @return self
      */
-    public function setMake(string $make): self
+    public function setMake($make)
     {
         if (is_null($make)) {
             throw new \InvalidArgumentException('non-nullable make cannot be null');
@@ -355,8 +376,10 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets model.
+     *
+     * @return string
      */
-    public function getModel(): string
+    public function getModel()
     {
         return $this->container['model'];
     }
@@ -365,8 +388,10 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets model.
      *
      * @param string $model specific model of a vehicle
+     *
+     * @return self
      */
-    public function setModel(string $model): self
+    public function setModel($model)
     {
         if (is_null($model)) {
             throw new \InvalidArgumentException('non-nullable model cannot be null');
@@ -378,8 +403,10 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets variant_name.
+     *
+     * @return null|string
      */
-    public function getVariantName(): ?string
+    public function getVariantName()
     {
         return $this->container['variant_name'];
     }
@@ -388,18 +415,13 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets variant_name.
      *
      * @param null|string $variant_name name of the vehicle variant
+     *
+     * @return self
      */
-    public function setVariantName(?string $variant_name): self
+    public function setVariantName($variant_name)
     {
         if (is_null($variant_name)) {
-            array_push($this->openAPINullablesSetToNull, 'variant_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('variant_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable variant_name cannot be null');
         }
         $this->container['variant_name'] = $variant_name;
 
@@ -408,8 +430,10 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets body_style.
+     *
+     * @return null|string
      */
-    public function getBodyStyle(): ?string
+    public function getBodyStyle()
     {
         return $this->container['body_style'];
     }
@@ -418,18 +442,13 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets body_style.
      *
      * @param null|string $body_style body style of vehicle (example: Hatchback, Cabriolet)
+     *
+     * @return self
      */
-    public function setBodyStyle(?string $body_style): self
+    public function setBodyStyle($body_style)
     {
         if (is_null($body_style)) {
-            array_push($this->openAPINullablesSetToNull, 'body_style');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('body_style', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable body_style cannot be null');
         }
         $this->container['body_style'] = $body_style;
 
@@ -438,8 +457,10 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets drive_type.
+     *
+     * @return null|string
      */
-    public function getDriveType(): ?string
+    public function getDriveType()
     {
         return $this->container['drive_type'];
     }
@@ -448,18 +469,13 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets drive_type.
      *
      * @param null|string $drive_type drive type of vehicle(example: Rear wheel drive)
+     *
+     * @return self
      */
-    public function setDriveType(?string $drive_type): self
+    public function setDriveType($drive_type)
     {
         if (is_null($drive_type)) {
-            array_push($this->openAPINullablesSetToNull, 'drive_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('drive_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable drive_type cannot be null');
         }
         $this->container['drive_type'] = $drive_type;
 
@@ -468,8 +484,10 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets energy.
+     *
+     * @return null|string
      */
-    public function getEnergy(): ?string
+    public function getEnergy()
     {
         return $this->container['energy'];
     }
@@ -478,18 +496,13 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets energy.
      *
      * @param null|string $energy Energy Source for the vehicle(example: Petrol)
+     *
+     * @return self
      */
-    public function setEnergy(?string $energy): self
+    public function setEnergy($energy)
     {
         if (is_null($energy)) {
-            array_push($this->openAPINullablesSetToNull, 'energy');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('energy', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable energy cannot be null');
         }
         $this->container['energy'] = $energy;
 
@@ -498,8 +511,10 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets engine_output.
+     *
+     * @return null|EngineOutput[]
      */
-    public function getEngineOutput(): ?array
+    public function getEngineOutput()
     {
         return $this->container['engine_output'];
     }
@@ -507,22 +522,17 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets engine_output.
      *
-     * @param null|array $engine_output engine output of vehicle
+     * @param null|EngineOutput[] $engine_output engine output of vehicle
+     *
+     * @return self
      */
-    public function setEngineOutput(?array $engine_output): self
+    public function setEngineOutput($engine_output)
     {
         if (is_null($engine_output)) {
-            array_push($this->openAPINullablesSetToNull, 'engine_output');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('engine_output', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable engine_output cannot be null');
         }
 
-        if (!is_null($engine_output) && (count($engine_output) < 1)) {
+        if (count($engine_output) < 1) {
             throw new \InvalidArgumentException('invalid length for $engine_output when calling Vehicle., number of items must be greater than or equal to 1.');
         }
         $this->container['engine_output'] = $engine_output;
@@ -532,8 +542,10 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets manufacturing_start_date.
+     *
+     * @return null|MonthAndYear
      */
-    public function getManufacturingStartDate(): ?MonthAndYear
+    public function getManufacturingStartDate()
     {
         return $this->container['manufacturing_start_date'];
     }
@@ -542,18 +554,13 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets manufacturing_start_date.
      *
      * @param null|MonthAndYear $manufacturing_start_date manufacturing_start_date
+     *
+     * @return self
      */
-    public function setManufacturingStartDate(?MonthAndYear $manufacturing_start_date): self
+    public function setManufacturingStartDate($manufacturing_start_date)
     {
         if (is_null($manufacturing_start_date)) {
-            array_push($this->openAPINullablesSetToNull, 'manufacturing_start_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('manufacturing_start_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable manufacturing_start_date cannot be null');
         }
         $this->container['manufacturing_start_date'] = $manufacturing_start_date;
 
@@ -562,8 +569,10 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets manufacturing_stop_date.
+     *
+     * @return null|MonthAndYear
      */
-    public function getManufacturingStopDate(): ?MonthAndYear
+    public function getManufacturingStopDate()
     {
         return $this->container['manufacturing_stop_date'];
     }
@@ -572,18 +581,13 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets manufacturing_stop_date.
      *
      * @param null|MonthAndYear $manufacturing_stop_date manufacturing_stop_date
+     *
+     * @return self
      */
-    public function setManufacturingStopDate(?MonthAndYear $manufacturing_stop_date): self
+    public function setManufacturingStopDate($manufacturing_stop_date)
     {
         if (is_null($manufacturing_stop_date)) {
-            array_push($this->openAPINullablesSetToNull, 'manufacturing_stop_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('manufacturing_stop_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable manufacturing_stop_date cannot be null');
         }
         $this->container['manufacturing_stop_date'] = $manufacturing_stop_date;
 
@@ -592,8 +596,10 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets last_processed_date.
+     *
+     * @return null|string
      */
-    public function getLastProcessedDate(): ?string
+    public function getLastProcessedDate()
     {
         return $this->container['last_processed_date'];
     }
@@ -602,18 +608,13 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets last_processed_date.
      *
      * @param null|string $last_processed_date the date on which the vehicle was last updated, in ISO-8601 date/time format
+     *
+     * @return self
      */
-    public function setLastProcessedDate(?string $last_processed_date): self
+    public function setLastProcessedDate($last_processed_date)
     {
         if (is_null($last_processed_date)) {
-            array_push($this->openAPINullablesSetToNull, 'last_processed_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('last_processed_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable last_processed_date cannot be null');
         }
         $this->container['last_processed_date'] = $last_processed_date;
 
@@ -622,8 +623,10 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets status.
+     *
+     * @return null|VehicleStatusInCatalog
      */
-    public function getStatus(): ?string
+    public function getStatus()
     {
         return $this->container['status'];
     }
@@ -631,19 +634,14 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets status.
      *
-     * @param null|string $status status
+     * @param null|VehicleStatusInCatalog $status status
+     *
+     * @return self
      */
-    public function setStatus(?string $status): self
+    public function setStatus($status)
     {
         if (is_null($status)) {
-            array_push($this->openAPINullablesSetToNull, 'status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('status', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable status cannot be null');
         }
         $this->container['status'] = $status;
 
@@ -652,8 +650,10 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets identifiers.
+     *
+     * @return VehicleIdentifiers[]
      */
-    public function getIdentifiers(): array
+    public function getIdentifiers()
     {
         return $this->container['identifiers'];
     }
@@ -661,9 +661,11 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets identifiers.
      *
-     * @param array $identifiers Identifiers that can be used to identify the vehicle uniquely
+     * @param VehicleIdentifiers[] $identifiers Identifiers that can be used to identify the vehicle uniquely
+     *
+     * @return self
      */
-    public function setIdentifiers(array $identifiers): self
+    public function setIdentifiers($identifiers)
     {
         if (is_null($identifiers)) {
             throw new \InvalidArgumentException('non-nullable identifiers cannot be null');
@@ -695,7 +697,7 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -706,7 +708,7 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -734,15 +736,17 @@ class Vehicle implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

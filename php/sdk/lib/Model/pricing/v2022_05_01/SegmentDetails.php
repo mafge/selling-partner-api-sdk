@@ -3,7 +3,7 @@
 /**
  * SegmentDetails.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v2022_05_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class SegmentDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'SegmentDetails';
+    protected static $openAPIModelName = 'SegmentDetails';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'glance_view_weight_percentage' => 'float',
-        'sample_location' => '\SpApi\Model\pricing\v2022_05_01\SampleLocation'];
+        'sample_location' => '\SpApi\Model\pricing\v2022_05_01\SampleLocation',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class SegmentDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'glance_view_weight_percentage' => null,
-        'sample_location' => null];
+        'sample_location' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class SegmentDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'glance_view_weight_percentage' => true,
-        'sample_location' => true,
+        'glance_view_weight_percentage' => false,
+        'sample_location' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class SegmentDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'glance_view_weight_percentage' => 'glanceViewWeightPercentage',
         'sample_location' => 'sampleLocation',
     ];
@@ -110,7 +113,7 @@ class SegmentDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'glance_view_weight_percentage' => 'setGlanceViewWeightPercentage',
         'sample_location' => 'setSampleLocation',
     ];
@@ -120,21 +123,23 @@ class SegmentDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'glance_view_weight_percentage' => 'getGlanceViewWeightPercentage',
         'sample_location' => 'getSampleLocation',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class SegmentDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class SegmentDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class SegmentDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -236,15 +253,17 @@ class SegmentDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets glance_view_weight_percentage.
+     *
+     * @return null|float
      */
-    public function getGlanceViewWeightPercentage(): ?float
+    public function getGlanceViewWeightPercentage()
     {
         return $this->container['glance_view_weight_percentage'];
     }
@@ -253,18 +272,13 @@ class SegmentDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets glance_view_weight_percentage.
      *
      * @param null|float $glance_view_weight_percentage The glance view weighted percentage for this segment, which is the glance views for this segment as a percentage of total glance views across all segments for the ASIN. A higher percentage indicates that more Amazon customers receive this offer as the Featured Offer.
+     *
+     * @return self
      */
-    public function setGlanceViewWeightPercentage(?float $glance_view_weight_percentage): self
+    public function setGlanceViewWeightPercentage($glance_view_weight_percentage)
     {
         if (is_null($glance_view_weight_percentage)) {
-            array_push($this->openAPINullablesSetToNull, 'glance_view_weight_percentage');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('glance_view_weight_percentage', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable glance_view_weight_percentage cannot be null');
         }
         $this->container['glance_view_weight_percentage'] = $glance_view_weight_percentage;
 
@@ -273,8 +287,10 @@ class SegmentDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets sample_location.
+     *
+     * @return null|SampleLocation
      */
-    public function getSampleLocation(): ?SampleLocation
+    public function getSampleLocation()
     {
         return $this->container['sample_location'];
     }
@@ -283,18 +299,13 @@ class SegmentDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets sample_location.
      *
      * @param null|SampleLocation $sample_location sample_location
+     *
+     * @return self
      */
-    public function setSampleLocation(?SampleLocation $sample_location): self
+    public function setSampleLocation($sample_location)
     {
         if (is_null($sample_location)) {
-            array_push($this->openAPINullablesSetToNull, 'sample_location');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sample_location', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable sample_location cannot be null');
         }
         $this->container['sample_location'] = $sample_location;
 
@@ -319,7 +330,7 @@ class SegmentDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +341,7 @@ class SegmentDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +369,17 @@ class SegmentDetails implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

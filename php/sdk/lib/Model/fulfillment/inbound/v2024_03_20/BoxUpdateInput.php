@@ -3,7 +3,7 @@
 /**
  * BoxUpdateInput.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'BoxUpdateInput';
+    protected static $openAPIModelName = 'BoxUpdateInput';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'content_information_source' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\BoxContentInformationSource',
         'dimensions' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Dimensions',
         'items' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\ItemInput[]',
         'package_id' => 'string',
         'quantity' => 'int',
-        'weight' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Weight'];
+        'weight' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Weight',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'content_information_source' => null,
         'dimensions' => null,
         'items' => null,
         'package_id' => null,
         'quantity' => null,
-        'weight' => null];
+        'weight' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -93,8 +96,8 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'content_information_source' => false,
         'dimensions' => false,
-        'items' => true,
-        'package_id' => true,
+        'items' => false,
+        'package_id' => false,
         'quantity' => false,
         'weight' => false,
     ];
@@ -112,7 +115,7 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'content_information_source' => 'contentInformationSource',
         'dimensions' => 'dimensions',
         'items' => 'items',
@@ -126,7 +129,7 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'content_information_source' => 'setContentInformationSource',
         'dimensions' => 'setDimensions',
         'items' => 'setItems',
@@ -140,7 +143,7 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'content_information_source' => 'getContentInformationSource',
         'dimensions' => 'getDimensions',
         'items' => 'getItems',
@@ -151,14 +154,16 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -299,15 +316,17 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets content_information_source.
+     *
+     * @return BoxContentInformationSource
      */
-    public function getContentInformationSource(): string
+    public function getContentInformationSource()
     {
         return $this->container['content_information_source'];
     }
@@ -315,9 +334,11 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets content_information_source.
      *
-     * @param string $content_information_source content_information_source
+     * @param BoxContentInformationSource $content_information_source content_information_source
+     *
+     * @return self
      */
-    public function setContentInformationSource(string $content_information_source): self
+    public function setContentInformationSource($content_information_source)
     {
         if (is_null($content_information_source)) {
             throw new \InvalidArgumentException('non-nullable content_information_source cannot be null');
@@ -329,8 +350,10 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets dimensions.
+     *
+     * @return Dimensions
      */
-    public function getDimensions(): Dimensions
+    public function getDimensions()
     {
         return $this->container['dimensions'];
     }
@@ -339,8 +362,10 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets dimensions.
      *
      * @param Dimensions $dimensions dimensions
+     *
+     * @return self
      */
-    public function setDimensions(Dimensions $dimensions): self
+    public function setDimensions($dimensions)
     {
         if (is_null($dimensions)) {
             throw new \InvalidArgumentException('non-nullable dimensions cannot be null');
@@ -352,8 +377,10 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets items.
+     *
+     * @return null|ItemInput[]
      */
-    public function getItems(): ?array
+    public function getItems()
     {
         return $this->container['items'];
     }
@@ -361,19 +388,14 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets items.
      *
-     * @param null|array $items The items and their quantity in the box. This must be empty if the box `contentInformationSource` is `BARCODE_2D` or `MANUAL_PROCESS`.
+     * @param null|ItemInput[] $items The items and their quantity in the box. This must be empty if the box `contentInformationSource` is `BARCODE_2D` or `MANUAL_PROCESS`.
+     *
+     * @return self
      */
-    public function setItems(?array $items): self
+    public function setItems($items)
     {
         if (is_null($items)) {
-            array_push($this->openAPINullablesSetToNull, 'items');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('items', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable items cannot be null');
         }
         $this->container['items'] = $items;
 
@@ -382,8 +404,10 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets package_id.
+     *
+     * @return null|string
      */
-    public function getPackageId(): ?string
+    public function getPackageId()
     {
         return $this->container['package_id'];
     }
@@ -392,26 +416,21 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets package_id.
      *
      * @param null|string $package_id Primary key to uniquely identify a Box Package. PackageId must be provided if the intent is to update an existing box. Adding a new box will not require providing this value. Any existing PackageIds not provided will be treated as to-be-removed
+     *
+     * @return self
      */
-    public function setPackageId(?string $package_id): self
+    public function setPackageId($package_id)
     {
         if (is_null($package_id)) {
-            array_push($this->openAPINullablesSetToNull, 'package_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('package_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable package_id cannot be null');
         }
-        if (!is_null($package_id) && (mb_strlen($package_id) > 38)) {
+        if (mb_strlen($package_id) > 38) {
             throw new \InvalidArgumentException('invalid length for $package_id when calling BoxUpdateInput., must be smaller than or equal to 38.');
         }
-        if (!is_null($package_id) && (mb_strlen($package_id) < 38)) {
+        if (mb_strlen($package_id) < 38) {
             throw new \InvalidArgumentException('invalid length for $package_id when calling BoxUpdateInput., must be bigger than or equal to 38.');
         }
-        if (!is_null($package_id) && (!preg_match('/^[a-zA-Z0-9-]*$/', ObjectSerializer::toString($package_id)))) {
+        if (!preg_match('/^[a-zA-Z0-9-]*$/', ObjectSerializer::toString($package_id))) {
             throw new \InvalidArgumentException('invalid value for $package_id when calling BoxUpdateInput., must conform to the pattern /^[a-zA-Z0-9-]*$/.');
         }
 
@@ -422,8 +441,10 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets quantity.
+     *
+     * @return int
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->container['quantity'];
     }
@@ -432,8 +453,10 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets quantity.
      *
      * @param int $quantity the number of containers where all other properties like weight or dimensions are identical
+     *
+     * @return self
      */
-    public function setQuantity(int $quantity): self
+    public function setQuantity($quantity)
     {
         if (is_null($quantity)) {
             throw new \InvalidArgumentException('non-nullable quantity cannot be null');
@@ -453,8 +476,10 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets weight.
+     *
+     * @return Weight
      */
-    public function getWeight(): Weight
+    public function getWeight()
     {
         return $this->container['weight'];
     }
@@ -463,8 +488,10 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets weight.
      *
      * @param Weight $weight weight
+     *
+     * @return self
      */
-    public function setWeight(Weight $weight): self
+    public function setWeight($weight)
     {
         if (is_null($weight)) {
             throw new \InvalidArgumentException('non-nullable weight cannot be null');
@@ -492,7 +519,7 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -503,7 +530,7 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -531,15 +558,17 @@ class BoxUpdateInput implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * ContentModule.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\aplusContent\v2020_11_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ContentModule';
+    protected static $openAPIModelName = 'ContentModule';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'content_module_type' => '\SpApi\Model\aplusContent\v2020_11_01\ContentModuleType',
         'standard_company_logo' => '\SpApi\Model\aplusContent\v2020_11_01\StandardCompanyLogoModule',
         'standard_comparison_table' => '\SpApi\Model\aplusContent\v2020_11_01\StandardComparisonTableModule',
@@ -76,7 +77,8 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
         'standard_single_side_image' => '\SpApi\Model\aplusContent\v2020_11_01\StandardSingleSideImageModule',
         'standard_tech_specs' => '\SpApi\Model\aplusContent\v2020_11_01\StandardTechSpecsModule',
         'standard_text' => '\SpApi\Model\aplusContent\v2020_11_01\StandardTextModule',
-        'standard_three_image_text' => '\SpApi\Model\aplusContent\v2020_11_01\StandardThreeImageTextModule'];
+        'standard_three_image_text' => '\SpApi\Model\aplusContent\v2020_11_01\StandardThreeImageTextModule',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -87,7 +89,7 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'content_module_type' => null,
         'standard_company_logo' => null,
         'standard_comparison_table' => null,
@@ -103,7 +105,8 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
         'standard_single_side_image' => null,
         'standard_tech_specs' => null,
         'standard_text' => null,
-        'standard_three_image_text' => null];
+        'standard_three_image_text' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -112,21 +115,21 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'content_module_type' => false,
-        'standard_company_logo' => true,
-        'standard_comparison_table' => true,
-        'standard_four_image_text' => true,
-        'standard_four_image_text_quadrant' => true,
-        'standard_header_image_text' => true,
-        'standard_image_sidebar' => true,
-        'standard_image_text_overlay' => true,
-        'standard_multiple_image_text' => true,
-        'standard_product_description' => true,
-        'standard_single_image_highlights' => true,
-        'standard_single_image_specs_detail' => true,
-        'standard_single_side_image' => true,
-        'standard_tech_specs' => true,
-        'standard_text' => true,
-        'standard_three_image_text' => true,
+        'standard_company_logo' => false,
+        'standard_comparison_table' => false,
+        'standard_four_image_text' => false,
+        'standard_four_image_text_quadrant' => false,
+        'standard_header_image_text' => false,
+        'standard_image_sidebar' => false,
+        'standard_image_text_overlay' => false,
+        'standard_multiple_image_text' => false,
+        'standard_product_description' => false,
+        'standard_single_image_highlights' => false,
+        'standard_single_image_specs_detail' => false,
+        'standard_single_side_image' => false,
+        'standard_tech_specs' => false,
+        'standard_text' => false,
+        'standard_three_image_text' => false,
     ];
 
     /**
@@ -142,7 +145,7 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'content_module_type' => 'contentModuleType',
         'standard_company_logo' => 'standardCompanyLogo',
         'standard_comparison_table' => 'standardComparisonTable',
@@ -166,7 +169,7 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'content_module_type' => 'setContentModuleType',
         'standard_company_logo' => 'setStandardCompanyLogo',
         'standard_comparison_table' => 'setStandardComparisonTable',
@@ -190,7 +193,7 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'content_module_type' => 'getContentModuleType',
         'standard_company_logo' => 'getStandardCompanyLogo',
         'standard_comparison_table' => 'getStandardComparisonTable',
@@ -211,14 +214,16 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -255,16 +260,20 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -288,32 +297,40 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -323,7 +340,7 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -340,15 +357,17 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets content_module_type.
+     *
+     * @return ContentModuleType
      */
-    public function getContentModuleType(): string
+    public function getContentModuleType()
     {
         return $this->container['content_module_type'];
     }
@@ -356,9 +375,11 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets content_module_type.
      *
-     * @param string $content_module_type content_module_type
+     * @param ContentModuleType $content_module_type content_module_type
+     *
+     * @return self
      */
-    public function setContentModuleType(string $content_module_type): self
+    public function setContentModuleType($content_module_type)
     {
         if (is_null($content_module_type)) {
             throw new \InvalidArgumentException('non-nullable content_module_type cannot be null');
@@ -370,8 +391,10 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets standard_company_logo.
+     *
+     * @return null|StandardCompanyLogoModule
      */
-    public function getStandardCompanyLogo(): ?StandardCompanyLogoModule
+    public function getStandardCompanyLogo()
     {
         return $this->container['standard_company_logo'];
     }
@@ -380,18 +403,13 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets standard_company_logo.
      *
      * @param null|StandardCompanyLogoModule $standard_company_logo standard_company_logo
+     *
+     * @return self
      */
-    public function setStandardCompanyLogo(?StandardCompanyLogoModule $standard_company_logo): self
+    public function setStandardCompanyLogo($standard_company_logo)
     {
         if (is_null($standard_company_logo)) {
-            array_push($this->openAPINullablesSetToNull, 'standard_company_logo');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('standard_company_logo', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable standard_company_logo cannot be null');
         }
         $this->container['standard_company_logo'] = $standard_company_logo;
 
@@ -400,8 +418,10 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets standard_comparison_table.
+     *
+     * @return null|StandardComparisonTableModule
      */
-    public function getStandardComparisonTable(): ?StandardComparisonTableModule
+    public function getStandardComparisonTable()
     {
         return $this->container['standard_comparison_table'];
     }
@@ -410,18 +430,13 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets standard_comparison_table.
      *
      * @param null|StandardComparisonTableModule $standard_comparison_table standard_comparison_table
+     *
+     * @return self
      */
-    public function setStandardComparisonTable(?StandardComparisonTableModule $standard_comparison_table): self
+    public function setStandardComparisonTable($standard_comparison_table)
     {
         if (is_null($standard_comparison_table)) {
-            array_push($this->openAPINullablesSetToNull, 'standard_comparison_table');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('standard_comparison_table', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable standard_comparison_table cannot be null');
         }
         $this->container['standard_comparison_table'] = $standard_comparison_table;
 
@@ -430,8 +445,10 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets standard_four_image_text.
+     *
+     * @return null|StandardFourImageTextModule
      */
-    public function getStandardFourImageText(): ?StandardFourImageTextModule
+    public function getStandardFourImageText()
     {
         return $this->container['standard_four_image_text'];
     }
@@ -440,18 +457,13 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets standard_four_image_text.
      *
      * @param null|StandardFourImageTextModule $standard_four_image_text standard_four_image_text
+     *
+     * @return self
      */
-    public function setStandardFourImageText(?StandardFourImageTextModule $standard_four_image_text): self
+    public function setStandardFourImageText($standard_four_image_text)
     {
         if (is_null($standard_four_image_text)) {
-            array_push($this->openAPINullablesSetToNull, 'standard_four_image_text');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('standard_four_image_text', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable standard_four_image_text cannot be null');
         }
         $this->container['standard_four_image_text'] = $standard_four_image_text;
 
@@ -460,8 +472,10 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets standard_four_image_text_quadrant.
+     *
+     * @return null|StandardFourImageTextQuadrantModule
      */
-    public function getStandardFourImageTextQuadrant(): ?StandardFourImageTextQuadrantModule
+    public function getStandardFourImageTextQuadrant()
     {
         return $this->container['standard_four_image_text_quadrant'];
     }
@@ -470,18 +484,13 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets standard_four_image_text_quadrant.
      *
      * @param null|StandardFourImageTextQuadrantModule $standard_four_image_text_quadrant standard_four_image_text_quadrant
+     *
+     * @return self
      */
-    public function setStandardFourImageTextQuadrant(?StandardFourImageTextQuadrantModule $standard_four_image_text_quadrant): self
+    public function setStandardFourImageTextQuadrant($standard_four_image_text_quadrant)
     {
         if (is_null($standard_four_image_text_quadrant)) {
-            array_push($this->openAPINullablesSetToNull, 'standard_four_image_text_quadrant');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('standard_four_image_text_quadrant', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable standard_four_image_text_quadrant cannot be null');
         }
         $this->container['standard_four_image_text_quadrant'] = $standard_four_image_text_quadrant;
 
@@ -490,8 +499,10 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets standard_header_image_text.
+     *
+     * @return null|StandardHeaderImageTextModule
      */
-    public function getStandardHeaderImageText(): ?StandardHeaderImageTextModule
+    public function getStandardHeaderImageText()
     {
         return $this->container['standard_header_image_text'];
     }
@@ -500,18 +511,13 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets standard_header_image_text.
      *
      * @param null|StandardHeaderImageTextModule $standard_header_image_text standard_header_image_text
+     *
+     * @return self
      */
-    public function setStandardHeaderImageText(?StandardHeaderImageTextModule $standard_header_image_text): self
+    public function setStandardHeaderImageText($standard_header_image_text)
     {
         if (is_null($standard_header_image_text)) {
-            array_push($this->openAPINullablesSetToNull, 'standard_header_image_text');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('standard_header_image_text', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable standard_header_image_text cannot be null');
         }
         $this->container['standard_header_image_text'] = $standard_header_image_text;
 
@@ -520,8 +526,10 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets standard_image_sidebar.
+     *
+     * @return null|StandardImageSidebarModule
      */
-    public function getStandardImageSidebar(): ?StandardImageSidebarModule
+    public function getStandardImageSidebar()
     {
         return $this->container['standard_image_sidebar'];
     }
@@ -530,18 +538,13 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets standard_image_sidebar.
      *
      * @param null|StandardImageSidebarModule $standard_image_sidebar standard_image_sidebar
+     *
+     * @return self
      */
-    public function setStandardImageSidebar(?StandardImageSidebarModule $standard_image_sidebar): self
+    public function setStandardImageSidebar($standard_image_sidebar)
     {
         if (is_null($standard_image_sidebar)) {
-            array_push($this->openAPINullablesSetToNull, 'standard_image_sidebar');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('standard_image_sidebar', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable standard_image_sidebar cannot be null');
         }
         $this->container['standard_image_sidebar'] = $standard_image_sidebar;
 
@@ -550,8 +553,10 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets standard_image_text_overlay.
+     *
+     * @return null|StandardImageTextOverlayModule
      */
-    public function getStandardImageTextOverlay(): ?StandardImageTextOverlayModule
+    public function getStandardImageTextOverlay()
     {
         return $this->container['standard_image_text_overlay'];
     }
@@ -560,18 +565,13 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets standard_image_text_overlay.
      *
      * @param null|StandardImageTextOverlayModule $standard_image_text_overlay standard_image_text_overlay
+     *
+     * @return self
      */
-    public function setStandardImageTextOverlay(?StandardImageTextOverlayModule $standard_image_text_overlay): self
+    public function setStandardImageTextOverlay($standard_image_text_overlay)
     {
         if (is_null($standard_image_text_overlay)) {
-            array_push($this->openAPINullablesSetToNull, 'standard_image_text_overlay');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('standard_image_text_overlay', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable standard_image_text_overlay cannot be null');
         }
         $this->container['standard_image_text_overlay'] = $standard_image_text_overlay;
 
@@ -580,8 +580,10 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets standard_multiple_image_text.
+     *
+     * @return null|StandardMultipleImageTextModule
      */
-    public function getStandardMultipleImageText(): ?StandardMultipleImageTextModule
+    public function getStandardMultipleImageText()
     {
         return $this->container['standard_multiple_image_text'];
     }
@@ -590,18 +592,13 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets standard_multiple_image_text.
      *
      * @param null|StandardMultipleImageTextModule $standard_multiple_image_text standard_multiple_image_text
+     *
+     * @return self
      */
-    public function setStandardMultipleImageText(?StandardMultipleImageTextModule $standard_multiple_image_text): self
+    public function setStandardMultipleImageText($standard_multiple_image_text)
     {
         if (is_null($standard_multiple_image_text)) {
-            array_push($this->openAPINullablesSetToNull, 'standard_multiple_image_text');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('standard_multiple_image_text', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable standard_multiple_image_text cannot be null');
         }
         $this->container['standard_multiple_image_text'] = $standard_multiple_image_text;
 
@@ -610,8 +607,10 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets standard_product_description.
+     *
+     * @return null|StandardProductDescriptionModule
      */
-    public function getStandardProductDescription(): ?StandardProductDescriptionModule
+    public function getStandardProductDescription()
     {
         return $this->container['standard_product_description'];
     }
@@ -620,18 +619,13 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets standard_product_description.
      *
      * @param null|StandardProductDescriptionModule $standard_product_description standard_product_description
+     *
+     * @return self
      */
-    public function setStandardProductDescription(?StandardProductDescriptionModule $standard_product_description): self
+    public function setStandardProductDescription($standard_product_description)
     {
         if (is_null($standard_product_description)) {
-            array_push($this->openAPINullablesSetToNull, 'standard_product_description');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('standard_product_description', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable standard_product_description cannot be null');
         }
         $this->container['standard_product_description'] = $standard_product_description;
 
@@ -640,8 +634,10 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets standard_single_image_highlights.
+     *
+     * @return null|StandardSingleImageHighlightsModule
      */
-    public function getStandardSingleImageHighlights(): ?StandardSingleImageHighlightsModule
+    public function getStandardSingleImageHighlights()
     {
         return $this->container['standard_single_image_highlights'];
     }
@@ -650,18 +646,13 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets standard_single_image_highlights.
      *
      * @param null|StandardSingleImageHighlightsModule $standard_single_image_highlights standard_single_image_highlights
+     *
+     * @return self
      */
-    public function setStandardSingleImageHighlights(?StandardSingleImageHighlightsModule $standard_single_image_highlights): self
+    public function setStandardSingleImageHighlights($standard_single_image_highlights)
     {
         if (is_null($standard_single_image_highlights)) {
-            array_push($this->openAPINullablesSetToNull, 'standard_single_image_highlights');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('standard_single_image_highlights', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable standard_single_image_highlights cannot be null');
         }
         $this->container['standard_single_image_highlights'] = $standard_single_image_highlights;
 
@@ -670,8 +661,10 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets standard_single_image_specs_detail.
+     *
+     * @return null|StandardSingleImageSpecsDetailModule
      */
-    public function getStandardSingleImageSpecsDetail(): ?StandardSingleImageSpecsDetailModule
+    public function getStandardSingleImageSpecsDetail()
     {
         return $this->container['standard_single_image_specs_detail'];
     }
@@ -680,18 +673,13 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets standard_single_image_specs_detail.
      *
      * @param null|StandardSingleImageSpecsDetailModule $standard_single_image_specs_detail standard_single_image_specs_detail
+     *
+     * @return self
      */
-    public function setStandardSingleImageSpecsDetail(?StandardSingleImageSpecsDetailModule $standard_single_image_specs_detail): self
+    public function setStandardSingleImageSpecsDetail($standard_single_image_specs_detail)
     {
         if (is_null($standard_single_image_specs_detail)) {
-            array_push($this->openAPINullablesSetToNull, 'standard_single_image_specs_detail');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('standard_single_image_specs_detail', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable standard_single_image_specs_detail cannot be null');
         }
         $this->container['standard_single_image_specs_detail'] = $standard_single_image_specs_detail;
 
@@ -700,8 +688,10 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets standard_single_side_image.
+     *
+     * @return null|StandardSingleSideImageModule
      */
-    public function getStandardSingleSideImage(): ?StandardSingleSideImageModule
+    public function getStandardSingleSideImage()
     {
         return $this->container['standard_single_side_image'];
     }
@@ -710,18 +700,13 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets standard_single_side_image.
      *
      * @param null|StandardSingleSideImageModule $standard_single_side_image standard_single_side_image
+     *
+     * @return self
      */
-    public function setStandardSingleSideImage(?StandardSingleSideImageModule $standard_single_side_image): self
+    public function setStandardSingleSideImage($standard_single_side_image)
     {
         if (is_null($standard_single_side_image)) {
-            array_push($this->openAPINullablesSetToNull, 'standard_single_side_image');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('standard_single_side_image', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable standard_single_side_image cannot be null');
         }
         $this->container['standard_single_side_image'] = $standard_single_side_image;
 
@@ -730,8 +715,10 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets standard_tech_specs.
+     *
+     * @return null|StandardTechSpecsModule
      */
-    public function getStandardTechSpecs(): ?StandardTechSpecsModule
+    public function getStandardTechSpecs()
     {
         return $this->container['standard_tech_specs'];
     }
@@ -740,18 +727,13 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets standard_tech_specs.
      *
      * @param null|StandardTechSpecsModule $standard_tech_specs standard_tech_specs
+     *
+     * @return self
      */
-    public function setStandardTechSpecs(?StandardTechSpecsModule $standard_tech_specs): self
+    public function setStandardTechSpecs($standard_tech_specs)
     {
         if (is_null($standard_tech_specs)) {
-            array_push($this->openAPINullablesSetToNull, 'standard_tech_specs');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('standard_tech_specs', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable standard_tech_specs cannot be null');
         }
         $this->container['standard_tech_specs'] = $standard_tech_specs;
 
@@ -760,8 +742,10 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets standard_text.
+     *
+     * @return null|StandardTextModule
      */
-    public function getStandardText(): ?StandardTextModule
+    public function getStandardText()
     {
         return $this->container['standard_text'];
     }
@@ -770,18 +754,13 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets standard_text.
      *
      * @param null|StandardTextModule $standard_text standard_text
+     *
+     * @return self
      */
-    public function setStandardText(?StandardTextModule $standard_text): self
+    public function setStandardText($standard_text)
     {
         if (is_null($standard_text)) {
-            array_push($this->openAPINullablesSetToNull, 'standard_text');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('standard_text', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable standard_text cannot be null');
         }
         $this->container['standard_text'] = $standard_text;
 
@@ -790,8 +769,10 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets standard_three_image_text.
+     *
+     * @return null|StandardThreeImageTextModule
      */
-    public function getStandardThreeImageText(): ?StandardThreeImageTextModule
+    public function getStandardThreeImageText()
     {
         return $this->container['standard_three_image_text'];
     }
@@ -800,18 +781,13 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets standard_three_image_text.
      *
      * @param null|StandardThreeImageTextModule $standard_three_image_text standard_three_image_text
+     *
+     * @return self
      */
-    public function setStandardThreeImageText(?StandardThreeImageTextModule $standard_three_image_text): self
+    public function setStandardThreeImageText($standard_three_image_text)
     {
         if (is_null($standard_three_image_text)) {
-            array_push($this->openAPINullablesSetToNull, 'standard_three_image_text');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('standard_three_image_text', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable standard_three_image_text cannot be null');
         }
         $this->container['standard_three_image_text'] = $standard_three_image_text;
 
@@ -836,7 +812,7 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -847,7 +823,7 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -875,15 +851,17 @@ class ContentModule implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

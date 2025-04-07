@@ -3,7 +3,7 @@
 /**
  * PostContentDocumentResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\aplusContent\v2020_11_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -50,17 +49,20 @@ class PostContentDocumentResponse implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'PostContentDocumentResponse';
+    protected static $openAPIModelName = 'PostContentDocumentResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'warnings' => '\SpApi\Model\aplusContent\v2020_11_01\Error[]',
-        'content_reference_key' => 'string'];
+        'content_reference_key' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -71,9 +73,10 @@ class PostContentDocumentResponse implements ModelInterface, \ArrayAccess, \Json
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'warnings' => null,
-        'content_reference_key' => null];
+        'content_reference_key' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -81,7 +84,7 @@ class PostContentDocumentResponse implements ModelInterface, \ArrayAccess, \Json
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'warnings' => true,
+        'warnings' => false,
         'content_reference_key' => false,
     ];
 
@@ -98,7 +101,7 @@ class PostContentDocumentResponse implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'warnings' => 'warnings',
         'content_reference_key' => 'contentReferenceKey',
     ];
@@ -108,7 +111,7 @@ class PostContentDocumentResponse implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'warnings' => 'setWarnings',
         'content_reference_key' => 'setContentReferenceKey',
     ];
@@ -118,21 +121,23 @@ class PostContentDocumentResponse implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'warnings' => 'getWarnings',
         'content_reference_key' => 'getContentReferenceKey',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -155,16 +160,20 @@ class PostContentDocumentResponse implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -188,32 +197,40 @@ class PostContentDocumentResponse implements ModelInterface, \ArrayAccess, \Json
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -223,7 +240,7 @@ class PostContentDocumentResponse implements ModelInterface, \ArrayAccess, \Json
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -243,15 +260,17 @@ class PostContentDocumentResponse implements ModelInterface, \ArrayAccess, \Json
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets warnings.
+     *
+     * @return null|Error[]
      */
-    public function getWarnings(): ?array
+    public function getWarnings()
     {
         return $this->container['warnings'];
     }
@@ -259,19 +278,14 @@ class PostContentDocumentResponse implements ModelInterface, \ArrayAccess, \Json
     /**
      * Sets warnings.
      *
-     * @param null|array $warnings a set of messages to the user, such as warnings or comments
+     * @param null|Error[] $warnings a set of messages to the user, such as warnings or comments
+     *
+     * @return self
      */
-    public function setWarnings(?array $warnings): self
+    public function setWarnings($warnings)
     {
         if (is_null($warnings)) {
-            array_push($this->openAPINullablesSetToNull, 'warnings');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('warnings', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable warnings cannot be null');
         }
 
         $this->container['warnings'] = $warnings;
@@ -281,8 +295,10 @@ class PostContentDocumentResponse implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Gets content_reference_key.
+     *
+     * @return string
      */
-    public function getContentReferenceKey(): string
+    public function getContentReferenceKey()
     {
         return $this->container['content_reference_key'];
     }
@@ -291,8 +307,10 @@ class PostContentDocumentResponse implements ModelInterface, \ArrayAccess, \Json
      * Sets content_reference_key.
      *
      * @param string $content_reference_key A unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier.
+     *
+     * @return self
      */
-    public function setContentReferenceKey(string $content_reference_key): self
+    public function setContentReferenceKey($content_reference_key)
     {
         if (is_null($content_reference_key)) {
             throw new \InvalidArgumentException('non-nullable content_reference_key cannot be null');
@@ -325,7 +343,7 @@ class PostContentDocumentResponse implements ModelInterface, \ArrayAccess, \Json
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -336,7 +354,7 @@ class PostContentDocumentResponse implements ModelInterface, \ArrayAccess, \Json
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -364,15 +382,17 @@ class PostContentDocumentResponse implements ModelInterface, \ArrayAccess, \Json
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

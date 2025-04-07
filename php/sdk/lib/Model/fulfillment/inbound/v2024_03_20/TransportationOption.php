@@ -3,7 +3,7 @@
 /**
  * TransportationOption.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'TransportationOption';
+    protected static $openAPIModelName = 'TransportationOption';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'carrier' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Carrier',
         'carrier_appointment' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\CarrierAppointment',
         'preconditions' => 'string[]',
@@ -68,7 +69,8 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
         'shipment_id' => 'string',
         'shipping_mode' => 'string',
         'shipping_solution' => 'string',
-        'transportation_option_id' => 'string'];
+        'transportation_option_id' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -79,7 +81,7 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'carrier' => null,
         'carrier_appointment' => null,
         'preconditions' => null,
@@ -87,7 +89,8 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
         'shipment_id' => null,
         'shipping_mode' => null,
         'shipping_solution' => null,
-        'transportation_option_id' => null];
+        'transportation_option_id' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -96,9 +99,9 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
      */
     protected static array $openAPINullables = [
         'carrier' => false,
-        'carrier_appointment' => true,
+        'carrier_appointment' => false,
         'preconditions' => false,
-        'quote' => true,
+        'quote' => false,
         'shipment_id' => false,
         'shipping_mode' => false,
         'shipping_solution' => false,
@@ -118,7 +121,7 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'carrier' => 'carrier',
         'carrier_appointment' => 'carrierAppointment',
         'preconditions' => 'preconditions',
@@ -134,7 +137,7 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'carrier' => 'setCarrier',
         'carrier_appointment' => 'setCarrierAppointment',
         'preconditions' => 'setPreconditions',
@@ -150,7 +153,7 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'carrier' => 'getCarrier',
         'carrier_appointment' => 'getCarrierAppointment',
         'preconditions' => 'getPreconditions',
@@ -163,14 +166,16 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -199,16 +204,20 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -232,32 +241,40 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -267,7 +284,7 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -338,15 +355,17 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets carrier.
+     *
+     * @return Carrier
      */
-    public function getCarrier(): Carrier
+    public function getCarrier()
     {
         return $this->container['carrier'];
     }
@@ -355,8 +374,10 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets carrier.
      *
      * @param Carrier $carrier carrier
+     *
+     * @return self
      */
-    public function setCarrier(Carrier $carrier): self
+    public function setCarrier($carrier)
     {
         if (is_null($carrier)) {
             throw new \InvalidArgumentException('non-nullable carrier cannot be null');
@@ -368,8 +389,10 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets carrier_appointment.
+     *
+     * @return null|CarrierAppointment
      */
-    public function getCarrierAppointment(): ?CarrierAppointment
+    public function getCarrierAppointment()
     {
         return $this->container['carrier_appointment'];
     }
@@ -378,18 +401,13 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets carrier_appointment.
      *
      * @param null|CarrierAppointment $carrier_appointment carrier_appointment
+     *
+     * @return self
      */
-    public function setCarrierAppointment(?CarrierAppointment $carrier_appointment): self
+    public function setCarrierAppointment($carrier_appointment)
     {
         if (is_null($carrier_appointment)) {
-            array_push($this->openAPINullablesSetToNull, 'carrier_appointment');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('carrier_appointment', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable carrier_appointment cannot be null');
         }
         $this->container['carrier_appointment'] = $carrier_appointment;
 
@@ -398,8 +416,10 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets preconditions.
+     *
+     * @return string[]
      */
-    public function getPreconditions(): array
+    public function getPreconditions()
     {
         return $this->container['preconditions'];
     }
@@ -407,9 +427,11 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Sets preconditions.
      *
-     * @param array $preconditions identifies a list of preconditions for confirming the transportation option
+     * @param string[] $preconditions identifies a list of preconditions for confirming the transportation option
+     *
+     * @return self
      */
-    public function setPreconditions(array $preconditions): self
+    public function setPreconditions($preconditions)
     {
         if (is_null($preconditions)) {
             throw new \InvalidArgumentException('non-nullable preconditions cannot be null');
@@ -421,8 +443,10 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets quote.
+     *
+     * @return null|Quote
      */
-    public function getQuote(): ?Quote
+    public function getQuote()
     {
         return $this->container['quote'];
     }
@@ -431,18 +455,13 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets quote.
      *
      * @param null|Quote $quote quote
+     *
+     * @return self
      */
-    public function setQuote(?Quote $quote): self
+    public function setQuote($quote)
     {
         if (is_null($quote)) {
-            array_push($this->openAPINullablesSetToNull, 'quote');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('quote', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable quote cannot be null');
         }
         $this->container['quote'] = $quote;
 
@@ -451,8 +470,10 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets shipment_id.
+     *
+     * @return string
      */
-    public function getShipmentId(): string
+    public function getShipmentId()
     {
         return $this->container['shipment_id'];
     }
@@ -461,8 +482,10 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets shipment_id.
      *
      * @param string $shipment_id Identifier of a shipment. A shipment contains the boxes and units being inbounded.
+     *
+     * @return self
      */
-    public function setShipmentId(string $shipment_id): self
+    public function setShipmentId($shipment_id)
     {
         if (is_null($shipment_id)) {
             throw new \InvalidArgumentException('non-nullable shipment_id cannot be null');
@@ -484,8 +507,10 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets shipping_mode.
+     *
+     * @return string
      */
-    public function getShippingMode(): string
+    public function getShippingMode()
     {
         return $this->container['shipping_mode'];
     }
@@ -494,8 +519,10 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets shipping_mode.
      *
      * @param string $shipping_mode Mode of shipment transportation that this option will provide.  Possible values: `GROUND_SMALL_PARCEL`, `FREIGHT_LTL`, `FREIGHT_FTL_PALLET`, `FREIGHT_FTL_NONPALLET`, `OCEAN_LCL`, `OCEAN_FCL`, `AIR_SMALL_PARCEL`, `AIR_SMALL_PARCEL_EXPRESS`.
+     *
+     * @return self
      */
-    public function setShippingMode(string $shipping_mode): self
+    public function setShippingMode($shipping_mode)
     {
         if (is_null($shipping_mode)) {
             throw new \InvalidArgumentException('non-nullable shipping_mode cannot be null');
@@ -514,8 +541,10 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets shipping_solution.
+     *
+     * @return string
      */
-    public function getShippingSolution(): string
+    public function getShippingSolution()
     {
         return $this->container['shipping_solution'];
     }
@@ -524,8 +553,10 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets shipping_solution.
      *
      * @param string $shipping_solution Shipping program for the option. Possible values: `AMAZON_PARTNERED_CARRIER`, `USE_YOUR_OWN_CARRIER`.
+     *
+     * @return self
      */
-    public function setShippingSolution(string $shipping_solution): self
+    public function setShippingSolution($shipping_solution)
     {
         if (is_null($shipping_solution)) {
             throw new \InvalidArgumentException('non-nullable shipping_solution cannot be null');
@@ -544,8 +575,10 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets transportation_option_id.
+     *
+     * @return string
      */
-    public function getTransportationOptionId(): string
+    public function getTransportationOptionId()
     {
         return $this->container['transportation_option_id'];
     }
@@ -554,8 +587,10 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets transportation_option_id.
      *
      * @param string $transportation_option_id Identifier of a transportation option. A transportation option represent one option for how to send a shipment.
+     *
+     * @return self
      */
-    public function setTransportationOptionId(string $transportation_option_id): self
+    public function setTransportationOptionId($transportation_option_id)
     {
         if (is_null($transportation_option_id)) {
             throw new \InvalidArgumentException('non-nullable transportation_option_id cannot be null');
@@ -593,7 +628,7 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -604,7 +639,7 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -632,15 +667,17 @@ class TransportationOption implements ModelInterface, \ArrayAccess, \JsonSeriali
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

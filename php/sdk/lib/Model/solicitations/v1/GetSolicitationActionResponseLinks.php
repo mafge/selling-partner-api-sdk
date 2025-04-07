@@ -3,7 +3,7 @@
 /**
  * GetSolicitationActionResponseLinks.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\solicitations\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -50,17 +49,20 @@ class GetSolicitationActionResponseLinks implements ModelInterface, \ArrayAccess
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetSolicitationActionResponse__links';
+    protected static $openAPIModelName = 'GetSolicitationActionResponse__links';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'self' => '\SpApi\Model\solicitations\v1\LinkObject',
-        'schema' => '\SpApi\Model\solicitations\v1\LinkObject'];
+        'schema' => '\SpApi\Model\solicitations\v1\LinkObject',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -71,9 +73,10 @@ class GetSolicitationActionResponseLinks implements ModelInterface, \ArrayAccess
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'self' => null,
-        'schema' => null];
+        'schema' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -98,7 +101,7 @@ class GetSolicitationActionResponseLinks implements ModelInterface, \ArrayAccess
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'self' => 'self',
         'schema' => 'schema',
     ];
@@ -108,7 +111,7 @@ class GetSolicitationActionResponseLinks implements ModelInterface, \ArrayAccess
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'self' => 'setSelf',
         'schema' => 'setSchema',
     ];
@@ -118,21 +121,23 @@ class GetSolicitationActionResponseLinks implements ModelInterface, \ArrayAccess
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'self' => 'getSelf',
         'schema' => 'getSchema',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -155,16 +160,20 @@ class GetSolicitationActionResponseLinks implements ModelInterface, \ArrayAccess
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -188,32 +197,40 @@ class GetSolicitationActionResponseLinks implements ModelInterface, \ArrayAccess
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -223,7 +240,7 @@ class GetSolicitationActionResponseLinks implements ModelInterface, \ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -243,15 +260,17 @@ class GetSolicitationActionResponseLinks implements ModelInterface, \ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets self.
+     *
+     * @return LinkObject
      */
-    public function getSelf(): LinkObject
+    public function getSelf()
     {
         return $this->container['self'];
     }
@@ -260,8 +279,10 @@ class GetSolicitationActionResponseLinks implements ModelInterface, \ArrayAccess
      * Sets self.
      *
      * @param LinkObject $self self
+     *
+     * @return self
      */
-    public function setSelf(LinkObject $self): self
+    public function setSelf($self)
     {
         if (is_null($self)) {
             throw new \InvalidArgumentException('non-nullable self cannot be null');
@@ -273,8 +294,10 @@ class GetSolicitationActionResponseLinks implements ModelInterface, \ArrayAccess
 
     /**
      * Gets schema.
+     *
+     * @return LinkObject
      */
-    public function getSchema(): LinkObject
+    public function getSchema()
     {
         return $this->container['schema'];
     }
@@ -283,8 +306,10 @@ class GetSolicitationActionResponseLinks implements ModelInterface, \ArrayAccess
      * Sets schema.
      *
      * @param LinkObject $schema schema
+     *
+     * @return self
      */
-    public function setSchema(LinkObject $schema): self
+    public function setSchema($schema)
     {
         if (is_null($schema)) {
             throw new \InvalidArgumentException('non-nullable schema cannot be null');
@@ -312,7 +337,7 @@ class GetSolicitationActionResponseLinks implements ModelInterface, \ArrayAccess
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -323,7 +348,7 @@ class GetSolicitationActionResponseLinks implements ModelInterface, \ArrayAccess
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -351,15 +376,17 @@ class GetSolicitationActionResponseLinks implements ModelInterface, \ArrayAccess
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

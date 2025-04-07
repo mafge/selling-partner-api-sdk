@@ -3,7 +3,7 @@
 /**
  * InboundOperationStatus.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class InboundOperationStatus implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'InboundOperationStatus';
+    protected static $openAPIModelName = 'InboundOperationStatus';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'operation' => 'string',
         'operation_id' => 'string',
         'operation_problems' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\OperationProblem[]',
-        'operation_status' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\OperationStatus'];
+        'operation_status' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\OperationStatus',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class InboundOperationStatus implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'operation' => null,
         'operation_id' => null,
         'operation_problems' => null,
-        'operation_status' => null];
+        'operation_status' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -106,7 +109,7 @@ class InboundOperationStatus implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'operation' => 'operation',
         'operation_id' => 'operationId',
         'operation_problems' => 'operationProblems',
@@ -118,7 +121,7 @@ class InboundOperationStatus implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'operation' => 'setOperation',
         'operation_id' => 'setOperationId',
         'operation_problems' => 'setOperationProblems',
@@ -130,7 +133,7 @@ class InboundOperationStatus implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'operation' => 'getOperation',
         'operation_id' => 'getOperationId',
         'operation_problems' => 'getOperationProblems',
@@ -139,14 +142,16 @@ class InboundOperationStatus implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class InboundOperationStatus implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class InboundOperationStatus implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class InboundOperationStatus implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -285,15 +302,17 @@ class InboundOperationStatus implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets operation.
+     *
+     * @return string
      */
-    public function getOperation(): string
+    public function getOperation()
     {
         return $this->container['operation'];
     }
@@ -302,8 +321,10 @@ class InboundOperationStatus implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets operation.
      *
      * @param string $operation the name of the operation in the asynchronous API call
+     *
+     * @return self
      */
-    public function setOperation(string $operation): self
+    public function setOperation($operation)
     {
         if (is_null($operation)) {
             throw new \InvalidArgumentException('non-nullable operation cannot be null');
@@ -322,8 +343,10 @@ class InboundOperationStatus implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets operation_id.
+     *
+     * @return string
      */
-    public function getOperationId(): string
+    public function getOperationId()
     {
         return $this->container['operation_id'];
     }
@@ -332,8 +355,10 @@ class InboundOperationStatus implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets operation_id.
      *
      * @param string $operation_id the operation ID returned by the asynchronous API call
+     *
+     * @return self
      */
-    public function setOperationId(string $operation_id): self
+    public function setOperationId($operation_id)
     {
         if (is_null($operation_id)) {
             throw new \InvalidArgumentException('non-nullable operation_id cannot be null');
@@ -355,8 +380,10 @@ class InboundOperationStatus implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets operation_problems.
+     *
+     * @return OperationProblem[]
      */
-    public function getOperationProblems(): array
+    public function getOperationProblems()
     {
         return $this->container['operation_problems'];
     }
@@ -364,9 +391,11 @@ class InboundOperationStatus implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Sets operation_problems.
      *
-     * @param array $operation_problems the problems in the processing of the asynchronous operation
+     * @param OperationProblem[] $operation_problems the problems in the processing of the asynchronous operation
+     *
+     * @return self
      */
-    public function setOperationProblems(array $operation_problems): self
+    public function setOperationProblems($operation_problems)
     {
         if (is_null($operation_problems)) {
             throw new \InvalidArgumentException('non-nullable operation_problems cannot be null');
@@ -378,8 +407,10 @@ class InboundOperationStatus implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets operation_status.
+     *
+     * @return OperationStatus
      */
-    public function getOperationStatus(): string
+    public function getOperationStatus()
     {
         return $this->container['operation_status'];
     }
@@ -387,9 +418,11 @@ class InboundOperationStatus implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Sets operation_status.
      *
-     * @param string $operation_status operation_status
+     * @param OperationStatus $operation_status operation_status
+     *
+     * @return self
      */
-    public function setOperationStatus(string $operation_status): self
+    public function setOperationStatus($operation_status)
     {
         if (is_null($operation_status)) {
             throw new \InvalidArgumentException('non-nullable operation_status cannot be null');
@@ -417,7 +450,7 @@ class InboundOperationStatus implements ModelInterface, \ArrayAccess, \JsonSeria
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -428,7 +461,7 @@ class InboundOperationStatus implements ModelInterface, \ArrayAccess, \JsonSeria
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -456,15 +489,17 @@ class InboundOperationStatus implements ModelInterface, \ArrayAccess, \JsonSeria
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

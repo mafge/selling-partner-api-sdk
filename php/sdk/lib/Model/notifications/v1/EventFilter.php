@@ -3,7 +3,7 @@
 /**
  * EventFilter.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\notifications\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -55,19 +54,22 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'EventFilter';
+    protected static $openAPIModelName = 'EventFilter';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'aggregation_settings' => '\SpApi\Model\notifications\v1\AggregationSettings',
         'marketplace_ids' => 'string[]',
         'order_change_types' => '\SpApi\Model\notifications\v1\OrderChangeTypeEnum[]',
-        'event_filter_type' => 'string'];
+        'event_filter_type' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -78,11 +80,12 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'aggregation_settings' => null,
         'marketplace_ids' => null,
         'order_change_types' => null,
-        'event_filter_type' => null];
+        'event_filter_type' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -90,9 +93,9 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'aggregation_settings' => true,
-        'marketplace_ids' => true,
-        'order_change_types' => true,
+        'aggregation_settings' => false,
+        'marketplace_ids' => false,
+        'order_change_types' => false,
         'event_filter_type' => false,
     ];
 
@@ -109,7 +112,7 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'aggregation_settings' => 'aggregationSettings',
         'marketplace_ids' => 'marketplaceIds',
         'order_change_types' => 'orderChangeTypes',
@@ -121,7 +124,7 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'aggregation_settings' => 'setAggregationSettings',
         'marketplace_ids' => 'setMarketplaceIds',
         'order_change_types' => 'setOrderChangeTypes',
@@ -133,7 +136,7 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'aggregation_settings' => 'getAggregationSettings',
         'marketplace_ids' => 'getMarketplaceIds',
         'order_change_types' => 'getOrderChangeTypes',
@@ -142,14 +145,16 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -174,16 +179,20 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -207,32 +216,40 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -242,7 +259,7 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getEventFilterTypeAllowableValues(): array
+    public function getEventFilterTypeAllowableValues()
     {
         return [
             self::EVENT_FILTER_TYPE_ANY_OFFER_CHANGED,
@@ -255,7 +272,7 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -280,15 +297,17 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets aggregation_settings.
+     *
+     * @return null|AggregationSettings
      */
-    public function getAggregationSettings(): ?AggregationSettings
+    public function getAggregationSettings()
     {
         return $this->container['aggregation_settings'];
     }
@@ -297,18 +316,13 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets aggregation_settings.
      *
      * @param null|AggregationSettings $aggregation_settings aggregation_settings
+     *
+     * @return self
      */
-    public function setAggregationSettings(?AggregationSettings $aggregation_settings): self
+    public function setAggregationSettings($aggregation_settings)
     {
         if (is_null($aggregation_settings)) {
-            array_push($this->openAPINullablesSetToNull, 'aggregation_settings');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('aggregation_settings', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable aggregation_settings cannot be null');
         }
         $this->container['aggregation_settings'] = $aggregation_settings;
 
@@ -317,8 +331,10 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets marketplace_ids.
+     *
+     * @return null|string[]
      */
-    public function getMarketplaceIds(): ?array
+    public function getMarketplaceIds()
     {
         return $this->container['marketplace_ids'];
     }
@@ -326,19 +342,14 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets marketplace_ids.
      *
-     * @param null|array $marketplace_ids A list of marketplace identifiers to subscribe to (for example: ATVPDKIKX0DER). To receive notifications in every marketplace, do not provide this list.
+     * @param null|string[] $marketplace_ids A list of marketplace identifiers to subscribe to (for example: ATVPDKIKX0DER). To receive notifications in every marketplace, do not provide this list.
+     *
+     * @return self
      */
-    public function setMarketplaceIds(?array $marketplace_ids): self
+    public function setMarketplaceIds($marketplace_ids)
     {
         if (is_null($marketplace_ids)) {
-            array_push($this->openAPINullablesSetToNull, 'marketplace_ids');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('marketplace_ids', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable marketplace_ids cannot be null');
         }
         $this->container['marketplace_ids'] = $marketplace_ids;
 
@@ -347,8 +358,10 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets order_change_types.
+     *
+     * @return null|OrderChangeTypeEnum[]
      */
-    public function getOrderChangeTypes(): ?array
+    public function getOrderChangeTypes()
     {
         return $this->container['order_change_types'];
     }
@@ -356,19 +369,14 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets order_change_types.
      *
-     * @param null|array $order_change_types A list of order change types to subscribe to (for example: `BuyerRequestedChange`). To receive notifications of all change types, do not provide this list.
+     * @param null|OrderChangeTypeEnum[] $order_change_types A list of order change types to subscribe to (for example: `BuyerRequestedChange`). To receive notifications of all change types, do not provide this list.
+     *
+     * @return self
      */
-    public function setOrderChangeTypes(?array $order_change_types): self
+    public function setOrderChangeTypes($order_change_types)
     {
         if (is_null($order_change_types)) {
-            array_push($this->openAPINullablesSetToNull, 'order_change_types');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('order_change_types', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable order_change_types cannot be null');
         }
         $this->container['order_change_types'] = $order_change_types;
 
@@ -377,8 +385,10 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets event_filter_type.
+     *
+     * @return string
      */
-    public function getEventFilterType(): string
+    public function getEventFilterType()
     {
         return $this->container['event_filter_type'];
     }
@@ -387,8 +397,10 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets event_filter_type.
      *
      * @param string $event_filter_type An `eventFilterType` value that is supported by the specific `notificationType`. This is used by the subscription service to determine the type of event filter. Refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values) to determine if an `eventFilterType` is supported.
+     *
+     * @return self
      */
-    public function setEventFilterType(string $event_filter_type): self
+    public function setEventFilterType($event_filter_type)
     {
         if (is_null($event_filter_type)) {
             throw new \InvalidArgumentException('non-nullable event_filter_type cannot be null');
@@ -426,7 +438,7 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -437,7 +449,7 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -465,15 +477,17 @@ class EventFilter implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

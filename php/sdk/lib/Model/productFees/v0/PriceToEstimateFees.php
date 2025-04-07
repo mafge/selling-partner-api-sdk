@@ -3,7 +3,7 @@
 /**
  * PriceToEstimateFees.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\productFees\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class PriceToEstimateFees implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'PriceToEstimateFees';
+    protected static $openAPIModelName = 'PriceToEstimateFees';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'listing_price' => '\SpApi\Model\productFees\v0\MoneyType',
         'shipping' => '\SpApi\Model\productFees\v0\MoneyType',
-        'points' => '\SpApi\Model\productFees\v0\Points'];
+        'points' => '\SpApi\Model\productFees\v0\Points',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class PriceToEstimateFees implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'listing_price' => null,
         'shipping' => null,
-        'points' => null];
+        'points' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -86,8 +89,8 @@ class PriceToEstimateFees implements ModelInterface, \ArrayAccess, \JsonSerializ
      */
     protected static array $openAPINullables = [
         'listing_price' => false,
-        'shipping' => true,
-        'points' => true,
+        'shipping' => false,
+        'points' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class PriceToEstimateFees implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'listing_price' => 'ListingPrice',
         'shipping' => 'Shipping',
         'points' => 'Points',
@@ -114,7 +117,7 @@ class PriceToEstimateFees implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'listing_price' => 'setListingPrice',
         'shipping' => 'setShipping',
         'points' => 'setPoints',
@@ -125,7 +128,7 @@ class PriceToEstimateFees implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'listing_price' => 'getListingPrice',
         'shipping' => 'getShipping',
         'points' => 'getPoints',
@@ -133,14 +136,16 @@ class PriceToEstimateFees implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class PriceToEstimateFees implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class PriceToEstimateFees implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class PriceToEstimateFees implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -249,15 +266,17 @@ class PriceToEstimateFees implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets listing_price.
+     *
+     * @return MoneyType
      */
-    public function getListingPrice(): MoneyType
+    public function getListingPrice()
     {
         return $this->container['listing_price'];
     }
@@ -266,8 +285,10 @@ class PriceToEstimateFees implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets listing_price.
      *
      * @param MoneyType $listing_price listing_price
+     *
+     * @return self
      */
-    public function setListingPrice(MoneyType $listing_price): self
+    public function setListingPrice($listing_price)
     {
         if (is_null($listing_price)) {
             throw new \InvalidArgumentException('non-nullable listing_price cannot be null');
@@ -279,8 +300,10 @@ class PriceToEstimateFees implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets shipping.
+     *
+     * @return null|MoneyType
      */
-    public function getShipping(): ?MoneyType
+    public function getShipping()
     {
         return $this->container['shipping'];
     }
@@ -289,18 +312,13 @@ class PriceToEstimateFees implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets shipping.
      *
      * @param null|MoneyType $shipping shipping
+     *
+     * @return self
      */
-    public function setShipping(?MoneyType $shipping): self
+    public function setShipping($shipping)
     {
         if (is_null($shipping)) {
-            array_push($this->openAPINullablesSetToNull, 'shipping');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipping', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipping cannot be null');
         }
         $this->container['shipping'] = $shipping;
 
@@ -309,8 +327,10 @@ class PriceToEstimateFees implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets points.
+     *
+     * @return null|Points
      */
-    public function getPoints(): ?Points
+    public function getPoints()
     {
         return $this->container['points'];
     }
@@ -319,18 +339,13 @@ class PriceToEstimateFees implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets points.
      *
      * @param null|Points $points points
+     *
+     * @return self
      */
-    public function setPoints(?Points $points): self
+    public function setPoints($points)
     {
         if (is_null($points)) {
-            array_push($this->openAPINullablesSetToNull, 'points');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('points', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable points cannot be null');
         }
         $this->container['points'] = $points;
 
@@ -355,7 +370,7 @@ class PriceToEstimateFees implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -366,7 +381,7 @@ class PriceToEstimateFees implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -394,15 +409,17 @@ class PriceToEstimateFees implements ModelInterface, \ArrayAccess, \JsonSerializ
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

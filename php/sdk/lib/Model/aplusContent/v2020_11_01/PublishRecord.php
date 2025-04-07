@@ -3,7 +3,7 @@
 /**
  * PublishRecord.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\aplusContent\v2020_11_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'PublishRecord';
+    protected static $openAPIModelName = 'PublishRecord';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'marketplace_id' => 'string',
         'locale' => 'string',
         'asin' => 'string',
         'content_type' => '\SpApi\Model\aplusContent\v2020_11_01\ContentType',
         'content_sub_type' => 'string',
-        'content_reference_key' => 'string'];
+        'content_reference_key' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'marketplace_id' => null,
         'locale' => null,
         'asin' => null,
         'content_type' => null,
         'content_sub_type' => null,
-        'content_reference_key' => null];
+        'content_reference_key' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -95,7 +98,7 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
         'locale' => false,
         'asin' => false,
         'content_type' => false,
-        'content_sub_type' => true,
+        'content_sub_type' => false,
         'content_reference_key' => false,
     ];
 
@@ -112,7 +115,7 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'marketplace_id' => 'marketplaceId',
         'locale' => 'locale',
         'asin' => 'asin',
@@ -126,7 +129,7 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
         'locale' => 'setLocale',
         'asin' => 'setAsin',
@@ -140,7 +143,7 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
         'locale' => 'getLocale',
         'asin' => 'getAsin',
@@ -151,14 +154,16 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -301,15 +318,17 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
-    public function getMarketplaceId(): string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -318,8 +337,10 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets marketplace_id.
      *
      * @param string $marketplace_id The marketplace ID is the globally unique identifier of a marketplace. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     *
+     * @return self
      */
-    public function setMarketplaceId(string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
             throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
@@ -336,8 +357,10 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets locale.
+     *
+     * @return string
      */
-    public function getLocale(): string
+    public function getLocale()
     {
         return $this->container['locale'];
     }
@@ -346,8 +369,10 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets locale.
      *
      * @param string $locale The IETF language tag, which supports the primary language subtag and one secondary language subtag. The secondary language subtag is usually a regional designation. This doesn't support subtags other than the primary and secondary subtags. **Pattern:** ^[a-z]{2,}-[A-Z0-9]{2,}$
+     *
+     * @return self
      */
-    public function setLocale(string $locale): self
+    public function setLocale($locale)
     {
         if (is_null($locale)) {
             throw new \InvalidArgumentException('non-nullable locale cannot be null');
@@ -364,8 +389,10 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets asin.
+     *
+     * @return string
      */
-    public function getAsin(): string
+    public function getAsin()
     {
         return $this->container['asin'];
     }
@@ -374,8 +401,10 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets asin.
      *
      * @param string $asin the Amazon Standard Identification Number (ASIN)
+     *
+     * @return self
      */
-    public function setAsin(string $asin): self
+    public function setAsin($asin)
     {
         if (is_null($asin)) {
             throw new \InvalidArgumentException('non-nullable asin cannot be null');
@@ -392,8 +421,10 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets content_type.
+     *
+     * @return ContentType
      */
-    public function getContentType(): string
+    public function getContentType()
     {
         return $this->container['content_type'];
     }
@@ -401,9 +432,11 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets content_type.
      *
-     * @param string $content_type content_type
+     * @param ContentType $content_type content_type
+     *
+     * @return self
      */
-    public function setContentType(string $content_type): self
+    public function setContentType($content_type)
     {
         if (is_null($content_type)) {
             throw new \InvalidArgumentException('non-nullable content_type cannot be null');
@@ -415,8 +448,10 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets content_sub_type.
+     *
+     * @return null|string
      */
-    public function getContentSubType(): ?string
+    public function getContentSubType()
     {
         return $this->container['content_sub_type'];
     }
@@ -425,21 +460,16 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets content_sub_type.
      *
      * @param null|string $content_sub_type The A+ Content document subtype. This represents a special-purpose type of an A+ Content document. Not every A+ Content document type has a subtype, and subtypes can change at any time.
+     *
+     * @return self
      */
-    public function setContentSubType(?string $content_sub_type): self
+    public function setContentSubType($content_sub_type)
     {
         if (is_null($content_sub_type)) {
-            array_push($this->openAPINullablesSetToNull, 'content_sub_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('content_sub_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable content_sub_type cannot be null');
         }
 
-        if (!is_null($content_sub_type) && (mb_strlen($content_sub_type) < 1)) {
+        if (mb_strlen($content_sub_type) < 1) {
             throw new \InvalidArgumentException('invalid length for $content_sub_type when calling PublishRecord., must be bigger than or equal to 1.');
         }
 
@@ -450,8 +480,10 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets content_reference_key.
+     *
+     * @return string
      */
-    public function getContentReferenceKey(): string
+    public function getContentReferenceKey()
     {
         return $this->container['content_reference_key'];
     }
@@ -460,8 +492,10 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets content_reference_key.
      *
      * @param string $content_reference_key A unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier.
+     *
+     * @return self
      */
-    public function setContentReferenceKey(string $content_reference_key): self
+    public function setContentReferenceKey($content_reference_key)
     {
         if (is_null($content_reference_key)) {
             throw new \InvalidArgumentException('non-nullable content_reference_key cannot be null');
@@ -494,7 +528,7 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -505,7 +539,7 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -533,15 +567,17 @@ class PublishRecord implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

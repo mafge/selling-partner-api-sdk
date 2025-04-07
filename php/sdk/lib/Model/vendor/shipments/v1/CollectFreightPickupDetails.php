@@ -2,7 +2,7 @@
 /**
  * CollectFreightPickupDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * CollectFreightPickupDetails Class Doc Comment
@@ -52,17 +50,18 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'CollectFreightPickupDetails';
+    protected static $openAPIModelName = 'CollectFreightPickupDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'requested_pick_up' => '\DateTime',
-             'scheduled_pick_up' => '\DateTime',
-             'carrier_assignment_date' => '\DateTime'    ];
+    protected static $openAPITypes = [
+        'requested_pick_up' => '\DateTime',
+        'scheduled_pick_up' => '\DateTime',
+        'carrier_assignment_date' => '\DateTime'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,10 +70,11 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'requested_pick_up' => 'date-time',
-            'scheduled_pick_up' => 'date-time',
-            'carrier_assignment_date' => 'date-time'    ];
+    protected static $openAPIFormats = [
+        'requested_pick_up' => 'date-time',
+        'scheduled_pick_up' => 'date-time',
+        'carrier_assignment_date' => 'date-time'
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -82,9 +82,9 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'requested_pick_up' => true,
-        'scheduled_pick_up' => true,
-        'carrier_assignment_date' => true
+        'requested_pick_up' => false,
+        'scheduled_pick_up' => false,
+        'carrier_assignment_date' => false
     ];
 
     /**
@@ -99,7 +99,7 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -109,7 +109,7 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -172,11 +172,10 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'requested_pick_up' => 'requestedPickUp',
-                'scheduled_pick_up' => 'scheduledPickUp',
-                'carrier_assignment_date' => 'carrierAssignmentDate'
-        
+        'scheduled_pick_up' => 'scheduledPickUp',
+        'carrier_assignment_date' => 'carrierAssignmentDate'
     ];
 
     /**
@@ -184,7 +183,7 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'requested_pick_up' => 'setRequestedPickUp',
         'scheduled_pick_up' => 'setScheduledPickUp',
         'carrier_assignment_date' => 'setCarrierAssignmentDate'
@@ -195,7 +194,7 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'requested_pick_up' => 'getRequestedPickUp',
         'scheduled_pick_up' => 'getScheduledPickUp',
         'carrier_assignment_date' => 'getCarrierAssignmentDate'
@@ -207,7 +206,7 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -217,7 +216,7 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -227,7 +226,7 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -237,7 +236,7 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,17 +245,17 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('requested_pick_up', $data ?? [], null);
         $this->setIfExists('scheduled_pick_up', $data ?? [], null);
@@ -286,7 +285,7 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -299,7 +298,7 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -310,7 +309,7 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return \DateTime|null
      */
-    public function getRequestedPickUp(): ?\DateTime
+    public function getRequestedPickUp()
     {
         return $this->container['requested_pick_up'];
     }
@@ -322,17 +321,10 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setRequestedPickUp(?\DateTime $requested_pick_up): self
+    public function setRequestedPickUp($requested_pick_up)
     {
         if (is_null($requested_pick_up)) {
-            array_push($this->openAPINullablesSetToNull, 'requested_pick_up');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('requested_pick_up', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable requested_pick_up cannot be null');
         }
         $this->container['requested_pick_up'] = $requested_pick_up;
 
@@ -344,7 +336,7 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return \DateTime|null
      */
-    public function getScheduledPickUp(): ?\DateTime
+    public function getScheduledPickUp()
     {
         return $this->container['scheduled_pick_up'];
     }
@@ -356,17 +348,10 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setScheduledPickUp(?\DateTime $scheduled_pick_up): self
+    public function setScheduledPickUp($scheduled_pick_up)
     {
         if (is_null($scheduled_pick_up)) {
-            array_push($this->openAPINullablesSetToNull, 'scheduled_pick_up');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('scheduled_pick_up', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable scheduled_pick_up cannot be null');
         }
         $this->container['scheduled_pick_up'] = $scheduled_pick_up;
 
@@ -378,7 +363,7 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return \DateTime|null
      */
-    public function getCarrierAssignmentDate(): ?\DateTime
+    public function getCarrierAssignmentDate()
     {
         return $this->container['carrier_assignment_date'];
     }
@@ -390,24 +375,15 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setCarrierAssignmentDate(?\DateTime $carrier_assignment_date): self
+    public function setCarrierAssignmentDate($carrier_assignment_date)
     {
         if (is_null($carrier_assignment_date)) {
-            array_push($this->openAPINullablesSetToNull, 'carrier_assignment_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('carrier_assignment_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable carrier_assignment_date cannot be null');
         }
         $this->container['carrier_assignment_date'] = $carrier_assignment_date;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -428,7 +404,7 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -441,7 +417,7 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -470,7 +446,7 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -493,7 +469,7 @@ class CollectFreightPickupDetails implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

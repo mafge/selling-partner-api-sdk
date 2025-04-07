@@ -2,7 +2,7 @@
 /**
  * TransportShipmentMeasurements
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * TransportShipmentMeasurements Class Doc Comment
@@ -52,19 +50,20 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'TransportShipmentMeasurements';
+    protected static $openAPIModelName = 'TransportShipmentMeasurements';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'total_carton_count' => 'int',
-             'total_pallet_stackable' => 'int',
-             'total_pallet_non_stackable' => 'int',
-             'shipment_weight' => '\SpApi\Model\vendor\shipments\v1\Weight',
-             'shipment_volume' => '\SpApi\Model\vendor\shipments\v1\Volume'    ];
+    protected static $openAPITypes = [
+        'total_carton_count' => 'int',
+        'total_pallet_stackable' => 'int',
+        'total_pallet_non_stackable' => 'int',
+        'shipment_weight' => '\SpApi\Model\vendor\shipments\v1\Weight',
+        'shipment_volume' => '\SpApi\Model\vendor\shipments\v1\Volume'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -73,12 +72,13 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'total_carton_count' => null,
-            'total_pallet_stackable' => null,
-            'total_pallet_non_stackable' => null,
-            'shipment_weight' => null,
-            'shipment_volume' => null    ];
+    protected static $openAPIFormats = [
+        'total_carton_count' => null,
+        'total_pallet_stackable' => null,
+        'total_pallet_non_stackable' => null,
+        'shipment_weight' => null,
+        'shipment_volume' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -86,11 +86,11 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'total_carton_count' => true,
-        'total_pallet_stackable' => true,
-        'total_pallet_non_stackable' => true,
-        'shipment_weight' => true,
-        'shipment_volume' => true
+        'total_carton_count' => false,
+        'total_pallet_stackable' => false,
+        'total_pallet_non_stackable' => false,
+        'shipment_weight' => false,
+        'shipment_volume' => false
     ];
 
     /**
@@ -105,7 +105,7 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -115,7 +115,7 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -178,13 +178,12 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'total_carton_count' => 'totalCartonCount',
-                'total_pallet_stackable' => 'totalPalletStackable',
-                'total_pallet_non_stackable' => 'totalPalletNonStackable',
-                'shipment_weight' => 'shipmentWeight',
-                'shipment_volume' => 'shipmentVolume'
-        
+        'total_pallet_stackable' => 'totalPalletStackable',
+        'total_pallet_non_stackable' => 'totalPalletNonStackable',
+        'shipment_weight' => 'shipmentWeight',
+        'shipment_volume' => 'shipmentVolume'
     ];
 
     /**
@@ -192,7 +191,7 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'total_carton_count' => 'setTotalCartonCount',
         'total_pallet_stackable' => 'setTotalPalletStackable',
         'total_pallet_non_stackable' => 'setTotalPalletNonStackable',
@@ -205,7 +204,7 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'total_carton_count' => 'getTotalCartonCount',
         'total_pallet_stackable' => 'getTotalPalletStackable',
         'total_pallet_non_stackable' => 'getTotalPalletNonStackable',
@@ -219,7 +218,7 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -229,7 +228,7 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -239,7 +238,7 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -249,7 +248,7 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -258,17 +257,17 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('total_carton_count', $data ?? [], null);
         $this->setIfExists('total_pallet_stackable', $data ?? [], null);
@@ -300,7 +299,7 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -313,7 +312,7 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -324,7 +323,7 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @return int|null
      */
-    public function getTotalCartonCount(): ?int
+    public function getTotalCartonCount()
     {
         return $this->container['total_carton_count'];
     }
@@ -336,17 +335,10 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setTotalCartonCount(?int $total_carton_count): self
+    public function setTotalCartonCount($total_carton_count)
     {
         if (is_null($total_carton_count)) {
-            array_push($this->openAPINullablesSetToNull, 'total_carton_count');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_carton_count', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable total_carton_count cannot be null');
         }
         $this->container['total_carton_count'] = $total_carton_count;
 
@@ -358,7 +350,7 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @return int|null
      */
-    public function getTotalPalletStackable(): ?int
+    public function getTotalPalletStackable()
     {
         return $this->container['total_pallet_stackable'];
     }
@@ -370,17 +362,10 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setTotalPalletStackable(?int $total_pallet_stackable): self
+    public function setTotalPalletStackable($total_pallet_stackable)
     {
         if (is_null($total_pallet_stackable)) {
-            array_push($this->openAPINullablesSetToNull, 'total_pallet_stackable');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_pallet_stackable', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable total_pallet_stackable cannot be null');
         }
         $this->container['total_pallet_stackable'] = $total_pallet_stackable;
 
@@ -392,7 +377,7 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @return int|null
      */
-    public function getTotalPalletNonStackable(): ?int
+    public function getTotalPalletNonStackable()
     {
         return $this->container['total_pallet_non_stackable'];
     }
@@ -404,17 +389,10 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setTotalPalletNonStackable(?int $total_pallet_non_stackable): self
+    public function setTotalPalletNonStackable($total_pallet_non_stackable)
     {
         if (is_null($total_pallet_non_stackable)) {
-            array_push($this->openAPINullablesSetToNull, 'total_pallet_non_stackable');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_pallet_non_stackable', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable total_pallet_non_stackable cannot be null');
         }
         $this->container['total_pallet_non_stackable'] = $total_pallet_non_stackable;
 
@@ -426,7 +404,7 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @return \SpApi\Model\vendor\shipments\v1\Weight|null
      */
-    public function getShipmentWeight(): ?\SpApi\Model\vendor\shipments\v1\Weight
+    public function getShipmentWeight()
     {
         return $this->container['shipment_weight'];
     }
@@ -438,17 +416,10 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setShipmentWeight(?\SpApi\Model\vendor\shipments\v1\Weight $shipment_weight): self
+    public function setShipmentWeight($shipment_weight)
     {
         if (is_null($shipment_weight)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_weight');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_weight', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_weight cannot be null');
         }
         $this->container['shipment_weight'] = $shipment_weight;
 
@@ -460,7 +431,7 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @return \SpApi\Model\vendor\shipments\v1\Volume|null
      */
-    public function getShipmentVolume(): ?\SpApi\Model\vendor\shipments\v1\Volume
+    public function getShipmentVolume()
     {
         return $this->container['shipment_volume'];
     }
@@ -472,24 +443,15 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @return self
      */
-    public function setShipmentVolume(?\SpApi\Model\vendor\shipments\v1\Volume $shipment_volume): self
+    public function setShipmentVolume($shipment_volume)
     {
         if (is_null($shipment_volume)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_volume');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_volume', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_volume cannot be null');
         }
         $this->container['shipment_volume'] = $shipment_volume;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -510,7 +472,7 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -523,7 +485,7 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -552,7 +514,7 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -575,7 +537,7 @@ class TransportShipmentMeasurements implements ModelInterface, ArrayAccess, \Jso
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

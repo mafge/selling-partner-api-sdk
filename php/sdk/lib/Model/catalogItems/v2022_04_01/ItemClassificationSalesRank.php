@@ -3,7 +3,7 @@
 /**
  * ItemClassificationSalesRank.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\catalogItems\v2022_04_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ItemClassificationSalesRank';
+    protected static $openAPIModelName = 'ItemClassificationSalesRank';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'classification_id' => 'string',
         'title' => 'string',
         'link' => 'string',
-        'rank' => 'int'];
+        'rank' => 'int',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'classification_id' => null,
         'title' => null,
         'link' => null,
-        'rank' => null];
+        'rank' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,7 +92,7 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
     protected static array $openAPINullables = [
         'classification_id' => false,
         'title' => false,
-        'link' => true,
+        'link' => false,
         'rank' => false,
     ];
 
@@ -106,7 +109,7 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'classification_id' => 'classificationId',
         'title' => 'title',
         'link' => 'link',
@@ -118,7 +121,7 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'classification_id' => 'setClassificationId',
         'title' => 'setTitle',
         'link' => 'setLink',
@@ -130,7 +133,7 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'classification_id' => 'getClassificationId',
         'title' => 'getTitle',
         'link' => 'getLink',
@@ -139,14 +142,16 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -262,15 +279,17 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets classification_id.
+     *
+     * @return string
      */
-    public function getClassificationId(): string
+    public function getClassificationId()
     {
         return $this->container['classification_id'];
     }
@@ -279,8 +298,10 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
      * Sets classification_id.
      *
      * @param string $classification_id identifier of the classification that is associated with the sales rank
+     *
+     * @return self
      */
-    public function setClassificationId(string $classification_id): self
+    public function setClassificationId($classification_id)
     {
         if (is_null($classification_id)) {
             throw new \InvalidArgumentException('non-nullable classification_id cannot be null');
@@ -292,8 +313,10 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Gets title.
+     *
+     * @return string
      */
-    public function getTitle(): string
+    public function getTitle()
     {
         return $this->container['title'];
     }
@@ -302,8 +325,10 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
      * Sets title.
      *
      * @param string $title name of the sales rank
+     *
+     * @return self
      */
-    public function setTitle(string $title): self
+    public function setTitle($title)
     {
         if (is_null($title)) {
             throw new \InvalidArgumentException('non-nullable title cannot be null');
@@ -315,8 +340,10 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Gets link.
+     *
+     * @return null|string
      */
-    public function getLink(): ?string
+    public function getLink()
     {
         return $this->container['link'];
     }
@@ -325,18 +352,13 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
      * Sets link.
      *
      * @param null|string $link corresponding Amazon retail website URL for the sales category
+     *
+     * @return self
      */
-    public function setLink(?string $link): self
+    public function setLink($link)
     {
         if (is_null($link)) {
-            array_push($this->openAPINullablesSetToNull, 'link');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('link', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable link cannot be null');
         }
         $this->container['link'] = $link;
 
@@ -345,8 +367,10 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Gets rank.
+     *
+     * @return int
      */
-    public function getRank(): int
+    public function getRank()
     {
         return $this->container['rank'];
     }
@@ -355,8 +379,10 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
      * Sets rank.
      *
      * @param int $rank sales rank
+     *
+     * @return self
      */
-    public function setRank(int $rank): self
+    public function setRank($rank)
     {
         if (is_null($rank)) {
             throw new \InvalidArgumentException('non-nullable rank cannot be null');
@@ -384,7 +410,7 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -395,7 +421,7 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -423,15 +449,17 @@ class ItemClassificationSalesRank implements ModelInterface, \ArrayAccess, \Json
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

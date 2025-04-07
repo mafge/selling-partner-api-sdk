@@ -2,7 +2,7 @@
 /**
  * OrderedQuantityDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\orders\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * OrderedQuantityDetails Class Doc Comment
@@ -52,17 +50,18 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'OrderedQuantityDetails';
+    protected static $openAPIModelName = 'OrderedQuantityDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'updated_date' => '\DateTime',
-             'ordered_quantity' => '\SpApi\Model\vendor\orders\v1\ItemQuantity',
-             'cancelled_quantity' => '\SpApi\Model\vendor\orders\v1\ItemQuantity'    ];
+    protected static $openAPITypes = [
+        'updated_date' => '\DateTime',
+        'ordered_quantity' => '\SpApi\Model\vendor\orders\v1\ItemQuantity',
+        'cancelled_quantity' => '\SpApi\Model\vendor\orders\v1\ItemQuantity'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,10 +70,11 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'updated_date' => 'date-time',
-            'ordered_quantity' => null,
-            'cancelled_quantity' => null    ];
+    protected static $openAPIFormats = [
+        'updated_date' => 'date-time',
+        'ordered_quantity' => null,
+        'cancelled_quantity' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -82,9 +82,9 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'updated_date' => true,
-        'ordered_quantity' => true,
-        'cancelled_quantity' => true
+        'updated_date' => false,
+        'ordered_quantity' => false,
+        'cancelled_quantity' => false
     ];
 
     /**
@@ -99,7 +99,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -109,7 +109,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -172,11 +172,10 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'updated_date' => 'updatedDate',
-                'ordered_quantity' => 'orderedQuantity',
-                'cancelled_quantity' => 'cancelledQuantity'
-        
+        'ordered_quantity' => 'orderedQuantity',
+        'cancelled_quantity' => 'cancelledQuantity'
     ];
 
     /**
@@ -184,7 +183,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'updated_date' => 'setUpdatedDate',
         'ordered_quantity' => 'setOrderedQuantity',
         'cancelled_quantity' => 'setCancelledQuantity'
@@ -195,7 +194,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'updated_date' => 'getUpdatedDate',
         'ordered_quantity' => 'getOrderedQuantity',
         'cancelled_quantity' => 'getCancelledQuantity'
@@ -207,7 +206,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -217,7 +216,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -227,7 +226,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -237,7 +236,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,17 +245,17 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('updated_date', $data ?? [], null);
         $this->setIfExists('ordered_quantity', $data ?? [], null);
@@ -286,7 +285,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -299,7 +298,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -310,7 +309,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return \DateTime|null
      */
-    public function getUpdatedDate(): ?\DateTime
+    public function getUpdatedDate()
     {
         return $this->container['updated_date'];
     }
@@ -322,17 +321,10 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setUpdatedDate(?\DateTime $updated_date): self
+    public function setUpdatedDate($updated_date)
     {
         if (is_null($updated_date)) {
-            array_push($this->openAPINullablesSetToNull, 'updated_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updated_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable updated_date cannot be null');
         }
         $this->container['updated_date'] = $updated_date;
 
@@ -344,7 +336,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return \SpApi\Model\vendor\orders\v1\ItemQuantity|null
      */
-    public function getOrderedQuantity(): ?\SpApi\Model\vendor\orders\v1\ItemQuantity
+    public function getOrderedQuantity()
     {
         return $this->container['ordered_quantity'];
     }
@@ -356,17 +348,10 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setOrderedQuantity(?\SpApi\Model\vendor\orders\v1\ItemQuantity $ordered_quantity): self
+    public function setOrderedQuantity($ordered_quantity)
     {
         if (is_null($ordered_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'ordered_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ordered_quantity', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ordered_quantity cannot be null');
         }
         $this->container['ordered_quantity'] = $ordered_quantity;
 
@@ -378,7 +363,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return \SpApi\Model\vendor\orders\v1\ItemQuantity|null
      */
-    public function getCancelledQuantity(): ?\SpApi\Model\vendor\orders\v1\ItemQuantity
+    public function getCancelledQuantity()
     {
         return $this->container['cancelled_quantity'];
     }
@@ -390,24 +375,15 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setCancelledQuantity(?\SpApi\Model\vendor\orders\v1\ItemQuantity $cancelled_quantity): self
+    public function setCancelledQuantity($cancelled_quantity)
     {
         if (is_null($cancelled_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'cancelled_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('cancelled_quantity', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable cancelled_quantity cannot be null');
         }
         $this->container['cancelled_quantity'] = $cancelled_quantity;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -428,7 +404,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -441,7 +417,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -470,7 +446,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -493,7 +469,7 @@ class OrderedQuantityDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

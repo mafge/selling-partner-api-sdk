@@ -3,7 +3,7 @@
 /**
  * FulfillmentShipmentPackage.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'FulfillmentShipmentPackage';
+    protected static $openAPIModelName = 'FulfillmentShipmentPackage';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'package_number' => 'int',
         'carrier_code' => 'string',
         'tracking_number' => 'string',
         'estimated_arrival_date' => '\DateTime',
         'locker_details' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\LockerDetails',
-        'delivery_information' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\DeliveryInformation'];
+        'delivery_information' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\DeliveryInformation',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'package_number' => 'int32',
         'carrier_code' => null,
         'tracking_number' => null,
         'estimated_arrival_date' => 'date-time',
         'locker_details' => null,
-        'delivery_information' => null];
+        'delivery_information' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -93,10 +96,10 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
     protected static array $openAPINullables = [
         'package_number' => false,
         'carrier_code' => false,
-        'tracking_number' => true,
-        'estimated_arrival_date' => true,
-        'locker_details' => true,
-        'delivery_information' => true,
+        'tracking_number' => false,
+        'estimated_arrival_date' => false,
+        'locker_details' => false,
+        'delivery_information' => false,
     ];
 
     /**
@@ -112,7 +115,7 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'package_number' => 'packageNumber',
         'carrier_code' => 'carrierCode',
         'tracking_number' => 'trackingNumber',
@@ -126,7 +129,7 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'package_number' => 'setPackageNumber',
         'carrier_code' => 'setCarrierCode',
         'tracking_number' => 'setTrackingNumber',
@@ -140,7 +143,7 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'package_number' => 'getPackageNumber',
         'carrier_code' => 'getCarrierCode',
         'tracking_number' => 'getTrackingNumber',
@@ -151,14 +154,16 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -273,15 +290,17 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets package_number.
+     *
+     * @return int
      */
-    public function getPackageNumber(): int
+    public function getPackageNumber()
     {
         return $this->container['package_number'];
     }
@@ -290,8 +309,10 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
      * Sets package_number.
      *
      * @param int $package_number identifies a package in a shipment
+     *
+     * @return self
      */
-    public function setPackageNumber(int $package_number): self
+    public function setPackageNumber($package_number)
     {
         if (is_null($package_number)) {
             throw new \InvalidArgumentException('non-nullable package_number cannot be null');
@@ -303,8 +324,10 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets carrier_code.
+     *
+     * @return string
      */
-    public function getCarrierCode(): string
+    public function getCarrierCode()
     {
         return $this->container['carrier_code'];
     }
@@ -313,8 +336,10 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
      * Sets carrier_code.
      *
      * @param string $carrier_code identifies the carrier who will deliver the shipment to the recipient
+     *
+     * @return self
      */
-    public function setCarrierCode(string $carrier_code): self
+    public function setCarrierCode($carrier_code)
     {
         if (is_null($carrier_code)) {
             throw new \InvalidArgumentException('non-nullable carrier_code cannot be null');
@@ -326,8 +351,10 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets tracking_number.
+     *
+     * @return null|string
      */
-    public function getTrackingNumber(): ?string
+    public function getTrackingNumber()
     {
         return $this->container['tracking_number'];
     }
@@ -336,18 +363,13 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
      * Sets tracking_number.
      *
      * @param null|string $tracking_number the tracking number, if provided, can be used to obtain tracking and delivery information
+     *
+     * @return self
      */
-    public function setTrackingNumber(?string $tracking_number): self
+    public function setTrackingNumber($tracking_number)
     {
         if (is_null($tracking_number)) {
-            array_push($this->openAPINullablesSetToNull, 'tracking_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tracking_number', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tracking_number cannot be null');
         }
         $this->container['tracking_number'] = $tracking_number;
 
@@ -356,8 +378,10 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets estimated_arrival_date.
+     *
+     * @return null|\DateTime
      */
-    public function getEstimatedArrivalDate(): ?\DateTime
+    public function getEstimatedArrivalDate()
     {
         return $this->container['estimated_arrival_date'];
     }
@@ -366,18 +390,13 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
      * Sets estimated_arrival_date.
      *
      * @param null|\DateTime $estimated_arrival_date Date timestamp
+     *
+     * @return self
      */
-    public function setEstimatedArrivalDate(?\DateTime $estimated_arrival_date): self
+    public function setEstimatedArrivalDate($estimated_arrival_date)
     {
         if (is_null($estimated_arrival_date)) {
-            array_push($this->openAPINullablesSetToNull, 'estimated_arrival_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('estimated_arrival_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable estimated_arrival_date cannot be null');
         }
         $this->container['estimated_arrival_date'] = $estimated_arrival_date;
 
@@ -386,8 +405,10 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets locker_details.
+     *
+     * @return null|LockerDetails
      */
-    public function getLockerDetails(): ?LockerDetails
+    public function getLockerDetails()
     {
         return $this->container['locker_details'];
     }
@@ -396,18 +417,13 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
      * Sets locker_details.
      *
      * @param null|LockerDetails $locker_details locker_details
+     *
+     * @return self
      */
-    public function setLockerDetails(?LockerDetails $locker_details): self
+    public function setLockerDetails($locker_details)
     {
         if (is_null($locker_details)) {
-            array_push($this->openAPINullablesSetToNull, 'locker_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('locker_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable locker_details cannot be null');
         }
         $this->container['locker_details'] = $locker_details;
 
@@ -416,8 +432,10 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets delivery_information.
+     *
+     * @return null|DeliveryInformation
      */
-    public function getDeliveryInformation(): ?DeliveryInformation
+    public function getDeliveryInformation()
     {
         return $this->container['delivery_information'];
     }
@@ -426,18 +444,13 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
      * Sets delivery_information.
      *
      * @param null|DeliveryInformation $delivery_information delivery_information
+     *
+     * @return self
      */
-    public function setDeliveryInformation(?DeliveryInformation $delivery_information): self
+    public function setDeliveryInformation($delivery_information)
     {
         if (is_null($delivery_information)) {
-            array_push($this->openAPINullablesSetToNull, 'delivery_information');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('delivery_information', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable delivery_information cannot be null');
         }
         $this->container['delivery_information'] = $delivery_information;
 
@@ -462,7 +475,7 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -473,7 +486,7 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -501,15 +514,17 @@ class FulfillmentShipmentPackage implements ModelInterface, \ArrayAccess, \JsonS
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

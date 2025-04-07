@@ -3,7 +3,7 @@
 /**
  * GetSolicitationActionResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\solicitations\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetSolicitationActionResponse';
+    protected static $openAPIModelName = 'GetSolicitationActionResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         '_links' => '\SpApi\Model\solicitations\v1\GetSolicitationActionResponseLinks',
         '_embedded' => '\SpApi\Model\solicitations\v1\GetSolicitationActionResponseEmbedded',
         'payload' => '\SpApi\Model\solicitations\v1\SolicitationsAction',
-        'errors' => '\SpApi\Model\solicitations\v1\Error[]'];
+        'errors' => '\SpApi\Model\solicitations\v1\Error[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         '_links' => null,
         '_embedded' => null,
         'payload' => null,
-        'errors' => null];
+        'errors' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,10 +90,10 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        '_links' => true,
-        '_embedded' => true,
-        'payload' => true,
-        'errors' => true,
+        '_links' => false,
+        '_embedded' => false,
+        'payload' => false,
+        'errors' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         '_links' => '_links',
         '_embedded' => '_embedded',
         'payload' => 'payload',
@@ -118,7 +121,7 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         '_links' => 'setLinks',
         '_embedded' => 'setEmbedded',
         'payload' => 'setPayload',
@@ -130,7 +133,7 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         '_links' => 'getLinks',
         '_embedded' => 'getEmbedded',
         'payload' => 'getPayload',
@@ -139,14 +142,16 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -250,15 +267,17 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets _links.
+     *
+     * @return null|GetSolicitationActionResponseLinks
      */
-    public function getLinks(): ?GetSolicitationActionResponseLinks
+    public function getLinks()
     {
         return $this->container['_links'];
     }
@@ -267,18 +286,13 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
      * Sets _links.
      *
      * @param null|GetSolicitationActionResponseLinks $_links _links
+     *
+     * @return self
      */
-    public function setLinks(?GetSolicitationActionResponseLinks $_links): self
+    public function setLinks($_links)
     {
         if (is_null($_links)) {
-            array_push($this->openAPINullablesSetToNull, '_links');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('_links', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable _links cannot be null');
         }
         $this->container['_links'] = $_links;
 
@@ -287,8 +301,10 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Gets _embedded.
+     *
+     * @return null|GetSolicitationActionResponseEmbedded
      */
-    public function getEmbedded(): ?GetSolicitationActionResponseEmbedded
+    public function getEmbedded()
     {
         return $this->container['_embedded'];
     }
@@ -297,18 +313,13 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
      * Sets _embedded.
      *
      * @param null|GetSolicitationActionResponseEmbedded $_embedded _embedded
+     *
+     * @return self
      */
-    public function setEmbedded(?GetSolicitationActionResponseEmbedded $_embedded): self
+    public function setEmbedded($_embedded)
     {
         if (is_null($_embedded)) {
-            array_push($this->openAPINullablesSetToNull, '_embedded');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('_embedded', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable _embedded cannot be null');
         }
         $this->container['_embedded'] = $_embedded;
 
@@ -317,8 +328,10 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Gets payload.
+     *
+     * @return null|SolicitationsAction
      */
-    public function getPayload(): ?SolicitationsAction
+    public function getPayload()
     {
         return $this->container['payload'];
     }
@@ -327,18 +340,13 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
      * Sets payload.
      *
      * @param null|SolicitationsAction $payload payload
+     *
+     * @return self
      */
-    public function setPayload(?SolicitationsAction $payload): self
+    public function setPayload($payload)
     {
         if (is_null($payload)) {
-            array_push($this->openAPINullablesSetToNull, 'payload');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('payload', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable payload cannot be null');
         }
         $this->container['payload'] = $payload;
 
@@ -347,8 +355,10 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Gets errors.
+     *
+     * @return null|Error[]
      */
-    public function getErrors(): ?array
+    public function getErrors()
     {
         return $this->container['errors'];
     }
@@ -356,19 +366,14 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
     /**
      * Sets errors.
      *
-     * @param null|array $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
+     *
+     * @return self
      */
-    public function setErrors(?array $errors): self
+    public function setErrors($errors)
     {
         if (is_null($errors)) {
-            array_push($this->openAPINullablesSetToNull, 'errors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('errors', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable errors cannot be null');
         }
         $this->container['errors'] = $errors;
 
@@ -393,7 +398,7 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -404,7 +409,7 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -432,15 +437,17 @@ class GetSolicitationActionResponse implements ModelInterface, \ArrayAccess, \Js
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

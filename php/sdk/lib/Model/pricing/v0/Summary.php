@@ -3,7 +3,7 @@
 /**
  * Summary.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Summary';
+    protected static $openAPIModelName = 'Summary';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'total_offer_count' => 'int',
         'number_of_offers' => '\SpApi\Model\pricing\v0\OfferCountType[]',
         'lowest_prices' => '\SpApi\Model\pricing\v0\LowestPriceType[]',
@@ -70,7 +71,8 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
         'suggested_lower_price_plus_shipping' => '\SpApi\Model\pricing\v0\MoneyType',
         'sales_rankings' => '\SpApi\Model\pricing\v0\SalesRankType[]',
         'buy_box_eligible_offers' => '\SpApi\Model\pricing\v0\OfferCountType[]',
-        'offers_available_time' => '\DateTime'];
+        'offers_available_time' => '\DateTime',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -81,7 +83,7 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'total_offer_count' => 'int32',
         'number_of_offers' => null,
         'lowest_prices' => null,
@@ -91,7 +93,8 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
         'suggested_lower_price_plus_shipping' => null,
         'sales_rankings' => null,
         'buy_box_eligible_offers' => null,
-        'offers_available_time' => 'date-time'];
+        'offers_available_time' => 'date-time',
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -100,15 +103,15 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'total_offer_count' => false,
-        'number_of_offers' => true,
-        'lowest_prices' => true,
-        'buy_box_prices' => true,
-        'list_price' => true,
-        'competitive_price_threshold' => true,
-        'suggested_lower_price_plus_shipping' => true,
-        'sales_rankings' => true,
-        'buy_box_eligible_offers' => true,
-        'offers_available_time' => true,
+        'number_of_offers' => false,
+        'lowest_prices' => false,
+        'buy_box_prices' => false,
+        'list_price' => false,
+        'competitive_price_threshold' => false,
+        'suggested_lower_price_plus_shipping' => false,
+        'sales_rankings' => false,
+        'buy_box_eligible_offers' => false,
+        'offers_available_time' => false,
     ];
 
     /**
@@ -124,7 +127,7 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'total_offer_count' => 'TotalOfferCount',
         'number_of_offers' => 'NumberOfOffers',
         'lowest_prices' => 'LowestPrices',
@@ -142,7 +145,7 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'total_offer_count' => 'setTotalOfferCount',
         'number_of_offers' => 'setNumberOfOffers',
         'lowest_prices' => 'setLowestPrices',
@@ -160,7 +163,7 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'total_offer_count' => 'getTotalOfferCount',
         'number_of_offers' => 'getNumberOfOffers',
         'lowest_prices' => 'getLowestPrices',
@@ -175,14 +178,16 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -213,16 +218,20 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -246,32 +255,40 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -281,7 +298,7 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -298,15 +315,17 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets total_offer_count.
+     *
+     * @return int
      */
-    public function getTotalOfferCount(): int
+    public function getTotalOfferCount()
     {
         return $this->container['total_offer_count'];
     }
@@ -315,8 +334,10 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets total_offer_count.
      *
      * @param int $total_offer_count the number of unique offers contained in NumberOfOffers
+     *
+     * @return self
      */
-    public function setTotalOfferCount(int $total_offer_count): self
+    public function setTotalOfferCount($total_offer_count)
     {
         if (is_null($total_offer_count)) {
             throw new \InvalidArgumentException('non-nullable total_offer_count cannot be null');
@@ -328,8 +349,10 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets number_of_offers.
+     *
+     * @return null|OfferCountType[]
      */
-    public function getNumberOfOffers(): ?array
+    public function getNumberOfOffers()
     {
         return $this->container['number_of_offers'];
     }
@@ -337,19 +360,14 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets number_of_offers.
      *
-     * @param null|array $number_of_offers a list that contains the total number of offers information for given conditions and fulfillment channels
+     * @param null|OfferCountType[] $number_of_offers a list that contains the total number of offers information for given conditions and fulfillment channels
+     *
+     * @return self
      */
-    public function setNumberOfOffers(?array $number_of_offers): self
+    public function setNumberOfOffers($number_of_offers)
     {
         if (is_null($number_of_offers)) {
-            array_push($this->openAPINullablesSetToNull, 'number_of_offers');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('number_of_offers', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable number_of_offers cannot be null');
         }
         $this->container['number_of_offers'] = $number_of_offers;
 
@@ -358,8 +376,10 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets lowest_prices.
+     *
+     * @return null|LowestPriceType[]
      */
-    public function getLowestPrices(): ?array
+    public function getLowestPrices()
     {
         return $this->container['lowest_prices'];
     }
@@ -367,19 +387,14 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets lowest_prices.
      *
-     * @param null|array $lowest_prices a list of the lowest prices
+     * @param null|LowestPriceType[] $lowest_prices a list of the lowest prices
+     *
+     * @return self
      */
-    public function setLowestPrices(?array $lowest_prices): self
+    public function setLowestPrices($lowest_prices)
     {
         if (is_null($lowest_prices)) {
-            array_push($this->openAPINullablesSetToNull, 'lowest_prices');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('lowest_prices', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable lowest_prices cannot be null');
         }
         $this->container['lowest_prices'] = $lowest_prices;
 
@@ -388,8 +403,10 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets buy_box_prices.
+     *
+     * @return null|BuyBoxPriceType[]
      */
-    public function getBuyBoxPrices(): ?array
+    public function getBuyBoxPrices()
     {
         return $this->container['buy_box_prices'];
     }
@@ -397,19 +414,14 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets buy_box_prices.
      *
-     * @param null|array $buy_box_prices a list of the Buy Box prices
+     * @param null|BuyBoxPriceType[] $buy_box_prices a list of the Buy Box prices
+     *
+     * @return self
      */
-    public function setBuyBoxPrices(?array $buy_box_prices): self
+    public function setBuyBoxPrices($buy_box_prices)
     {
         if (is_null($buy_box_prices)) {
-            array_push($this->openAPINullablesSetToNull, 'buy_box_prices');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('buy_box_prices', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable buy_box_prices cannot be null');
         }
         $this->container['buy_box_prices'] = $buy_box_prices;
 
@@ -418,8 +430,10 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets list_price.
+     *
+     * @return null|MoneyType
      */
-    public function getListPrice(): ?MoneyType
+    public function getListPrice()
     {
         return $this->container['list_price'];
     }
@@ -428,18 +442,13 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets list_price.
      *
      * @param null|MoneyType $list_price list_price
+     *
+     * @return self
      */
-    public function setListPrice(?MoneyType $list_price): self
+    public function setListPrice($list_price)
     {
         if (is_null($list_price)) {
-            array_push($this->openAPINullablesSetToNull, 'list_price');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('list_price', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable list_price cannot be null');
         }
         $this->container['list_price'] = $list_price;
 
@@ -448,8 +457,10 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets competitive_price_threshold.
+     *
+     * @return null|MoneyType
      */
-    public function getCompetitivePriceThreshold(): ?MoneyType
+    public function getCompetitivePriceThreshold()
     {
         return $this->container['competitive_price_threshold'];
     }
@@ -458,18 +469,13 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets competitive_price_threshold.
      *
      * @param null|MoneyType $competitive_price_threshold competitive_price_threshold
+     *
+     * @return self
      */
-    public function setCompetitivePriceThreshold(?MoneyType $competitive_price_threshold): self
+    public function setCompetitivePriceThreshold($competitive_price_threshold)
     {
         if (is_null($competitive_price_threshold)) {
-            array_push($this->openAPINullablesSetToNull, 'competitive_price_threshold');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('competitive_price_threshold', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable competitive_price_threshold cannot be null');
         }
         $this->container['competitive_price_threshold'] = $competitive_price_threshold;
 
@@ -478,8 +484,10 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets suggested_lower_price_plus_shipping.
+     *
+     * @return null|MoneyType
      */
-    public function getSuggestedLowerPricePlusShipping(): ?MoneyType
+    public function getSuggestedLowerPricePlusShipping()
     {
         return $this->container['suggested_lower_price_plus_shipping'];
     }
@@ -488,18 +496,13 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets suggested_lower_price_plus_shipping.
      *
      * @param null|MoneyType $suggested_lower_price_plus_shipping suggested_lower_price_plus_shipping
+     *
+     * @return self
      */
-    public function setSuggestedLowerPricePlusShipping(?MoneyType $suggested_lower_price_plus_shipping): self
+    public function setSuggestedLowerPricePlusShipping($suggested_lower_price_plus_shipping)
     {
         if (is_null($suggested_lower_price_plus_shipping)) {
-            array_push($this->openAPINullablesSetToNull, 'suggested_lower_price_plus_shipping');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('suggested_lower_price_plus_shipping', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable suggested_lower_price_plus_shipping cannot be null');
         }
         $this->container['suggested_lower_price_plus_shipping'] = $suggested_lower_price_plus_shipping;
 
@@ -508,8 +511,10 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets sales_rankings.
+     *
+     * @return null|SalesRankType[]
      */
-    public function getSalesRankings(): ?array
+    public function getSalesRankings()
     {
         return $this->container['sales_rankings'];
     }
@@ -517,19 +522,14 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets sales_rankings.
      *
-     * @param null|array $sales_rankings a list of sales rank information for the item, by category
+     * @param null|SalesRankType[] $sales_rankings a list of sales rank information for the item, by category
+     *
+     * @return self
      */
-    public function setSalesRankings(?array $sales_rankings): self
+    public function setSalesRankings($sales_rankings)
     {
         if (is_null($sales_rankings)) {
-            array_push($this->openAPINullablesSetToNull, 'sales_rankings');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sales_rankings', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable sales_rankings cannot be null');
         }
         $this->container['sales_rankings'] = $sales_rankings;
 
@@ -538,8 +538,10 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets buy_box_eligible_offers.
+     *
+     * @return null|OfferCountType[]
      */
-    public function getBuyBoxEligibleOffers(): ?array
+    public function getBuyBoxEligibleOffers()
     {
         return $this->container['buy_box_eligible_offers'];
     }
@@ -547,19 +549,14 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets buy_box_eligible_offers.
      *
-     * @param null|array $buy_box_eligible_offers a list that contains the total number of offers that are eligible for the Buy Box for the given conditions and fulfillment channels
+     * @param null|OfferCountType[] $buy_box_eligible_offers a list that contains the total number of offers that are eligible for the Buy Box for the given conditions and fulfillment channels
+     *
+     * @return self
      */
-    public function setBuyBoxEligibleOffers(?array $buy_box_eligible_offers): self
+    public function setBuyBoxEligibleOffers($buy_box_eligible_offers)
     {
         if (is_null($buy_box_eligible_offers)) {
-            array_push($this->openAPINullablesSetToNull, 'buy_box_eligible_offers');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('buy_box_eligible_offers', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable buy_box_eligible_offers cannot be null');
         }
         $this->container['buy_box_eligible_offers'] = $buy_box_eligible_offers;
 
@@ -568,8 +565,10 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets offers_available_time.
+     *
+     * @return null|\DateTime
      */
-    public function getOffersAvailableTime(): ?\DateTime
+    public function getOffersAvailableTime()
     {
         return $this->container['offers_available_time'];
     }
@@ -578,18 +577,13 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets offers_available_time.
      *
      * @param null|\DateTime $offers_available_time when the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing
+     *
+     * @return self
      */
-    public function setOffersAvailableTime(?\DateTime $offers_available_time): self
+    public function setOffersAvailableTime($offers_available_time)
     {
         if (is_null($offers_available_time)) {
-            array_push($this->openAPINullablesSetToNull, 'offers_available_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('offers_available_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable offers_available_time cannot be null');
         }
         $this->container['offers_available_time'] = $offers_available_time;
 
@@ -614,7 +608,7 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -625,7 +619,7 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -653,15 +647,17 @@ class Summary implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

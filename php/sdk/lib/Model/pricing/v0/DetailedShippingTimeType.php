@@ -3,7 +3,7 @@
 /**
  * DetailedShippingTimeType.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -56,19 +55,22 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'DetailedShippingTimeType';
+    protected static $openAPIModelName = 'DetailedShippingTimeType';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'minimum_hours' => 'int',
         'maximum_hours' => 'int',
         'available_date' => 'string',
-        'availability_type' => 'string'];
+        'availability_type' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -79,11 +81,12 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'minimum_hours' => 'int64',
         'maximum_hours' => 'int64',
         'available_date' => null,
-        'availability_type' => null];
+        'availability_type' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -91,10 +94,10 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'minimum_hours' => true,
-        'maximum_hours' => true,
-        'available_date' => true,
-        'availability_type' => true,
+        'minimum_hours' => false,
+        'maximum_hours' => false,
+        'available_date' => false,
+        'availability_type' => false,
     ];
 
     /**
@@ -110,7 +113,7 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'minimum_hours' => 'minimumHours',
         'maximum_hours' => 'maximumHours',
         'available_date' => 'availableDate',
@@ -122,7 +125,7 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'minimum_hours' => 'setMinimumHours',
         'maximum_hours' => 'setMaximumHours',
         'available_date' => 'setAvailableDate',
@@ -134,7 +137,7 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'minimum_hours' => 'getMinimumHours',
         'maximum_hours' => 'getMaximumHours',
         'available_date' => 'getAvailableDate',
@@ -143,14 +146,16 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -175,16 +180,20 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -208,32 +217,40 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -243,7 +260,7 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return string[]
      */
-    public function getAvailabilityTypeAllowableValues(): array
+    public function getAvailabilityTypeAllowableValues()
     {
         return [
             self::AVAILABILITY_TYPE_NOW,
@@ -257,7 +274,7 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -279,15 +296,17 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets minimum_hours.
+     *
+     * @return null|int
      */
-    public function getMinimumHours(): ?int
+    public function getMinimumHours()
     {
         return $this->container['minimum_hours'];
     }
@@ -296,18 +315,13 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets minimum_hours.
      *
      * @param null|int $minimum_hours the minimum time, in hours, that the item will likely be shipped after the order has been placed
+     *
+     * @return self
      */
-    public function setMinimumHours(?int $minimum_hours): self
+    public function setMinimumHours($minimum_hours)
     {
         if (is_null($minimum_hours)) {
-            array_push($this->openAPINullablesSetToNull, 'minimum_hours');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('minimum_hours', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable minimum_hours cannot be null');
         }
         $this->container['minimum_hours'] = $minimum_hours;
 
@@ -316,8 +330,10 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets maximum_hours.
+     *
+     * @return null|int
      */
-    public function getMaximumHours(): ?int
+    public function getMaximumHours()
     {
         return $this->container['maximum_hours'];
     }
@@ -326,18 +342,13 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets maximum_hours.
      *
      * @param null|int $maximum_hours the maximum time, in hours, that the item will likely be shipped after the order has been placed
+     *
+     * @return self
      */
-    public function setMaximumHours(?int $maximum_hours): self
+    public function setMaximumHours($maximum_hours)
     {
         if (is_null($maximum_hours)) {
-            array_push($this->openAPINullablesSetToNull, 'maximum_hours');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('maximum_hours', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable maximum_hours cannot be null');
         }
         $this->container['maximum_hours'] = $maximum_hours;
 
@@ -346,8 +357,10 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets available_date.
+     *
+     * @return null|string
      */
-    public function getAvailableDate(): ?string
+    public function getAvailableDate()
     {
         return $this->container['available_date'];
     }
@@ -356,18 +369,13 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets available_date.
      *
      * @param null|string $available_date The date when the item will be available for shipping. Only displayed for items that are not currently available for shipping.
+     *
+     * @return self
      */
-    public function setAvailableDate(?string $available_date): self
+    public function setAvailableDate($available_date)
     {
         if (is_null($available_date)) {
-            array_push($this->openAPINullablesSetToNull, 'available_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('available_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable available_date cannot be null');
         }
         $this->container['available_date'] = $available_date;
 
@@ -376,8 +384,10 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets availability_type.
+     *
+     * @return null|string
      */
-    public function getAvailabilityType(): ?string
+    public function getAvailabilityType()
     {
         return $this->container['availability_type'];
     }
@@ -386,21 +396,16 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets availability_type.
      *
      * @param null|string $availability_type Indicates whether the item is available for shipping now, or on a known or an unknown date in the future. If known, the availableDate property indicates the date that the item will be available for shipping. Possible values: NOW, FUTURE_WITHOUT_DATE, FUTURE_WITH_DATE.
+     *
+     * @return self
      */
-    public function setAvailabilityType(?string $availability_type): self
+    public function setAvailabilityType($availability_type)
     {
         if (is_null($availability_type)) {
-            array_push($this->openAPINullablesSetToNull, 'availability_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('availability_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable availability_type cannot be null');
         }
         $allowedValues = $this->getAvailabilityTypeAllowableValues();
-        if (!is_null($availability_type) && !in_array($availability_type, $allowedValues, true)) {
+        if (!in_array($availability_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'availability_type', must be one of '%s'",
@@ -432,7 +437,7 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -443,7 +448,7 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -471,15 +476,17 @@ class DetailedShippingTimeType implements ModelInterface, \ArrayAccess, \JsonSer
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

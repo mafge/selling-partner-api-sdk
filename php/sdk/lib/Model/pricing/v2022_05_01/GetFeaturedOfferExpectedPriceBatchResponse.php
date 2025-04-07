@@ -3,7 +3,7 @@
 /**
  * GetFeaturedOfferExpectedPriceBatchResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v2022_05_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,16 +51,19 @@ class GetFeaturedOfferExpectedPriceBatchResponse implements ModelInterface, \Arr
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetFeaturedOfferExpectedPriceBatchResponse';
+    protected static $openAPIModelName = 'GetFeaturedOfferExpectedPriceBatchResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
-        'responses' => '\SpApi\Model\pricing\v2022_05_01\FeaturedOfferExpectedPriceResponse[]'];
+    protected static $openAPITypes = [
+        'responses' => '\SpApi\Model\pricing\v2022_05_01\FeaturedOfferExpectedPriceResponse[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -72,8 +74,9 @@ class GetFeaturedOfferExpectedPriceBatchResponse implements ModelInterface, \Arr
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
-        'responses' => null];
+    protected static $openAPIFormats = [
+        'responses' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -81,7 +84,7 @@ class GetFeaturedOfferExpectedPriceBatchResponse implements ModelInterface, \Arr
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'responses' => true,
+        'responses' => false,
     ];
 
     /**
@@ -97,7 +100,7 @@ class GetFeaturedOfferExpectedPriceBatchResponse implements ModelInterface, \Arr
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'responses' => 'responses',
     ];
 
@@ -106,7 +109,7 @@ class GetFeaturedOfferExpectedPriceBatchResponse implements ModelInterface, \Arr
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'responses' => 'setResponses',
     ];
 
@@ -115,20 +118,22 @@ class GetFeaturedOfferExpectedPriceBatchResponse implements ModelInterface, \Arr
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'responses' => 'getResponses',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -150,16 +155,20 @@ class GetFeaturedOfferExpectedPriceBatchResponse implements ModelInterface, \Arr
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -183,32 +192,40 @@ class GetFeaturedOfferExpectedPriceBatchResponse implements ModelInterface, \Arr
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -218,7 +235,7 @@ class GetFeaturedOfferExpectedPriceBatchResponse implements ModelInterface, \Arr
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -235,15 +252,17 @@ class GetFeaturedOfferExpectedPriceBatchResponse implements ModelInterface, \Arr
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets responses.
+     *
+     * @return null|FeaturedOfferExpectedPriceResponse[]
      */
-    public function getResponses(): ?array
+    public function getResponses()
     {
         return $this->container['responses'];
     }
@@ -251,22 +270,17 @@ class GetFeaturedOfferExpectedPriceBatchResponse implements ModelInterface, \Arr
     /**
      * Sets responses.
      *
-     * @param null|array $responses a batched list of FOEP responses
+     * @param null|FeaturedOfferExpectedPriceResponse[] $responses a batched list of FOEP responses
+     *
+     * @return self
      */
-    public function setResponses(?array $responses): self
+    public function setResponses($responses)
     {
         if (is_null($responses)) {
-            array_push($this->openAPINullablesSetToNull, 'responses');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('responses', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable responses cannot be null');
         }
 
-        if (!is_null($responses) && (count($responses) < 1)) {
+        if (count($responses) < 1) {
             throw new \InvalidArgumentException('invalid length for $responses when calling GetFeaturedOfferExpectedPriceBatchResponse., number of items must be greater than or equal to 1.');
         }
         $this->container['responses'] = $responses;
@@ -292,7 +306,7 @@ class GetFeaturedOfferExpectedPriceBatchResponse implements ModelInterface, \Arr
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -303,7 +317,7 @@ class GetFeaturedOfferExpectedPriceBatchResponse implements ModelInterface, \Arr
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -331,15 +345,17 @@ class GetFeaturedOfferExpectedPriceBatchResponse implements ModelInterface, \Arr
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

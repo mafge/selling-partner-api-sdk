@@ -3,7 +3,7 @@
 /**
  * GetFulfillmentPreviewRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,22 +51,25 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetFulfillmentPreviewRequest';
+    protected static $openAPIModelName = 'GetFulfillmentPreviewRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'marketplace_id' => 'string',
         'address' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\Address',
         'items' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\GetFulfillmentPreviewItem[]',
         'shipping_speed_categories' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\ShippingSpeedCategory[]',
         'include_cod_fulfillment_preview' => 'bool',
         'include_delivery_windows' => 'bool',
-        'feature_constraints' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\FeatureSettings[]'];
+        'feature_constraints' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\FeatureSettings[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -78,14 +80,15 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'marketplace_id' => null,
         'address' => null,
         'items' => null,
         'shipping_speed_categories' => null,
         'include_cod_fulfillment_preview' => null,
         'include_delivery_windows' => null,
-        'feature_constraints' => null];
+        'feature_constraints' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -93,13 +96,13 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'marketplace_id' => true,
+        'marketplace_id' => false,
         'address' => false,
         'items' => false,
-        'shipping_speed_categories' => true,
-        'include_cod_fulfillment_preview' => true,
-        'include_delivery_windows' => true,
-        'feature_constraints' => true,
+        'shipping_speed_categories' => false,
+        'include_cod_fulfillment_preview' => false,
+        'include_delivery_windows' => false,
+        'feature_constraints' => false,
     ];
 
     /**
@@ -115,7 +118,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'marketplace_id' => 'marketplaceId',
         'address' => 'address',
         'items' => 'items',
@@ -130,7 +133,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
         'address' => 'setAddress',
         'items' => 'setItems',
@@ -145,7 +148,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
         'address' => 'getAddress',
         'items' => 'getItems',
@@ -157,14 +160,16 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -192,16 +197,20 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -225,32 +234,40 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -260,7 +277,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -280,15 +297,17 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets marketplace_id.
+     *
+     * @return null|string
      */
-    public function getMarketplaceId(): ?string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -297,18 +316,13 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
      * Sets marketplace_id.
      *
      * @param null|string $marketplace_id the marketplace the fulfillment order is placed against
+     *
+     * @return self
      */
-    public function setMarketplaceId(?string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
-            array_push($this->openAPINullablesSetToNull, 'marketplace_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('marketplace_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
         }
         $this->container['marketplace_id'] = $marketplace_id;
 
@@ -317,8 +331,10 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Gets address.
+     *
+     * @return Address
      */
-    public function getAddress(): Address
+    public function getAddress()
     {
         return $this->container['address'];
     }
@@ -327,8 +343,10 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
      * Sets address.
      *
      * @param Address $address address
+     *
+     * @return self
      */
-    public function setAddress(Address $address): self
+    public function setAddress($address)
     {
         if (is_null($address)) {
             throw new \InvalidArgumentException('non-nullable address cannot be null');
@@ -340,8 +358,10 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Gets items.
+     *
+     * @return GetFulfillmentPreviewItem[]
      */
-    public function getItems(): array
+    public function getItems()
     {
         return $this->container['items'];
     }
@@ -349,9 +369,11 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
     /**
      * Sets items.
      *
-     * @param array $items an array of fulfillment preview item information
+     * @param GetFulfillmentPreviewItem[] $items an array of fulfillment preview item information
+     *
+     * @return self
      */
-    public function setItems(array $items): self
+    public function setItems($items)
     {
         if (is_null($items)) {
             throw new \InvalidArgumentException('non-nullable items cannot be null');
@@ -363,8 +385,10 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Gets shipping_speed_categories.
+     *
+     * @return null|ShippingSpeedCategory[]
      */
-    public function getShippingSpeedCategories(): ?array
+    public function getShippingSpeedCategories()
     {
         return $this->container['shipping_speed_categories'];
     }
@@ -372,19 +396,14 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
     /**
      * Sets shipping_speed_categories.
      *
-     * @param null|array $shipping_speed_categories ShippingSpeedCategory List
+     * @param null|ShippingSpeedCategory[] $shipping_speed_categories ShippingSpeedCategory List
+     *
+     * @return self
      */
-    public function setShippingSpeedCategories(?array $shipping_speed_categories): self
+    public function setShippingSpeedCategories($shipping_speed_categories)
     {
         if (is_null($shipping_speed_categories)) {
-            array_push($this->openAPINullablesSetToNull, 'shipping_speed_categories');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipping_speed_categories', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipping_speed_categories cannot be null');
         }
         $this->container['shipping_speed_categories'] = $shipping_speed_categories;
 
@@ -393,8 +412,10 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Gets include_cod_fulfillment_preview.
+     *
+     * @return null|bool
      */
-    public function getIncludeCodFulfillmentPreview(): ?bool
+    public function getIncludeCodFulfillmentPreview()
     {
         return $this->container['include_cod_fulfillment_preview'];
     }
@@ -403,18 +424,13 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
      * Sets include_cod_fulfillment_preview.
      *
      * @param null|bool $include_cod_fulfillment_preview When true, returns all fulfillment order previews both for COD and not for COD. Otherwise, returns only fulfillment order previews that are not for COD.
+     *
+     * @return self
      */
-    public function setIncludeCodFulfillmentPreview(?bool $include_cod_fulfillment_preview): self
+    public function setIncludeCodFulfillmentPreview($include_cod_fulfillment_preview)
     {
         if (is_null($include_cod_fulfillment_preview)) {
-            array_push($this->openAPINullablesSetToNull, 'include_cod_fulfillment_preview');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('include_cod_fulfillment_preview', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable include_cod_fulfillment_preview cannot be null');
         }
         $this->container['include_cod_fulfillment_preview'] = $include_cod_fulfillment_preview;
 
@@ -423,8 +439,10 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Gets include_delivery_windows.
+     *
+     * @return null|bool
      */
-    public function getIncludeDeliveryWindows(): ?bool
+    public function getIncludeDeliveryWindows()
     {
         return $this->container['include_delivery_windows'];
     }
@@ -433,18 +451,13 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
      * Sets include_delivery_windows.
      *
      * @param null|bool $include_delivery_windows When true, returns the `ScheduledDeliveryInfo` response object, which contains the available delivery windows for a Scheduled Delivery. The `ScheduledDeliveryInfo` response object can only be returned for fulfillment order previews with `ShippingSpeedCategories` = `ScheduledDelivery`.
+     *
+     * @return self
      */
-    public function setIncludeDeliveryWindows(?bool $include_delivery_windows): self
+    public function setIncludeDeliveryWindows($include_delivery_windows)
     {
         if (is_null($include_delivery_windows)) {
-            array_push($this->openAPINullablesSetToNull, 'include_delivery_windows');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('include_delivery_windows', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable include_delivery_windows cannot be null');
         }
         $this->container['include_delivery_windows'] = $include_delivery_windows;
 
@@ -453,8 +466,10 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Gets feature_constraints.
+     *
+     * @return null|FeatureSettings[]
      */
-    public function getFeatureConstraints(): ?array
+    public function getFeatureConstraints()
     {
         return $this->container['feature_constraints'];
     }
@@ -462,19 +477,14 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
     /**
      * Sets feature_constraints.
      *
-     * @param null|array $feature_constraints a list of features and their fulfillment policies to apply to the order
+     * @param null|FeatureSettings[] $feature_constraints a list of features and their fulfillment policies to apply to the order
+     *
+     * @return self
      */
-    public function setFeatureConstraints(?array $feature_constraints): self
+    public function setFeatureConstraints($feature_constraints)
     {
         if (is_null($feature_constraints)) {
-            array_push($this->openAPINullablesSetToNull, 'feature_constraints');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('feature_constraints', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable feature_constraints cannot be null');
         }
         $this->container['feature_constraints'] = $feature_constraints;
 
@@ -499,7 +509,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -510,7 +520,7 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -538,15 +548,17 @@ class GetFulfillmentPreviewRequest implements ModelInterface, \ArrayAccess, \Jso
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

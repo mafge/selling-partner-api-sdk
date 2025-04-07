@@ -3,7 +3,7 @@
 /**
  * ContentMetadataRecord.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\aplusContent\v2020_11_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class ContentMetadataRecord implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ContentMetadataRecord';
+    protected static $openAPIModelName = 'ContentMetadataRecord';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'content_reference_key' => 'string',
-        'content_metadata' => '\SpApi\Model\aplusContent\v2020_11_01\ContentMetadata'];
+        'content_metadata' => '\SpApi\Model\aplusContent\v2020_11_01\ContentMetadata',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class ContentMetadataRecord implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'content_reference_key' => null,
-        'content_metadata' => null];
+        'content_metadata' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -100,7 +103,7 @@ class ContentMetadataRecord implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'content_reference_key' => 'contentReferenceKey',
         'content_metadata' => 'contentMetadata',
     ];
@@ -110,7 +113,7 @@ class ContentMetadataRecord implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'content_reference_key' => 'setContentReferenceKey',
         'content_metadata' => 'setContentMetadata',
     ];
@@ -120,21 +123,23 @@ class ContentMetadataRecord implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'content_reference_key' => 'getContentReferenceKey',
         'content_metadata' => 'getContentMetadata',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class ContentMetadataRecord implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class ContentMetadataRecord implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class ContentMetadataRecord implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -249,15 +266,17 @@ class ContentMetadataRecord implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets content_reference_key.
+     *
+     * @return string
      */
-    public function getContentReferenceKey(): string
+    public function getContentReferenceKey()
     {
         return $this->container['content_reference_key'];
     }
@@ -266,8 +285,10 @@ class ContentMetadataRecord implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets content_reference_key.
      *
      * @param string $content_reference_key A unique reference key for the A+ Content document. A content reference key cannot form a permalink and might change in the future. A content reference key is not guaranteed to match any A+ content identifier.
+     *
+     * @return self
      */
-    public function setContentReferenceKey(string $content_reference_key): self
+    public function setContentReferenceKey($content_reference_key)
     {
         if (is_null($content_reference_key)) {
             throw new \InvalidArgumentException('non-nullable content_reference_key cannot be null');
@@ -284,8 +305,10 @@ class ContentMetadataRecord implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets content_metadata.
+     *
+     * @return ContentMetadata
      */
-    public function getContentMetadata(): ContentMetadata
+    public function getContentMetadata()
     {
         return $this->container['content_metadata'];
     }
@@ -294,8 +317,10 @@ class ContentMetadataRecord implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets content_metadata.
      *
      * @param ContentMetadata $content_metadata content_metadata
+     *
+     * @return self
      */
-    public function setContentMetadata(ContentMetadata $content_metadata): self
+    public function setContentMetadata($content_metadata)
     {
         if (is_null($content_metadata)) {
             throw new \InvalidArgumentException('non-nullable content_metadata cannot be null');
@@ -323,7 +348,7 @@ class ContentMetadataRecord implements ModelInterface, \ArrayAccess, \JsonSerial
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -334,7 +359,7 @@ class ContentMetadataRecord implements ModelInterface, \ArrayAccess, \JsonSerial
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -362,15 +387,17 @@ class ContentMetadataRecord implements ModelInterface, \ArrayAccess, \JsonSerial
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

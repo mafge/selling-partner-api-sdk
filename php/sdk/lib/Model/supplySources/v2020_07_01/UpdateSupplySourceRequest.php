@@ -3,7 +3,7 @@
 /**
  * UpdateSupplySourceRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\supplySources\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class UpdateSupplySourceRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'UpdateSupplySourceRequest';
+    protected static $openAPIModelName = 'UpdateSupplySourceRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'alias' => 'string',
         'configuration' => '\SpApi\Model\supplySources\v2020_07_01\SupplySourceConfiguration',
-        'capabilities' => '\SpApi\Model\supplySources\v2020_07_01\SupplySourceCapabilities'];
+        'capabilities' => '\SpApi\Model\supplySources\v2020_07_01\SupplySourceCapabilities',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class UpdateSupplySourceRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'alias' => null,
         'configuration' => null,
-        'capabilities' => null];
+        'capabilities' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class UpdateSupplySourceRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'alias' => true,
-        'configuration' => true,
-        'capabilities' => true,
+        'alias' => false,
+        'configuration' => false,
+        'capabilities' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class UpdateSupplySourceRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'alias' => 'alias',
         'configuration' => 'configuration',
         'capabilities' => 'capabilities',
@@ -114,7 +117,7 @@ class UpdateSupplySourceRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'alias' => 'setAlias',
         'configuration' => 'setConfiguration',
         'capabilities' => 'setCapabilities',
@@ -125,7 +128,7 @@ class UpdateSupplySourceRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'alias' => 'getAlias',
         'configuration' => 'getConfiguration',
         'capabilities' => 'getCapabilities',
@@ -133,14 +136,16 @@ class UpdateSupplySourceRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class UpdateSupplySourceRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class UpdateSupplySourceRequest implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class UpdateSupplySourceRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -243,15 +260,17 @@ class UpdateSupplySourceRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets alias.
+     *
+     * @return null|string
      */
-    public function getAlias(): ?string
+    public function getAlias()
     {
         return $this->container['alias'];
     }
@@ -260,18 +279,13 @@ class UpdateSupplySourceRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets alias.
      *
      * @param null|string $alias The custom alias for this supply source
+     *
+     * @return self
      */
-    public function setAlias(?string $alias): self
+    public function setAlias($alias)
     {
         if (is_null($alias)) {
-            array_push($this->openAPINullablesSetToNull, 'alias');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('alias', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable alias cannot be null');
         }
         $this->container['alias'] = $alias;
 
@@ -280,8 +294,10 @@ class UpdateSupplySourceRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets configuration.
+     *
+     * @return null|SupplySourceConfiguration
      */
-    public function getConfiguration(): ?SupplySourceConfiguration
+    public function getConfiguration()
     {
         return $this->container['configuration'];
     }
@@ -290,18 +306,13 @@ class UpdateSupplySourceRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets configuration.
      *
      * @param null|SupplySourceConfiguration $configuration configuration
+     *
+     * @return self
      */
-    public function setConfiguration(?SupplySourceConfiguration $configuration): self
+    public function setConfiguration($configuration)
     {
         if (is_null($configuration)) {
-            array_push($this->openAPINullablesSetToNull, 'configuration');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('configuration', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable configuration cannot be null');
         }
         $this->container['configuration'] = $configuration;
 
@@ -310,8 +321,10 @@ class UpdateSupplySourceRequest implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets capabilities.
+     *
+     * @return null|SupplySourceCapabilities
      */
-    public function getCapabilities(): ?SupplySourceCapabilities
+    public function getCapabilities()
     {
         return $this->container['capabilities'];
     }
@@ -320,18 +333,13 @@ class UpdateSupplySourceRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets capabilities.
      *
      * @param null|SupplySourceCapabilities $capabilities capabilities
+     *
+     * @return self
      */
-    public function setCapabilities(?SupplySourceCapabilities $capabilities): self
+    public function setCapabilities($capabilities)
     {
         if (is_null($capabilities)) {
-            array_push($this->openAPINullablesSetToNull, 'capabilities');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('capabilities', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable capabilities cannot be null');
         }
         $this->container['capabilities'] = $capabilities;
 
@@ -356,7 +364,7 @@ class UpdateSupplySourceRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -367,7 +375,7 @@ class UpdateSupplySourceRequest implements ModelInterface, \ArrayAccess, \JsonSe
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -395,15 +403,17 @@ class UpdateSupplySourceRequest implements ModelInterface, \ArrayAccess, \JsonSe
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

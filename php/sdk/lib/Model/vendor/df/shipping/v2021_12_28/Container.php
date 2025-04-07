@@ -2,7 +2,7 @@
 /**
  * Container
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\df\shipping\v2021_12_28;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * Container Class Doc Comment
@@ -52,26 +50,27 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'Container';
+    protected static $openAPIModelName = 'Container';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'container_type' => 'string',
-             'container_identifier' => 'string',
-             'tracking_number' => 'string',
-             'manifest_id' => 'string',
-             'manifest_date' => 'string',
-             'ship_method' => 'string',
-             'scac_code' => 'string',
-             'carrier' => 'string',
-             'container_sequence_number' => 'int',
-             'dimensions' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\Dimensions',
-             'weight' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\Weight',
-             'packed_items' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\PackedItem[]'    ];
+    protected static $openAPITypes = [
+        'container_type' => 'string',
+        'container_identifier' => 'string',
+        'tracking_number' => 'string',
+        'manifest_id' => 'string',
+        'manifest_date' => 'string',
+        'ship_method' => 'string',
+        'scac_code' => 'string',
+        'carrier' => 'string',
+        'container_sequence_number' => 'int',
+        'dimensions' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\Dimensions',
+        'weight' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\Weight',
+        'packed_items' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\PackedItem[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -80,19 +79,20 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'container_type' => null,
-            'container_identifier' => null,
-            'tracking_number' => null,
-            'manifest_id' => null,
-            'manifest_date' => null,
-            'ship_method' => null,
-            'scac_code' => null,
-            'carrier' => null,
-            'container_sequence_number' => null,
-            'dimensions' => null,
-            'weight' => null,
-            'packed_items' => null    ];
+    protected static $openAPIFormats = [
+        'container_type' => null,
+        'container_identifier' => null,
+        'tracking_number' => null,
+        'manifest_id' => null,
+        'manifest_date' => null,
+        'ship_method' => null,
+        'scac_code' => null,
+        'carrier' => null,
+        'container_sequence_number' => null,
+        'dimensions' => null,
+        'weight' => null,
+        'packed_items' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -102,14 +102,14 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'container_type' => false,
         'container_identifier' => false,
-        'tracking_number' => true,
-        'manifest_id' => true,
-        'manifest_date' => true,
-        'ship_method' => true,
-        'scac_code' => true,
-        'carrier' => true,
-        'container_sequence_number' => true,
-        'dimensions' => true,
+        'tracking_number' => false,
+        'manifest_id' => false,
+        'manifest_date' => false,
+        'ship_method' => false,
+        'scac_code' => false,
+        'carrier' => false,
+        'container_sequence_number' => false,
+        'dimensions' => false,
         'weight' => false,
         'packed_items' => false
     ];
@@ -126,7 +126,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -136,7 +136,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -199,20 +199,19 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'container_type' => 'containerType',
-                'container_identifier' => 'containerIdentifier',
-                'tracking_number' => 'trackingNumber',
-                'manifest_id' => 'manifestId',
-                'manifest_date' => 'manifestDate',
-                'ship_method' => 'shipMethod',
-                'scac_code' => 'scacCode',
-                'carrier' => 'carrier',
-                'container_sequence_number' => 'containerSequenceNumber',
-                'dimensions' => 'dimensions',
-                'weight' => 'weight',
-                'packed_items' => 'packedItems'
-        
+        'container_identifier' => 'containerIdentifier',
+        'tracking_number' => 'trackingNumber',
+        'manifest_id' => 'manifestId',
+        'manifest_date' => 'manifestDate',
+        'ship_method' => 'shipMethod',
+        'scac_code' => 'scacCode',
+        'carrier' => 'carrier',
+        'container_sequence_number' => 'containerSequenceNumber',
+        'dimensions' => 'dimensions',
+        'weight' => 'weight',
+        'packed_items' => 'packedItems'
     ];
 
     /**
@@ -220,7 +219,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'container_type' => 'setContainerType',
         'container_identifier' => 'setContainerIdentifier',
         'tracking_number' => 'setTrackingNumber',
@@ -240,7 +239,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'container_type' => 'getContainerType',
         'container_identifier' => 'getContainerIdentifier',
         'tracking_number' => 'getTrackingNumber',
@@ -261,7 +260,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -271,7 +270,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -281,7 +280,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -291,7 +290,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -304,7 +303,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getContainerTypeAllowableValues(): array
+    public function getContainerTypeAllowableValues()
     {
         return [
             self::CONTAINER_TYPE_CARTON,
@@ -315,17 +314,17 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('container_type', $data ?? [], null);
         $this->setIfExists('container_identifier', $data ?? [], null);
@@ -364,7 +363,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -398,7 +397,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -409,7 +408,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getContainerType(): string
+    public function getContainerType()
     {
         return $this->container['container_type'];
     }
@@ -421,7 +420,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setContainerType(string $container_type): self
+    public function setContainerType($container_type)
     {
         if (is_null($container_type)) {
             throw new \InvalidArgumentException('non-nullable container_type cannot be null');
@@ -446,7 +445,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getContainerIdentifier(): string
+    public function getContainerIdentifier()
     {
         return $this->container['container_identifier'];
     }
@@ -458,7 +457,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setContainerIdentifier(string $container_identifier): self
+    public function setContainerIdentifier($container_identifier)
     {
         if (is_null($container_identifier)) {
             throw new \InvalidArgumentException('non-nullable container_identifier cannot be null');
@@ -473,7 +472,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getTrackingNumber(): ?string
+    public function getTrackingNumber()
     {
         return $this->container['tracking_number'];
     }
@@ -485,17 +484,10 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTrackingNumber(?string $tracking_number): self
+    public function setTrackingNumber($tracking_number)
     {
         if (is_null($tracking_number)) {
-            array_push($this->openAPINullablesSetToNull, 'tracking_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tracking_number', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tracking_number cannot be null');
         }
         $this->container['tracking_number'] = $tracking_number;
 
@@ -507,7 +499,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getManifestId(): ?string
+    public function getManifestId()
     {
         return $this->container['manifest_id'];
     }
@@ -519,17 +511,10 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setManifestId(?string $manifest_id): self
+    public function setManifestId($manifest_id)
     {
         if (is_null($manifest_id)) {
-            array_push($this->openAPINullablesSetToNull, 'manifest_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('manifest_id', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable manifest_id cannot be null');
         }
         $this->container['manifest_id'] = $manifest_id;
 
@@ -541,7 +526,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getManifestDate(): ?string
+    public function getManifestDate()
     {
         return $this->container['manifest_date'];
     }
@@ -553,17 +538,10 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setManifestDate(?string $manifest_date): self
+    public function setManifestDate($manifest_date)
     {
         if (is_null($manifest_date)) {
-            array_push($this->openAPINullablesSetToNull, 'manifest_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('manifest_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable manifest_date cannot be null');
         }
         $this->container['manifest_date'] = $manifest_date;
 
@@ -575,7 +553,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getShipMethod(): ?string
+    public function getShipMethod()
     {
         return $this->container['ship_method'];
     }
@@ -587,17 +565,10 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShipMethod(?string $ship_method): self
+    public function setShipMethod($ship_method)
     {
         if (is_null($ship_method)) {
-            array_push($this->openAPINullablesSetToNull, 'ship_method');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ship_method', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ship_method cannot be null');
         }
         $this->container['ship_method'] = $ship_method;
 
@@ -609,7 +580,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getScacCode(): ?string
+    public function getScacCode()
     {
         return $this->container['scac_code'];
     }
@@ -621,17 +592,10 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setScacCode(?string $scac_code): self
+    public function setScacCode($scac_code)
     {
         if (is_null($scac_code)) {
-            array_push($this->openAPINullablesSetToNull, 'scac_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('scac_code', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable scac_code cannot be null');
         }
         $this->container['scac_code'] = $scac_code;
 
@@ -643,7 +607,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getCarrier(): ?string
+    public function getCarrier()
     {
         return $this->container['carrier'];
     }
@@ -655,17 +619,10 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCarrier(?string $carrier): self
+    public function setCarrier($carrier)
     {
         if (is_null($carrier)) {
-            array_push($this->openAPINullablesSetToNull, 'carrier');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('carrier', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable carrier cannot be null');
         }
         $this->container['carrier'] = $carrier;
 
@@ -677,7 +634,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return int|null
      */
-    public function getContainerSequenceNumber(): ?int
+    public function getContainerSequenceNumber()
     {
         return $this->container['container_sequence_number'];
     }
@@ -689,17 +646,10 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setContainerSequenceNumber(?int $container_sequence_number): self
+    public function setContainerSequenceNumber($container_sequence_number)
     {
         if (is_null($container_sequence_number)) {
-            array_push($this->openAPINullablesSetToNull, 'container_sequence_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('container_sequence_number', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable container_sequence_number cannot be null');
         }
         $this->container['container_sequence_number'] = $container_sequence_number;
 
@@ -711,7 +661,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\df\shipping\v2021_12_28\Dimensions|null
      */
-    public function getDimensions(): ?\SpApi\Model\vendor\df\shipping\v2021_12_28\Dimensions
+    public function getDimensions()
     {
         return $this->container['dimensions'];
     }
@@ -723,17 +673,10 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDimensions(?\SpApi\Model\vendor\df\shipping\v2021_12_28\Dimensions $dimensions): self
+    public function setDimensions($dimensions)
     {
         if (is_null($dimensions)) {
-            array_push($this->openAPINullablesSetToNull, 'dimensions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('dimensions', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable dimensions cannot be null');
         }
         $this->container['dimensions'] = $dimensions;
 
@@ -745,7 +688,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\df\shipping\v2021_12_28\Weight
      */
-    public function getWeight(): \SpApi\Model\vendor\df\shipping\v2021_12_28\Weight
+    public function getWeight()
     {
         return $this->container['weight'];
     }
@@ -757,7 +700,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setWeight(\SpApi\Model\vendor\df\shipping\v2021_12_28\Weight $weight): self
+    public function setWeight($weight)
     {
         if (is_null($weight)) {
             throw new \InvalidArgumentException('non-nullable weight cannot be null');
@@ -770,9 +713,9 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets packed_items
      *
-     * @return array
+     * @return \SpApi\Model\vendor\df\shipping\v2021_12_28\PackedItem[]
      */
-    public function getPackedItems(): array
+    public function getPackedItems()
     {
         return $this->container['packed_items'];
     }
@@ -780,11 +723,11 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets packed_items
      *
-     * @param array $packed_items A list of packed items.
+     * @param \SpApi\Model\vendor\df\shipping\v2021_12_28\PackedItem[] $packed_items A list of packed items.
      *
      * @return self
      */
-    public function setPackedItems(array $packed_items): self
+    public function setPackedItems($packed_items)
     {
         if (is_null($packed_items)) {
             throw new \InvalidArgumentException('non-nullable packed_items cannot be null');
@@ -793,8 +736,6 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -815,7 +756,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -828,7 +769,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -857,7 +798,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -880,7 +821,7 @@ class Container implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

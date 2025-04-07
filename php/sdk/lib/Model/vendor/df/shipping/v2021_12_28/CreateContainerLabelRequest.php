@@ -2,7 +2,7 @@
 /**
  * CreateContainerLabelRequest
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\df\shipping\v2021_12_28;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * CreateContainerLabelRequest Class Doc Comment
@@ -52,19 +50,20 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'CreateContainerLabelRequest';
+    protected static $openAPIModelName = 'CreateContainerLabelRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'selling_party' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\PartyIdentification',
-             'ship_from_party' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\PartyIdentification',
-             'carrier_id' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\CarrierId',
-             'vendor_container_id' => 'string',
-             'packages' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\Package[]'    ];
+    protected static $openAPITypes = [
+        'selling_party' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\PartyIdentification',
+        'ship_from_party' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\PartyIdentification',
+        'carrier_id' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\CarrierId',
+        'vendor_container_id' => 'string',
+        'packages' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\Package[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -73,12 +72,13 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'selling_party' => null,
-            'ship_from_party' => null,
-            'carrier_id' => null,
-            'vendor_container_id' => null,
-            'packages' => null    ];
+    protected static $openAPIFormats = [
+        'selling_party' => null,
+        'ship_from_party' => null,
+        'carrier_id' => null,
+        'vendor_container_id' => null,
+        'packages' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -105,7 +105,7 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -115,7 +115,7 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -178,13 +178,12 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'selling_party' => 'sellingParty',
-                'ship_from_party' => 'shipFromParty',
-                'carrier_id' => 'carrierId',
-                'vendor_container_id' => 'vendorContainerId',
-                'packages' => 'packages'
-        
+        'ship_from_party' => 'shipFromParty',
+        'carrier_id' => 'carrierId',
+        'vendor_container_id' => 'vendorContainerId',
+        'packages' => 'packages'
     ];
 
     /**
@@ -192,7 +191,7 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'selling_party' => 'setSellingParty',
         'ship_from_party' => 'setShipFromParty',
         'carrier_id' => 'setCarrierId',
@@ -205,7 +204,7 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'selling_party' => 'getSellingParty',
         'ship_from_party' => 'getShipFromParty',
         'carrier_id' => 'getCarrierId',
@@ -219,7 +218,7 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -229,7 +228,7 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -239,7 +238,7 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -249,7 +248,7 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -258,17 +257,17 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('selling_party', $data ?? [], null);
         $this->setIfExists('ship_from_party', $data ?? [], null);
@@ -300,7 +299,7 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -328,7 +327,7 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -339,7 +338,7 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return \SpApi\Model\vendor\df\shipping\v2021_12_28\PartyIdentification
      */
-    public function getSellingParty(): \SpApi\Model\vendor\df\shipping\v2021_12_28\PartyIdentification
+    public function getSellingParty()
     {
         return $this->container['selling_party'];
     }
@@ -351,7 +350,7 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setSellingParty(\SpApi\Model\vendor\df\shipping\v2021_12_28\PartyIdentification $selling_party): self
+    public function setSellingParty($selling_party)
     {
         if (is_null($selling_party)) {
             throw new \InvalidArgumentException('non-nullable selling_party cannot be null');
@@ -366,7 +365,7 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return \SpApi\Model\vendor\df\shipping\v2021_12_28\PartyIdentification
      */
-    public function getShipFromParty(): \SpApi\Model\vendor\df\shipping\v2021_12_28\PartyIdentification
+    public function getShipFromParty()
     {
         return $this->container['ship_from_party'];
     }
@@ -378,7 +377,7 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setShipFromParty(\SpApi\Model\vendor\df\shipping\v2021_12_28\PartyIdentification $ship_from_party): self
+    public function setShipFromParty($ship_from_party)
     {
         if (is_null($ship_from_party)) {
             throw new \InvalidArgumentException('non-nullable ship_from_party cannot be null');
@@ -391,9 +390,9 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets carrier_id
      *
-     * @return string
+     * @return \SpApi\Model\vendor\df\shipping\v2021_12_28\CarrierId
      */
-    public function getCarrierId(): string
+    public function getCarrierId()
     {
         return $this->container['carrier_id'];
     }
@@ -401,11 +400,11 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets carrier_id
      *
-     * @param string $carrier_id carrier_id
+     * @param \SpApi\Model\vendor\df\shipping\v2021_12_28\CarrierId $carrier_id carrier_id
      *
      * @return self
      */
-    public function setCarrierId(string $carrier_id): self
+    public function setCarrierId($carrier_id)
     {
         if (is_null($carrier_id)) {
             throw new \InvalidArgumentException('non-nullable carrier_id cannot be null');
@@ -420,7 +419,7 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string
      */
-    public function getVendorContainerId(): string
+    public function getVendorContainerId()
     {
         return $this->container['vendor_container_id'];
     }
@@ -432,7 +431,7 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return self
      */
-    public function setVendorContainerId(string $vendor_container_id): self
+    public function setVendorContainerId($vendor_container_id)
     {
         if (is_null($vendor_container_id)) {
             throw new \InvalidArgumentException('non-nullable vendor_container_id cannot be null');
@@ -445,9 +444,9 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Gets packages
      *
-     * @return array
+     * @return \SpApi\Model\vendor\df\shipping\v2021_12_28\Package[]
      */
-    public function getPackages(): array
+    public function getPackages()
     {
         return $this->container['packages'];
     }
@@ -455,11 +454,11 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
     /**
      * Sets packages
      *
-     * @param array $packages An array of package objects in a container.
+     * @param \SpApi\Model\vendor\df\shipping\v2021_12_28\Package[] $packages An array of package objects in a container.
      *
      * @return self
      */
-    public function setPackages(array $packages): self
+    public function setPackages($packages)
     {
         if (is_null($packages)) {
             throw new \InvalidArgumentException('non-nullable packages cannot be null');
@@ -468,8 +467,6 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -490,7 +487,7 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -503,7 +500,7 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -532,7 +529,7 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -555,7 +552,7 @@ class CreateContainerLabelRequest implements ModelInterface, ArrayAccess, \JsonS
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

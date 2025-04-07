@@ -3,7 +3,7 @@
 /**
  * FeaturedOfferExpectedPriceResult.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v2022_05_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'FeaturedOfferExpectedPriceResult';
+    protected static $openAPIModelName = 'FeaturedOfferExpectedPriceResult';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'featured_offer_expected_price' => '\SpApi\Model\pricing\v2022_05_01\FeaturedOfferExpectedPrice',
         'result_status' => 'string',
         'competing_featured_offer' => '\SpApi\Model\pricing\v2022_05_01\FeaturedOffer',
-        'current_featured_offer' => '\SpApi\Model\pricing\v2022_05_01\FeaturedOffer'];
+        'current_featured_offer' => '\SpApi\Model\pricing\v2022_05_01\FeaturedOffer',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'featured_offer_expected_price' => null,
         'result_status' => null,
         'competing_featured_offer' => null,
-        'current_featured_offer' => null];
+        'current_featured_offer' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,10 +90,10 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'featured_offer_expected_price' => true,
+        'featured_offer_expected_price' => false,
         'result_status' => false,
-        'competing_featured_offer' => true,
-        'current_featured_offer' => true,
+        'competing_featured_offer' => false,
+        'current_featured_offer' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'featured_offer_expected_price' => 'featuredOfferExpectedPrice',
         'result_status' => 'resultStatus',
         'competing_featured_offer' => 'competingFeaturedOffer',
@@ -118,7 +121,7 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'featured_offer_expected_price' => 'setFeaturedOfferExpectedPrice',
         'result_status' => 'setResultStatus',
         'competing_featured_offer' => 'setCompetingFeaturedOffer',
@@ -130,7 +133,7 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'featured_offer_expected_price' => 'getFeaturedOfferExpectedPrice',
         'result_status' => 'getResultStatus',
         'competing_featured_offer' => 'getCompetingFeaturedOffer',
@@ -139,14 +142,16 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -256,15 +273,17 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets featured_offer_expected_price.
+     *
+     * @return null|FeaturedOfferExpectedPrice
      */
-    public function getFeaturedOfferExpectedPrice(): ?FeaturedOfferExpectedPrice
+    public function getFeaturedOfferExpectedPrice()
     {
         return $this->container['featured_offer_expected_price'];
     }
@@ -273,18 +292,13 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
      * Sets featured_offer_expected_price.
      *
      * @param null|FeaturedOfferExpectedPrice $featured_offer_expected_price featured_offer_expected_price
+     *
+     * @return self
      */
-    public function setFeaturedOfferExpectedPrice(?FeaturedOfferExpectedPrice $featured_offer_expected_price): self
+    public function setFeaturedOfferExpectedPrice($featured_offer_expected_price)
     {
         if (is_null($featured_offer_expected_price)) {
-            array_push($this->openAPINullablesSetToNull, 'featured_offer_expected_price');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('featured_offer_expected_price', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable featured_offer_expected_price cannot be null');
         }
         $this->container['featured_offer_expected_price'] = $featured_offer_expected_price;
 
@@ -293,8 +307,10 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
 
     /**
      * Gets result_status.
+     *
+     * @return string
      */
-    public function getResultStatus(): string
+    public function getResultStatus()
     {
         return $this->container['result_status'];
     }
@@ -303,8 +319,10 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
      * Sets result_status.
      *
      * @param string $result_status The status of the FOEP computation. Possible values include `VALID_FOEP`, `NO_COMPETING_OFFER`, `OFFER_NOT_ELIGIBLE`, `OFFER_NOT_FOUND`, and `ASIN_NOT_ELIGIBLE`. Additional values might be added in the future.
+     *
+     * @return self
      */
-    public function setResultStatus(string $result_status): self
+    public function setResultStatus($result_status)
     {
         if (is_null($result_status)) {
             throw new \InvalidArgumentException('non-nullable result_status cannot be null');
@@ -316,8 +334,10 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
 
     /**
      * Gets competing_featured_offer.
+     *
+     * @return null|FeaturedOffer
      */
-    public function getCompetingFeaturedOffer(): ?FeaturedOffer
+    public function getCompetingFeaturedOffer()
     {
         return $this->container['competing_featured_offer'];
     }
@@ -326,18 +346,13 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
      * Sets competing_featured_offer.
      *
      * @param null|FeaturedOffer $competing_featured_offer competing_featured_offer
+     *
+     * @return self
      */
-    public function setCompetingFeaturedOffer(?FeaturedOffer $competing_featured_offer): self
+    public function setCompetingFeaturedOffer($competing_featured_offer)
     {
         if (is_null($competing_featured_offer)) {
-            array_push($this->openAPINullablesSetToNull, 'competing_featured_offer');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('competing_featured_offer', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable competing_featured_offer cannot be null');
         }
         $this->container['competing_featured_offer'] = $competing_featured_offer;
 
@@ -346,8 +361,10 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
 
     /**
      * Gets current_featured_offer.
+     *
+     * @return null|FeaturedOffer
      */
-    public function getCurrentFeaturedOffer(): ?FeaturedOffer
+    public function getCurrentFeaturedOffer()
     {
         return $this->container['current_featured_offer'];
     }
@@ -356,18 +373,13 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
      * Sets current_featured_offer.
      *
      * @param null|FeaturedOffer $current_featured_offer current_featured_offer
+     *
+     * @return self
      */
-    public function setCurrentFeaturedOffer(?FeaturedOffer $current_featured_offer): self
+    public function setCurrentFeaturedOffer($current_featured_offer)
     {
         if (is_null($current_featured_offer)) {
-            array_push($this->openAPINullablesSetToNull, 'current_featured_offer');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('current_featured_offer', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable current_featured_offer cannot be null');
         }
         $this->container['current_featured_offer'] = $current_featured_offer;
 
@@ -392,7 +404,7 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -403,7 +415,7 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -431,15 +443,17 @@ class FeaturedOfferExpectedPriceResult implements ModelInterface, \ArrayAccess, 
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

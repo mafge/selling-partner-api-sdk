@@ -3,7 +3,7 @@
 /**
  * SelfShipAppointmentSlotsAvailability.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class SelfShipAppointmentSlotsAvailability implements ModelInterface, \ArrayAcce
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'SelfShipAppointmentSlotsAvailability';
+    protected static $openAPIModelName = 'SelfShipAppointmentSlotsAvailability';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'expires_at' => '\DateTime',
-        'slots' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\AppointmentSlot[]'];
+        'slots' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\AppointmentSlot[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class SelfShipAppointmentSlotsAvailability implements ModelInterface, \ArrayAcce
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'expires_at' => 'date-time',
-        'slots' => null];
+        'slots' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class SelfShipAppointmentSlotsAvailability implements ModelInterface, \ArrayAcce
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'expires_at' => true,
-        'slots' => true,
+        'expires_at' => false,
+        'slots' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class SelfShipAppointmentSlotsAvailability implements ModelInterface, \ArrayAcce
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'expires_at' => 'expiresAt',
         'slots' => 'slots',
     ];
@@ -110,7 +113,7 @@ class SelfShipAppointmentSlotsAvailability implements ModelInterface, \ArrayAcce
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'expires_at' => 'setExpiresAt',
         'slots' => 'setSlots',
     ];
@@ -120,21 +123,23 @@ class SelfShipAppointmentSlotsAvailability implements ModelInterface, \ArrayAcce
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'expires_at' => 'getExpiresAt',
         'slots' => 'getSlots',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class SelfShipAppointmentSlotsAvailability implements ModelInterface, \ArrayAcce
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class SelfShipAppointmentSlotsAvailability implements ModelInterface, \ArrayAcce
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class SelfShipAppointmentSlotsAvailability implements ModelInterface, \ArrayAcce
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -236,15 +253,17 @@ class SelfShipAppointmentSlotsAvailability implements ModelInterface, \ArrayAcce
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets expires_at.
+     *
+     * @return null|\DateTime
      */
-    public function getExpiresAt(): ?\DateTime
+    public function getExpiresAt()
     {
         return $this->container['expires_at'];
     }
@@ -253,18 +272,13 @@ class SelfShipAppointmentSlotsAvailability implements ModelInterface, \ArrayAcce
      * Sets expires_at.
      *
      * @param null|\DateTime $expires_at The time at which the self ship appointment slot expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
+     *
+     * @return self
      */
-    public function setExpiresAt(?\DateTime $expires_at): self
+    public function setExpiresAt($expires_at)
     {
         if (is_null($expires_at)) {
-            array_push($this->openAPINullablesSetToNull, 'expires_at');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expires_at', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable expires_at cannot be null');
         }
         $this->container['expires_at'] = $expires_at;
 
@@ -273,8 +287,10 @@ class SelfShipAppointmentSlotsAvailability implements ModelInterface, \ArrayAcce
 
     /**
      * Gets slots.
+     *
+     * @return null|AppointmentSlot[]
      */
-    public function getSlots(): ?array
+    public function getSlots()
     {
         return $this->container['slots'];
     }
@@ -282,19 +298,14 @@ class SelfShipAppointmentSlotsAvailability implements ModelInterface, \ArrayAcce
     /**
      * Sets slots.
      *
-     * @param null|array $slots a list of appointment slots
+     * @param null|AppointmentSlot[] $slots a list of appointment slots
+     *
+     * @return self
      */
-    public function setSlots(?array $slots): self
+    public function setSlots($slots)
     {
         if (is_null($slots)) {
-            array_push($this->openAPINullablesSetToNull, 'slots');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('slots', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable slots cannot be null');
         }
         $this->container['slots'] = $slots;
 
@@ -319,7 +330,7 @@ class SelfShipAppointmentSlotsAvailability implements ModelInterface, \ArrayAcce
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +341,7 @@ class SelfShipAppointmentSlotsAvailability implements ModelInterface, \ArrayAcce
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +369,17 @@ class SelfShipAppointmentSlotsAvailability implements ModelInterface, \ArrayAcce
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

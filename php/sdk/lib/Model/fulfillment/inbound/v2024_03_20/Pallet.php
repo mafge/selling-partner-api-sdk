@@ -3,7 +3,7 @@
 /**
  * Pallet.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Pallet';
+    protected static $openAPIModelName = 'Pallet';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'dimensions' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Dimensions',
         'package_id' => 'string',
         'quantity' => 'int',
         'stackability' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Stackability',
-        'weight' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Weight'];
+        'weight' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Weight',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'dimensions' => null,
         'package_id' => null,
         'quantity' => null,
         'stackability' => null,
-        'weight' => null];
+        'weight' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,11 +92,11 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'dimensions' => true,
+        'dimensions' => false,
         'package_id' => false,
-        'quantity' => true,
-        'stackability' => true,
-        'weight' => true,
+        'quantity' => false,
+        'stackability' => false,
+        'weight' => false,
     ];
 
     /**
@@ -109,7 +112,7 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'dimensions' => 'dimensions',
         'package_id' => 'packageId',
         'quantity' => 'quantity',
@@ -122,7 +125,7 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'dimensions' => 'setDimensions',
         'package_id' => 'setPackageId',
         'quantity' => 'setQuantity',
@@ -135,7 +138,7 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'dimensions' => 'getDimensions',
         'package_id' => 'getPackageId',
         'quantity' => 'getQuantity',
@@ -145,14 +148,16 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -282,15 +299,17 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets dimensions.
+     *
+     * @return null|Dimensions
      */
-    public function getDimensions(): ?Dimensions
+    public function getDimensions()
     {
         return $this->container['dimensions'];
     }
@@ -299,18 +318,13 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets dimensions.
      *
      * @param null|Dimensions $dimensions dimensions
+     *
+     * @return self
      */
-    public function setDimensions(?Dimensions $dimensions): self
+    public function setDimensions($dimensions)
     {
         if (is_null($dimensions)) {
-            array_push($this->openAPINullablesSetToNull, 'dimensions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('dimensions', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable dimensions cannot be null');
         }
         $this->container['dimensions'] = $dimensions;
 
@@ -319,8 +333,10 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets package_id.
+     *
+     * @return string
      */
-    public function getPackageId(): string
+    public function getPackageId()
     {
         return $this->container['package_id'];
     }
@@ -329,8 +345,10 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets package_id.
      *
      * @param string $package_id primary key to uniquely identify a Package (Box or Pallet)
+     *
+     * @return self
      */
-    public function setPackageId(string $package_id): self
+    public function setPackageId($package_id)
     {
         if (is_null($package_id)) {
             throw new \InvalidArgumentException('non-nullable package_id cannot be null');
@@ -352,8 +370,10 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets quantity.
+     *
+     * @return null|int
      */
-    public function getQuantity(): ?int
+    public function getQuantity()
     {
         return $this->container['quantity'];
     }
@@ -362,24 +382,19 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets quantity.
      *
      * @param null|int $quantity the number of containers where all other properties like weight or dimensions are identical
+     *
+     * @return self
      */
-    public function setQuantity(?int $quantity): self
+    public function setQuantity($quantity)
     {
         if (is_null($quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable quantity cannot be null');
         }
 
-        if (!is_null($quantity) && ($quantity > 10000)) {
+        if ($quantity > 10000) {
             throw new \InvalidArgumentException('invalid value for $quantity when calling Pallet., must be smaller than or equal to 10000.');
         }
-        if (!is_null($quantity) && ($quantity < 1)) {
+        if ($quantity < 1) {
             throw new \InvalidArgumentException('invalid value for $quantity when calling Pallet., must be bigger than or equal to 1.');
         }
 
@@ -390,8 +405,10 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets stackability.
+     *
+     * @return null|Stackability
      */
-    public function getStackability(): ?string
+    public function getStackability()
     {
         return $this->container['stackability'];
     }
@@ -399,19 +416,14 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets stackability.
      *
-     * @param null|string $stackability stackability
+     * @param null|Stackability $stackability stackability
+     *
+     * @return self
      */
-    public function setStackability(?string $stackability): self
+    public function setStackability($stackability)
     {
         if (is_null($stackability)) {
-            array_push($this->openAPINullablesSetToNull, 'stackability');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('stackability', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable stackability cannot be null');
         }
         $this->container['stackability'] = $stackability;
 
@@ -420,8 +432,10 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets weight.
+     *
+     * @return null|Weight
      */
-    public function getWeight(): ?Weight
+    public function getWeight()
     {
         return $this->container['weight'];
     }
@@ -430,18 +444,13 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets weight.
      *
      * @param null|Weight $weight weight
+     *
+     * @return self
      */
-    public function setWeight(?Weight $weight): self
+    public function setWeight($weight)
     {
         if (is_null($weight)) {
-            array_push($this->openAPINullablesSetToNull, 'weight');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('weight', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable weight cannot be null');
         }
         $this->container['weight'] = $weight;
 
@@ -466,7 +475,7 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -477,7 +486,7 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -505,15 +514,17 @@ class Pallet implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

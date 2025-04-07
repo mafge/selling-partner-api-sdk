@@ -3,7 +3,7 @@
 /**
  * Constraint.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\merchantFulfillment\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class Constraint implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Constraint';
+    protected static $openAPIModelName = 'Constraint';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'validation_reg_ex' => 'string',
-        'validation_string' => 'string'];
+        'validation_string' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class Constraint implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'validation_reg_ex' => null,
-        'validation_string' => null];
+        'validation_string' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,7 +86,7 @@ class Constraint implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'validation_reg_ex' => true,
+        'validation_reg_ex' => false,
         'validation_string' => false,
     ];
 
@@ -100,7 +103,7 @@ class Constraint implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'validation_reg_ex' => 'ValidationRegEx',
         'validation_string' => 'ValidationString',
     ];
@@ -110,7 +113,7 @@ class Constraint implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'validation_reg_ex' => 'setValidationRegEx',
         'validation_string' => 'setValidationString',
     ];
@@ -120,21 +123,23 @@ class Constraint implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'validation_reg_ex' => 'getValidationRegEx',
         'validation_string' => 'getValidationString',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class Constraint implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class Constraint implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class Constraint implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -242,15 +259,17 @@ class Constraint implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets validation_reg_ex.
+     *
+     * @return null|string
      */
-    public function getValidationRegEx(): ?string
+    public function getValidationRegEx()
     {
         return $this->container['validation_reg_ex'];
     }
@@ -259,18 +278,13 @@ class Constraint implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets validation_reg_ex.
      *
      * @param null|string $validation_reg_ex a regular expression
+     *
+     * @return self
      */
-    public function setValidationRegEx(?string $validation_reg_ex): self
+    public function setValidationRegEx($validation_reg_ex)
     {
         if (is_null($validation_reg_ex)) {
-            array_push($this->openAPINullablesSetToNull, 'validation_reg_ex');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('validation_reg_ex', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable validation_reg_ex cannot be null');
         }
         $this->container['validation_reg_ex'] = $validation_reg_ex;
 
@@ -279,8 +293,10 @@ class Constraint implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets validation_string.
+     *
+     * @return string
      */
-    public function getValidationString(): string
+    public function getValidationString()
     {
         return $this->container['validation_string'];
     }
@@ -289,8 +305,10 @@ class Constraint implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets validation_string.
      *
      * @param string $validation_string a validation string
+     *
+     * @return self
      */
-    public function setValidationString(string $validation_string): self
+    public function setValidationString($validation_string)
     {
         if (is_null($validation_string)) {
             throw new \InvalidArgumentException('non-nullable validation_string cannot be null');
@@ -318,7 +336,7 @@ class Constraint implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -329,7 +347,7 @@ class Constraint implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -357,15 +375,17 @@ class Constraint implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

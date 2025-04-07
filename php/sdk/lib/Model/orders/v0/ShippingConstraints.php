@@ -3,7 +3,7 @@
 /**
  * ShippingConstraints.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\orders\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ShippingConstraints';
+    protected static $openAPIModelName = 'ShippingConstraints';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'pallet_delivery' => '\SpApi\Model\orders\v0\ConstraintType',
         'signature_confirmation' => '\SpApi\Model\orders\v0\ConstraintType',
         'recipient_identity_verification' => '\SpApi\Model\orders\v0\ConstraintType',
-        'recipient_age_verification' => '\SpApi\Model\orders\v0\ConstraintType'];
+        'recipient_age_verification' => '\SpApi\Model\orders\v0\ConstraintType',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'pallet_delivery' => null,
         'signature_confirmation' => null,
         'recipient_identity_verification' => null,
-        'recipient_age_verification' => null];
+        'recipient_age_verification' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,10 +90,10 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'pallet_delivery' => true,
-        'signature_confirmation' => true,
-        'recipient_identity_verification' => true,
-        'recipient_age_verification' => true,
+        'pallet_delivery' => false,
+        'signature_confirmation' => false,
+        'recipient_identity_verification' => false,
+        'recipient_age_verification' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'pallet_delivery' => 'PalletDelivery',
         'signature_confirmation' => 'SignatureConfirmation',
         'recipient_identity_verification' => 'RecipientIdentityVerification',
@@ -118,7 +121,7 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'pallet_delivery' => 'setPalletDelivery',
         'signature_confirmation' => 'setSignatureConfirmation',
         'recipient_identity_verification' => 'setRecipientIdentityVerification',
@@ -130,7 +133,7 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'pallet_delivery' => 'getPalletDelivery',
         'signature_confirmation' => 'getSignatureConfirmation',
         'recipient_identity_verification' => 'getRecipientIdentityVerification',
@@ -139,14 +142,16 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -250,15 +267,17 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets pallet_delivery.
+     *
+     * @return null|ConstraintType
      */
-    public function getPalletDelivery(): ?string
+    public function getPalletDelivery()
     {
         return $this->container['pallet_delivery'];
     }
@@ -266,19 +285,14 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets pallet_delivery.
      *
-     * @param null|string $pallet_delivery pallet_delivery
+     * @param null|ConstraintType $pallet_delivery pallet_delivery
+     *
+     * @return self
      */
-    public function setPalletDelivery(?string $pallet_delivery): self
+    public function setPalletDelivery($pallet_delivery)
     {
         if (is_null($pallet_delivery)) {
-            array_push($this->openAPINullablesSetToNull, 'pallet_delivery');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('pallet_delivery', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable pallet_delivery cannot be null');
         }
         $this->container['pallet_delivery'] = $pallet_delivery;
 
@@ -287,8 +301,10 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets signature_confirmation.
+     *
+     * @return null|ConstraintType
      */
-    public function getSignatureConfirmation(): ?string
+    public function getSignatureConfirmation()
     {
         return $this->container['signature_confirmation'];
     }
@@ -296,19 +312,14 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets signature_confirmation.
      *
-     * @param null|string $signature_confirmation signature_confirmation
+     * @param null|ConstraintType $signature_confirmation signature_confirmation
+     *
+     * @return self
      */
-    public function setSignatureConfirmation(?string $signature_confirmation): self
+    public function setSignatureConfirmation($signature_confirmation)
     {
         if (is_null($signature_confirmation)) {
-            array_push($this->openAPINullablesSetToNull, 'signature_confirmation');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('signature_confirmation', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable signature_confirmation cannot be null');
         }
         $this->container['signature_confirmation'] = $signature_confirmation;
 
@@ -317,8 +328,10 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets recipient_identity_verification.
+     *
+     * @return null|ConstraintType
      */
-    public function getRecipientIdentityVerification(): ?string
+    public function getRecipientIdentityVerification()
     {
         return $this->container['recipient_identity_verification'];
     }
@@ -326,19 +339,14 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets recipient_identity_verification.
      *
-     * @param null|string $recipient_identity_verification recipient_identity_verification
+     * @param null|ConstraintType $recipient_identity_verification recipient_identity_verification
+     *
+     * @return self
      */
-    public function setRecipientIdentityVerification(?string $recipient_identity_verification): self
+    public function setRecipientIdentityVerification($recipient_identity_verification)
     {
         if (is_null($recipient_identity_verification)) {
-            array_push($this->openAPINullablesSetToNull, 'recipient_identity_verification');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('recipient_identity_verification', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable recipient_identity_verification cannot be null');
         }
         $this->container['recipient_identity_verification'] = $recipient_identity_verification;
 
@@ -347,8 +355,10 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets recipient_age_verification.
+     *
+     * @return null|ConstraintType
      */
-    public function getRecipientAgeVerification(): ?string
+    public function getRecipientAgeVerification()
     {
         return $this->container['recipient_age_verification'];
     }
@@ -356,19 +366,14 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets recipient_age_verification.
      *
-     * @param null|string $recipient_age_verification recipient_age_verification
+     * @param null|ConstraintType $recipient_age_verification recipient_age_verification
+     *
+     * @return self
      */
-    public function setRecipientAgeVerification(?string $recipient_age_verification): self
+    public function setRecipientAgeVerification($recipient_age_verification)
     {
         if (is_null($recipient_age_verification)) {
-            array_push($this->openAPINullablesSetToNull, 'recipient_age_verification');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('recipient_age_verification', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable recipient_age_verification cannot be null');
         }
         $this->container['recipient_age_verification'] = $recipient_age_verification;
 
@@ -393,7 +398,7 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -404,7 +409,7 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -432,15 +437,17 @@ class ShippingConstraints implements ModelInterface, \ArrayAccess, \JsonSerializ
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
