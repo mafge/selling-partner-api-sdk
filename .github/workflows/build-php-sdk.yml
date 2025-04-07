@@ -106,4 +106,3 @@ jobs:
           branch: feature/update-php-sdk
           assignees: nakagleo
           path: ./selling-partner-api-sdk
-          token: ${{ secrets.MAFGE_PAT }}
