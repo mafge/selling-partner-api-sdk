@@ -3,7 +3,7 @@
 /**
  * Feature.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class Feature implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Feature';
+    protected static $openAPIModelName = 'Feature';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'feature_name' => 'string',
         'feature_description' => 'string',
-        'seller_eligible' => 'bool'];
+        'seller_eligible' => 'bool',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class Feature implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'feature_name' => null,
         'feature_description' => null,
-        'seller_eligible' => null];
+        'seller_eligible' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,7 +90,7 @@ class Feature implements ModelInterface, \ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'feature_name' => false,
         'feature_description' => false,
-        'seller_eligible' => true,
+        'seller_eligible' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class Feature implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'feature_name' => 'featureName',
         'feature_description' => 'featureDescription',
         'seller_eligible' => 'sellerEligible',
@@ -114,7 +117,7 @@ class Feature implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'feature_name' => 'setFeatureName',
         'feature_description' => 'setFeatureDescription',
         'seller_eligible' => 'setSellerEligible',
@@ -125,7 +128,7 @@ class Feature implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'feature_name' => 'getFeatureName',
         'feature_description' => 'getFeatureDescription',
         'seller_eligible' => 'getSellerEligible',
@@ -133,14 +136,16 @@ class Feature implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class Feature implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class Feature implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class Feature implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -252,15 +269,17 @@ class Feature implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets feature_name.
+     *
+     * @return string
      */
-    public function getFeatureName(): string
+    public function getFeatureName()
     {
         return $this->container['feature_name'];
     }
@@ -269,8 +288,10 @@ class Feature implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets feature_name.
      *
      * @param string $feature_name the feature name
+     *
+     * @return self
      */
-    public function setFeatureName(string $feature_name): self
+    public function setFeatureName($feature_name)
     {
         if (is_null($feature_name)) {
             throw new \InvalidArgumentException('non-nullable feature_name cannot be null');
@@ -282,8 +303,10 @@ class Feature implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets feature_description.
+     *
+     * @return string
      */
-    public function getFeatureDescription(): string
+    public function getFeatureDescription()
     {
         return $this->container['feature_description'];
     }
@@ -292,8 +315,10 @@ class Feature implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets feature_description.
      *
      * @param string $feature_description the feature description
+     *
+     * @return self
      */
-    public function setFeatureDescription(string $feature_description): self
+    public function setFeatureDescription($feature_description)
     {
         if (is_null($feature_description)) {
             throw new \InvalidArgumentException('non-nullable feature_description cannot be null');
@@ -305,8 +330,10 @@ class Feature implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets seller_eligible.
+     *
+     * @return null|bool
      */
-    public function getSellerEligible(): ?bool
+    public function getSellerEligible()
     {
         return $this->container['seller_eligible'];
     }
@@ -315,18 +342,13 @@ class Feature implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets seller_eligible.
      *
      * @param null|bool $seller_eligible when true, indicates that the seller is eligible to use the feature
+     *
+     * @return self
      */
-    public function setSellerEligible(?bool $seller_eligible): self
+    public function setSellerEligible($seller_eligible)
     {
         if (is_null($seller_eligible)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_eligible');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_eligible', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_eligible cannot be null');
         }
         $this->container['seller_eligible'] = $seller_eligible;
 
@@ -351,7 +373,7 @@ class Feature implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -362,7 +384,7 @@ class Feature implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -390,15 +412,17 @@ class Feature implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -2,7 +2,7 @@
 /**
  * TransportationDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * TransportationDetails Class Doc Comment
@@ -52,21 +50,22 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'TransportationDetails';
+    protected static $openAPIModelName = 'TransportationDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'ship_mode' => 'string',
-             'transportation_mode' => 'string',
-             'shipped_date' => '\DateTime',
-             'estimated_delivery_date' => '\DateTime',
-             'shipment_delivery_date' => '\DateTime',
-             'carrier_details' => '\SpApi\Model\vendor\shipments\v1\CarrierDetails',
-             'bill_of_lading_number' => 'string'    ];
+    protected static $openAPITypes = [
+        'ship_mode' => 'string',
+        'transportation_mode' => 'string',
+        'shipped_date' => '\DateTime',
+        'estimated_delivery_date' => '\DateTime',
+        'shipment_delivery_date' => '\DateTime',
+        'carrier_details' => '\SpApi\Model\vendor\shipments\v1\CarrierDetails',
+        'bill_of_lading_number' => 'string'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -75,14 +74,15 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'ship_mode' => null,
-            'transportation_mode' => null,
-            'shipped_date' => 'date-time',
-            'estimated_delivery_date' => 'date-time',
-            'shipment_delivery_date' => 'date-time',
-            'carrier_details' => null,
-            'bill_of_lading_number' => null    ];
+    protected static $openAPIFormats = [
+        'ship_mode' => null,
+        'transportation_mode' => null,
+        'shipped_date' => 'date-time',
+        'estimated_delivery_date' => 'date-time',
+        'shipment_delivery_date' => 'date-time',
+        'carrier_details' => null,
+        'bill_of_lading_number' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -90,13 +90,13 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'ship_mode' => true,
-        'transportation_mode' => true,
-        'shipped_date' => true,
-        'estimated_delivery_date' => true,
-        'shipment_delivery_date' => true,
-        'carrier_details' => true,
-        'bill_of_lading_number' => true
+        'ship_mode' => false,
+        'transportation_mode' => false,
+        'shipped_date' => false,
+        'estimated_delivery_date' => false,
+        'shipment_delivery_date' => false,
+        'carrier_details' => false,
+        'bill_of_lading_number' => false
     ];
 
     /**
@@ -111,7 +111,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -121,7 +121,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -184,15 +184,14 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'ship_mode' => 'shipMode',
-                'transportation_mode' => 'transportationMode',
-                'shipped_date' => 'shippedDate',
-                'estimated_delivery_date' => 'estimatedDeliveryDate',
-                'shipment_delivery_date' => 'shipmentDeliveryDate',
-                'carrier_details' => 'carrierDetails',
-                'bill_of_lading_number' => 'billOfLadingNumber'
-        
+        'transportation_mode' => 'transportationMode',
+        'shipped_date' => 'shippedDate',
+        'estimated_delivery_date' => 'estimatedDeliveryDate',
+        'shipment_delivery_date' => 'shipmentDeliveryDate',
+        'carrier_details' => 'carrierDetails',
+        'bill_of_lading_number' => 'billOfLadingNumber'
     ];
 
     /**
@@ -200,7 +199,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'ship_mode' => 'setShipMode',
         'transportation_mode' => 'setTransportationMode',
         'shipped_date' => 'setShippedDate',
@@ -215,7 +214,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'ship_mode' => 'getShipMode',
         'transportation_mode' => 'getTransportationMode',
         'shipped_date' => 'getShippedDate',
@@ -231,7 +230,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -241,7 +240,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -251,7 +250,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -261,7 +260,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -278,7 +277,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string[]
      */
-    public function getShipModeAllowableValues(): array
+    public function getShipModeAllowableValues()
     {
         return [
             self::SHIP_MODE_TRUCK_LOAD,
@@ -292,7 +291,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string[]
      */
-    public function getTransportationModeAllowableValues(): array
+    public function getTransportationModeAllowableValues()
     {
         return [
             self::TRANSPORTATION_MODE_ROAD,
@@ -304,17 +303,17 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('ship_mode', $data ?? [], null);
         $this->setIfExists('transportation_mode', $data ?? [], null);
@@ -348,7 +347,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -379,7 +378,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -390,7 +389,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
-    public function getShipMode(): ?string
+    public function getShipMode()
     {
         return $this->container['ship_mode'];
     }
@@ -402,20 +401,13 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setShipMode(?string $ship_mode): self
+    public function setShipMode($ship_mode)
     {
         if (is_null($ship_mode)) {
-            array_push($this->openAPINullablesSetToNull, 'ship_mode');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ship_mode', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ship_mode cannot be null');
         }
         $allowedValues = $this->getShipModeAllowableValues();
-        if (!is_null($ship_mode) && !in_array($ship_mode, $allowedValues, true)) {
+        if (!in_array($ship_mode, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'ship_mode', must be one of '%s'",
@@ -434,7 +426,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
-    public function getTransportationMode(): ?string
+    public function getTransportationMode()
     {
         return $this->container['transportation_mode'];
     }
@@ -446,20 +438,13 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setTransportationMode(?string $transportation_mode): self
+    public function setTransportationMode($transportation_mode)
     {
         if (is_null($transportation_mode)) {
-            array_push($this->openAPINullablesSetToNull, 'transportation_mode');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transportation_mode', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transportation_mode cannot be null');
         }
         $allowedValues = $this->getTransportationModeAllowableValues();
-        if (!is_null($transportation_mode) && !in_array($transportation_mode, $allowedValues, true)) {
+        if (!in_array($transportation_mode, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'transportation_mode', must be one of '%s'",
@@ -478,7 +463,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return \DateTime|null
      */
-    public function getShippedDate(): ?\DateTime
+    public function getShippedDate()
     {
         return $this->container['shipped_date'];
     }
@@ -490,17 +475,10 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setShippedDate(?\DateTime $shipped_date): self
+    public function setShippedDate($shipped_date)
     {
         if (is_null($shipped_date)) {
-            array_push($this->openAPINullablesSetToNull, 'shipped_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipped_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipped_date cannot be null');
         }
         $this->container['shipped_date'] = $shipped_date;
 
@@ -512,7 +490,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return \DateTime|null
      */
-    public function getEstimatedDeliveryDate(): ?\DateTime
+    public function getEstimatedDeliveryDate()
     {
         return $this->container['estimated_delivery_date'];
     }
@@ -524,17 +502,10 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setEstimatedDeliveryDate(?\DateTime $estimated_delivery_date): self
+    public function setEstimatedDeliveryDate($estimated_delivery_date)
     {
         if (is_null($estimated_delivery_date)) {
-            array_push($this->openAPINullablesSetToNull, 'estimated_delivery_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('estimated_delivery_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable estimated_delivery_date cannot be null');
         }
         $this->container['estimated_delivery_date'] = $estimated_delivery_date;
 
@@ -546,7 +517,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return \DateTime|null
      */
-    public function getShipmentDeliveryDate(): ?\DateTime
+    public function getShipmentDeliveryDate()
     {
         return $this->container['shipment_delivery_date'];
     }
@@ -558,17 +529,10 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setShipmentDeliveryDate(?\DateTime $shipment_delivery_date): self
+    public function setShipmentDeliveryDate($shipment_delivery_date)
     {
         if (is_null($shipment_delivery_date)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_delivery_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_delivery_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_delivery_date cannot be null');
         }
         $this->container['shipment_delivery_date'] = $shipment_delivery_date;
 
@@ -580,7 +544,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return \SpApi\Model\vendor\shipments\v1\CarrierDetails|null
      */
-    public function getCarrierDetails(): ?\SpApi\Model\vendor\shipments\v1\CarrierDetails
+    public function getCarrierDetails()
     {
         return $this->container['carrier_details'];
     }
@@ -592,17 +556,10 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setCarrierDetails(?\SpApi\Model\vendor\shipments\v1\CarrierDetails $carrier_details): self
+    public function setCarrierDetails($carrier_details)
     {
         if (is_null($carrier_details)) {
-            array_push($this->openAPINullablesSetToNull, 'carrier_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('carrier_details', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable carrier_details cannot be null');
         }
         $this->container['carrier_details'] = $carrier_details;
 
@@ -614,7 +571,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
-    public function getBillOfLadingNumber(): ?string
+    public function getBillOfLadingNumber()
     {
         return $this->container['bill_of_lading_number'];
     }
@@ -626,24 +583,15 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setBillOfLadingNumber(?string $bill_of_lading_number): self
+    public function setBillOfLadingNumber($bill_of_lading_number)
     {
         if (is_null($bill_of_lading_number)) {
-            array_push($this->openAPINullablesSetToNull, 'bill_of_lading_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('bill_of_lading_number', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable bill_of_lading_number cannot be null');
         }
         $this->container['bill_of_lading_number'] = $bill_of_lading_number;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -664,7 +612,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -677,7 +625,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -706,7 +654,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -729,7 +677,7 @@ class TransportationDetails implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

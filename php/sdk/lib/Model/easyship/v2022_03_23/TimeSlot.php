@@ -3,7 +3,7 @@
 /**
  * TimeSlot.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\easyship\v2022_03_23;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'TimeSlot';
+    protected static $openAPIModelName = 'TimeSlot';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'slot_id' => 'string',
         'start_time' => '\DateTime',
         'end_time' => '\DateTime',
-        'handover_method' => '\SpApi\Model\easyship\v2022_03_23\HandoverMethod'];
+        'handover_method' => '\SpApi\Model\easyship\v2022_03_23\HandoverMethod',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'slot_id' => null,
         'start_time' => 'date-time',
         'end_time' => 'date-time',
-        'handover_method' => null];
+        'handover_method' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -88,9 +91,9 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'slot_id' => false,
-        'start_time' => true,
-        'end_time' => true,
-        'handover_method' => true,
+        'start_time' => false,
+        'end_time' => false,
+        'handover_method' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'slot_id' => 'slotId',
         'start_time' => 'startTime',
         'end_time' => 'endTime',
@@ -118,7 +121,7 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'slot_id' => 'setSlotId',
         'start_time' => 'setStartTime',
         'end_time' => 'setEndTime',
@@ -130,7 +133,7 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'slot_id' => 'getSlotId',
         'start_time' => 'getStartTime',
         'end_time' => 'getEndTime',
@@ -139,14 +142,16 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -263,15 +280,17 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets slot_id.
+     *
+     * @return string
      */
-    public function getSlotId(): string
+    public function getSlotId()
     {
         return $this->container['slot_id'];
     }
@@ -280,8 +299,10 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets slot_id.
      *
      * @param string $slot_id a string of up to 255 characters
+     *
+     * @return self
      */
-    public function setSlotId(string $slot_id): self
+    public function setSlotId($slot_id)
     {
         if (is_null($slot_id)) {
             throw new \InvalidArgumentException('non-nullable slot_id cannot be null');
@@ -300,8 +321,10 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets start_time.
+     *
+     * @return null|\DateTime
      */
-    public function getStartTime(): ?\DateTime
+    public function getStartTime()
     {
         return $this->container['start_time'];
     }
@@ -310,18 +333,13 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets start_time.
      *
      * @param null|\DateTime $start_time a datetime value in ISO 8601 format
+     *
+     * @return self
      */
-    public function setStartTime(?\DateTime $start_time): self
+    public function setStartTime($start_time)
     {
         if (is_null($start_time)) {
-            array_push($this->openAPINullablesSetToNull, 'start_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('start_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable start_time cannot be null');
         }
         $this->container['start_time'] = $start_time;
 
@@ -330,8 +348,10 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets end_time.
+     *
+     * @return null|\DateTime
      */
-    public function getEndTime(): ?\DateTime
+    public function getEndTime()
     {
         return $this->container['end_time'];
     }
@@ -340,18 +360,13 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets end_time.
      *
      * @param null|\DateTime $end_time a datetime value in ISO 8601 format
+     *
+     * @return self
      */
-    public function setEndTime(?\DateTime $end_time): self
+    public function setEndTime($end_time)
     {
         if (is_null($end_time)) {
-            array_push($this->openAPINullablesSetToNull, 'end_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('end_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable end_time cannot be null');
         }
         $this->container['end_time'] = $end_time;
 
@@ -360,8 +375,10 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets handover_method.
+     *
+     * @return null|HandoverMethod
      */
-    public function getHandoverMethod(): ?string
+    public function getHandoverMethod()
     {
         return $this->container['handover_method'];
     }
@@ -369,19 +386,14 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets handover_method.
      *
-     * @param null|string $handover_method handover_method
+     * @param null|HandoverMethod $handover_method handover_method
+     *
+     * @return self
      */
-    public function setHandoverMethod(?string $handover_method): self
+    public function setHandoverMethod($handover_method)
     {
         if (is_null($handover_method)) {
-            array_push($this->openAPINullablesSetToNull, 'handover_method');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('handover_method', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable handover_method cannot be null');
         }
         $this->container['handover_method'] = $handover_method;
 
@@ -406,7 +418,7 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -417,7 +429,7 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -445,15 +457,17 @@ class TimeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

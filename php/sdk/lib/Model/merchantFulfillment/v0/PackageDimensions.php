@@ -3,7 +3,7 @@
 /**
  * PackageDimensions.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\merchantFulfillment\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'PackageDimensions';
+    protected static $openAPIModelName = 'PackageDimensions';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'length' => 'float',
         'width' => 'float',
         'height' => 'float',
         'unit' => '\SpApi\Model\merchantFulfillment\v0\UnitOfLength',
-        'predefined_package_dimensions' => '\SpApi\Model\merchantFulfillment\v0\PredefinedPackageDimensions'];
+        'predefined_package_dimensions' => '\SpApi\Model\merchantFulfillment\v0\PredefinedPackageDimensions',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'length' => 'double',
         'width' => 'double',
         'height' => 'double',
         'unit' => null,
-        'predefined_package_dimensions' => null];
+        'predefined_package_dimensions' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,11 +92,11 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'length' => true,
-        'width' => true,
-        'height' => true,
-        'unit' => true,
-        'predefined_package_dimensions' => true,
+        'length' => false,
+        'width' => false,
+        'height' => false,
+        'unit' => false,
+        'predefined_package_dimensions' => false,
     ];
 
     /**
@@ -109,7 +112,7 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'length' => 'Length',
         'width' => 'Width',
         'height' => 'Height',
@@ -122,7 +125,7 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'length' => 'setLength',
         'width' => 'setWidth',
         'height' => 'setHeight',
@@ -135,7 +138,7 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'length' => 'getLength',
         'width' => 'getWidth',
         'height' => 'getHeight',
@@ -145,14 +148,16 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -257,15 +274,17 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets length.
+     *
+     * @return null|float
      */
-    public function getLength(): ?float
+    public function getLength()
     {
         return $this->container['length'];
     }
@@ -274,18 +293,13 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets length.
      *
      * @param null|float $length a number that represents the given package dimension
+     *
+     * @return self
      */
-    public function setLength(?float $length): self
+    public function setLength($length)
     {
         if (is_null($length)) {
-            array_push($this->openAPINullablesSetToNull, 'length');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('length', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable length cannot be null');
         }
         $this->container['length'] = $length;
 
@@ -294,8 +308,10 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets width.
+     *
+     * @return null|float
      */
-    public function getWidth(): ?float
+    public function getWidth()
     {
         return $this->container['width'];
     }
@@ -304,18 +320,13 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets width.
      *
      * @param null|float $width a number that represents the given package dimension
+     *
+     * @return self
      */
-    public function setWidth(?float $width): self
+    public function setWidth($width)
     {
         if (is_null($width)) {
-            array_push($this->openAPINullablesSetToNull, 'width');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('width', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable width cannot be null');
         }
         $this->container['width'] = $width;
 
@@ -324,8 +335,10 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets height.
+     *
+     * @return null|float
      */
-    public function getHeight(): ?float
+    public function getHeight()
     {
         return $this->container['height'];
     }
@@ -334,18 +347,13 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets height.
      *
      * @param null|float $height a number that represents the given package dimension
+     *
+     * @return self
      */
-    public function setHeight(?float $height): self
+    public function setHeight($height)
     {
         if (is_null($height)) {
-            array_push($this->openAPINullablesSetToNull, 'height');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('height', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable height cannot be null');
         }
         $this->container['height'] = $height;
 
@@ -354,8 +362,10 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets unit.
+     *
+     * @return null|UnitOfLength
      */
-    public function getUnit(): ?string
+    public function getUnit()
     {
         return $this->container['unit'];
     }
@@ -363,19 +373,14 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Sets unit.
      *
-     * @param null|string $unit unit
+     * @param null|UnitOfLength $unit unit
+     *
+     * @return self
      */
-    public function setUnit(?string $unit): self
+    public function setUnit($unit)
     {
         if (is_null($unit)) {
-            array_push($this->openAPINullablesSetToNull, 'unit');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('unit', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable unit cannot be null');
         }
         $this->container['unit'] = $unit;
 
@@ -384,8 +389,10 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets predefined_package_dimensions.
+     *
+     * @return null|PredefinedPackageDimensions
      */
-    public function getPredefinedPackageDimensions(): ?string
+    public function getPredefinedPackageDimensions()
     {
         return $this->container['predefined_package_dimensions'];
     }
@@ -393,19 +400,14 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Sets predefined_package_dimensions.
      *
-     * @param null|string $predefined_package_dimensions predefined_package_dimensions
+     * @param null|PredefinedPackageDimensions $predefined_package_dimensions predefined_package_dimensions
+     *
+     * @return self
      */
-    public function setPredefinedPackageDimensions(?string $predefined_package_dimensions): self
+    public function setPredefinedPackageDimensions($predefined_package_dimensions)
     {
         if (is_null($predefined_package_dimensions)) {
-            array_push($this->openAPINullablesSetToNull, 'predefined_package_dimensions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('predefined_package_dimensions', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable predefined_package_dimensions cannot be null');
         }
         $this->container['predefined_package_dimensions'] = $predefined_package_dimensions;
 
@@ -430,7 +432,7 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -441,7 +443,7 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -469,15 +471,17 @@ class PackageDimensions implements ModelInterface, \ArrayAccess, \JsonSerializab
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

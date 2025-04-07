@@ -3,7 +3,7 @@
 /**
  * CollectionFormsHistoryRecord.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,20 +52,23 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CollectionFormsHistoryRecord';
+    protected static $openAPIModelName = 'CollectionFormsHistoryRecord';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'carrier_name' => 'string',
         'creation_date' => 'string',
         'generation_status' => '\SpApi\Model\shipping\v2\GenerationStatus',
         'collection_form_id' => 'string',
-        'ship_from_address' => '\SpApi\Model\shipping\v2\Address'];
+        'ship_from_address' => '\SpApi\Model\shipping\v2\Address',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,12 +79,13 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'carrier_name' => null,
         'creation_date' => 'dateTime',
         'generation_status' => null,
         'collection_form_id' => null,
-        'ship_from_address' => null];
+        'ship_from_address' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -90,11 +93,11 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'carrier_name' => true,
-        'creation_date' => true,
-        'generation_status' => true,
-        'collection_form_id' => true,
-        'ship_from_address' => true,
+        'carrier_name' => false,
+        'creation_date' => false,
+        'generation_status' => false,
+        'collection_form_id' => false,
+        'ship_from_address' => false,
     ];
 
     /**
@@ -110,7 +113,7 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'carrier_name' => 'carrierName',
         'creation_date' => 'creationDate',
         'generation_status' => 'generationStatus',
@@ -123,7 +126,7 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'carrier_name' => 'setCarrierName',
         'creation_date' => 'setCreationDate',
         'generation_status' => 'setGenerationStatus',
@@ -136,7 +139,7 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'carrier_name' => 'getCarrierName',
         'creation_date' => 'getCreationDate',
         'generation_status' => 'getGenerationStatus',
@@ -146,14 +149,16 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -179,16 +184,20 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -212,32 +221,40 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -247,7 +264,7 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -258,15 +275,17 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets carrier_name.
+     *
+     * @return null|string
      */
-    public function getCarrierName(): ?string
+    public function getCarrierName()
     {
         return $this->container['carrier_name'];
     }
@@ -275,18 +294,13 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
      * Sets carrier_name.
      *
      * @param null|string $carrier_name the carrier name for the offering
+     *
+     * @return self
      */
-    public function setCarrierName(?string $carrier_name): self
+    public function setCarrierName($carrier_name)
     {
         if (is_null($carrier_name)) {
-            array_push($this->openAPINullablesSetToNull, 'carrier_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('carrier_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable carrier_name cannot be null');
         }
         $this->container['carrier_name'] = $carrier_name;
 
@@ -295,8 +309,10 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Gets creation_date.
+     *
+     * @return null|string
      */
-    public function getCreationDate(): ?string
+    public function getCreationDate()
     {
         return $this->container['creation_date'];
     }
@@ -305,18 +321,13 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
      * Sets creation_date.
      *
      * @param null|string $creation_date creation Time for this account
+     *
+     * @return self
      */
-    public function setCreationDate(?string $creation_date): self
+    public function setCreationDate($creation_date)
     {
         if (is_null($creation_date)) {
-            array_push($this->openAPINullablesSetToNull, 'creation_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('creation_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable creation_date cannot be null');
         }
         $this->container['creation_date'] = $creation_date;
 
@@ -325,8 +336,10 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Gets generation_status.
+     *
+     * @return null|GenerationStatus
      */
-    public function getGenerationStatus(): ?string
+    public function getGenerationStatus()
     {
         return $this->container['generation_status'];
     }
@@ -334,19 +347,14 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
     /**
      * Sets generation_status.
      *
-     * @param null|string $generation_status generation_status
+     * @param null|GenerationStatus $generation_status generation_status
+     *
+     * @return self
      */
-    public function setGenerationStatus(?string $generation_status): self
+    public function setGenerationStatus($generation_status)
     {
         if (is_null($generation_status)) {
-            array_push($this->openAPINullablesSetToNull, 'generation_status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('generation_status', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable generation_status cannot be null');
         }
         $this->container['generation_status'] = $generation_status;
 
@@ -355,8 +363,10 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Gets collection_form_id.
+     *
+     * @return null|string
      */
-    public function getCollectionFormId(): ?string
+    public function getCollectionFormId()
     {
         return $this->container['collection_form_id'];
     }
@@ -365,18 +375,13 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
      * Sets collection_form_id.
      *
      * @param null|string $collection_form_id collection Form Id for Reprint
+     *
+     * @return self
      */
-    public function setCollectionFormId(?string $collection_form_id): self
+    public function setCollectionFormId($collection_form_id)
     {
         if (is_null($collection_form_id)) {
-            array_push($this->openAPINullablesSetToNull, 'collection_form_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('collection_form_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable collection_form_id cannot be null');
         }
         $this->container['collection_form_id'] = $collection_form_id;
 
@@ -385,8 +390,10 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Gets ship_from_address.
+     *
+     * @return null|Address
      */
-    public function getShipFromAddress(): ?Address
+    public function getShipFromAddress()
     {
         return $this->container['ship_from_address'];
     }
@@ -395,18 +402,13 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
      * Sets ship_from_address.
      *
      * @param null|Address $ship_from_address ship_from_address
+     *
+     * @return self
      */
-    public function setShipFromAddress(?Address $ship_from_address): self
+    public function setShipFromAddress($ship_from_address)
     {
         if (is_null($ship_from_address)) {
-            array_push($this->openAPINullablesSetToNull, 'ship_from_address');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ship_from_address', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ship_from_address cannot be null');
         }
         $this->container['ship_from_address'] = $ship_from_address;
 
@@ -431,7 +433,7 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -442,7 +444,7 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -470,15 +472,17 @@ class CollectionFormsHistoryRecord implements ModelInterface, \ArrayAccess, \Jso
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

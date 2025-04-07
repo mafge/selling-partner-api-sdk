@@ -3,7 +3,7 @@
 /**
  * ReturnItem.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ReturnItem';
+    protected static $openAPIModelName = 'ReturnItem';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'seller_return_item_id' => 'string',
         'seller_fulfillment_order_item_id' => 'string',
         'amazon_shipment_id' => 'string',
@@ -71,7 +72,8 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
         'status_changed_date' => '\DateTime',
         'return_authorization_id' => 'string',
         'return_received_condition' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\ReturnItemDisposition',
-        'fulfillment_center_id' => 'string'];
+        'fulfillment_center_id' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -82,7 +84,7 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'seller_return_item_id' => null,
         'seller_fulfillment_order_item_id' => null,
         'amazon_shipment_id' => null,
@@ -93,7 +95,8 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
         'status_changed_date' => 'date-time',
         'return_authorization_id' => null,
         'return_received_condition' => null,
-        'fulfillment_center_id' => null];
+        'fulfillment_center_id' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -105,13 +108,13 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
         'seller_fulfillment_order_item_id' => false,
         'amazon_shipment_id' => false,
         'seller_return_reason_code' => false,
-        'return_comment' => true,
-        'amazon_return_reason_code' => true,
+        'return_comment' => false,
+        'amazon_return_reason_code' => false,
         'status' => false,
         'status_changed_date' => false,
-        'return_authorization_id' => true,
-        'return_received_condition' => true,
-        'fulfillment_center_id' => true,
+        'return_authorization_id' => false,
+        'return_received_condition' => false,
+        'fulfillment_center_id' => false,
     ];
 
     /**
@@ -127,7 +130,7 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'seller_return_item_id' => 'sellerReturnItemId',
         'seller_fulfillment_order_item_id' => 'sellerFulfillmentOrderItemId',
         'amazon_shipment_id' => 'amazonShipmentId',
@@ -146,7 +149,7 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'seller_return_item_id' => 'setSellerReturnItemId',
         'seller_fulfillment_order_item_id' => 'setSellerFulfillmentOrderItemId',
         'amazon_shipment_id' => 'setAmazonShipmentId',
@@ -165,7 +168,7 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'seller_return_item_id' => 'getSellerReturnItemId',
         'seller_fulfillment_order_item_id' => 'getSellerFulfillmentOrderItemId',
         'amazon_shipment_id' => 'getAmazonShipmentId',
@@ -181,14 +184,16 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -220,16 +225,20 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -253,32 +262,40 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -288,7 +305,7 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -320,15 +337,17 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets seller_return_item_id.
+     *
+     * @return string
      */
-    public function getSellerReturnItemId(): string
+    public function getSellerReturnItemId()
     {
         return $this->container['seller_return_item_id'];
     }
@@ -337,8 +356,10 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets seller_return_item_id.
      *
      * @param string $seller_return_item_id an identifier assigned by the seller to the return item
+     *
+     * @return self
      */
-    public function setSellerReturnItemId(string $seller_return_item_id): self
+    public function setSellerReturnItemId($seller_return_item_id)
     {
         if (is_null($seller_return_item_id)) {
             throw new \InvalidArgumentException('non-nullable seller_return_item_id cannot be null');
@@ -350,8 +371,10 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets seller_fulfillment_order_item_id.
+     *
+     * @return string
      */
-    public function getSellerFulfillmentOrderItemId(): string
+    public function getSellerFulfillmentOrderItemId()
     {
         return $this->container['seller_fulfillment_order_item_id'];
     }
@@ -360,8 +383,10 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets seller_fulfillment_order_item_id.
      *
      * @param string $seller_fulfillment_order_item_id the identifier assigned to the item by the seller when the fulfillment order was created
+     *
+     * @return self
      */
-    public function setSellerFulfillmentOrderItemId(string $seller_fulfillment_order_item_id): self
+    public function setSellerFulfillmentOrderItemId($seller_fulfillment_order_item_id)
     {
         if (is_null($seller_fulfillment_order_item_id)) {
             throw new \InvalidArgumentException('non-nullable seller_fulfillment_order_item_id cannot be null');
@@ -373,8 +398,10 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets amazon_shipment_id.
+     *
+     * @return string
      */
-    public function getAmazonShipmentId(): string
+    public function getAmazonShipmentId()
     {
         return $this->container['amazon_shipment_id'];
     }
@@ -383,8 +410,10 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets amazon_shipment_id.
      *
      * @param string $amazon_shipment_id the identifier for the shipment that is associated with the return item
+     *
+     * @return self
      */
-    public function setAmazonShipmentId(string $amazon_shipment_id): self
+    public function setAmazonShipmentId($amazon_shipment_id)
     {
         if (is_null($amazon_shipment_id)) {
             throw new \InvalidArgumentException('non-nullable amazon_shipment_id cannot be null');
@@ -396,8 +425,10 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets seller_return_reason_code.
+     *
+     * @return string
      */
-    public function getSellerReturnReasonCode(): string
+    public function getSellerReturnReasonCode()
     {
         return $this->container['seller_return_reason_code'];
     }
@@ -406,8 +437,10 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets seller_return_reason_code.
      *
      * @param string $seller_return_reason_code the return reason code assigned to the return item by the seller
+     *
+     * @return self
      */
-    public function setSellerReturnReasonCode(string $seller_return_reason_code): self
+    public function setSellerReturnReasonCode($seller_return_reason_code)
     {
         if (is_null($seller_return_reason_code)) {
             throw new \InvalidArgumentException('non-nullable seller_return_reason_code cannot be null');
@@ -419,8 +452,10 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets return_comment.
+     *
+     * @return null|string
      */
-    public function getReturnComment(): ?string
+    public function getReturnComment()
     {
         return $this->container['return_comment'];
     }
@@ -429,18 +464,13 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets return_comment.
      *
      * @param null|string $return_comment an optional comment about the return item
+     *
+     * @return self
      */
-    public function setReturnComment(?string $return_comment): self
+    public function setReturnComment($return_comment)
     {
         if (is_null($return_comment)) {
-            array_push($this->openAPINullablesSetToNull, 'return_comment');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('return_comment', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable return_comment cannot be null');
         }
         $this->container['return_comment'] = $return_comment;
 
@@ -449,8 +479,10 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets amazon_return_reason_code.
+     *
+     * @return null|string
      */
-    public function getAmazonReturnReasonCode(): ?string
+    public function getAmazonReturnReasonCode()
     {
         return $this->container['amazon_return_reason_code'];
     }
@@ -459,18 +491,13 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets amazon_return_reason_code.
      *
      * @param null|string $amazon_return_reason_code the return reason code that the Amazon fulfillment center assigned to the return item
+     *
+     * @return self
      */
-    public function setAmazonReturnReasonCode(?string $amazon_return_reason_code): self
+    public function setAmazonReturnReasonCode($amazon_return_reason_code)
     {
         if (is_null($amazon_return_reason_code)) {
-            array_push($this->openAPINullablesSetToNull, 'amazon_return_reason_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amazon_return_reason_code', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable amazon_return_reason_code cannot be null');
         }
         $this->container['amazon_return_reason_code'] = $amazon_return_reason_code;
 
@@ -479,8 +506,10 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets status.
+     *
+     * @return FulfillmentReturnItemStatus
      */
-    public function getStatus(): string
+    public function getStatus()
     {
         return $this->container['status'];
     }
@@ -488,9 +517,11 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets status.
      *
-     * @param string $status status
+     * @param FulfillmentReturnItemStatus $status status
+     *
+     * @return self
      */
-    public function setStatus(string $status): self
+    public function setStatus($status)
     {
         if (is_null($status)) {
             throw new \InvalidArgumentException('non-nullable status cannot be null');
@@ -502,8 +533,10 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets status_changed_date.
+     *
+     * @return \DateTime
      */
-    public function getStatusChangedDate(): \DateTime
+    public function getStatusChangedDate()
     {
         return $this->container['status_changed_date'];
     }
@@ -512,8 +545,10 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets status_changed_date.
      *
      * @param \DateTime $status_changed_date Date timestamp
+     *
+     * @return self
      */
-    public function setStatusChangedDate(\DateTime $status_changed_date): self
+    public function setStatusChangedDate($status_changed_date)
     {
         if (is_null($status_changed_date)) {
             throw new \InvalidArgumentException('non-nullable status_changed_date cannot be null');
@@ -525,8 +560,10 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets return_authorization_id.
+     *
+     * @return null|string
      */
-    public function getReturnAuthorizationId(): ?string
+    public function getReturnAuthorizationId()
     {
         return $this->container['return_authorization_id'];
     }
@@ -535,18 +572,13 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets return_authorization_id.
      *
      * @param null|string $return_authorization_id Identifies the return authorization used to return this item. Refer to `ReturnAuthorization`.
+     *
+     * @return self
      */
-    public function setReturnAuthorizationId(?string $return_authorization_id): self
+    public function setReturnAuthorizationId($return_authorization_id)
     {
         if (is_null($return_authorization_id)) {
-            array_push($this->openAPINullablesSetToNull, 'return_authorization_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('return_authorization_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable return_authorization_id cannot be null');
         }
         $this->container['return_authorization_id'] = $return_authorization_id;
 
@@ -555,8 +587,10 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets return_received_condition.
+     *
+     * @return null|ReturnItemDisposition
      */
-    public function getReturnReceivedCondition(): ?string
+    public function getReturnReceivedCondition()
     {
         return $this->container['return_received_condition'];
     }
@@ -564,19 +598,14 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets return_received_condition.
      *
-     * @param null|string $return_received_condition return_received_condition
+     * @param null|ReturnItemDisposition $return_received_condition return_received_condition
+     *
+     * @return self
      */
-    public function setReturnReceivedCondition(?string $return_received_condition): self
+    public function setReturnReceivedCondition($return_received_condition)
     {
         if (is_null($return_received_condition)) {
-            array_push($this->openAPINullablesSetToNull, 'return_received_condition');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('return_received_condition', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable return_received_condition cannot be null');
         }
         $this->container['return_received_condition'] = $return_received_condition;
 
@@ -585,8 +614,10 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets fulfillment_center_id.
+     *
+     * @return null|string
      */
-    public function getFulfillmentCenterId(): ?string
+    public function getFulfillmentCenterId()
     {
         return $this->container['fulfillment_center_id'];
     }
@@ -595,18 +626,13 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets fulfillment_center_id.
      *
      * @param null|string $fulfillment_center_id the identifier for the Amazon fulfillment center that processed the return item
+     *
+     * @return self
      */
-    public function setFulfillmentCenterId(?string $fulfillment_center_id): self
+    public function setFulfillmentCenterId($fulfillment_center_id)
     {
         if (is_null($fulfillment_center_id)) {
-            array_push($this->openAPINullablesSetToNull, 'fulfillment_center_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fulfillment_center_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fulfillment_center_id cannot be null');
         }
         $this->container['fulfillment_center_id'] = $fulfillment_center_id;
 
@@ -631,7 +657,7 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -642,7 +668,7 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -670,15 +696,17 @@ class ReturnItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

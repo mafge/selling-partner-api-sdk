@@ -3,7 +3,7 @@
 /**
  * StandardFourImageTextQuadrantModule.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\aplusContent\v2020_11_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, \ArrayAcces
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'StandardFourImageTextQuadrantModule';
+    protected static $openAPIModelName = 'StandardFourImageTextQuadrantModule';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'block1' => '\SpApi\Model\aplusContent\v2020_11_01\StandardImageTextBlock',
         'block2' => '\SpApi\Model\aplusContent\v2020_11_01\StandardImageTextBlock',
         'block3' => '\SpApi\Model\aplusContent\v2020_11_01\StandardImageTextBlock',
-        'block4' => '\SpApi\Model\aplusContent\v2020_11_01\StandardImageTextBlock'];
+        'block4' => '\SpApi\Model\aplusContent\v2020_11_01\StandardImageTextBlock',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, \ArrayAcces
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'block1' => null,
         'block2' => null,
         'block3' => null,
-        'block4' => null];
+        'block4' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -106,7 +109,7 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, \ArrayAcces
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'block1' => 'block1',
         'block2' => 'block2',
         'block3' => 'block3',
@@ -118,7 +121,7 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, \ArrayAcces
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'block1' => 'setBlock1',
         'block2' => 'setBlock2',
         'block3' => 'setBlock3',
@@ -130,7 +133,7 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, \ArrayAcces
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'block1' => 'getBlock1',
         'block2' => 'getBlock2',
         'block3' => 'getBlock3',
@@ -139,14 +142,16 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, \ArrayAcces
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, \ArrayAcces
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, \ArrayAcces
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, \ArrayAcces
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -265,15 +282,17 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, \ArrayAcces
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets block1.
+     *
+     * @return StandardImageTextBlock
      */
-    public function getBlock1(): StandardImageTextBlock
+    public function getBlock1()
     {
         return $this->container['block1'];
     }
@@ -282,8 +301,10 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, \ArrayAcces
      * Sets block1.
      *
      * @param StandardImageTextBlock $block1 block1
+     *
+     * @return self
      */
-    public function setBlock1(StandardImageTextBlock $block1): self
+    public function setBlock1($block1)
     {
         if (is_null($block1)) {
             throw new \InvalidArgumentException('non-nullable block1 cannot be null');
@@ -295,8 +316,10 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, \ArrayAcces
 
     /**
      * Gets block2.
+     *
+     * @return StandardImageTextBlock
      */
-    public function getBlock2(): StandardImageTextBlock
+    public function getBlock2()
     {
         return $this->container['block2'];
     }
@@ -305,8 +328,10 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, \ArrayAcces
      * Sets block2.
      *
      * @param StandardImageTextBlock $block2 block2
+     *
+     * @return self
      */
-    public function setBlock2(StandardImageTextBlock $block2): self
+    public function setBlock2($block2)
     {
         if (is_null($block2)) {
             throw new \InvalidArgumentException('non-nullable block2 cannot be null');
@@ -318,8 +343,10 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, \ArrayAcces
 
     /**
      * Gets block3.
+     *
+     * @return StandardImageTextBlock
      */
-    public function getBlock3(): StandardImageTextBlock
+    public function getBlock3()
     {
         return $this->container['block3'];
     }
@@ -328,8 +355,10 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, \ArrayAcces
      * Sets block3.
      *
      * @param StandardImageTextBlock $block3 block3
+     *
+     * @return self
      */
-    public function setBlock3(StandardImageTextBlock $block3): self
+    public function setBlock3($block3)
     {
         if (is_null($block3)) {
             throw new \InvalidArgumentException('non-nullable block3 cannot be null');
@@ -341,8 +370,10 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, \ArrayAcces
 
     /**
      * Gets block4.
+     *
+     * @return StandardImageTextBlock
      */
-    public function getBlock4(): StandardImageTextBlock
+    public function getBlock4()
     {
         return $this->container['block4'];
     }
@@ -351,8 +382,10 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, \ArrayAcces
      * Sets block4.
      *
      * @param StandardImageTextBlock $block4 block4
+     *
+     * @return self
      */
-    public function setBlock4(StandardImageTextBlock $block4): self
+    public function setBlock4($block4)
     {
         if (is_null($block4)) {
             throw new \InvalidArgumentException('non-nullable block4 cannot be null');
@@ -380,7 +413,7 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, \ArrayAcces
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -391,7 +424,7 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, \ArrayAcces
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -419,15 +452,17 @@ class StandardFourImageTextQuadrantModule implements ModelInterface, \ArrayAcces
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

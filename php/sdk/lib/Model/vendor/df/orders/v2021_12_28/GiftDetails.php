@@ -2,7 +2,7 @@
 /**
  * GiftDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\df\orders\v2021_12_28;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * GiftDetails Class Doc Comment
@@ -52,16 +50,17 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'GiftDetails';
+    protected static $openAPIModelName = 'GiftDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'gift_message' => 'string',
-             'gift_wrap_id' => 'string'    ];
+    protected static $openAPITypes = [
+        'gift_message' => 'string',
+        'gift_wrap_id' => 'string'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,9 +69,10 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'gift_message' => null,
-            'gift_wrap_id' => null    ];
+    protected static $openAPIFormats = [
+        'gift_message' => null,
+        'gift_wrap_id' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -80,8 +80,8 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'gift_message' => true,
-        'gift_wrap_id' => true
+        'gift_message' => false,
+        'gift_wrap_id' => false
     ];
 
     /**
@@ -96,7 +96,7 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -106,7 +106,7 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -169,10 +169,9 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'gift_message' => 'giftMessage',
-                'gift_wrap_id' => 'giftWrapId'
-        
+        'gift_wrap_id' => 'giftWrapId'
     ];
 
     /**
@@ -180,7 +179,7 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'gift_message' => 'setGiftMessage',
         'gift_wrap_id' => 'setGiftWrapId'
     ];
@@ -190,7 +189,7 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'gift_message' => 'getGiftMessage',
         'gift_wrap_id' => 'getGiftWrapId'
     ];
@@ -201,7 +200,7 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -211,7 +210,7 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -221,7 +220,7 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -231,7 +230,7 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -240,17 +239,17 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('gift_message', $data ?? [], null);
         $this->setIfExists('gift_wrap_id', $data ?? [], null);
@@ -279,7 +278,7 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -292,7 +291,7 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -303,7 +302,7 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getGiftMessage(): ?string
+    public function getGiftMessage()
     {
         return $this->container['gift_message'];
     }
@@ -315,17 +314,10 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setGiftMessage(?string $gift_message): self
+    public function setGiftMessage($gift_message)
     {
         if (is_null($gift_message)) {
-            array_push($this->openAPINullablesSetToNull, 'gift_message');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('gift_message', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable gift_message cannot be null');
         }
         $this->container['gift_message'] = $gift_message;
 
@@ -337,7 +329,7 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getGiftWrapId(): ?string
+    public function getGiftWrapId()
     {
         return $this->container['gift_wrap_id'];
     }
@@ -349,24 +341,15 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setGiftWrapId(?string $gift_wrap_id): self
+    public function setGiftWrapId($gift_wrap_id)
     {
         if (is_null($gift_wrap_id)) {
-            array_push($this->openAPINullablesSetToNull, 'gift_wrap_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('gift_wrap_id', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable gift_wrap_id cannot be null');
         }
         $this->container['gift_wrap_id'] = $gift_wrap_id;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -387,7 +370,7 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -400,7 +383,7 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -429,7 +412,7 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -452,7 +435,7 @@ class GiftDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

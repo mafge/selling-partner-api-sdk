@@ -3,7 +3,7 @@
 /**
  * CreateReportResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\reports\v2021_06_30;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,16 +51,19 @@ class CreateReportResponse implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CreateReportResponse';
+    protected static $openAPIModelName = 'CreateReportResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
-        'report_id' => 'string'];
+    protected static $openAPITypes = [
+        'report_id' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -72,8 +74,9 @@ class CreateReportResponse implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
-        'report_id' => null];
+    protected static $openAPIFormats = [
+        'report_id' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -97,7 +100,7 @@ class CreateReportResponse implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'report_id' => 'reportId',
     ];
 
@@ -106,7 +109,7 @@ class CreateReportResponse implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'report_id' => 'setReportId',
     ];
 
@@ -115,20 +118,22 @@ class CreateReportResponse implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'report_id' => 'getReportId',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -150,16 +155,20 @@ class CreateReportResponse implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -183,32 +192,40 @@ class CreateReportResponse implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -218,7 +235,7 @@ class CreateReportResponse implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -235,15 +252,17 @@ class CreateReportResponse implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets report_id.
+     *
+     * @return string
      */
-    public function getReportId(): string
+    public function getReportId()
     {
         return $this->container['report_id'];
     }
@@ -252,8 +271,10 @@ class CreateReportResponse implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets report_id.
      *
      * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID.
+     *
+     * @return self
      */
-    public function setReportId(string $report_id): self
+    public function setReportId($report_id)
     {
         if (is_null($report_id)) {
             throw new \InvalidArgumentException('non-nullable report_id cannot be null');
@@ -281,7 +302,7 @@ class CreateReportResponse implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -292,7 +313,7 @@ class CreateReportResponse implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -320,15 +341,17 @@ class CreateReportResponse implements ModelInterface, \ArrayAccess, \JsonSeriali
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -2,7 +2,7 @@
 /**
  * ImportDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * ImportDetails Class Doc Comment
@@ -52,21 +50,22 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'ImportDetails';
+    protected static $openAPIModelName = 'ImportDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'method_of_payment' => 'string',
-             'seal_number' => 'string',
-             'route' => '\SpApi\Model\vendor\shipments\v1\Route',
-             'import_containers' => 'string',
-             'billable_weight' => '\SpApi\Model\vendor\shipments\v1\Weight',
-             'estimated_ship_by_date' => '\DateTime',
-             'handling_instructions' => 'string'    ];
+    protected static $openAPITypes = [
+        'method_of_payment' => 'string',
+        'seal_number' => 'string',
+        'route' => '\SpApi\Model\vendor\shipments\v1\Route',
+        'import_containers' => 'string',
+        'billable_weight' => '\SpApi\Model\vendor\shipments\v1\Weight',
+        'estimated_ship_by_date' => '\DateTime',
+        'handling_instructions' => 'string'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -75,14 +74,15 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'method_of_payment' => null,
-            'seal_number' => null,
-            'route' => null,
-            'import_containers' => null,
-            'billable_weight' => null,
-            'estimated_ship_by_date' => 'date-time',
-            'handling_instructions' => null    ];
+    protected static $openAPIFormats = [
+        'method_of_payment' => null,
+        'seal_number' => null,
+        'route' => null,
+        'import_containers' => null,
+        'billable_weight' => null,
+        'estimated_ship_by_date' => 'date-time',
+        'handling_instructions' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -90,13 +90,13 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'method_of_payment' => true,
-        'seal_number' => true,
-        'route' => true,
-        'import_containers' => true,
-        'billable_weight' => true,
-        'estimated_ship_by_date' => true,
-        'handling_instructions' => true
+        'method_of_payment' => false,
+        'seal_number' => false,
+        'route' => false,
+        'import_containers' => false,
+        'billable_weight' => false,
+        'estimated_ship_by_date' => false,
+        'handling_instructions' => false
     ];
 
     /**
@@ -111,7 +111,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -121,7 +121,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -184,15 +184,14 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'method_of_payment' => 'methodOfPayment',
-                'seal_number' => 'sealNumber',
-                'route' => 'route',
-                'import_containers' => 'importContainers',
-                'billable_weight' => 'billableWeight',
-                'estimated_ship_by_date' => 'estimatedShipByDate',
-                'handling_instructions' => 'handlingInstructions'
-        
+        'seal_number' => 'sealNumber',
+        'route' => 'route',
+        'import_containers' => 'importContainers',
+        'billable_weight' => 'billableWeight',
+        'estimated_ship_by_date' => 'estimatedShipByDate',
+        'handling_instructions' => 'handlingInstructions'
     ];
 
     /**
@@ -200,7 +199,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'method_of_payment' => 'setMethodOfPayment',
         'seal_number' => 'setSealNumber',
         'route' => 'setRoute',
@@ -215,7 +214,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'method_of_payment' => 'getMethodOfPayment',
         'seal_number' => 'getSealNumber',
         'route' => 'getRoute',
@@ -231,7 +230,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -241,7 +240,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -251,7 +250,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -261,7 +260,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -282,7 +281,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getMethodOfPaymentAllowableValues(): array
+    public function getMethodOfPaymentAllowableValues()
     {
         return [
             self::METHOD_OF_PAYMENT_PAID_BY_BUYER,
@@ -299,7 +298,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getHandlingInstructionsAllowableValues(): array
+    public function getHandlingInstructionsAllowableValues()
     {
         return [
             self::HANDLING_INSTRUCTIONS_OVERSIZED,
@@ -312,17 +311,17 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('method_of_payment', $data ?? [], null);
         $this->setIfExists('seal_number', $data ?? [], null);
@@ -356,7 +355,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -391,7 +390,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -402,7 +401,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getMethodOfPayment(): ?string
+    public function getMethodOfPayment()
     {
         return $this->container['method_of_payment'];
     }
@@ -414,20 +413,13 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMethodOfPayment(?string $method_of_payment): self
+    public function setMethodOfPayment($method_of_payment)
     {
         if (is_null($method_of_payment)) {
-            array_push($this->openAPINullablesSetToNull, 'method_of_payment');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('method_of_payment', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable method_of_payment cannot be null');
         }
         $allowedValues = $this->getMethodOfPaymentAllowableValues();
-        if (!is_null($method_of_payment) && !in_array($method_of_payment, $allowedValues, true)) {
+        if (!in_array($method_of_payment, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'method_of_payment', must be one of '%s'",
@@ -446,7 +438,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getSealNumber(): ?string
+    public function getSealNumber()
     {
         return $this->container['seal_number'];
     }
@@ -458,17 +450,10 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSealNumber(?string $seal_number): self
+    public function setSealNumber($seal_number)
     {
         if (is_null($seal_number)) {
-            array_push($this->openAPINullablesSetToNull, 'seal_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seal_number', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seal_number cannot be null');
         }
         $this->container['seal_number'] = $seal_number;
 
@@ -480,7 +465,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\shipments\v1\Route|null
      */
-    public function getRoute(): ?\SpApi\Model\vendor\shipments\v1\Route
+    public function getRoute()
     {
         return $this->container['route'];
     }
@@ -492,17 +477,10 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setRoute(?\SpApi\Model\vendor\shipments\v1\Route $route): self
+    public function setRoute($route)
     {
         if (is_null($route)) {
-            array_push($this->openAPINullablesSetToNull, 'route');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('route', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable route cannot be null');
         }
         $this->container['route'] = $route;
 
@@ -514,7 +492,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getImportContainers(): ?string
+    public function getImportContainers()
     {
         return $this->container['import_containers'];
     }
@@ -526,19 +504,12 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setImportContainers(?string $import_containers): self
+    public function setImportContainers($import_containers)
     {
         if (is_null($import_containers)) {
-            array_push($this->openAPINullablesSetToNull, 'import_containers');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('import_containers', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable import_containers cannot be null');
         }
-        if (!is_null($import_containers) && (mb_strlen($import_containers) > 64)) {
+        if ((mb_strlen($import_containers) > 64)) {
             throw new \InvalidArgumentException('invalid length for $import_containers when calling ImportDetails., must be smaller than or equal to 64.');
         }
 
@@ -552,7 +523,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\shipments\v1\Weight|null
      */
-    public function getBillableWeight(): ?\SpApi\Model\vendor\shipments\v1\Weight
+    public function getBillableWeight()
     {
         return $this->container['billable_weight'];
     }
@@ -564,17 +535,10 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setBillableWeight(?\SpApi\Model\vendor\shipments\v1\Weight $billable_weight): self
+    public function setBillableWeight($billable_weight)
     {
         if (is_null($billable_weight)) {
-            array_push($this->openAPINullablesSetToNull, 'billable_weight');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('billable_weight', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable billable_weight cannot be null');
         }
         $this->container['billable_weight'] = $billable_weight;
 
@@ -586,7 +550,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime|null
      */
-    public function getEstimatedShipByDate(): ?\DateTime
+    public function getEstimatedShipByDate()
     {
         return $this->container['estimated_ship_by_date'];
     }
@@ -598,17 +562,10 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setEstimatedShipByDate(?\DateTime $estimated_ship_by_date): self
+    public function setEstimatedShipByDate($estimated_ship_by_date)
     {
         if (is_null($estimated_ship_by_date)) {
-            array_push($this->openAPINullablesSetToNull, 'estimated_ship_by_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('estimated_ship_by_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable estimated_ship_by_date cannot be null');
         }
         $this->container['estimated_ship_by_date'] = $estimated_ship_by_date;
 
@@ -620,7 +577,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getHandlingInstructions(): ?string
+    public function getHandlingInstructions()
     {
         return $this->container['handling_instructions'];
     }
@@ -632,20 +589,13 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setHandlingInstructions(?string $handling_instructions): self
+    public function setHandlingInstructions($handling_instructions)
     {
         if (is_null($handling_instructions)) {
-            array_push($this->openAPINullablesSetToNull, 'handling_instructions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('handling_instructions', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable handling_instructions cannot be null');
         }
         $allowedValues = $this->getHandlingInstructionsAllowableValues();
-        if (!is_null($handling_instructions) && !in_array($handling_instructions, $allowedValues, true)) {
+        if (!in_array($handling_instructions, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'handling_instructions', must be one of '%s'",
@@ -658,8 +608,6 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -680,7 +628,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -693,7 +641,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -722,7 +670,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -745,7 +693,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

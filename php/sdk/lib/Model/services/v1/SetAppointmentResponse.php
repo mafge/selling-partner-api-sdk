@@ -3,7 +3,7 @@
 /**
  * SetAppointmentResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\services\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class SetAppointmentResponse implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'SetAppointmentResponse';
+    protected static $openAPIModelName = 'SetAppointmentResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'appointment_id' => 'string',
         'warnings' => '\SpApi\Model\services\v1\Warning[]',
-        'errors' => '\SpApi\Model\services\v1\Error[]'];
+        'errors' => '\SpApi\Model\services\v1\Error[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class SetAppointmentResponse implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'appointment_id' => null,
         'warnings' => null,
-        'errors' => null];
+        'errors' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class SetAppointmentResponse implements ModelInterface, \ArrayAccess, \JsonSeria
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'appointment_id' => true,
-        'warnings' => true,
-        'errors' => true,
+        'appointment_id' => false,
+        'warnings' => false,
+        'errors' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class SetAppointmentResponse implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'appointment_id' => 'appointmentId',
         'warnings' => 'warnings',
         'errors' => 'errors',
@@ -114,7 +117,7 @@ class SetAppointmentResponse implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'appointment_id' => 'setAppointmentId',
         'warnings' => 'setWarnings',
         'errors' => 'setErrors',
@@ -125,7 +128,7 @@ class SetAppointmentResponse implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'appointment_id' => 'getAppointmentId',
         'warnings' => 'getWarnings',
         'errors' => 'getErrors',
@@ -133,14 +136,16 @@ class SetAppointmentResponse implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class SetAppointmentResponse implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class SetAppointmentResponse implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class SetAppointmentResponse implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -253,15 +270,17 @@ class SetAppointmentResponse implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets appointment_id.
+     *
+     * @return null|string
      */
-    public function getAppointmentId(): ?string
+    public function getAppointmentId()
     {
         return $this->container['appointment_id'];
     }
@@ -270,23 +289,18 @@ class SetAppointmentResponse implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets appointment_id.
      *
      * @param null|string $appointment_id the appointment identifier
+     *
+     * @return self
      */
-    public function setAppointmentId(?string $appointment_id): self
+    public function setAppointmentId($appointment_id)
     {
         if (is_null($appointment_id)) {
-            array_push($this->openAPINullablesSetToNull, 'appointment_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('appointment_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable appointment_id cannot be null');
         }
-        if (!is_null($appointment_id) && (mb_strlen($appointment_id) > 100)) {
+        if (mb_strlen($appointment_id) > 100) {
             throw new \InvalidArgumentException('invalid length for $appointment_id when calling SetAppointmentResponse., must be smaller than or equal to 100.');
         }
-        if (!is_null($appointment_id) && (mb_strlen($appointment_id) < 5)) {
+        if (mb_strlen($appointment_id) < 5) {
             throw new \InvalidArgumentException('invalid length for $appointment_id when calling SetAppointmentResponse., must be bigger than or equal to 5.');
         }
 
@@ -297,8 +311,10 @@ class SetAppointmentResponse implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets warnings.
+     *
+     * @return null|Warning[]
      */
-    public function getWarnings(): ?array
+    public function getWarnings()
     {
         return $this->container['warnings'];
     }
@@ -306,19 +322,14 @@ class SetAppointmentResponse implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Sets warnings.
      *
-     * @param null|array $warnings a list of warnings returned in the sucessful execution response of an API request
+     * @param null|Warning[] $warnings a list of warnings returned in the sucessful execution response of an API request
+     *
+     * @return self
      */
-    public function setWarnings(?array $warnings): self
+    public function setWarnings($warnings)
     {
         if (is_null($warnings)) {
-            array_push($this->openAPINullablesSetToNull, 'warnings');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('warnings', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable warnings cannot be null');
         }
         $this->container['warnings'] = $warnings;
 
@@ -327,8 +338,10 @@ class SetAppointmentResponse implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets errors.
+     *
+     * @return null|Error[]
      */
-    public function getErrors(): ?array
+    public function getErrors()
     {
         return $this->container['errors'];
     }
@@ -336,19 +349,14 @@ class SetAppointmentResponse implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Sets errors.
      *
-     * @param null|array $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
+     *
+     * @return self
      */
-    public function setErrors(?array $errors): self
+    public function setErrors($errors)
     {
         if (is_null($errors)) {
-            array_push($this->openAPINullablesSetToNull, 'errors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('errors', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable errors cannot be null');
         }
         $this->container['errors'] = $errors;
 
@@ -373,7 +381,7 @@ class SetAppointmentResponse implements ModelInterface, \ArrayAccess, \JsonSeria
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -384,7 +392,7 @@ class SetAppointmentResponse implements ModelInterface, \ArrayAccess, \JsonSeria
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -412,15 +420,17 @@ class SetAppointmentResponse implements ModelInterface, \ArrayAccess, \JsonSeria
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

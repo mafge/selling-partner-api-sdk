@@ -3,7 +3,7 @@
 /**
  * AvailabilityRecord.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\services\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'AvailabilityRecord';
+    protected static $openAPIModelName = 'AvailabilityRecord';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'start_time' => '\DateTime',
         'end_time' => '\DateTime',
         'recurrence' => '\SpApi\Model\services\v1\Recurrence',
-        'capacity' => 'int'];
+        'capacity' => 'int',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'start_time' => 'date-time',
         'end_time' => 'date-time',
         'recurrence' => null,
-        'capacity' => null];
+        'capacity' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,8 +92,8 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
     protected static array $openAPINullables = [
         'start_time' => false,
         'end_time' => false,
-        'recurrence' => true,
-        'capacity' => true,
+        'recurrence' => false,
+        'capacity' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'start_time' => 'startTime',
         'end_time' => 'endTime',
         'recurrence' => 'recurrence',
@@ -118,7 +121,7 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'start_time' => 'setStartTime',
         'end_time' => 'setEndTime',
         'recurrence' => 'setRecurrence',
@@ -130,7 +133,7 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'start_time' => 'getStartTime',
         'end_time' => 'getEndTime',
         'recurrence' => 'getRecurrence',
@@ -139,14 +142,16 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -262,15 +279,17 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets start_time.
+     *
+     * @return \DateTime
      */
-    public function getStartTime(): \DateTime
+    public function getStartTime()
     {
         return $this->container['start_time'];
     }
@@ -279,8 +298,10 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets start_time.
      *
      * @param \DateTime $start_time denotes the time from when the resource is available in a day in ISO-8601 format
+     *
+     * @return self
      */
-    public function setStartTime(\DateTime $start_time): self
+    public function setStartTime($start_time)
     {
         if (is_null($start_time)) {
             throw new \InvalidArgumentException('non-nullable start_time cannot be null');
@@ -292,8 +313,10 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets end_time.
+     *
+     * @return \DateTime
      */
-    public function getEndTime(): \DateTime
+    public function getEndTime()
     {
         return $this->container['end_time'];
     }
@@ -302,8 +325,10 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets end_time.
      *
      * @param \DateTime $end_time denotes the time till when the resource is available in a day in ISO-8601 format
+     *
+     * @return self
      */
-    public function setEndTime(\DateTime $end_time): self
+    public function setEndTime($end_time)
     {
         if (is_null($end_time)) {
             throw new \InvalidArgumentException('non-nullable end_time cannot be null');
@@ -315,8 +340,10 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets recurrence.
+     *
+     * @return null|Recurrence
      */
-    public function getRecurrence(): ?Recurrence
+    public function getRecurrence()
     {
         return $this->container['recurrence'];
     }
@@ -325,18 +352,13 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets recurrence.
      *
      * @param null|Recurrence $recurrence recurrence
+     *
+     * @return self
      */
-    public function setRecurrence(?Recurrence $recurrence): self
+    public function setRecurrence($recurrence)
     {
         if (is_null($recurrence)) {
-            array_push($this->openAPINullablesSetToNull, 'recurrence');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('recurrence', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable recurrence cannot be null');
         }
         $this->container['recurrence'] = $recurrence;
 
@@ -345,8 +367,10 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets capacity.
+     *
+     * @return null|int
      */
-    public function getCapacity(): ?int
+    public function getCapacity()
     {
         return $this->container['capacity'];
     }
@@ -355,21 +379,16 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets capacity.
      *
      * @param null|int $capacity signifies the capacity of a resource which is available
+     *
+     * @return self
      */
-    public function setCapacity(?int $capacity): self
+    public function setCapacity($capacity)
     {
         if (is_null($capacity)) {
-            array_push($this->openAPINullablesSetToNull, 'capacity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('capacity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable capacity cannot be null');
         }
 
-        if (!is_null($capacity) && ($capacity < 1)) {
+        if ($capacity < 1) {
             throw new \InvalidArgumentException('invalid value for $capacity when calling AvailabilityRecord., must be bigger than or equal to 1.');
         }
 
@@ -396,7 +415,7 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -407,7 +426,7 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -435,15 +454,17 @@ class AvailabilityRecord implements ModelInterface, \ArrayAccess, \JsonSerializa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

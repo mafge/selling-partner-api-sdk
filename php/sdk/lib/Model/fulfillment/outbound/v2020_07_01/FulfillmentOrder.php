@@ -3,7 +3,7 @@
 /**
  * FulfillmentOrder.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'FulfillmentOrder';
+    protected static $openAPIModelName = 'FulfillmentOrder';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'seller_fulfillment_order_id' => 'string',
         'marketplace_id' => 'string',
         'displayable_order_id' => 'string',
@@ -76,7 +77,8 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
         'fulfillment_order_status' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\FulfillmentOrderStatus',
         'status_updated_date' => '\DateTime',
         'notification_emails' => 'string[]',
-        'feature_constraints' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\FeatureSettings[]'];
+        'feature_constraints' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\FeatureSettings[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -87,7 +89,7 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'seller_fulfillment_order_id' => null,
         'marketplace_id' => null,
         'displayable_order_id' => null,
@@ -103,7 +105,8 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
         'fulfillment_order_status' => null,
         'status_updated_date' => 'date-time',
         'notification_emails' => null,
-        'feature_constraints' => null];
+        'feature_constraints' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -117,16 +120,16 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
         'displayable_order_date' => false,
         'displayable_order_comment' => false,
         'shipping_speed_category' => false,
-        'delivery_window' => true,
+        'delivery_window' => false,
         'destination_address' => false,
-        'fulfillment_action' => true,
-        'fulfillment_policy' => true,
-        'cod_settings' => true,
+        'fulfillment_action' => false,
+        'fulfillment_policy' => false,
+        'cod_settings' => false,
         'received_date' => false,
         'fulfillment_order_status' => false,
         'status_updated_date' => false,
-        'notification_emails' => true,
-        'feature_constraints' => true,
+        'notification_emails' => false,
+        'feature_constraints' => false,
     ];
 
     /**
@@ -142,7 +145,7 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'seller_fulfillment_order_id' => 'sellerFulfillmentOrderId',
         'marketplace_id' => 'marketplaceId',
         'displayable_order_id' => 'displayableOrderId',
@@ -166,7 +169,7 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'seller_fulfillment_order_id' => 'setSellerFulfillmentOrderId',
         'marketplace_id' => 'setMarketplaceId',
         'displayable_order_id' => 'setDisplayableOrderId',
@@ -190,7 +193,7 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'seller_fulfillment_order_id' => 'getSellerFulfillmentOrderId',
         'marketplace_id' => 'getMarketplaceId',
         'displayable_order_id' => 'getDisplayableOrderId',
@@ -211,14 +214,16 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -255,16 +260,20 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -288,32 +297,40 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -323,7 +340,7 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -367,15 +384,17 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets seller_fulfillment_order_id.
+     *
+     * @return string
      */
-    public function getSellerFulfillmentOrderId(): string
+    public function getSellerFulfillmentOrderId()
     {
         return $this->container['seller_fulfillment_order_id'];
     }
@@ -384,8 +403,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets seller_fulfillment_order_id.
      *
      * @param string $seller_fulfillment_order_id the fulfillment order identifier submitted with the `createFulfillmentOrder` operation
+     *
+     * @return self
      */
-    public function setSellerFulfillmentOrderId(string $seller_fulfillment_order_id): self
+    public function setSellerFulfillmentOrderId($seller_fulfillment_order_id)
     {
         if (is_null($seller_fulfillment_order_id)) {
             throw new \InvalidArgumentException('non-nullable seller_fulfillment_order_id cannot be null');
@@ -397,8 +418,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
-    public function getMarketplaceId(): string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -407,8 +430,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets marketplace_id.
      *
      * @param string $marketplace_id the identifier for the marketplace the fulfillment order is placed against
+     *
+     * @return self
      */
-    public function setMarketplaceId(string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
             throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
@@ -420,8 +445,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets displayable_order_id.
+     *
+     * @return string
      */
-    public function getDisplayableOrderId(): string
+    public function getDisplayableOrderId()
     {
         return $this->container['displayable_order_id'];
     }
@@ -430,8 +457,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets displayable_order_id.
      *
      * @param string $displayable_order_id A fulfillment order identifier submitted with the `createFulfillmentOrder` operation. Displays as the order identifier in recipient-facing materials such as the packing slip.
+     *
+     * @return self
      */
-    public function setDisplayableOrderId(string $displayable_order_id): self
+    public function setDisplayableOrderId($displayable_order_id)
     {
         if (is_null($displayable_order_id)) {
             throw new \InvalidArgumentException('non-nullable displayable_order_id cannot be null');
@@ -443,8 +472,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets displayable_order_date.
+     *
+     * @return \DateTime
      */
-    public function getDisplayableOrderDate(): \DateTime
+    public function getDisplayableOrderDate()
     {
         return $this->container['displayable_order_date'];
     }
@@ -453,8 +484,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets displayable_order_date.
      *
      * @param \DateTime $displayable_order_date Date timestamp
+     *
+     * @return self
      */
-    public function setDisplayableOrderDate(\DateTime $displayable_order_date): self
+    public function setDisplayableOrderDate($displayable_order_date)
     {
         if (is_null($displayable_order_date)) {
             throw new \InvalidArgumentException('non-nullable displayable_order_date cannot be null');
@@ -466,8 +499,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets displayable_order_comment.
+     *
+     * @return string
      */
-    public function getDisplayableOrderComment(): string
+    public function getDisplayableOrderComment()
     {
         return $this->container['displayable_order_comment'];
     }
@@ -476,8 +511,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets displayable_order_comment.
      *
      * @param string $displayable_order_comment A text block submitted with the `createFulfillmentOrder` operation. Displays in recipient-facing materials such as the packing slip.
+     *
+     * @return self
      */
-    public function setDisplayableOrderComment(string $displayable_order_comment): self
+    public function setDisplayableOrderComment($displayable_order_comment)
     {
         if (is_null($displayable_order_comment)) {
             throw new \InvalidArgumentException('non-nullable displayable_order_comment cannot be null');
@@ -489,8 +526,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets shipping_speed_category.
+     *
+     * @return ShippingSpeedCategory
      */
-    public function getShippingSpeedCategory(): string
+    public function getShippingSpeedCategory()
     {
         return $this->container['shipping_speed_category'];
     }
@@ -498,9 +537,11 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Sets shipping_speed_category.
      *
-     * @param string $shipping_speed_category shipping_speed_category
+     * @param ShippingSpeedCategory $shipping_speed_category shipping_speed_category
+     *
+     * @return self
      */
-    public function setShippingSpeedCategory(string $shipping_speed_category): self
+    public function setShippingSpeedCategory($shipping_speed_category)
     {
         if (is_null($shipping_speed_category)) {
             throw new \InvalidArgumentException('non-nullable shipping_speed_category cannot be null');
@@ -512,8 +553,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets delivery_window.
+     *
+     * @return null|DeliveryWindow
      */
-    public function getDeliveryWindow(): ?DeliveryWindow
+    public function getDeliveryWindow()
     {
         return $this->container['delivery_window'];
     }
@@ -522,18 +565,13 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets delivery_window.
      *
      * @param null|DeliveryWindow $delivery_window delivery_window
+     *
+     * @return self
      */
-    public function setDeliveryWindow(?DeliveryWindow $delivery_window): self
+    public function setDeliveryWindow($delivery_window)
     {
         if (is_null($delivery_window)) {
-            array_push($this->openAPINullablesSetToNull, 'delivery_window');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('delivery_window', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable delivery_window cannot be null');
         }
         $this->container['delivery_window'] = $delivery_window;
 
@@ -542,8 +580,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets destination_address.
+     *
+     * @return Address
      */
-    public function getDestinationAddress(): Address
+    public function getDestinationAddress()
     {
         return $this->container['destination_address'];
     }
@@ -552,8 +592,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets destination_address.
      *
      * @param Address $destination_address destination_address
+     *
+     * @return self
      */
-    public function setDestinationAddress(Address $destination_address): self
+    public function setDestinationAddress($destination_address)
     {
         if (is_null($destination_address)) {
             throw new \InvalidArgumentException('non-nullable destination_address cannot be null');
@@ -565,8 +607,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets fulfillment_action.
+     *
+     * @return null|FulfillmentAction
      */
-    public function getFulfillmentAction(): ?string
+    public function getFulfillmentAction()
     {
         return $this->container['fulfillment_action'];
     }
@@ -574,19 +618,14 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Sets fulfillment_action.
      *
-     * @param null|string $fulfillment_action fulfillment_action
+     * @param null|FulfillmentAction $fulfillment_action fulfillment_action
+     *
+     * @return self
      */
-    public function setFulfillmentAction(?string $fulfillment_action): self
+    public function setFulfillmentAction($fulfillment_action)
     {
         if (is_null($fulfillment_action)) {
-            array_push($this->openAPINullablesSetToNull, 'fulfillment_action');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fulfillment_action', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fulfillment_action cannot be null');
         }
         $this->container['fulfillment_action'] = $fulfillment_action;
 
@@ -595,8 +634,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets fulfillment_policy.
+     *
+     * @return null|FulfillmentPolicy
      */
-    public function getFulfillmentPolicy(): ?string
+    public function getFulfillmentPolicy()
     {
         return $this->container['fulfillment_policy'];
     }
@@ -604,19 +645,14 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Sets fulfillment_policy.
      *
-     * @param null|string $fulfillment_policy fulfillment_policy
+     * @param null|FulfillmentPolicy $fulfillment_policy fulfillment_policy
+     *
+     * @return self
      */
-    public function setFulfillmentPolicy(?string $fulfillment_policy): self
+    public function setFulfillmentPolicy($fulfillment_policy)
     {
         if (is_null($fulfillment_policy)) {
-            array_push($this->openAPINullablesSetToNull, 'fulfillment_policy');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fulfillment_policy', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fulfillment_policy cannot be null');
         }
         $this->container['fulfillment_policy'] = $fulfillment_policy;
 
@@ -625,8 +661,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets cod_settings.
+     *
+     * @return null|CODSettings
      */
-    public function getCodSettings(): ?CODSettings
+    public function getCodSettings()
     {
         return $this->container['cod_settings'];
     }
@@ -635,18 +673,13 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets cod_settings.
      *
      * @param null|CODSettings $cod_settings cod_settings
+     *
+     * @return self
      */
-    public function setCodSettings(?CODSettings $cod_settings): self
+    public function setCodSettings($cod_settings)
     {
         if (is_null($cod_settings)) {
-            array_push($this->openAPINullablesSetToNull, 'cod_settings');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('cod_settings', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable cod_settings cannot be null');
         }
         $this->container['cod_settings'] = $cod_settings;
 
@@ -655,8 +688,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets received_date.
+     *
+     * @return \DateTime
      */
-    public function getReceivedDate(): \DateTime
+    public function getReceivedDate()
     {
         return $this->container['received_date'];
     }
@@ -665,8 +700,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets received_date.
      *
      * @param \DateTime $received_date Date timestamp
+     *
+     * @return self
      */
-    public function setReceivedDate(\DateTime $received_date): self
+    public function setReceivedDate($received_date)
     {
         if (is_null($received_date)) {
             throw new \InvalidArgumentException('non-nullable received_date cannot be null');
@@ -678,8 +715,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets fulfillment_order_status.
+     *
+     * @return FulfillmentOrderStatus
      */
-    public function getFulfillmentOrderStatus(): string
+    public function getFulfillmentOrderStatus()
     {
         return $this->container['fulfillment_order_status'];
     }
@@ -687,9 +726,11 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Sets fulfillment_order_status.
      *
-     * @param string $fulfillment_order_status fulfillment_order_status
+     * @param FulfillmentOrderStatus $fulfillment_order_status fulfillment_order_status
+     *
+     * @return self
      */
-    public function setFulfillmentOrderStatus(string $fulfillment_order_status): self
+    public function setFulfillmentOrderStatus($fulfillment_order_status)
     {
         if (is_null($fulfillment_order_status)) {
             throw new \InvalidArgumentException('non-nullable fulfillment_order_status cannot be null');
@@ -701,8 +742,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets status_updated_date.
+     *
+     * @return \DateTime
      */
-    public function getStatusUpdatedDate(): \DateTime
+    public function getStatusUpdatedDate()
     {
         return $this->container['status_updated_date'];
     }
@@ -711,8 +754,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets status_updated_date.
      *
      * @param \DateTime $status_updated_date Date timestamp
+     *
+     * @return self
      */
-    public function setStatusUpdatedDate(\DateTime $status_updated_date): self
+    public function setStatusUpdatedDate($status_updated_date)
     {
         if (is_null($status_updated_date)) {
             throw new \InvalidArgumentException('non-nullable status_updated_date cannot be null');
@@ -724,8 +769,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets notification_emails.
+     *
+     * @return null|string[]
      */
-    public function getNotificationEmails(): ?array
+    public function getNotificationEmails()
     {
         return $this->container['notification_emails'];
     }
@@ -733,19 +780,14 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Sets notification_emails.
      *
-     * @param null|array $notification_emails a list of email addresses that the seller provides that are used by Amazon to send ship-complete notifications to recipients on behalf of the seller
+     * @param null|string[] $notification_emails a list of email addresses that the seller provides that are used by Amazon to send ship-complete notifications to recipients on behalf of the seller
+     *
+     * @return self
      */
-    public function setNotificationEmails(?array $notification_emails): self
+    public function setNotificationEmails($notification_emails)
     {
         if (is_null($notification_emails)) {
-            array_push($this->openAPINullablesSetToNull, 'notification_emails');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('notification_emails', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable notification_emails cannot be null');
         }
         $this->container['notification_emails'] = $notification_emails;
 
@@ -754,8 +796,10 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets feature_constraints.
+     *
+     * @return null|FeatureSettings[]
      */
-    public function getFeatureConstraints(): ?array
+    public function getFeatureConstraints()
     {
         return $this->container['feature_constraints'];
     }
@@ -763,19 +807,14 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Sets feature_constraints.
      *
-     * @param null|array $feature_constraints a list of features and their fulfillment policies to apply to the order
+     * @param null|FeatureSettings[] $feature_constraints a list of features and their fulfillment policies to apply to the order
+     *
+     * @return self
      */
-    public function setFeatureConstraints(?array $feature_constraints): self
+    public function setFeatureConstraints($feature_constraints)
     {
         if (is_null($feature_constraints)) {
-            array_push($this->openAPINullablesSetToNull, 'feature_constraints');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('feature_constraints', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable feature_constraints cannot be null');
         }
         $this->container['feature_constraints'] = $feature_constraints;
 
@@ -800,7 +839,7 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -811,7 +850,7 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -839,15 +878,17 @@ class FulfillmentOrder implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

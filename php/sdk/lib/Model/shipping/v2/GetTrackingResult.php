@@ -3,7 +3,7 @@
 /**
  * GetTrackingResult.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,20 +52,23 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetTrackingResult';
+    protected static $openAPIModelName = 'GetTrackingResult';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'tracking_id' => 'string',
         'alternate_leg_tracking_id' => 'string',
         'event_history' => '\SpApi\Model\shipping\v2\Event[]',
         'promised_delivery_date' => '\DateTime',
-        'summary' => '\SpApi\Model\shipping\v2\TrackingSummary'];
+        'summary' => '\SpApi\Model\shipping\v2\TrackingSummary',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,12 +79,13 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'tracking_id' => null,
         'alternate_leg_tracking_id' => null,
         'event_history' => null,
         'promised_delivery_date' => 'date-time',
-        'summary' => null];
+        'summary' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -110,7 +113,7 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'tracking_id' => 'trackingId',
         'alternate_leg_tracking_id' => 'alternateLegTrackingId',
         'event_history' => 'eventHistory',
@@ -123,7 +126,7 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'tracking_id' => 'setTrackingId',
         'alternate_leg_tracking_id' => 'setAlternateLegTrackingId',
         'event_history' => 'setEventHistory',
@@ -136,7 +139,7 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'tracking_id' => 'getTrackingId',
         'alternate_leg_tracking_id' => 'getAlternateLegTrackingId',
         'event_history' => 'getEventHistory',
@@ -146,14 +149,16 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -179,16 +184,20 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -212,32 +221,40 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -247,7 +264,7 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -276,15 +293,17 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets tracking_id.
+     *
+     * @return string
      */
-    public function getTrackingId(): string
+    public function getTrackingId()
     {
         return $this->container['tracking_id'];
     }
@@ -293,8 +312,10 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets tracking_id.
      *
      * @param string $tracking_id the carrier generated identifier for a package in a purchased shipment
+     *
+     * @return self
      */
-    public function setTrackingId(string $tracking_id): self
+    public function setTrackingId($tracking_id)
     {
         if (is_null($tracking_id)) {
             throw new \InvalidArgumentException('non-nullable tracking_id cannot be null');
@@ -306,8 +327,10 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets alternate_leg_tracking_id.
+     *
+     * @return string
      */
-    public function getAlternateLegTrackingId(): string
+    public function getAlternateLegTrackingId()
     {
         return $this->container['alternate_leg_tracking_id'];
     }
@@ -316,8 +339,10 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets alternate_leg_tracking_id.
      *
      * @param string $alternate_leg_tracking_id the carrier generated reverse identifier for a returned package in a purchased shipment
+     *
+     * @return self
      */
-    public function setAlternateLegTrackingId(string $alternate_leg_tracking_id): self
+    public function setAlternateLegTrackingId($alternate_leg_tracking_id)
     {
         if (is_null($alternate_leg_tracking_id)) {
             throw new \InvalidArgumentException('non-nullable alternate_leg_tracking_id cannot be null');
@@ -329,8 +354,10 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets event_history.
+     *
+     * @return Event[]
      */
-    public function getEventHistory(): array
+    public function getEventHistory()
     {
         return $this->container['event_history'];
     }
@@ -338,9 +365,11 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Sets event_history.
      *
-     * @param array $event_history a list of tracking events
+     * @param Event[] $event_history a list of tracking events
+     *
+     * @return self
      */
-    public function setEventHistory(array $event_history): self
+    public function setEventHistory($event_history)
     {
         if (is_null($event_history)) {
             throw new \InvalidArgumentException('non-nullable event_history cannot be null');
@@ -352,8 +381,10 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets promised_delivery_date.
+     *
+     * @return \DateTime
      */
-    public function getPromisedDeliveryDate(): \DateTime
+    public function getPromisedDeliveryDate()
     {
         return $this->container['promised_delivery_date'];
     }
@@ -362,8 +393,10 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets promised_delivery_date.
      *
      * @param \DateTime $promised_delivery_date the date and time by which the shipment is promised to be delivered
+     *
+     * @return self
      */
-    public function setPromisedDeliveryDate(\DateTime $promised_delivery_date): self
+    public function setPromisedDeliveryDate($promised_delivery_date)
     {
         if (is_null($promised_delivery_date)) {
             throw new \InvalidArgumentException('non-nullable promised_delivery_date cannot be null');
@@ -375,8 +408,10 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets summary.
+     *
+     * @return TrackingSummary
      */
-    public function getSummary(): TrackingSummary
+    public function getSummary()
     {
         return $this->container['summary'];
     }
@@ -385,8 +420,10 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets summary.
      *
      * @param TrackingSummary $summary summary
+     *
+     * @return self
      */
-    public function setSummary(TrackingSummary $summary): self
+    public function setSummary($summary)
     {
         if (is_null($summary)) {
             throw new \InvalidArgumentException('non-nullable summary cannot be null');
@@ -414,7 +451,7 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -425,7 +462,7 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -453,15 +490,17 @@ class GetTrackingResult implements ModelInterface, \ArrayAccess, \JsonSerializab
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

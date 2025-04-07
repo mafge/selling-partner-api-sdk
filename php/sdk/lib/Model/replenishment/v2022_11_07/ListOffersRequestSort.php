@@ -3,7 +3,7 @@
 /**
  * ListOffersRequestSort.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\replenishment\v2022_11_07;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class ListOffersRequestSort implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ListOffersRequestSort';
+    protected static $openAPIModelName = 'ListOffersRequestSort';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'order' => '\SpApi\Model\replenishment\v2022_11_07\SortOrder',
-        'key' => '\SpApi\Model\replenishment\v2022_11_07\ListOffersSortKey'];
+        'key' => '\SpApi\Model\replenishment\v2022_11_07\ListOffersSortKey',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class ListOffersRequestSort implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'order' => null,
-        'key' => null];
+        'key' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -100,7 +103,7 @@ class ListOffersRequestSort implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'order' => 'order',
         'key' => 'key',
     ];
@@ -110,7 +113,7 @@ class ListOffersRequestSort implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'order' => 'setOrder',
         'key' => 'setKey',
     ];
@@ -120,21 +123,23 @@ class ListOffersRequestSort implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'order' => 'getOrder',
         'key' => 'getKey',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class ListOffersRequestSort implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class ListOffersRequestSort implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class ListOffersRequestSort implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -245,15 +262,17 @@ class ListOffersRequestSort implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets order.
+     *
+     * @return SortOrder
      */
-    public function getOrder(): string
+    public function getOrder()
     {
         return $this->container['order'];
     }
@@ -261,9 +280,11 @@ class ListOffersRequestSort implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Sets order.
      *
-     * @param string $order order
+     * @param SortOrder $order order
+     *
+     * @return self
      */
-    public function setOrder(string $order): self
+    public function setOrder($order)
     {
         if (is_null($order)) {
             throw new \InvalidArgumentException('non-nullable order cannot be null');
@@ -275,8 +296,10 @@ class ListOffersRequestSort implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets key.
+     *
+     * @return ListOffersSortKey
      */
-    public function getKey(): string
+    public function getKey()
     {
         return $this->container['key'];
     }
@@ -284,9 +307,11 @@ class ListOffersRequestSort implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Sets key.
      *
-     * @param string $key key
+     * @param ListOffersSortKey $key key
+     *
+     * @return self
      */
-    public function setKey(string $key): self
+    public function setKey($key)
     {
         if (is_null($key)) {
             throw new \InvalidArgumentException('non-nullable key cannot be null');
@@ -314,7 +339,7 @@ class ListOffersRequestSort implements ModelInterface, \ArrayAccess, \JsonSerial
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -325,7 +350,7 @@ class ListOffersRequestSort implements ModelInterface, \ArrayAccess, \JsonSerial
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -353,15 +378,17 @@ class ListOffersRequestSort implements ModelInterface, \ArrayAccess, \JsonSerial
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

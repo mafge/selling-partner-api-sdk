@@ -3,7 +3,7 @@
 /**
  * ExceptionOperatingHours.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,17 +52,20 @@ class ExceptionOperatingHours implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ExceptionOperatingHours';
+    protected static $openAPIModelName = 'ExceptionOperatingHours';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'date_range' => '\SpApi\Model\shipping\v2\DateRange',
-        'operating_hours' => '\SpApi\Model\shipping\v2\OperatingHours'];
+        'operating_hours' => '\SpApi\Model\shipping\v2\OperatingHours',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,9 +76,10 @@ class ExceptionOperatingHours implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'date_range' => null,
-        'operating_hours' => null];
+        'operating_hours' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -84,8 +87,8 @@ class ExceptionOperatingHours implements ModelInterface, \ArrayAccess, \JsonSeri
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'date_range' => true,
-        'operating_hours' => true,
+        'date_range' => false,
+        'operating_hours' => false,
     ];
 
     /**
@@ -101,7 +104,7 @@ class ExceptionOperatingHours implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'date_range' => 'dateRange',
         'operating_hours' => 'operatingHours',
     ];
@@ -111,7 +114,7 @@ class ExceptionOperatingHours implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'date_range' => 'setDateRange',
         'operating_hours' => 'setOperatingHours',
     ];
@@ -121,21 +124,23 @@ class ExceptionOperatingHours implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'date_range' => 'getDateRange',
         'operating_hours' => 'getOperatingHours',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -158,16 +163,20 @@ class ExceptionOperatingHours implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -191,32 +200,40 @@ class ExceptionOperatingHours implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -226,7 +243,7 @@ class ExceptionOperatingHours implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -237,15 +254,17 @@ class ExceptionOperatingHours implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets date_range.
+     *
+     * @return null|DateRange
      */
-    public function getDateRange(): ?DateRange
+    public function getDateRange()
     {
         return $this->container['date_range'];
     }
@@ -254,18 +273,13 @@ class ExceptionOperatingHours implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets date_range.
      *
      * @param null|DateRange $date_range date_range
+     *
+     * @return self
      */
-    public function setDateRange(?DateRange $date_range): self
+    public function setDateRange($date_range)
     {
         if (is_null($date_range)) {
-            array_push($this->openAPINullablesSetToNull, 'date_range');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('date_range', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable date_range cannot be null');
         }
         $this->container['date_range'] = $date_range;
 
@@ -274,8 +288,10 @@ class ExceptionOperatingHours implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets operating_hours.
+     *
+     * @return null|OperatingHours
      */
-    public function getOperatingHours(): ?OperatingHours
+    public function getOperatingHours()
     {
         return $this->container['operating_hours'];
     }
@@ -284,18 +300,13 @@ class ExceptionOperatingHours implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets operating_hours.
      *
      * @param null|OperatingHours $operating_hours operating_hours
+     *
+     * @return self
      */
-    public function setOperatingHours(?OperatingHours $operating_hours): self
+    public function setOperatingHours($operating_hours)
     {
         if (is_null($operating_hours)) {
-            array_push($this->openAPINullablesSetToNull, 'operating_hours');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('operating_hours', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable operating_hours cannot be null');
         }
         $this->container['operating_hours'] = $operating_hours;
 
@@ -320,7 +331,7 @@ class ExceptionOperatingHours implements ModelInterface, \ArrayAccess, \JsonSeri
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -331,7 +342,7 @@ class ExceptionOperatingHours implements ModelInterface, \ArrayAccess, \JsonSeri
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -359,15 +370,17 @@ class ExceptionOperatingHours implements ModelInterface, \ArrayAccess, \JsonSeri
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

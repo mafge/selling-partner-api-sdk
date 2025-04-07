@@ -3,7 +3,7 @@
 /**
  * Destination.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\notifications\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Destination';
+    protected static $openAPIModelName = 'Destination';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'name' => 'string',
         'destination_id' => 'string',
-        'resource' => '\SpApi\Model\notifications\v1\DestinationResource'];
+        'resource' => '\SpApi\Model\notifications\v1\DestinationResource',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'name' => null,
         'destination_id' => null,
-        'resource' => null];
+        'resource' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -103,7 +106,7 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'name' => 'name',
         'destination_id' => 'destinationId',
         'resource' => 'resource',
@@ -114,7 +117,7 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'name' => 'setName',
         'destination_id' => 'setDestinationId',
         'resource' => 'setResource',
@@ -125,7 +128,7 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'name' => 'getName',
         'destination_id' => 'getDestinationId',
         'resource' => 'getResource',
@@ -133,14 +136,16 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -259,15 +276,17 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets name.
+     *
+     * @return string
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->container['name'];
     }
@@ -276,8 +295,10 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets name.
      *
      * @param string $name the developer-defined name for this destination
+     *
+     * @return self
      */
-    public function setName(string $name): self
+    public function setName($name)
     {
         if (is_null($name)) {
             throw new \InvalidArgumentException('non-nullable name cannot be null');
@@ -293,8 +314,10 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets destination_id.
+     *
+     * @return string
      */
-    public function getDestinationId(): string
+    public function getDestinationId()
     {
         return $this->container['destination_id'];
     }
@@ -303,8 +326,10 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets destination_id.
      *
      * @param string $destination_id the destination identifier generated when you created the destination
+     *
+     * @return self
      */
-    public function setDestinationId(string $destination_id): self
+    public function setDestinationId($destination_id)
     {
         if (is_null($destination_id)) {
             throw new \InvalidArgumentException('non-nullable destination_id cannot be null');
@@ -316,8 +341,10 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets resource.
+     *
+     * @return DestinationResource
      */
-    public function getResource(): DestinationResource
+    public function getResource()
     {
         return $this->container['resource'];
     }
@@ -326,8 +353,10 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets resource.
      *
      * @param DestinationResource $resource resource
+     *
+     * @return self
      */
-    public function setResource(DestinationResource $resource): self
+    public function setResource($resource)
     {
         if (is_null($resource)) {
             throw new \InvalidArgumentException('non-nullable resource cannot be null');
@@ -355,7 +384,7 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -366,7 +395,7 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -394,15 +423,17 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

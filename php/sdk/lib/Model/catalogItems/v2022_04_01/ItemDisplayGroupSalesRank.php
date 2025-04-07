@@ -3,7 +3,7 @@
 /**
  * ItemDisplayGroupSalesRank.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\catalogItems\v2022_04_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ItemDisplayGroupSalesRank';
+    protected static $openAPIModelName = 'ItemDisplayGroupSalesRank';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'website_display_group' => 'string',
         'title' => 'string',
         'link' => 'string',
-        'rank' => 'int'];
+        'rank' => 'int',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'website_display_group' => null,
         'title' => null,
         'link' => null,
-        'rank' => null];
+        'rank' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,7 +92,7 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
     protected static array $openAPINullables = [
         'website_display_group' => false,
         'title' => false,
-        'link' => true,
+        'link' => false,
         'rank' => false,
     ];
 
@@ -106,7 +109,7 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'website_display_group' => 'websiteDisplayGroup',
         'title' => 'title',
         'link' => 'link',
@@ -118,7 +121,7 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'website_display_group' => 'setWebsiteDisplayGroup',
         'title' => 'setTitle',
         'link' => 'setLink',
@@ -130,7 +133,7 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'website_display_group' => 'getWebsiteDisplayGroup',
         'title' => 'getTitle',
         'link' => 'getLink',
@@ -139,14 +142,16 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -262,15 +279,17 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets website_display_group.
+     *
+     * @return string
      */
-    public function getWebsiteDisplayGroup(): string
+    public function getWebsiteDisplayGroup()
     {
         return $this->container['website_display_group'];
     }
@@ -279,8 +298,10 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets website_display_group.
      *
      * @param string $website_display_group Name of the website display group that is associated with the sales rank
+     *
+     * @return self
      */
-    public function setWebsiteDisplayGroup(string $website_display_group): self
+    public function setWebsiteDisplayGroup($website_display_group)
     {
         if (is_null($website_display_group)) {
             throw new \InvalidArgumentException('non-nullable website_display_group cannot be null');
@@ -292,8 +313,10 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets title.
+     *
+     * @return string
      */
-    public function getTitle(): string
+    public function getTitle()
     {
         return $this->container['title'];
     }
@@ -302,8 +325,10 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets title.
      *
      * @param string $title name of the sales rank
+     *
+     * @return self
      */
-    public function setTitle(string $title): self
+    public function setTitle($title)
     {
         if (is_null($title)) {
             throw new \InvalidArgumentException('non-nullable title cannot be null');
@@ -315,8 +340,10 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets link.
+     *
+     * @return null|string
      */
-    public function getLink(): ?string
+    public function getLink()
     {
         return $this->container['link'];
     }
@@ -325,18 +352,13 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets link.
      *
      * @param null|string $link corresponding Amazon retail website URL for the sales rank
+     *
+     * @return self
      */
-    public function setLink(?string $link): self
+    public function setLink($link)
     {
         if (is_null($link)) {
-            array_push($this->openAPINullablesSetToNull, 'link');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('link', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable link cannot be null');
         }
         $this->container['link'] = $link;
 
@@ -345,8 +367,10 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets rank.
+     *
+     * @return int
      */
-    public function getRank(): int
+    public function getRank()
     {
         return $this->container['rank'];
     }
@@ -355,8 +379,10 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets rank.
      *
      * @param int $rank sales rank
+     *
+     * @return self
      */
-    public function setRank(int $rank): self
+    public function setRank($rank)
     {
         if (is_null($rank)) {
             throw new \InvalidArgumentException('non-nullable rank cannot be null');
@@ -384,7 +410,7 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -395,7 +421,7 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -423,15 +449,17 @@ class ItemDisplayGroupSalesRank implements ModelInterface, \ArrayAccess, \JsonSe
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

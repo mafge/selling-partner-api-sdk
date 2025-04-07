@@ -3,7 +3,7 @@
 /**
  * GetDocumentResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\datakiosk\v2023_11_15;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class GetDocumentResponse implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetDocumentResponse';
+    protected static $openAPIModelName = 'GetDocumentResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'document_id' => 'string',
-        'document_url' => 'string'];
+        'document_url' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class GetDocumentResponse implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'document_id' => null,
-        'document_url' => null];
+        'document_url' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -100,7 +103,7 @@ class GetDocumentResponse implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'document_id' => 'documentId',
         'document_url' => 'documentUrl',
     ];
@@ -110,7 +113,7 @@ class GetDocumentResponse implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'document_id' => 'setDocumentId',
         'document_url' => 'setDocumentUrl',
     ];
@@ -120,21 +123,23 @@ class GetDocumentResponse implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'document_id' => 'getDocumentId',
         'document_url' => 'getDocumentUrl',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class GetDocumentResponse implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class GetDocumentResponse implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class GetDocumentResponse implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -245,15 +262,17 @@ class GetDocumentResponse implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets document_id.
+     *
+     * @return string
      */
-    public function getDocumentId(): string
+    public function getDocumentId()
     {
         return $this->container['document_id'];
     }
@@ -262,8 +281,10 @@ class GetDocumentResponse implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets document_id.
      *
      * @param string $document_id The identifier for the Data Kiosk document. This identifier is unique only in combination with a selling partner account ID.
+     *
+     * @return self
      */
-    public function setDocumentId(string $document_id): self
+    public function setDocumentId($document_id)
     {
         if (is_null($document_id)) {
             throw new \InvalidArgumentException('non-nullable document_id cannot be null');
@@ -275,8 +296,10 @@ class GetDocumentResponse implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets document_url.
+     *
+     * @return string
      */
-    public function getDocumentUrl(): string
+    public function getDocumentUrl()
     {
         return $this->container['document_url'];
     }
@@ -285,8 +308,10 @@ class GetDocumentResponse implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets document_url.
      *
      * @param string $document_url A presigned URL that can be used to retrieve the Data Kiosk document. This URL expires after 5 minutes. If the Data Kiosk document is compressed, the `Content-Encoding` header will indicate the compression algorithm.  **Note:** Most HTTP clients are capable of automatically decompressing downloaded files based on the `Content-Encoding` header.
+     *
+     * @return self
      */
-    public function setDocumentUrl(string $document_url): self
+    public function setDocumentUrl($document_url)
     {
         if (is_null($document_url)) {
             throw new \InvalidArgumentException('non-nullable document_url cannot be null');
@@ -314,7 +339,7 @@ class GetDocumentResponse implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -325,7 +350,7 @@ class GetDocumentResponse implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -353,15 +378,17 @@ class GetDocumentResponse implements ModelInterface, \ArrayAccess, \JsonSerializ
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * RemovalShipmentEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'RemovalShipmentEvent';
+    protected static $openAPIModelName = 'RemovalShipmentEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'posted_date' => '\DateTime',
         'merchant_order_id' => 'string',
         'order_id' => 'string',
         'transaction_type' => 'string',
         'store_name' => 'string',
-        'removal_shipment_item_list' => '\SpApi\Model\finances\v0\RemovalShipmentItem[]'];
+        'removal_shipment_item_list' => '\SpApi\Model\finances\v0\RemovalShipmentItem[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'posted_date' => 'date-time',
         'merchant_order_id' => null,
         'order_id' => null,
         'transaction_type' => null,
         'store_name' => null,
-        'removal_shipment_item_list' => null];
+        'removal_shipment_item_list' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -91,12 +94,12 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'posted_date' => true,
-        'merchant_order_id' => true,
-        'order_id' => true,
-        'transaction_type' => true,
-        'store_name' => true,
-        'removal_shipment_item_list' => true,
+        'posted_date' => false,
+        'merchant_order_id' => false,
+        'order_id' => false,
+        'transaction_type' => false,
+        'store_name' => false,
+        'removal_shipment_item_list' => false,
     ];
 
     /**
@@ -112,7 +115,7 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'posted_date' => 'PostedDate',
         'merchant_order_id' => 'MerchantOrderId',
         'order_id' => 'OrderId',
@@ -126,7 +129,7 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'posted_date' => 'setPostedDate',
         'merchant_order_id' => 'setMerchantOrderId',
         'order_id' => 'setOrderId',
@@ -140,7 +143,7 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'posted_date' => 'getPostedDate',
         'merchant_order_id' => 'getMerchantOrderId',
         'order_id' => 'getOrderId',
@@ -151,14 +154,16 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -264,15 +281,17 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTime
      */
-    public function getPostedDate(): ?\DateTime
+    public function getPostedDate()
     {
         return $this->container['posted_date'];
     }
@@ -281,18 +300,13 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets posted_date.
      *
      * @param null|\DateTime $posted_date fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate)
+     *
+     * @return self
      */
-    public function setPostedDate(?\DateTime $posted_date): self
+    public function setPostedDate($posted_date)
     {
         if (is_null($posted_date)) {
-            array_push($this->openAPINullablesSetToNull, 'posted_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('posted_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable posted_date cannot be null');
         }
         $this->container['posted_date'] = $posted_date;
 
@@ -301,8 +315,10 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets merchant_order_id.
+     *
+     * @return null|string
      */
-    public function getMerchantOrderId(): ?string
+    public function getMerchantOrderId()
     {
         return $this->container['merchant_order_id'];
     }
@@ -311,18 +327,13 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets merchant_order_id.
      *
      * @param null|string $merchant_order_id the merchant removal orderId
+     *
+     * @return self
      */
-    public function setMerchantOrderId(?string $merchant_order_id): self
+    public function setMerchantOrderId($merchant_order_id)
     {
         if (is_null($merchant_order_id)) {
-            array_push($this->openAPINullablesSetToNull, 'merchant_order_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('merchant_order_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable merchant_order_id cannot be null');
         }
         $this->container['merchant_order_id'] = $merchant_order_id;
 
@@ -331,8 +342,10 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets order_id.
+     *
+     * @return null|string
      */
-    public function getOrderId(): ?string
+    public function getOrderId()
     {
         return $this->container['order_id'];
     }
@@ -341,18 +354,13 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets order_id.
      *
      * @param null|string $order_id the identifier for the removal shipment order
+     *
+     * @return self
      */
-    public function setOrderId(?string $order_id): self
+    public function setOrderId($order_id)
     {
         if (is_null($order_id)) {
-            array_push($this->openAPINullablesSetToNull, 'order_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('order_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable order_id cannot be null');
         }
         $this->container['order_id'] = $order_id;
 
@@ -361,8 +369,10 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets transaction_type.
+     *
+     * @return null|string
      */
-    public function getTransactionType(): ?string
+    public function getTransactionType()
     {
         return $this->container['transaction_type'];
     }
@@ -371,18 +381,13 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets transaction_type.
      *
      * @param null|string $transaction_type The type of removal order.  Possible values:  * WHOLESALE_LIQUIDATION
+     *
+     * @return self
      */
-    public function setTransactionType(?string $transaction_type): self
+    public function setTransactionType($transaction_type)
     {
         if (is_null($transaction_type)) {
-            array_push($this->openAPINullablesSetToNull, 'transaction_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transaction_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transaction_type cannot be null');
         }
         $this->container['transaction_type'] = $transaction_type;
 
@@ -391,8 +396,10 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets store_name.
+     *
+     * @return null|string
      */
-    public function getStoreName(): ?string
+    public function getStoreName()
     {
         return $this->container['store_name'];
     }
@@ -401,18 +408,13 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets store_name.
      *
      * @param null|string $store_name the name of the store where the event occurred
+     *
+     * @return self
      */
-    public function setStoreName(?string $store_name): self
+    public function setStoreName($store_name)
     {
         if (is_null($store_name)) {
-            array_push($this->openAPINullablesSetToNull, 'store_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('store_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable store_name cannot be null');
         }
         $this->container['store_name'] = $store_name;
 
@@ -421,8 +423,10 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets removal_shipment_item_list.
+     *
+     * @return null|RemovalShipmentItem[]
      */
-    public function getRemovalShipmentItemList(): ?array
+    public function getRemovalShipmentItemList()
     {
         return $this->container['removal_shipment_item_list'];
     }
@@ -430,19 +434,14 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Sets removal_shipment_item_list.
      *
-     * @param null|array $removal_shipment_item_list a list of information about removal shipment items
+     * @param null|RemovalShipmentItem[] $removal_shipment_item_list a list of information about removal shipment items
+     *
+     * @return self
      */
-    public function setRemovalShipmentItemList(?array $removal_shipment_item_list): self
+    public function setRemovalShipmentItemList($removal_shipment_item_list)
     {
         if (is_null($removal_shipment_item_list)) {
-            array_push($this->openAPINullablesSetToNull, 'removal_shipment_item_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('removal_shipment_item_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable removal_shipment_item_list cannot be null');
         }
         $this->container['removal_shipment_item_list'] = $removal_shipment_item_list;
 
@@ -467,7 +466,7 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -478,7 +477,7 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -506,15 +505,17 @@ class RemovalShipmentEvent implements ModelInterface, \ArrayAccess, \JsonSeriali
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

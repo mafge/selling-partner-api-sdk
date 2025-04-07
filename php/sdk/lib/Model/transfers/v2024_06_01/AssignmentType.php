@@ -3,7 +3,7 @@
 /**
  * AssignmentType.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -53,7 +53,7 @@ class AssignmentType
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues(): array
+    public static function getAllowableEnumValues()
     {
         return [
             self::DEFAULT_DEPOSIT_METHOD,

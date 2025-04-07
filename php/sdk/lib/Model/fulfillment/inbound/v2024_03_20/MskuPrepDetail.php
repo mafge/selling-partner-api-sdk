@@ -3,7 +3,7 @@
 /**
  * MskuPrepDetail.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'MskuPrepDetail';
+    protected static $openAPIModelName = 'MskuPrepDetail';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'all_owners_constraint' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\AllOwnersConstraint',
         'label_owner_constraint' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\OwnerConstraint',
         'msku' => 'string',
         'prep_category' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\PrepCategory',
         'prep_owner_constraint' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\OwnerConstraint',
-        'prep_types' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\PrepType[]'];
+        'prep_types' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\PrepType[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'all_owners_constraint' => null,
         'label_owner_constraint' => null,
         'msku' => null,
         'prep_category' => null,
         'prep_owner_constraint' => null,
-        'prep_types' => null];
+        'prep_types' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -91,11 +94,11 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'all_owners_constraint' => true,
-        'label_owner_constraint' => true,
+        'all_owners_constraint' => false,
+        'label_owner_constraint' => false,
         'msku' => false,
         'prep_category' => false,
-        'prep_owner_constraint' => true,
+        'prep_owner_constraint' => false,
         'prep_types' => false,
     ];
 
@@ -112,7 +115,7 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'all_owners_constraint' => 'allOwnersConstraint',
         'label_owner_constraint' => 'labelOwnerConstraint',
         'msku' => 'msku',
@@ -126,7 +129,7 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'all_owners_constraint' => 'setAllOwnersConstraint',
         'label_owner_constraint' => 'setLabelOwnerConstraint',
         'msku' => 'setMsku',
@@ -140,7 +143,7 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'all_owners_constraint' => 'getAllOwnersConstraint',
         'label_owner_constraint' => 'getLabelOwnerConstraint',
         'msku' => 'getMsku',
@@ -151,14 +154,16 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -284,15 +301,17 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets all_owners_constraint.
+     *
+     * @return null|AllOwnersConstraint
      */
-    public function getAllOwnersConstraint(): ?string
+    public function getAllOwnersConstraint()
     {
         return $this->container['all_owners_constraint'];
     }
@@ -300,19 +319,14 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets all_owners_constraint.
      *
-     * @param null|string $all_owners_constraint all_owners_constraint
+     * @param null|AllOwnersConstraint $all_owners_constraint all_owners_constraint
+     *
+     * @return self
      */
-    public function setAllOwnersConstraint(?string $all_owners_constraint): self
+    public function setAllOwnersConstraint($all_owners_constraint)
     {
         if (is_null($all_owners_constraint)) {
-            array_push($this->openAPINullablesSetToNull, 'all_owners_constraint');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('all_owners_constraint', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable all_owners_constraint cannot be null');
         }
         $this->container['all_owners_constraint'] = $all_owners_constraint;
 
@@ -321,8 +335,10 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets label_owner_constraint.
+     *
+     * @return null|OwnerConstraint
      */
-    public function getLabelOwnerConstraint(): ?string
+    public function getLabelOwnerConstraint()
     {
         return $this->container['label_owner_constraint'];
     }
@@ -330,19 +346,14 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets label_owner_constraint.
      *
-     * @param null|string $label_owner_constraint label_owner_constraint
+     * @param null|OwnerConstraint $label_owner_constraint label_owner_constraint
+     *
+     * @return self
      */
-    public function setLabelOwnerConstraint(?string $label_owner_constraint): self
+    public function setLabelOwnerConstraint($label_owner_constraint)
     {
         if (is_null($label_owner_constraint)) {
-            array_push($this->openAPINullablesSetToNull, 'label_owner_constraint');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('label_owner_constraint', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable label_owner_constraint cannot be null');
         }
         $this->container['label_owner_constraint'] = $label_owner_constraint;
 
@@ -351,8 +362,10 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets msku.
+     *
+     * @return string
      */
-    public function getMsku(): string
+    public function getMsku()
     {
         return $this->container['msku'];
     }
@@ -361,8 +374,10 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets msku.
      *
      * @param string $msku the merchant SKU, a merchant-supplied identifier for a specific SKU
+     *
+     * @return self
      */
-    public function setMsku(string $msku): self
+    public function setMsku($msku)
     {
         if (is_null($msku)) {
             throw new \InvalidArgumentException('non-nullable msku cannot be null');
@@ -381,8 +396,10 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets prep_category.
+     *
+     * @return PrepCategory
      */
-    public function getPrepCategory(): string
+    public function getPrepCategory()
     {
         return $this->container['prep_category'];
     }
@@ -390,9 +407,11 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets prep_category.
      *
-     * @param string $prep_category prep_category
+     * @param PrepCategory $prep_category prep_category
+     *
+     * @return self
      */
-    public function setPrepCategory(string $prep_category): self
+    public function setPrepCategory($prep_category)
     {
         if (is_null($prep_category)) {
             throw new \InvalidArgumentException('non-nullable prep_category cannot be null');
@@ -404,8 +423,10 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets prep_owner_constraint.
+     *
+     * @return null|OwnerConstraint
      */
-    public function getPrepOwnerConstraint(): ?string
+    public function getPrepOwnerConstraint()
     {
         return $this->container['prep_owner_constraint'];
     }
@@ -413,19 +434,14 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets prep_owner_constraint.
      *
-     * @param null|string $prep_owner_constraint prep_owner_constraint
+     * @param null|OwnerConstraint $prep_owner_constraint prep_owner_constraint
+     *
+     * @return self
      */
-    public function setPrepOwnerConstraint(?string $prep_owner_constraint): self
+    public function setPrepOwnerConstraint($prep_owner_constraint)
     {
         if (is_null($prep_owner_constraint)) {
-            array_push($this->openAPINullablesSetToNull, 'prep_owner_constraint');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('prep_owner_constraint', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable prep_owner_constraint cannot be null');
         }
         $this->container['prep_owner_constraint'] = $prep_owner_constraint;
 
@@ -434,8 +450,10 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets prep_types.
+     *
+     * @return PrepType[]
      */
-    public function getPrepTypes(): array
+    public function getPrepTypes()
     {
         return $this->container['prep_types'];
     }
@@ -443,9 +461,11 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets prep_types.
      *
-     * @param array $prep_types a list of preparation types associated with a preparation category
+     * @param PrepType[] $prep_types a list of preparation types associated with a preparation category
+     *
+     * @return self
      */
-    public function setPrepTypes(array $prep_types): self
+    public function setPrepTypes($prep_types)
     {
         if (is_null($prep_types)) {
             throw new \InvalidArgumentException('non-nullable prep_types cannot be null');
@@ -473,7 +493,7 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -484,7 +504,7 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -512,15 +532,17 @@ class MskuPrepDetail implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

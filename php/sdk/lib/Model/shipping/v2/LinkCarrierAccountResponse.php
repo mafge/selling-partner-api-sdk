@@ -3,7 +3,7 @@
 /**
  * LinkCarrierAccountResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,17 +52,20 @@ class LinkCarrierAccountResponse implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'LinkCarrierAccountResponse';
+    protected static $openAPIModelName = 'LinkCarrierAccountResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'registration_status' => '\SpApi\Model\shipping\v2\AccountStatus',
-        'account_id' => 'string'];
+        'account_id' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,9 +76,10 @@ class LinkCarrierAccountResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'registration_status' => null,
-        'account_id' => null];
+        'account_id' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -84,8 +87,8 @@ class LinkCarrierAccountResponse implements ModelInterface, \ArrayAccess, \JsonS
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'registration_status' => true,
-        'account_id' => true,
+        'registration_status' => false,
+        'account_id' => false,
     ];
 
     /**
@@ -101,7 +104,7 @@ class LinkCarrierAccountResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'registration_status' => 'registrationStatus',
         'account_id' => 'accountId',
     ];
@@ -111,7 +114,7 @@ class LinkCarrierAccountResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'registration_status' => 'setRegistrationStatus',
         'account_id' => 'setAccountId',
     ];
@@ -121,21 +124,23 @@ class LinkCarrierAccountResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'registration_status' => 'getRegistrationStatus',
         'account_id' => 'getAccountId',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -158,16 +163,20 @@ class LinkCarrierAccountResponse implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -191,32 +200,40 @@ class LinkCarrierAccountResponse implements ModelInterface, \ArrayAccess, \JsonS
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -226,7 +243,7 @@ class LinkCarrierAccountResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -237,15 +254,17 @@ class LinkCarrierAccountResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets registration_status.
+     *
+     * @return null|AccountStatus
      */
-    public function getRegistrationStatus(): ?string
+    public function getRegistrationStatus()
     {
         return $this->container['registration_status'];
     }
@@ -253,19 +272,14 @@ class LinkCarrierAccountResponse implements ModelInterface, \ArrayAccess, \JsonS
     /**
      * Sets registration_status.
      *
-     * @param null|string $registration_status registration_status
+     * @param null|AccountStatus $registration_status registration_status
+     *
+     * @return self
      */
-    public function setRegistrationStatus(?string $registration_status): self
+    public function setRegistrationStatus($registration_status)
     {
         if (is_null($registration_status)) {
-            array_push($this->openAPINullablesSetToNull, 'registration_status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('registration_status', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable registration_status cannot be null');
         }
         $this->container['registration_status'] = $registration_status;
 
@@ -274,8 +288,10 @@ class LinkCarrierAccountResponse implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets account_id.
+     *
+     * @return null|string
      */
-    public function getAccountId(): ?string
+    public function getAccountId()
     {
         return $this->container['account_id'];
     }
@@ -284,18 +300,13 @@ class LinkCarrierAccountResponse implements ModelInterface, \ArrayAccess, \JsonS
      * Sets account_id.
      *
      * @param null|string $account_id identifier for the seller's carrier account
+     *
+     * @return self
      */
-    public function setAccountId(?string $account_id): self
+    public function setAccountId($account_id)
     {
         if (is_null($account_id)) {
-            array_push($this->openAPINullablesSetToNull, 'account_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('account_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable account_id cannot be null');
         }
         $this->container['account_id'] = $account_id;
 
@@ -320,7 +331,7 @@ class LinkCarrierAccountResponse implements ModelInterface, \ArrayAccess, \JsonS
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -331,7 +342,7 @@ class LinkCarrierAccountResponse implements ModelInterface, \ArrayAccess, \JsonS
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -359,15 +370,17 @@ class LinkCarrierAccountResponse implements ModelInterface, \ArrayAccess, \JsonS
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

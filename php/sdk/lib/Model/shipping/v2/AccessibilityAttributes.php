@@ -3,7 +3,7 @@
 /**
  * AccessibilityAttributes.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,17 +52,20 @@ class AccessibilityAttributes implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'AccessibilityAttributes';
+    protected static $openAPIModelName = 'AccessibilityAttributes';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'distance' => 'string',
-        'drive_time' => 'int'];
+        'drive_time' => 'int',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,9 +76,10 @@ class AccessibilityAttributes implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'distance' => null,
-        'drive_time' => null];
+        'drive_time' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -84,8 +87,8 @@ class AccessibilityAttributes implements ModelInterface, \ArrayAccess, \JsonSeri
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'distance' => true,
-        'drive_time' => true,
+        'distance' => false,
+        'drive_time' => false,
     ];
 
     /**
@@ -101,7 +104,7 @@ class AccessibilityAttributes implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'distance' => 'distance',
         'drive_time' => 'driveTime',
     ];
@@ -111,7 +114,7 @@ class AccessibilityAttributes implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'distance' => 'setDistance',
         'drive_time' => 'setDriveTime',
     ];
@@ -121,21 +124,23 @@ class AccessibilityAttributes implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'distance' => 'getDistance',
         'drive_time' => 'getDriveTime',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -158,16 +163,20 @@ class AccessibilityAttributes implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -191,32 +200,40 @@ class AccessibilityAttributes implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -226,7 +243,7 @@ class AccessibilityAttributes implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -237,15 +254,17 @@ class AccessibilityAttributes implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets distance.
+     *
+     * @return null|string
      */
-    public function getDistance(): ?string
+    public function getDistance()
     {
         return $this->container['distance'];
     }
@@ -254,18 +273,13 @@ class AccessibilityAttributes implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets distance.
      *
      * @param null|string $distance the approximate distance of access point from input postalCode's centroid
+     *
+     * @return self
      */
-    public function setDistance(?string $distance): self
+    public function setDistance($distance)
     {
         if (is_null($distance)) {
-            array_push($this->openAPINullablesSetToNull, 'distance');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('distance', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable distance cannot be null');
         }
         $this->container['distance'] = $distance;
 
@@ -274,8 +288,10 @@ class AccessibilityAttributes implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets drive_time.
+     *
+     * @return null|int
      */
-    public function getDriveTime(): ?int
+    public function getDriveTime()
     {
         return $this->container['drive_time'];
     }
@@ -284,18 +300,13 @@ class AccessibilityAttributes implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets drive_time.
      *
      * @param null|int $drive_time the approximate (static) drive time from input postal code's centroid
+     *
+     * @return self
      */
-    public function setDriveTime(?int $drive_time): self
+    public function setDriveTime($drive_time)
     {
         if (is_null($drive_time)) {
-            array_push($this->openAPINullablesSetToNull, 'drive_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('drive_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable drive_time cannot be null');
         }
         $this->container['drive_time'] = $drive_time;
 
@@ -320,7 +331,7 @@ class AccessibilityAttributes implements ModelInterface, \ArrayAccess, \JsonSeri
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -331,7 +342,7 @@ class AccessibilityAttributes implements ModelInterface, \ArrayAccess, \JsonSeri
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -359,15 +370,17 @@ class AccessibilityAttributes implements ModelInterface, \ArrayAccess, \JsonSeri
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

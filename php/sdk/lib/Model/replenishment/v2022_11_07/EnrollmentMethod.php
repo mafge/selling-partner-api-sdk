@@ -3,7 +3,7 @@
 /**
  * EnrollmentMethod.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -55,7 +55,7 @@ class EnrollmentMethod
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues(): array
+    public static function getAllowableEnumValues()
     {
         return [
             self::MANUAL,

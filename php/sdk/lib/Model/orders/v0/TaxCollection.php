@@ -3,7 +3,7 @@
 /**
  * TaxCollection.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\orders\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -55,17 +54,20 @@ class TaxCollection implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'TaxCollection';
+    protected static $openAPIModelName = 'TaxCollection';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'model' => 'string',
-        'responsible_party' => 'string'];
+        'responsible_party' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,9 +78,10 @@ class TaxCollection implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'model' => null,
-        'responsible_party' => null];
+        'responsible_party' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -86,8 +89,8 @@ class TaxCollection implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'model' => true,
-        'responsible_party' => true,
+        'model' => false,
+        'responsible_party' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class TaxCollection implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'model' => 'Model',
         'responsible_party' => 'ResponsibleParty',
     ];
@@ -113,7 +116,7 @@ class TaxCollection implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'model' => 'setModel',
         'responsible_party' => 'setResponsibleParty',
     ];
@@ -123,21 +126,23 @@ class TaxCollection implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'model' => 'getModel',
         'responsible_party' => 'getResponsibleParty',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -160,16 +165,20 @@ class TaxCollection implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -193,32 +202,40 @@ class TaxCollection implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -228,7 +245,7 @@ class TaxCollection implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getModelAllowableValues(): array
+    public function getModelAllowableValues()
     {
         return [
             self::MODEL_MARKETPLACE_FACILITATOR,
@@ -240,7 +257,7 @@ class TaxCollection implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getResponsiblePartyAllowableValues(): array
+    public function getResponsiblePartyAllowableValues()
     {
         return [
             self::RESPONSIBLE_PARTY_AMAZON_SERVICES_INC,
@@ -252,7 +269,7 @@ class TaxCollection implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -283,15 +300,17 @@ class TaxCollection implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets model.
+     *
+     * @return null|string
      */
-    public function getModel(): ?string
+    public function getModel()
     {
         return $this->container['model'];
     }
@@ -300,21 +319,16 @@ class TaxCollection implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets model.
      *
      * @param null|string $model the tax collection model applied to the item
+     *
+     * @return self
      */
-    public function setModel(?string $model): self
+    public function setModel($model)
     {
         if (is_null($model)) {
-            array_push($this->openAPINullablesSetToNull, 'model');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('model', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable model cannot be null');
         }
         $allowedValues = $this->getModelAllowableValues();
-        if (!is_null($model) && !in_array($model, $allowedValues, true)) {
+        if (!in_array($model, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'model', must be one of '%s'",
@@ -330,8 +344,10 @@ class TaxCollection implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets responsible_party.
+     *
+     * @return null|string
      */
-    public function getResponsibleParty(): ?string
+    public function getResponsibleParty()
     {
         return $this->container['responsible_party'];
     }
@@ -340,21 +356,16 @@ class TaxCollection implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets responsible_party.
      *
      * @param null|string $responsible_party the party responsible for withholding the taxes and remitting them to the taxing authority
+     *
+     * @return self
      */
-    public function setResponsibleParty(?string $responsible_party): self
+    public function setResponsibleParty($responsible_party)
     {
         if (is_null($responsible_party)) {
-            array_push($this->openAPINullablesSetToNull, 'responsible_party');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('responsible_party', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable responsible_party cannot be null');
         }
         $allowedValues = $this->getResponsiblePartyAllowableValues();
-        if (!is_null($responsible_party) && !in_array($responsible_party, $allowedValues, true)) {
+        if (!in_array($responsible_party, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'responsible_party', must be one of '%s'",
@@ -386,7 +397,7 @@ class TaxCollection implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -397,7 +408,7 @@ class TaxCollection implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -425,15 +436,17 @@ class TaxCollection implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

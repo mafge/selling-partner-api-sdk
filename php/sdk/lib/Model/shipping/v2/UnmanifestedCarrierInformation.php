@@ -3,7 +3,7 @@
 /**
  * UnmanifestedCarrierInformation.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,18 +52,21 @@ class UnmanifestedCarrierInformation implements ModelInterface, \ArrayAccess, \J
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'UnmanifestedCarrierInformation';
+    protected static $openAPIModelName = 'UnmanifestedCarrierInformation';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'carrier_id' => 'string',
         'carrier_name' => 'string',
-        'unmanifested_shipment_location_list' => '\SpApi\Model\shipping\v2\UnmanifestedShipmentLocation[]'];
+        'unmanifested_shipment_location_list' => '\SpApi\Model\shipping\v2\UnmanifestedShipmentLocation[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,10 +77,11 @@ class UnmanifestedCarrierInformation implements ModelInterface, \ArrayAccess, \J
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'carrier_id' => null,
         'carrier_name' => null,
-        'unmanifested_shipment_location_list' => null];
+        'unmanifested_shipment_location_list' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -86,9 +89,9 @@ class UnmanifestedCarrierInformation implements ModelInterface, \ArrayAccess, \J
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'carrier_id' => true,
-        'carrier_name' => true,
-        'unmanifested_shipment_location_list' => true,
+        'carrier_id' => false,
+        'carrier_name' => false,
+        'unmanifested_shipment_location_list' => false,
     ];
 
     /**
@@ -104,7 +107,7 @@ class UnmanifestedCarrierInformation implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'carrier_id' => 'carrierId',
         'carrier_name' => 'carrierName',
         'unmanifested_shipment_location_list' => 'unmanifestedShipmentLocationList',
@@ -115,7 +118,7 @@ class UnmanifestedCarrierInformation implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'carrier_id' => 'setCarrierId',
         'carrier_name' => 'setCarrierName',
         'unmanifested_shipment_location_list' => 'setUnmanifestedShipmentLocationList',
@@ -126,7 +129,7 @@ class UnmanifestedCarrierInformation implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'carrier_id' => 'getCarrierId',
         'carrier_name' => 'getCarrierName',
         'unmanifested_shipment_location_list' => 'getUnmanifestedShipmentLocationList',
@@ -134,14 +137,16 @@ class UnmanifestedCarrierInformation implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -165,16 +170,20 @@ class UnmanifestedCarrierInformation implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -198,32 +207,40 @@ class UnmanifestedCarrierInformation implements ModelInterface, \ArrayAccess, \J
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -233,7 +250,7 @@ class UnmanifestedCarrierInformation implements ModelInterface, \ArrayAccess, \J
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -244,15 +261,17 @@ class UnmanifestedCarrierInformation implements ModelInterface, \ArrayAccess, \J
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets carrier_id.
+     *
+     * @return null|string
      */
-    public function getCarrierId(): ?string
+    public function getCarrierId()
     {
         return $this->container['carrier_id'];
     }
@@ -261,18 +280,13 @@ class UnmanifestedCarrierInformation implements ModelInterface, \ArrayAccess, \J
      * Sets carrier_id.
      *
      * @param null|string $carrier_id the carrier identifier for the offering, provided by the carrier
+     *
+     * @return self
      */
-    public function setCarrierId(?string $carrier_id): self
+    public function setCarrierId($carrier_id)
     {
         if (is_null($carrier_id)) {
-            array_push($this->openAPINullablesSetToNull, 'carrier_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('carrier_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable carrier_id cannot be null');
         }
         $this->container['carrier_id'] = $carrier_id;
 
@@ -281,8 +295,10 @@ class UnmanifestedCarrierInformation implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets carrier_name.
+     *
+     * @return null|string
      */
-    public function getCarrierName(): ?string
+    public function getCarrierName()
     {
         return $this->container['carrier_name'];
     }
@@ -291,18 +307,13 @@ class UnmanifestedCarrierInformation implements ModelInterface, \ArrayAccess, \J
      * Sets carrier_name.
      *
      * @param null|string $carrier_name the carrier name for the offering
+     *
+     * @return self
      */
-    public function setCarrierName(?string $carrier_name): self
+    public function setCarrierName($carrier_name)
     {
         if (is_null($carrier_name)) {
-            array_push($this->openAPINullablesSetToNull, 'carrier_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('carrier_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable carrier_name cannot be null');
         }
         $this->container['carrier_name'] = $carrier_name;
 
@@ -311,8 +322,10 @@ class UnmanifestedCarrierInformation implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets unmanifested_shipment_location_list.
+     *
+     * @return null|UnmanifestedShipmentLocation[]
      */
-    public function getUnmanifestedShipmentLocationList(): ?array
+    public function getUnmanifestedShipmentLocationList()
     {
         return $this->container['unmanifested_shipment_location_list'];
     }
@@ -320,19 +333,14 @@ class UnmanifestedCarrierInformation implements ModelInterface, \ArrayAccess, \J
     /**
      * Sets unmanifested_shipment_location_list.
      *
-     * @param null|array $unmanifested_shipment_location_list A list of UnmanifestedShipmentLocation
+     * @param null|UnmanifestedShipmentLocation[] $unmanifested_shipment_location_list A list of UnmanifestedShipmentLocation
+     *
+     * @return self
      */
-    public function setUnmanifestedShipmentLocationList(?array $unmanifested_shipment_location_list): self
+    public function setUnmanifestedShipmentLocationList($unmanifested_shipment_location_list)
     {
         if (is_null($unmanifested_shipment_location_list)) {
-            array_push($this->openAPINullablesSetToNull, 'unmanifested_shipment_location_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('unmanifested_shipment_location_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable unmanifested_shipment_location_list cannot be null');
         }
         $this->container['unmanifested_shipment_location_list'] = $unmanifested_shipment_location_list;
 
@@ -357,7 +365,7 @@ class UnmanifestedCarrierInformation implements ModelInterface, \ArrayAccess, \J
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -368,7 +376,7 @@ class UnmanifestedCarrierInformation implements ModelInterface, \ArrayAccess, \J
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -396,15 +404,17 @@ class UnmanifestedCarrierInformation implements ModelInterface, \ArrayAccess, \J
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

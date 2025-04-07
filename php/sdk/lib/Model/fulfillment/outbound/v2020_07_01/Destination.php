@@ -3,7 +3,7 @@
 /**
  * Destination.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Destination';
+    protected static $openAPIModelName = 'Destination';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'delivery_address' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\VariablePrecisionAddress',
-        'ip_address' => 'string'];
+        'ip_address' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'delivery_address' => null,
-        'ip_address' => 'ip'];
+        'ip_address' => 'ip',
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'delivery_address' => true,
-        'ip_address' => true,
+        'delivery_address' => false,
+        'ip_address' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'delivery_address' => 'deliveryAddress',
         'ip_address' => 'ipAddress',
     ];
@@ -110,7 +113,7 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'delivery_address' => 'setDeliveryAddress',
         'ip_address' => 'setIpAddress',
     ];
@@ -120,21 +123,23 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'delivery_address' => 'getDeliveryAddress',
         'ip_address' => 'getIpAddress',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -236,15 +253,17 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets delivery_address.
+     *
+     * @return null|VariablePrecisionAddress
      */
-    public function getDeliveryAddress(): ?VariablePrecisionAddress
+    public function getDeliveryAddress()
     {
         return $this->container['delivery_address'];
     }
@@ -253,18 +272,13 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets delivery_address.
      *
      * @param null|VariablePrecisionAddress $delivery_address delivery_address
+     *
+     * @return self
      */
-    public function setDeliveryAddress(?VariablePrecisionAddress $delivery_address): self
+    public function setDeliveryAddress($delivery_address)
     {
         if (is_null($delivery_address)) {
-            array_push($this->openAPINullablesSetToNull, 'delivery_address');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('delivery_address', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable delivery_address cannot be null');
         }
         $this->container['delivery_address'] = $delivery_address;
 
@@ -273,8 +287,10 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets ip_address.
+     *
+     * @return null|string
      */
-    public function getIpAddress(): ?string
+    public function getIpAddress()
     {
         return $this->container['ip_address'];
     }
@@ -283,18 +299,13 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets ip_address.
      *
      * @param null|string $ip_address an IP Address
+     *
+     * @return self
      */
-    public function setIpAddress(?string $ip_address): self
+    public function setIpAddress($ip_address)
     {
         if (is_null($ip_address)) {
-            array_push($this->openAPINullablesSetToNull, 'ip_address');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ip_address', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ip_address cannot be null');
         }
         $this->container['ip_address'] = $ip_address;
 
@@ -319,7 +330,7 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +341,7 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +369,17 @@ class Destination implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

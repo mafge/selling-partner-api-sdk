@@ -2,7 +2,7 @@
 /**
  * TransactionStatus
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\transactionStatus\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * TransactionStatus Class Doc Comment
@@ -52,15 +50,16 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'TransactionStatus';
+    protected static $openAPIModelName = 'TransactionStatus';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'transaction_status' => '\SpApi\Model\vendor\transactionStatus\v1\Transaction'    ];
+    protected static $openAPITypes = [
+        'transaction_status' => '\SpApi\Model\vendor\transactionStatus\v1\Transaction'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -69,8 +68,9 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'transaction_status' => null    ];
+    protected static $openAPIFormats = [
+        'transaction_status' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -78,7 +78,7 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'transaction_status' => true
+        'transaction_status' => false
     ];
 
     /**
@@ -93,7 +93,7 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -103,7 +103,7 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -166,9 +166,8 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'transaction_status' => 'transactionStatus'
-        
     ];
 
     /**
@@ -176,7 +175,7 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'transaction_status' => 'setTransactionStatus'
     ];
 
@@ -185,7 +184,7 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'transaction_status' => 'getTransactionStatus'
     ];
 
@@ -195,7 +194,7 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -205,7 +204,7 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -215,7 +214,7 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -225,7 +224,7 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -234,17 +233,17 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('transaction_status', $data ?? [], null);
     }
@@ -272,7 +271,7 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -285,7 +284,7 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -296,7 +295,7 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return \SpApi\Model\vendor\transactionStatus\v1\Transaction|null
      */
-    public function getTransactionStatus(): ?\SpApi\Model\vendor\transactionStatus\v1\Transaction
+    public function getTransactionStatus()
     {
         return $this->container['transaction_status'];
     }
@@ -308,24 +307,15 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setTransactionStatus(?\SpApi\Model\vendor\transactionStatus\v1\Transaction $transaction_status): self
+    public function setTransactionStatus($transaction_status)
     {
         if (is_null($transaction_status)) {
-            array_push($this->openAPINullablesSetToNull, 'transaction_status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transaction_status', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transaction_status cannot be null');
         }
         $this->container['transaction_status'] = $transaction_status;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -346,7 +336,7 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -359,7 +349,7 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -388,7 +378,7 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -411,7 +401,7 @@ class TransactionStatus implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -2,7 +2,7 @@
 /**
  * SubmitShipmentConfirmationsRequest
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * SubmitShipmentConfirmationsRequest Class Doc Comment
@@ -52,15 +50,16 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'SubmitShipmentConfirmationsRequest';
+    protected static $openAPIModelName = 'SubmitShipmentConfirmationsRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'shipment_confirmations' => '\SpApi\Model\vendor\shipments\v1\ShipmentConfirmation[]'    ];
+    protected static $openAPITypes = [
+        'shipment_confirmations' => '\SpApi\Model\vendor\shipments\v1\ShipmentConfirmation[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -69,8 +68,9 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'shipment_confirmations' => null    ];
+    protected static $openAPIFormats = [
+        'shipment_confirmations' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -78,7 +78,7 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'shipment_confirmations' => true
+        'shipment_confirmations' => false
     ];
 
     /**
@@ -93,7 +93,7 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -103,7 +103,7 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -166,9 +166,8 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'shipment_confirmations' => 'shipmentConfirmations'
-        
     ];
 
     /**
@@ -176,7 +175,7 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'shipment_confirmations' => 'setShipmentConfirmations'
     ];
 
@@ -185,7 +184,7 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'shipment_confirmations' => 'getShipmentConfirmations'
     ];
 
@@ -195,7 +194,7 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -205,7 +204,7 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -215,7 +214,7 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -225,7 +224,7 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -234,17 +233,17 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('shipment_confirmations', $data ?? [], null);
     }
@@ -272,7 +271,7 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -285,7 +284,7 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -294,9 +293,9 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
     /**
      * Gets shipment_confirmations
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\shipments\v1\ShipmentConfirmation[]|null
      */
-    public function getShipmentConfirmations(): ?array
+    public function getShipmentConfirmations()
     {
         return $this->container['shipment_confirmations'];
     }
@@ -304,28 +303,19 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
     /**
      * Sets shipment_confirmations
      *
-     * @param array|null $shipment_confirmations A list of one or more shipment confirmations.
+     * @param \SpApi\Model\vendor\shipments\v1\ShipmentConfirmation[]|null $shipment_confirmations A list of one or more shipment confirmations.
      *
      * @return self
      */
-    public function setShipmentConfirmations(?array $shipment_confirmations): self
+    public function setShipmentConfirmations($shipment_confirmations)
     {
         if (is_null($shipment_confirmations)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_confirmations');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_confirmations', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_confirmations cannot be null');
         }
         $this->container['shipment_confirmations'] = $shipment_confirmations;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -346,7 +336,7 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -359,7 +349,7 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -388,7 +378,7 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -411,7 +401,7 @@ class SubmitShipmentConfirmationsRequest implements ModelInterface, ArrayAccess,
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

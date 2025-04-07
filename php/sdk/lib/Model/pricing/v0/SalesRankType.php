@@ -3,7 +3,7 @@
 /**
  * SalesRankType.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class SalesRankType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'SalesRankType';
+    protected static $openAPIModelName = 'SalesRankType';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'product_category_id' => 'string',
-        'rank' => 'int'];
+        'rank' => 'int',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class SalesRankType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'product_category_id' => null,
-        'rank' => 'int32'];
+        'rank' => 'int32',
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -100,7 +103,7 @@ class SalesRankType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'product_category_id' => 'ProductCategoryId',
         'rank' => 'Rank',
     ];
@@ -110,7 +113,7 @@ class SalesRankType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'product_category_id' => 'setProductCategoryId',
         'rank' => 'setRank',
     ];
@@ -120,21 +123,23 @@ class SalesRankType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'product_category_id' => 'getProductCategoryId',
         'rank' => 'getRank',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class SalesRankType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class SalesRankType implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class SalesRankType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -245,15 +262,17 @@ class SalesRankType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets product_category_id.
+     *
+     * @return string
      */
-    public function getProductCategoryId(): string
+    public function getProductCategoryId()
     {
         return $this->container['product_category_id'];
     }
@@ -262,8 +281,10 @@ class SalesRankType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets product_category_id.
      *
      * @param string $product_category_id identifies the item category from which the sales rank is taken
+     *
+     * @return self
      */
-    public function setProductCategoryId(string $product_category_id): self
+    public function setProductCategoryId($product_category_id)
     {
         if (is_null($product_category_id)) {
             throw new \InvalidArgumentException('non-nullable product_category_id cannot be null');
@@ -275,8 +296,10 @@ class SalesRankType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets rank.
+     *
+     * @return int
      */
-    public function getRank(): int
+    public function getRank()
     {
         return $this->container['rank'];
     }
@@ -285,8 +308,10 @@ class SalesRankType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets rank.
      *
      * @param int $rank the sales rank of the item within the item category
+     *
+     * @return self
      */
-    public function setRank(int $rank): self
+    public function setRank($rank)
     {
         if (is_null($rank)) {
             throw new \InvalidArgumentException('non-nullable rank cannot be null');
@@ -314,7 +339,7 @@ class SalesRankType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -325,7 +350,7 @@ class SalesRankType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -353,15 +378,17 @@ class SalesRankType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

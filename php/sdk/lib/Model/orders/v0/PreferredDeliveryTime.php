@@ -3,7 +3,7 @@
 /**
  * PreferredDeliveryTime.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\orders\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class PreferredDeliveryTime implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'PreferredDeliveryTime';
+    protected static $openAPIModelName = 'PreferredDeliveryTime';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'business_hours' => '\SpApi\Model\orders\v0\BusinessHours[]',
-        'exception_dates' => '\SpApi\Model\orders\v0\ExceptionDates[]'];
+        'exception_dates' => '\SpApi\Model\orders\v0\ExceptionDates[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class PreferredDeliveryTime implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'business_hours' => null,
-        'exception_dates' => null];
+        'exception_dates' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class PreferredDeliveryTime implements ModelInterface, \ArrayAccess, \JsonSerial
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'business_hours' => true,
-        'exception_dates' => true,
+        'business_hours' => false,
+        'exception_dates' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class PreferredDeliveryTime implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'business_hours' => 'BusinessHours',
         'exception_dates' => 'ExceptionDates',
     ];
@@ -110,7 +113,7 @@ class PreferredDeliveryTime implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'business_hours' => 'setBusinessHours',
         'exception_dates' => 'setExceptionDates',
     ];
@@ -120,21 +123,23 @@ class PreferredDeliveryTime implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'business_hours' => 'getBusinessHours',
         'exception_dates' => 'getExceptionDates',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class PreferredDeliveryTime implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class PreferredDeliveryTime implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class PreferredDeliveryTime implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -236,15 +253,17 @@ class PreferredDeliveryTime implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets business_hours.
+     *
+     * @return null|BusinessHours[]
      */
-    public function getBusinessHours(): ?array
+    public function getBusinessHours()
     {
         return $this->container['business_hours'];
     }
@@ -252,19 +271,14 @@ class PreferredDeliveryTime implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Sets business_hours.
      *
-     * @param null|array $business_hours business hours when the business is open for deliveries
+     * @param null|BusinessHours[] $business_hours business hours when the business is open for deliveries
+     *
+     * @return self
      */
-    public function setBusinessHours(?array $business_hours): self
+    public function setBusinessHours($business_hours)
     {
         if (is_null($business_hours)) {
-            array_push($this->openAPINullablesSetToNull, 'business_hours');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('business_hours', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable business_hours cannot be null');
         }
         $this->container['business_hours'] = $business_hours;
 
@@ -273,8 +287,10 @@ class PreferredDeliveryTime implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets exception_dates.
+     *
+     * @return null|ExceptionDates[]
      */
-    public function getExceptionDates(): ?array
+    public function getExceptionDates()
     {
         return $this->container['exception_dates'];
     }
@@ -282,19 +298,14 @@ class PreferredDeliveryTime implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Sets exception_dates.
      *
-     * @param null|array $exception_dates dates when the business is closed during the next 30 days
+     * @param null|ExceptionDates[] $exception_dates dates when the business is closed during the next 30 days
+     *
+     * @return self
      */
-    public function setExceptionDates(?array $exception_dates): self
+    public function setExceptionDates($exception_dates)
     {
         if (is_null($exception_dates)) {
-            array_push($this->openAPINullablesSetToNull, 'exception_dates');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('exception_dates', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable exception_dates cannot be null');
         }
         $this->container['exception_dates'] = $exception_dates;
 
@@ -319,7 +330,7 @@ class PreferredDeliveryTime implements ModelInterface, \ArrayAccess, \JsonSerial
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +341,7 @@ class PreferredDeliveryTime implements ModelInterface, \ArrayAccess, \JsonSerial
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +369,17 @@ class PreferredDeliveryTime implements ModelInterface, \ArrayAccess, \JsonSerial
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

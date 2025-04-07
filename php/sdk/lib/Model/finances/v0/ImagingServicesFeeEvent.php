@@ -3,7 +3,7 @@
 /**
  * ImagingServicesFeeEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ImagingServicesFeeEvent';
+    protected static $openAPIModelName = 'ImagingServicesFeeEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'imaging_request_billing_item_id' => 'string',
         'asin' => 'string',
         'posted_date' => '\DateTime',
-        'fee_list' => '\SpApi\Model\finances\v0\FeeComponent[]'];
+        'fee_list' => '\SpApi\Model\finances\v0\FeeComponent[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'imaging_request_billing_item_id' => null,
         'asin' => null,
         'posted_date' => 'date-time',
-        'fee_list' => null];
+        'fee_list' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,10 +90,10 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'imaging_request_billing_item_id' => true,
-        'asin' => true,
-        'posted_date' => true,
-        'fee_list' => true,
+        'imaging_request_billing_item_id' => false,
+        'asin' => false,
+        'posted_date' => false,
+        'fee_list' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'imaging_request_billing_item_id' => 'ImagingRequestBillingItemID',
         'asin' => 'ASIN',
         'posted_date' => 'PostedDate',
@@ -118,7 +121,7 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'imaging_request_billing_item_id' => 'setImagingRequestBillingItemId',
         'asin' => 'setAsin',
         'posted_date' => 'setPostedDate',
@@ -130,7 +133,7 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'imaging_request_billing_item_id' => 'getImagingRequestBillingItemId',
         'asin' => 'getAsin',
         'posted_date' => 'getPostedDate',
@@ -139,14 +142,16 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -250,15 +267,17 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets imaging_request_billing_item_id.
+     *
+     * @return null|string
      */
-    public function getImagingRequestBillingItemId(): ?string
+    public function getImagingRequestBillingItemId()
     {
         return $this->container['imaging_request_billing_item_id'];
     }
@@ -267,18 +286,13 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets imaging_request_billing_item_id.
      *
      * @param null|string $imaging_request_billing_item_id the identifier for the imaging services request
+     *
+     * @return self
      */
-    public function setImagingRequestBillingItemId(?string $imaging_request_billing_item_id): self
+    public function setImagingRequestBillingItemId($imaging_request_billing_item_id)
     {
         if (is_null($imaging_request_billing_item_id)) {
-            array_push($this->openAPINullablesSetToNull, 'imaging_request_billing_item_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('imaging_request_billing_item_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable imaging_request_billing_item_id cannot be null');
         }
         $this->container['imaging_request_billing_item_id'] = $imaging_request_billing_item_id;
 
@@ -287,8 +301,10 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
-    public function getAsin(): ?string
+    public function getAsin()
     {
         return $this->container['asin'];
     }
@@ -297,18 +313,13 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number (ASIN) of the item for which the imaging service was requested
+     *
+     * @return self
      */
-    public function setAsin(?string $asin): self
+    public function setAsin($asin)
     {
         if (is_null($asin)) {
-            array_push($this->openAPINullablesSetToNull, 'asin');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('asin', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable asin cannot be null');
         }
         $this->container['asin'] = $asin;
 
@@ -317,8 +328,10 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTime
      */
-    public function getPostedDate(): ?\DateTime
+    public function getPostedDate()
     {
         return $this->container['posted_date'];
     }
@@ -327,18 +340,13 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets posted_date.
      *
      * @param null|\DateTime $posted_date fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate)
+     *
+     * @return self
      */
-    public function setPostedDate(?\DateTime $posted_date): self
+    public function setPostedDate($posted_date)
     {
         if (is_null($posted_date)) {
-            array_push($this->openAPINullablesSetToNull, 'posted_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('posted_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable posted_date cannot be null');
         }
         $this->container['posted_date'] = $posted_date;
 
@@ -347,8 +355,10 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets fee_list.
+     *
+     * @return null|FeeComponent[]
      */
-    public function getFeeList(): ?array
+    public function getFeeList()
     {
         return $this->container['fee_list'];
     }
@@ -356,19 +366,14 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Sets fee_list.
      *
-     * @param null|array $fee_list a list of fee component information
+     * @param null|FeeComponent[] $fee_list a list of fee component information
+     *
+     * @return self
      */
-    public function setFeeList(?array $fee_list): self
+    public function setFeeList($fee_list)
     {
         if (is_null($fee_list)) {
-            array_push($this->openAPINullablesSetToNull, 'fee_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fee_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fee_list cannot be null');
         }
         $this->container['fee_list'] = $fee_list;
 
@@ -393,7 +398,7 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -404,7 +409,7 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -432,15 +437,17 @@ class ImagingServicesFeeEvent implements ModelInterface, \ArrayAccess, \JsonSeri
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

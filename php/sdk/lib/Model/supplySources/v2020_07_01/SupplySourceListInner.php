@@ -3,7 +3,7 @@
 /**
  * SupplySourceListInner.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\supplySources\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -50,19 +49,22 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'SupplySourceList_inner';
+    protected static $openAPIModelName = 'SupplySourceList_inner';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'alias' => 'string',
         'supply_source_id' => 'string',
         'supply_source_code' => 'string',
-        'address' => '\SpApi\Model\supplySources\v2020_07_01\Address'];
+        'address' => '\SpApi\Model\supplySources\v2020_07_01\Address',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,11 +75,12 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'alias' => null,
         'supply_source_id' => null,
         'supply_source_code' => null,
-        'address' => null];
+        'address' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,10 +88,10 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'alias' => true,
-        'supply_source_id' => true,
-        'supply_source_code' => true,
-        'address' => true,
+        'alias' => false,
+        'supply_source_id' => false,
+        'supply_source_code' => false,
+        'address' => false,
     ];
 
     /**
@@ -104,7 +107,7 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'alias' => 'alias',
         'supply_source_id' => 'supplySourceId',
         'supply_source_code' => 'supplySourceCode',
@@ -116,7 +119,7 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'alias' => 'setAlias',
         'supply_source_id' => 'setSupplySourceId',
         'supply_source_code' => 'setSupplySourceCode',
@@ -128,7 +131,7 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'alias' => 'getAlias',
         'supply_source_id' => 'getSupplySourceId',
         'supply_source_code' => 'getSupplySourceCode',
@@ -137,14 +140,16 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -169,16 +174,20 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -202,32 +211,40 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -237,7 +254,7 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -248,15 +265,17 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets alias.
+     *
+     * @return null|string
      */
-    public function getAlias(): ?string
+    public function getAlias()
     {
         return $this->container['alias'];
     }
@@ -265,18 +284,13 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets alias.
      *
      * @param null|string $alias The custom alias for this supply source
+     *
+     * @return self
      */
-    public function setAlias(?string $alias): self
+    public function setAlias($alias)
     {
         if (is_null($alias)) {
-            array_push($this->openAPINullablesSetToNull, 'alias');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('alias', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable alias cannot be null');
         }
         $this->container['alias'] = $alias;
 
@@ -285,8 +299,10 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets supply_source_id.
+     *
+     * @return null|string
      */
-    public function getSupplySourceId(): ?string
+    public function getSupplySourceId()
     {
         return $this->container['supply_source_id'];
     }
@@ -295,18 +311,13 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets supply_source_id.
      *
      * @param null|string $supply_source_id an Amazon generated unique supply source ID
+     *
+     * @return self
      */
-    public function setSupplySourceId(?string $supply_source_id): self
+    public function setSupplySourceId($supply_source_id)
     {
         if (is_null($supply_source_id)) {
-            array_push($this->openAPINullablesSetToNull, 'supply_source_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('supply_source_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable supply_source_id cannot be null');
         }
         $this->container['supply_source_id'] = $supply_source_id;
 
@@ -315,8 +326,10 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets supply_source_code.
+     *
+     * @return null|string
      */
-    public function getSupplySourceCode(): ?string
+    public function getSupplySourceCode()
     {
         return $this->container['supply_source_code'];
     }
@@ -325,18 +338,13 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets supply_source_code.
      *
      * @param null|string $supply_source_code the seller-provided unique supply source code
+     *
+     * @return self
      */
-    public function setSupplySourceCode(?string $supply_source_code): self
+    public function setSupplySourceCode($supply_source_code)
     {
         if (is_null($supply_source_code)) {
-            array_push($this->openAPINullablesSetToNull, 'supply_source_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('supply_source_code', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable supply_source_code cannot be null');
         }
         $this->container['supply_source_code'] = $supply_source_code;
 
@@ -345,8 +353,10 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets address.
+     *
+     * @return null|Address
      */
-    public function getAddress(): ?Address
+    public function getAddress()
     {
         return $this->container['address'];
     }
@@ -355,18 +365,13 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets address.
      *
      * @param null|Address $address address
+     *
+     * @return self
      */
-    public function setAddress(?Address $address): self
+    public function setAddress($address)
     {
         if (is_null($address)) {
-            array_push($this->openAPINullablesSetToNull, 'address');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('address', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable address cannot be null');
         }
         $this->container['address'] = $address;
 
@@ -391,7 +396,7 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -402,7 +407,7 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -430,15 +435,17 @@ class SupplySourceListInner implements ModelInterface, \ArrayAccess, \JsonSerial
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * ScopeOfWork.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\services\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ScopeOfWork';
+    protected static $openAPIModelName = 'ScopeOfWork';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'asin' => 'string',
         'title' => 'string',
         'quantity' => 'int',
-        'required_skills' => 'string[]'];
+        'required_skills' => 'string[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'asin' => null,
         'title' => null,
         'quantity' => null,
-        'required_skills' => null];
+        'required_skills' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,10 +90,10 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'asin' => true,
-        'title' => true,
-        'quantity' => true,
-        'required_skills' => true,
+        'asin' => false,
+        'title' => false,
+        'quantity' => false,
+        'required_skills' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'asin' => 'asin',
         'title' => 'title',
         'quantity' => 'quantity',
@@ -118,7 +121,7 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'asin' => 'setAsin',
         'title' => 'setTitle',
         'quantity' => 'setQuantity',
@@ -130,7 +133,7 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'asin' => 'getAsin',
         'title' => 'getTitle',
         'quantity' => 'getQuantity',
@@ -139,14 +142,16 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -250,15 +267,17 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
-    public function getAsin(): ?string
+    public function getAsin()
     {
         return $this->container['asin'];
     }
@@ -267,18 +286,13 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number (ASIN) of the service job
+     *
+     * @return self
      */
-    public function setAsin(?string $asin): self
+    public function setAsin($asin)
     {
         if (is_null($asin)) {
-            array_push($this->openAPINullablesSetToNull, 'asin');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('asin', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable asin cannot be null');
         }
         $this->container['asin'] = $asin;
 
@@ -287,8 +301,10 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets title.
+     *
+     * @return null|string
      */
-    public function getTitle(): ?string
+    public function getTitle()
     {
         return $this->container['title'];
     }
@@ -297,18 +313,13 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets title.
      *
      * @param null|string $title the title of the service job
+     *
+     * @return self
      */
-    public function setTitle(?string $title): self
+    public function setTitle($title)
     {
         if (is_null($title)) {
-            array_push($this->openAPINullablesSetToNull, 'title');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('title', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable title cannot be null');
         }
         $this->container['title'] = $title;
 
@@ -317,8 +328,10 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets quantity.
+     *
+     * @return null|int
      */
-    public function getQuantity(): ?int
+    public function getQuantity()
     {
         return $this->container['quantity'];
     }
@@ -327,18 +340,13 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets quantity.
      *
      * @param null|int $quantity the number of service jobs
+     *
+     * @return self
      */
-    public function setQuantity(?int $quantity): self
+    public function setQuantity($quantity)
     {
         if (is_null($quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable quantity cannot be null');
         }
         $this->container['quantity'] = $quantity;
 
@@ -347,8 +355,10 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets required_skills.
+     *
+     * @return null|string[]
      */
-    public function getRequiredSkills(): ?array
+    public function getRequiredSkills()
     {
         return $this->container['required_skills'];
     }
@@ -356,19 +366,14 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets required_skills.
      *
-     * @param null|array $required_skills a list of skills required to perform the job
+     * @param null|string[] $required_skills a list of skills required to perform the job
+     *
+     * @return self
      */
-    public function setRequiredSkills(?array $required_skills): self
+    public function setRequiredSkills($required_skills)
     {
         if (is_null($required_skills)) {
-            array_push($this->openAPINullablesSetToNull, 'required_skills');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('required_skills', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable required_skills cannot be null');
         }
         $this->container['required_skills'] = $required_skills;
 
@@ -393,7 +398,7 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -404,7 +409,7 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -432,15 +437,17 @@ class ScopeOfWork implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

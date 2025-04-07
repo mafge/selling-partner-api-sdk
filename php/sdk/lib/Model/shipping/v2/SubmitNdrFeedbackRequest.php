@@ -3,7 +3,7 @@
 /**
  * SubmitNdrFeedbackRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,18 +52,21 @@ class SubmitNdrFeedbackRequest implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'SubmitNdrFeedbackRequest';
+    protected static $openAPIModelName = 'SubmitNdrFeedbackRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'tracking_id' => 'string',
         'ndr_action' => '\SpApi\Model\shipping\v2\NdrAction',
-        'ndr_request_data' => '\SpApi\Model\shipping\v2\NdrRequestData'];
+        'ndr_request_data' => '\SpApi\Model\shipping\v2\NdrRequestData',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,10 +77,11 @@ class SubmitNdrFeedbackRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'tracking_id' => null,
         'ndr_action' => null,
-        'ndr_request_data' => null];
+        'ndr_request_data' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -88,7 +91,7 @@ class SubmitNdrFeedbackRequest implements ModelInterface, \ArrayAccess, \JsonSer
     protected static array $openAPINullables = [
         'tracking_id' => false,
         'ndr_action' => false,
-        'ndr_request_data' => true,
+        'ndr_request_data' => false,
     ];
 
     /**
@@ -104,7 +107,7 @@ class SubmitNdrFeedbackRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'tracking_id' => 'trackingId',
         'ndr_action' => 'ndrAction',
         'ndr_request_data' => 'ndrRequestData',
@@ -115,7 +118,7 @@ class SubmitNdrFeedbackRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'tracking_id' => 'setTrackingId',
         'ndr_action' => 'setNdrAction',
         'ndr_request_data' => 'setNdrRequestData',
@@ -126,7 +129,7 @@ class SubmitNdrFeedbackRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'tracking_id' => 'getTrackingId',
         'ndr_action' => 'getNdrAction',
         'ndr_request_data' => 'getNdrRequestData',
@@ -134,14 +137,16 @@ class SubmitNdrFeedbackRequest implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -165,16 +170,20 @@ class SubmitNdrFeedbackRequest implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -198,32 +207,40 @@ class SubmitNdrFeedbackRequest implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -233,7 +250,7 @@ class SubmitNdrFeedbackRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -253,15 +270,17 @@ class SubmitNdrFeedbackRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets tracking_id.
+     *
+     * @return string
      */
-    public function getTrackingId(): string
+    public function getTrackingId()
     {
         return $this->container['tracking_id'];
     }
@@ -270,8 +289,10 @@ class SubmitNdrFeedbackRequest implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets tracking_id.
      *
      * @param string $tracking_id the carrier generated identifier for a package in a purchased shipment
+     *
+     * @return self
      */
-    public function setTrackingId(string $tracking_id): self
+    public function setTrackingId($tracking_id)
     {
         if (is_null($tracking_id)) {
             throw new \InvalidArgumentException('non-nullable tracking_id cannot be null');
@@ -283,8 +304,10 @@ class SubmitNdrFeedbackRequest implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets ndr_action.
+     *
+     * @return NdrAction
      */
-    public function getNdrAction(): string
+    public function getNdrAction()
     {
         return $this->container['ndr_action'];
     }
@@ -292,9 +315,11 @@ class SubmitNdrFeedbackRequest implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Sets ndr_action.
      *
-     * @param string $ndr_action ndr_action
+     * @param NdrAction $ndr_action ndr_action
+     *
+     * @return self
      */
-    public function setNdrAction(string $ndr_action): self
+    public function setNdrAction($ndr_action)
     {
         if (is_null($ndr_action)) {
             throw new \InvalidArgumentException('non-nullable ndr_action cannot be null');
@@ -306,8 +331,10 @@ class SubmitNdrFeedbackRequest implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets ndr_request_data.
+     *
+     * @return null|NdrRequestData
      */
-    public function getNdrRequestData(): ?NdrRequestData
+    public function getNdrRequestData()
     {
         return $this->container['ndr_request_data'];
     }
@@ -316,18 +343,13 @@ class SubmitNdrFeedbackRequest implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets ndr_request_data.
      *
      * @param null|NdrRequestData $ndr_request_data ndr_request_data
+     *
+     * @return self
      */
-    public function setNdrRequestData(?NdrRequestData $ndr_request_data): self
+    public function setNdrRequestData($ndr_request_data)
     {
         if (is_null($ndr_request_data)) {
-            array_push($this->openAPINullablesSetToNull, 'ndr_request_data');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ndr_request_data', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ndr_request_data cannot be null');
         }
         $this->container['ndr_request_data'] = $ndr_request_data;
 
@@ -352,7 +374,7 @@ class SubmitNdrFeedbackRequest implements ModelInterface, \ArrayAccess, \JsonSer
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -363,7 +385,7 @@ class SubmitNdrFeedbackRequest implements ModelInterface, \ArrayAccess, \JsonSer
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -391,15 +413,17 @@ class SubmitNdrFeedbackRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

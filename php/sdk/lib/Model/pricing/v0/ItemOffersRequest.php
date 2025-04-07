@@ -3,7 +3,7 @@
 /**
  * ItemOffersRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ItemOffersRequest';
+    protected static $openAPIModelName = 'ItemOffersRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'uri' => 'string',
         'method' => '\SpApi\Model\pricing\v0\HttpMethod',
         'headers' => 'array<string,string>',
         'marketplace_id' => 'string',
         'item_condition' => '\SpApi\Model\pricing\v0\ItemCondition',
-        'customer_type' => '\SpApi\Model\pricing\v0\CustomerType'];
+        'customer_type' => '\SpApi\Model\pricing\v0\CustomerType',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'uri' => null,
         'method' => null,
         'headers' => null,
         'marketplace_id' => null,
         'item_condition' => null,
-        'customer_type' => null];
+        'customer_type' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -93,10 +96,10 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
     protected static array $openAPINullables = [
         'uri' => false,
         'method' => false,
-        'headers' => true,
+        'headers' => false,
         'marketplace_id' => false,
         'item_condition' => false,
-        'customer_type' => true,
+        'customer_type' => false,
     ];
 
     /**
@@ -112,7 +115,7 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'uri' => 'uri',
         'method' => 'method',
         'headers' => 'headers',
@@ -126,7 +129,7 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'uri' => 'setUri',
         'method' => 'setMethod',
         'headers' => 'setHeaders',
@@ -140,7 +143,7 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'uri' => 'getUri',
         'method' => 'getMethod',
         'headers' => 'getHeaders',
@@ -151,14 +154,16 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -279,15 +296,17 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets uri.
+     *
+     * @return string
      */
-    public function getUri(): string
+    public function getUri()
     {
         return $this->container['uri'];
     }
@@ -296,8 +315,10 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets uri.
      *
      * @param string $uri The resource path of the operation you are calling in batch without any query parameters.  If you are calling `getItemOffersBatch`, supply the path of `getItemOffers`.  **Example:** `/products/pricing/v0/items/B000P6Q7MY/offers`  If you are calling `getListingOffersBatch`, supply the path of `getListingOffers`.  **Example:** `/products/pricing/v0/listings/B000P6Q7MY/offers`
+     *
+     * @return self
      */
-    public function setUri(string $uri): self
+    public function setUri($uri)
     {
         if (is_null($uri)) {
             throw new \InvalidArgumentException('non-nullable uri cannot be null');
@@ -309,8 +330,10 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets method.
+     *
+     * @return HttpMethod
      */
-    public function getMethod(): string
+    public function getMethod()
     {
         return $this->container['method'];
     }
@@ -318,9 +341,11 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Sets method.
      *
-     * @param string $method method
+     * @param HttpMethod $method method
+     *
+     * @return self
      */
-    public function setMethod(string $method): self
+    public function setMethod($method)
     {
         if (is_null($method)) {
             throw new \InvalidArgumentException('non-nullable method cannot be null');
@@ -335,7 +360,7 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return null|array<string,string>
      */
-    public function getHeaders(): ?array
+    public function getHeaders()
     {
         return $this->container['headers'];
     }
@@ -344,18 +369,13 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets headers.
      *
      * @param null|array<string,string> $headers a mapping of additional HTTP headers to send/receive for the individual batch request
+     *
+     * @return self
      */
-    public function setHeaders(?array $headers): self
+    public function setHeaders($headers)
     {
         if (is_null($headers)) {
-            array_push($this->openAPINullablesSetToNull, 'headers');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('headers', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable headers cannot be null');
         }
         $this->container['headers'] = $headers;
 
@@ -364,8 +384,10 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
-    public function getMarketplaceId(): string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -374,8 +396,10 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets marketplace_id.
      *
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned.
+     *
+     * @return self
      */
-    public function setMarketplaceId(string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
             throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
@@ -387,8 +411,10 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets item_condition.
+     *
+     * @return ItemCondition
      */
-    public function getItemCondition(): string
+    public function getItemCondition()
     {
         return $this->container['item_condition'];
     }
@@ -396,9 +422,11 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Sets item_condition.
      *
-     * @param string $item_condition item_condition
+     * @param ItemCondition $item_condition item_condition
+     *
+     * @return self
      */
-    public function setItemCondition(string $item_condition): self
+    public function setItemCondition($item_condition)
     {
         if (is_null($item_condition)) {
             throw new \InvalidArgumentException('non-nullable item_condition cannot be null');
@@ -410,8 +438,10 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets customer_type.
+     *
+     * @return null|CustomerType
      */
-    public function getCustomerType(): ?string
+    public function getCustomerType()
     {
         return $this->container['customer_type'];
     }
@@ -419,19 +449,14 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Sets customer_type.
      *
-     * @param null|string $customer_type customer_type
+     * @param null|CustomerType $customer_type customer_type
+     *
+     * @return self
      */
-    public function setCustomerType(?string $customer_type): self
+    public function setCustomerType($customer_type)
     {
         if (is_null($customer_type)) {
-            array_push($this->openAPINullablesSetToNull, 'customer_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('customer_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable customer_type cannot be null');
         }
         $this->container['customer_type'] = $customer_type;
 
@@ -456,7 +481,7 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -467,7 +492,7 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -495,15 +520,17 @@ class ItemOffersRequest implements ModelInterface, \ArrayAccess, \JsonSerializab
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

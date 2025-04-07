@@ -3,7 +3,7 @@
 /**
  * Reservation.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\services\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -58,18 +57,21 @@ class Reservation implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Reservation';
+    protected static $openAPIModelName = 'Reservation';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'reservation_id' => 'string',
         'type' => 'string',
-        'availability' => '\SpApi\Model\services\v1\AvailabilityRecord'];
+        'availability' => '\SpApi\Model\services\v1\AvailabilityRecord',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -80,10 +82,11 @@ class Reservation implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'reservation_id' => null,
         'type' => null,
-        'availability' => null];
+        'availability' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -91,7 +94,7 @@ class Reservation implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'reservation_id' => true,
+        'reservation_id' => false,
         'type' => false,
         'availability' => false,
     ];
@@ -109,7 +112,7 @@ class Reservation implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'reservation_id' => 'reservationId',
         'type' => 'type',
         'availability' => 'availability',
@@ -120,7 +123,7 @@ class Reservation implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'reservation_id' => 'setReservationId',
         'type' => 'setType',
         'availability' => 'setAvailability',
@@ -131,7 +134,7 @@ class Reservation implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'reservation_id' => 'getReservationId',
         'type' => 'getType',
         'availability' => 'getAvailability',
@@ -139,14 +142,16 @@ class Reservation implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -170,16 +175,20 @@ class Reservation implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -203,32 +212,40 @@ class Reservation implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -238,7 +255,7 @@ class Reservation implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array
+    public function getTypeAllowableValues()
     {
         return [
             self::TYPE_APPOINTMENT,
@@ -254,7 +271,7 @@ class Reservation implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -283,15 +300,17 @@ class Reservation implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets reservation_id.
+     *
+     * @return null|string
      */
-    public function getReservationId(): ?string
+    public function getReservationId()
     {
         return $this->container['reservation_id'];
     }
@@ -300,18 +319,13 @@ class Reservation implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets reservation_id.
      *
      * @param null|string $reservation_id Unique identifier for a reservation. If present, it is treated as an update reservation request and will update the corresponding reservation. Otherwise, it is treated as a new create reservation request.
+     *
+     * @return self
      */
-    public function setReservationId(?string $reservation_id): self
+    public function setReservationId($reservation_id)
     {
         if (is_null($reservation_id)) {
-            array_push($this->openAPINullablesSetToNull, 'reservation_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('reservation_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable reservation_id cannot be null');
         }
         $this->container['reservation_id'] = $reservation_id;
 
@@ -320,8 +334,10 @@ class Reservation implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets type.
+     *
+     * @return string
      */
-    public function getType(): string
+    public function getType()
     {
         return $this->container['type'];
     }
@@ -330,8 +346,10 @@ class Reservation implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets type.
      *
      * @param string $type type of reservation
+     *
+     * @return self
      */
-    public function setType(string $type): self
+    public function setType($type)
     {
         if (is_null($type)) {
             throw new \InvalidArgumentException('non-nullable type cannot be null');
@@ -353,8 +371,10 @@ class Reservation implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets availability.
+     *
+     * @return AvailabilityRecord
      */
-    public function getAvailability(): AvailabilityRecord
+    public function getAvailability()
     {
         return $this->container['availability'];
     }
@@ -363,8 +383,10 @@ class Reservation implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets availability.
      *
      * @param AvailabilityRecord $availability availability
+     *
+     * @return self
      */
-    public function setAvailability(AvailabilityRecord $availability): self
+    public function setAvailability($availability)
     {
         if (is_null($availability)) {
             throw new \InvalidArgumentException('non-nullable availability cannot be null');
@@ -392,7 +414,7 @@ class Reservation implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -403,7 +425,7 @@ class Reservation implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -431,15 +453,17 @@ class Reservation implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

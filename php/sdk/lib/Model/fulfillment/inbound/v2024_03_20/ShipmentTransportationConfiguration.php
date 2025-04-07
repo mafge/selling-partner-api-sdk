@@ -3,7 +3,7 @@
 /**
  * ShipmentTransportationConfiguration.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ShipmentTransportationConfiguration';
+    protected static $openAPIModelName = 'ShipmentTransportationConfiguration';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'contact_information' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\ContactInformation',
         'freight_information' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\FreightInformation',
         'pallets' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\PalletInput[]',
         'ready_to_ship_window' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\WindowInput',
-        'shipment_id' => 'string'];
+        'shipment_id' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'contact_information' => null,
         'freight_information' => null,
         'pallets' => null,
         'ready_to_ship_window' => null,
-        'shipment_id' => null];
+        'shipment_id' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,9 +92,9 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'contact_information' => true,
-        'freight_information' => true,
-        'pallets' => true,
+        'contact_information' => false,
+        'freight_information' => false,
+        'pallets' => false,
         'ready_to_ship_window' => false,
         'shipment_id' => false,
     ];
@@ -109,7 +112,7 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'contact_information' => 'contactInformation',
         'freight_information' => 'freightInformation',
         'pallets' => 'pallets',
@@ -122,7 +125,7 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'contact_information' => 'setContactInformation',
         'freight_information' => 'setFreightInformation',
         'pallets' => 'setPallets',
@@ -135,7 +138,7 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'contact_information' => 'getContactInformation',
         'freight_information' => 'getFreightInformation',
         'pallets' => 'getPallets',
@@ -145,14 +148,16 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -277,15 +294,17 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets contact_information.
+     *
+     * @return null|ContactInformation
      */
-    public function getContactInformation(): ?ContactInformation
+    public function getContactInformation()
     {
         return $this->container['contact_information'];
     }
@@ -294,18 +313,13 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
      * Sets contact_information.
      *
      * @param null|ContactInformation $contact_information contact_information
+     *
+     * @return self
      */
-    public function setContactInformation(?ContactInformation $contact_information): self
+    public function setContactInformation($contact_information)
     {
         if (is_null($contact_information)) {
-            array_push($this->openAPINullablesSetToNull, 'contact_information');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('contact_information', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable contact_information cannot be null');
         }
         $this->container['contact_information'] = $contact_information;
 
@@ -314,8 +328,10 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
 
     /**
      * Gets freight_information.
+     *
+     * @return null|FreightInformation
      */
-    public function getFreightInformation(): ?FreightInformation
+    public function getFreightInformation()
     {
         return $this->container['freight_information'];
     }
@@ -324,18 +340,13 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
      * Sets freight_information.
      *
      * @param null|FreightInformation $freight_information freight_information
+     *
+     * @return self
      */
-    public function setFreightInformation(?FreightInformation $freight_information): self
+    public function setFreightInformation($freight_information)
     {
         if (is_null($freight_information)) {
-            array_push($this->openAPINullablesSetToNull, 'freight_information');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('freight_information', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable freight_information cannot be null');
         }
         $this->container['freight_information'] = $freight_information;
 
@@ -344,8 +355,10 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
 
     /**
      * Gets pallets.
+     *
+     * @return null|PalletInput[]
      */
-    public function getPallets(): ?array
+    public function getPallets()
     {
         return $this->container['pallets'];
     }
@@ -353,19 +366,14 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
     /**
      * Sets pallets.
      *
-     * @param null|array $pallets list of pallet configuration inputs
+     * @param null|PalletInput[] $pallets list of pallet configuration inputs
+     *
+     * @return self
      */
-    public function setPallets(?array $pallets): self
+    public function setPallets($pallets)
     {
         if (is_null($pallets)) {
-            array_push($this->openAPINullablesSetToNull, 'pallets');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('pallets', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable pallets cannot be null');
         }
         $this->container['pallets'] = $pallets;
 
@@ -374,8 +382,10 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
 
     /**
      * Gets ready_to_ship_window.
+     *
+     * @return WindowInput
      */
-    public function getReadyToShipWindow(): WindowInput
+    public function getReadyToShipWindow()
     {
         return $this->container['ready_to_ship_window'];
     }
@@ -384,8 +394,10 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
      * Sets ready_to_ship_window.
      *
      * @param WindowInput $ready_to_ship_window ready_to_ship_window
+     *
+     * @return self
      */
-    public function setReadyToShipWindow(WindowInput $ready_to_ship_window): self
+    public function setReadyToShipWindow($ready_to_ship_window)
     {
         if (is_null($ready_to_ship_window)) {
             throw new \InvalidArgumentException('non-nullable ready_to_ship_window cannot be null');
@@ -397,8 +409,10 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
 
     /**
      * Gets shipment_id.
+     *
+     * @return string
      */
-    public function getShipmentId(): string
+    public function getShipmentId()
     {
         return $this->container['shipment_id'];
     }
@@ -407,8 +421,10 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
      * Sets shipment_id.
      *
      * @param string $shipment_id Identifier of a shipment. A shipment contains the boxes and units being inbounded.
+     *
+     * @return self
      */
-    public function setShipmentId(string $shipment_id): self
+    public function setShipmentId($shipment_id)
     {
         if (is_null($shipment_id)) {
             throw new \InvalidArgumentException('non-nullable shipment_id cannot be null');
@@ -446,7 +462,7 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -457,7 +473,7 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -485,15 +501,17 @@ class ShipmentTransportationConfiguration implements ModelInterface, \ArrayAcces
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

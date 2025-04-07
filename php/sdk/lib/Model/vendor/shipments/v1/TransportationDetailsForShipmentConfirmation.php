@@ -2,7 +2,7 @@
 /**
  * TransportationDetailsForShipmentConfirmation
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * TransportationDetailsForShipmentConfirmation Class Doc Comment
@@ -52,18 +50,19 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'TransportationDetailsForShipmentConfirmation';
+    protected static $openAPIModelName = 'TransportationDetailsForShipmentConfirmation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'carrier_scac' => 'string',
-             'carrier_shipment_reference_number' => 'string',
-             'transportation_mode' => 'string',
-             'bill_of_lading_number' => 'string'    ];
+    protected static $openAPITypes = [
+        'carrier_scac' => 'string',
+        'carrier_shipment_reference_number' => 'string',
+        'transportation_mode' => 'string',
+        'bill_of_lading_number' => 'string'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -72,11 +71,12 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'carrier_scac' => null,
-            'carrier_shipment_reference_number' => null,
-            'transportation_mode' => null,
-            'bill_of_lading_number' => null    ];
+    protected static $openAPIFormats = [
+        'carrier_scac' => null,
+        'carrier_shipment_reference_number' => null,
+        'transportation_mode' => null,
+        'bill_of_lading_number' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -84,10 +84,10 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'carrier_scac' => true,
-        'carrier_shipment_reference_number' => true,
-        'transportation_mode' => true,
-        'bill_of_lading_number' => true
+        'carrier_scac' => false,
+        'carrier_shipment_reference_number' => false,
+        'transportation_mode' => false,
+        'bill_of_lading_number' => false
     ];
 
     /**
@@ -102,7 +102,7 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -112,7 +112,7 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -175,12 +175,11 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'carrier_scac' => 'carrierScac',
-                'carrier_shipment_reference_number' => 'carrierShipmentReferenceNumber',
-                'transportation_mode' => 'transportationMode',
-                'bill_of_lading_number' => 'billOfLadingNumber'
-        
+        'carrier_shipment_reference_number' => 'carrierShipmentReferenceNumber',
+        'transportation_mode' => 'transportationMode',
+        'bill_of_lading_number' => 'billOfLadingNumber'
     ];
 
     /**
@@ -188,7 +187,7 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'carrier_scac' => 'setCarrierScac',
         'carrier_shipment_reference_number' => 'setCarrierShipmentReferenceNumber',
         'transportation_mode' => 'setTransportationMode',
@@ -200,7 +199,7 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'carrier_scac' => 'getCarrierScac',
         'carrier_shipment_reference_number' => 'getCarrierShipmentReferenceNumber',
         'transportation_mode' => 'getTransportationMode',
@@ -213,7 +212,7 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -223,7 +222,7 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -233,7 +232,7 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -243,7 +242,7 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -257,7 +256,7 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @return string[]
      */
-    public function getTransportationModeAllowableValues(): array
+    public function getTransportationModeAllowableValues()
     {
         return [
             self::TRANSPORTATION_MODE_ROAD,
@@ -269,17 +268,17 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('carrier_scac', $data ?? [], null);
         $this->setIfExists('carrier_shipment_reference_number', $data ?? [], null);
@@ -310,7 +309,7 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -332,7 +331,7 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -343,7 +342,7 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @return string|null
      */
-    public function getCarrierScac(): ?string
+    public function getCarrierScac()
     {
         return $this->container['carrier_scac'];
     }
@@ -355,17 +354,10 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @return self
      */
-    public function setCarrierScac(?string $carrier_scac): self
+    public function setCarrierScac($carrier_scac)
     {
         if (is_null($carrier_scac)) {
-            array_push($this->openAPINullablesSetToNull, 'carrier_scac');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('carrier_scac', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable carrier_scac cannot be null');
         }
         $this->container['carrier_scac'] = $carrier_scac;
 
@@ -377,7 +369,7 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @return string|null
      */
-    public function getCarrierShipmentReferenceNumber(): ?string
+    public function getCarrierShipmentReferenceNumber()
     {
         return $this->container['carrier_shipment_reference_number'];
     }
@@ -389,17 +381,10 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @return self
      */
-    public function setCarrierShipmentReferenceNumber(?string $carrier_shipment_reference_number): self
+    public function setCarrierShipmentReferenceNumber($carrier_shipment_reference_number)
     {
         if (is_null($carrier_shipment_reference_number)) {
-            array_push($this->openAPINullablesSetToNull, 'carrier_shipment_reference_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('carrier_shipment_reference_number', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable carrier_shipment_reference_number cannot be null');
         }
         $this->container['carrier_shipment_reference_number'] = $carrier_shipment_reference_number;
 
@@ -411,7 +396,7 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @return string|null
      */
-    public function getTransportationMode(): ?string
+    public function getTransportationMode()
     {
         return $this->container['transportation_mode'];
     }
@@ -423,20 +408,13 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @return self
      */
-    public function setTransportationMode(?string $transportation_mode): self
+    public function setTransportationMode($transportation_mode)
     {
         if (is_null($transportation_mode)) {
-            array_push($this->openAPINullablesSetToNull, 'transportation_mode');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transportation_mode', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transportation_mode cannot be null');
         }
         $allowedValues = $this->getTransportationModeAllowableValues();
-        if (!is_null($transportation_mode) && !in_array($transportation_mode, $allowedValues, true)) {
+        if (!in_array($transportation_mode, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'transportation_mode', must be one of '%s'",
@@ -455,7 +433,7 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @return string|null
      */
-    public function getBillOfLadingNumber(): ?string
+    public function getBillOfLadingNumber()
     {
         return $this->container['bill_of_lading_number'];
     }
@@ -467,24 +445,15 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @return self
      */
-    public function setBillOfLadingNumber(?string $bill_of_lading_number): self
+    public function setBillOfLadingNumber($bill_of_lading_number)
     {
         if (is_null($bill_of_lading_number)) {
-            array_push($this->openAPINullablesSetToNull, 'bill_of_lading_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('bill_of_lading_number', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable bill_of_lading_number cannot be null');
         }
         $this->container['bill_of_lading_number'] = $bill_of_lading_number;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -505,7 +474,7 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -518,7 +487,7 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -547,7 +516,7 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -570,7 +539,7 @@ class TransportationDetailsForShipmentConfirmation implements ModelInterface, Ar
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

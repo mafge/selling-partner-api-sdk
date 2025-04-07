@@ -3,7 +3,7 @@
 /**
  * ListFinancialEventsPayload.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class ListFinancialEventsPayload implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ListFinancialEventsPayload';
+    protected static $openAPIModelName = 'ListFinancialEventsPayload';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'next_token' => 'string',
-        'financial_events' => '\SpApi\Model\finances\v0\FinancialEvents'];
+        'financial_events' => '\SpApi\Model\finances\v0\FinancialEvents',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class ListFinancialEventsPayload implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'next_token' => null,
-        'financial_events' => null];
+        'financial_events' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class ListFinancialEventsPayload implements ModelInterface, \ArrayAccess, \JsonS
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'next_token' => true,
-        'financial_events' => true,
+        'next_token' => false,
+        'financial_events' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class ListFinancialEventsPayload implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'next_token' => 'NextToken',
         'financial_events' => 'FinancialEvents',
     ];
@@ -110,7 +113,7 @@ class ListFinancialEventsPayload implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'next_token' => 'setNextToken',
         'financial_events' => 'setFinancialEvents',
     ];
@@ -120,21 +123,23 @@ class ListFinancialEventsPayload implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'next_token' => 'getNextToken',
         'financial_events' => 'getFinancialEvents',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class ListFinancialEventsPayload implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class ListFinancialEventsPayload implements ModelInterface, \ArrayAccess, \JsonS
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class ListFinancialEventsPayload implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -236,15 +253,17 @@ class ListFinancialEventsPayload implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets next_token.
+     *
+     * @return null|string
      */
-    public function getNextToken(): ?string
+    public function getNextToken()
     {
         return $this->container['next_token'];
     }
@@ -253,18 +272,13 @@ class ListFinancialEventsPayload implements ModelInterface, \ArrayAccess, \JsonS
      * Sets next_token.
      *
      * @param null|string $next_token when present and not empty, pass this string token in the next request to return the next response page
+     *
+     * @return self
      */
-    public function setNextToken(?string $next_token): self
+    public function setNextToken($next_token)
     {
         if (is_null($next_token)) {
-            array_push($this->openAPINullablesSetToNull, 'next_token');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('next_token', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable next_token cannot be null');
         }
         $this->container['next_token'] = $next_token;
 
@@ -273,8 +287,10 @@ class ListFinancialEventsPayload implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets financial_events.
+     *
+     * @return null|FinancialEvents
      */
-    public function getFinancialEvents(): ?FinancialEvents
+    public function getFinancialEvents()
     {
         return $this->container['financial_events'];
     }
@@ -283,18 +299,13 @@ class ListFinancialEventsPayload implements ModelInterface, \ArrayAccess, \JsonS
      * Sets financial_events.
      *
      * @param null|FinancialEvents $financial_events financial_events
+     *
+     * @return self
      */
-    public function setFinancialEvents(?FinancialEvents $financial_events): self
+    public function setFinancialEvents($financial_events)
     {
         if (is_null($financial_events)) {
-            array_push($this->openAPINullablesSetToNull, 'financial_events');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('financial_events', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable financial_events cannot be null');
         }
         $this->container['financial_events'] = $financial_events;
 
@@ -319,7 +330,7 @@ class ListFinancialEventsPayload implements ModelInterface, \ArrayAccess, \JsonS
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +341,7 @@ class ListFinancialEventsPayload implements ModelInterface, \ArrayAccess, \JsonS
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +369,17 @@ class ListFinancialEventsPayload implements ModelInterface, \ArrayAccess, \JsonS
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

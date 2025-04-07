@@ -3,7 +3,7 @@
 /**
  * ReturnAuthorization.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ReturnAuthorization';
+    protected static $openAPIModelName = 'ReturnAuthorization';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'return_authorization_id' => 'string',
         'fulfillment_center_id' => 'string',
         'return_to_address' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\Address',
         'amazon_rma_id' => 'string',
-        'rma_page_url' => 'string'];
+        'rma_page_url' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'return_authorization_id' => null,
         'fulfillment_center_id' => null,
         'return_to_address' => null,
         'amazon_rma_id' => null,
-        'rma_page_url' => null];
+        'rma_page_url' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -109,7 +112,7 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'return_authorization_id' => 'returnAuthorizationId',
         'fulfillment_center_id' => 'fulfillmentCenterId',
         'return_to_address' => 'returnToAddress',
@@ -122,7 +125,7 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'return_authorization_id' => 'setReturnAuthorizationId',
         'fulfillment_center_id' => 'setFulfillmentCenterId',
         'return_to_address' => 'setReturnToAddress',
@@ -135,7 +138,7 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'return_authorization_id' => 'getReturnAuthorizationId',
         'fulfillment_center_id' => 'getFulfillmentCenterId',
         'return_to_address' => 'getReturnToAddress',
@@ -145,14 +148,16 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -275,15 +292,17 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets return_authorization_id.
+     *
+     * @return string
      */
-    public function getReturnAuthorizationId(): string
+    public function getReturnAuthorizationId()
     {
         return $this->container['return_authorization_id'];
     }
@@ -292,8 +311,10 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets return_authorization_id.
      *
      * @param string $return_authorization_id An identifier for the return authorization. This identifier associates return items with the return authorization used to return them.
+     *
+     * @return self
      */
-    public function setReturnAuthorizationId(string $return_authorization_id): self
+    public function setReturnAuthorizationId($return_authorization_id)
     {
         if (is_null($return_authorization_id)) {
             throw new \InvalidArgumentException('non-nullable return_authorization_id cannot be null');
@@ -305,8 +326,10 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets fulfillment_center_id.
+     *
+     * @return string
      */
-    public function getFulfillmentCenterId(): string
+    public function getFulfillmentCenterId()
     {
         return $this->container['fulfillment_center_id'];
     }
@@ -315,8 +338,10 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets fulfillment_center_id.
      *
      * @param string $fulfillment_center_id an identifier for the Amazon fulfillment center that the return items should be sent to
+     *
+     * @return self
      */
-    public function setFulfillmentCenterId(string $fulfillment_center_id): self
+    public function setFulfillmentCenterId($fulfillment_center_id)
     {
         if (is_null($fulfillment_center_id)) {
             throw new \InvalidArgumentException('non-nullable fulfillment_center_id cannot be null');
@@ -328,8 +353,10 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets return_to_address.
+     *
+     * @return Address
      */
-    public function getReturnToAddress(): Address
+    public function getReturnToAddress()
     {
         return $this->container['return_to_address'];
     }
@@ -338,8 +365,10 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets return_to_address.
      *
      * @param Address $return_to_address return_to_address
+     *
+     * @return self
      */
-    public function setReturnToAddress(Address $return_to_address): self
+    public function setReturnToAddress($return_to_address)
     {
         if (is_null($return_to_address)) {
             throw new \InvalidArgumentException('non-nullable return_to_address cannot be null');
@@ -351,8 +380,10 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets amazon_rma_id.
+     *
+     * @return string
      */
-    public function getAmazonRmaId(): string
+    public function getAmazonRmaId()
     {
         return $this->container['amazon_rma_id'];
     }
@@ -361,8 +392,10 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets amazon_rma_id.
      *
      * @param string $amazon_rma_id the return merchandise authorization (RMA) that Amazon needs to process the return
+     *
+     * @return self
      */
-    public function setAmazonRmaId(string $amazon_rma_id): self
+    public function setAmazonRmaId($amazon_rma_id)
     {
         if (is_null($amazon_rma_id)) {
             throw new \InvalidArgumentException('non-nullable amazon_rma_id cannot be null');
@@ -374,8 +407,10 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets rma_page_url.
+     *
+     * @return string
      */
-    public function getRmaPageUrl(): string
+    public function getRmaPageUrl()
     {
         return $this->container['rma_page_url'];
     }
@@ -384,8 +419,10 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets rma_page_url.
      *
      * @param string $rma_page_url A URL for a web page that contains the return authorization barcode and the mailing label. This does not include pre-paid shipping.
+     *
+     * @return self
      */
-    public function setRmaPageUrl(string $rma_page_url): self
+    public function setRmaPageUrl($rma_page_url)
     {
         if (is_null($rma_page_url)) {
             throw new \InvalidArgumentException('non-nullable rma_page_url cannot be null');
@@ -413,7 +450,7 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -424,7 +461,7 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -452,15 +489,17 @@ class ReturnAuthorization implements ModelInterface, \ArrayAccess, \JsonSerializ
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

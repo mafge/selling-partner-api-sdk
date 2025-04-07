@@ -3,7 +3,7 @@
 /**
  * TrackingEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class TrackingEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'TrackingEvent';
+    protected static $openAPIModelName = 'TrackingEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'event_date' => '\DateTime',
         'event_address' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\TrackingAddress',
         'event_code' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\EventCode',
-        'event_description' => 'string'];
+        'event_description' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class TrackingEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'event_date' => 'date-time',
         'event_address' => null,
         'event_code' => null,
-        'event_description' => null];
+        'event_description' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -106,7 +109,7 @@ class TrackingEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'event_date' => 'eventDate',
         'event_address' => 'eventAddress',
         'event_code' => 'eventCode',
@@ -118,7 +121,7 @@ class TrackingEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'event_date' => 'setEventDate',
         'event_address' => 'setEventAddress',
         'event_code' => 'setEventCode',
@@ -130,7 +133,7 @@ class TrackingEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'event_date' => 'getEventDate',
         'event_address' => 'getEventAddress',
         'event_code' => 'getEventCode',
@@ -139,14 +142,16 @@ class TrackingEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class TrackingEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class TrackingEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class TrackingEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -265,15 +282,17 @@ class TrackingEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets event_date.
+     *
+     * @return \DateTime
      */
-    public function getEventDate(): \DateTime
+    public function getEventDate()
     {
         return $this->container['event_date'];
     }
@@ -282,8 +301,10 @@ class TrackingEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets event_date.
      *
      * @param \DateTime $event_date Date timestamp
+     *
+     * @return self
      */
-    public function setEventDate(\DateTime $event_date): self
+    public function setEventDate($event_date)
     {
         if (is_null($event_date)) {
             throw new \InvalidArgumentException('non-nullable event_date cannot be null');
@@ -295,8 +316,10 @@ class TrackingEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets event_address.
+     *
+     * @return TrackingAddress
      */
-    public function getEventAddress(): TrackingAddress
+    public function getEventAddress()
     {
         return $this->container['event_address'];
     }
@@ -305,8 +328,10 @@ class TrackingEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets event_address.
      *
      * @param TrackingAddress $event_address event_address
+     *
+     * @return self
      */
-    public function setEventAddress(TrackingAddress $event_address): self
+    public function setEventAddress($event_address)
     {
         if (is_null($event_address)) {
             throw new \InvalidArgumentException('non-nullable event_address cannot be null');
@@ -318,8 +343,10 @@ class TrackingEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets event_code.
+     *
+     * @return EventCode
      */
-    public function getEventCode(): string
+    public function getEventCode()
     {
         return $this->container['event_code'];
     }
@@ -327,9 +354,11 @@ class TrackingEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets event_code.
      *
-     * @param string $event_code event_code
+     * @param EventCode $event_code event_code
+     *
+     * @return self
      */
-    public function setEventCode(string $event_code): self
+    public function setEventCode($event_code)
     {
         if (is_null($event_code)) {
             throw new \InvalidArgumentException('non-nullable event_code cannot be null');
@@ -341,8 +370,10 @@ class TrackingEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets event_description.
+     *
+     * @return string
      */
-    public function getEventDescription(): string
+    public function getEventDescription()
     {
         return $this->container['event_description'];
     }
@@ -351,8 +382,10 @@ class TrackingEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets event_description.
      *
      * @param string $event_description a description for the corresponding event code
+     *
+     * @return self
      */
-    public function setEventDescription(string $event_description): self
+    public function setEventDescription($event_description)
     {
         if (is_null($event_description)) {
             throw new \InvalidArgumentException('non-nullable event_description cannot be null');
@@ -380,7 +413,7 @@ class TrackingEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -391,7 +424,7 @@ class TrackingEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -419,15 +452,17 @@ class TrackingEvent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

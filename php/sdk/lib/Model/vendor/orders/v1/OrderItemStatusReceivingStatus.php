@@ -2,7 +2,7 @@
 /**
  * OrderItemStatusReceivingStatus
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\orders\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * OrderItemStatusReceivingStatus Class Doc Comment
@@ -52,17 +50,18 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'OrderItemStatus_receivingStatus';
+    protected static $openAPIModelName = 'OrderItemStatus_receivingStatus';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'receive_status' => 'string',
-             'received_quantity' => '\SpApi\Model\vendor\orders\v1\ItemQuantity',
-             'last_receive_date' => '\DateTime'    ];
+    protected static $openAPITypes = [
+        'receive_status' => 'string',
+        'received_quantity' => '\SpApi\Model\vendor\orders\v1\ItemQuantity',
+        'last_receive_date' => '\DateTime'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,10 +70,11 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'receive_status' => null,
-            'received_quantity' => null,
-            'last_receive_date' => 'date-time'    ];
+    protected static $openAPIFormats = [
+        'receive_status' => null,
+        'received_quantity' => null,
+        'last_receive_date' => 'date-time'
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -82,9 +82,9 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'receive_status' => true,
-        'received_quantity' => true,
-        'last_receive_date' => true
+        'receive_status' => false,
+        'received_quantity' => false,
+        'last_receive_date' => false
     ];
 
     /**
@@ -99,7 +99,7 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -109,7 +109,7 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -172,11 +172,10 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'receive_status' => 'receiveStatus',
-                'received_quantity' => 'receivedQuantity',
-                'last_receive_date' => 'lastReceiveDate'
-        
+        'received_quantity' => 'receivedQuantity',
+        'last_receive_date' => 'lastReceiveDate'
     ];
 
     /**
@@ -184,7 +183,7 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'receive_status' => 'setReceiveStatus',
         'received_quantity' => 'setReceivedQuantity',
         'last_receive_date' => 'setLastReceiveDate'
@@ -195,7 +194,7 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'receive_status' => 'getReceiveStatus',
         'received_quantity' => 'getReceivedQuantity',
         'last_receive_date' => 'getLastReceiveDate'
@@ -207,7 +206,7 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -217,7 +216,7 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -227,7 +226,7 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -237,7 +236,7 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -251,7 +250,7 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      *
      * @return string[]
      */
-    public function getReceiveStatusAllowableValues(): array
+    public function getReceiveStatusAllowableValues()
     {
         return [
             self::RECEIVE_STATUS_NOT_RECEIVED,
@@ -263,17 +262,17 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('receive_status', $data ?? [], null);
         $this->setIfExists('received_quantity', $data ?? [], null);
@@ -303,7 +302,7 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -325,7 +324,7 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -336,7 +335,7 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      *
      * @return string|null
      */
-    public function getReceiveStatus(): ?string
+    public function getReceiveStatus()
     {
         return $this->container['receive_status'];
     }
@@ -348,20 +347,13 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setReceiveStatus(?string $receive_status): self
+    public function setReceiveStatus($receive_status)
     {
         if (is_null($receive_status)) {
-            array_push($this->openAPINullablesSetToNull, 'receive_status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('receive_status', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable receive_status cannot be null');
         }
         $allowedValues = $this->getReceiveStatusAllowableValues();
-        if (!is_null($receive_status) && !in_array($receive_status, $allowedValues, true)) {
+        if (!in_array($receive_status, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'receive_status', must be one of '%s'",
@@ -380,7 +372,7 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      *
      * @return \SpApi\Model\vendor\orders\v1\ItemQuantity|null
      */
-    public function getReceivedQuantity(): ?\SpApi\Model\vendor\orders\v1\ItemQuantity
+    public function getReceivedQuantity()
     {
         return $this->container['received_quantity'];
     }
@@ -392,17 +384,10 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setReceivedQuantity(?\SpApi\Model\vendor\orders\v1\ItemQuantity $received_quantity): self
+    public function setReceivedQuantity($received_quantity)
     {
         if (is_null($received_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'received_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('received_quantity', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable received_quantity cannot be null');
         }
         $this->container['received_quantity'] = $received_quantity;
 
@@ -414,7 +399,7 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      *
      * @return \DateTime|null
      */
-    public function getLastReceiveDate(): ?\DateTime
+    public function getLastReceiveDate()
     {
         return $this->container['last_receive_date'];
     }
@@ -426,24 +411,15 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      *
      * @return self
      */
-    public function setLastReceiveDate(?\DateTime $last_receive_date): self
+    public function setLastReceiveDate($last_receive_date)
     {
         if (is_null($last_receive_date)) {
-            array_push($this->openAPINullablesSetToNull, 'last_receive_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('last_receive_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable last_receive_date cannot be null');
         }
         $this->container['last_receive_date'] = $last_receive_date;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -464,7 +440,7 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -477,7 +453,7 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -506,7 +482,7 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -529,7 +505,7 @@ class OrderItemStatusReceivingStatus implements ModelInterface, ArrayAccess, \Js
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

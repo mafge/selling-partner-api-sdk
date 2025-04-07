@@ -3,7 +3,7 @@
 /**
  * InboundOrder.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\awd\v2024_05_09;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'InboundOrder';
+    protected static $openAPIModelName = 'InboundOrder';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'created_at' => '\DateTime',
         'destination_details' => '\SpApi\Model\awd\v2024_05_09\DestinationDetails',
         'external_reference_id' => 'string',
@@ -69,7 +70,8 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
         'origin_address' => '\SpApi\Model\awd\v2024_05_09\Address',
         'packages_to_inbound' => '\SpApi\Model\awd\v2024_05_09\DistributionPackageQuantity[]',
         'preferences' => '\SpApi\Model\awd\v2024_05_09\InboundPreferences',
-        'updated_at' => '\DateTime'];
+        'updated_at' => '\DateTime',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -80,7 +82,7 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'created_at' => 'date-time',
         'destination_details' => null,
         'external_reference_id' => null,
@@ -89,7 +91,8 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
         'origin_address' => null,
         'packages_to_inbound' => null,
         'preferences' => null,
-        'updated_at' => 'date-time'];
+        'updated_at' => 'date-time',
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -98,14 +101,14 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'created_at' => false,
-        'destination_details' => true,
-        'external_reference_id' => true,
+        'destination_details' => false,
+        'external_reference_id' => false,
         'order_id' => false,
         'order_status' => false,
         'origin_address' => false,
         'packages_to_inbound' => false,
-        'preferences' => true,
-        'updated_at' => true,
+        'preferences' => false,
+        'updated_at' => false,
     ];
 
     /**
@@ -121,7 +124,7 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'created_at' => 'createdAt',
         'destination_details' => 'destinationDetails',
         'external_reference_id' => 'externalReferenceId',
@@ -138,7 +141,7 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'created_at' => 'setCreatedAt',
         'destination_details' => 'setDestinationDetails',
         'external_reference_id' => 'setExternalReferenceId',
@@ -155,7 +158,7 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'created_at' => 'getCreatedAt',
         'destination_details' => 'getDestinationDetails',
         'external_reference_id' => 'getExternalReferenceId',
@@ -169,14 +172,16 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -206,16 +211,20 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -239,32 +248,40 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -274,7 +291,7 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -306,15 +323,17 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets created_at.
+     *
+     * @return \DateTime
      */
-    public function getCreatedAt(): \DateTime
+    public function getCreatedAt()
     {
         return $this->container['created_at'];
     }
@@ -323,8 +342,10 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets created_at.
      *
      * @param \DateTime $created_at date when this order was created
+     *
+     * @return self
      */
-    public function setCreatedAt(\DateTime $created_at): self
+    public function setCreatedAt($created_at)
     {
         if (is_null($created_at)) {
             throw new \InvalidArgumentException('non-nullable created_at cannot be null');
@@ -336,8 +357,10 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets destination_details.
+     *
+     * @return null|DestinationDetails
      */
-    public function getDestinationDetails(): ?DestinationDetails
+    public function getDestinationDetails()
     {
         return $this->container['destination_details'];
     }
@@ -346,18 +369,13 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets destination_details.
      *
      * @param null|DestinationDetails $destination_details destination_details
+     *
+     * @return self
      */
-    public function setDestinationDetails(?DestinationDetails $destination_details): self
+    public function setDestinationDetails($destination_details)
     {
         if (is_null($destination_details)) {
-            array_push($this->openAPINullablesSetToNull, 'destination_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('destination_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable destination_details cannot be null');
         }
         $this->container['destination_details'] = $destination_details;
 
@@ -366,8 +384,10 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets external_reference_id.
+     *
+     * @return null|string
      */
-    public function getExternalReferenceId(): ?string
+    public function getExternalReferenceId()
     {
         return $this->container['external_reference_id'];
     }
@@ -376,18 +396,13 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets external_reference_id.
      *
      * @param null|string $external_reference_id reference ID that can be used to correlate the order with partner resources
+     *
+     * @return self
      */
-    public function setExternalReferenceId(?string $external_reference_id): self
+    public function setExternalReferenceId($external_reference_id)
     {
         if (is_null($external_reference_id)) {
-            array_push($this->openAPINullablesSetToNull, 'external_reference_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('external_reference_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable external_reference_id cannot be null');
         }
         $this->container['external_reference_id'] = $external_reference_id;
 
@@ -396,8 +411,10 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets order_id.
+     *
+     * @return string
      */
-    public function getOrderId(): string
+    public function getOrderId()
     {
         return $this->container['order_id'];
     }
@@ -406,8 +423,10 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets order_id.
      *
      * @param string $order_id inbound order ID
+     *
+     * @return self
      */
-    public function setOrderId(string $order_id): self
+    public function setOrderId($order_id)
     {
         if (is_null($order_id)) {
             throw new \InvalidArgumentException('non-nullable order_id cannot be null');
@@ -419,8 +438,10 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets order_status.
+     *
+     * @return InboundStatus
      */
-    public function getOrderStatus(): string
+    public function getOrderStatus()
     {
         return $this->container['order_status'];
     }
@@ -428,9 +449,11 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets order_status.
      *
-     * @param string $order_status order_status
+     * @param InboundStatus $order_status order_status
+     *
+     * @return self
      */
-    public function setOrderStatus(string $order_status): self
+    public function setOrderStatus($order_status)
     {
         if (is_null($order_status)) {
             throw new \InvalidArgumentException('non-nullable order_status cannot be null');
@@ -442,8 +465,10 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets origin_address.
+     *
+     * @return Address
      */
-    public function getOriginAddress(): Address
+    public function getOriginAddress()
     {
         return $this->container['origin_address'];
     }
@@ -452,8 +477,10 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets origin_address.
      *
      * @param Address $origin_address origin_address
+     *
+     * @return self
      */
-    public function setOriginAddress(Address $origin_address): self
+    public function setOriginAddress($origin_address)
     {
         if (is_null($origin_address)) {
             throw new \InvalidArgumentException('non-nullable origin_address cannot be null');
@@ -465,8 +492,10 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets packages_to_inbound.
+     *
+     * @return DistributionPackageQuantity[]
      */
-    public function getPackagesToInbound(): array
+    public function getPackagesToInbound()
     {
         return $this->container['packages_to_inbound'];
     }
@@ -474,9 +503,11 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets packages_to_inbound.
      *
-     * @param array $packages_to_inbound list of packages to be inbounded
+     * @param DistributionPackageQuantity[] $packages_to_inbound list of packages to be inbounded
+     *
+     * @return self
      */
-    public function setPackagesToInbound(array $packages_to_inbound): self
+    public function setPackagesToInbound($packages_to_inbound)
     {
         if (is_null($packages_to_inbound)) {
             throw new \InvalidArgumentException('non-nullable packages_to_inbound cannot be null');
@@ -492,8 +523,10 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets preferences.
+     *
+     * @return null|InboundPreferences
      */
-    public function getPreferences(): ?InboundPreferences
+    public function getPreferences()
     {
         return $this->container['preferences'];
     }
@@ -502,18 +535,13 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets preferences.
      *
      * @param null|InboundPreferences $preferences preferences
+     *
+     * @return self
      */
-    public function setPreferences(?InboundPreferences $preferences): self
+    public function setPreferences($preferences)
     {
         if (is_null($preferences)) {
-            array_push($this->openAPINullablesSetToNull, 'preferences');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('preferences', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable preferences cannot be null');
         }
         $this->container['preferences'] = $preferences;
 
@@ -522,8 +550,10 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets updated_at.
+     *
+     * @return null|\DateTime
      */
-    public function getUpdatedAt(): ?\DateTime
+    public function getUpdatedAt()
     {
         return $this->container['updated_at'];
     }
@@ -532,18 +562,13 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets updated_at.
      *
      * @param null|\DateTime $updated_at date when this order was last updated
+     *
+     * @return self
      */
-    public function setUpdatedAt(?\DateTime $updated_at): self
+    public function setUpdatedAt($updated_at)
     {
         if (is_null($updated_at)) {
-            array_push($this->openAPINullablesSetToNull, 'updated_at');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updated_at', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable updated_at cannot be null');
         }
         $this->container['updated_at'] = $updated_at;
 
@@ -568,7 +593,7 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -579,7 +604,7 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -607,15 +632,17 @@ class InboundOrder implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

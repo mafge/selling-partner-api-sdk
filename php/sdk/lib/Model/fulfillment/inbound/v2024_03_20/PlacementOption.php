@@ -3,7 +3,7 @@
 /**
  * PlacementOption.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'PlacementOption';
+    protected static $openAPIModelName = 'PlacementOption';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'discounts' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Incentive[]',
         'expiration' => '\DateTime',
         'fees' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Incentive[]',
         'placement_option_id' => 'string',
         'shipment_ids' => 'string[]',
-        'status' => 'string'];
+        'status' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'discounts' => null,
         'expiration' => 'date-time',
         'fees' => null,
         'placement_option_id' => null,
         'shipment_ids' => null,
-        'status' => null];
+        'status' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -92,7 +95,7 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'discounts' => false,
-        'expiration' => true,
+        'expiration' => false,
         'fees' => false,
         'placement_option_id' => false,
         'shipment_ids' => false,
@@ -112,7 +115,7 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'discounts' => 'discounts',
         'expiration' => 'expiration',
         'fees' => 'fees',
@@ -126,7 +129,7 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'discounts' => 'setDiscounts',
         'expiration' => 'setExpiration',
         'fees' => 'setFees',
@@ -140,7 +143,7 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'discounts' => 'getDiscounts',
         'expiration' => 'getExpiration',
         'fees' => 'getFees',
@@ -151,14 +154,16 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -301,15 +318,17 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets discounts.
+     *
+     * @return Incentive[]
      */
-    public function getDiscounts(): array
+    public function getDiscounts()
     {
         return $this->container['discounts'];
     }
@@ -317,9 +336,11 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets discounts.
      *
-     * @param array $discounts discount for the offered option
+     * @param Incentive[] $discounts discount for the offered option
+     *
+     * @return self
      */
-    public function setDiscounts(array $discounts): self
+    public function setDiscounts($discounts)
     {
         if (is_null($discounts)) {
             throw new \InvalidArgumentException('non-nullable discounts cannot be null');
@@ -331,8 +352,10 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets expiration.
+     *
+     * @return null|\DateTime
      */
-    public function getExpiration(): ?\DateTime
+    public function getExpiration()
     {
         return $this->container['expiration'];
     }
@@ -341,18 +364,13 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets expiration.
      *
      * @param null|\DateTime $expiration The expiration date of the placement option. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     *
+     * @return self
      */
-    public function setExpiration(?\DateTime $expiration): self
+    public function setExpiration($expiration)
     {
         if (is_null($expiration)) {
-            array_push($this->openAPINullablesSetToNull, 'expiration');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expiration', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable expiration cannot be null');
         }
         $this->container['expiration'] = $expiration;
 
@@ -361,8 +379,10 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets fees.
+     *
+     * @return Incentive[]
      */
-    public function getFees(): array
+    public function getFees()
     {
         return $this->container['fees'];
     }
@@ -370,9 +390,11 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets fees.
      *
-     * @param array $fees the fee for the offered option
+     * @param Incentive[] $fees the fee for the offered option
+     *
+     * @return self
      */
-    public function setFees(array $fees): self
+    public function setFees($fees)
     {
         if (is_null($fees)) {
             throw new \InvalidArgumentException('non-nullable fees cannot be null');
@@ -384,8 +406,10 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets placement_option_id.
+     *
+     * @return string
      */
-    public function getPlacementOptionId(): string
+    public function getPlacementOptionId()
     {
         return $this->container['placement_option_id'];
     }
@@ -394,8 +418,10 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets placement_option_id.
      *
      * @param string $placement_option_id The identifier of a placement option. A placement option represents the shipment splits and destinations of SKUs.
+     *
+     * @return self
      */
-    public function setPlacementOptionId(string $placement_option_id): self
+    public function setPlacementOptionId($placement_option_id)
     {
         if (is_null($placement_option_id)) {
             throw new \InvalidArgumentException('non-nullable placement_option_id cannot be null');
@@ -417,8 +443,10 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets shipment_ids.
+     *
+     * @return string[]
      */
-    public function getShipmentIds(): array
+    public function getShipmentIds()
     {
         return $this->container['shipment_ids'];
     }
@@ -426,9 +454,11 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets shipment_ids.
      *
-     * @param array $shipment_ids shipment ids
+     * @param string[] $shipment_ids shipment ids
+     *
+     * @return self
      */
-    public function setShipmentIds(array $shipment_ids): self
+    public function setShipmentIds($shipment_ids)
     {
         if (is_null($shipment_ids)) {
             throw new \InvalidArgumentException('non-nullable shipment_ids cannot be null');
@@ -440,8 +470,10 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets status.
+     *
+     * @return string
      */
-    public function getStatus(): string
+    public function getStatus()
     {
         return $this->container['status'];
     }
@@ -450,8 +482,10 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets status.
      *
      * @param string $status The status of a placement option. Possible values: `OFFERED`, `ACCEPTED`, `EXPIRED`.
+     *
+     * @return self
      */
-    public function setStatus(string $status): self
+    public function setStatus($status)
     {
         if (is_null($status)) {
             throw new \InvalidArgumentException('non-nullable status cannot be null');
@@ -486,7 +520,7 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -497,7 +531,7 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -525,15 +559,17 @@ class PlacementOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

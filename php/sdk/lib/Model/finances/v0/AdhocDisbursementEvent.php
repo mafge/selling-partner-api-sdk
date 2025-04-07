@@ -3,7 +3,7 @@
 /**
  * AdhocDisbursementEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'AdhocDisbursementEvent';
+    protected static $openAPIModelName = 'AdhocDisbursementEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'transaction_type' => 'string',
         'posted_date' => '\DateTime',
         'transaction_id' => 'string',
-        'transaction_amount' => '\SpApi\Model\finances\v0\Currency'];
+        'transaction_amount' => '\SpApi\Model\finances\v0\Currency',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'transaction_type' => null,
         'posted_date' => 'date-time',
         'transaction_id' => null,
-        'transaction_amount' => null];
+        'transaction_amount' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,10 +90,10 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'transaction_type' => true,
-        'posted_date' => true,
-        'transaction_id' => true,
-        'transaction_amount' => true,
+        'transaction_type' => false,
+        'posted_date' => false,
+        'transaction_id' => false,
+        'transaction_amount' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'transaction_type' => 'TransactionType',
         'posted_date' => 'PostedDate',
         'transaction_id' => 'TransactionId',
@@ -118,7 +121,7 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'transaction_type' => 'setTransactionType',
         'posted_date' => 'setPostedDate',
         'transaction_id' => 'setTransactionId',
@@ -130,7 +133,7 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'transaction_type' => 'getTransactionType',
         'posted_date' => 'getPostedDate',
         'transaction_id' => 'getTransactionId',
@@ -139,14 +142,16 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -250,15 +267,17 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets transaction_type.
+     *
+     * @return null|string
      */
-    public function getTransactionType(): ?string
+    public function getTransactionType()
     {
         return $this->container['transaction_type'];
     }
@@ -267,18 +286,13 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets transaction_type.
      *
      * @param null|string $transaction_type Indicates the type of transaction.  Example: \"Disbursed to Amazon Gift Card balance\"
+     *
+     * @return self
      */
-    public function setTransactionType(?string $transaction_type): self
+    public function setTransactionType($transaction_type)
     {
         if (is_null($transaction_type)) {
-            array_push($this->openAPINullablesSetToNull, 'transaction_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transaction_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transaction_type cannot be null');
         }
         $this->container['transaction_type'] = $transaction_type;
 
@@ -287,8 +301,10 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTime
      */
-    public function getPostedDate(): ?\DateTime
+    public function getPostedDate()
     {
         return $this->container['posted_date'];
     }
@@ -297,18 +313,13 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets posted_date.
      *
      * @param null|\DateTime $posted_date fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate)
+     *
+     * @return self
      */
-    public function setPostedDate(?\DateTime $posted_date): self
+    public function setPostedDate($posted_date)
     {
         if (is_null($posted_date)) {
-            array_push($this->openAPINullablesSetToNull, 'posted_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('posted_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable posted_date cannot be null');
         }
         $this->container['posted_date'] = $posted_date;
 
@@ -317,8 +328,10 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets transaction_id.
+     *
+     * @return null|string
      */
-    public function getTransactionId(): ?string
+    public function getTransactionId()
     {
         return $this->container['transaction_id'];
     }
@@ -327,18 +340,13 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets transaction_id.
      *
      * @param null|string $transaction_id the identifier for the transaction
+     *
+     * @return self
      */
-    public function setTransactionId(?string $transaction_id): self
+    public function setTransactionId($transaction_id)
     {
         if (is_null($transaction_id)) {
-            array_push($this->openAPINullablesSetToNull, 'transaction_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transaction_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transaction_id cannot be null');
         }
         $this->container['transaction_id'] = $transaction_id;
 
@@ -347,8 +355,10 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets transaction_amount.
+     *
+     * @return null|Currency
      */
-    public function getTransactionAmount(): ?Currency
+    public function getTransactionAmount()
     {
         return $this->container['transaction_amount'];
     }
@@ -357,18 +367,13 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets transaction_amount.
      *
      * @param null|Currency $transaction_amount transaction_amount
+     *
+     * @return self
      */
-    public function setTransactionAmount(?Currency $transaction_amount): self
+    public function setTransactionAmount($transaction_amount)
     {
         if (is_null($transaction_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'transaction_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transaction_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transaction_amount cannot be null');
         }
         $this->container['transaction_amount'] = $transaction_amount;
 
@@ -393,7 +398,7 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -404,7 +409,7 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -432,15 +437,17 @@ class AdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \JsonSeria
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

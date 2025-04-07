@@ -3,7 +3,7 @@
 /**
  * AccessPoint.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -56,15 +55,17 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'AccessPoint';
+    protected static $openAPIModelName = 'AccessPoint';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'access_point_id' => 'string',
         'name' => 'string',
         'timezone' => 'string',
@@ -74,7 +75,8 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
         'exception_operating_hours' => '\SpApi\Model\shipping\v2\ExceptionOperatingHours[]',
         'assistance_type' => 'string',
         'score' => 'string',
-        'standard_operating_hours' => 'array<string,\SpApi\Model\shipping\v2\OperatingHours>'];
+        'standard_operating_hours' => 'array<string,\SpApi\Model\shipping\v2\OperatingHours>',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -85,7 +87,7 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'access_point_id' => null,
         'name' => null,
         'timezone' => null,
@@ -95,7 +97,8 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
         'exception_operating_hours' => null,
         'assistance_type' => null,
         'score' => null,
-        'standard_operating_hours' => null];
+        'standard_operating_hours' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -103,16 +106,16 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'access_point_id' => true,
-        'name' => true,
-        'timezone' => true,
-        'type' => true,
-        'accessibility_attributes' => true,
-        'address' => true,
-        'exception_operating_hours' => true,
-        'assistance_type' => true,
-        'score' => true,
-        'standard_operating_hours' => true,
+        'access_point_id' => false,
+        'name' => false,
+        'timezone' => false,
+        'type' => false,
+        'accessibility_attributes' => false,
+        'address' => false,
+        'exception_operating_hours' => false,
+        'assistance_type' => false,
+        'score' => false,
+        'standard_operating_hours' => false,
     ];
 
     /**
@@ -128,7 +131,7 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'access_point_id' => 'accessPointId',
         'name' => 'name',
         'timezone' => 'timezone',
@@ -146,7 +149,7 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'access_point_id' => 'setAccessPointId',
         'name' => 'setName',
         'timezone' => 'setTimezone',
@@ -164,7 +167,7 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'access_point_id' => 'getAccessPointId',
         'name' => 'getName',
         'timezone' => 'getTimezone',
@@ -179,14 +182,16 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -217,16 +222,20 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -250,32 +259,40 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -285,7 +302,7 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getAssistanceTypeAllowableValues(): array
+    public function getAssistanceTypeAllowableValues()
     {
         return [
             self::ASSISTANCE_TYPE_STAFF_ASSISTED,
@@ -298,7 +315,7 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -320,15 +337,17 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets access_point_id.
+     *
+     * @return null|string
      */
-    public function getAccessPointId(): ?string
+    public function getAccessPointId()
     {
         return $this->container['access_point_id'];
     }
@@ -337,18 +356,13 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets access_point_id.
      *
      * @param null|string $access_point_id Unique identifier for the access point
+     *
+     * @return self
      */
-    public function setAccessPointId(?string $access_point_id): self
+    public function setAccessPointId($access_point_id)
     {
         if (is_null($access_point_id)) {
-            array_push($this->openAPINullablesSetToNull, 'access_point_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('access_point_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable access_point_id cannot be null');
         }
         $this->container['access_point_id'] = $access_point_id;
 
@@ -357,8 +371,10 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets name.
+     *
+     * @return null|string
      */
-    public function getName(): ?string
+    public function getName()
     {
         return $this->container['name'];
     }
@@ -367,18 +383,13 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets name.
      *
      * @param null|string $name Name of entity (store/hub etc) where this access point is located
+     *
+     * @return self
      */
-    public function setName(?string $name): self
+    public function setName($name)
     {
         if (is_null($name)) {
-            array_push($this->openAPINullablesSetToNull, 'name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
         $this->container['name'] = $name;
 
@@ -387,8 +398,10 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets timezone.
+     *
+     * @return null|string
      */
-    public function getTimezone(): ?string
+    public function getTimezone()
     {
         return $this->container['timezone'];
     }
@@ -397,18 +410,13 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets timezone.
      *
      * @param null|string $timezone Timezone of access point
+     *
+     * @return self
      */
-    public function setTimezone(?string $timezone): self
+    public function setTimezone($timezone)
     {
         if (is_null($timezone)) {
-            array_push($this->openAPINullablesSetToNull, 'timezone');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('timezone', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable timezone cannot be null');
         }
         $this->container['timezone'] = $timezone;
 
@@ -417,8 +425,10 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets type.
+     *
+     * @return null|AccessPointType
      */
-    public function getType(): ?string
+    public function getType()
     {
         return $this->container['type'];
     }
@@ -426,19 +436,14 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets type.
      *
-     * @param null|string $type type
+     * @param null|AccessPointType $type type
+     *
+     * @return self
      */
-    public function setType(?string $type): self
+    public function setType($type)
     {
         if (is_null($type)) {
-            array_push($this->openAPINullablesSetToNull, 'type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable type cannot be null');
         }
         $this->container['type'] = $type;
 
@@ -447,8 +452,10 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets accessibility_attributes.
+     *
+     * @return null|AccessibilityAttributes
      */
-    public function getAccessibilityAttributes(): ?AccessibilityAttributes
+    public function getAccessibilityAttributes()
     {
         return $this->container['accessibility_attributes'];
     }
@@ -457,18 +464,13 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets accessibility_attributes.
      *
      * @param null|AccessibilityAttributes $accessibility_attributes accessibility_attributes
+     *
+     * @return self
      */
-    public function setAccessibilityAttributes(?AccessibilityAttributes $accessibility_attributes): self
+    public function setAccessibilityAttributes($accessibility_attributes)
     {
         if (is_null($accessibility_attributes)) {
-            array_push($this->openAPINullablesSetToNull, 'accessibility_attributes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('accessibility_attributes', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable accessibility_attributes cannot be null');
         }
         $this->container['accessibility_attributes'] = $accessibility_attributes;
 
@@ -477,8 +479,10 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets address.
+     *
+     * @return null|Address
      */
-    public function getAddress(): ?Address
+    public function getAddress()
     {
         return $this->container['address'];
     }
@@ -487,18 +491,13 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets address.
      *
      * @param null|Address $address address
+     *
+     * @return self
      */
-    public function setAddress(?Address $address): self
+    public function setAddress($address)
     {
         if (is_null($address)) {
-            array_push($this->openAPINullablesSetToNull, 'address');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('address', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable address cannot be null');
         }
         $this->container['address'] = $address;
 
@@ -507,8 +506,10 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets exception_operating_hours.
+     *
+     * @return null|ExceptionOperatingHours[]
      */
-    public function getExceptionOperatingHours(): ?array
+    public function getExceptionOperatingHours()
     {
         return $this->container['exception_operating_hours'];
     }
@@ -516,19 +517,14 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets exception_operating_hours.
      *
-     * @param null|array $exception_operating_hours Exception operating hours for Access Point
+     * @param null|ExceptionOperatingHours[] $exception_operating_hours Exception operating hours for Access Point
+     *
+     * @return self
      */
-    public function setExceptionOperatingHours(?array $exception_operating_hours): self
+    public function setExceptionOperatingHours($exception_operating_hours)
     {
         if (is_null($exception_operating_hours)) {
-            array_push($this->openAPINullablesSetToNull, 'exception_operating_hours');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('exception_operating_hours', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable exception_operating_hours cannot be null');
         }
         $this->container['exception_operating_hours'] = $exception_operating_hours;
 
@@ -537,8 +533,10 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets assistance_type.
+     *
+     * @return null|string
      */
-    public function getAssistanceType(): ?string
+    public function getAssistanceType()
     {
         return $this->container['assistance_type'];
     }
@@ -547,21 +545,16 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets assistance_type.
      *
      * @param null|string $assistance_type Assistance type enum for Access point i.e. STAFF_ASSISTED or SELF_ASSISTED
+     *
+     * @return self
      */
-    public function setAssistanceType(?string $assistance_type): self
+    public function setAssistanceType($assistance_type)
     {
         if (is_null($assistance_type)) {
-            array_push($this->openAPINullablesSetToNull, 'assistance_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('assistance_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable assistance_type cannot be null');
         }
         $allowedValues = $this->getAssistanceTypeAllowableValues();
-        if (!is_null($assistance_type) && !in_array($assistance_type, $allowedValues, true)) {
+        if (!in_array($assistance_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'assistance_type', must be one of '%s'",
@@ -577,8 +570,10 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets score.
+     *
+     * @return null|string
      */
-    public function getScore(): ?string
+    public function getScore()
     {
         return $this->container['score'];
     }
@@ -587,18 +582,13 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets score.
      *
      * @param null|string $score The score of access point, based on proximity to postal code and sorting preference. This can be used to sort access point results on shipper's end.
+     *
+     * @return self
      */
-    public function setScore(?string $score): self
+    public function setScore($score)
     {
         if (is_null($score)) {
-            array_push($this->openAPINullablesSetToNull, 'score');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('score', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable score cannot be null');
         }
         $this->container['score'] = $score;
 
@@ -610,7 +600,7 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return null|array<string,OperatingHours>
      */
-    public function getStandardOperatingHours(): ?array
+    public function getStandardOperatingHours()
     {
         return $this->container['standard_operating_hours'];
     }
@@ -619,18 +609,13 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets standard_operating_hours.
      *
      * @param null|array<string,OperatingHours> $standard_operating_hours Map of day of the week to operating hours of that day
+     *
+     * @return self
      */
-    public function setStandardOperatingHours(?array $standard_operating_hours): self
+    public function setStandardOperatingHours($standard_operating_hours)
     {
         if (is_null($standard_operating_hours)) {
-            array_push($this->openAPINullablesSetToNull, 'standard_operating_hours');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('standard_operating_hours', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable standard_operating_hours cannot be null');
         }
         $this->container['standard_operating_hours'] = $standard_operating_hours;
 
@@ -655,7 +640,7 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -666,7 +651,7 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -694,15 +679,17 @@ class AccessPoint implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

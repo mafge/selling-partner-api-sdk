@@ -3,7 +3,7 @@
 /**
  * BuyerInfo.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\orders\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'BuyerInfo';
+    protected static $openAPIModelName = 'BuyerInfo';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'buyer_email' => 'string',
         'buyer_name' => 'string',
         'buyer_county' => 'string',
         'buyer_tax_info' => '\SpApi\Model\orders\v0\BuyerTaxInfo',
-        'purchase_order_number' => 'string'];
+        'purchase_order_number' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'buyer_email' => null,
         'buyer_name' => null,
         'buyer_county' => null,
         'buyer_tax_info' => null,
-        'purchase_order_number' => null];
+        'purchase_order_number' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,11 +92,11 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'buyer_email' => true,
-        'buyer_name' => true,
-        'buyer_county' => true,
-        'buyer_tax_info' => true,
-        'purchase_order_number' => true,
+        'buyer_email' => false,
+        'buyer_name' => false,
+        'buyer_county' => false,
+        'buyer_tax_info' => false,
+        'purchase_order_number' => false,
     ];
 
     /**
@@ -109,7 +112,7 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'buyer_email' => 'BuyerEmail',
         'buyer_name' => 'BuyerName',
         'buyer_county' => 'BuyerCounty',
@@ -122,7 +125,7 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'buyer_email' => 'setBuyerEmail',
         'buyer_name' => 'setBuyerName',
         'buyer_county' => 'setBuyerCounty',
@@ -135,7 +138,7 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'buyer_email' => 'getBuyerEmail',
         'buyer_name' => 'getBuyerName',
         'buyer_county' => 'getBuyerCounty',
@@ -145,14 +148,16 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -257,15 +274,17 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets buyer_email.
+     *
+     * @return null|string
      */
-    public function getBuyerEmail(): ?string
+    public function getBuyerEmail()
     {
         return $this->container['buyer_email'];
     }
@@ -274,18 +293,13 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets buyer_email.
      *
      * @param null|string $buyer_email the anonymized email address of the buyer
+     *
+     * @return self
      */
-    public function setBuyerEmail(?string $buyer_email): self
+    public function setBuyerEmail($buyer_email)
     {
         if (is_null($buyer_email)) {
-            array_push($this->openAPINullablesSetToNull, 'buyer_email');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('buyer_email', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable buyer_email cannot be null');
         }
         $this->container['buyer_email'] = $buyer_email;
 
@@ -294,8 +308,10 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets buyer_name.
+     *
+     * @return null|string
      */
-    public function getBuyerName(): ?string
+    public function getBuyerName()
     {
         return $this->container['buyer_name'];
     }
@@ -304,18 +320,13 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets buyer_name.
      *
      * @param null|string $buyer_name the buyer name or the recipient name
+     *
+     * @return self
      */
-    public function setBuyerName(?string $buyer_name): self
+    public function setBuyerName($buyer_name)
     {
         if (is_null($buyer_name)) {
-            array_push($this->openAPINullablesSetToNull, 'buyer_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('buyer_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable buyer_name cannot be null');
         }
         $this->container['buyer_name'] = $buyer_name;
 
@@ -324,8 +335,10 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets buyer_county.
+     *
+     * @return null|string
      */
-    public function getBuyerCounty(): ?string
+    public function getBuyerCounty()
     {
         return $this->container['buyer_county'];
     }
@@ -334,18 +347,13 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets buyer_county.
      *
      * @param null|string $buyer_county The county of the buyer.  **Note**: This attribute is only available in the Brazil marketplace.
+     *
+     * @return self
      */
-    public function setBuyerCounty(?string $buyer_county): self
+    public function setBuyerCounty($buyer_county)
     {
         if (is_null($buyer_county)) {
-            array_push($this->openAPINullablesSetToNull, 'buyer_county');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('buyer_county', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable buyer_county cannot be null');
         }
         $this->container['buyer_county'] = $buyer_county;
 
@@ -354,8 +362,10 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets buyer_tax_info.
+     *
+     * @return null|BuyerTaxInfo
      */
-    public function getBuyerTaxInfo(): ?BuyerTaxInfo
+    public function getBuyerTaxInfo()
     {
         return $this->container['buyer_tax_info'];
     }
@@ -364,18 +374,13 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets buyer_tax_info.
      *
      * @param null|BuyerTaxInfo $buyer_tax_info buyer_tax_info
+     *
+     * @return self
      */
-    public function setBuyerTaxInfo(?BuyerTaxInfo $buyer_tax_info): self
+    public function setBuyerTaxInfo($buyer_tax_info)
     {
         if (is_null($buyer_tax_info)) {
-            array_push($this->openAPINullablesSetToNull, 'buyer_tax_info');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('buyer_tax_info', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable buyer_tax_info cannot be null');
         }
         $this->container['buyer_tax_info'] = $buyer_tax_info;
 
@@ -384,8 +389,10 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets purchase_order_number.
+     *
+     * @return null|string
      */
-    public function getPurchaseOrderNumber(): ?string
+    public function getPurchaseOrderNumber()
     {
         return $this->container['purchase_order_number'];
     }
@@ -394,18 +401,13 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets purchase_order_number.
      *
      * @param null|string $purchase_order_number The purchase order (PO) number entered by the buyer at checkout. Only returned for orders where the buyer entered a PO number at checkout.
+     *
+     * @return self
      */
-    public function setPurchaseOrderNumber(?string $purchase_order_number): self
+    public function setPurchaseOrderNumber($purchase_order_number)
     {
         if (is_null($purchase_order_number)) {
-            array_push($this->openAPINullablesSetToNull, 'purchase_order_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('purchase_order_number', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable purchase_order_number cannot be null');
         }
         $this->container['purchase_order_number'] = $purchase_order_number;
 
@@ -430,7 +432,7 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -441,7 +443,7 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -469,15 +471,17 @@ class BuyerInfo implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

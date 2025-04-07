@@ -3,7 +3,7 @@
 /**
  * PayWithAmazonEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'PayWithAmazonEvent';
+    protected static $openAPIModelName = 'PayWithAmazonEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'seller_order_id' => 'string',
         'transaction_posted_date' => '\DateTime',
         'business_object_type' => 'string',
@@ -70,7 +71,8 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
         'payment_amount_type' => 'string',
         'amount_description' => 'string',
         'fulfillment_channel' => 'string',
-        'store_name' => 'string'];
+        'store_name' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -81,7 +83,7 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'seller_order_id' => null,
         'transaction_posted_date' => 'date-time',
         'business_object_type' => null,
@@ -91,7 +93,8 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
         'payment_amount_type' => null,
         'amount_description' => null,
         'fulfillment_channel' => null,
-        'store_name' => null];
+        'store_name' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -99,16 +102,16 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'seller_order_id' => true,
-        'transaction_posted_date' => true,
-        'business_object_type' => true,
-        'sales_channel' => true,
-        'charge' => true,
-        'fee_list' => true,
-        'payment_amount_type' => true,
-        'amount_description' => true,
-        'fulfillment_channel' => true,
-        'store_name' => true,
+        'seller_order_id' => false,
+        'transaction_posted_date' => false,
+        'business_object_type' => false,
+        'sales_channel' => false,
+        'charge' => false,
+        'fee_list' => false,
+        'payment_amount_type' => false,
+        'amount_description' => false,
+        'fulfillment_channel' => false,
+        'store_name' => false,
     ];
 
     /**
@@ -124,7 +127,7 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'seller_order_id' => 'SellerOrderId',
         'transaction_posted_date' => 'TransactionPostedDate',
         'business_object_type' => 'BusinessObjectType',
@@ -142,7 +145,7 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'seller_order_id' => 'setSellerOrderId',
         'transaction_posted_date' => 'setTransactionPostedDate',
         'business_object_type' => 'setBusinessObjectType',
@@ -160,7 +163,7 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'seller_order_id' => 'getSellerOrderId',
         'transaction_posted_date' => 'getTransactionPostedDate',
         'business_object_type' => 'getBusinessObjectType',
@@ -175,14 +178,16 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -213,16 +218,20 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -246,32 +255,40 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -281,7 +298,7 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -292,15 +309,17 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets seller_order_id.
+     *
+     * @return null|string
      */
-    public function getSellerOrderId(): ?string
+    public function getSellerOrderId()
     {
         return $this->container['seller_order_id'];
     }
@@ -309,18 +328,13 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets seller_order_id.
      *
      * @param null|string $seller_order_id an order identifier that is specified by the seller
+     *
+     * @return self
      */
-    public function setSellerOrderId(?string $seller_order_id): self
+    public function setSellerOrderId($seller_order_id)
     {
         if (is_null($seller_order_id)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_order_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_order_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_order_id cannot be null');
         }
         $this->container['seller_order_id'] = $seller_order_id;
 
@@ -329,8 +343,10 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets transaction_posted_date.
+     *
+     * @return null|\DateTime
      */
-    public function getTransactionPostedDate(): ?\DateTime
+    public function getTransactionPostedDate()
     {
         return $this->container['transaction_posted_date'];
     }
@@ -339,18 +355,13 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets transaction_posted_date.
      *
      * @param null|\DateTime $transaction_posted_date fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate)
+     *
+     * @return self
      */
-    public function setTransactionPostedDate(?\DateTime $transaction_posted_date): self
+    public function setTransactionPostedDate($transaction_posted_date)
     {
         if (is_null($transaction_posted_date)) {
-            array_push($this->openAPINullablesSetToNull, 'transaction_posted_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transaction_posted_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transaction_posted_date cannot be null');
         }
         $this->container['transaction_posted_date'] = $transaction_posted_date;
 
@@ -359,8 +370,10 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets business_object_type.
+     *
+     * @return null|string
      */
-    public function getBusinessObjectType(): ?string
+    public function getBusinessObjectType()
     {
         return $this->container['business_object_type'];
     }
@@ -369,18 +382,13 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets business_object_type.
      *
      * @param null|string $business_object_type the type of business object
+     *
+     * @return self
      */
-    public function setBusinessObjectType(?string $business_object_type): self
+    public function setBusinessObjectType($business_object_type)
     {
         if (is_null($business_object_type)) {
-            array_push($this->openAPINullablesSetToNull, 'business_object_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('business_object_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable business_object_type cannot be null');
         }
         $this->container['business_object_type'] = $business_object_type;
 
@@ -389,8 +397,10 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets sales_channel.
+     *
+     * @return null|string
      */
-    public function getSalesChannel(): ?string
+    public function getSalesChannel()
     {
         return $this->container['sales_channel'];
     }
@@ -399,18 +409,13 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets sales_channel.
      *
      * @param null|string $sales_channel the sales channel for the transaction
+     *
+     * @return self
      */
-    public function setSalesChannel(?string $sales_channel): self
+    public function setSalesChannel($sales_channel)
     {
         if (is_null($sales_channel)) {
-            array_push($this->openAPINullablesSetToNull, 'sales_channel');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sales_channel', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable sales_channel cannot be null');
         }
         $this->container['sales_channel'] = $sales_channel;
 
@@ -419,8 +424,10 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets charge.
+     *
+     * @return null|ChargeComponent
      */
-    public function getCharge(): ?ChargeComponent
+    public function getCharge()
     {
         return $this->container['charge'];
     }
@@ -429,18 +436,13 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets charge.
      *
      * @param null|ChargeComponent $charge charge
+     *
+     * @return self
      */
-    public function setCharge(?ChargeComponent $charge): self
+    public function setCharge($charge)
     {
         if (is_null($charge)) {
-            array_push($this->openAPINullablesSetToNull, 'charge');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('charge', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable charge cannot be null');
         }
         $this->container['charge'] = $charge;
 
@@ -449,8 +451,10 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets fee_list.
+     *
+     * @return null|FeeComponent[]
      */
-    public function getFeeList(): ?array
+    public function getFeeList()
     {
         return $this->container['fee_list'];
     }
@@ -458,19 +462,14 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Sets fee_list.
      *
-     * @param null|array $fee_list a list of fee component information
+     * @param null|FeeComponent[] $fee_list a list of fee component information
+     *
+     * @return self
      */
-    public function setFeeList(?array $fee_list): self
+    public function setFeeList($fee_list)
     {
         if (is_null($fee_list)) {
-            array_push($this->openAPINullablesSetToNull, 'fee_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fee_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fee_list cannot be null');
         }
         $this->container['fee_list'] = $fee_list;
 
@@ -479,8 +478,10 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets payment_amount_type.
+     *
+     * @return null|string
      */
-    public function getPaymentAmountType(): ?string
+    public function getPaymentAmountType()
     {
         return $this->container['payment_amount_type'];
     }
@@ -489,18 +490,13 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets payment_amount_type.
      *
      * @param null|string $payment_amount_type The type of payment.  Possible values:  * Sales
+     *
+     * @return self
      */
-    public function setPaymentAmountType(?string $payment_amount_type): self
+    public function setPaymentAmountType($payment_amount_type)
     {
         if (is_null($payment_amount_type)) {
-            array_push($this->openAPINullablesSetToNull, 'payment_amount_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('payment_amount_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable payment_amount_type cannot be null');
         }
         $this->container['payment_amount_type'] = $payment_amount_type;
 
@@ -509,8 +505,10 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets amount_description.
+     *
+     * @return null|string
      */
-    public function getAmountDescription(): ?string
+    public function getAmountDescription()
     {
         return $this->container['amount_description'];
     }
@@ -519,18 +517,13 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets amount_description.
      *
      * @param null|string $amount_description a short description of this payment event
+     *
+     * @return self
      */
-    public function setAmountDescription(?string $amount_description): self
+    public function setAmountDescription($amount_description)
     {
         if (is_null($amount_description)) {
-            array_push($this->openAPINullablesSetToNull, 'amount_description');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amount_description', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable amount_description cannot be null');
         }
         $this->container['amount_description'] = $amount_description;
 
@@ -539,8 +532,10 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets fulfillment_channel.
+     *
+     * @return null|string
      */
-    public function getFulfillmentChannel(): ?string
+    public function getFulfillmentChannel()
     {
         return $this->container['fulfillment_channel'];
     }
@@ -549,18 +544,13 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets fulfillment_channel.
      *
      * @param null|string $fulfillment_channel The fulfillment channel.  Possible values:  * AFN - Amazon Fulfillment Network (Fulfillment by Amazon)  * MFN - Merchant Fulfillment Network (self-fulfilled)
+     *
+     * @return self
      */
-    public function setFulfillmentChannel(?string $fulfillment_channel): self
+    public function setFulfillmentChannel($fulfillment_channel)
     {
         if (is_null($fulfillment_channel)) {
-            array_push($this->openAPINullablesSetToNull, 'fulfillment_channel');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fulfillment_channel', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fulfillment_channel cannot be null');
         }
         $this->container['fulfillment_channel'] = $fulfillment_channel;
 
@@ -569,8 +559,10 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets store_name.
+     *
+     * @return null|string
      */
-    public function getStoreName(): ?string
+    public function getStoreName()
     {
         return $this->container['store_name'];
     }
@@ -579,18 +571,13 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets store_name.
      *
      * @param null|string $store_name the store name where the event occurred
+     *
+     * @return self
      */
-    public function setStoreName(?string $store_name): self
+    public function setStoreName($store_name)
     {
         if (is_null($store_name)) {
-            array_push($this->openAPINullablesSetToNull, 'store_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('store_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable store_name cannot be null');
         }
         $this->container['store_name'] = $store_name;
 
@@ -615,7 +602,7 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -626,7 +613,7 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -654,15 +641,17 @@ class PayWithAmazonEvent implements ModelInterface, \ArrayAccess, \JsonSerializa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

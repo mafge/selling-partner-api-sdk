@@ -3,7 +3,7 @@
 /**
  * AdditionalInputs.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\merchantFulfillment\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class AdditionalInputs implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'AdditionalInputs';
+    protected static $openAPIModelName = 'AdditionalInputs';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'additional_input_field_name' => 'string',
-        'seller_input_definition' => '\SpApi\Model\merchantFulfillment\v0\SellerInputDefinition'];
+        'seller_input_definition' => '\SpApi\Model\merchantFulfillment\v0\SellerInputDefinition',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class AdditionalInputs implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'additional_input_field_name' => null,
-        'seller_input_definition' => null];
+        'seller_input_definition' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class AdditionalInputs implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'additional_input_field_name' => true,
-        'seller_input_definition' => true,
+        'additional_input_field_name' => false,
+        'seller_input_definition' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class AdditionalInputs implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'additional_input_field_name' => 'AdditionalInputFieldName',
         'seller_input_definition' => 'SellerInputDefinition',
     ];
@@ -110,7 +113,7 @@ class AdditionalInputs implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'additional_input_field_name' => 'setAdditionalInputFieldName',
         'seller_input_definition' => 'setSellerInputDefinition',
     ];
@@ -120,21 +123,23 @@ class AdditionalInputs implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'additional_input_field_name' => 'getAdditionalInputFieldName',
         'seller_input_definition' => 'getSellerInputDefinition',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class AdditionalInputs implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class AdditionalInputs implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class AdditionalInputs implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -236,15 +253,17 @@ class AdditionalInputs implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets additional_input_field_name.
+     *
+     * @return null|string
      */
-    public function getAdditionalInputFieldName(): ?string
+    public function getAdditionalInputFieldName()
     {
         return $this->container['additional_input_field_name'];
     }
@@ -253,18 +272,13 @@ class AdditionalInputs implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets additional_input_field_name.
      *
      * @param null|string $additional_input_field_name the field name
+     *
+     * @return self
      */
-    public function setAdditionalInputFieldName(?string $additional_input_field_name): self
+    public function setAdditionalInputFieldName($additional_input_field_name)
     {
         if (is_null($additional_input_field_name)) {
-            array_push($this->openAPINullablesSetToNull, 'additional_input_field_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('additional_input_field_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable additional_input_field_name cannot be null');
         }
         $this->container['additional_input_field_name'] = $additional_input_field_name;
 
@@ -273,8 +287,10 @@ class AdditionalInputs implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets seller_input_definition.
+     *
+     * @return null|SellerInputDefinition
      */
-    public function getSellerInputDefinition(): ?SellerInputDefinition
+    public function getSellerInputDefinition()
     {
         return $this->container['seller_input_definition'];
     }
@@ -283,18 +299,13 @@ class AdditionalInputs implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets seller_input_definition.
      *
      * @param null|SellerInputDefinition $seller_input_definition seller_input_definition
+     *
+     * @return self
      */
-    public function setSellerInputDefinition(?SellerInputDefinition $seller_input_definition): self
+    public function setSellerInputDefinition($seller_input_definition)
     {
         if (is_null($seller_input_definition)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_input_definition');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_input_definition', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_input_definition cannot be null');
         }
         $this->container['seller_input_definition'] = $seller_input_definition;
 
@@ -319,7 +330,7 @@ class AdditionalInputs implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +341,7 @@ class AdditionalInputs implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +369,17 @@ class AdditionalInputs implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -2,7 +2,7 @@
 /**
  * ShipmentMeasurements
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * ShipmentMeasurements Class Doc Comment
@@ -52,18 +50,19 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'ShipmentMeasurements';
+    protected static $openAPIModelName = 'ShipmentMeasurements';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'gross_shipment_weight' => '\SpApi\Model\vendor\shipments\v1\Weight',
-             'shipment_volume' => '\SpApi\Model\vendor\shipments\v1\Volume',
-             'carton_count' => 'int',
-             'pallet_count' => 'int'    ];
+    protected static $openAPITypes = [
+        'gross_shipment_weight' => '\SpApi\Model\vendor\shipments\v1\Weight',
+        'shipment_volume' => '\SpApi\Model\vendor\shipments\v1\Volume',
+        'carton_count' => 'int',
+        'pallet_count' => 'int'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -72,11 +71,12 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'gross_shipment_weight' => null,
-            'shipment_volume' => null,
-            'carton_count' => null,
-            'pallet_count' => null    ];
+    protected static $openAPIFormats = [
+        'gross_shipment_weight' => null,
+        'shipment_volume' => null,
+        'carton_count' => null,
+        'pallet_count' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -84,10 +84,10 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'gross_shipment_weight' => true,
-        'shipment_volume' => true,
-        'carton_count' => true,
-        'pallet_count' => true
+        'gross_shipment_weight' => false,
+        'shipment_volume' => false,
+        'carton_count' => false,
+        'pallet_count' => false
     ];
 
     /**
@@ -102,7 +102,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -112,7 +112,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -175,12 +175,11 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'gross_shipment_weight' => 'grossShipmentWeight',
-                'shipment_volume' => 'shipmentVolume',
-                'carton_count' => 'cartonCount',
-                'pallet_count' => 'palletCount'
-        
+        'shipment_volume' => 'shipmentVolume',
+        'carton_count' => 'cartonCount',
+        'pallet_count' => 'palletCount'
     ];
 
     /**
@@ -188,7 +187,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'gross_shipment_weight' => 'setGrossShipmentWeight',
         'shipment_volume' => 'setShipmentVolume',
         'carton_count' => 'setCartonCount',
@@ -200,7 +199,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'gross_shipment_weight' => 'getGrossShipmentWeight',
         'shipment_volume' => 'getShipmentVolume',
         'carton_count' => 'getCartonCount',
@@ -213,7 +212,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -223,7 +222,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -233,7 +232,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -243,7 +242,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -252,17 +251,17 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('gross_shipment_weight', $data ?? [], null);
         $this->setIfExists('shipment_volume', $data ?? [], null);
@@ -293,7 +292,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -306,7 +305,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -317,7 +316,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return \SpApi\Model\vendor\shipments\v1\Weight|null
      */
-    public function getGrossShipmentWeight(): ?\SpApi\Model\vendor\shipments\v1\Weight
+    public function getGrossShipmentWeight()
     {
         return $this->container['gross_shipment_weight'];
     }
@@ -329,17 +328,10 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setGrossShipmentWeight(?\SpApi\Model\vendor\shipments\v1\Weight $gross_shipment_weight): self
+    public function setGrossShipmentWeight($gross_shipment_weight)
     {
         if (is_null($gross_shipment_weight)) {
-            array_push($this->openAPINullablesSetToNull, 'gross_shipment_weight');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('gross_shipment_weight', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable gross_shipment_weight cannot be null');
         }
         $this->container['gross_shipment_weight'] = $gross_shipment_weight;
 
@@ -351,7 +343,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return \SpApi\Model\vendor\shipments\v1\Volume|null
      */
-    public function getShipmentVolume(): ?\SpApi\Model\vendor\shipments\v1\Volume
+    public function getShipmentVolume()
     {
         return $this->container['shipment_volume'];
     }
@@ -363,17 +355,10 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setShipmentVolume(?\SpApi\Model\vendor\shipments\v1\Volume $shipment_volume): self
+    public function setShipmentVolume($shipment_volume)
     {
         if (is_null($shipment_volume)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_volume');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_volume', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_volume cannot be null');
         }
         $this->container['shipment_volume'] = $shipment_volume;
 
@@ -385,7 +370,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return int|null
      */
-    public function getCartonCount(): ?int
+    public function getCartonCount()
     {
         return $this->container['carton_count'];
     }
@@ -397,17 +382,10 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setCartonCount(?int $carton_count): self
+    public function setCartonCount($carton_count)
     {
         if (is_null($carton_count)) {
-            array_push($this->openAPINullablesSetToNull, 'carton_count');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('carton_count', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable carton_count cannot be null');
         }
         $this->container['carton_count'] = $carton_count;
 
@@ -419,7 +397,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return int|null
      */
-    public function getPalletCount(): ?int
+    public function getPalletCount()
     {
         return $this->container['pallet_count'];
     }
@@ -431,24 +409,15 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setPalletCount(?int $pallet_count): self
+    public function setPalletCount($pallet_count)
     {
         if (is_null($pallet_count)) {
-            array_push($this->openAPINullablesSetToNull, 'pallet_count');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('pallet_count', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable pallet_count cannot be null');
         }
         $this->container['pallet_count'] = $pallet_count;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -469,7 +438,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -482,7 +451,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -511,7 +480,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -534,7 +503,7 @@ class ShipmentMeasurements implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -2,7 +2,7 @@
 /**
  * ShipmentConfirmation
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * ShipmentConfirmation Class Doc Comment
@@ -52,31 +50,32 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'ShipmentConfirmation';
+    protected static $openAPIModelName = 'ShipmentConfirmation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'shipment_identifier' => 'string',
-             'shipment_confirmation_type' => 'string',
-             'shipment_type' => 'string',
-             'shipment_structure' => 'string',
-             'transportation_details' => '\SpApi\Model\vendor\shipments\v1\TransportationDetailsForShipmentConfirmation',
-             'amazon_reference_number' => 'string',
-             'shipment_confirmation_date' => '\DateTime',
-             'shipped_date' => '\DateTime',
-             'estimated_delivery_date' => '\DateTime',
-             'selling_party' => '\SpApi\Model\vendor\shipments\v1\PartyIdentification',
-             'ship_from_party' => '\SpApi\Model\vendor\shipments\v1\PartyIdentification',
-             'ship_to_party' => '\SpApi\Model\vendor\shipments\v1\PartyIdentification',
-             'shipment_measurements' => '\SpApi\Model\vendor\shipments\v1\ShipmentMeasurements',
-             'import_details' => '\SpApi\Model\vendor\shipments\v1\ImportDetails',
-             'shipped_items' => '\SpApi\Model\vendor\shipments\v1\Item[]',
-             'cartons' => '\SpApi\Model\vendor\shipments\v1\Carton[]',
-             'pallets' => '\SpApi\Model\vendor\shipments\v1\Pallet[]'    ];
+    protected static $openAPITypes = [
+        'shipment_identifier' => 'string',
+        'shipment_confirmation_type' => 'string',
+        'shipment_type' => 'string',
+        'shipment_structure' => 'string',
+        'transportation_details' => '\SpApi\Model\vendor\shipments\v1\TransportationDetailsForShipmentConfirmation',
+        'amazon_reference_number' => 'string',
+        'shipment_confirmation_date' => '\DateTime',
+        'shipped_date' => '\DateTime',
+        'estimated_delivery_date' => '\DateTime',
+        'selling_party' => '\SpApi\Model\vendor\shipments\v1\PartyIdentification',
+        'ship_from_party' => '\SpApi\Model\vendor\shipments\v1\PartyIdentification',
+        'ship_to_party' => '\SpApi\Model\vendor\shipments\v1\PartyIdentification',
+        'shipment_measurements' => '\SpApi\Model\vendor\shipments\v1\ShipmentMeasurements',
+        'import_details' => '\SpApi\Model\vendor\shipments\v1\ImportDetails',
+        'shipped_items' => '\SpApi\Model\vendor\shipments\v1\Item[]',
+        'cartons' => '\SpApi\Model\vendor\shipments\v1\Carton[]',
+        'pallets' => '\SpApi\Model\vendor\shipments\v1\Pallet[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -85,24 +84,25 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'shipment_identifier' => null,
-            'shipment_confirmation_type' => null,
-            'shipment_type' => null,
-            'shipment_structure' => null,
-            'transportation_details' => null,
-            'amazon_reference_number' => null,
-            'shipment_confirmation_date' => 'date-time',
-            'shipped_date' => 'date-time',
-            'estimated_delivery_date' => 'date-time',
-            'selling_party' => null,
-            'ship_from_party' => null,
-            'ship_to_party' => null,
-            'shipment_measurements' => null,
-            'import_details' => null,
-            'shipped_items' => null,
-            'cartons' => null,
-            'pallets' => null    ];
+    protected static $openAPIFormats = [
+        'shipment_identifier' => null,
+        'shipment_confirmation_type' => null,
+        'shipment_type' => null,
+        'shipment_structure' => null,
+        'transportation_details' => null,
+        'amazon_reference_number' => null,
+        'shipment_confirmation_date' => 'date-time',
+        'shipped_date' => 'date-time',
+        'estimated_delivery_date' => 'date-time',
+        'selling_party' => null,
+        'ship_from_party' => null,
+        'ship_to_party' => null,
+        'shipment_measurements' => null,
+        'import_details' => null,
+        'shipped_items' => null,
+        'cartons' => null,
+        'pallets' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -112,21 +112,21 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     protected static array $openAPINullables = [
         'shipment_identifier' => false,
         'shipment_confirmation_type' => false,
-        'shipment_type' => true,
-        'shipment_structure' => true,
-        'transportation_details' => true,
-        'amazon_reference_number' => true,
+        'shipment_type' => false,
+        'shipment_structure' => false,
+        'transportation_details' => false,
+        'amazon_reference_number' => false,
         'shipment_confirmation_date' => false,
-        'shipped_date' => true,
-        'estimated_delivery_date' => true,
+        'shipped_date' => false,
+        'estimated_delivery_date' => false,
         'selling_party' => false,
         'ship_from_party' => false,
         'ship_to_party' => false,
-        'shipment_measurements' => true,
-        'import_details' => true,
+        'shipment_measurements' => false,
+        'import_details' => false,
         'shipped_items' => false,
-        'cartons' => true,
-        'pallets' => true
+        'cartons' => false,
+        'pallets' => false
     ];
 
     /**
@@ -141,7 +141,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -151,7 +151,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -214,25 +214,24 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'shipment_identifier' => 'shipmentIdentifier',
-                'shipment_confirmation_type' => 'shipmentConfirmationType',
-                'shipment_type' => 'shipmentType',
-                'shipment_structure' => 'shipmentStructure',
-                'transportation_details' => 'transportationDetails',
-                'amazon_reference_number' => 'amazonReferenceNumber',
-                'shipment_confirmation_date' => 'shipmentConfirmationDate',
-                'shipped_date' => 'shippedDate',
-                'estimated_delivery_date' => 'estimatedDeliveryDate',
-                'selling_party' => 'sellingParty',
-                'ship_from_party' => 'shipFromParty',
-                'ship_to_party' => 'shipToParty',
-                'shipment_measurements' => 'shipmentMeasurements',
-                'import_details' => 'importDetails',
-                'shipped_items' => 'shippedItems',
-                'cartons' => 'cartons',
-                'pallets' => 'pallets'
-        
+        'shipment_confirmation_type' => 'shipmentConfirmationType',
+        'shipment_type' => 'shipmentType',
+        'shipment_structure' => 'shipmentStructure',
+        'transportation_details' => 'transportationDetails',
+        'amazon_reference_number' => 'amazonReferenceNumber',
+        'shipment_confirmation_date' => 'shipmentConfirmationDate',
+        'shipped_date' => 'shippedDate',
+        'estimated_delivery_date' => 'estimatedDeliveryDate',
+        'selling_party' => 'sellingParty',
+        'ship_from_party' => 'shipFromParty',
+        'ship_to_party' => 'shipToParty',
+        'shipment_measurements' => 'shipmentMeasurements',
+        'import_details' => 'importDetails',
+        'shipped_items' => 'shippedItems',
+        'cartons' => 'cartons',
+        'pallets' => 'pallets'
     ];
 
     /**
@@ -240,7 +239,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'shipment_identifier' => 'setShipmentIdentifier',
         'shipment_confirmation_type' => 'setShipmentConfirmationType',
         'shipment_type' => 'setShipmentType',
@@ -265,7 +264,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'shipment_identifier' => 'getShipmentIdentifier',
         'shipment_confirmation_type' => 'getShipmentConfirmationType',
         'shipment_type' => 'getShipmentType',
@@ -291,7 +290,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -301,7 +300,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -311,7 +310,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -321,7 +320,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -344,7 +343,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return string[]
      */
-    public function getShipmentConfirmationTypeAllowableValues(): array
+    public function getShipmentConfirmationTypeAllowableValues()
     {
         return [
             self::SHIPMENT_CONFIRMATION_TYPE_ORIGINAL,
@@ -357,7 +356,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return string[]
      */
-    public function getShipmentTypeAllowableValues(): array
+    public function getShipmentTypeAllowableValues()
     {
         return [
             self::SHIPMENT_TYPE_TRUCK_LOAD,
@@ -371,7 +370,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return string[]
      */
-    public function getShipmentStructureAllowableValues(): array
+    public function getShipmentStructureAllowableValues()
     {
         return [
             self::SHIPMENT_STRUCTURE_PALLETIZED_ASSORTMENT_CASE,
@@ -387,17 +386,17 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('shipment_identifier', $data ?? [], null);
         $this->setIfExists('shipment_confirmation_type', $data ?? [], null);
@@ -441,7 +440,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -502,7 +501,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -513,7 +512,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return string
      */
-    public function getShipmentIdentifier(): string
+    public function getShipmentIdentifier()
     {
         return $this->container['shipment_identifier'];
     }
@@ -525,7 +524,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setShipmentIdentifier(string $shipment_identifier): self
+    public function setShipmentIdentifier($shipment_identifier)
     {
         if (is_null($shipment_identifier)) {
             throw new \InvalidArgumentException('non-nullable shipment_identifier cannot be null');
@@ -540,7 +539,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return string
      */
-    public function getShipmentConfirmationType(): string
+    public function getShipmentConfirmationType()
     {
         return $this->container['shipment_confirmation_type'];
     }
@@ -552,7 +551,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setShipmentConfirmationType(string $shipment_confirmation_type): self
+    public function setShipmentConfirmationType($shipment_confirmation_type)
     {
         if (is_null($shipment_confirmation_type)) {
             throw new \InvalidArgumentException('non-nullable shipment_confirmation_type cannot be null');
@@ -577,7 +576,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return string|null
      */
-    public function getShipmentType(): ?string
+    public function getShipmentType()
     {
         return $this->container['shipment_type'];
     }
@@ -589,20 +588,13 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setShipmentType(?string $shipment_type): self
+    public function setShipmentType($shipment_type)
     {
         if (is_null($shipment_type)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_type', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_type cannot be null');
         }
         $allowedValues = $this->getShipmentTypeAllowableValues();
-        if (!is_null($shipment_type) && !in_array($shipment_type, $allowedValues, true)) {
+        if (!in_array($shipment_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'shipment_type', must be one of '%s'",
@@ -621,7 +613,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return string|null
      */
-    public function getShipmentStructure(): ?string
+    public function getShipmentStructure()
     {
         return $this->container['shipment_structure'];
     }
@@ -633,20 +625,13 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setShipmentStructure(?string $shipment_structure): self
+    public function setShipmentStructure($shipment_structure)
     {
         if (is_null($shipment_structure)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_structure');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_structure', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_structure cannot be null');
         }
         $allowedValues = $this->getShipmentStructureAllowableValues();
-        if (!is_null($shipment_structure) && !in_array($shipment_structure, $allowedValues, true)) {
+        if (!in_array($shipment_structure, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'shipment_structure', must be one of '%s'",
@@ -665,7 +650,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return \SpApi\Model\vendor\shipments\v1\TransportationDetailsForShipmentConfirmation|null
      */
-    public function getTransportationDetails(): ?\SpApi\Model\vendor\shipments\v1\TransportationDetailsForShipmentConfirmation
+    public function getTransportationDetails()
     {
         return $this->container['transportation_details'];
     }
@@ -677,17 +662,10 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setTransportationDetails(?\SpApi\Model\vendor\shipments\v1\TransportationDetailsForShipmentConfirmation $transportation_details): self
+    public function setTransportationDetails($transportation_details)
     {
         if (is_null($transportation_details)) {
-            array_push($this->openAPINullablesSetToNull, 'transportation_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transportation_details', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transportation_details cannot be null');
         }
         $this->container['transportation_details'] = $transportation_details;
 
@@ -699,7 +677,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return string|null
      */
-    public function getAmazonReferenceNumber(): ?string
+    public function getAmazonReferenceNumber()
     {
         return $this->container['amazon_reference_number'];
     }
@@ -711,17 +689,10 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setAmazonReferenceNumber(?string $amazon_reference_number): self
+    public function setAmazonReferenceNumber($amazon_reference_number)
     {
         if (is_null($amazon_reference_number)) {
-            array_push($this->openAPINullablesSetToNull, 'amazon_reference_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amazon_reference_number', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable amazon_reference_number cannot be null');
         }
         $this->container['amazon_reference_number'] = $amazon_reference_number;
 
@@ -733,7 +704,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return \DateTime
      */
-    public function getShipmentConfirmationDate(): \DateTime
+    public function getShipmentConfirmationDate()
     {
         return $this->container['shipment_confirmation_date'];
     }
@@ -745,7 +716,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setShipmentConfirmationDate(\DateTime $shipment_confirmation_date): self
+    public function setShipmentConfirmationDate($shipment_confirmation_date)
     {
         if (is_null($shipment_confirmation_date)) {
             throw new \InvalidArgumentException('non-nullable shipment_confirmation_date cannot be null');
@@ -760,7 +731,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return \DateTime|null
      */
-    public function getShippedDate(): ?\DateTime
+    public function getShippedDate()
     {
         return $this->container['shipped_date'];
     }
@@ -772,17 +743,10 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setShippedDate(?\DateTime $shipped_date): self
+    public function setShippedDate($shipped_date)
     {
         if (is_null($shipped_date)) {
-            array_push($this->openAPINullablesSetToNull, 'shipped_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipped_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipped_date cannot be null');
         }
         $this->container['shipped_date'] = $shipped_date;
 
@@ -794,7 +758,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return \DateTime|null
      */
-    public function getEstimatedDeliveryDate(): ?\DateTime
+    public function getEstimatedDeliveryDate()
     {
         return $this->container['estimated_delivery_date'];
     }
@@ -806,17 +770,10 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setEstimatedDeliveryDate(?\DateTime $estimated_delivery_date): self
+    public function setEstimatedDeliveryDate($estimated_delivery_date)
     {
         if (is_null($estimated_delivery_date)) {
-            array_push($this->openAPINullablesSetToNull, 'estimated_delivery_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('estimated_delivery_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable estimated_delivery_date cannot be null');
         }
         $this->container['estimated_delivery_date'] = $estimated_delivery_date;
 
@@ -828,7 +785,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return \SpApi\Model\vendor\shipments\v1\PartyIdentification
      */
-    public function getSellingParty(): \SpApi\Model\vendor\shipments\v1\PartyIdentification
+    public function getSellingParty()
     {
         return $this->container['selling_party'];
     }
@@ -840,7 +797,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setSellingParty(\SpApi\Model\vendor\shipments\v1\PartyIdentification $selling_party): self
+    public function setSellingParty($selling_party)
     {
         if (is_null($selling_party)) {
             throw new \InvalidArgumentException('non-nullable selling_party cannot be null');
@@ -855,7 +812,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return \SpApi\Model\vendor\shipments\v1\PartyIdentification
      */
-    public function getShipFromParty(): \SpApi\Model\vendor\shipments\v1\PartyIdentification
+    public function getShipFromParty()
     {
         return $this->container['ship_from_party'];
     }
@@ -867,7 +824,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setShipFromParty(\SpApi\Model\vendor\shipments\v1\PartyIdentification $ship_from_party): self
+    public function setShipFromParty($ship_from_party)
     {
         if (is_null($ship_from_party)) {
             throw new \InvalidArgumentException('non-nullable ship_from_party cannot be null');
@@ -882,7 +839,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return \SpApi\Model\vendor\shipments\v1\PartyIdentification
      */
-    public function getShipToParty(): \SpApi\Model\vendor\shipments\v1\PartyIdentification
+    public function getShipToParty()
     {
         return $this->container['ship_to_party'];
     }
@@ -894,7 +851,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setShipToParty(\SpApi\Model\vendor\shipments\v1\PartyIdentification $ship_to_party): self
+    public function setShipToParty($ship_to_party)
     {
         if (is_null($ship_to_party)) {
             throw new \InvalidArgumentException('non-nullable ship_to_party cannot be null');
@@ -909,7 +866,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return \SpApi\Model\vendor\shipments\v1\ShipmentMeasurements|null
      */
-    public function getShipmentMeasurements(): ?\SpApi\Model\vendor\shipments\v1\ShipmentMeasurements
+    public function getShipmentMeasurements()
     {
         return $this->container['shipment_measurements'];
     }
@@ -921,17 +878,10 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setShipmentMeasurements(?\SpApi\Model\vendor\shipments\v1\ShipmentMeasurements $shipment_measurements): self
+    public function setShipmentMeasurements($shipment_measurements)
     {
         if (is_null($shipment_measurements)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_measurements');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_measurements', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_measurements cannot be null');
         }
         $this->container['shipment_measurements'] = $shipment_measurements;
 
@@ -943,7 +893,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return \SpApi\Model\vendor\shipments\v1\ImportDetails|null
      */
-    public function getImportDetails(): ?\SpApi\Model\vendor\shipments\v1\ImportDetails
+    public function getImportDetails()
     {
         return $this->container['import_details'];
     }
@@ -955,17 +905,10 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return self
      */
-    public function setImportDetails(?\SpApi\Model\vendor\shipments\v1\ImportDetails $import_details): self
+    public function setImportDetails($import_details)
     {
         if (is_null($import_details)) {
-            array_push($this->openAPINullablesSetToNull, 'import_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('import_details', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable import_details cannot be null');
         }
         $this->container['import_details'] = $import_details;
 
@@ -975,9 +918,9 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets shipped_items
      *
-     * @return array
+     * @return \SpApi\Model\vendor\shipments\v1\Item[]
      */
-    public function getShippedItems(): array
+    public function getShippedItems()
     {
         return $this->container['shipped_items'];
     }
@@ -985,11 +928,11 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets shipped_items
      *
-     * @param array $shipped_items A list of the items in this shipment and their associated details. If any of the item detail fields are common at a carton or a pallet level, provide them at the corresponding carton or pallet level.
+     * @param \SpApi\Model\vendor\shipments\v1\Item[] $shipped_items A list of the items in this shipment and their associated details. If any of the item detail fields are common at a carton or a pallet level, provide them at the corresponding carton or pallet level.
      *
      * @return self
      */
-    public function setShippedItems(array $shipped_items): self
+    public function setShippedItems($shipped_items)
     {
         if (is_null($shipped_items)) {
             throw new \InvalidArgumentException('non-nullable shipped_items cannot be null');
@@ -1002,9 +945,9 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets cartons
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\shipments\v1\Carton[]|null
      */
-    public function getCartons(): ?array
+    public function getCartons()
     {
         return $this->container['cartons'];
     }
@@ -1012,21 +955,14 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets cartons
      *
-     * @param array|null $cartons A list of the cartons in this shipment.
+     * @param \SpApi\Model\vendor\shipments\v1\Carton[]|null $cartons A list of the cartons in this shipment.
      *
      * @return self
      */
-    public function setCartons(?array $cartons): self
+    public function setCartons($cartons)
     {
         if (is_null($cartons)) {
-            array_push($this->openAPINullablesSetToNull, 'cartons');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('cartons', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable cartons cannot be null');
         }
         $this->container['cartons'] = $cartons;
 
@@ -1036,9 +972,9 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Gets pallets
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\shipments\v1\Pallet[]|null
      */
-    public function getPallets(): ?array
+    public function getPallets()
     {
         return $this->container['pallets'];
     }
@@ -1046,28 +982,19 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
     /**
      * Sets pallets
      *
-     * @param array|null $pallets A list of the pallets in this shipment.
+     * @param \SpApi\Model\vendor\shipments\v1\Pallet[]|null $pallets A list of the pallets in this shipment.
      *
      * @return self
      */
-    public function setPallets(?array $pallets): self
+    public function setPallets($pallets)
     {
         if (is_null($pallets)) {
-            array_push($this->openAPINullablesSetToNull, 'pallets');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('pallets', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable pallets cannot be null');
         }
         $this->container['pallets'] = $pallets;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -1088,7 +1015,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -1101,7 +1028,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -1130,7 +1057,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -1153,7 +1080,7 @@ class ShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializ
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

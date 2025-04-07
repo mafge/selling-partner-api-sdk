@@ -3,7 +3,7 @@
 /**
  * Label.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\merchantFulfillment\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Label';
+    protected static $openAPIModelName = 'Label';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'custom_text_for_label' => 'string',
         'dimensions' => '\SpApi\Model\merchantFulfillment\v0\LabelDimensions',
         'file_contents' => '\SpApi\Model\merchantFulfillment\v0\FileContents',
         'label_format' => '\SpApi\Model\merchantFulfillment\v0\LabelFormat',
-        'standard_id_for_label' => '\SpApi\Model\merchantFulfillment\v0\StandardIdForLabel'];
+        'standard_id_for_label' => '\SpApi\Model\merchantFulfillment\v0\StandardIdForLabel',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'custom_text_for_label' => null,
         'dimensions' => null,
         'file_contents' => null,
         'label_format' => null,
-        'standard_id_for_label' => null];
+        'standard_id_for_label' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,11 +92,11 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'custom_text_for_label' => true,
+        'custom_text_for_label' => false,
         'dimensions' => false,
         'file_contents' => false,
-        'label_format' => true,
-        'standard_id_for_label' => true,
+        'label_format' => false,
+        'standard_id_for_label' => false,
     ];
 
     /**
@@ -109,7 +112,7 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'custom_text_for_label' => 'CustomTextForLabel',
         'dimensions' => 'Dimensions',
         'file_contents' => 'FileContents',
@@ -122,7 +125,7 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'custom_text_for_label' => 'setCustomTextForLabel',
         'dimensions' => 'setDimensions',
         'file_contents' => 'setFileContents',
@@ -135,7 +138,7 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'custom_text_for_label' => 'getCustomTextForLabel',
         'dimensions' => 'getDimensions',
         'file_contents' => 'getFileContents',
@@ -145,14 +148,16 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -270,15 +287,17 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets custom_text_for_label.
+     *
+     * @return null|string
      */
-    public function getCustomTextForLabel(): ?string
+    public function getCustomTextForLabel()
     {
         return $this->container['custom_text_for_label'];
     }
@@ -287,20 +306,15 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets custom_text_for_label.
      *
      * @param null|string $custom_text_for_label Custom text to print on the label. Note: Custom text is only included on labels that are in ZPL format (ZPL203). FedEx does not support `CustomTextForLabel`.
+     *
+     * @return self
      */
-    public function setCustomTextForLabel(?string $custom_text_for_label): self
+    public function setCustomTextForLabel($custom_text_for_label)
     {
         if (is_null($custom_text_for_label)) {
-            array_push($this->openAPINullablesSetToNull, 'custom_text_for_label');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('custom_text_for_label', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable custom_text_for_label cannot be null');
         }
-        if (!is_null($custom_text_for_label) && (mb_strlen($custom_text_for_label) > 14)) {
+        if (mb_strlen($custom_text_for_label) > 14) {
             throw new \InvalidArgumentException('invalid length for $custom_text_for_label when calling Label., must be smaller than or equal to 14.');
         }
 
@@ -311,8 +325,10 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets dimensions.
+     *
+     * @return LabelDimensions
      */
-    public function getDimensions(): LabelDimensions
+    public function getDimensions()
     {
         return $this->container['dimensions'];
     }
@@ -321,8 +337,10 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets dimensions.
      *
      * @param LabelDimensions $dimensions dimensions
+     *
+     * @return self
      */
-    public function setDimensions(LabelDimensions $dimensions): self
+    public function setDimensions($dimensions)
     {
         if (is_null($dimensions)) {
             throw new \InvalidArgumentException('non-nullable dimensions cannot be null');
@@ -334,8 +352,10 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets file_contents.
+     *
+     * @return FileContents
      */
-    public function getFileContents(): FileContents
+    public function getFileContents()
     {
         return $this->container['file_contents'];
     }
@@ -344,8 +364,10 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets file_contents.
      *
      * @param FileContents $file_contents file_contents
+     *
+     * @return self
      */
-    public function setFileContents(FileContents $file_contents): self
+    public function setFileContents($file_contents)
     {
         if (is_null($file_contents)) {
             throw new \InvalidArgumentException('non-nullable file_contents cannot be null');
@@ -357,8 +379,10 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets label_format.
+     *
+     * @return null|LabelFormat
      */
-    public function getLabelFormat(): ?string
+    public function getLabelFormat()
     {
         return $this->container['label_format'];
     }
@@ -366,19 +390,14 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets label_format.
      *
-     * @param null|string $label_format label_format
+     * @param null|LabelFormat $label_format label_format
+     *
+     * @return self
      */
-    public function setLabelFormat(?string $label_format): self
+    public function setLabelFormat($label_format)
     {
         if (is_null($label_format)) {
-            array_push($this->openAPINullablesSetToNull, 'label_format');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('label_format', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable label_format cannot be null');
         }
         $this->container['label_format'] = $label_format;
 
@@ -387,8 +406,10 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets standard_id_for_label.
+     *
+     * @return null|StandardIdForLabel
      */
-    public function getStandardIdForLabel(): ?string
+    public function getStandardIdForLabel()
     {
         return $this->container['standard_id_for_label'];
     }
@@ -396,19 +417,14 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets standard_id_for_label.
      *
-     * @param null|string $standard_id_for_label standard_id_for_label
+     * @param null|StandardIdForLabel $standard_id_for_label standard_id_for_label
+     *
+     * @return self
      */
-    public function setStandardIdForLabel(?string $standard_id_for_label): self
+    public function setStandardIdForLabel($standard_id_for_label)
     {
         if (is_null($standard_id_for_label)) {
-            array_push($this->openAPINullablesSetToNull, 'standard_id_for_label');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('standard_id_for_label', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable standard_id_for_label cannot be null');
         }
         $this->container['standard_id_for_label'] = $standard_id_for_label;
 
@@ -433,7 +449,7 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -444,7 +460,7 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -472,15 +488,17 @@ class Label implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

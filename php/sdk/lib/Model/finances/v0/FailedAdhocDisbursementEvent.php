@@ -3,7 +3,7 @@
 /**
  * FailedAdhocDisbursementEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,22 +51,25 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'FailedAdhocDisbursementEvent';
+    protected static $openAPIModelName = 'FailedAdhocDisbursementEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'funds_transfers_type' => 'string',
         'transfer_id' => 'string',
         'disbursement_id' => 'string',
         'payment_disbursement_type' => 'string',
         'status' => 'string',
         'transfer_amount' => '\SpApi\Model\finances\v0\Currency',
-        'posted_date' => '\DateTime'];
+        'posted_date' => '\DateTime',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -78,14 +80,15 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'funds_transfers_type' => null,
         'transfer_id' => null,
         'disbursement_id' => null,
         'payment_disbursement_type' => null,
         'status' => null,
         'transfer_amount' => null,
-        'posted_date' => 'date-time'];
+        'posted_date' => 'date-time',
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -93,13 +96,13 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'funds_transfers_type' => true,
-        'transfer_id' => true,
-        'disbursement_id' => true,
-        'payment_disbursement_type' => true,
-        'status' => true,
-        'transfer_amount' => true,
-        'posted_date' => true,
+        'funds_transfers_type' => false,
+        'transfer_id' => false,
+        'disbursement_id' => false,
+        'payment_disbursement_type' => false,
+        'status' => false,
+        'transfer_amount' => false,
+        'posted_date' => false,
     ];
 
     /**
@@ -115,7 +118,7 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'funds_transfers_type' => 'FundsTransfersType',
         'transfer_id' => 'TransferId',
         'disbursement_id' => 'DisbursementId',
@@ -130,7 +133,7 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'funds_transfers_type' => 'setFundsTransfersType',
         'transfer_id' => 'setTransferId',
         'disbursement_id' => 'setDisbursementId',
@@ -145,7 +148,7 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'funds_transfers_type' => 'getFundsTransfersType',
         'transfer_id' => 'getTransferId',
         'disbursement_id' => 'getDisbursementId',
@@ -157,14 +160,16 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -192,16 +197,20 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -225,32 +234,40 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -260,7 +277,7 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -271,15 +288,17 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets funds_transfers_type.
+     *
+     * @return null|string
      */
-    public function getFundsTransfersType(): ?string
+    public function getFundsTransfersType()
     {
         return $this->container['funds_transfers_type'];
     }
@@ -288,18 +307,13 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
      * Sets funds_transfers_type.
      *
      * @param null|string $funds_transfers_type The type of fund transfer.   Example \"Refund\"
+     *
+     * @return self
      */
-    public function setFundsTransfersType(?string $funds_transfers_type): self
+    public function setFundsTransfersType($funds_transfers_type)
     {
         if (is_null($funds_transfers_type)) {
-            array_push($this->openAPINullablesSetToNull, 'funds_transfers_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('funds_transfers_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable funds_transfers_type cannot be null');
         }
         $this->container['funds_transfers_type'] = $funds_transfers_type;
 
@@ -308,8 +322,10 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Gets transfer_id.
+     *
+     * @return null|string
      */
-    public function getTransferId(): ?string
+    public function getTransferId()
     {
         return $this->container['transfer_id'];
     }
@@ -318,18 +334,13 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
      * Sets transfer_id.
      *
      * @param null|string $transfer_id the transfer identifier
+     *
+     * @return self
      */
-    public function setTransferId(?string $transfer_id): self
+    public function setTransferId($transfer_id)
     {
         if (is_null($transfer_id)) {
-            array_push($this->openAPINullablesSetToNull, 'transfer_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transfer_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transfer_id cannot be null');
         }
         $this->container['transfer_id'] = $transfer_id;
 
@@ -338,8 +349,10 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Gets disbursement_id.
+     *
+     * @return null|string
      */
-    public function getDisbursementId(): ?string
+    public function getDisbursementId()
     {
         return $this->container['disbursement_id'];
     }
@@ -348,18 +361,13 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
      * Sets disbursement_id.
      *
      * @param null|string $disbursement_id the disbursement identifier
+     *
+     * @return self
      */
-    public function setDisbursementId(?string $disbursement_id): self
+    public function setDisbursementId($disbursement_id)
     {
         if (is_null($disbursement_id)) {
-            array_push($this->openAPINullablesSetToNull, 'disbursement_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('disbursement_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable disbursement_id cannot be null');
         }
         $this->container['disbursement_id'] = $disbursement_id;
 
@@ -368,8 +376,10 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Gets payment_disbursement_type.
+     *
+     * @return null|string
      */
-    public function getPaymentDisbursementType(): ?string
+    public function getPaymentDisbursementType()
     {
         return $this->container['payment_disbursement_type'];
     }
@@ -378,18 +388,13 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
      * Sets payment_disbursement_type.
      *
      * @param null|string $payment_disbursement_type The type of payment for disbursement.   Example `CREDIT_CARD`
+     *
+     * @return self
      */
-    public function setPaymentDisbursementType(?string $payment_disbursement_type): self
+    public function setPaymentDisbursementType($payment_disbursement_type)
     {
         if (is_null($payment_disbursement_type)) {
-            array_push($this->openAPINullablesSetToNull, 'payment_disbursement_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('payment_disbursement_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable payment_disbursement_type cannot be null');
         }
         $this->container['payment_disbursement_type'] = $payment_disbursement_type;
 
@@ -398,8 +403,10 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Gets status.
+     *
+     * @return null|string
      */
-    public function getStatus(): ?string
+    public function getStatus()
     {
         return $this->container['status'];
     }
@@ -408,18 +415,13 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
      * Sets status.
      *
      * @param null|string $status The status of the failed `AdhocDisbursement`.   Example `HARD_DECLINED`
+     *
+     * @return self
      */
-    public function setStatus(?string $status): self
+    public function setStatus($status)
     {
         if (is_null($status)) {
-            array_push($this->openAPINullablesSetToNull, 'status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('status', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable status cannot be null');
         }
         $this->container['status'] = $status;
 
@@ -428,8 +430,10 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Gets transfer_amount.
+     *
+     * @return null|Currency
      */
-    public function getTransferAmount(): ?Currency
+    public function getTransferAmount()
     {
         return $this->container['transfer_amount'];
     }
@@ -438,18 +442,13 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
      * Sets transfer_amount.
      *
      * @param null|Currency $transfer_amount transfer_amount
+     *
+     * @return self
      */
-    public function setTransferAmount(?Currency $transfer_amount): self
+    public function setTransferAmount($transfer_amount)
     {
         if (is_null($transfer_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'transfer_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transfer_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transfer_amount cannot be null');
         }
         $this->container['transfer_amount'] = $transfer_amount;
 
@@ -458,8 +457,10 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTime
      */
-    public function getPostedDate(): ?\DateTime
+    public function getPostedDate()
     {
         return $this->container['posted_date'];
     }
@@ -468,18 +469,13 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
      * Sets posted_date.
      *
      * @param null|\DateTime $posted_date fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate)
+     *
+     * @return self
      */
-    public function setPostedDate(?\DateTime $posted_date): self
+    public function setPostedDate($posted_date)
     {
         if (is_null($posted_date)) {
-            array_push($this->openAPINullablesSetToNull, 'posted_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('posted_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable posted_date cannot be null');
         }
         $this->container['posted_date'] = $posted_date;
 
@@ -504,7 +500,7 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -515,7 +511,7 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -543,15 +539,17 @@ class FailedAdhocDisbursementEvent implements ModelInterface, \ArrayAccess, \Jso
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

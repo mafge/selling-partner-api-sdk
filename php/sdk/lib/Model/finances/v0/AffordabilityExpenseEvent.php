@@ -3,7 +3,7 @@
 /**
  * AffordabilityExpenseEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'AffordabilityExpenseEvent';
+    protected static $openAPIModelName = 'AffordabilityExpenseEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'amazon_order_id' => 'string',
         'posted_date' => '\DateTime',
         'marketplace_id' => 'string',
@@ -69,7 +70,8 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
         'tax_type_cgst' => '\SpApi\Model\finances\v0\Currency',
         'tax_type_sgst' => '\SpApi\Model\finances\v0\Currency',
         'tax_type_igst' => '\SpApi\Model\finances\v0\Currency',
-        'total_expense' => '\SpApi\Model\finances\v0\Currency'];
+        'total_expense' => '\SpApi\Model\finances\v0\Currency',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -80,7 +82,7 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'amazon_order_id' => null,
         'posted_date' => 'date-time',
         'marketplace_id' => null,
@@ -89,7 +91,8 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
         'tax_type_cgst' => null,
         'tax_type_sgst' => null,
         'tax_type_igst' => null,
-        'total_expense' => null];
+        'total_expense' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -97,15 +100,15 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'amazon_order_id' => true,
-        'posted_date' => true,
-        'marketplace_id' => true,
-        'transaction_type' => true,
-        'base_expense' => true,
+        'amazon_order_id' => false,
+        'posted_date' => false,
+        'marketplace_id' => false,
+        'transaction_type' => false,
+        'base_expense' => false,
         'tax_type_cgst' => false,
         'tax_type_sgst' => false,
         'tax_type_igst' => false,
-        'total_expense' => true,
+        'total_expense' => false,
     ];
 
     /**
@@ -121,7 +124,7 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'amazon_order_id' => 'AmazonOrderId',
         'posted_date' => 'PostedDate',
         'marketplace_id' => 'MarketplaceId',
@@ -138,7 +141,7 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'amazon_order_id' => 'setAmazonOrderId',
         'posted_date' => 'setPostedDate',
         'marketplace_id' => 'setMarketplaceId',
@@ -155,7 +158,7 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'amazon_order_id' => 'getAmazonOrderId',
         'posted_date' => 'getPostedDate',
         'marketplace_id' => 'getMarketplaceId',
@@ -169,14 +172,16 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -206,16 +211,20 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -239,32 +248,40 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -274,7 +291,7 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -297,15 +314,17 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets amazon_order_id.
+     *
+     * @return null|string
      */
-    public function getAmazonOrderId(): ?string
+    public function getAmazonOrderId()
     {
         return $this->container['amazon_order_id'];
     }
@@ -314,18 +333,13 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets amazon_order_id.
      *
      * @param null|string $amazon_order_id an Amazon-defined identifier for an order
+     *
+     * @return self
      */
-    public function setAmazonOrderId(?string $amazon_order_id): self
+    public function setAmazonOrderId($amazon_order_id)
     {
         if (is_null($amazon_order_id)) {
-            array_push($this->openAPINullablesSetToNull, 'amazon_order_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amazon_order_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable amazon_order_id cannot be null');
         }
         $this->container['amazon_order_id'] = $amazon_order_id;
 
@@ -334,8 +348,10 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTime
      */
-    public function getPostedDate(): ?\DateTime
+    public function getPostedDate()
     {
         return $this->container['posted_date'];
     }
@@ -344,18 +360,13 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets posted_date.
      *
      * @param null|\DateTime $posted_date fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate)
+     *
+     * @return self
      */
-    public function setPostedDate(?\DateTime $posted_date): self
+    public function setPostedDate($posted_date)
     {
         if (is_null($posted_date)) {
-            array_push($this->openAPINullablesSetToNull, 'posted_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('posted_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable posted_date cannot be null');
         }
         $this->container['posted_date'] = $posted_date;
 
@@ -364,8 +375,10 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets marketplace_id.
+     *
+     * @return null|string
      */
-    public function getMarketplaceId(): ?string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -374,18 +387,13 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets marketplace_id.
      *
      * @param null|string $marketplace_id an encrypted, Amazon-defined marketplace identifier
+     *
+     * @return self
      */
-    public function setMarketplaceId(?string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
-            array_push($this->openAPINullablesSetToNull, 'marketplace_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('marketplace_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
         }
         $this->container['marketplace_id'] = $marketplace_id;
 
@@ -394,8 +402,10 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets transaction_type.
+     *
+     * @return null|string
      */
-    public function getTransactionType(): ?string
+    public function getTransactionType()
     {
         return $this->container['transaction_type'];
     }
@@ -404,18 +414,13 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets transaction_type.
      *
      * @param null|string $transaction_type Indicates the type of transaction.   Possible values:  * Charge - For an affordability promotion expense.  * Refund - For an affordability promotion expense reversal.
+     *
+     * @return self
      */
-    public function setTransactionType(?string $transaction_type): self
+    public function setTransactionType($transaction_type)
     {
         if (is_null($transaction_type)) {
-            array_push($this->openAPINullablesSetToNull, 'transaction_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transaction_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transaction_type cannot be null');
         }
         $this->container['transaction_type'] = $transaction_type;
 
@@ -424,8 +429,10 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets base_expense.
+     *
+     * @return null|Currency
      */
-    public function getBaseExpense(): ?Currency
+    public function getBaseExpense()
     {
         return $this->container['base_expense'];
     }
@@ -434,18 +441,13 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets base_expense.
      *
      * @param null|Currency $base_expense base_expense
+     *
+     * @return self
      */
-    public function setBaseExpense(?Currency $base_expense): self
+    public function setBaseExpense($base_expense)
     {
         if (is_null($base_expense)) {
-            array_push($this->openAPINullablesSetToNull, 'base_expense');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('base_expense', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable base_expense cannot be null');
         }
         $this->container['base_expense'] = $base_expense;
 
@@ -454,8 +456,10 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets tax_type_cgst.
+     *
+     * @return Currency
      */
-    public function getTaxTypeCgst(): Currency
+    public function getTaxTypeCgst()
     {
         return $this->container['tax_type_cgst'];
     }
@@ -464,8 +468,10 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets tax_type_cgst.
      *
      * @param Currency $tax_type_cgst tax_type_cgst
+     *
+     * @return self
      */
-    public function setTaxTypeCgst(Currency $tax_type_cgst): self
+    public function setTaxTypeCgst($tax_type_cgst)
     {
         if (is_null($tax_type_cgst)) {
             throw new \InvalidArgumentException('non-nullable tax_type_cgst cannot be null');
@@ -477,8 +483,10 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets tax_type_sgst.
+     *
+     * @return Currency
      */
-    public function getTaxTypeSgst(): Currency
+    public function getTaxTypeSgst()
     {
         return $this->container['tax_type_sgst'];
     }
@@ -487,8 +495,10 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets tax_type_sgst.
      *
      * @param Currency $tax_type_sgst tax_type_sgst
+     *
+     * @return self
      */
-    public function setTaxTypeSgst(Currency $tax_type_sgst): self
+    public function setTaxTypeSgst($tax_type_sgst)
     {
         if (is_null($tax_type_sgst)) {
             throw new \InvalidArgumentException('non-nullable tax_type_sgst cannot be null');
@@ -500,8 +510,10 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets tax_type_igst.
+     *
+     * @return Currency
      */
-    public function getTaxTypeIgst(): Currency
+    public function getTaxTypeIgst()
     {
         return $this->container['tax_type_igst'];
     }
@@ -510,8 +522,10 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets tax_type_igst.
      *
      * @param Currency $tax_type_igst tax_type_igst
+     *
+     * @return self
      */
-    public function setTaxTypeIgst(Currency $tax_type_igst): self
+    public function setTaxTypeIgst($tax_type_igst)
     {
         if (is_null($tax_type_igst)) {
             throw new \InvalidArgumentException('non-nullable tax_type_igst cannot be null');
@@ -523,8 +537,10 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets total_expense.
+     *
+     * @return null|Currency
      */
-    public function getTotalExpense(): ?Currency
+    public function getTotalExpense()
     {
         return $this->container['total_expense'];
     }
@@ -533,18 +549,13 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets total_expense.
      *
      * @param null|Currency $total_expense total_expense
+     *
+     * @return self
      */
-    public function setTotalExpense(?Currency $total_expense): self
+    public function setTotalExpense($total_expense)
     {
         if (is_null($total_expense)) {
-            array_push($this->openAPINullablesSetToNull, 'total_expense');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_expense', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable total_expense cannot be null');
         }
         $this->container['total_expense'] = $total_expense;
 
@@ -569,7 +580,7 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -580,7 +591,7 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -608,15 +619,17 @@ class AffordabilityExpenseEvent implements ModelInterface, \ArrayAccess, \JsonSe
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

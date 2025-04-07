@@ -3,7 +3,7 @@
 /**
  * OrdersList.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\orders\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'OrdersList';
+    protected static $openAPIModelName = 'OrdersList';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'orders' => '\SpApi\Model\orders\v0\Order[]',
         'next_token' => 'string',
         'last_updated_before' => 'string',
-        'created_before' => 'string'];
+        'created_before' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'orders' => null,
         'next_token' => null,
         'last_updated_before' => null,
-        'created_before' => null];
+        'created_before' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -88,9 +91,9 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'orders' => false,
-        'next_token' => true,
-        'last_updated_before' => true,
-        'created_before' => true,
+        'next_token' => false,
+        'last_updated_before' => false,
+        'created_before' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'orders' => 'Orders',
         'next_token' => 'NextToken',
         'last_updated_before' => 'LastUpdatedBefore',
@@ -118,7 +121,7 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'orders' => 'setOrders',
         'next_token' => 'setNextToken',
         'last_updated_before' => 'setLastUpdatedBefore',
@@ -130,7 +133,7 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'orders' => 'getOrders',
         'next_token' => 'getNextToken',
         'last_updated_before' => 'getLastUpdatedBefore',
@@ -139,14 +142,16 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -256,15 +273,17 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets orders.
+     *
+     * @return Order[]
      */
-    public function getOrders(): array
+    public function getOrders()
     {
         return $this->container['orders'];
     }
@@ -272,9 +291,11 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets orders.
      *
-     * @param array $orders a list of orders
+     * @param Order[] $orders a list of orders
+     *
+     * @return self
      */
-    public function setOrders(array $orders): self
+    public function setOrders($orders)
     {
         if (is_null($orders)) {
             throw new \InvalidArgumentException('non-nullable orders cannot be null');
@@ -286,8 +307,10 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets next_token.
+     *
+     * @return null|string
      */
-    public function getNextToken(): ?string
+    public function getNextToken()
     {
         return $this->container['next_token'];
     }
@@ -296,18 +319,13 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets next_token.
      *
      * @param null|string $next_token when present and not empty, pass this string token in the next request to return the next response page
+     *
+     * @return self
      */
-    public function setNextToken(?string $next_token): self
+    public function setNextToken($next_token)
     {
         if (is_null($next_token)) {
-            array_push($this->openAPINullablesSetToNull, 'next_token');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('next_token', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable next_token cannot be null');
         }
         $this->container['next_token'] = $next_token;
 
@@ -316,8 +334,10 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets last_updated_before.
+     *
+     * @return null|string
      */
-    public function getLastUpdatedBefore(): ?string
+    public function getLastUpdatedBefore()
     {
         return $this->container['last_updated_before'];
     }
@@ -326,18 +346,13 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets last_updated_before.
      *
      * @param null|string $last_updated_before Use this date to select orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. All dates must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
+     *
+     * @return self
      */
-    public function setLastUpdatedBefore(?string $last_updated_before): self
+    public function setLastUpdatedBefore($last_updated_before)
     {
         if (is_null($last_updated_before)) {
-            array_push($this->openAPINullablesSetToNull, 'last_updated_before');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('last_updated_before', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable last_updated_before cannot be null');
         }
         $this->container['last_updated_before'] = $last_updated_before;
 
@@ -346,8 +361,10 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets created_before.
+     *
+     * @return null|string
      */
-    public function getCreatedBefore(): ?string
+    public function getCreatedBefore()
     {
         return $this->container['created_before'];
     }
@@ -356,18 +373,13 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets created_before.
      *
      * @param null|string $created_before Use this date to select orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format.
+     *
+     * @return self
      */
-    public function setCreatedBefore(?string $created_before): self
+    public function setCreatedBefore($created_before)
     {
         if (is_null($created_before)) {
-            array_push($this->openAPINullablesSetToNull, 'created_before');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_before', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable created_before cannot be null');
         }
         $this->container['created_before'] = $created_before;
 
@@ -392,7 +404,7 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -403,7 +415,7 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -431,15 +443,17 @@ class OrdersList implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

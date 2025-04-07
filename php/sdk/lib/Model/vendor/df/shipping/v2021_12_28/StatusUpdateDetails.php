@@ -2,7 +2,7 @@
 /**
  * StatusUpdateDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\df\shipping\v2021_12_28;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * StatusUpdateDetails Class Doc Comment
@@ -52,20 +50,21 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'StatusUpdateDetails';
+    protected static $openAPIModelName = 'StatusUpdateDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'tracking_number' => 'string',
-             'status_code' => 'string',
-             'reason_code' => 'string',
-             'status_date_time' => '\DateTime',
-             'status_location_address' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\Address',
-             'shipment_schedule' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\ShipmentSchedule'    ];
+    protected static $openAPITypes = [
+        'tracking_number' => 'string',
+        'status_code' => 'string',
+        'reason_code' => 'string',
+        'status_date_time' => '\DateTime',
+        'status_location_address' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\Address',
+        'shipment_schedule' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\ShipmentSchedule'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -74,13 +73,14 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'tracking_number' => null,
-            'status_code' => null,
-            'reason_code' => null,
-            'status_date_time' => 'date-time',
-            'status_location_address' => null,
-            'shipment_schedule' => null    ];
+    protected static $openAPIFormats = [
+        'tracking_number' => null,
+        'status_code' => null,
+        'reason_code' => null,
+        'status_date_time' => 'date-time',
+        'status_location_address' => null,
+        'shipment_schedule' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -93,7 +93,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
         'reason_code' => false,
         'status_date_time' => false,
         'status_location_address' => false,
-        'shipment_schedule' => true
+        'shipment_schedule' => false
     ];
 
     /**
@@ -108,7 +108,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -118,7 +118,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -181,14 +181,13 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'tracking_number' => 'trackingNumber',
-                'status_code' => 'statusCode',
-                'reason_code' => 'reasonCode',
-                'status_date_time' => 'statusDateTime',
-                'status_location_address' => 'statusLocationAddress',
-                'shipment_schedule' => 'shipmentSchedule'
-        
+        'status_code' => 'statusCode',
+        'reason_code' => 'reasonCode',
+        'status_date_time' => 'statusDateTime',
+        'status_location_address' => 'statusLocationAddress',
+        'shipment_schedule' => 'shipmentSchedule'
     ];
 
     /**
@@ -196,7 +195,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'tracking_number' => 'setTrackingNumber',
         'status_code' => 'setStatusCode',
         'reason_code' => 'setReasonCode',
@@ -210,7 +209,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'tracking_number' => 'getTrackingNumber',
         'status_code' => 'getStatusCode',
         'reason_code' => 'getReasonCode',
@@ -225,7 +224,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -235,7 +234,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -245,7 +244,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -255,7 +254,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -264,17 +263,17 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('tracking_number', $data ?? [], null);
         $this->setIfExists('status_code', $data ?? [], null);
@@ -307,7 +306,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -335,7 +334,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -346,7 +345,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return string
      */
-    public function getTrackingNumber(): string
+    public function getTrackingNumber()
     {
         return $this->container['tracking_number'];
     }
@@ -358,7 +357,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setTrackingNumber(string $tracking_number): self
+    public function setTrackingNumber($tracking_number)
     {
         if (is_null($tracking_number)) {
             throw new \InvalidArgumentException('non-nullable tracking_number cannot be null');
@@ -373,7 +372,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return string
      */
-    public function getStatusCode(): string
+    public function getStatusCode()
     {
         return $this->container['status_code'];
     }
@@ -385,7 +384,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setStatusCode(string $status_code): self
+    public function setStatusCode($status_code)
     {
         if (is_null($status_code)) {
             throw new \InvalidArgumentException('non-nullable status_code cannot be null');
@@ -400,7 +399,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return string
      */
-    public function getReasonCode(): string
+    public function getReasonCode()
     {
         return $this->container['reason_code'];
     }
@@ -412,7 +411,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setReasonCode(string $reason_code): self
+    public function setReasonCode($reason_code)
     {
         if (is_null($reason_code)) {
             throw new \InvalidArgumentException('non-nullable reason_code cannot be null');
@@ -427,7 +426,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return \DateTime
      */
-    public function getStatusDateTime(): \DateTime
+    public function getStatusDateTime()
     {
         return $this->container['status_date_time'];
     }
@@ -439,7 +438,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setStatusDateTime(\DateTime $status_date_time): self
+    public function setStatusDateTime($status_date_time)
     {
         if (is_null($status_date_time)) {
             throw new \InvalidArgumentException('non-nullable status_date_time cannot be null');
@@ -454,7 +453,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return \SpApi\Model\vendor\df\shipping\v2021_12_28\Address
      */
-    public function getStatusLocationAddress(): \SpApi\Model\vendor\df\shipping\v2021_12_28\Address
+    public function getStatusLocationAddress()
     {
         return $this->container['status_location_address'];
     }
@@ -466,7 +465,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setStatusLocationAddress(\SpApi\Model\vendor\df\shipping\v2021_12_28\Address $status_location_address): self
+    public function setStatusLocationAddress($status_location_address)
     {
         if (is_null($status_location_address)) {
             throw new \InvalidArgumentException('non-nullable status_location_address cannot be null');
@@ -481,7 +480,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return \SpApi\Model\vendor\df\shipping\v2021_12_28\ShipmentSchedule|null
      */
-    public function getShipmentSchedule(): ?\SpApi\Model\vendor\df\shipping\v2021_12_28\ShipmentSchedule
+    public function getShipmentSchedule()
     {
         return $this->container['shipment_schedule'];
     }
@@ -493,24 +492,15 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setShipmentSchedule(?\SpApi\Model\vendor\df\shipping\v2021_12_28\ShipmentSchedule $shipment_schedule): self
+    public function setShipmentSchedule($shipment_schedule)
     {
         if (is_null($shipment_schedule)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_schedule');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_schedule', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_schedule cannot be null');
         }
         $this->container['shipment_schedule'] = $shipment_schedule;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -531,7 +521,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -544,7 +534,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -573,7 +563,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -596,7 +586,7 @@ class StatusUpdateDetails implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

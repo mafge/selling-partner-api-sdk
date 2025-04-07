@@ -3,7 +3,7 @@
 /**
  * DirectFulfillmentItemIdentifiers.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,17 +52,20 @@ class DirectFulfillmentItemIdentifiers implements ModelInterface, \ArrayAccess, 
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'DirectFulfillmentItemIdentifiers';
+    protected static $openAPIModelName = 'DirectFulfillmentItemIdentifiers';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'line_item_id' => 'string',
-        'piece_number' => 'string'];
+        'piece_number' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,9 +76,10 @@ class DirectFulfillmentItemIdentifiers implements ModelInterface, \ArrayAccess, 
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'line_item_id' => null,
-        'piece_number' => null];
+        'piece_number' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,7 +88,7 @@ class DirectFulfillmentItemIdentifiers implements ModelInterface, \ArrayAccess, 
      */
     protected static array $openAPINullables = [
         'line_item_id' => false,
-        'piece_number' => true,
+        'piece_number' => false,
     ];
 
     /**
@@ -101,7 +104,7 @@ class DirectFulfillmentItemIdentifiers implements ModelInterface, \ArrayAccess, 
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'line_item_id' => 'lineItemID',
         'piece_number' => 'pieceNumber',
     ];
@@ -111,7 +114,7 @@ class DirectFulfillmentItemIdentifiers implements ModelInterface, \ArrayAccess, 
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'line_item_id' => 'setLineItemId',
         'piece_number' => 'setPieceNumber',
     ];
@@ -121,21 +124,23 @@ class DirectFulfillmentItemIdentifiers implements ModelInterface, \ArrayAccess, 
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'line_item_id' => 'getLineItemId',
         'piece_number' => 'getPieceNumber',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -158,16 +163,20 @@ class DirectFulfillmentItemIdentifiers implements ModelInterface, \ArrayAccess, 
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -191,32 +200,40 @@ class DirectFulfillmentItemIdentifiers implements ModelInterface, \ArrayAccess, 
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -226,7 +243,7 @@ class DirectFulfillmentItemIdentifiers implements ModelInterface, \ArrayAccess, 
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -243,15 +260,17 @@ class DirectFulfillmentItemIdentifiers implements ModelInterface, \ArrayAccess, 
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets line_item_id.
+     *
+     * @return string
      */
-    public function getLineItemId(): string
+    public function getLineItemId()
     {
         return $this->container['line_item_id'];
     }
@@ -260,8 +279,10 @@ class DirectFulfillmentItemIdentifiers implements ModelInterface, \ArrayAccess, 
      * Sets line_item_id.
      *
      * @param string $line_item_id A unique identifier for an item provided by the client for a direct fulfillment shipment. This is only populated for direct fulfillment multi-piece shipments. It is required if a vendor wants to change the configuration of the packages in which the purchase order is shipped.
+     *
+     * @return self
      */
-    public function setLineItemId(string $line_item_id): self
+    public function setLineItemId($line_item_id)
     {
         if (is_null($line_item_id)) {
             throw new \InvalidArgumentException('non-nullable line_item_id cannot be null');
@@ -273,8 +294,10 @@ class DirectFulfillmentItemIdentifiers implements ModelInterface, \ArrayAccess, 
 
     /**
      * Gets piece_number.
+     *
+     * @return null|string
      */
-    public function getPieceNumber(): ?string
+    public function getPieceNumber()
     {
         return $this->container['piece_number'];
     }
@@ -283,18 +306,13 @@ class DirectFulfillmentItemIdentifiers implements ModelInterface, \ArrayAccess, 
      * Sets piece_number.
      *
      * @param null|string $piece_number A unique identifier for an item provided by the client for a direct fulfillment shipment. This is only populated if a single line item has multiple pieces. Defaults to 1.
+     *
+     * @return self
      */
-    public function setPieceNumber(?string $piece_number): self
+    public function setPieceNumber($piece_number)
     {
         if (is_null($piece_number)) {
-            array_push($this->openAPINullablesSetToNull, 'piece_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('piece_number', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable piece_number cannot be null');
         }
         $this->container['piece_number'] = $piece_number;
 
@@ -319,7 +337,7 @@ class DirectFulfillmentItemIdentifiers implements ModelInterface, \ArrayAccess, 
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +348,7 @@ class DirectFulfillmentItemIdentifiers implements ModelInterface, \ArrayAccess, 
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +376,17 @@ class DirectFulfillmentItemIdentifiers implements ModelInterface, \ArrayAccess, 
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

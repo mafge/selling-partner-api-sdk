@@ -3,7 +3,7 @@
 /**
  * ListingsItemPatchRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\listings\items\v2021_08_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class ListingsItemPatchRequest implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ListingsItemPatchRequest';
+    protected static $openAPIModelName = 'ListingsItemPatchRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'product_type' => 'string',
-        'patches' => '\SpApi\Model\listings\items\v2021_08_01\PatchOperation[]'];
+        'patches' => '\SpApi\Model\listings\items\v2021_08_01\PatchOperation[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class ListingsItemPatchRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'product_type' => null,
-        'patches' => null];
+        'patches' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -100,7 +103,7 @@ class ListingsItemPatchRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'product_type' => 'productType',
         'patches' => 'patches',
     ];
@@ -110,7 +113,7 @@ class ListingsItemPatchRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'product_type' => 'setProductType',
         'patches' => 'setPatches',
     ];
@@ -120,21 +123,23 @@ class ListingsItemPatchRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'product_type' => 'getProductType',
         'patches' => 'getPatches',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class ListingsItemPatchRequest implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class ListingsItemPatchRequest implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class ListingsItemPatchRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -248,15 +265,17 @@ class ListingsItemPatchRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets product_type.
+     *
+     * @return string
      */
-    public function getProductType(): string
+    public function getProductType()
     {
         return $this->container['product_type'];
     }
@@ -265,8 +284,10 @@ class ListingsItemPatchRequest implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets product_type.
      *
      * @param string $product_type the Amazon product type of the listings item
+     *
+     * @return self
      */
-    public function setProductType(string $product_type): self
+    public function setProductType($product_type)
     {
         if (is_null($product_type)) {
             throw new \InvalidArgumentException('non-nullable product_type cannot be null');
@@ -278,8 +299,10 @@ class ListingsItemPatchRequest implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets patches.
+     *
+     * @return PatchOperation[]
      */
-    public function getPatches(): array
+    public function getPatches()
     {
         return $this->container['patches'];
     }
@@ -287,9 +310,11 @@ class ListingsItemPatchRequest implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Sets patches.
      *
-     * @param array $patches one or more JSON Patch operations to perform on the listings item
+     * @param PatchOperation[] $patches one or more JSON Patch operations to perform on the listings item
+     *
+     * @return self
      */
-    public function setPatches(array $patches): self
+    public function setPatches($patches)
     {
         if (is_null($patches)) {
             throw new \InvalidArgumentException('non-nullable patches cannot be null');
@@ -321,7 +346,7 @@ class ListingsItemPatchRequest implements ModelInterface, \ArrayAccess, \JsonSer
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -332,7 +357,7 @@ class ListingsItemPatchRequest implements ModelInterface, \ArrayAccess, \JsonSer
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -360,15 +385,17 @@ class ListingsItemPatchRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

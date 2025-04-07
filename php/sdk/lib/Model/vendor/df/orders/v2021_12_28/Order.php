@@ -2,7 +2,7 @@
 /**
  * Order
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\df\orders\v2021_12_28;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * Order Class Doc Comment
@@ -52,16 +50,17 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'Order';
+    protected static $openAPIModelName = 'Order';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'purchase_order_number' => 'string',
-             'order_details' => '\SpApi\Model\vendor\df\orders\v2021_12_28\OrderDetails'    ];
+    protected static $openAPITypes = [
+        'purchase_order_number' => 'string',
+        'order_details' => '\SpApi\Model\vendor\df\orders\v2021_12_28\OrderDetails'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,9 +69,10 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'purchase_order_number' => null,
-            'order_details' => null    ];
+    protected static $openAPIFormats = [
+        'purchase_order_number' => null,
+        'order_details' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -81,7 +81,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'purchase_order_number' => false,
-        'order_details' => true
+        'order_details' => false
     ];
 
     /**
@@ -96,7 +96,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -106,7 +106,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -169,10 +169,9 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'purchase_order_number' => 'purchaseOrderNumber',
-                'order_details' => 'orderDetails'
-        
+        'order_details' => 'orderDetails'
     ];
 
     /**
@@ -180,7 +179,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'purchase_order_number' => 'setPurchaseOrderNumber',
         'order_details' => 'setOrderDetails'
     ];
@@ -190,7 +189,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'purchase_order_number' => 'getPurchaseOrderNumber',
         'order_details' => 'getOrderDetails'
     ];
@@ -201,7 +200,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -211,7 +210,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -221,7 +220,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -231,7 +230,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -240,17 +239,17 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('purchase_order_number', $data ?? [], null);
         $this->setIfExists('order_details', $data ?? [], null);
@@ -279,7 +278,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -295,7 +294,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -306,7 +305,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getPurchaseOrderNumber(): string
+    public function getPurchaseOrderNumber()
     {
         return $this->container['purchase_order_number'];
     }
@@ -318,7 +317,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setPurchaseOrderNumber(string $purchase_order_number): self
+    public function setPurchaseOrderNumber($purchase_order_number)
     {
         if (is_null($purchase_order_number)) {
             throw new \InvalidArgumentException('non-nullable purchase_order_number cannot be null');
@@ -333,7 +332,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\df\orders\v2021_12_28\OrderDetails|null
      */
-    public function getOrderDetails(): ?\SpApi\Model\vendor\df\orders\v2021_12_28\OrderDetails
+    public function getOrderDetails()
     {
         return $this->container['order_details'];
     }
@@ -345,24 +344,15 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setOrderDetails(?\SpApi\Model\vendor\df\orders\v2021_12_28\OrderDetails $order_details): self
+    public function setOrderDetails($order_details)
     {
         if (is_null($order_details)) {
-            array_push($this->openAPINullablesSetToNull, 'order_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('order_details', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable order_details cannot be null');
         }
         $this->container['order_details'] = $order_details;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -383,7 +373,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -396,7 +386,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -425,7 +415,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -448,7 +438,7 @@ class Order implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

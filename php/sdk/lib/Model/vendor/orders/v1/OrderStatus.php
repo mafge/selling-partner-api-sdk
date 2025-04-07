@@ -2,7 +2,7 @@
 /**
  * OrderStatus
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\orders\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * OrderStatus Class Doc Comment
@@ -52,21 +50,22 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'OrderStatus';
+    protected static $openAPIModelName = 'OrderStatus';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'purchase_order_number' => 'string',
-             'purchase_order_status' => 'string',
-             'purchase_order_date' => '\DateTime',
-             'last_updated_date' => '\DateTime',
-             'selling_party' => '\SpApi\Model\vendor\orders\v1\PartyIdentification',
-             'ship_to_party' => '\SpApi\Model\vendor\orders\v1\PartyIdentification',
-             'item_status' => '\SpApi\Model\vendor\orders\v1\OrderItemStatus[]'    ];
+    protected static $openAPITypes = [
+        'purchase_order_number' => 'string',
+        'purchase_order_status' => 'string',
+        'purchase_order_date' => '\DateTime',
+        'last_updated_date' => '\DateTime',
+        'selling_party' => '\SpApi\Model\vendor\orders\v1\PartyIdentification',
+        'ship_to_party' => '\SpApi\Model\vendor\orders\v1\PartyIdentification',
+        'item_status' => '\SpApi\Model\vendor\orders\v1\OrderItemStatus[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -75,14 +74,15 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'purchase_order_number' => null,
-            'purchase_order_status' => null,
-            'purchase_order_date' => 'date-time',
-            'last_updated_date' => 'date-time',
-            'selling_party' => null,
-            'ship_to_party' => null,
-            'item_status' => null    ];
+    protected static $openAPIFormats = [
+        'purchase_order_number' => null,
+        'purchase_order_status' => null,
+        'purchase_order_date' => 'date-time',
+        'last_updated_date' => 'date-time',
+        'selling_party' => null,
+        'ship_to_party' => null,
+        'item_status' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -93,7 +93,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
         'purchase_order_number' => false,
         'purchase_order_status' => false,
         'purchase_order_date' => false,
-        'last_updated_date' => true,
+        'last_updated_date' => false,
         'selling_party' => false,
         'ship_to_party' => false,
         'item_status' => false
@@ -111,7 +111,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -121,7 +121,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -184,15 +184,14 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'purchase_order_number' => 'purchaseOrderNumber',
-                'purchase_order_status' => 'purchaseOrderStatus',
-                'purchase_order_date' => 'purchaseOrderDate',
-                'last_updated_date' => 'lastUpdatedDate',
-                'selling_party' => 'sellingParty',
-                'ship_to_party' => 'shipToParty',
-                'item_status' => 'itemStatus'
-        
+        'purchase_order_status' => 'purchaseOrderStatus',
+        'purchase_order_date' => 'purchaseOrderDate',
+        'last_updated_date' => 'lastUpdatedDate',
+        'selling_party' => 'sellingParty',
+        'ship_to_party' => 'shipToParty',
+        'item_status' => 'itemStatus'
     ];
 
     /**
@@ -200,7 +199,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'purchase_order_number' => 'setPurchaseOrderNumber',
         'purchase_order_status' => 'setPurchaseOrderStatus',
         'purchase_order_date' => 'setPurchaseOrderDate',
@@ -215,7 +214,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'purchase_order_number' => 'getPurchaseOrderNumber',
         'purchase_order_status' => 'getPurchaseOrderStatus',
         'purchase_order_date' => 'getPurchaseOrderDate',
@@ -231,7 +230,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -241,7 +240,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -251,7 +250,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -261,7 +260,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -274,7 +273,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getPurchaseOrderStatusAllowableValues(): array
+    public function getPurchaseOrderStatusAllowableValues()
     {
         return [
             self::PURCHASE_ORDER_STATUS_OPEN,
@@ -285,17 +284,17 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('purchase_order_number', $data ?? [], null);
         $this->setIfExists('purchase_order_status', $data ?? [], null);
@@ -329,7 +328,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -369,7 +368,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -380,7 +379,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getPurchaseOrderNumber(): string
+    public function getPurchaseOrderNumber()
     {
         return $this->container['purchase_order_number'];
     }
@@ -392,7 +391,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setPurchaseOrderNumber(string $purchase_order_number): self
+    public function setPurchaseOrderNumber($purchase_order_number)
     {
         if (is_null($purchase_order_number)) {
             throw new \InvalidArgumentException('non-nullable purchase_order_number cannot be null');
@@ -407,7 +406,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getPurchaseOrderStatus(): string
+    public function getPurchaseOrderStatus()
     {
         return $this->container['purchase_order_status'];
     }
@@ -419,7 +418,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setPurchaseOrderStatus(string $purchase_order_status): self
+    public function setPurchaseOrderStatus($purchase_order_status)
     {
         if (is_null($purchase_order_status)) {
             throw new \InvalidArgumentException('non-nullable purchase_order_status cannot be null');
@@ -444,7 +443,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime
      */
-    public function getPurchaseOrderDate(): \DateTime
+    public function getPurchaseOrderDate()
     {
         return $this->container['purchase_order_date'];
     }
@@ -456,7 +455,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setPurchaseOrderDate(\DateTime $purchase_order_date): self
+    public function setPurchaseOrderDate($purchase_order_date)
     {
         if (is_null($purchase_order_date)) {
             throw new \InvalidArgumentException('non-nullable purchase_order_date cannot be null');
@@ -471,7 +470,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime|null
      */
-    public function getLastUpdatedDate(): ?\DateTime
+    public function getLastUpdatedDate()
     {
         return $this->container['last_updated_date'];
     }
@@ -483,17 +482,10 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLastUpdatedDate(?\DateTime $last_updated_date): self
+    public function setLastUpdatedDate($last_updated_date)
     {
         if (is_null($last_updated_date)) {
-            array_push($this->openAPINullablesSetToNull, 'last_updated_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('last_updated_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable last_updated_date cannot be null');
         }
         $this->container['last_updated_date'] = $last_updated_date;
 
@@ -505,7 +497,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\orders\v1\PartyIdentification
      */
-    public function getSellingParty(): \SpApi\Model\vendor\orders\v1\PartyIdentification
+    public function getSellingParty()
     {
         return $this->container['selling_party'];
     }
@@ -517,7 +509,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSellingParty(\SpApi\Model\vendor\orders\v1\PartyIdentification $selling_party): self
+    public function setSellingParty($selling_party)
     {
         if (is_null($selling_party)) {
             throw new \InvalidArgumentException('non-nullable selling_party cannot be null');
@@ -532,7 +524,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\orders\v1\PartyIdentification
      */
-    public function getShipToParty(): \SpApi\Model\vendor\orders\v1\PartyIdentification
+    public function getShipToParty()
     {
         return $this->container['ship_to_party'];
     }
@@ -544,7 +536,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShipToParty(\SpApi\Model\vendor\orders\v1\PartyIdentification $ship_to_party): self
+    public function setShipToParty($ship_to_party)
     {
         if (is_null($ship_to_party)) {
             throw new \InvalidArgumentException('non-nullable ship_to_party cannot be null');
@@ -557,9 +549,9 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets item_status
      *
-     * @return array
+     * @return \SpApi\Model\vendor\orders\v1\OrderItemStatus[]
      */
-    public function getItemStatus(): array
+    public function getItemStatus()
     {
         return $this->container['item_status'];
     }
@@ -567,11 +559,11 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets item_status
      *
-     * @param array $item_status Detailed description of items order status.
+     * @param \SpApi\Model\vendor\orders\v1\OrderItemStatus[] $item_status Detailed description of items order status.
      *
      * @return self
      */
-    public function setItemStatus(array $item_status): self
+    public function setItemStatus($item_status)
     {
         if (is_null($item_status)) {
             throw new \InvalidArgumentException('non-nullable item_status cannot be null');
@@ -580,8 +572,6 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -602,7 +592,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -615,7 +605,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -644,7 +634,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -667,7 +657,7 @@ class OrderStatus implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

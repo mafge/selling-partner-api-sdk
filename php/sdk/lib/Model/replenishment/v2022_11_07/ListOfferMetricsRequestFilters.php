@@ -3,7 +3,7 @@
 /**
  * ListOfferMetricsRequestFilters.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\replenishment\v2022_11_07;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ListOfferMetricsRequestFilters';
+    protected static $openAPIModelName = 'ListOfferMetricsRequestFilters';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'aggregation_frequency' => '\SpApi\Model\replenishment\v2022_11_07\AggregationFrequency',
         'time_interval' => '\SpApi\Model\replenishment\v2022_11_07\TimeInterval',
         'time_period_type' => '\SpApi\Model\replenishment\v2022_11_07\TimePeriodType',
         'marketplace_id' => 'string',
         'program_types' => '\SpApi\Model\replenishment\v2022_11_07\ProgramType[]',
-        'asins' => 'string[]'];
+        'asins' => 'string[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'aggregation_frequency' => null,
         'time_interval' => null,
         'time_period_type' => null,
         'marketplace_id' => null,
         'program_types' => null,
-        'asins' => null];
+        'asins' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -91,12 +94,12 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'aggregation_frequency' => true,
+        'aggregation_frequency' => false,
         'time_interval' => false,
         'time_period_type' => false,
         'marketplace_id' => false,
         'program_types' => false,
-        'asins' => true,
+        'asins' => false,
     ];
 
     /**
@@ -112,7 +115,7 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'aggregation_frequency' => 'aggregationFrequency',
         'time_interval' => 'timeInterval',
         'time_period_type' => 'timePeriodType',
@@ -126,7 +129,7 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'aggregation_frequency' => 'setAggregationFrequency',
         'time_interval' => 'setTimeInterval',
         'time_period_type' => 'setTimePeriodType',
@@ -140,7 +143,7 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'aggregation_frequency' => 'getAggregationFrequency',
         'time_interval' => 'getTimeInterval',
         'time_period_type' => 'getTimePeriodType',
@@ -151,14 +154,16 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -290,15 +307,17 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets aggregation_frequency.
+     *
+     * @return null|AggregationFrequency
      */
-    public function getAggregationFrequency(): ?string
+    public function getAggregationFrequency()
     {
         return $this->container['aggregation_frequency'];
     }
@@ -306,19 +325,14 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
     /**
      * Sets aggregation_frequency.
      *
-     * @param null|string $aggregation_frequency aggregation_frequency
+     * @param null|AggregationFrequency $aggregation_frequency aggregation_frequency
+     *
+     * @return self
      */
-    public function setAggregationFrequency(?string $aggregation_frequency): self
+    public function setAggregationFrequency($aggregation_frequency)
     {
         if (is_null($aggregation_frequency)) {
-            array_push($this->openAPINullablesSetToNull, 'aggregation_frequency');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('aggregation_frequency', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable aggregation_frequency cannot be null');
         }
         $this->container['aggregation_frequency'] = $aggregation_frequency;
 
@@ -327,8 +341,10 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets time_interval.
+     *
+     * @return TimeInterval
      */
-    public function getTimeInterval(): TimeInterval
+    public function getTimeInterval()
     {
         return $this->container['time_interval'];
     }
@@ -337,8 +353,10 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
      * Sets time_interval.
      *
      * @param TimeInterval $time_interval time_interval
+     *
+     * @return self
      */
-    public function setTimeInterval(TimeInterval $time_interval): self
+    public function setTimeInterval($time_interval)
     {
         if (is_null($time_interval)) {
             throw new \InvalidArgumentException('non-nullable time_interval cannot be null');
@@ -350,8 +368,10 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets time_period_type.
+     *
+     * @return TimePeriodType
      */
-    public function getTimePeriodType(): string
+    public function getTimePeriodType()
     {
         return $this->container['time_period_type'];
     }
@@ -359,9 +379,11 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
     /**
      * Sets time_period_type.
      *
-     * @param string $time_period_type time_period_type
+     * @param TimePeriodType $time_period_type time_period_type
+     *
+     * @return self
      */
-    public function setTimePeriodType(string $time_period_type): self
+    public function setTimePeriodType($time_period_type)
     {
         if (is_null($time_period_type)) {
             throw new \InvalidArgumentException('non-nullable time_period_type cannot be null');
@@ -373,8 +395,10 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
-    public function getMarketplaceId(): string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -383,8 +407,10 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
      * Sets marketplace_id.
      *
      * @param string $marketplace_id The marketplace identifier. The supported marketplaces for both sellers and vendors are US, CA, ES, UK, FR, IT, IN, DE and JP. The supported marketplaces for vendors only are BR, AU, MX, AE and NL. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) to find the identifier for the marketplace.
+     *
+     * @return self
      */
-    public function setMarketplaceId(string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
             throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
@@ -396,8 +422,10 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets program_types.
+     *
+     * @return ProgramType[]
      */
-    public function getProgramTypes(): array
+    public function getProgramTypes()
     {
         return $this->container['program_types'];
     }
@@ -405,9 +433,11 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
     /**
      * Sets program_types.
      *
-     * @param array $program_types a list of replenishment program types
+     * @param ProgramType[] $program_types a list of replenishment program types
+     *
+     * @return self
      */
-    public function setProgramTypes(array $program_types): self
+    public function setProgramTypes($program_types)
     {
         if (is_null($program_types)) {
             throw new \InvalidArgumentException('non-nullable program_types cannot be null');
@@ -423,8 +453,10 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets asins.
+     *
+     * @return null|string[]
      */
-    public function getAsins(): ?array
+    public function getAsins()
     {
         return $this->container['asins'];
     }
@@ -432,25 +464,20 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
     /**
      * Sets asins.
      *
-     * @param null|array $asins a list of Amazon Standard Identification Numbers (ASINs)
+     * @param null|string[] $asins a list of Amazon Standard Identification Numbers (ASINs)
+     *
+     * @return self
      */
-    public function setAsins(?array $asins): self
+    public function setAsins($asins)
     {
         if (is_null($asins)) {
-            array_push($this->openAPINullablesSetToNull, 'asins');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('asins', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable asins cannot be null');
         }
 
-        if (!is_null($asins) && (count($asins) > 20)) {
+        if (count($asins) > 20) {
             throw new \InvalidArgumentException('invalid value for $asins when calling ListOfferMetricsRequestFilters., number of items must be less than or equal to 20.');
         }
-        if (!is_null($asins) && (count($asins) < 1)) {
+        if (count($asins) < 1) {
             throw new \InvalidArgumentException('invalid length for $asins when calling ListOfferMetricsRequestFilters., number of items must be greater than or equal to 1.');
         }
         $this->container['asins'] = $asins;
@@ -476,7 +503,7 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -487,7 +514,7 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -515,15 +542,17 @@ class ListOfferMetricsRequestFilters implements ModelInterface, \ArrayAccess, \J
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

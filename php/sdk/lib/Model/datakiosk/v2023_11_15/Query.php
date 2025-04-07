@@ -3,7 +3,7 @@
 /**
  * Query.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\datakiosk\v2023_11_15;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -58,15 +57,17 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Query';
+    protected static $openAPIModelName = 'Query';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'query_id' => 'string',
         'query' => 'string',
         'created_time' => '\DateTime',
@@ -75,7 +76,8 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
         'processing_end_time' => '\DateTime',
         'data_document_id' => 'string',
         'error_document_id' => 'string',
-        'pagination' => '\SpApi\Model\datakiosk\v2023_11_15\QueryPagination'];
+        'pagination' => '\SpApi\Model\datakiosk\v2023_11_15\QueryPagination',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -86,7 +88,7 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'query_id' => null,
         'query' => null,
         'created_time' => 'date-time',
@@ -95,7 +97,8 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
         'processing_end_time' => 'date-time',
         'data_document_id' => null,
         'error_document_id' => null,
-        'pagination' => null];
+        'pagination' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -107,11 +110,11 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
         'query' => false,
         'created_time' => false,
         'processing_status' => false,
-        'processing_start_time' => true,
-        'processing_end_time' => true,
-        'data_document_id' => true,
-        'error_document_id' => true,
-        'pagination' => true,
+        'processing_start_time' => false,
+        'processing_end_time' => false,
+        'data_document_id' => false,
+        'error_document_id' => false,
+        'pagination' => false,
     ];
 
     /**
@@ -127,7 +130,7 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'query_id' => 'queryId',
         'query' => 'query',
         'created_time' => 'createdTime',
@@ -144,7 +147,7 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'query_id' => 'setQueryId',
         'query' => 'setQuery',
         'created_time' => 'setCreatedTime',
@@ -161,7 +164,7 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'query_id' => 'getQueryId',
         'query' => 'getQuery',
         'created_time' => 'getCreatedTime',
@@ -175,14 +178,16 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -212,16 +217,20 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -245,32 +254,40 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -280,7 +297,7 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getProcessingStatusAllowableValues(): array
+    public function getProcessingStatusAllowableValues()
     {
         return [
             self::PROCESSING_STATUS_CANCELLED,
@@ -296,7 +313,7 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -330,15 +347,17 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets query_id.
+     *
+     * @return string
      */
-    public function getQueryId(): string
+    public function getQueryId()
     {
         return $this->container['query_id'];
     }
@@ -347,8 +366,10 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets query_id.
      *
      * @param string $query_id The query identifier. This identifier is unique only in combination with a selling partner account ID.
+     *
+     * @return self
      */
-    public function setQueryId(string $query_id): self
+    public function setQueryId($query_id)
     {
         if (is_null($query_id)) {
             throw new \InvalidArgumentException('non-nullable query_id cannot be null');
@@ -360,8 +381,10 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets query.
+     *
+     * @return string
      */
-    public function getQuery(): string
+    public function getQuery()
     {
         return $this->container['query'];
     }
@@ -370,8 +393,10 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets query.
      *
      * @param string $query the submitted query
+     *
+     * @return self
      */
-    public function setQuery(string $query): self
+    public function setQuery($query)
     {
         if (is_null($query)) {
             throw new \InvalidArgumentException('non-nullable query cannot be null');
@@ -383,8 +408,10 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets created_time.
+     *
+     * @return \DateTime
      */
-    public function getCreatedTime(): \DateTime
+    public function getCreatedTime()
     {
         return $this->container['created_time'];
     }
@@ -393,8 +420,10 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets created_time.
      *
      * @param \DateTime $created_time the date and time when the query was created, in ISO 8601 date time format
+     *
+     * @return self
      */
-    public function setCreatedTime(\DateTime $created_time): self
+    public function setCreatedTime($created_time)
     {
         if (is_null($created_time)) {
             throw new \InvalidArgumentException('non-nullable created_time cannot be null');
@@ -406,8 +435,10 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets processing_status.
+     *
+     * @return string
      */
-    public function getProcessingStatus(): string
+    public function getProcessingStatus()
     {
         return $this->container['processing_status'];
     }
@@ -416,8 +447,10 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets processing_status.
      *
      * @param string $processing_status the processing status of the query
+     *
+     * @return self
      */
-    public function setProcessingStatus(string $processing_status): self
+    public function setProcessingStatus($processing_status)
     {
         if (is_null($processing_status)) {
             throw new \InvalidArgumentException('non-nullable processing_status cannot be null');
@@ -439,8 +472,10 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets processing_start_time.
+     *
+     * @return null|\DateTime
      */
-    public function getProcessingStartTime(): ?\DateTime
+    public function getProcessingStartTime()
     {
         return $this->container['processing_start_time'];
     }
@@ -449,18 +484,13 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets processing_start_time.
      *
      * @param null|\DateTime $processing_start_time the date and time when the query processing started, in ISO 8601 date time format
+     *
+     * @return self
      */
-    public function setProcessingStartTime(?\DateTime $processing_start_time): self
+    public function setProcessingStartTime($processing_start_time)
     {
         if (is_null($processing_start_time)) {
-            array_push($this->openAPINullablesSetToNull, 'processing_start_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('processing_start_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable processing_start_time cannot be null');
         }
         $this->container['processing_start_time'] = $processing_start_time;
 
@@ -469,8 +499,10 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets processing_end_time.
+     *
+     * @return null|\DateTime
      */
-    public function getProcessingEndTime(): ?\DateTime
+    public function getProcessingEndTime()
     {
         return $this->container['processing_end_time'];
     }
@@ -479,18 +511,13 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets processing_end_time.
      *
      * @param null|\DateTime $processing_end_time the date and time when the query processing completed, in ISO 8601 date time format
+     *
+     * @return self
      */
-    public function setProcessingEndTime(?\DateTime $processing_end_time): self
+    public function setProcessingEndTime($processing_end_time)
     {
         if (is_null($processing_end_time)) {
-            array_push($this->openAPINullablesSetToNull, 'processing_end_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('processing_end_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable processing_end_time cannot be null');
         }
         $this->container['processing_end_time'] = $processing_end_time;
 
@@ -499,8 +526,10 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets data_document_id.
+     *
+     * @return null|string
      */
-    public function getDataDocumentId(): ?string
+    public function getDataDocumentId()
     {
         return $this->container['data_document_id'];
     }
@@ -509,18 +538,13 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets data_document_id.
      *
      * @param null|string $data_document_id The data document identifier. This identifier is only present when there is data available as a result of the query. This identifier is unique only in combination with a selling partner account ID. Pass this identifier into the `getDocument` operation to get the information required to retrieve the data document's contents.
+     *
+     * @return self
      */
-    public function setDataDocumentId(?string $data_document_id): self
+    public function setDataDocumentId($data_document_id)
     {
         if (is_null($data_document_id)) {
-            array_push($this->openAPINullablesSetToNull, 'data_document_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('data_document_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable data_document_id cannot be null');
         }
         $this->container['data_document_id'] = $data_document_id;
 
@@ -529,8 +553,10 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets error_document_id.
+     *
+     * @return null|string
      */
-    public function getErrorDocumentId(): ?string
+    public function getErrorDocumentId()
     {
         return $this->container['error_document_id'];
     }
@@ -539,18 +565,13 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets error_document_id.
      *
      * @param null|string $error_document_id The error document identifier. This identifier is only present when an error occurs during query processing. This identifier is unique only in combination with a selling partner account ID. Pass this identifier into the `getDocument` operation to get the information required to retrieve the error document's contents.
+     *
+     * @return self
      */
-    public function setErrorDocumentId(?string $error_document_id): self
+    public function setErrorDocumentId($error_document_id)
     {
         if (is_null($error_document_id)) {
-            array_push($this->openAPINullablesSetToNull, 'error_document_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('error_document_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable error_document_id cannot be null');
         }
         $this->container['error_document_id'] = $error_document_id;
 
@@ -559,8 +580,10 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets pagination.
+     *
+     * @return null|QueryPagination
      */
-    public function getPagination(): ?QueryPagination
+    public function getPagination()
     {
         return $this->container['pagination'];
     }
@@ -569,18 +592,13 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets pagination.
      *
      * @param null|QueryPagination $pagination pagination
+     *
+     * @return self
      */
-    public function setPagination(?QueryPagination $pagination): self
+    public function setPagination($pagination)
     {
         if (is_null($pagination)) {
-            array_push($this->openAPINullablesSetToNull, 'pagination');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('pagination', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable pagination cannot be null');
         }
         $this->container['pagination'] = $pagination;
 
@@ -605,7 +623,7 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -616,7 +634,7 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -644,15 +662,17 @@ class Query implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * StandardImageTextCaptionBlock.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\aplusContent\v2020_11_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class StandardImageTextCaptionBlock implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'StandardImageTextCaptionBlock';
+    protected static $openAPIModelName = 'StandardImageTextCaptionBlock';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'block' => '\SpApi\Model\aplusContent\v2020_11_01\StandardImageTextBlock',
-        'caption' => '\SpApi\Model\aplusContent\v2020_11_01\TextComponent'];
+        'caption' => '\SpApi\Model\aplusContent\v2020_11_01\TextComponent',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class StandardImageTextCaptionBlock implements ModelInterface, \ArrayAccess, \Js
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'block' => null,
-        'caption' => null];
+        'caption' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class StandardImageTextCaptionBlock implements ModelInterface, \ArrayAccess, \Js
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'block' => true,
-        'caption' => true,
+        'block' => false,
+        'caption' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class StandardImageTextCaptionBlock implements ModelInterface, \ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'block' => 'block',
         'caption' => 'caption',
     ];
@@ -110,7 +113,7 @@ class StandardImageTextCaptionBlock implements ModelInterface, \ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'block' => 'setBlock',
         'caption' => 'setCaption',
     ];
@@ -120,21 +123,23 @@ class StandardImageTextCaptionBlock implements ModelInterface, \ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'block' => 'getBlock',
         'caption' => 'getCaption',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class StandardImageTextCaptionBlock implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class StandardImageTextCaptionBlock implements ModelInterface, \ArrayAccess, \Js
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class StandardImageTextCaptionBlock implements ModelInterface, \ArrayAccess, \Js
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -236,15 +253,17 @@ class StandardImageTextCaptionBlock implements ModelInterface, \ArrayAccess, \Js
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets block.
+     *
+     * @return null|StandardImageTextBlock
      */
-    public function getBlock(): ?StandardImageTextBlock
+    public function getBlock()
     {
         return $this->container['block'];
     }
@@ -253,18 +272,13 @@ class StandardImageTextCaptionBlock implements ModelInterface, \ArrayAccess, \Js
      * Sets block.
      *
      * @param null|StandardImageTextBlock $block block
+     *
+     * @return self
      */
-    public function setBlock(?StandardImageTextBlock $block): self
+    public function setBlock($block)
     {
         if (is_null($block)) {
-            array_push($this->openAPINullablesSetToNull, 'block');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('block', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable block cannot be null');
         }
         $this->container['block'] = $block;
 
@@ -273,8 +287,10 @@ class StandardImageTextCaptionBlock implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Gets caption.
+     *
+     * @return null|TextComponent
      */
-    public function getCaption(): ?TextComponent
+    public function getCaption()
     {
         return $this->container['caption'];
     }
@@ -283,18 +299,13 @@ class StandardImageTextCaptionBlock implements ModelInterface, \ArrayAccess, \Js
      * Sets caption.
      *
      * @param null|TextComponent $caption caption
+     *
+     * @return self
      */
-    public function setCaption(?TextComponent $caption): self
+    public function setCaption($caption)
     {
         if (is_null($caption)) {
-            array_push($this->openAPINullablesSetToNull, 'caption');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('caption', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable caption cannot be null');
         }
         $this->container['caption'] = $caption;
 
@@ -319,7 +330,7 @@ class StandardImageTextCaptionBlock implements ModelInterface, \ArrayAccess, \Js
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +341,7 @@ class StandardImageTextCaptionBlock implements ModelInterface, \ArrayAccess, \Js
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +369,17 @@ class StandardImageTextCaptionBlock implements ModelInterface, \ArrayAccess, \Js
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

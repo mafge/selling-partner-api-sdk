@@ -3,7 +3,7 @@
 /**
  * PurchaseShipmentRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,20 +52,23 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'PurchaseShipmentRequest';
+    protected static $openAPIModelName = 'PurchaseShipmentRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'request_token' => 'string',
         'rate_id' => 'string',
         'requested_document_specification' => '\SpApi\Model\shipping\v2\RequestedDocumentSpecification',
         'requested_value_added_services' => '\SpApi\Model\shipping\v2\RequestedValueAddedService[]',
-        'additional_inputs' => 'array<string,object>'];
+        'additional_inputs' => 'array<string,object>',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,12 +79,13 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'request_token' => null,
         'rate_id' => null,
         'requested_document_specification' => null,
         'requested_value_added_services' => null,
-        'additional_inputs' => null];
+        'additional_inputs' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -93,8 +96,8 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
         'request_token' => false,
         'rate_id' => false,
         'requested_document_specification' => false,
-        'requested_value_added_services' => true,
-        'additional_inputs' => true,
+        'requested_value_added_services' => false,
+        'additional_inputs' => false,
     ];
 
     /**
@@ -110,7 +113,7 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'request_token' => 'requestToken',
         'rate_id' => 'rateId',
         'requested_document_specification' => 'requestedDocumentSpecification',
@@ -123,7 +126,7 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'request_token' => 'setRequestToken',
         'rate_id' => 'setRateId',
         'requested_document_specification' => 'setRequestedDocumentSpecification',
@@ -136,7 +139,7 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'request_token' => 'getRequestToken',
         'rate_id' => 'getRateId',
         'requested_document_specification' => 'getRequestedDocumentSpecification',
@@ -146,14 +149,16 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -179,16 +184,20 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -212,32 +221,40 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -247,7 +264,7 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -270,15 +287,17 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets request_token.
+     *
+     * @return string
      */
-    public function getRequestToken(): string
+    public function getRequestToken()
     {
         return $this->container['request_token'];
     }
@@ -287,8 +306,10 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets request_token.
      *
      * @param string $request_token a unique token generated to identify a getRates operation
+     *
+     * @return self
      */
-    public function setRequestToken(string $request_token): self
+    public function setRequestToken($request_token)
     {
         if (is_null($request_token)) {
             throw new \InvalidArgumentException('non-nullable request_token cannot be null');
@@ -300,8 +321,10 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets rate_id.
+     *
+     * @return string
      */
-    public function getRateId(): string
+    public function getRateId()
     {
         return $this->container['rate_id'];
     }
@@ -310,8 +333,10 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets rate_id.
      *
      * @param string $rate_id an identifier for the rate (shipment offering) provided by a shipping service provider
+     *
+     * @return self
      */
-    public function setRateId(string $rate_id): self
+    public function setRateId($rate_id)
     {
         if (is_null($rate_id)) {
             throw new \InvalidArgumentException('non-nullable rate_id cannot be null');
@@ -323,8 +348,10 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets requested_document_specification.
+     *
+     * @return RequestedDocumentSpecification
      */
-    public function getRequestedDocumentSpecification(): RequestedDocumentSpecification
+    public function getRequestedDocumentSpecification()
     {
         return $this->container['requested_document_specification'];
     }
@@ -333,8 +360,10 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets requested_document_specification.
      *
      * @param RequestedDocumentSpecification $requested_document_specification requested_document_specification
+     *
+     * @return self
      */
-    public function setRequestedDocumentSpecification(RequestedDocumentSpecification $requested_document_specification): self
+    public function setRequestedDocumentSpecification($requested_document_specification)
     {
         if (is_null($requested_document_specification)) {
             throw new \InvalidArgumentException('non-nullable requested_document_specification cannot be null');
@@ -346,8 +375,10 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets requested_value_added_services.
+     *
+     * @return null|RequestedValueAddedService[]
      */
-    public function getRequestedValueAddedServices(): ?array
+    public function getRequestedValueAddedServices()
     {
         return $this->container['requested_value_added_services'];
     }
@@ -355,19 +386,14 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Sets requested_value_added_services.
      *
-     * @param null|array $requested_value_added_services the value-added services to be added to a shipping service purchase
+     * @param null|RequestedValueAddedService[] $requested_value_added_services the value-added services to be added to a shipping service purchase
+     *
+     * @return self
      */
-    public function setRequestedValueAddedServices(?array $requested_value_added_services): self
+    public function setRequestedValueAddedServices($requested_value_added_services)
     {
         if (is_null($requested_value_added_services)) {
-            array_push($this->openAPINullablesSetToNull, 'requested_value_added_services');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('requested_value_added_services', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable requested_value_added_services cannot be null');
         }
         $this->container['requested_value_added_services'] = $requested_value_added_services;
 
@@ -379,7 +405,7 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return null|array<string,object>
      */
-    public function getAdditionalInputs(): ?array
+    public function getAdditionalInputs()
     {
         return $this->container['additional_inputs'];
     }
@@ -388,18 +414,13 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets additional_inputs.
      *
      * @param null|array<string,object> $additional_inputs The additional inputs required to purchase a shipping offering, in JSON format. The JSON provided here must adhere to the JSON schema that is returned in the response to the getAdditionalInputs operation.  Additional inputs are only required when indicated by the requiresAdditionalInputs property in the response to the getRates operation.
+     *
+     * @return self
      */
-    public function setAdditionalInputs(?array $additional_inputs): self
+    public function setAdditionalInputs($additional_inputs)
     {
         if (is_null($additional_inputs)) {
-            array_push($this->openAPINullablesSetToNull, 'additional_inputs');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('additional_inputs', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable additional_inputs cannot be null');
         }
         $this->container['additional_inputs'] = $additional_inputs;
 
@@ -424,7 +445,7 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -435,7 +456,7 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -463,15 +484,17 @@ class PurchaseShipmentRequest implements ModelInterface, \ArrayAccess, \JsonSeri
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

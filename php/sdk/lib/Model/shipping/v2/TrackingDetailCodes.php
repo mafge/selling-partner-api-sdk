@@ -3,7 +3,7 @@
 /**
  * TrackingDetailCodes.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,17 +52,20 @@ class TrackingDetailCodes implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'TrackingDetailCodes';
+    protected static $openAPIModelName = 'TrackingDetailCodes';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'forward' => '\SpApi\Model\shipping\v2\DetailCodes[]',
-        'returns' => '\SpApi\Model\shipping\v2\DetailCodes[]'];
+        'returns' => '\SpApi\Model\shipping\v2\DetailCodes[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,9 +76,10 @@ class TrackingDetailCodes implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'forward' => null,
-        'returns' => null];
+        'returns' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -101,7 +104,7 @@ class TrackingDetailCodes implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'forward' => 'forward',
         'returns' => 'returns',
     ];
@@ -111,7 +114,7 @@ class TrackingDetailCodes implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'forward' => 'setForward',
         'returns' => 'setReturns',
     ];
@@ -121,21 +124,23 @@ class TrackingDetailCodes implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'forward' => 'getForward',
         'returns' => 'getReturns',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -158,16 +163,20 @@ class TrackingDetailCodes implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -191,32 +200,40 @@ class TrackingDetailCodes implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -226,7 +243,7 @@ class TrackingDetailCodes implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -246,15 +263,17 @@ class TrackingDetailCodes implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets forward.
+     *
+     * @return DetailCodes[]
      */
-    public function getForward(): array
+    public function getForward()
     {
         return $this->container['forward'];
     }
@@ -262,9 +281,11 @@ class TrackingDetailCodes implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets forward.
      *
-     * @param array $forward contains detail codes that provide additional details related to the forward leg of the shipment
+     * @param DetailCodes[] $forward contains detail codes that provide additional details related to the forward leg of the shipment
+     *
+     * @return self
      */
-    public function setForward(array $forward): self
+    public function setForward($forward)
     {
         if (is_null($forward)) {
             throw new \InvalidArgumentException('non-nullable forward cannot be null');
@@ -276,8 +297,10 @@ class TrackingDetailCodes implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets returns.
+     *
+     * @return DetailCodes[]
      */
-    public function getReturns(): array
+    public function getReturns()
     {
         return $this->container['returns'];
     }
@@ -285,9 +308,11 @@ class TrackingDetailCodes implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets returns.
      *
-     * @param array $returns contains detail codes that provide additional details related to the return leg of the shipment
+     * @param DetailCodes[] $returns contains detail codes that provide additional details related to the return leg of the shipment
+     *
+     * @return self
      */
-    public function setReturns(array $returns): self
+    public function setReturns($returns)
     {
         if (is_null($returns)) {
             throw new \InvalidArgumentException('non-nullable returns cannot be null');
@@ -315,7 +340,7 @@ class TrackingDetailCodes implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -326,7 +351,7 @@ class TrackingDetailCodes implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -354,15 +379,17 @@ class TrackingDetailCodes implements ModelInterface, \ArrayAccess, \JsonSerializ
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * RangeSlot.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\services\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class RangeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'RangeSlot';
+    protected static $openAPIModelName = 'RangeSlot';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'start_date_time' => '\DateTime',
         'end_date_time' => '\DateTime',
-        'capacity' => 'int'];
+        'capacity' => 'int',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class RangeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'start_date_time' => 'date-time',
         'end_date_time' => 'date-time',
-        'capacity' => 'int32'];
+        'capacity' => 'int32',
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class RangeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'start_date_time' => true,
-        'end_date_time' => true,
-        'capacity' => true,
+        'start_date_time' => false,
+        'end_date_time' => false,
+        'capacity' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class RangeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'start_date_time' => 'startDateTime',
         'end_date_time' => 'endDateTime',
         'capacity' => 'capacity',
@@ -114,7 +117,7 @@ class RangeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'start_date_time' => 'setStartDateTime',
         'end_date_time' => 'setEndDateTime',
         'capacity' => 'setCapacity',
@@ -125,7 +128,7 @@ class RangeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'start_date_time' => 'getStartDateTime',
         'end_date_time' => 'getEndDateTime',
         'capacity' => 'getCapacity',
@@ -133,14 +136,16 @@ class RangeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class RangeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class RangeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class RangeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -243,15 +260,17 @@ class RangeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets start_date_time.
+     *
+     * @return null|\DateTime
      */
-    public function getStartDateTime(): ?\DateTime
+    public function getStartDateTime()
     {
         return $this->container['start_date_time'];
     }
@@ -260,18 +279,13 @@ class RangeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets start_date_time.
      *
      * @param null|\DateTime $start_date_time start date time of slot in ISO 8601 format with precision of seconds
+     *
+     * @return self
      */
-    public function setStartDateTime(?\DateTime $start_date_time): self
+    public function setStartDateTime($start_date_time)
     {
         if (is_null($start_date_time)) {
-            array_push($this->openAPINullablesSetToNull, 'start_date_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('start_date_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable start_date_time cannot be null');
         }
         $this->container['start_date_time'] = $start_date_time;
 
@@ -280,8 +294,10 @@ class RangeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets end_date_time.
+     *
+     * @return null|\DateTime
      */
-    public function getEndDateTime(): ?\DateTime
+    public function getEndDateTime()
     {
         return $this->container['end_date_time'];
     }
@@ -290,18 +306,13 @@ class RangeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets end_date_time.
      *
      * @param null|\DateTime $end_date_time end date time of slot in ISO 8601 format with precision of seconds
+     *
+     * @return self
      */
-    public function setEndDateTime(?\DateTime $end_date_time): self
+    public function setEndDateTime($end_date_time)
     {
         if (is_null($end_date_time)) {
-            array_push($this->openAPINullablesSetToNull, 'end_date_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('end_date_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable end_date_time cannot be null');
         }
         $this->container['end_date_time'] = $end_date_time;
 
@@ -310,8 +321,10 @@ class RangeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets capacity.
+     *
+     * @return null|int
      */
-    public function getCapacity(): ?int
+    public function getCapacity()
     {
         return $this->container['capacity'];
     }
@@ -320,18 +333,13 @@ class RangeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets capacity.
      *
      * @param null|int $capacity capacity of the slot
+     *
+     * @return self
      */
-    public function setCapacity(?int $capacity): self
+    public function setCapacity($capacity)
     {
         if (is_null($capacity)) {
-            array_push($this->openAPINullablesSetToNull, 'capacity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('capacity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable capacity cannot be null');
         }
         $this->container['capacity'] = $capacity;
 
@@ -356,7 +364,7 @@ class RangeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -367,7 +375,7 @@ class RangeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -395,15 +403,17 @@ class RangeSlot implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

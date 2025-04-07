@@ -3,7 +3,7 @@
 /**
  * GetPaymentMethodsResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\transfers\v2024_06_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,16 +51,19 @@ class GetPaymentMethodsResponse implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetPaymentMethodsResponse';
+    protected static $openAPIModelName = 'GetPaymentMethodsResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
-        'payment_methods' => '\SpApi\Model\transfers\v2024_06_01\PaymentMethodDetails[]'];
+    protected static $openAPITypes = [
+        'payment_methods' => '\SpApi\Model\transfers\v2024_06_01\PaymentMethodDetails[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -72,8 +74,9 @@ class GetPaymentMethodsResponse implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
-        'payment_methods' => null];
+    protected static $openAPIFormats = [
+        'payment_methods' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -81,7 +84,7 @@ class GetPaymentMethodsResponse implements ModelInterface, \ArrayAccess, \JsonSe
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'payment_methods' => true,
+        'payment_methods' => false,
     ];
 
     /**
@@ -97,7 +100,7 @@ class GetPaymentMethodsResponse implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'payment_methods' => 'paymentMethods',
     ];
 
@@ -106,7 +109,7 @@ class GetPaymentMethodsResponse implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'payment_methods' => 'setPaymentMethods',
     ];
 
@@ -115,20 +118,22 @@ class GetPaymentMethodsResponse implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'payment_methods' => 'getPaymentMethods',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -150,16 +155,20 @@ class GetPaymentMethodsResponse implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -183,32 +192,40 @@ class GetPaymentMethodsResponse implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -218,7 +235,7 @@ class GetPaymentMethodsResponse implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -229,15 +246,17 @@ class GetPaymentMethodsResponse implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets payment_methods.
+     *
+     * @return null|PaymentMethodDetails[]
      */
-    public function getPaymentMethods(): ?array
+    public function getPaymentMethods()
     {
         return $this->container['payment_methods'];
     }
@@ -245,19 +264,14 @@ class GetPaymentMethodsResponse implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets payment_methods.
      *
-     * @param null|array $payment_methods the list of payment methods with payment method details
+     * @param null|PaymentMethodDetails[] $payment_methods the list of payment methods with payment method details
+     *
+     * @return self
      */
-    public function setPaymentMethods(?array $payment_methods): self
+    public function setPaymentMethods($payment_methods)
     {
         if (is_null($payment_methods)) {
-            array_push($this->openAPINullablesSetToNull, 'payment_methods');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('payment_methods', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable payment_methods cannot be null');
         }
         $this->container['payment_methods'] = $payment_methods;
 
@@ -282,7 +296,7 @@ class GetPaymentMethodsResponse implements ModelInterface, \ArrayAccess, \JsonSe
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -293,7 +307,7 @@ class GetPaymentMethodsResponse implements ModelInterface, \ArrayAccess, \JsonSe
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -321,15 +335,17 @@ class GetPaymentMethodsResponse implements ModelInterface, \ArrayAccess, \JsonSe
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

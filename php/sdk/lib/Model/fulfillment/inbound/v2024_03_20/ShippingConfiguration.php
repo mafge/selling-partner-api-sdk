@@ -3,7 +3,7 @@
 /**
  * ShippingConfiguration.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class ShippingConfiguration implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ShippingConfiguration';
+    protected static $openAPIModelName = 'ShippingConfiguration';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'shipping_mode' => 'string',
-        'shipping_solution' => 'string'];
+        'shipping_solution' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class ShippingConfiguration implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'shipping_mode' => null,
-        'shipping_solution' => null];
+        'shipping_solution' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class ShippingConfiguration implements ModelInterface, \ArrayAccess, \JsonSerial
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'shipping_mode' => true,
-        'shipping_solution' => true,
+        'shipping_mode' => false,
+        'shipping_solution' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class ShippingConfiguration implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'shipping_mode' => 'shippingMode',
         'shipping_solution' => 'shippingSolution',
     ];
@@ -110,7 +113,7 @@ class ShippingConfiguration implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'shipping_mode' => 'setShippingMode',
         'shipping_solution' => 'setShippingSolution',
     ];
@@ -120,21 +123,23 @@ class ShippingConfiguration implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'shipping_mode' => 'getShippingMode',
         'shipping_solution' => 'getShippingSolution',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class ShippingConfiguration implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class ShippingConfiguration implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class ShippingConfiguration implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -254,15 +271,17 @@ class ShippingConfiguration implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets shipping_mode.
+     *
+     * @return null|string
      */
-    public function getShippingMode(): ?string
+    public function getShippingMode()
     {
         return $this->container['shipping_mode'];
     }
@@ -271,23 +290,18 @@ class ShippingConfiguration implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets shipping_mode.
      *
      * @param null|string $shipping_mode Mode of shipment transportation that this option will provide.  Possible values: `GROUND_SMALL_PARCEL`, `FREIGHT_LTL`, `FREIGHT_FTL_PALLET`, `FREIGHT_FTL_NONPALLET`, `OCEAN_LCL`, `OCEAN_FCL`, `AIR_SMALL_PARCEL`, `AIR_SMALL_PARCEL_EXPRESS`.
+     *
+     * @return self
      */
-    public function setShippingMode(?string $shipping_mode): self
+    public function setShippingMode($shipping_mode)
     {
         if (is_null($shipping_mode)) {
-            array_push($this->openAPINullablesSetToNull, 'shipping_mode');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipping_mode', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipping_mode cannot be null');
         }
-        if (!is_null($shipping_mode) && (mb_strlen($shipping_mode) > 1024)) {
+        if (mb_strlen($shipping_mode) > 1024) {
             throw new \InvalidArgumentException('invalid length for $shipping_mode when calling ShippingConfiguration., must be smaller than or equal to 1024.');
         }
-        if (!is_null($shipping_mode) && (mb_strlen($shipping_mode) < 1)) {
+        if (mb_strlen($shipping_mode) < 1) {
             throw new \InvalidArgumentException('invalid length for $shipping_mode when calling ShippingConfiguration., must be bigger than or equal to 1.');
         }
 
@@ -298,8 +312,10 @@ class ShippingConfiguration implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets shipping_solution.
+     *
+     * @return null|string
      */
-    public function getShippingSolution(): ?string
+    public function getShippingSolution()
     {
         return $this->container['shipping_solution'];
     }
@@ -308,23 +324,18 @@ class ShippingConfiguration implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets shipping_solution.
      *
      * @param null|string $shipping_solution Shipping program for the option. Possible values: `AMAZON_PARTNERED_CARRIER`, `USE_YOUR_OWN_CARRIER`.
+     *
+     * @return self
      */
-    public function setShippingSolution(?string $shipping_solution): self
+    public function setShippingSolution($shipping_solution)
     {
         if (is_null($shipping_solution)) {
-            array_push($this->openAPINullablesSetToNull, 'shipping_solution');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipping_solution', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipping_solution cannot be null');
         }
-        if (!is_null($shipping_solution) && (mb_strlen($shipping_solution) > 1024)) {
+        if (mb_strlen($shipping_solution) > 1024) {
             throw new \InvalidArgumentException('invalid length for $shipping_solution when calling ShippingConfiguration., must be smaller than or equal to 1024.');
         }
-        if (!is_null($shipping_solution) && (mb_strlen($shipping_solution) < 1)) {
+        if (mb_strlen($shipping_solution) < 1) {
             throw new \InvalidArgumentException('invalid length for $shipping_solution when calling ShippingConfiguration., must be bigger than or equal to 1.');
         }
 
@@ -351,7 +362,7 @@ class ShippingConfiguration implements ModelInterface, \ArrayAccess, \JsonSerial
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -362,7 +373,7 @@ class ShippingConfiguration implements ModelInterface, \ArrayAccess, \JsonSerial
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -390,15 +401,17 @@ class ShippingConfiguration implements ModelInterface, \ArrayAccess, \JsonSerial
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

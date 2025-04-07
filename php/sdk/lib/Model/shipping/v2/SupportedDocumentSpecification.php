@@ -3,7 +3,7 @@
 /**
  * SupportedDocumentSpecification.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,18 +52,21 @@ class SupportedDocumentSpecification implements ModelInterface, \ArrayAccess, \J
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'SupportedDocumentSpecification';
+    protected static $openAPIModelName = 'SupportedDocumentSpecification';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'format' => '\SpApi\Model\shipping\v2\DocumentFormat',
         'size' => '\SpApi\Model\shipping\v2\DocumentSize',
-        'print_options' => '\SpApi\Model\shipping\v2\PrintOption[]'];
+        'print_options' => '\SpApi\Model\shipping\v2\PrintOption[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,10 +77,11 @@ class SupportedDocumentSpecification implements ModelInterface, \ArrayAccess, \J
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'format' => null,
         'size' => null,
-        'print_options' => null];
+        'print_options' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -104,7 +107,7 @@ class SupportedDocumentSpecification implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'format' => 'format',
         'size' => 'size',
         'print_options' => 'printOptions',
@@ -115,7 +118,7 @@ class SupportedDocumentSpecification implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'format' => 'setFormat',
         'size' => 'setSize',
         'print_options' => 'setPrintOptions',
@@ -126,7 +129,7 @@ class SupportedDocumentSpecification implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'format' => 'getFormat',
         'size' => 'getSize',
         'print_options' => 'getPrintOptions',
@@ -134,14 +137,16 @@ class SupportedDocumentSpecification implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -165,16 +170,20 @@ class SupportedDocumentSpecification implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -198,32 +207,40 @@ class SupportedDocumentSpecification implements ModelInterface, \ArrayAccess, \J
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -233,7 +250,7 @@ class SupportedDocumentSpecification implements ModelInterface, \ArrayAccess, \J
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -256,15 +273,17 @@ class SupportedDocumentSpecification implements ModelInterface, \ArrayAccess, \J
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets format.
+     *
+     * @return DocumentFormat
      */
-    public function getFormat(): string
+    public function getFormat()
     {
         return $this->container['format'];
     }
@@ -272,9 +291,11 @@ class SupportedDocumentSpecification implements ModelInterface, \ArrayAccess, \J
     /**
      * Sets format.
      *
-     * @param string $format format
+     * @param DocumentFormat $format format
+     *
+     * @return self
      */
-    public function setFormat(string $format): self
+    public function setFormat($format)
     {
         if (is_null($format)) {
             throw new \InvalidArgumentException('non-nullable format cannot be null');
@@ -286,8 +307,10 @@ class SupportedDocumentSpecification implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets size.
+     *
+     * @return DocumentSize
      */
-    public function getSize(): DocumentSize
+    public function getSize()
     {
         return $this->container['size'];
     }
@@ -296,8 +319,10 @@ class SupportedDocumentSpecification implements ModelInterface, \ArrayAccess, \J
      * Sets size.
      *
      * @param DocumentSize $size size
+     *
+     * @return self
      */
-    public function setSize(DocumentSize $size): self
+    public function setSize($size)
     {
         if (is_null($size)) {
             throw new \InvalidArgumentException('non-nullable size cannot be null');
@@ -309,8 +334,10 @@ class SupportedDocumentSpecification implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets print_options.
+     *
+     * @return PrintOption[]
      */
-    public function getPrintOptions(): array
+    public function getPrintOptions()
     {
         return $this->container['print_options'];
     }
@@ -318,9 +345,11 @@ class SupportedDocumentSpecification implements ModelInterface, \ArrayAccess, \J
     /**
      * Sets print_options.
      *
-     * @param array $print_options a list of the format options for a label
+     * @param PrintOption[] $print_options a list of the format options for a label
+     *
+     * @return self
      */
-    public function setPrintOptions(array $print_options): self
+    public function setPrintOptions($print_options)
     {
         if (is_null($print_options)) {
             throw new \InvalidArgumentException('non-nullable print_options cannot be null');
@@ -348,7 +377,7 @@ class SupportedDocumentSpecification implements ModelInterface, \ArrayAccess, \J
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -359,7 +388,7 @@ class SupportedDocumentSpecification implements ModelInterface, \ArrayAccess, \J
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -387,15 +416,17 @@ class SupportedDocumentSpecification implements ModelInterface, \ArrayAccess, \J
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -2,7 +2,7 @@
 /**
  * InvoiceItem
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\invoices\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * InvoiceItem Class Doc Comment
@@ -52,26 +50,27 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'InvoiceItem';
+    protected static $openAPIModelName = 'InvoiceItem';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'item_sequence_number' => 'int',
-             'amazon_product_identifier' => 'string',
-             'vendor_product_identifier' => 'string',
-             'invoiced_quantity' => '\SpApi\Model\vendor\invoices\v1\ItemQuantity',
-             'net_cost' => '\SpApi\Model\vendor\invoices\v1\Money',
-             'net_cost_unit_of_measure' => '\SpApi\Model\vendor\invoices\v1\NetCostUnitOfMeasure',
-             'purchase_order_number' => 'string',
-             'hsn_code' => 'string',
-             'credit_note_details' => '\SpApi\Model\vendor\invoices\v1\CreditNoteDetails',
-             'tax_details' => '\SpApi\Model\vendor\invoices\v1\TaxDetails[]',
-             'charge_details' => '\SpApi\Model\vendor\invoices\v1\ChargeDetails[]',
-             'allowance_details' => '\SpApi\Model\vendor\invoices\v1\AllowanceDetails[]'    ];
+    protected static $openAPITypes = [
+        'item_sequence_number' => 'int',
+        'amazon_product_identifier' => 'string',
+        'vendor_product_identifier' => 'string',
+        'invoiced_quantity' => '\SpApi\Model\vendor\invoices\v1\ItemQuantity',
+        'net_cost' => '\SpApi\Model\vendor\invoices\v1\Money',
+        'net_cost_unit_of_measure' => '\SpApi\Model\vendor\invoices\v1\NetCostUnitOfMeasure',
+        'purchase_order_number' => 'string',
+        'hsn_code' => 'string',
+        'credit_note_details' => '\SpApi\Model\vendor\invoices\v1\CreditNoteDetails',
+        'tax_details' => '\SpApi\Model\vendor\invoices\v1\TaxDetails[]',
+        'charge_details' => '\SpApi\Model\vendor\invoices\v1\ChargeDetails[]',
+        'allowance_details' => '\SpApi\Model\vendor\invoices\v1\AllowanceDetails[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -80,19 +79,20 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'item_sequence_number' => null,
-            'amazon_product_identifier' => null,
-            'vendor_product_identifier' => null,
-            'invoiced_quantity' => null,
-            'net_cost' => null,
-            'net_cost_unit_of_measure' => null,
-            'purchase_order_number' => null,
-            'hsn_code' => null,
-            'credit_note_details' => null,
-            'tax_details' => null,
-            'charge_details' => null,
-            'allowance_details' => null    ];
+    protected static $openAPIFormats = [
+        'item_sequence_number' => null,
+        'amazon_product_identifier' => null,
+        'vendor_product_identifier' => null,
+        'invoiced_quantity' => null,
+        'net_cost' => null,
+        'net_cost_unit_of_measure' => null,
+        'purchase_order_number' => null,
+        'hsn_code' => null,
+        'credit_note_details' => null,
+        'tax_details' => null,
+        'charge_details' => null,
+        'allowance_details' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -101,17 +101,17 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'item_sequence_number' => false,
-        'amazon_product_identifier' => true,
-        'vendor_product_identifier' => true,
+        'amazon_product_identifier' => false,
+        'vendor_product_identifier' => false,
         'invoiced_quantity' => false,
         'net_cost' => false,
-        'net_cost_unit_of_measure' => true,
-        'purchase_order_number' => true,
-        'hsn_code' => true,
-        'credit_note_details' => true,
-        'tax_details' => true,
-        'charge_details' => true,
-        'allowance_details' => true
+        'net_cost_unit_of_measure' => false,
+        'purchase_order_number' => false,
+        'hsn_code' => false,
+        'credit_note_details' => false,
+        'tax_details' => false,
+        'charge_details' => false,
+        'allowance_details' => false
     ];
 
     /**
@@ -126,7 +126,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -136,7 +136,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -199,20 +199,19 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'item_sequence_number' => 'itemSequenceNumber',
-                'amazon_product_identifier' => 'amazonProductIdentifier',
-                'vendor_product_identifier' => 'vendorProductIdentifier',
-                'invoiced_quantity' => 'invoicedQuantity',
-                'net_cost' => 'netCost',
-                'net_cost_unit_of_measure' => 'netCostUnitOfMeasure',
-                'purchase_order_number' => 'purchaseOrderNumber',
-                'hsn_code' => 'hsnCode',
-                'credit_note_details' => 'creditNoteDetails',
-                'tax_details' => 'taxDetails',
-                'charge_details' => 'chargeDetails',
-                'allowance_details' => 'allowanceDetails'
-        
+        'amazon_product_identifier' => 'amazonProductIdentifier',
+        'vendor_product_identifier' => 'vendorProductIdentifier',
+        'invoiced_quantity' => 'invoicedQuantity',
+        'net_cost' => 'netCost',
+        'net_cost_unit_of_measure' => 'netCostUnitOfMeasure',
+        'purchase_order_number' => 'purchaseOrderNumber',
+        'hsn_code' => 'hsnCode',
+        'credit_note_details' => 'creditNoteDetails',
+        'tax_details' => 'taxDetails',
+        'charge_details' => 'chargeDetails',
+        'allowance_details' => 'allowanceDetails'
     ];
 
     /**
@@ -220,7 +219,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'item_sequence_number' => 'setItemSequenceNumber',
         'amazon_product_identifier' => 'setAmazonProductIdentifier',
         'vendor_product_identifier' => 'setVendorProductIdentifier',
@@ -240,7 +239,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'item_sequence_number' => 'getItemSequenceNumber',
         'amazon_product_identifier' => 'getAmazonProductIdentifier',
         'vendor_product_identifier' => 'getVendorProductIdentifier',
@@ -261,7 +260,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -271,7 +270,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -281,7 +280,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -291,7 +290,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -300,17 +299,17 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('item_sequence_number', $data ?? [], null);
         $this->setIfExists('amazon_product_identifier', $data ?? [], null);
@@ -349,7 +348,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -371,7 +370,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -382,7 +381,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return int
      */
-    public function getItemSequenceNumber(): int
+    public function getItemSequenceNumber()
     {
         return $this->container['item_sequence_number'];
     }
@@ -394,7 +393,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setItemSequenceNumber(int $item_sequence_number): self
+    public function setItemSequenceNumber($item_sequence_number)
     {
         if (is_null($item_sequence_number)) {
             throw new \InvalidArgumentException('non-nullable item_sequence_number cannot be null');
@@ -409,7 +408,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getAmazonProductIdentifier(): ?string
+    public function getAmazonProductIdentifier()
     {
         return $this->container['amazon_product_identifier'];
     }
@@ -421,17 +420,10 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAmazonProductIdentifier(?string $amazon_product_identifier): self
+    public function setAmazonProductIdentifier($amazon_product_identifier)
     {
         if (is_null($amazon_product_identifier)) {
-            array_push($this->openAPINullablesSetToNull, 'amazon_product_identifier');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amazon_product_identifier', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable amazon_product_identifier cannot be null');
         }
         $this->container['amazon_product_identifier'] = $amazon_product_identifier;
 
@@ -443,7 +435,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getVendorProductIdentifier(): ?string
+    public function getVendorProductIdentifier()
     {
         return $this->container['vendor_product_identifier'];
     }
@@ -455,17 +447,10 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setVendorProductIdentifier(?string $vendor_product_identifier): self
+    public function setVendorProductIdentifier($vendor_product_identifier)
     {
         if (is_null($vendor_product_identifier)) {
-            array_push($this->openAPINullablesSetToNull, 'vendor_product_identifier');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('vendor_product_identifier', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable vendor_product_identifier cannot be null');
         }
         $this->container['vendor_product_identifier'] = $vendor_product_identifier;
 
@@ -477,7 +462,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\invoices\v1\ItemQuantity
      */
-    public function getInvoicedQuantity(): \SpApi\Model\vendor\invoices\v1\ItemQuantity
+    public function getInvoicedQuantity()
     {
         return $this->container['invoiced_quantity'];
     }
@@ -489,7 +474,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setInvoicedQuantity(\SpApi\Model\vendor\invoices\v1\ItemQuantity $invoiced_quantity): self
+    public function setInvoicedQuantity($invoiced_quantity)
     {
         if (is_null($invoiced_quantity)) {
             throw new \InvalidArgumentException('non-nullable invoiced_quantity cannot be null');
@@ -504,7 +489,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\invoices\v1\Money
      */
-    public function getNetCost(): \SpApi\Model\vendor\invoices\v1\Money
+    public function getNetCost()
     {
         return $this->container['net_cost'];
     }
@@ -516,7 +501,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setNetCost(\SpApi\Model\vendor\invoices\v1\Money $net_cost): self
+    public function setNetCost($net_cost)
     {
         if (is_null($net_cost)) {
             throw new \InvalidArgumentException('non-nullable net_cost cannot be null');
@@ -529,9 +514,9 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets net_cost_unit_of_measure
      *
-     * @return string|null
+     * @return \SpApi\Model\vendor\invoices\v1\NetCostUnitOfMeasure|null
      */
-    public function getNetCostUnitOfMeasure(): ?string
+    public function getNetCostUnitOfMeasure()
     {
         return $this->container['net_cost_unit_of_measure'];
     }
@@ -539,21 +524,14 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets net_cost_unit_of_measure
      *
-     * @param string|null $net_cost_unit_of_measure net_cost_unit_of_measure
+     * @param \SpApi\Model\vendor\invoices\v1\NetCostUnitOfMeasure|null $net_cost_unit_of_measure net_cost_unit_of_measure
      *
      * @return self
      */
-    public function setNetCostUnitOfMeasure(?string $net_cost_unit_of_measure): self
+    public function setNetCostUnitOfMeasure($net_cost_unit_of_measure)
     {
         if (is_null($net_cost_unit_of_measure)) {
-            array_push($this->openAPINullablesSetToNull, 'net_cost_unit_of_measure');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('net_cost_unit_of_measure', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable net_cost_unit_of_measure cannot be null');
         }
         $this->container['net_cost_unit_of_measure'] = $net_cost_unit_of_measure;
 
@@ -565,7 +543,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getPurchaseOrderNumber(): ?string
+    public function getPurchaseOrderNumber()
     {
         return $this->container['purchase_order_number'];
     }
@@ -577,17 +555,10 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setPurchaseOrderNumber(?string $purchase_order_number): self
+    public function setPurchaseOrderNumber($purchase_order_number)
     {
         if (is_null($purchase_order_number)) {
-            array_push($this->openAPINullablesSetToNull, 'purchase_order_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('purchase_order_number', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable purchase_order_number cannot be null');
         }
         $this->container['purchase_order_number'] = $purchase_order_number;
 
@@ -599,7 +570,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getHsnCode(): ?string
+    public function getHsnCode()
     {
         return $this->container['hsn_code'];
     }
@@ -611,17 +582,10 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setHsnCode(?string $hsn_code): self
+    public function setHsnCode($hsn_code)
     {
         if (is_null($hsn_code)) {
-            array_push($this->openAPINullablesSetToNull, 'hsn_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('hsn_code', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable hsn_code cannot be null');
         }
         $this->container['hsn_code'] = $hsn_code;
 
@@ -633,7 +597,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\invoices\v1\CreditNoteDetails|null
      */
-    public function getCreditNoteDetails(): ?\SpApi\Model\vendor\invoices\v1\CreditNoteDetails
+    public function getCreditNoteDetails()
     {
         return $this->container['credit_note_details'];
     }
@@ -645,17 +609,10 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCreditNoteDetails(?\SpApi\Model\vendor\invoices\v1\CreditNoteDetails $credit_note_details): self
+    public function setCreditNoteDetails($credit_note_details)
     {
         if (is_null($credit_note_details)) {
-            array_push($this->openAPINullablesSetToNull, 'credit_note_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('credit_note_details', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable credit_note_details cannot be null');
         }
         $this->container['credit_note_details'] = $credit_note_details;
 
@@ -665,9 +622,9 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tax_details
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\invoices\v1\TaxDetails[]|null
      */
-    public function getTaxDetails(): ?array
+    public function getTaxDetails()
     {
         return $this->container['tax_details'];
     }
@@ -675,21 +632,14 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tax_details
      *
-     * @param array|null $tax_details Individual tax details per line item.
+     * @param \SpApi\Model\vendor\invoices\v1\TaxDetails[]|null $tax_details Individual tax details per line item.
      *
      * @return self
      */
-    public function setTaxDetails(?array $tax_details): self
+    public function setTaxDetails($tax_details)
     {
         if (is_null($tax_details)) {
-            array_push($this->openAPINullablesSetToNull, 'tax_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tax_details', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tax_details cannot be null');
         }
         $this->container['tax_details'] = $tax_details;
 
@@ -699,9 +649,9 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets charge_details
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\invoices\v1\ChargeDetails[]|null
      */
-    public function getChargeDetails(): ?array
+    public function getChargeDetails()
     {
         return $this->container['charge_details'];
     }
@@ -709,21 +659,14 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets charge_details
      *
-     * @param array|null $charge_details Individual charge details per line item.
+     * @param \SpApi\Model\vendor\invoices\v1\ChargeDetails[]|null $charge_details Individual charge details per line item.
      *
      * @return self
      */
-    public function setChargeDetails(?array $charge_details): self
+    public function setChargeDetails($charge_details)
     {
         if (is_null($charge_details)) {
-            array_push($this->openAPINullablesSetToNull, 'charge_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('charge_details', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable charge_details cannot be null');
         }
         $this->container['charge_details'] = $charge_details;
 
@@ -733,9 +676,9 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets allowance_details
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\invoices\v1\AllowanceDetails[]|null
      */
-    public function getAllowanceDetails(): ?array
+    public function getAllowanceDetails()
     {
         return $this->container['allowance_details'];
     }
@@ -743,28 +686,19 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets allowance_details
      *
-     * @param array|null $allowance_details Individual allowance details per line item.
+     * @param \SpApi\Model\vendor\invoices\v1\AllowanceDetails[]|null $allowance_details Individual allowance details per line item.
      *
      * @return self
      */
-    public function setAllowanceDetails(?array $allowance_details): self
+    public function setAllowanceDetails($allowance_details)
     {
         if (is_null($allowance_details)) {
-            array_push($this->openAPINullablesSetToNull, 'allowance_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('allowance_details', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable allowance_details cannot be null');
         }
         $this->container['allowance_details'] = $allowance_details;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -785,7 +719,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -798,7 +732,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -827,7 +761,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -850,7 +784,7 @@ class InvoiceItem implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

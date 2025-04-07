@@ -3,7 +3,7 @@
 /**
  * InventorySummary.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\awd\v2024_05_09;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'InventorySummary';
+    protected static $openAPIModelName = 'InventorySummary';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'expiration_details' => '\SpApi\Model\awd\v2024_05_09\ExpirationDetails[]',
         'inventory_details' => '\SpApi\Model\awd\v2024_05_09\InventoryDetails',
         'sku' => 'string',
         'total_inbound_quantity' => 'int',
-        'total_onhand_quantity' => 'int'];
+        'total_onhand_quantity' => 'int',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'expiration_details' => null,
         'inventory_details' => null,
         'sku' => null,
         'total_inbound_quantity' => 'int64',
-        'total_onhand_quantity' => 'int64'];
+        'total_onhand_quantity' => 'int64',
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,11 +92,11 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'expiration_details' => true,
-        'inventory_details' => true,
+        'expiration_details' => false,
+        'inventory_details' => false,
         'sku' => false,
-        'total_inbound_quantity' => true,
-        'total_onhand_quantity' => true,
+        'total_inbound_quantity' => false,
+        'total_onhand_quantity' => false,
     ];
 
     /**
@@ -109,7 +112,7 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'expiration_details' => 'expirationDetails',
         'inventory_details' => 'inventoryDetails',
         'sku' => 'sku',
@@ -122,7 +125,7 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'expiration_details' => 'setExpirationDetails',
         'inventory_details' => 'setInventoryDetails',
         'sku' => 'setSku',
@@ -135,7 +138,7 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'expiration_details' => 'getExpirationDetails',
         'inventory_details' => 'getInventoryDetails',
         'sku' => 'getSku',
@@ -145,14 +148,16 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -263,15 +280,17 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets expiration_details.
+     *
+     * @return null|ExpirationDetails[]
      */
-    public function getExpirationDetails(): ?array
+    public function getExpirationDetails()
     {
         return $this->container['expiration_details'];
     }
@@ -279,19 +298,14 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Sets expiration_details.
      *
-     * @param null|array $expiration_details The expiration details of the inventory. This object will only appear if the `details` parameter in the request is set to `SHOW`.
+     * @param null|ExpirationDetails[] $expiration_details The expiration details of the inventory. This object will only appear if the `details` parameter in the request is set to `SHOW`.
+     *
+     * @return self
      */
-    public function setExpirationDetails(?array $expiration_details): self
+    public function setExpirationDetails($expiration_details)
     {
         if (is_null($expiration_details)) {
-            array_push($this->openAPINullablesSetToNull, 'expiration_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expiration_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable expiration_details cannot be null');
         }
         $this->container['expiration_details'] = $expiration_details;
 
@@ -300,8 +314,10 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets inventory_details.
+     *
+     * @return null|InventoryDetails
      */
-    public function getInventoryDetails(): ?InventoryDetails
+    public function getInventoryDetails()
     {
         return $this->container['inventory_details'];
     }
@@ -310,18 +326,13 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets inventory_details.
      *
      * @param null|InventoryDetails $inventory_details inventory_details
+     *
+     * @return self
      */
-    public function setInventoryDetails(?InventoryDetails $inventory_details): self
+    public function setInventoryDetails($inventory_details)
     {
         if (is_null($inventory_details)) {
-            array_push($this->openAPINullablesSetToNull, 'inventory_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('inventory_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable inventory_details cannot be null');
         }
         $this->container['inventory_details'] = $inventory_details;
 
@@ -330,8 +341,10 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets sku.
+     *
+     * @return string
      */
-    public function getSku(): string
+    public function getSku()
     {
         return $this->container['sku'];
     }
@@ -340,8 +353,10 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets sku.
      *
      * @param string $sku the seller or merchant SKU
+     *
+     * @return self
      */
-    public function setSku(string $sku): self
+    public function setSku($sku)
     {
         if (is_null($sku)) {
             throw new \InvalidArgumentException('non-nullable sku cannot be null');
@@ -353,8 +368,10 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets total_inbound_quantity.
+     *
+     * @return null|int
      */
-    public function getTotalInboundQuantity(): ?int
+    public function getTotalInboundQuantity()
     {
         return $this->container['total_inbound_quantity'];
     }
@@ -363,18 +380,13 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets total_inbound_quantity.
      *
      * @param null|int $total_inbound_quantity Total quantity that is in-transit from the seller and has not yet been received at an AWD Distribution Center
+     *
+     * @return self
      */
-    public function setTotalInboundQuantity(?int $total_inbound_quantity): self
+    public function setTotalInboundQuantity($total_inbound_quantity)
     {
         if (is_null($total_inbound_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'total_inbound_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_inbound_quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable total_inbound_quantity cannot be null');
         }
         $this->container['total_inbound_quantity'] = $total_inbound_quantity;
 
@@ -383,8 +395,10 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets total_onhand_quantity.
+     *
+     * @return null|int
      */
-    public function getTotalOnhandQuantity(): ?int
+    public function getTotalOnhandQuantity()
     {
         return $this->container['total_onhand_quantity'];
     }
@@ -393,18 +407,13 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets total_onhand_quantity.
      *
      * @param null|int $total_onhand_quantity total quantity that is present in AWD distribution centers
+     *
+     * @return self
      */
-    public function setTotalOnhandQuantity(?int $total_onhand_quantity): self
+    public function setTotalOnhandQuantity($total_onhand_quantity)
     {
         if (is_null($total_onhand_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'total_onhand_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_onhand_quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable total_onhand_quantity cannot be null');
         }
         $this->container['total_onhand_quantity'] = $total_onhand_quantity;
 
@@ -429,7 +438,7 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -440,7 +449,7 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -468,15 +477,17 @@ class InventorySummary implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

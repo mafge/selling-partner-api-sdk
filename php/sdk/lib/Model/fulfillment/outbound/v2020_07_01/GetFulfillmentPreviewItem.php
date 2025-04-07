@@ -3,7 +3,7 @@
 /**
  * GetFulfillmentPreviewItem.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetFulfillmentPreviewItem';
+    protected static $openAPIModelName = 'GetFulfillmentPreviewItem';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'seller_sku' => 'string',
         'quantity' => 'int',
         'per_unit_declared_value' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\Money',
-        'seller_fulfillment_order_item_id' => 'string'];
+        'seller_fulfillment_order_item_id' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'seller_sku' => null,
         'quantity' => 'int32',
         'per_unit_declared_value' => null,
-        'seller_fulfillment_order_item_id' => null];
+        'seller_fulfillment_order_item_id' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,7 +92,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
     protected static array $openAPINullables = [
         'seller_sku' => false,
         'quantity' => false,
-        'per_unit_declared_value' => true,
+        'per_unit_declared_value' => false,
         'seller_fulfillment_order_item_id' => false,
     ];
 
@@ -106,7 +109,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'seller_sku' => 'sellerSku',
         'quantity' => 'quantity',
         'per_unit_declared_value' => 'perUnitDeclaredValue',
@@ -118,7 +121,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'seller_sku' => 'setSellerSku',
         'quantity' => 'setQuantity',
         'per_unit_declared_value' => 'setPerUnitDeclaredValue',
@@ -130,7 +133,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'seller_sku' => 'getSellerSku',
         'quantity' => 'getQuantity',
         'per_unit_declared_value' => 'getPerUnitDeclaredValue',
@@ -139,14 +142,16 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -269,15 +286,17 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets seller_sku.
+     *
+     * @return string
      */
-    public function getSellerSku(): string
+    public function getSellerSku()
     {
         return $this->container['seller_sku'];
     }
@@ -286,8 +305,10 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets seller_sku.
      *
      * @param string $seller_sku the seller SKU of the item
+     *
+     * @return self
      */
-    public function setSellerSku(string $seller_sku): self
+    public function setSellerSku($seller_sku)
     {
         if (is_null($seller_sku)) {
             throw new \InvalidArgumentException('non-nullable seller_sku cannot be null');
@@ -303,8 +324,10 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets quantity.
+     *
+     * @return int
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->container['quantity'];
     }
@@ -313,8 +336,10 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets quantity.
      *
      * @param int $quantity the item quantity
+     *
+     * @return self
      */
-    public function setQuantity(int $quantity): self
+    public function setQuantity($quantity)
     {
         if (is_null($quantity)) {
             throw new \InvalidArgumentException('non-nullable quantity cannot be null');
@@ -326,8 +351,10 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets per_unit_declared_value.
+     *
+     * @return null|Money
      */
-    public function getPerUnitDeclaredValue(): ?Money
+    public function getPerUnitDeclaredValue()
     {
         return $this->container['per_unit_declared_value'];
     }
@@ -336,18 +363,13 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets per_unit_declared_value.
      *
      * @param null|Money $per_unit_declared_value per_unit_declared_value
+     *
+     * @return self
      */
-    public function setPerUnitDeclaredValue(?Money $per_unit_declared_value): self
+    public function setPerUnitDeclaredValue($per_unit_declared_value)
     {
         if (is_null($per_unit_declared_value)) {
-            array_push($this->openAPINullablesSetToNull, 'per_unit_declared_value');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('per_unit_declared_value', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable per_unit_declared_value cannot be null');
         }
         $this->container['per_unit_declared_value'] = $per_unit_declared_value;
 
@@ -356,8 +378,10 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets seller_fulfillment_order_item_id.
+     *
+     * @return string
      */
-    public function getSellerFulfillmentOrderItemId(): string
+    public function getSellerFulfillmentOrderItemId()
     {
         return $this->container['seller_fulfillment_order_item_id'];
     }
@@ -366,8 +390,10 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets seller_fulfillment_order_item_id.
      *
      * @param string $seller_fulfillment_order_item_id a fulfillment order item identifier that the seller creates to track items in the fulfillment preview
+     *
+     * @return self
      */
-    public function setSellerFulfillmentOrderItemId(string $seller_fulfillment_order_item_id): self
+    public function setSellerFulfillmentOrderItemId($seller_fulfillment_order_item_id)
     {
         if (is_null($seller_fulfillment_order_item_id)) {
             throw new \InvalidArgumentException('non-nullable seller_fulfillment_order_item_id cannot be null');
@@ -399,7 +425,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -410,7 +436,7 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -438,15 +464,17 @@ class GetFulfillmentPreviewItem implements ModelInterface, \ArrayAccess, \JsonSe
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * ChargeRefundEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ChargeRefundEvent';
+    protected static $openAPIModelName = 'ChargeRefundEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'posted_date' => '\DateTime',
         'reason_code' => 'string',
         'reason_code_description' => 'string',
-        'charge_refund_transactions' => '\SpApi\Model\finances\v0\ChargeRefundTransaction[]'];
+        'charge_refund_transactions' => '\SpApi\Model\finances\v0\ChargeRefundTransaction[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'posted_date' => 'date-time',
         'reason_code' => null,
         'reason_code_description' => null,
-        'charge_refund_transactions' => null];
+        'charge_refund_transactions' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,10 +90,10 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'posted_date' => true,
-        'reason_code' => true,
-        'reason_code_description' => true,
-        'charge_refund_transactions' => true,
+        'posted_date' => false,
+        'reason_code' => false,
+        'reason_code_description' => false,
+        'charge_refund_transactions' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'posted_date' => 'PostedDate',
         'reason_code' => 'ReasonCode',
         'reason_code_description' => 'ReasonCodeDescription',
@@ -118,7 +121,7 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'posted_date' => 'setPostedDate',
         'reason_code' => 'setReasonCode',
         'reason_code_description' => 'setReasonCodeDescription',
@@ -130,7 +133,7 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'posted_date' => 'getPostedDate',
         'reason_code' => 'getReasonCode',
         'reason_code_description' => 'getReasonCodeDescription',
@@ -139,14 +142,16 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -250,15 +267,17 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTime
      */
-    public function getPostedDate(): ?\DateTime
+    public function getPostedDate()
     {
         return $this->container['posted_date'];
     }
@@ -267,18 +286,13 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets posted_date.
      *
      * @param null|\DateTime $posted_date fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate)
+     *
+     * @return self
      */
-    public function setPostedDate(?\DateTime $posted_date): self
+    public function setPostedDate($posted_date)
     {
         if (is_null($posted_date)) {
-            array_push($this->openAPINullablesSetToNull, 'posted_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('posted_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable posted_date cannot be null');
         }
         $this->container['posted_date'] = $posted_date;
 
@@ -287,8 +301,10 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets reason_code.
+     *
+     * @return null|string
      */
-    public function getReasonCode(): ?string
+    public function getReasonCode()
     {
         return $this->container['reason_code'];
     }
@@ -297,18 +313,13 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets reason_code.
      *
      * @param null|string $reason_code The reason given for a charge refund.  Example: `SubscriptionFeeCorrection`
+     *
+     * @return self
      */
-    public function setReasonCode(?string $reason_code): self
+    public function setReasonCode($reason_code)
     {
         if (is_null($reason_code)) {
-            array_push($this->openAPINullablesSetToNull, 'reason_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('reason_code', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable reason_code cannot be null');
         }
         $this->container['reason_code'] = $reason_code;
 
@@ -317,8 +328,10 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets reason_code_description.
+     *
+     * @return null|string
      */
-    public function getReasonCodeDescription(): ?string
+    public function getReasonCodeDescription()
     {
         return $this->container['reason_code_description'];
     }
@@ -327,18 +340,13 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets reason_code_description.
      *
      * @param null|string $reason_code_description A description of the Reason Code.   Example: `SubscriptionFeeCorrection`
+     *
+     * @return self
      */
-    public function setReasonCodeDescription(?string $reason_code_description): self
+    public function setReasonCodeDescription($reason_code_description)
     {
         if (is_null($reason_code_description)) {
-            array_push($this->openAPINullablesSetToNull, 'reason_code_description');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('reason_code_description', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable reason_code_description cannot be null');
         }
         $this->container['reason_code_description'] = $reason_code_description;
 
@@ -347,8 +355,10 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets charge_refund_transactions.
+     *
+     * @return null|ChargeRefundTransaction[]
      */
-    public function getChargeRefundTransactions(): ?array
+    public function getChargeRefundTransactions()
     {
         return $this->container['charge_refund_transactions'];
     }
@@ -356,19 +366,14 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Sets charge_refund_transactions.
      *
-     * @param null|array $charge_refund_transactions A list of `ChargeRefund` transactions
+     * @param null|ChargeRefundTransaction[] $charge_refund_transactions A list of `ChargeRefund` transactions
+     *
+     * @return self
      */
-    public function setChargeRefundTransactions(?array $charge_refund_transactions): self
+    public function setChargeRefundTransactions($charge_refund_transactions)
     {
         if (is_null($charge_refund_transactions)) {
-            array_push($this->openAPINullablesSetToNull, 'charge_refund_transactions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('charge_refund_transactions', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable charge_refund_transactions cannot be null');
         }
         $this->container['charge_refund_transactions'] = $charge_refund_transactions;
 
@@ -393,7 +398,7 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -404,7 +409,7 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -432,15 +437,17 @@ class ChargeRefundEvent implements ModelInterface, \ArrayAccess, \JsonSerializab
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

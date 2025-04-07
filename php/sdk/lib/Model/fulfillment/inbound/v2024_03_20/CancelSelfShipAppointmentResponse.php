@@ -3,7 +3,7 @@
 /**
  * CancelSelfShipAppointmentResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,16 +51,19 @@ class CancelSelfShipAppointmentResponse implements ModelInterface, \ArrayAccess,
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CancelSelfShipAppointmentResponse';
+    protected static $openAPIModelName = 'CancelSelfShipAppointmentResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
-        'operation_id' => 'string'];
+    protected static $openAPITypes = [
+        'operation_id' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -72,8 +74,9 @@ class CancelSelfShipAppointmentResponse implements ModelInterface, \ArrayAccess,
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
-        'operation_id' => null];
+    protected static $openAPIFormats = [
+        'operation_id' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -97,7 +100,7 @@ class CancelSelfShipAppointmentResponse implements ModelInterface, \ArrayAccess,
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'operation_id' => 'operationId',
     ];
 
@@ -106,7 +109,7 @@ class CancelSelfShipAppointmentResponse implements ModelInterface, \ArrayAccess,
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'operation_id' => 'setOperationId',
     ];
 
@@ -115,20 +118,22 @@ class CancelSelfShipAppointmentResponse implements ModelInterface, \ArrayAccess,
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'operation_id' => 'getOperationId',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -150,16 +155,20 @@ class CancelSelfShipAppointmentResponse implements ModelInterface, \ArrayAccess,
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -183,32 +192,40 @@ class CancelSelfShipAppointmentResponse implements ModelInterface, \ArrayAccess,
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -218,7 +235,7 @@ class CancelSelfShipAppointmentResponse implements ModelInterface, \ArrayAccess,
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -246,15 +263,17 @@ class CancelSelfShipAppointmentResponse implements ModelInterface, \ArrayAccess,
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets operation_id.
+     *
+     * @return string
      */
-    public function getOperationId(): string
+    public function getOperationId()
     {
         return $this->container['operation_id'];
     }
@@ -263,8 +282,10 @@ class CancelSelfShipAppointmentResponse implements ModelInterface, \ArrayAccess,
      * Sets operation_id.
      *
      * @param string $operation_id UUID for the given operation
+     *
+     * @return self
      */
-    public function setOperationId(string $operation_id): self
+    public function setOperationId($operation_id)
     {
         if (is_null($operation_id)) {
             throw new \InvalidArgumentException('non-nullable operation_id cannot be null');
@@ -302,7 +323,7 @@ class CancelSelfShipAppointmentResponse implements ModelInterface, \ArrayAccess,
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -313,7 +334,7 @@ class CancelSelfShipAppointmentResponse implements ModelInterface, \ArrayAccess,
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -341,15 +362,17 @@ class CancelSelfShipAppointmentResponse implements ModelInterface, \ArrayAccess,
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * ListingsItemSubmissionResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\listings\items\v2021_08_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -56,20 +55,23 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ListingsItemSubmissionResponse';
+    protected static $openAPIModelName = 'ListingsItemSubmissionResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'sku' => 'string',
         'status' => 'string',
         'submission_id' => 'string',
         'issues' => '\SpApi\Model\listings\items\v2021_08_01\Issue[]',
-        'identifiers' => '\SpApi\Model\listings\items\v2021_08_01\ItemIdentifiersByMarketplace[]'];
+        'identifiers' => '\SpApi\Model\listings\items\v2021_08_01\ItemIdentifiersByMarketplace[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -80,12 +82,13 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'sku' => null,
         'status' => null,
         'submission_id' => null,
         'issues' => null,
-        'identifiers' => null];
+        'identifiers' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -96,8 +99,8 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
         'sku' => false,
         'status' => false,
         'submission_id' => false,
-        'issues' => true,
-        'identifiers' => true,
+        'issues' => false,
+        'identifiers' => false,
     ];
 
     /**
@@ -113,7 +116,7 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'sku' => 'sku',
         'status' => 'status',
         'submission_id' => 'submissionId',
@@ -126,7 +129,7 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'sku' => 'setSku',
         'status' => 'setStatus',
         'submission_id' => 'setSubmissionId',
@@ -139,7 +142,7 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'sku' => 'getSku',
         'status' => 'getStatus',
         'submission_id' => 'getSubmissionId',
@@ -149,14 +152,16 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -182,16 +187,20 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -215,32 +224,40 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -250,7 +267,7 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
      *
      * @return string[]
      */
-    public function getStatusAllowableValues(): array
+    public function getStatusAllowableValues()
     {
         return [
             self::STATUS_ACCEPTED,
@@ -264,7 +281,7 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -296,15 +313,17 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets sku.
+     *
+     * @return string
      */
-    public function getSku(): string
+    public function getSku()
     {
         return $this->container['sku'];
     }
@@ -313,8 +332,10 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
      * Sets sku.
      *
      * @param string $sku a selling partner provided identifier for an Amazon listing
+     *
+     * @return self
      */
-    public function setSku(string $sku): self
+    public function setSku($sku)
     {
         if (is_null($sku)) {
             throw new \InvalidArgumentException('non-nullable sku cannot be null');
@@ -326,8 +347,10 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets status.
+     *
+     * @return string
      */
-    public function getStatus(): string
+    public function getStatus()
     {
         return $this->container['status'];
     }
@@ -336,8 +359,10 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
      * Sets status.
      *
      * @param string $status the status of the listings item submission
+     *
+     * @return self
      */
-    public function setStatus(string $status): self
+    public function setStatus($status)
     {
         if (is_null($status)) {
             throw new \InvalidArgumentException('non-nullable status cannot be null');
@@ -359,8 +384,10 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets submission_id.
+     *
+     * @return string
      */
-    public function getSubmissionId(): string
+    public function getSubmissionId()
     {
         return $this->container['submission_id'];
     }
@@ -369,8 +396,10 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
      * Sets submission_id.
      *
      * @param string $submission_id the unique identifier of the listings item submission
+     *
+     * @return self
      */
-    public function setSubmissionId(string $submission_id): self
+    public function setSubmissionId($submission_id)
     {
         if (is_null($submission_id)) {
             throw new \InvalidArgumentException('non-nullable submission_id cannot be null');
@@ -382,8 +411,10 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets issues.
+     *
+     * @return null|Issue[]
      */
-    public function getIssues(): ?array
+    public function getIssues()
     {
         return $this->container['issues'];
     }
@@ -391,19 +422,14 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
     /**
      * Sets issues.
      *
-     * @param null|array $issues listings item issues related to the listings item submission
+     * @param null|Issue[] $issues listings item issues related to the listings item submission
+     *
+     * @return self
      */
-    public function setIssues(?array $issues): self
+    public function setIssues($issues)
     {
         if (is_null($issues)) {
-            array_push($this->openAPINullablesSetToNull, 'issues');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('issues', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable issues cannot be null');
         }
         $this->container['issues'] = $issues;
 
@@ -412,8 +438,10 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets identifiers.
+     *
+     * @return null|ItemIdentifiersByMarketplace[]
      */
-    public function getIdentifiers(): ?array
+    public function getIdentifiers()
     {
         return $this->container['identifiers'];
     }
@@ -421,19 +449,14 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
     /**
      * Sets identifiers.
      *
-     * @param null|array $identifiers identity attributes associated with the item in the Amazon catalog, such as the ASIN
+     * @param null|ItemIdentifiersByMarketplace[] $identifiers identity attributes associated with the item in the Amazon catalog, such as the ASIN
+     *
+     * @return self
      */
-    public function setIdentifiers(?array $identifiers): self
+    public function setIdentifiers($identifiers)
     {
         if (is_null($identifiers)) {
-            array_push($this->openAPINullablesSetToNull, 'identifiers');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('identifiers', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable identifiers cannot be null');
         }
         $this->container['identifiers'] = $identifiers;
 
@@ -458,7 +481,7 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -469,7 +492,7 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -497,15 +520,17 @@ class ListingsItemSubmissionResponse implements ModelInterface, \ArrayAccess, \J
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

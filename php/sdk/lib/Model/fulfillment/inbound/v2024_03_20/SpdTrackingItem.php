@@ -3,7 +3,7 @@
 /**
  * SpdTrackingItem.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class SpdTrackingItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'SpdTrackingItem';
+    protected static $openAPIModelName = 'SpdTrackingItem';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'box_id' => 'string',
         'tracking_id' => 'string',
-        'tracking_number_validation_status' => 'string'];
+        'tracking_number_validation_status' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class SpdTrackingItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'box_id' => null,
         'tracking_id' => null,
-        'tracking_number_validation_status' => null];
+        'tracking_number_validation_status' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class SpdTrackingItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'box_id' => true,
-        'tracking_id' => true,
-        'tracking_number_validation_status' => true,
+        'box_id' => false,
+        'tracking_id' => false,
+        'tracking_number_validation_status' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class SpdTrackingItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'box_id' => 'boxId',
         'tracking_id' => 'trackingId',
         'tracking_number_validation_status' => 'trackingNumberValidationStatus',
@@ -114,7 +117,7 @@ class SpdTrackingItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'box_id' => 'setBoxId',
         'tracking_id' => 'setTrackingId',
         'tracking_number_validation_status' => 'setTrackingNumberValidationStatus',
@@ -125,7 +128,7 @@ class SpdTrackingItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'box_id' => 'getBoxId',
         'tracking_id' => 'getTrackingId',
         'tracking_number_validation_status' => 'getTrackingNumberValidationStatus',
@@ -133,14 +136,16 @@ class SpdTrackingItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class SpdTrackingItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class SpdTrackingItem implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class SpdTrackingItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -269,15 +286,17 @@ class SpdTrackingItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets box_id.
+     *
+     * @return null|string
      */
-    public function getBoxId(): ?string
+    public function getBoxId()
     {
         return $this->container['box_id'];
     }
@@ -286,23 +305,18 @@ class SpdTrackingItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets box_id.
      *
      * @param null|string $box_id The ID provided by Amazon that identifies a given box. This ID is comprised of the external shipment ID (which is generated after transportation has been confirmed) and the index of the box.
+     *
+     * @return self
      */
-    public function setBoxId(?string $box_id): self
+    public function setBoxId($box_id)
     {
         if (is_null($box_id)) {
-            array_push($this->openAPINullablesSetToNull, 'box_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('box_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable box_id cannot be null');
         }
-        if (!is_null($box_id) && (mb_strlen($box_id) > 1024)) {
+        if (mb_strlen($box_id) > 1024) {
             throw new \InvalidArgumentException('invalid length for $box_id when calling SpdTrackingItem., must be smaller than or equal to 1024.');
         }
-        if (!is_null($box_id) && (mb_strlen($box_id) < 1)) {
+        if (mb_strlen($box_id) < 1) {
             throw new \InvalidArgumentException('invalid length for $box_id when calling SpdTrackingItem., must be bigger than or equal to 1.');
         }
 
@@ -313,8 +327,10 @@ class SpdTrackingItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets tracking_id.
+     *
+     * @return null|string
      */
-    public function getTrackingId(): ?string
+    public function getTrackingId()
     {
         return $this->container['tracking_id'];
     }
@@ -323,23 +339,18 @@ class SpdTrackingItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets tracking_id.
      *
      * @param null|string $tracking_id the tracking ID associated with each box in a non-Amazon partnered Small Parcel Delivery (SPD) shipment
+     *
+     * @return self
      */
-    public function setTrackingId(?string $tracking_id): self
+    public function setTrackingId($tracking_id)
     {
         if (is_null($tracking_id)) {
-            array_push($this->openAPINullablesSetToNull, 'tracking_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tracking_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tracking_id cannot be null');
         }
-        if (!is_null($tracking_id) && (mb_strlen($tracking_id) > 1024)) {
+        if (mb_strlen($tracking_id) > 1024) {
             throw new \InvalidArgumentException('invalid length for $tracking_id when calling SpdTrackingItem., must be smaller than or equal to 1024.');
         }
-        if (!is_null($tracking_id) && (mb_strlen($tracking_id) < 1)) {
+        if (mb_strlen($tracking_id) < 1) {
             throw new \InvalidArgumentException('invalid length for $tracking_id when calling SpdTrackingItem., must be bigger than or equal to 1.');
         }
 
@@ -350,8 +361,10 @@ class SpdTrackingItem implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets tracking_number_validation_status.
+     *
+     * @return null|string
      */
-    public function getTrackingNumberValidationStatus(): ?string
+    public function getTrackingNumberValidationStatus()
     {
         return $this->container['tracking_number_validation_status'];
     }
@@ -360,23 +373,18 @@ class SpdTrackingItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets tracking_number_validation_status.
      *
      * @param null|string $tracking_number_validation_status Whether or not Amazon has validated the tracking number. If more than 24 hours have passed and the status is not yet 'VALIDATED', please verify the number and update if necessary. Possible values: `VALIDATED`, `NOT_VALIDATED`.
+     *
+     * @return self
      */
-    public function setTrackingNumberValidationStatus(?string $tracking_number_validation_status): self
+    public function setTrackingNumberValidationStatus($tracking_number_validation_status)
     {
         if (is_null($tracking_number_validation_status)) {
-            array_push($this->openAPINullablesSetToNull, 'tracking_number_validation_status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tracking_number_validation_status', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tracking_number_validation_status cannot be null');
         }
-        if (!is_null($tracking_number_validation_status) && (mb_strlen($tracking_number_validation_status) > 1024)) {
+        if (mb_strlen($tracking_number_validation_status) > 1024) {
             throw new \InvalidArgumentException('invalid length for $tracking_number_validation_status when calling SpdTrackingItem., must be smaller than or equal to 1024.');
         }
-        if (!is_null($tracking_number_validation_status) && (mb_strlen($tracking_number_validation_status) < 1)) {
+        if (mb_strlen($tracking_number_validation_status) < 1) {
             throw new \InvalidArgumentException('invalid length for $tracking_number_validation_status when calling SpdTrackingItem., must be bigger than or equal to 1.');
         }
 
@@ -403,7 +411,7 @@ class SpdTrackingItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -414,7 +422,7 @@ class SpdTrackingItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -442,15 +450,17 @@ class SpdTrackingItem implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

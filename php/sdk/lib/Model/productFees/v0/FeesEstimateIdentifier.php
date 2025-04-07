@@ -3,7 +3,7 @@
 /**
  * FeesEstimateIdentifier.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\productFees\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'FeesEstimateIdentifier';
+    protected static $openAPIModelName = 'FeesEstimateIdentifier';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'marketplace_id' => 'string',
         'seller_id' => 'string',
         'id_type' => '\SpApi\Model\productFees\v0\IdType',
@@ -68,7 +69,8 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
         'is_amazon_fulfilled' => 'bool',
         'price_to_estimate_fees' => '\SpApi\Model\productFees\v0\PriceToEstimateFees',
         'seller_input_identifier' => 'string',
-        'optional_fulfillment_program' => '\SpApi\Model\productFees\v0\OptionalFulfillmentProgram'];
+        'optional_fulfillment_program' => '\SpApi\Model\productFees\v0\OptionalFulfillmentProgram',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -79,7 +81,7 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'marketplace_id' => null,
         'seller_id' => null,
         'id_type' => null,
@@ -87,7 +89,8 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
         'is_amazon_fulfilled' => null,
         'price_to_estimate_fees' => null,
         'seller_input_identifier' => null,
-        'optional_fulfillment_program' => null];
+        'optional_fulfillment_program' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -95,14 +98,14 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'marketplace_id' => true,
-        'seller_id' => true,
-        'id_type' => true,
-        'id_value' => true,
-        'is_amazon_fulfilled' => true,
-        'price_to_estimate_fees' => true,
-        'seller_input_identifier' => true,
-        'optional_fulfillment_program' => true,
+        'marketplace_id' => false,
+        'seller_id' => false,
+        'id_type' => false,
+        'id_value' => false,
+        'is_amazon_fulfilled' => false,
+        'price_to_estimate_fees' => false,
+        'seller_input_identifier' => false,
+        'optional_fulfillment_program' => false,
     ];
 
     /**
@@ -118,7 +121,7 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'marketplace_id' => 'MarketplaceId',
         'seller_id' => 'SellerId',
         'id_type' => 'IdType',
@@ -134,7 +137,7 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
         'seller_id' => 'setSellerId',
         'id_type' => 'setIdType',
@@ -150,7 +153,7 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
         'seller_id' => 'getSellerId',
         'id_type' => 'getIdType',
@@ -163,14 +166,16 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -199,16 +204,20 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -232,32 +241,40 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -267,7 +284,7 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -278,15 +295,17 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets marketplace_id.
+     *
+     * @return null|string
      */
-    public function getMarketplaceId(): ?string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -295,18 +314,13 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets marketplace_id.
      *
      * @param null|string $marketplace_id a marketplace identifier
+     *
+     * @return self
      */
-    public function setMarketplaceId(?string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
-            array_push($this->openAPINullablesSetToNull, 'marketplace_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('marketplace_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
         }
         $this->container['marketplace_id'] = $marketplace_id;
 
@@ -315,8 +329,10 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets seller_id.
+     *
+     * @return null|string
      */
-    public function getSellerId(): ?string
+    public function getSellerId()
     {
         return $this->container['seller_id'];
     }
@@ -325,18 +341,13 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets seller_id.
      *
      * @param null|string $seller_id the seller identifier
+     *
+     * @return self
      */
-    public function setSellerId(?string $seller_id): self
+    public function setSellerId($seller_id)
     {
         if (is_null($seller_id)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_id cannot be null');
         }
         $this->container['seller_id'] = $seller_id;
 
@@ -345,8 +356,10 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets id_type.
+     *
+     * @return null|IdType
      */
-    public function getIdType(): ?string
+    public function getIdType()
     {
         return $this->container['id_type'];
     }
@@ -354,19 +367,14 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Sets id_type.
      *
-     * @param null|string $id_type id_type
+     * @param null|IdType $id_type id_type
+     *
+     * @return self
      */
-    public function setIdType(?string $id_type): self
+    public function setIdType($id_type)
     {
         if (is_null($id_type)) {
-            array_push($this->openAPINullablesSetToNull, 'id_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('id_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable id_type cannot be null');
         }
         $this->container['id_type'] = $id_type;
 
@@ -375,8 +383,10 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets id_value.
+     *
+     * @return null|string
      */
-    public function getIdValue(): ?string
+    public function getIdValue()
     {
         return $this->container['id_value'];
     }
@@ -385,18 +395,13 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets id_value.
      *
      * @param null|string $id_value the item identifier
+     *
+     * @return self
      */
-    public function setIdValue(?string $id_value): self
+    public function setIdValue($id_value)
     {
         if (is_null($id_value)) {
-            array_push($this->openAPINullablesSetToNull, 'id_value');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('id_value', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable id_value cannot be null');
         }
         $this->container['id_value'] = $id_value;
 
@@ -405,8 +410,10 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets is_amazon_fulfilled.
+     *
+     * @return null|bool
      */
-    public function getIsAmazonFulfilled(): ?bool
+    public function getIsAmazonFulfilled()
     {
         return $this->container['is_amazon_fulfilled'];
     }
@@ -415,18 +422,13 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets is_amazon_fulfilled.
      *
      * @param null|bool $is_amazon_fulfilled when true, the offer is fulfilled by Amazon
+     *
+     * @return self
      */
-    public function setIsAmazonFulfilled(?bool $is_amazon_fulfilled): self
+    public function setIsAmazonFulfilled($is_amazon_fulfilled)
     {
         if (is_null($is_amazon_fulfilled)) {
-            array_push($this->openAPINullablesSetToNull, 'is_amazon_fulfilled');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_amazon_fulfilled', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_amazon_fulfilled cannot be null');
         }
         $this->container['is_amazon_fulfilled'] = $is_amazon_fulfilled;
 
@@ -435,8 +437,10 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets price_to_estimate_fees.
+     *
+     * @return null|PriceToEstimateFees
      */
-    public function getPriceToEstimateFees(): ?PriceToEstimateFees
+    public function getPriceToEstimateFees()
     {
         return $this->container['price_to_estimate_fees'];
     }
@@ -445,18 +449,13 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets price_to_estimate_fees.
      *
      * @param null|PriceToEstimateFees $price_to_estimate_fees price_to_estimate_fees
+     *
+     * @return self
      */
-    public function setPriceToEstimateFees(?PriceToEstimateFees $price_to_estimate_fees): self
+    public function setPriceToEstimateFees($price_to_estimate_fees)
     {
         if (is_null($price_to_estimate_fees)) {
-            array_push($this->openAPINullablesSetToNull, 'price_to_estimate_fees');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('price_to_estimate_fees', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable price_to_estimate_fees cannot be null');
         }
         $this->container['price_to_estimate_fees'] = $price_to_estimate_fees;
 
@@ -465,8 +464,10 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets seller_input_identifier.
+     *
+     * @return null|string
      */
-    public function getSellerInputIdentifier(): ?string
+    public function getSellerInputIdentifier()
     {
         return $this->container['seller_input_identifier'];
     }
@@ -475,18 +476,13 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets seller_input_identifier.
      *
      * @param null|string $seller_input_identifier a unique identifier provided by the caller to track this request
+     *
+     * @return self
      */
-    public function setSellerInputIdentifier(?string $seller_input_identifier): self
+    public function setSellerInputIdentifier($seller_input_identifier)
     {
         if (is_null($seller_input_identifier)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_input_identifier');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_input_identifier', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_input_identifier cannot be null');
         }
         $this->container['seller_input_identifier'] = $seller_input_identifier;
 
@@ -495,8 +491,10 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets optional_fulfillment_program.
+     *
+     * @return null|OptionalFulfillmentProgram
      */
-    public function getOptionalFulfillmentProgram(): ?string
+    public function getOptionalFulfillmentProgram()
     {
         return $this->container['optional_fulfillment_program'];
     }
@@ -504,19 +502,14 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Sets optional_fulfillment_program.
      *
-     * @param null|string $optional_fulfillment_program optional_fulfillment_program
+     * @param null|OptionalFulfillmentProgram $optional_fulfillment_program optional_fulfillment_program
+     *
+     * @return self
      */
-    public function setOptionalFulfillmentProgram(?string $optional_fulfillment_program): self
+    public function setOptionalFulfillmentProgram($optional_fulfillment_program)
     {
         if (is_null($optional_fulfillment_program)) {
-            array_push($this->openAPINullablesSetToNull, 'optional_fulfillment_program');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('optional_fulfillment_program', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable optional_fulfillment_program cannot be null');
         }
         $this->container['optional_fulfillment_program'] = $optional_fulfillment_program;
 
@@ -541,7 +534,7 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -552,7 +545,7 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -580,15 +573,17 @@ class FeesEstimateIdentifier implements ModelInterface, \ArrayAccess, \JsonSeria
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

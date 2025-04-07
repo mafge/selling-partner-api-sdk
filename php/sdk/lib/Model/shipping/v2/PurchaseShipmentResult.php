@@ -3,7 +3,7 @@
 /**
  * PurchaseShipmentResult.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,19 +52,22 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'PurchaseShipmentResult';
+    protected static $openAPIModelName = 'PurchaseShipmentResult';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'shipment_id' => 'string',
         'package_document_details' => '\SpApi\Model\shipping\v2\PackageDocumentDetail[]',
         'promise' => '\SpApi\Model\shipping\v2\Promise',
-        'benefits' => '\SpApi\Model\shipping\v2\Benefits'];
+        'benefits' => '\SpApi\Model\shipping\v2\Benefits',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,11 +78,12 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'shipment_id' => null,
         'package_document_details' => null,
         'promise' => null,
-        'benefits' => null];
+        'benefits' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -91,7 +94,7 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
         'shipment_id' => false,
         'package_document_details' => false,
         'promise' => false,
-        'benefits' => true,
+        'benefits' => false,
     ];
 
     /**
@@ -107,7 +110,7 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'shipment_id' => 'shipmentId',
         'package_document_details' => 'packageDocumentDetails',
         'promise' => 'promise',
@@ -119,7 +122,7 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'shipment_id' => 'setShipmentId',
         'package_document_details' => 'setPackageDocumentDetails',
         'promise' => 'setPromise',
@@ -131,7 +134,7 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'shipment_id' => 'getShipmentId',
         'package_document_details' => 'getPackageDocumentDetails',
         'promise' => 'getPromise',
@@ -140,14 +143,16 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -172,16 +177,20 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -205,32 +214,40 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -240,7 +257,7 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -263,15 +280,17 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets shipment_id.
+     *
+     * @return string
      */
-    public function getShipmentId(): string
+    public function getShipmentId()
     {
         return $this->container['shipment_id'];
     }
@@ -280,8 +299,10 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets shipment_id.
      *
      * @param string $shipment_id the unique shipment identifier provided by a shipping service
+     *
+     * @return self
      */
-    public function setShipmentId(string $shipment_id): self
+    public function setShipmentId($shipment_id)
     {
         if (is_null($shipment_id)) {
             throw new \InvalidArgumentException('non-nullable shipment_id cannot be null');
@@ -293,8 +314,10 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets package_document_details.
+     *
+     * @return PackageDocumentDetail[]
      */
-    public function getPackageDocumentDetails(): array
+    public function getPackageDocumentDetails()
     {
         return $this->container['package_document_details'];
     }
@@ -302,9 +325,11 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Sets package_document_details.
      *
-     * @param array $package_document_details a list of post-purchase details about a package that will be shipped using a shipping service
+     * @param PackageDocumentDetail[] $package_document_details a list of post-purchase details about a package that will be shipped using a shipping service
+     *
+     * @return self
      */
-    public function setPackageDocumentDetails(array $package_document_details): self
+    public function setPackageDocumentDetails($package_document_details)
     {
         if (is_null($package_document_details)) {
             throw new \InvalidArgumentException('non-nullable package_document_details cannot be null');
@@ -316,8 +341,10 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets promise.
+     *
+     * @return Promise
      */
-    public function getPromise(): Promise
+    public function getPromise()
     {
         return $this->container['promise'];
     }
@@ -326,8 +353,10 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets promise.
      *
      * @param Promise $promise promise
+     *
+     * @return self
      */
-    public function setPromise(Promise $promise): self
+    public function setPromise($promise)
     {
         if (is_null($promise)) {
             throw new \InvalidArgumentException('non-nullable promise cannot be null');
@@ -339,8 +368,10 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets benefits.
+     *
+     * @return null|Benefits
      */
-    public function getBenefits(): ?Benefits
+    public function getBenefits()
     {
         return $this->container['benefits'];
     }
@@ -349,18 +380,13 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets benefits.
      *
      * @param null|Benefits $benefits benefits
+     *
+     * @return self
      */
-    public function setBenefits(?Benefits $benefits): self
+    public function setBenefits($benefits)
     {
         if (is_null($benefits)) {
-            array_push($this->openAPINullablesSetToNull, 'benefits');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('benefits', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable benefits cannot be null');
         }
         $this->container['benefits'] = $benefits;
 
@@ -385,7 +411,7 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -396,7 +422,7 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -424,15 +450,17 @@ class PurchaseShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

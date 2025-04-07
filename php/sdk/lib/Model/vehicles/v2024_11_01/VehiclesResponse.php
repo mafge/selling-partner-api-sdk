@@ -3,7 +3,7 @@
 /**
  * VehiclesResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\vehicles\v2024_11_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class VehiclesResponse implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'VehiclesResponse';
+    protected static $openAPIModelName = 'VehiclesResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'pagination' => '\SpApi\Model\vehicles\v2024_11_01\Pagination',
-        'vehicles' => '\SpApi\Model\vehicles\v2024_11_01\Vehicle[]'];
+        'vehicles' => '\SpApi\Model\vehicles\v2024_11_01\Vehicle[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class VehiclesResponse implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'pagination' => null,
-        'vehicles' => null];
+        'vehicles' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,7 +86,7 @@ class VehiclesResponse implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'pagination' => true,
+        'pagination' => false,
         'vehicles' => false,
     ];
 
@@ -100,7 +103,7 @@ class VehiclesResponse implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'pagination' => 'pagination',
         'vehicles' => 'vehicles',
     ];
@@ -110,7 +113,7 @@ class VehiclesResponse implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'pagination' => 'setPagination',
         'vehicles' => 'setVehicles',
     ];
@@ -120,21 +123,23 @@ class VehiclesResponse implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'pagination' => 'getPagination',
         'vehicles' => 'getVehicles',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class VehiclesResponse implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class VehiclesResponse implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class VehiclesResponse implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -242,15 +259,17 @@ class VehiclesResponse implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets pagination.
+     *
+     * @return null|Pagination
      */
-    public function getPagination(): ?Pagination
+    public function getPagination()
     {
         return $this->container['pagination'];
     }
@@ -259,18 +278,13 @@ class VehiclesResponse implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets pagination.
      *
      * @param null|Pagination $pagination pagination
+     *
+     * @return self
      */
-    public function setPagination(?Pagination $pagination): self
+    public function setPagination($pagination)
     {
         if (is_null($pagination)) {
-            array_push($this->openAPINullablesSetToNull, 'pagination');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('pagination', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable pagination cannot be null');
         }
         $this->container['pagination'] = $pagination;
 
@@ -279,8 +293,10 @@ class VehiclesResponse implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets vehicles.
+     *
+     * @return Vehicle[]
      */
-    public function getVehicles(): array
+    public function getVehicles()
     {
         return $this->container['vehicles'];
     }
@@ -288,9 +304,11 @@ class VehiclesResponse implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Sets vehicles.
      *
-     * @param array $vehicles list of vehicles from Amazon's catalog
+     * @param Vehicle[] $vehicles list of vehicles from Amazon's catalog
+     *
+     * @return self
      */
-    public function setVehicles(array $vehicles): self
+    public function setVehicles($vehicles)
     {
         if (is_null($vehicles)) {
             throw new \InvalidArgumentException('non-nullable vehicles cannot be null');
@@ -318,7 +336,7 @@ class VehiclesResponse implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -329,7 +347,7 @@ class VehiclesResponse implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -357,15 +375,17 @@ class VehiclesResponse implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

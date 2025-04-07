@@ -3,7 +3,7 @@
 /**
  * ResearchingQuantity.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fba\inventory\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class ResearchingQuantity implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ResearchingQuantity';
+    protected static $openAPIModelName = 'ResearchingQuantity';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'total_researching_quantity' => 'int',
-        'researching_quantity_breakdown' => '\SpApi\Model\fba\inventory\v1\ResearchingQuantityEntry[]'];
+        'researching_quantity_breakdown' => '\SpApi\Model\fba\inventory\v1\ResearchingQuantityEntry[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class ResearchingQuantity implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'total_researching_quantity' => null,
-        'researching_quantity_breakdown' => null];
+        'researching_quantity_breakdown' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class ResearchingQuantity implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'total_researching_quantity' => true,
-        'researching_quantity_breakdown' => true,
+        'total_researching_quantity' => false,
+        'researching_quantity_breakdown' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class ResearchingQuantity implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'total_researching_quantity' => 'totalResearchingQuantity',
         'researching_quantity_breakdown' => 'researchingQuantityBreakdown',
     ];
@@ -110,7 +113,7 @@ class ResearchingQuantity implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'total_researching_quantity' => 'setTotalResearchingQuantity',
         'researching_quantity_breakdown' => 'setResearchingQuantityBreakdown',
     ];
@@ -120,21 +123,23 @@ class ResearchingQuantity implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'total_researching_quantity' => 'getTotalResearchingQuantity',
         'researching_quantity_breakdown' => 'getResearchingQuantityBreakdown',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class ResearchingQuantity implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class ResearchingQuantity implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class ResearchingQuantity implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -236,15 +253,17 @@ class ResearchingQuantity implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets total_researching_quantity.
+     *
+     * @return null|int
      */
-    public function getTotalResearchingQuantity(): ?int
+    public function getTotalResearchingQuantity()
     {
         return $this->container['total_researching_quantity'];
     }
@@ -253,18 +272,13 @@ class ResearchingQuantity implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets total_researching_quantity.
      *
      * @param null|int $total_researching_quantity the total number of units currently being researched in Amazon's fulfillment network
+     *
+     * @return self
      */
-    public function setTotalResearchingQuantity(?int $total_researching_quantity): self
+    public function setTotalResearchingQuantity($total_researching_quantity)
     {
         if (is_null($total_researching_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'total_researching_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_researching_quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable total_researching_quantity cannot be null');
         }
         $this->container['total_researching_quantity'] = $total_researching_quantity;
 
@@ -273,8 +287,10 @@ class ResearchingQuantity implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets researching_quantity_breakdown.
+     *
+     * @return null|ResearchingQuantityEntry[]
      */
-    public function getResearchingQuantityBreakdown(): ?array
+    public function getResearchingQuantityBreakdown()
     {
         return $this->container['researching_quantity_breakdown'];
     }
@@ -282,19 +298,14 @@ class ResearchingQuantity implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets researching_quantity_breakdown.
      *
-     * @param null|array $researching_quantity_breakdown a list of quantity details for items currently being researched
+     * @param null|ResearchingQuantityEntry[] $researching_quantity_breakdown a list of quantity details for items currently being researched
+     *
+     * @return self
      */
-    public function setResearchingQuantityBreakdown(?array $researching_quantity_breakdown): self
+    public function setResearchingQuantityBreakdown($researching_quantity_breakdown)
     {
         if (is_null($researching_quantity_breakdown)) {
-            array_push($this->openAPINullablesSetToNull, 'researching_quantity_breakdown');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('researching_quantity_breakdown', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable researching_quantity_breakdown cannot be null');
         }
         $this->container['researching_quantity_breakdown'] = $researching_quantity_breakdown;
 
@@ -319,7 +330,7 @@ class ResearchingQuantity implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +341,7 @@ class ResearchingQuantity implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +369,17 @@ class ResearchingQuantity implements ModelInterface, \ArrayAccess, \JsonSerializ
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

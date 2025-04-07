@@ -3,7 +3,7 @@
 /**
  * DeliveryPreferences.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\orders\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'DeliveryPreferences';
+    protected static $openAPIModelName = 'DeliveryPreferences';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'drop_off_location' => 'string',
         'preferred_delivery_time' => '\SpApi\Model\orders\v0\PreferredDeliveryTime',
         'other_attributes' => '\SpApi\Model\orders\v0\OtherDeliveryAttributes[]',
-        'address_instructions' => 'string'];
+        'address_instructions' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'drop_off_location' => null,
         'preferred_delivery_time' => null,
         'other_attributes' => null,
-        'address_instructions' => null];
+        'address_instructions' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,10 +90,10 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'drop_off_location' => true,
-        'preferred_delivery_time' => true,
-        'other_attributes' => true,
-        'address_instructions' => true,
+        'drop_off_location' => false,
+        'preferred_delivery_time' => false,
+        'other_attributes' => false,
+        'address_instructions' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'drop_off_location' => 'DropOffLocation',
         'preferred_delivery_time' => 'PreferredDeliveryTime',
         'other_attributes' => 'OtherAttributes',
@@ -118,7 +121,7 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'drop_off_location' => 'setDropOffLocation',
         'preferred_delivery_time' => 'setPreferredDeliveryTime',
         'other_attributes' => 'setOtherAttributes',
@@ -130,7 +133,7 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'drop_off_location' => 'getDropOffLocation',
         'preferred_delivery_time' => 'getPreferredDeliveryTime',
         'other_attributes' => 'getOtherAttributes',
@@ -139,14 +142,16 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -250,15 +267,17 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets drop_off_location.
+     *
+     * @return null|string
      */
-    public function getDropOffLocation(): ?string
+    public function getDropOffLocation()
     {
         return $this->container['drop_off_location'];
     }
@@ -267,18 +286,13 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets drop_off_location.
      *
      * @param null|string $drop_off_location drop-off location selected by the customer
+     *
+     * @return self
      */
-    public function setDropOffLocation(?string $drop_off_location): self
+    public function setDropOffLocation($drop_off_location)
     {
         if (is_null($drop_off_location)) {
-            array_push($this->openAPINullablesSetToNull, 'drop_off_location');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('drop_off_location', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable drop_off_location cannot be null');
         }
         $this->container['drop_off_location'] = $drop_off_location;
 
@@ -287,8 +301,10 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets preferred_delivery_time.
+     *
+     * @return null|PreferredDeliveryTime
      */
-    public function getPreferredDeliveryTime(): ?PreferredDeliveryTime
+    public function getPreferredDeliveryTime()
     {
         return $this->container['preferred_delivery_time'];
     }
@@ -297,18 +313,13 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets preferred_delivery_time.
      *
      * @param null|PreferredDeliveryTime $preferred_delivery_time preferred_delivery_time
+     *
+     * @return self
      */
-    public function setPreferredDeliveryTime(?PreferredDeliveryTime $preferred_delivery_time): self
+    public function setPreferredDeliveryTime($preferred_delivery_time)
     {
         if (is_null($preferred_delivery_time)) {
-            array_push($this->openAPINullablesSetToNull, 'preferred_delivery_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('preferred_delivery_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable preferred_delivery_time cannot be null');
         }
         $this->container['preferred_delivery_time'] = $preferred_delivery_time;
 
@@ -317,8 +328,10 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets other_attributes.
+     *
+     * @return null|OtherDeliveryAttributes[]
      */
-    public function getOtherAttributes(): ?array
+    public function getOtherAttributes()
     {
         return $this->container['other_attributes'];
     }
@@ -326,19 +339,14 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets other_attributes.
      *
-     * @param null|array $other_attributes enumerated list of miscellaneous delivery attributes associated with the shipping address
+     * @param null|OtherDeliveryAttributes[] $other_attributes enumerated list of miscellaneous delivery attributes associated with the shipping address
+     *
+     * @return self
      */
-    public function setOtherAttributes(?array $other_attributes): self
+    public function setOtherAttributes($other_attributes)
     {
         if (is_null($other_attributes)) {
-            array_push($this->openAPINullablesSetToNull, 'other_attributes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('other_attributes', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable other_attributes cannot be null');
         }
         $this->container['other_attributes'] = $other_attributes;
 
@@ -347,8 +355,10 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets address_instructions.
+     *
+     * @return null|string
      */
-    public function getAddressInstructions(): ?string
+    public function getAddressInstructions()
     {
         return $this->container['address_instructions'];
     }
@@ -357,18 +367,13 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets address_instructions.
      *
      * @param null|string $address_instructions building instructions, nearby landmark or navigation instructions
+     *
+     * @return self
      */
-    public function setAddressInstructions(?string $address_instructions): self
+    public function setAddressInstructions($address_instructions)
     {
         if (is_null($address_instructions)) {
-            array_push($this->openAPINullablesSetToNull, 'address_instructions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('address_instructions', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable address_instructions cannot be null');
         }
         $this->container['address_instructions'] = $address_instructions;
 
@@ -393,7 +398,7 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -404,7 +409,7 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -432,15 +437,17 @@ class DeliveryPreferences implements ModelInterface, \ArrayAccess, \JsonSerializ
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * FeaturedOfferExpectedPriceResponseBody.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v2022_05_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class FeaturedOfferExpectedPriceResponseBody implements ModelInterface, \ArrayAc
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'FeaturedOfferExpectedPriceResponseBody';
+    protected static $openAPIModelName = 'FeaturedOfferExpectedPriceResponseBody';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'offer_identifier' => '\SpApi\Model\pricing\v2022_05_01\OfferIdentifier',
         'featured_offer_expected_price_results' => '\SpApi\Model\pricing\v2022_05_01\FeaturedOfferExpectedPriceResult[]',
-        'errors' => '\SpApi\Model\pricing\v2022_05_01\Error[]'];
+        'errors' => '\SpApi\Model\pricing\v2022_05_01\Error[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class FeaturedOfferExpectedPriceResponseBody implements ModelInterface, \ArrayAc
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'offer_identifier' => null,
         'featured_offer_expected_price_results' => null,
-        'errors' => null];
+        'errors' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class FeaturedOfferExpectedPriceResponseBody implements ModelInterface, \ArrayAc
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'offer_identifier' => true,
-        'featured_offer_expected_price_results' => true,
-        'errors' => true,
+        'offer_identifier' => false,
+        'featured_offer_expected_price_results' => false,
+        'errors' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class FeaturedOfferExpectedPriceResponseBody implements ModelInterface, \ArrayAc
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'offer_identifier' => 'offerIdentifier',
         'featured_offer_expected_price_results' => 'featuredOfferExpectedPriceResults',
         'errors' => 'errors',
@@ -114,7 +117,7 @@ class FeaturedOfferExpectedPriceResponseBody implements ModelInterface, \ArrayAc
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'offer_identifier' => 'setOfferIdentifier',
         'featured_offer_expected_price_results' => 'setFeaturedOfferExpectedPriceResults',
         'errors' => 'setErrors',
@@ -125,7 +128,7 @@ class FeaturedOfferExpectedPriceResponseBody implements ModelInterface, \ArrayAc
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'offer_identifier' => 'getOfferIdentifier',
         'featured_offer_expected_price_results' => 'getFeaturedOfferExpectedPriceResults',
         'errors' => 'getErrors',
@@ -133,14 +136,16 @@ class FeaturedOfferExpectedPriceResponseBody implements ModelInterface, \ArrayAc
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class FeaturedOfferExpectedPriceResponseBody implements ModelInterface, \ArrayAc
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class FeaturedOfferExpectedPriceResponseBody implements ModelInterface, \ArrayAc
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class FeaturedOfferExpectedPriceResponseBody implements ModelInterface, \ArrayAc
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -243,15 +260,17 @@ class FeaturedOfferExpectedPriceResponseBody implements ModelInterface, \ArrayAc
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets offer_identifier.
+     *
+     * @return null|OfferIdentifier
      */
-    public function getOfferIdentifier(): ?OfferIdentifier
+    public function getOfferIdentifier()
     {
         return $this->container['offer_identifier'];
     }
@@ -260,18 +279,13 @@ class FeaturedOfferExpectedPriceResponseBody implements ModelInterface, \ArrayAc
      * Sets offer_identifier.
      *
      * @param null|OfferIdentifier $offer_identifier offer_identifier
+     *
+     * @return self
      */
-    public function setOfferIdentifier(?OfferIdentifier $offer_identifier): self
+    public function setOfferIdentifier($offer_identifier)
     {
         if (is_null($offer_identifier)) {
-            array_push($this->openAPINullablesSetToNull, 'offer_identifier');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('offer_identifier', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable offer_identifier cannot be null');
         }
         $this->container['offer_identifier'] = $offer_identifier;
 
@@ -280,8 +294,10 @@ class FeaturedOfferExpectedPriceResponseBody implements ModelInterface, \ArrayAc
 
     /**
      * Gets featured_offer_expected_price_results.
+     *
+     * @return null|FeaturedOfferExpectedPriceResult[]
      */
-    public function getFeaturedOfferExpectedPriceResults(): ?array
+    public function getFeaturedOfferExpectedPriceResults()
     {
         return $this->container['featured_offer_expected_price_results'];
     }
@@ -289,19 +305,14 @@ class FeaturedOfferExpectedPriceResponseBody implements ModelInterface, \ArrayAc
     /**
      * Sets featured_offer_expected_price_results.
      *
-     * @param null|array $featured_offer_expected_price_results a list of FOEP results for the requested offer
+     * @param null|FeaturedOfferExpectedPriceResult[] $featured_offer_expected_price_results a list of FOEP results for the requested offer
+     *
+     * @return self
      */
-    public function setFeaturedOfferExpectedPriceResults(?array $featured_offer_expected_price_results): self
+    public function setFeaturedOfferExpectedPriceResults($featured_offer_expected_price_results)
     {
         if (is_null($featured_offer_expected_price_results)) {
-            array_push($this->openAPINullablesSetToNull, 'featured_offer_expected_price_results');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('featured_offer_expected_price_results', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable featured_offer_expected_price_results cannot be null');
         }
         $this->container['featured_offer_expected_price_results'] = $featured_offer_expected_price_results;
 
@@ -310,8 +321,10 @@ class FeaturedOfferExpectedPriceResponseBody implements ModelInterface, \ArrayAc
 
     /**
      * Gets errors.
+     *
+     * @return null|Error[]
      */
-    public function getErrors(): ?array
+    public function getErrors()
     {
         return $this->container['errors'];
     }
@@ -319,19 +332,14 @@ class FeaturedOfferExpectedPriceResponseBody implements ModelInterface, \ArrayAc
     /**
      * Sets errors.
      *
-     * @param null|array $errors a list of error responses that are returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses that are returned when a request is unsuccessful
+     *
+     * @return self
      */
-    public function setErrors(?array $errors): self
+    public function setErrors($errors)
     {
         if (is_null($errors)) {
-            array_push($this->openAPINullablesSetToNull, 'errors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('errors', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable errors cannot be null');
         }
         $this->container['errors'] = $errors;
 
@@ -356,7 +364,7 @@ class FeaturedOfferExpectedPriceResponseBody implements ModelInterface, \ArrayAc
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -367,7 +375,7 @@ class FeaturedOfferExpectedPriceResponseBody implements ModelInterface, \ArrayAc
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -395,15 +403,17 @@ class FeaturedOfferExpectedPriceResponseBody implements ModelInterface, \ArrayAc
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -2,7 +2,7 @@
 /**
  * InventoryUpdate
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\df\inventory\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * InventoryUpdate Class Doc Comment
@@ -52,17 +50,18 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'InventoryUpdate';
+    protected static $openAPIModelName = 'InventoryUpdate';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'selling_party' => '\SpApi\Model\vendor\df\inventory\v1\PartyIdentification',
-             'is_full_update' => 'bool',
-             'items' => '\SpApi\Model\vendor\df\inventory\v1\ItemDetails[]'    ];
+    protected static $openAPITypes = [
+        'selling_party' => '\SpApi\Model\vendor\df\inventory\v1\PartyIdentification',
+        'is_full_update' => 'bool',
+        'items' => '\SpApi\Model\vendor\df\inventory\v1\ItemDetails[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,10 +70,11 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'selling_party' => null,
-            'is_full_update' => null,
-            'items' => null    ];
+    protected static $openAPIFormats = [
+        'selling_party' => null,
+        'is_full_update' => null,
+        'items' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -99,7 +99,7 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -109,7 +109,7 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -172,11 +172,10 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'selling_party' => 'sellingParty',
-                'is_full_update' => 'isFullUpdate',
-                'items' => 'items'
-        
+        'is_full_update' => 'isFullUpdate',
+        'items' => 'items'
     ];
 
     /**
@@ -184,7 +183,7 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'selling_party' => 'setSellingParty',
         'is_full_update' => 'setIsFullUpdate',
         'items' => 'setItems'
@@ -195,7 +194,7 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'selling_party' => 'getSellingParty',
         'is_full_update' => 'getIsFullUpdate',
         'items' => 'getItems'
@@ -207,7 +206,7 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -217,7 +216,7 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -227,7 +226,7 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -237,7 +236,7 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,17 +245,17 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('selling_party', $data ?? [], null);
         $this->setIfExists('is_full_update', $data ?? [], null);
@@ -286,7 +285,7 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -308,7 +307,7 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -319,7 +318,7 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\df\inventory\v1\PartyIdentification
      */
-    public function getSellingParty(): \SpApi\Model\vendor\df\inventory\v1\PartyIdentification
+    public function getSellingParty()
     {
         return $this->container['selling_party'];
     }
@@ -331,7 +330,7 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSellingParty(\SpApi\Model\vendor\df\inventory\v1\PartyIdentification $selling_party): self
+    public function setSellingParty($selling_party)
     {
         if (is_null($selling_party)) {
             throw new \InvalidArgumentException('non-nullable selling_party cannot be null');
@@ -346,7 +345,7 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool
      */
-    public function getIsFullUpdate(): bool
+    public function getIsFullUpdate()
     {
         return $this->container['is_full_update'];
     }
@@ -358,7 +357,7 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setIsFullUpdate(bool $is_full_update): self
+    public function setIsFullUpdate($is_full_update)
     {
         if (is_null($is_full_update)) {
             throw new \InvalidArgumentException('non-nullable is_full_update cannot be null');
@@ -371,9 +370,9 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets items
      *
-     * @return array
+     * @return \SpApi\Model\vendor\df\inventory\v1\ItemDetails[]
      */
-    public function getItems(): array
+    public function getItems()
     {
         return $this->container['items'];
     }
@@ -381,11 +380,11 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets items
      *
-     * @param array $items A list of inventory items with updated details, including quantity available.
+     * @param \SpApi\Model\vendor\df\inventory\v1\ItemDetails[] $items A list of inventory items with updated details, including quantity available.
      *
      * @return self
      */
-    public function setItems(array $items): self
+    public function setItems($items)
     {
         if (is_null($items)) {
             throw new \InvalidArgumentException('non-nullable items cannot be null');
@@ -394,8 +393,6 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -416,7 +413,7 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -429,7 +426,7 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -458,7 +455,7 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -481,7 +478,7 @@ class InventoryUpdate implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * OutboundCapability.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\supplySources\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'OutboundCapability';
+    protected static $openAPIModelName = 'OutboundCapability';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'is_supported' => 'bool',
         'operational_configuration' => '\SpApi\Model\supplySources\v2020_07_01\OperationalConfiguration',
         'return_location' => '\SpApi\Model\supplySources\v2020_07_01\ReturnLocation',
         'delivery_channel' => '\SpApi\Model\supplySources\v2020_07_01\DeliveryChannel',
-        'pickup_channel' => '\SpApi\Model\supplySources\v2020_07_01\PickupChannel'];
+        'pickup_channel' => '\SpApi\Model\supplySources\v2020_07_01\PickupChannel',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'is_supported' => null,
         'operational_configuration' => null,
         'return_location' => null,
         'delivery_channel' => null,
-        'pickup_channel' => null];
+        'pickup_channel' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,11 +92,11 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'is_supported' => true,
-        'operational_configuration' => true,
-        'return_location' => true,
-        'delivery_channel' => true,
-        'pickup_channel' => true,
+        'is_supported' => false,
+        'operational_configuration' => false,
+        'return_location' => false,
+        'delivery_channel' => false,
+        'pickup_channel' => false,
     ];
 
     /**
@@ -109,7 +112,7 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'is_supported' => 'isSupported',
         'operational_configuration' => 'operationalConfiguration',
         'return_location' => 'returnLocation',
@@ -122,7 +125,7 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'is_supported' => 'setIsSupported',
         'operational_configuration' => 'setOperationalConfiguration',
         'return_location' => 'setReturnLocation',
@@ -135,7 +138,7 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'is_supported' => 'getIsSupported',
         'operational_configuration' => 'getOperationalConfiguration',
         'return_location' => 'getReturnLocation',
@@ -145,14 +148,16 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -257,15 +274,17 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets is_supported.
+     *
+     * @return null|bool
      */
-    public function getIsSupported(): ?bool
+    public function getIsSupported()
     {
         return $this->container['is_supported'];
     }
@@ -274,18 +293,13 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets is_supported.
      *
      * @param null|bool $is_supported is_supported
+     *
+     * @return self
      */
-    public function setIsSupported(?bool $is_supported): self
+    public function setIsSupported($is_supported)
     {
         if (is_null($is_supported)) {
-            array_push($this->openAPINullablesSetToNull, 'is_supported');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_supported', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_supported cannot be null');
         }
         $this->container['is_supported'] = $is_supported;
 
@@ -294,8 +308,10 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets operational_configuration.
+     *
+     * @return null|OperationalConfiguration
      */
-    public function getOperationalConfiguration(): ?OperationalConfiguration
+    public function getOperationalConfiguration()
     {
         return $this->container['operational_configuration'];
     }
@@ -304,18 +320,13 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets operational_configuration.
      *
      * @param null|OperationalConfiguration $operational_configuration operational_configuration
+     *
+     * @return self
      */
-    public function setOperationalConfiguration(?OperationalConfiguration $operational_configuration): self
+    public function setOperationalConfiguration($operational_configuration)
     {
         if (is_null($operational_configuration)) {
-            array_push($this->openAPINullablesSetToNull, 'operational_configuration');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('operational_configuration', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable operational_configuration cannot be null');
         }
         $this->container['operational_configuration'] = $operational_configuration;
 
@@ -324,8 +335,10 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets return_location.
+     *
+     * @return null|ReturnLocation
      */
-    public function getReturnLocation(): ?ReturnLocation
+    public function getReturnLocation()
     {
         return $this->container['return_location'];
     }
@@ -334,18 +347,13 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets return_location.
      *
      * @param null|ReturnLocation $return_location return_location
+     *
+     * @return self
      */
-    public function setReturnLocation(?ReturnLocation $return_location): self
+    public function setReturnLocation($return_location)
     {
         if (is_null($return_location)) {
-            array_push($this->openAPINullablesSetToNull, 'return_location');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('return_location', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable return_location cannot be null');
         }
         $this->container['return_location'] = $return_location;
 
@@ -354,8 +362,10 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets delivery_channel.
+     *
+     * @return null|DeliveryChannel
      */
-    public function getDeliveryChannel(): ?DeliveryChannel
+    public function getDeliveryChannel()
     {
         return $this->container['delivery_channel'];
     }
@@ -364,18 +374,13 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets delivery_channel.
      *
      * @param null|DeliveryChannel $delivery_channel delivery_channel
+     *
+     * @return self
      */
-    public function setDeliveryChannel(?DeliveryChannel $delivery_channel): self
+    public function setDeliveryChannel($delivery_channel)
     {
         if (is_null($delivery_channel)) {
-            array_push($this->openAPINullablesSetToNull, 'delivery_channel');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('delivery_channel', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable delivery_channel cannot be null');
         }
         $this->container['delivery_channel'] = $delivery_channel;
 
@@ -384,8 +389,10 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets pickup_channel.
+     *
+     * @return null|PickupChannel
      */
-    public function getPickupChannel(): ?PickupChannel
+    public function getPickupChannel()
     {
         return $this->container['pickup_channel'];
     }
@@ -394,18 +401,13 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets pickup_channel.
      *
      * @param null|PickupChannel $pickup_channel pickup_channel
+     *
+     * @return self
      */
-    public function setPickupChannel(?PickupChannel $pickup_channel): self
+    public function setPickupChannel($pickup_channel)
     {
         if (is_null($pickup_channel)) {
-            array_push($this->openAPINullablesSetToNull, 'pickup_channel');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('pickup_channel', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable pickup_channel cannot be null');
         }
         $this->container['pickup_channel'] = $pickup_channel;
 
@@ -430,7 +432,7 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -441,7 +443,7 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -469,15 +471,17 @@ class OutboundCapability implements ModelInterface, \ArrayAccess, \JsonSerializa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

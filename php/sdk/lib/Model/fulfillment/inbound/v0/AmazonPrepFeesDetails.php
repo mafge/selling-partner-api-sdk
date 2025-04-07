@@ -3,7 +3,7 @@
 /**
  * AmazonPrepFeesDetails.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class AmazonPrepFeesDetails implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'AmazonPrepFeesDetails';
+    protected static $openAPIModelName = 'AmazonPrepFeesDetails';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'prep_instruction' => '\SpApi\Model\fulfillment\inbound\v0\PrepInstruction',
-        'fee_per_unit' => '\SpApi\Model\fulfillment\inbound\v0\Amount'];
+        'fee_per_unit' => '\SpApi\Model\fulfillment\inbound\v0\Amount',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class AmazonPrepFeesDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'prep_instruction' => null,
-        'fee_per_unit' => null];
+        'fee_per_unit' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class AmazonPrepFeesDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'prep_instruction' => true,
-        'fee_per_unit' => true,
+        'prep_instruction' => false,
+        'fee_per_unit' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class AmazonPrepFeesDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'prep_instruction' => 'PrepInstruction',
         'fee_per_unit' => 'FeePerUnit',
     ];
@@ -110,7 +113,7 @@ class AmazonPrepFeesDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'prep_instruction' => 'setPrepInstruction',
         'fee_per_unit' => 'setFeePerUnit',
     ];
@@ -120,21 +123,23 @@ class AmazonPrepFeesDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'prep_instruction' => 'getPrepInstruction',
         'fee_per_unit' => 'getFeePerUnit',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class AmazonPrepFeesDetails implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class AmazonPrepFeesDetails implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class AmazonPrepFeesDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -236,15 +253,17 @@ class AmazonPrepFeesDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets prep_instruction.
+     *
+     * @return null|PrepInstruction
      */
-    public function getPrepInstruction(): ?string
+    public function getPrepInstruction()
     {
         return $this->container['prep_instruction'];
     }
@@ -252,19 +271,14 @@ class AmazonPrepFeesDetails implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Sets prep_instruction.
      *
-     * @param null|string $prep_instruction prep_instruction
+     * @param null|PrepInstruction $prep_instruction prep_instruction
+     *
+     * @return self
      */
-    public function setPrepInstruction(?string $prep_instruction): self
+    public function setPrepInstruction($prep_instruction)
     {
         if (is_null($prep_instruction)) {
-            array_push($this->openAPINullablesSetToNull, 'prep_instruction');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('prep_instruction', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable prep_instruction cannot be null');
         }
         $this->container['prep_instruction'] = $prep_instruction;
 
@@ -273,8 +287,10 @@ class AmazonPrepFeesDetails implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets fee_per_unit.
+     *
+     * @return null|Amount
      */
-    public function getFeePerUnit(): ?Amount
+    public function getFeePerUnit()
     {
         return $this->container['fee_per_unit'];
     }
@@ -283,18 +299,13 @@ class AmazonPrepFeesDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets fee_per_unit.
      *
      * @param null|Amount $fee_per_unit fee_per_unit
+     *
+     * @return self
      */
-    public function setFeePerUnit(?Amount $fee_per_unit): self
+    public function setFeePerUnit($fee_per_unit)
     {
         if (is_null($fee_per_unit)) {
-            array_push($this->openAPINullablesSetToNull, 'fee_per_unit');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fee_per_unit', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fee_per_unit cannot be null');
         }
         $this->container['fee_per_unit'] = $fee_per_unit;
 
@@ -319,7 +330,7 @@ class AmazonPrepFeesDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +341,7 @@ class AmazonPrepFeesDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +369,17 @@ class AmazonPrepFeesDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * ItemSummaryByMarketplace.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\listings\items\v2021_08_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -68,15 +67,17 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ItemSummaryByMarketplace';
+    protected static $openAPIModelName = 'ItemSummaryByMarketplace';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'marketplace_id' => 'string',
         'asin' => 'string',
         'product_type' => 'string',
@@ -86,7 +87,8 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
         'item_name' => 'string',
         'created_date' => '\DateTime',
         'last_updated_date' => '\DateTime',
-        'main_image' => '\SpApi\Model\listings\items\v2021_08_01\ItemImage'];
+        'main_image' => '\SpApi\Model\listings\items\v2021_08_01\ItemImage',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -97,7 +99,7 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'marketplace_id' => null,
         'asin' => null,
         'product_type' => null,
@@ -107,7 +109,8 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
         'item_name' => null,
         'created_date' => 'date-time',
         'last_updated_date' => 'date-time',
-        'main_image' => null];
+        'main_image' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -116,15 +119,15 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      */
     protected static array $openAPINullables = [
         'marketplace_id' => false,
-        'asin' => true,
+        'asin' => false,
         'product_type' => false,
-        'condition_type' => true,
+        'condition_type' => false,
         'status' => false,
-        'fn_sku' => true,
-        'item_name' => true,
+        'fn_sku' => false,
+        'item_name' => false,
         'created_date' => false,
         'last_updated_date' => false,
-        'main_image' => true,
+        'main_image' => false,
     ];
 
     /**
@@ -140,7 +143,7 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'marketplace_id' => 'marketplaceId',
         'asin' => 'asin',
         'product_type' => 'productType',
@@ -158,7 +161,7 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
         'asin' => 'setAsin',
         'product_type' => 'setProductType',
@@ -176,7 +179,7 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
         'asin' => 'getAsin',
         'product_type' => 'getProductType',
@@ -191,14 +194,16 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -229,16 +234,20 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -262,32 +271,40 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -297,7 +314,7 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return string[]
      */
-    public function getConditionTypeAllowableValues(): array
+    public function getConditionTypeAllowableValues()
     {
         return [
             self::CONDITION_TYPE_NEW_NEW,
@@ -321,7 +338,7 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return string[]
      */
-    public function getStatusAllowableValues(): array
+    public function getStatusAllowableValues()
     {
         return [
             self::STATUS_BUYABLE,
@@ -334,7 +351,7 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -372,15 +389,17 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
-    public function getMarketplaceId(): string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -389,8 +408,10 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets marketplace_id.
      *
      * @param string $marketplace_id A marketplace identifier. Identifies the Amazon marketplace for the listings item.
+     *
+     * @return self
      */
-    public function setMarketplaceId(string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
             throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
@@ -402,8 +423,10 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
-    public function getAsin(): ?string
+    public function getAsin()
     {
         return $this->container['asin'];
     }
@@ -412,18 +435,13 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets asin.
      *
      * @param null|string $asin amazon Standard Identification Number (ASIN) of the listings item
+     *
+     * @return self
      */
-    public function setAsin(?string $asin): self
+    public function setAsin($asin)
     {
         if (is_null($asin)) {
-            array_push($this->openAPINullablesSetToNull, 'asin');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('asin', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable asin cannot be null');
         }
         $this->container['asin'] = $asin;
 
@@ -432,8 +450,10 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets product_type.
+     *
+     * @return string
      */
-    public function getProductType(): string
+    public function getProductType()
     {
         return $this->container['product_type'];
     }
@@ -442,8 +462,10 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets product_type.
      *
      * @param string $product_type the Amazon product type of the listings item
+     *
+     * @return self
      */
-    public function setProductType(string $product_type): self
+    public function setProductType($product_type)
     {
         if (is_null($product_type)) {
             throw new \InvalidArgumentException('non-nullable product_type cannot be null');
@@ -455,8 +477,10 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets condition_type.
+     *
+     * @return null|string
      */
-    public function getConditionType(): ?string
+    public function getConditionType()
     {
         return $this->container['condition_type'];
     }
@@ -465,21 +489,16 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets condition_type.
      *
      * @param null|string $condition_type identifies the condition of the listings item
+     *
+     * @return self
      */
-    public function setConditionType(?string $condition_type): self
+    public function setConditionType($condition_type)
     {
         if (is_null($condition_type)) {
-            array_push($this->openAPINullablesSetToNull, 'condition_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('condition_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable condition_type cannot be null');
         }
         $allowedValues = $this->getConditionTypeAllowableValues();
-        if (!is_null($condition_type) && !in_array($condition_type, $allowedValues, true)) {
+        if (!in_array($condition_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'condition_type', must be one of '%s'",
@@ -495,8 +514,10 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets status.
+     *
+     * @return string[]
      */
-    public function getStatus(): array
+    public function getStatus()
     {
         return $this->container['status'];
     }
@@ -504,9 +525,11 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Sets status.
      *
-     * @param array $status statuses that apply to the listings item
+     * @param string[] $status statuses that apply to the listings item
+     *
+     * @return self
      */
-    public function setStatus(array $status): self
+    public function setStatus($status)
     {
         if (is_null($status)) {
             throw new \InvalidArgumentException('non-nullable status cannot be null');
@@ -527,8 +550,10 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets fn_sku.
+     *
+     * @return null|string
      */
-    public function getFnSku(): ?string
+    public function getFnSku()
     {
         return $this->container['fn_sku'];
     }
@@ -537,18 +562,13 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets fn_sku.
      *
      * @param null|string $fn_sku the fulfillment network stock keeping unit is an identifier used by Amazon fulfillment centers to identify each unique item
+     *
+     * @return self
      */
-    public function setFnSku(?string $fn_sku): self
+    public function setFnSku($fn_sku)
     {
         if (is_null($fn_sku)) {
-            array_push($this->openAPINullablesSetToNull, 'fn_sku');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fn_sku', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fn_sku cannot be null');
         }
         $this->container['fn_sku'] = $fn_sku;
 
@@ -557,8 +577,10 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets item_name.
+     *
+     * @return null|string
      */
-    public function getItemName(): ?string
+    public function getItemName()
     {
         return $this->container['item_name'];
     }
@@ -567,18 +589,13 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets item_name.
      *
      * @param null|string $item_name the name or title associated with an Amazon catalog item
+     *
+     * @return self
      */
-    public function setItemName(?string $item_name): self
+    public function setItemName($item_name)
     {
         if (is_null($item_name)) {
-            array_push($this->openAPINullablesSetToNull, 'item_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('item_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable item_name cannot be null');
         }
         $this->container['item_name'] = $item_name;
 
@@ -587,8 +604,10 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets created_date.
+     *
+     * @return \DateTime
      */
-    public function getCreatedDate(): \DateTime
+    public function getCreatedDate()
     {
         return $this->container['created_date'];
     }
@@ -597,8 +616,10 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets created_date.
      *
      * @param \DateTime $created_date the date the listings item was created in ISO 8601 format
+     *
+     * @return self
      */
-    public function setCreatedDate(\DateTime $created_date): self
+    public function setCreatedDate($created_date)
     {
         if (is_null($created_date)) {
             throw new \InvalidArgumentException('non-nullable created_date cannot be null');
@@ -610,8 +631,10 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets last_updated_date.
+     *
+     * @return \DateTime
      */
-    public function getLastUpdatedDate(): \DateTime
+    public function getLastUpdatedDate()
     {
         return $this->container['last_updated_date'];
     }
@@ -620,8 +643,10 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets last_updated_date.
      *
      * @param \DateTime $last_updated_date the date the listings item was last updated in ISO 8601 format
+     *
+     * @return self
      */
-    public function setLastUpdatedDate(\DateTime $last_updated_date): self
+    public function setLastUpdatedDate($last_updated_date)
     {
         if (is_null($last_updated_date)) {
             throw new \InvalidArgumentException('non-nullable last_updated_date cannot be null');
@@ -633,8 +658,10 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets main_image.
+     *
+     * @return null|ItemImage
      */
-    public function getMainImage(): ?ItemImage
+    public function getMainImage()
     {
         return $this->container['main_image'];
     }
@@ -643,18 +670,13 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets main_image.
      *
      * @param null|ItemImage $main_image main_image
+     *
+     * @return self
      */
-    public function setMainImage(?ItemImage $main_image): self
+    public function setMainImage($main_image)
     {
         if (is_null($main_image)) {
-            array_push($this->openAPINullablesSetToNull, 'main_image');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('main_image', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable main_image cannot be null');
         }
         $this->container['main_image'] = $main_image;
 
@@ -679,7 +701,7 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -690,7 +712,7 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -718,15 +740,17 @@ class ItemSummaryByMarketplace implements ModelInterface, \ArrayAccess, \JsonSer
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

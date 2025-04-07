@@ -3,7 +3,7 @@
 /**
  * ReportDocument.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\reports\v2021_06_30;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -54,18 +53,21 @@ class ReportDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ReportDocument';
+    protected static $openAPIModelName = 'ReportDocument';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'report_document_id' => 'string',
         'url' => 'string',
-        'compression_algorithm' => 'string'];
+        'compression_algorithm' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,10 +78,11 @@ class ReportDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'report_document_id' => null,
         'url' => null,
-        'compression_algorithm' => null];
+        'compression_algorithm' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,7 +92,7 @@ class ReportDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'report_document_id' => false,
         'url' => false,
-        'compression_algorithm' => true,
+        'compression_algorithm' => false,
     ];
 
     /**
@@ -105,7 +108,7 @@ class ReportDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'report_document_id' => 'reportDocumentId',
         'url' => 'url',
         'compression_algorithm' => 'compressionAlgorithm',
@@ -116,7 +119,7 @@ class ReportDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'report_document_id' => 'setReportDocumentId',
         'url' => 'setUrl',
         'compression_algorithm' => 'setCompressionAlgorithm',
@@ -127,7 +130,7 @@ class ReportDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'report_document_id' => 'getReportDocumentId',
         'url' => 'getUrl',
         'compression_algorithm' => 'getCompressionAlgorithm',
@@ -135,14 +138,16 @@ class ReportDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -166,16 +171,20 @@ class ReportDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -199,32 +208,40 @@ class ReportDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -234,7 +251,7 @@ class ReportDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getCompressionAlgorithmAllowableValues(): array
+    public function getCompressionAlgorithmAllowableValues()
     {
         return [
             self::COMPRESSION_ALGORITHM_GZIP,
@@ -246,7 +263,7 @@ class ReportDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -274,15 +291,17 @@ class ReportDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets report_document_id.
+     *
+     * @return string
      */
-    public function getReportDocumentId(): string
+    public function getReportDocumentId()
     {
         return $this->container['report_document_id'];
     }
@@ -291,8 +310,10 @@ class ReportDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets report_document_id.
      *
      * @param string $report_document_id The identifier for the report document. This identifier is unique only in combination with a seller ID.
+     *
+     * @return self
      */
-    public function setReportDocumentId(string $report_document_id): self
+    public function setReportDocumentId($report_document_id)
     {
         if (is_null($report_document_id)) {
             throw new \InvalidArgumentException('non-nullable report_document_id cannot be null');
@@ -304,8 +325,10 @@ class ReportDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets url.
+     *
+     * @return string
      */
-    public function getUrl(): string
+    public function getUrl()
     {
         return $this->container['url'];
     }
@@ -314,8 +337,10 @@ class ReportDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets url.
      *
      * @param string $url A presigned URL for the report document. If `compressionAlgorithm` is not returned, you can download the report directly from this URL. This URL expires after 5 minutes.
+     *
+     * @return self
      */
-    public function setUrl(string $url): self
+    public function setUrl($url)
     {
         if (is_null($url)) {
             throw new \InvalidArgumentException('non-nullable url cannot be null');
@@ -327,8 +352,10 @@ class ReportDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets compression_algorithm.
+     *
+     * @return null|string
      */
-    public function getCompressionAlgorithm(): ?string
+    public function getCompressionAlgorithm()
     {
         return $this->container['compression_algorithm'];
     }
@@ -337,21 +364,16 @@ class ReportDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets compression_algorithm.
      *
      * @param null|string $compression_algorithm If the report document contents have been compressed, the compression algorithm used is returned in this property and you must decompress the report when you download. Otherwise, you can download the report directly. Refer to [Step 2. Download the report](https://developer-docs.amazon.com/sp-api/docs/reports-api-v2021-06-30-retrieve-a-report#step-2-download-the-report) in the use case guide, where sample code is provided.
+     *
+     * @return self
      */
-    public function setCompressionAlgorithm(?string $compression_algorithm): self
+    public function setCompressionAlgorithm($compression_algorithm)
     {
         if (is_null($compression_algorithm)) {
-            array_push($this->openAPINullablesSetToNull, 'compression_algorithm');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('compression_algorithm', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable compression_algorithm cannot be null');
         }
         $allowedValues = $this->getCompressionAlgorithmAllowableValues();
-        if (!is_null($compression_algorithm) && !in_array($compression_algorithm, $allowedValues, true)) {
+        if (!in_array($compression_algorithm, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'compression_algorithm', must be one of '%s'",
@@ -383,7 +405,7 @@ class ReportDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -394,7 +416,7 @@ class ReportDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -422,15 +444,17 @@ class ReportDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

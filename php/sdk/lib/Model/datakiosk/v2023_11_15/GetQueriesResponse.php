@@ -3,7 +3,7 @@
 /**
  * GetQueriesResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\datakiosk\v2023_11_15;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class GetQueriesResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetQueriesResponse';
+    protected static $openAPIModelName = 'GetQueriesResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'queries' => '\SpApi\Model\datakiosk\v2023_11_15\Query[]',
-        'pagination' => '\SpApi\Model\datakiosk\v2023_11_15\GetQueriesResponsePagination'];
+        'pagination' => '\SpApi\Model\datakiosk\v2023_11_15\GetQueriesResponsePagination',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class GetQueriesResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'queries' => null,
-        'pagination' => null];
+        'pagination' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -84,7 +87,7 @@ class GetQueriesResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      */
     protected static array $openAPINullables = [
         'queries' => false,
-        'pagination' => true,
+        'pagination' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class GetQueriesResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'queries' => 'queries',
         'pagination' => 'pagination',
     ];
@@ -110,7 +113,7 @@ class GetQueriesResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'queries' => 'setQueries',
         'pagination' => 'setPagination',
     ];
@@ -120,21 +123,23 @@ class GetQueriesResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'queries' => 'getQueries',
         'pagination' => 'getPagination',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class GetQueriesResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class GetQueriesResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class GetQueriesResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -242,15 +259,17 @@ class GetQueriesResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets queries.
+     *
+     * @return Query[]
      */
-    public function getQueries(): array
+    public function getQueries()
     {
         return $this->container['queries'];
     }
@@ -258,9 +277,11 @@ class GetQueriesResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Sets queries.
      *
-     * @param array $queries a list of queries
+     * @param Query[] $queries a list of queries
+     *
+     * @return self
      */
-    public function setQueries(array $queries): self
+    public function setQueries($queries)
     {
         if (is_null($queries)) {
             throw new \InvalidArgumentException('non-nullable queries cannot be null');
@@ -272,8 +293,10 @@ class GetQueriesResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets pagination.
+     *
+     * @return null|GetQueriesResponsePagination
      */
-    public function getPagination(): ?GetQueriesResponsePagination
+    public function getPagination()
     {
         return $this->container['pagination'];
     }
@@ -282,18 +305,13 @@ class GetQueriesResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets pagination.
      *
      * @param null|GetQueriesResponsePagination $pagination pagination
+     *
+     * @return self
      */
-    public function setPagination(?GetQueriesResponsePagination $pagination): self
+    public function setPagination($pagination)
     {
         if (is_null($pagination)) {
-            array_push($this->openAPINullablesSetToNull, 'pagination');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('pagination', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable pagination cannot be null');
         }
         $this->container['pagination'] = $pagination;
 
@@ -318,7 +336,7 @@ class GetQueriesResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -329,7 +347,7 @@ class GetQueriesResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -357,15 +375,17 @@ class GetQueriesResponse implements ModelInterface, \ArrayAccess, \JsonSerializa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

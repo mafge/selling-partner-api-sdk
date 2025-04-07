@@ -3,7 +3,7 @@
 /**
  * TaxWithholdingEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'TaxWithholdingEvent';
+    protected static $openAPIModelName = 'TaxWithholdingEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'posted_date' => '\DateTime',
         'base_amount' => '\SpApi\Model\finances\v0\Currency',
         'withheld_amount' => '\SpApi\Model\finances\v0\Currency',
-        'tax_withholding_period' => '\SpApi\Model\finances\v0\TaxWithholdingPeriod'];
+        'tax_withholding_period' => '\SpApi\Model\finances\v0\TaxWithholdingPeriod',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'posted_date' => 'date-time',
         'base_amount' => null,
         'withheld_amount' => null,
-        'tax_withholding_period' => null];
+        'tax_withholding_period' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,10 +90,10 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'posted_date' => true,
-        'base_amount' => true,
-        'withheld_amount' => true,
-        'tax_withholding_period' => true,
+        'posted_date' => false,
+        'base_amount' => false,
+        'withheld_amount' => false,
+        'tax_withholding_period' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'posted_date' => 'PostedDate',
         'base_amount' => 'BaseAmount',
         'withheld_amount' => 'WithheldAmount',
@@ -118,7 +121,7 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'posted_date' => 'setPostedDate',
         'base_amount' => 'setBaseAmount',
         'withheld_amount' => 'setWithheldAmount',
@@ -130,7 +133,7 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'posted_date' => 'getPostedDate',
         'base_amount' => 'getBaseAmount',
         'withheld_amount' => 'getWithheldAmount',
@@ -139,14 +142,16 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -250,15 +267,17 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTime
      */
-    public function getPostedDate(): ?\DateTime
+    public function getPostedDate()
     {
         return $this->container['posted_date'];
     }
@@ -267,18 +286,13 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets posted_date.
      *
      * @param null|\DateTime $posted_date fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate)
+     *
+     * @return self
      */
-    public function setPostedDate(?\DateTime $posted_date): self
+    public function setPostedDate($posted_date)
     {
         if (is_null($posted_date)) {
-            array_push($this->openAPINullablesSetToNull, 'posted_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('posted_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable posted_date cannot be null');
         }
         $this->container['posted_date'] = $posted_date;
 
@@ -287,8 +301,10 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets base_amount.
+     *
+     * @return null|Currency
      */
-    public function getBaseAmount(): ?Currency
+    public function getBaseAmount()
     {
         return $this->container['base_amount'];
     }
@@ -297,18 +313,13 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets base_amount.
      *
      * @param null|Currency $base_amount base_amount
+     *
+     * @return self
      */
-    public function setBaseAmount(?Currency $base_amount): self
+    public function setBaseAmount($base_amount)
     {
         if (is_null($base_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'base_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('base_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable base_amount cannot be null');
         }
         $this->container['base_amount'] = $base_amount;
 
@@ -317,8 +328,10 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets withheld_amount.
+     *
+     * @return null|Currency
      */
-    public function getWithheldAmount(): ?Currency
+    public function getWithheldAmount()
     {
         return $this->container['withheld_amount'];
     }
@@ -327,18 +340,13 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets withheld_amount.
      *
      * @param null|Currency $withheld_amount withheld_amount
+     *
+     * @return self
      */
-    public function setWithheldAmount(?Currency $withheld_amount): self
+    public function setWithheldAmount($withheld_amount)
     {
         if (is_null($withheld_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'withheld_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('withheld_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable withheld_amount cannot be null');
         }
         $this->container['withheld_amount'] = $withheld_amount;
 
@@ -347,8 +355,10 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets tax_withholding_period.
+     *
+     * @return null|TaxWithholdingPeriod
      */
-    public function getTaxWithholdingPeriod(): ?TaxWithholdingPeriod
+    public function getTaxWithholdingPeriod()
     {
         return $this->container['tax_withholding_period'];
     }
@@ -357,18 +367,13 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets tax_withholding_period.
      *
      * @param null|TaxWithholdingPeriod $tax_withholding_period tax_withholding_period
+     *
+     * @return self
      */
-    public function setTaxWithholdingPeriod(?TaxWithholdingPeriod $tax_withholding_period): self
+    public function setTaxWithholdingPeriod($tax_withholding_period)
     {
         if (is_null($tax_withholding_period)) {
-            array_push($this->openAPINullablesSetToNull, 'tax_withholding_period');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tax_withholding_period', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tax_withholding_period cannot be null');
         }
         $this->container['tax_withholding_period'] = $tax_withholding_period;
 
@@ -393,7 +398,7 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -404,7 +409,7 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -432,15 +437,17 @@ class TaxWithholdingEvent implements ModelInterface, \ArrayAccess, \JsonSerializ
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * ReservedQuantity.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fba\inventory\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ReservedQuantity';
+    protected static $openAPIModelName = 'ReservedQuantity';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'total_reserved_quantity' => 'int',
         'pending_customer_order_quantity' => 'int',
         'pending_transshipment_quantity' => 'int',
-        'fc_processing_quantity' => 'int'];
+        'fc_processing_quantity' => 'int',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'total_reserved_quantity' => null,
         'pending_customer_order_quantity' => null,
         'pending_transshipment_quantity' => null,
-        'fc_processing_quantity' => null];
+        'fc_processing_quantity' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,10 +90,10 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'total_reserved_quantity' => true,
-        'pending_customer_order_quantity' => true,
-        'pending_transshipment_quantity' => true,
-        'fc_processing_quantity' => true,
+        'total_reserved_quantity' => false,
+        'pending_customer_order_quantity' => false,
+        'pending_transshipment_quantity' => false,
+        'fc_processing_quantity' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'total_reserved_quantity' => 'totalReservedQuantity',
         'pending_customer_order_quantity' => 'pendingCustomerOrderQuantity',
         'pending_transshipment_quantity' => 'pendingTransshipmentQuantity',
@@ -118,7 +121,7 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'total_reserved_quantity' => 'setTotalReservedQuantity',
         'pending_customer_order_quantity' => 'setPendingCustomerOrderQuantity',
         'pending_transshipment_quantity' => 'setPendingTransshipmentQuantity',
@@ -130,7 +133,7 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'total_reserved_quantity' => 'getTotalReservedQuantity',
         'pending_customer_order_quantity' => 'getPendingCustomerOrderQuantity',
         'pending_transshipment_quantity' => 'getPendingTransshipmentQuantity',
@@ -139,14 +142,16 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -250,15 +267,17 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets total_reserved_quantity.
+     *
+     * @return null|int
      */
-    public function getTotalReservedQuantity(): ?int
+    public function getTotalReservedQuantity()
     {
         return $this->container['total_reserved_quantity'];
     }
@@ -267,18 +286,13 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets total_reserved_quantity.
      *
      * @param null|int $total_reserved_quantity the total number of units in Amazon's fulfillment network that are currently being picked, packed, and shipped; or are sidelined for measurement, sampling, or other internal processes
+     *
+     * @return self
      */
-    public function setTotalReservedQuantity(?int $total_reserved_quantity): self
+    public function setTotalReservedQuantity($total_reserved_quantity)
     {
         if (is_null($total_reserved_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'total_reserved_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_reserved_quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable total_reserved_quantity cannot be null');
         }
         $this->container['total_reserved_quantity'] = $total_reserved_quantity;
 
@@ -287,8 +301,10 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets pending_customer_order_quantity.
+     *
+     * @return null|int
      */
-    public function getPendingCustomerOrderQuantity(): ?int
+    public function getPendingCustomerOrderQuantity()
     {
         return $this->container['pending_customer_order_quantity'];
     }
@@ -297,18 +313,13 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets pending_customer_order_quantity.
      *
      * @param null|int $pending_customer_order_quantity the number of units reserved for customer orders
+     *
+     * @return self
      */
-    public function setPendingCustomerOrderQuantity(?int $pending_customer_order_quantity): self
+    public function setPendingCustomerOrderQuantity($pending_customer_order_quantity)
     {
         if (is_null($pending_customer_order_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'pending_customer_order_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('pending_customer_order_quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable pending_customer_order_quantity cannot be null');
         }
         $this->container['pending_customer_order_quantity'] = $pending_customer_order_quantity;
 
@@ -317,8 +328,10 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets pending_transshipment_quantity.
+     *
+     * @return null|int
      */
-    public function getPendingTransshipmentQuantity(): ?int
+    public function getPendingTransshipmentQuantity()
     {
         return $this->container['pending_transshipment_quantity'];
     }
@@ -327,18 +340,13 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets pending_transshipment_quantity.
      *
      * @param null|int $pending_transshipment_quantity the number of units being transferred from one fulfillment center to another
+     *
+     * @return self
      */
-    public function setPendingTransshipmentQuantity(?int $pending_transshipment_quantity): self
+    public function setPendingTransshipmentQuantity($pending_transshipment_quantity)
     {
         if (is_null($pending_transshipment_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'pending_transshipment_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('pending_transshipment_quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable pending_transshipment_quantity cannot be null');
         }
         $this->container['pending_transshipment_quantity'] = $pending_transshipment_quantity;
 
@@ -347,8 +355,10 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets fc_processing_quantity.
+     *
+     * @return null|int
      */
-    public function getFcProcessingQuantity(): ?int
+    public function getFcProcessingQuantity()
     {
         return $this->container['fc_processing_quantity'];
     }
@@ -357,18 +367,13 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets fc_processing_quantity.
      *
      * @param null|int $fc_processing_quantity the number of units that have been sidelined at the fulfillment center for additional processing
+     *
+     * @return self
      */
-    public function setFcProcessingQuantity(?int $fc_processing_quantity): self
+    public function setFcProcessingQuantity($fc_processing_quantity)
     {
         if (is_null($fc_processing_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'fc_processing_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fc_processing_quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fc_processing_quantity cannot be null');
         }
         $this->container['fc_processing_quantity'] = $fc_processing_quantity;
 
@@ -393,7 +398,7 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -404,7 +409,7 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -432,15 +437,17 @@ class ReservedQuantity implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

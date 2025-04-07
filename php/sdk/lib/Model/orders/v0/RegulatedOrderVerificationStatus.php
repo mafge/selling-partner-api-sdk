@@ -3,7 +3,7 @@
 /**
  * RegulatedOrderVerificationStatus.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\orders\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,22 +51,25 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'RegulatedOrderVerificationStatus';
+    protected static $openAPIModelName = 'RegulatedOrderVerificationStatus';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'status' => '\SpApi\Model\orders\v0\VerificationStatus',
         'requires_merchant_action' => 'bool',
         'valid_rejection_reasons' => '\SpApi\Model\orders\v0\RejectionReason[]',
         'rejection_reason' => '\SpApi\Model\orders\v0\RejectionReason',
         'review_date' => 'string',
         'external_reviewer_id' => 'string',
-        'valid_verification_details' => '\SpApi\Model\orders\v0\ValidVerificationDetail[]'];
+        'valid_verification_details' => '\SpApi\Model\orders\v0\ValidVerificationDetail[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -78,14 +80,15 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'status' => null,
         'requires_merchant_action' => null,
         'valid_rejection_reasons' => null,
         'rejection_reason' => null,
         'review_date' => null,
         'external_reviewer_id' => null,
-        'valid_verification_details' => null];
+        'valid_verification_details' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -96,10 +99,10 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
         'status' => false,
         'requires_merchant_action' => false,
         'valid_rejection_reasons' => false,
-        'rejection_reason' => true,
-        'review_date' => true,
-        'external_reviewer_id' => true,
-        'valid_verification_details' => true,
+        'rejection_reason' => false,
+        'review_date' => false,
+        'external_reviewer_id' => false,
+        'valid_verification_details' => false,
     ];
 
     /**
@@ -115,7 +118,7 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'status' => 'Status',
         'requires_merchant_action' => 'RequiresMerchantAction',
         'valid_rejection_reasons' => 'ValidRejectionReasons',
@@ -130,7 +133,7 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'status' => 'setStatus',
         'requires_merchant_action' => 'setRequiresMerchantAction',
         'valid_rejection_reasons' => 'setValidRejectionReasons',
@@ -145,7 +148,7 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'status' => 'getStatus',
         'requires_merchant_action' => 'getRequiresMerchantAction',
         'valid_rejection_reasons' => 'getValidRejectionReasons',
@@ -157,14 +160,16 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -192,16 +197,20 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -225,32 +234,40 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -260,7 +277,7 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -283,15 +300,17 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets status.
+     *
+     * @return VerificationStatus
      */
-    public function getStatus(): string
+    public function getStatus()
     {
         return $this->container['status'];
     }
@@ -299,9 +318,11 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
     /**
      * Sets status.
      *
-     * @param string $status status
+     * @param VerificationStatus $status status
+     *
+     * @return self
      */
-    public function setStatus(string $status): self
+    public function setStatus($status)
     {
         if (is_null($status)) {
             throw new \InvalidArgumentException('non-nullable status cannot be null');
@@ -313,8 +334,10 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
 
     /**
      * Gets requires_merchant_action.
+     *
+     * @return bool
      */
-    public function getRequiresMerchantAction(): bool
+    public function getRequiresMerchantAction()
     {
         return $this->container['requires_merchant_action'];
     }
@@ -323,8 +346,10 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
      * Sets requires_merchant_action.
      *
      * @param bool $requires_merchant_action when true, the regulated information provided in the order requires a review by the merchant
+     *
+     * @return self
      */
-    public function setRequiresMerchantAction(bool $requires_merchant_action): self
+    public function setRequiresMerchantAction($requires_merchant_action)
     {
         if (is_null($requires_merchant_action)) {
             throw new \InvalidArgumentException('non-nullable requires_merchant_action cannot be null');
@@ -336,8 +361,10 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
 
     /**
      * Gets valid_rejection_reasons.
+     *
+     * @return RejectionReason[]
      */
-    public function getValidRejectionReasons(): array
+    public function getValidRejectionReasons()
     {
         return $this->container['valid_rejection_reasons'];
     }
@@ -345,9 +372,11 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
     /**
      * Sets valid_rejection_reasons.
      *
-     * @param array $valid_rejection_reasons a list of valid rejection reasons that may be used to reject the order's regulated information
+     * @param RejectionReason[] $valid_rejection_reasons a list of valid rejection reasons that may be used to reject the order's regulated information
+     *
+     * @return self
      */
-    public function setValidRejectionReasons(array $valid_rejection_reasons): self
+    public function setValidRejectionReasons($valid_rejection_reasons)
     {
         if (is_null($valid_rejection_reasons)) {
             throw new \InvalidArgumentException('non-nullable valid_rejection_reasons cannot be null');
@@ -359,8 +388,10 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
 
     /**
      * Gets rejection_reason.
+     *
+     * @return null|RejectionReason
      */
-    public function getRejectionReason(): ?RejectionReason
+    public function getRejectionReason()
     {
         return $this->container['rejection_reason'];
     }
@@ -369,18 +400,13 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
      * Sets rejection_reason.
      *
      * @param null|RejectionReason $rejection_reason rejection_reason
+     *
+     * @return self
      */
-    public function setRejectionReason(?RejectionReason $rejection_reason): self
+    public function setRejectionReason($rejection_reason)
     {
         if (is_null($rejection_reason)) {
-            array_push($this->openAPINullablesSetToNull, 'rejection_reason');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rejection_reason', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable rejection_reason cannot be null');
         }
         $this->container['rejection_reason'] = $rejection_reason;
 
@@ -389,8 +415,10 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
 
     /**
      * Gets review_date.
+     *
+     * @return null|string
      */
-    public function getReviewDate(): ?string
+    public function getReviewDate()
     {
         return $this->container['review_date'];
     }
@@ -399,18 +427,13 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
      * Sets review_date.
      *
      * @param null|string $review_date The date the order was reviewed. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
+     *
+     * @return self
      */
-    public function setReviewDate(?string $review_date): self
+    public function setReviewDate($review_date)
     {
         if (is_null($review_date)) {
-            array_push($this->openAPINullablesSetToNull, 'review_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('review_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable review_date cannot be null');
         }
         $this->container['review_date'] = $review_date;
 
@@ -419,8 +442,10 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
 
     /**
      * Gets external_reviewer_id.
+     *
+     * @return null|string
      */
-    public function getExternalReviewerId(): ?string
+    public function getExternalReviewerId()
     {
         return $this->container['external_reviewer_id'];
     }
@@ -429,18 +454,13 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
      * Sets external_reviewer_id.
      *
      * @param null|string $external_reviewer_id the identifier for the order's regulated information reviewer
+     *
+     * @return self
      */
-    public function setExternalReviewerId(?string $external_reviewer_id): self
+    public function setExternalReviewerId($external_reviewer_id)
     {
         if (is_null($external_reviewer_id)) {
-            array_push($this->openAPINullablesSetToNull, 'external_reviewer_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('external_reviewer_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable external_reviewer_id cannot be null');
         }
         $this->container['external_reviewer_id'] = $external_reviewer_id;
 
@@ -449,8 +469,10 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
 
     /**
      * Gets valid_verification_details.
+     *
+     * @return null|ValidVerificationDetail[]
      */
-    public function getValidVerificationDetails(): ?array
+    public function getValidVerificationDetails()
     {
         return $this->container['valid_verification_details'];
     }
@@ -458,19 +480,14 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
     /**
      * Sets valid_verification_details.
      *
-     * @param null|array $valid_verification_details a list of valid verification details that may be provided and the criteria required for when the verification detail can be provided
+     * @param null|ValidVerificationDetail[] $valid_verification_details a list of valid verification details that may be provided and the criteria required for when the verification detail can be provided
+     *
+     * @return self
      */
-    public function setValidVerificationDetails(?array $valid_verification_details): self
+    public function setValidVerificationDetails($valid_verification_details)
     {
         if (is_null($valid_verification_details)) {
-            array_push($this->openAPINullablesSetToNull, 'valid_verification_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('valid_verification_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable valid_verification_details cannot be null');
         }
         $this->container['valid_verification_details'] = $valid_verification_details;
 
@@ -495,7 +512,7 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -506,7 +523,7 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -534,15 +551,17 @@ class RegulatedOrderVerificationStatus implements ModelInterface, \ArrayAccess, 
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

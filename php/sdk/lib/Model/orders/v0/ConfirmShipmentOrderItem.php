@@ -3,7 +3,7 @@
 /**
  * ConfirmShipmentOrderItem.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\orders\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class ConfirmShipmentOrderItem implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ConfirmShipmentOrderItem';
+    protected static $openAPIModelName = 'ConfirmShipmentOrderItem';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'order_item_id' => 'string',
         'quantity' => 'int',
-        'transparency_codes' => 'string[]'];
+        'transparency_codes' => 'string[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class ConfirmShipmentOrderItem implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'order_item_id' => null,
         'quantity' => null,
-        'transparency_codes' => null];
+        'transparency_codes' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,7 +90,7 @@ class ConfirmShipmentOrderItem implements ModelInterface, \ArrayAccess, \JsonSer
     protected static array $openAPINullables = [
         'order_item_id' => false,
         'quantity' => false,
-        'transparency_codes' => true,
+        'transparency_codes' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class ConfirmShipmentOrderItem implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'order_item_id' => 'orderItemId',
         'quantity' => 'quantity',
         'transparency_codes' => 'transparencyCodes',
@@ -114,7 +117,7 @@ class ConfirmShipmentOrderItem implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'order_item_id' => 'setOrderItemId',
         'quantity' => 'setQuantity',
         'transparency_codes' => 'setTransparencyCodes',
@@ -125,7 +128,7 @@ class ConfirmShipmentOrderItem implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'order_item_id' => 'getOrderItemId',
         'quantity' => 'getQuantity',
         'transparency_codes' => 'getTransparencyCodes',
@@ -133,14 +136,16 @@ class ConfirmShipmentOrderItem implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class ConfirmShipmentOrderItem implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class ConfirmShipmentOrderItem implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class ConfirmShipmentOrderItem implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -252,15 +269,17 @@ class ConfirmShipmentOrderItem implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets order_item_id.
+     *
+     * @return string
      */
-    public function getOrderItemId(): string
+    public function getOrderItemId()
     {
         return $this->container['order_item_id'];
     }
@@ -269,8 +288,10 @@ class ConfirmShipmentOrderItem implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets order_item_id.
      *
      * @param string $order_item_id the order item's unique identifier
+     *
+     * @return self
      */
-    public function setOrderItemId(string $order_item_id): self
+    public function setOrderItemId($order_item_id)
     {
         if (is_null($order_item_id)) {
             throw new \InvalidArgumentException('non-nullable order_item_id cannot be null');
@@ -282,8 +303,10 @@ class ConfirmShipmentOrderItem implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets quantity.
+     *
+     * @return int
      */
-    public function getQuantity(): int
+    public function getQuantity()
     {
         return $this->container['quantity'];
     }
@@ -292,8 +315,10 @@ class ConfirmShipmentOrderItem implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets quantity.
      *
      * @param int $quantity the item's quantity
+     *
+     * @return self
      */
-    public function setQuantity(int $quantity): self
+    public function setQuantity($quantity)
     {
         if (is_null($quantity)) {
             throw new \InvalidArgumentException('non-nullable quantity cannot be null');
@@ -305,8 +330,10 @@ class ConfirmShipmentOrderItem implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets transparency_codes.
+     *
+     * @return null|string[]
      */
-    public function getTransparencyCodes(): ?array
+    public function getTransparencyCodes()
     {
         return $this->container['transparency_codes'];
     }
@@ -314,19 +341,14 @@ class ConfirmShipmentOrderItem implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Sets transparency_codes.
      *
-     * @param null|array $transparency_codes a list of order items
+     * @param null|string[] $transparency_codes a list of order items
+     *
+     * @return self
      */
-    public function setTransparencyCodes(?array $transparency_codes): self
+    public function setTransparencyCodes($transparency_codes)
     {
         if (is_null($transparency_codes)) {
-            array_push($this->openAPINullablesSetToNull, 'transparency_codes');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transparency_codes', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transparency_codes cannot be null');
         }
         $this->container['transparency_codes'] = $transparency_codes;
 
@@ -351,7 +373,7 @@ class ConfirmShipmentOrderItem implements ModelInterface, \ArrayAccess, \JsonSer
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -362,7 +384,7 @@ class ConfirmShipmentOrderItem implements ModelInterface, \ArrayAccess, \JsonSer
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -390,15 +412,17 @@ class ConfirmShipmentOrderItem implements ModelInterface, \ArrayAccess, \JsonSer
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * ChargeRefundTransaction.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class ChargeRefundTransaction implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ChargeRefundTransaction';
+    protected static $openAPIModelName = 'ChargeRefundTransaction';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'charge_amount' => '\SpApi\Model\finances\v0\Currency',
-        'charge_type' => 'string'];
+        'charge_type' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class ChargeRefundTransaction implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'charge_amount' => null,
-        'charge_type' => null];
+        'charge_type' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class ChargeRefundTransaction implements ModelInterface, \ArrayAccess, \JsonSeri
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'charge_amount' => true,
-        'charge_type' => true,
+        'charge_amount' => false,
+        'charge_type' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class ChargeRefundTransaction implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'charge_amount' => 'ChargeAmount',
         'charge_type' => 'ChargeType',
     ];
@@ -110,7 +113,7 @@ class ChargeRefundTransaction implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'charge_amount' => 'setChargeAmount',
         'charge_type' => 'setChargeType',
     ];
@@ -120,21 +123,23 @@ class ChargeRefundTransaction implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'charge_amount' => 'getChargeAmount',
         'charge_type' => 'getChargeType',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class ChargeRefundTransaction implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class ChargeRefundTransaction implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class ChargeRefundTransaction implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -236,15 +253,17 @@ class ChargeRefundTransaction implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets charge_amount.
+     *
+     * @return null|Currency
      */
-    public function getChargeAmount(): ?Currency
+    public function getChargeAmount()
     {
         return $this->container['charge_amount'];
     }
@@ -253,18 +272,13 @@ class ChargeRefundTransaction implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets charge_amount.
      *
      * @param null|Currency $charge_amount charge_amount
+     *
+     * @return self
      */
-    public function setChargeAmount(?Currency $charge_amount): self
+    public function setChargeAmount($charge_amount)
     {
         if (is_null($charge_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'charge_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('charge_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable charge_amount cannot be null');
         }
         $this->container['charge_amount'] = $charge_amount;
 
@@ -273,8 +287,10 @@ class ChargeRefundTransaction implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets charge_type.
+     *
+     * @return null|string
      */
-    public function getChargeType(): ?string
+    public function getChargeType()
     {
         return $this->container['charge_type'];
     }
@@ -283,18 +299,13 @@ class ChargeRefundTransaction implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets charge_type.
      *
      * @param null|string $charge_type the type of charge
+     *
+     * @return self
      */
-    public function setChargeType(?string $charge_type): self
+    public function setChargeType($charge_type)
     {
         if (is_null($charge_type)) {
-            array_push($this->openAPINullablesSetToNull, 'charge_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('charge_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable charge_type cannot be null');
         }
         $this->container['charge_type'] = $charge_type;
 
@@ -319,7 +330,7 @@ class ChargeRefundTransaction implements ModelInterface, \ArrayAccess, \JsonSeri
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +341,7 @@ class ChargeRefundTransaction implements ModelInterface, \ArrayAccess, \JsonSeri
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +369,17 @@ class ChargeRefundTransaction implements ModelInterface, \ArrayAccess, \JsonSeri
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

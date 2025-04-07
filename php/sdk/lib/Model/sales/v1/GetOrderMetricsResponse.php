@@ -3,7 +3,7 @@
 /**
  * GetOrderMetricsResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\sales\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class GetOrderMetricsResponse implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetOrderMetricsResponse';
+    protected static $openAPIModelName = 'GetOrderMetricsResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'payload' => '\SpApi\Model\sales\v1\OrderMetricsInterval[]',
-        'errors' => '\SpApi\Model\sales\v1\Error[]'];
+        'errors' => '\SpApi\Model\sales\v1\Error[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class GetOrderMetricsResponse implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'payload' => null,
-        'errors' => null];
+        'errors' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class GetOrderMetricsResponse implements ModelInterface, \ArrayAccess, \JsonSeri
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'payload' => true,
-        'errors' => true,
+        'payload' => false,
+        'errors' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class GetOrderMetricsResponse implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'payload' => 'payload',
         'errors' => 'errors',
     ];
@@ -110,7 +113,7 @@ class GetOrderMetricsResponse implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'payload' => 'setPayload',
         'errors' => 'setErrors',
     ];
@@ -120,21 +123,23 @@ class GetOrderMetricsResponse implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'payload' => 'getPayload',
         'errors' => 'getErrors',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class GetOrderMetricsResponse implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class GetOrderMetricsResponse implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class GetOrderMetricsResponse implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -236,15 +253,17 @@ class GetOrderMetricsResponse implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets payload.
+     *
+     * @return null|OrderMetricsInterval[]
      */
-    public function getPayload(): ?array
+    public function getPayload()
     {
         return $this->container['payload'];
     }
@@ -252,19 +271,14 @@ class GetOrderMetricsResponse implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Sets payload.
      *
-     * @param null|array $payload a set of order metrics, each scoped to a particular time interval
+     * @param null|OrderMetricsInterval[] $payload a set of order metrics, each scoped to a particular time interval
+     *
+     * @return self
      */
-    public function setPayload(?array $payload): self
+    public function setPayload($payload)
     {
         if (is_null($payload)) {
-            array_push($this->openAPINullablesSetToNull, 'payload');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('payload', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable payload cannot be null');
         }
         $this->container['payload'] = $payload;
 
@@ -273,8 +287,10 @@ class GetOrderMetricsResponse implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets errors.
+     *
+     * @return null|Error[]
      */
-    public function getErrors(): ?array
+    public function getErrors()
     {
         return $this->container['errors'];
     }
@@ -282,19 +298,14 @@ class GetOrderMetricsResponse implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Sets errors.
      *
-     * @param null|array $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
+     *
+     * @return self
      */
-    public function setErrors(?array $errors): self
+    public function setErrors($errors)
     {
         if (is_null($errors)) {
-            array_push($this->openAPINullablesSetToNull, 'errors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('errors', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable errors cannot be null');
         }
         $this->container['errors'] = $errors;
 
@@ -319,7 +330,7 @@ class GetOrderMetricsResponse implements ModelInterface, \ArrayAccess, \JsonSeri
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +341,7 @@ class GetOrderMetricsResponse implements ModelInterface, \ArrayAccess, \JsonSeri
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +369,17 @@ class GetOrderMetricsResponse implements ModelInterface, \ArrayAccess, \JsonSeri
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

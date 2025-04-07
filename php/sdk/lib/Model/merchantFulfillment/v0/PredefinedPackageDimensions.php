@@ -3,7 +3,7 @@
 /**
  * PredefinedPackageDimensions.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -151,7 +151,7 @@ class PredefinedPackageDimensions
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues(): array
+    public static function getAllowableEnumValues()
     {
         return [
             self::FED_EX_BOX_10KG,

@@ -3,7 +3,7 @@
 /**
  * SellerReviewEnrollmentPaymentEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'SellerReviewEnrollmentPaymentEvent';
+    protected static $openAPIModelName = 'SellerReviewEnrollmentPaymentEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'posted_date' => '\DateTime',
         'enrollment_id' => 'string',
         'parent_asin' => 'string',
         'fee_component' => '\SpApi\Model\finances\v0\FeeComponent',
         'charge_component' => '\SpApi\Model\finances\v0\ChargeComponent',
-        'total_amount' => '\SpApi\Model\finances\v0\Currency'];
+        'total_amount' => '\SpApi\Model\finances\v0\Currency',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'posted_date' => 'date-time',
         'enrollment_id' => null,
         'parent_asin' => null,
         'fee_component' => null,
         'charge_component' => null,
-        'total_amount' => null];
+        'total_amount' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -91,12 +94,12 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'posted_date' => true,
-        'enrollment_id' => true,
-        'parent_asin' => true,
-        'fee_component' => true,
-        'charge_component' => true,
-        'total_amount' => true,
+        'posted_date' => false,
+        'enrollment_id' => false,
+        'parent_asin' => false,
+        'fee_component' => false,
+        'charge_component' => false,
+        'total_amount' => false,
     ];
 
     /**
@@ -112,7 +115,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'posted_date' => 'PostedDate',
         'enrollment_id' => 'EnrollmentId',
         'parent_asin' => 'ParentASIN',
@@ -126,7 +129,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'posted_date' => 'setPostedDate',
         'enrollment_id' => 'setEnrollmentId',
         'parent_asin' => 'setParentAsin',
@@ -140,7 +143,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'posted_date' => 'getPostedDate',
         'enrollment_id' => 'getEnrollmentId',
         'parent_asin' => 'getParentAsin',
@@ -151,14 +154,16 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -264,15 +281,17 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTime
      */
-    public function getPostedDate(): ?\DateTime
+    public function getPostedDate()
     {
         return $this->container['posted_date'];
     }
@@ -281,18 +300,13 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
      * Sets posted_date.
      *
      * @param null|\DateTime $posted_date fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate)
+     *
+     * @return self
      */
-    public function setPostedDate(?\DateTime $posted_date): self
+    public function setPostedDate($posted_date)
     {
         if (is_null($posted_date)) {
-            array_push($this->openAPINullablesSetToNull, 'posted_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('posted_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable posted_date cannot be null');
         }
         $this->container['posted_date'] = $posted_date;
 
@@ -301,8 +315,10 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
 
     /**
      * Gets enrollment_id.
+     *
+     * @return null|string
      */
-    public function getEnrollmentId(): ?string
+    public function getEnrollmentId()
     {
         return $this->container['enrollment_id'];
     }
@@ -311,18 +327,13 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
      * Sets enrollment_id.
      *
      * @param null|string $enrollment_id an enrollment identifier
+     *
+     * @return self
      */
-    public function setEnrollmentId(?string $enrollment_id): self
+    public function setEnrollmentId($enrollment_id)
     {
         if (is_null($enrollment_id)) {
-            array_push($this->openAPINullablesSetToNull, 'enrollment_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('enrollment_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable enrollment_id cannot be null');
         }
         $this->container['enrollment_id'] = $enrollment_id;
 
@@ -331,8 +342,10 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
 
     /**
      * Gets parent_asin.
+     *
+     * @return null|string
      */
-    public function getParentAsin(): ?string
+    public function getParentAsin()
     {
         return $this->container['parent_asin'];
     }
@@ -341,18 +354,13 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
      * Sets parent_asin.
      *
      * @param null|string $parent_asin the Amazon Standard Identification Number (ASIN) of the item that was enrolled in the Early Reviewer Program
+     *
+     * @return self
      */
-    public function setParentAsin(?string $parent_asin): self
+    public function setParentAsin($parent_asin)
     {
         if (is_null($parent_asin)) {
-            array_push($this->openAPINullablesSetToNull, 'parent_asin');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('parent_asin', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable parent_asin cannot be null');
         }
         $this->container['parent_asin'] = $parent_asin;
 
@@ -361,8 +369,10 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
 
     /**
      * Gets fee_component.
+     *
+     * @return null|FeeComponent
      */
-    public function getFeeComponent(): ?FeeComponent
+    public function getFeeComponent()
     {
         return $this->container['fee_component'];
     }
@@ -371,18 +381,13 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
      * Sets fee_component.
      *
      * @param null|FeeComponent $fee_component fee_component
+     *
+     * @return self
      */
-    public function setFeeComponent(?FeeComponent $fee_component): self
+    public function setFeeComponent($fee_component)
     {
         if (is_null($fee_component)) {
-            array_push($this->openAPINullablesSetToNull, 'fee_component');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fee_component', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fee_component cannot be null');
         }
         $this->container['fee_component'] = $fee_component;
 
@@ -391,8 +396,10 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
 
     /**
      * Gets charge_component.
+     *
+     * @return null|ChargeComponent
      */
-    public function getChargeComponent(): ?ChargeComponent
+    public function getChargeComponent()
     {
         return $this->container['charge_component'];
     }
@@ -401,18 +408,13 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
      * Sets charge_component.
      *
      * @param null|ChargeComponent $charge_component charge_component
+     *
+     * @return self
      */
-    public function setChargeComponent(?ChargeComponent $charge_component): self
+    public function setChargeComponent($charge_component)
     {
         if (is_null($charge_component)) {
-            array_push($this->openAPINullablesSetToNull, 'charge_component');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('charge_component', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable charge_component cannot be null');
         }
         $this->container['charge_component'] = $charge_component;
 
@@ -421,8 +423,10 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
 
     /**
      * Gets total_amount.
+     *
+     * @return null|Currency
      */
-    public function getTotalAmount(): ?Currency
+    public function getTotalAmount()
     {
         return $this->container['total_amount'];
     }
@@ -431,18 +435,13 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
      * Sets total_amount.
      *
      * @param null|Currency $total_amount total_amount
+     *
+     * @return self
      */
-    public function setTotalAmount(?Currency $total_amount): self
+    public function setTotalAmount($total_amount)
     {
         if (is_null($total_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'total_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable total_amount cannot be null');
         }
         $this->container['total_amount'] = $total_amount;
 
@@ -467,7 +466,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -478,7 +477,7 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -506,15 +505,17 @@ class SellerReviewEnrollmentPaymentEvent implements ModelInterface, \ArrayAccess
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

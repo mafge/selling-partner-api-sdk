@@ -3,7 +3,7 @@
 /**
  * ContentDocument.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\aplusContent\v2020_11_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ContentDocument';
+    protected static $openAPIModelName = 'ContentDocument';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'name' => 'string',
         'content_type' => '\SpApi\Model\aplusContent\v2020_11_01\ContentType',
         'content_sub_type' => 'string',
         'locale' => 'string',
-        'content_module_list' => '\SpApi\Model\aplusContent\v2020_11_01\ContentModule[]'];
+        'content_module_list' => '\SpApi\Model\aplusContent\v2020_11_01\ContentModule[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'name' => null,
         'content_type' => null,
         'content_sub_type' => null,
         'locale' => null,
-        'content_module_list' => null];
+        'content_module_list' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -91,7 +94,7 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'name' => false,
         'content_type' => false,
-        'content_sub_type' => true,
+        'content_sub_type' => false,
         'locale' => false,
         'content_module_list' => false,
     ];
@@ -109,7 +112,7 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'name' => 'name',
         'content_type' => 'contentType',
         'content_sub_type' => 'contentSubType',
@@ -122,7 +125,7 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'name' => 'setName',
         'content_type' => 'setContentType',
         'content_sub_type' => 'setContentSubType',
@@ -135,7 +138,7 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'name' => 'getName',
         'content_type' => 'getContentType',
         'content_sub_type' => 'getContentSubType',
@@ -145,14 +148,16 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -295,15 +312,17 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets name.
+     *
+     * @return string
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->container['name'];
     }
@@ -312,8 +331,10 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets name.
      *
      * @param string $name the A+ Content document name
+     *
+     * @return self
      */
-    public function setName(string $name): self
+    public function setName($name)
     {
         if (is_null($name)) {
             throw new \InvalidArgumentException('non-nullable name cannot be null');
@@ -332,8 +353,10 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets content_type.
+     *
+     * @return ContentType
      */
-    public function getContentType(): string
+    public function getContentType()
     {
         return $this->container['content_type'];
     }
@@ -341,9 +364,11 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets content_type.
      *
-     * @param string $content_type content_type
+     * @param ContentType $content_type content_type
+     *
+     * @return self
      */
-    public function setContentType(string $content_type): self
+    public function setContentType($content_type)
     {
         if (is_null($content_type)) {
             throw new \InvalidArgumentException('non-nullable content_type cannot be null');
@@ -355,8 +380,10 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets content_sub_type.
+     *
+     * @return null|string
      */
-    public function getContentSubType(): ?string
+    public function getContentSubType()
     {
         return $this->container['content_sub_type'];
     }
@@ -365,21 +392,16 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets content_sub_type.
      *
      * @param null|string $content_sub_type The A+ Content document subtype. This represents a special-purpose type of an A+ Content document. Not every A+ Content document type has a subtype, and subtypes can change at any time.
+     *
+     * @return self
      */
-    public function setContentSubType(?string $content_sub_type): self
+    public function setContentSubType($content_sub_type)
     {
         if (is_null($content_sub_type)) {
-            array_push($this->openAPINullablesSetToNull, 'content_sub_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('content_sub_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable content_sub_type cannot be null');
         }
 
-        if (!is_null($content_sub_type) && (mb_strlen($content_sub_type) < 1)) {
+        if (mb_strlen($content_sub_type) < 1) {
             throw new \InvalidArgumentException('invalid length for $content_sub_type when calling ContentDocument., must be bigger than or equal to 1.');
         }
 
@@ -390,8 +412,10 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets locale.
+     *
+     * @return string
      */
-    public function getLocale(): string
+    public function getLocale()
     {
         return $this->container['locale'];
     }
@@ -400,8 +424,10 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets locale.
      *
      * @param string $locale The IETF language tag, which supports the primary language subtag and one secondary language subtag. The secondary language subtag is usually a regional designation. This doesn't support subtags other than the primary and secondary subtags. **Pattern:** ^[a-z]{2,}-[A-Z0-9]{2,}$
+     *
+     * @return self
      */
-    public function setLocale(string $locale): self
+    public function setLocale($locale)
     {
         if (is_null($locale)) {
             throw new \InvalidArgumentException('non-nullable locale cannot be null');
@@ -418,8 +444,10 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets content_module_list.
+     *
+     * @return ContentModule[]
      */
-    public function getContentModuleList(): array
+    public function getContentModuleList()
     {
         return $this->container['content_module_list'];
     }
@@ -427,9 +455,11 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets content_module_list.
      *
-     * @param array $content_module_list a list of A+ Content modules
+     * @param ContentModule[] $content_module_list a list of A+ Content modules
+     *
+     * @return self
      */
-    public function setContentModuleList(array $content_module_list): self
+    public function setContentModuleList($content_module_list)
     {
         if (is_null($content_module_list)) {
             throw new \InvalidArgumentException('non-nullable content_module_list cannot be null');
@@ -464,7 +494,7 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -475,7 +505,7 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -503,15 +533,17 @@ class ContentDocument implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

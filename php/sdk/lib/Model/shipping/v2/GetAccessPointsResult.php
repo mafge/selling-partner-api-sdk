@@ -3,7 +3,7 @@
 /**
  * GetAccessPointsResult.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,16 +52,19 @@ class GetAccessPointsResult implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetAccessPointsResult';
+    protected static $openAPIModelName = 'GetAccessPointsResult';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
-        'access_points_map' => 'array<string,array>'];
+    protected static $openAPITypes = [
+        'access_points_map' => 'array<string,array>',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,8 +75,9 @@ class GetAccessPointsResult implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
-        'access_points_map' => null];
+    protected static $openAPIFormats = [
+        'access_points_map' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -98,7 +101,7 @@ class GetAccessPointsResult implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'access_points_map' => 'accessPointsMap',
     ];
 
@@ -107,7 +110,7 @@ class GetAccessPointsResult implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'access_points_map' => 'setAccessPointsMap',
     ];
 
@@ -116,20 +119,22 @@ class GetAccessPointsResult implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'access_points_map' => 'getAccessPointsMap',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -151,16 +156,20 @@ class GetAccessPointsResult implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -184,32 +193,40 @@ class GetAccessPointsResult implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -219,7 +236,7 @@ class GetAccessPointsResult implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -236,7 +253,7 @@ class GetAccessPointsResult implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
@@ -246,7 +263,7 @@ class GetAccessPointsResult implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return array<string,array>
      */
-    public function getAccessPointsMap(): array
+    public function getAccessPointsMap()
     {
         return $this->container['access_points_map'];
     }
@@ -255,8 +272,10 @@ class GetAccessPointsResult implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets access_points_map.
      *
      * @param array<string,array> $access_points_map Map of type of access point to list of access points
+     *
+     * @return self
      */
-    public function setAccessPointsMap(array $access_points_map): self
+    public function setAccessPointsMap($access_points_map)
     {
         if (is_null($access_points_map)) {
             throw new \InvalidArgumentException('non-nullable access_points_map cannot be null');
@@ -284,7 +303,7 @@ class GetAccessPointsResult implements ModelInterface, \ArrayAccess, \JsonSerial
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -295,7 +314,7 @@ class GetAccessPointsResult implements ModelInterface, \ArrayAccess, \JsonSerial
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -323,15 +342,17 @@ class GetAccessPointsResult implements ModelInterface, \ArrayAccess, \JsonSerial
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -2,7 +2,7 @@
 /**
  * AcknowledgementStatus
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\df\orders\v2021_12_28;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * AcknowledgementStatus Class Doc Comment
@@ -52,16 +50,17 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'AcknowledgementStatus';
+    protected static $openAPIModelName = 'AcknowledgementStatus';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'code' => 'string',
-             'description' => 'string'    ];
+    protected static $openAPITypes = [
+        'code' => 'string',
+        'description' => 'string'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,9 +69,10 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'code' => null,
-            'description' => null    ];
+    protected static $openAPIFormats = [
+        'code' => null,
+        'description' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -80,8 +80,8 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'code' => true,
-        'description' => true
+        'code' => false,
+        'description' => false
     ];
 
     /**
@@ -96,7 +96,7 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -106,7 +106,7 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -169,10 +169,9 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'code' => 'code',
-                'description' => 'description'
-        
+        'description' => 'description'
     ];
 
     /**
@@ -180,7 +179,7 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'code' => 'setCode',
         'description' => 'setDescription'
     ];
@@ -190,7 +189,7 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'code' => 'getCode',
         'description' => 'getDescription'
     ];
@@ -201,7 +200,7 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -211,7 +210,7 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -221,7 +220,7 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -231,7 +230,7 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -240,17 +239,17 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('code', $data ?? [], null);
         $this->setIfExists('description', $data ?? [], null);
@@ -279,7 +278,7 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -292,7 +291,7 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -303,7 +302,7 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
-    public function getCode(): ?string
+    public function getCode()
     {
         return $this->container['code'];
     }
@@ -315,17 +314,10 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setCode(?string $code): self
+    public function setCode($code)
     {
         if (is_null($code)) {
-            array_push($this->openAPINullablesSetToNull, 'code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('code', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable code cannot be null');
         }
         $this->container['code'] = $code;
 
@@ -337,7 +329,7 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string|null
      */
-    public function getDescription(): ?string
+    public function getDescription()
     {
         return $this->container['description'];
     }
@@ -349,24 +341,15 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return self
      */
-    public function setDescription(?string $description): self
+    public function setDescription($description)
     {
         if (is_null($description)) {
-            array_push($this->openAPINullablesSetToNull, 'description');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('description', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable description cannot be null');
         }
         $this->container['description'] = $description;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -387,7 +370,7 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -400,7 +383,7 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -429,7 +412,7 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -452,7 +435,7 @@ class AcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSeriali
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

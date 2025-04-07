@@ -3,7 +3,7 @@
 /**
  * OfferCountType.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class OfferCountType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'OfferCountType';
+    protected static $openAPIModelName = 'OfferCountType';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'condition' => 'string',
         'fulfillment_channel' => '\SpApi\Model\pricing\v0\FulfillmentChannelType',
-        'offer_count' => 'int'];
+        'offer_count' => 'int',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class OfferCountType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'condition' => null,
         'fulfillment_channel' => null,
-        'offer_count' => 'int32'];
+        'offer_count' => 'int32',
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class OfferCountType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'condition' => true,
-        'fulfillment_channel' => true,
-        'offer_count' => true,
+        'condition' => false,
+        'fulfillment_channel' => false,
+        'offer_count' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class OfferCountType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'condition' => 'condition',
         'fulfillment_channel' => 'fulfillmentChannel',
         'offer_count' => 'OfferCount',
@@ -114,7 +117,7 @@ class OfferCountType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'condition' => 'setCondition',
         'fulfillment_channel' => 'setFulfillmentChannel',
         'offer_count' => 'setOfferCount',
@@ -125,7 +128,7 @@ class OfferCountType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'condition' => 'getCondition',
         'fulfillment_channel' => 'getFulfillmentChannel',
         'offer_count' => 'getOfferCount',
@@ -133,14 +136,16 @@ class OfferCountType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class OfferCountType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class OfferCountType implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class OfferCountType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -243,15 +260,17 @@ class OfferCountType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets condition.
+     *
+     * @return null|string
      */
-    public function getCondition(): ?string
+    public function getCondition()
     {
         return $this->container['condition'];
     }
@@ -260,18 +279,13 @@ class OfferCountType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets condition.
      *
      * @param null|string $condition Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club.
+     *
+     * @return self
      */
-    public function setCondition(?string $condition): self
+    public function setCondition($condition)
     {
         if (is_null($condition)) {
-            array_push($this->openAPINullablesSetToNull, 'condition');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('condition', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable condition cannot be null');
         }
         $this->container['condition'] = $condition;
 
@@ -280,8 +294,10 @@ class OfferCountType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets fulfillment_channel.
+     *
+     * @return null|FulfillmentChannelType
      */
-    public function getFulfillmentChannel(): ?string
+    public function getFulfillmentChannel()
     {
         return $this->container['fulfillment_channel'];
     }
@@ -289,19 +305,14 @@ class OfferCountType implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets fulfillment_channel.
      *
-     * @param null|string $fulfillment_channel fulfillment_channel
+     * @param null|FulfillmentChannelType $fulfillment_channel fulfillment_channel
+     *
+     * @return self
      */
-    public function setFulfillmentChannel(?string $fulfillment_channel): self
+    public function setFulfillmentChannel($fulfillment_channel)
     {
         if (is_null($fulfillment_channel)) {
-            array_push($this->openAPINullablesSetToNull, 'fulfillment_channel');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fulfillment_channel', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fulfillment_channel cannot be null');
         }
         $this->container['fulfillment_channel'] = $fulfillment_channel;
 
@@ -310,8 +321,10 @@ class OfferCountType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets offer_count.
+     *
+     * @return null|int
      */
-    public function getOfferCount(): ?int
+    public function getOfferCount()
     {
         return $this->container['offer_count'];
     }
@@ -320,18 +333,13 @@ class OfferCountType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets offer_count.
      *
      * @param null|int $offer_count the number of offers in a fulfillment channel that meet a specific condition
+     *
+     * @return self
      */
-    public function setOfferCount(?int $offer_count): self
+    public function setOfferCount($offer_count)
     {
         if (is_null($offer_count)) {
-            array_push($this->openAPINullablesSetToNull, 'offer_count');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('offer_count', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable offer_count cannot be null');
         }
         $this->container['offer_count'] = $offer_count;
 
@@ -356,7 +364,7 @@ class OfferCountType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -367,7 +375,7 @@ class OfferCountType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -395,15 +403,17 @@ class OfferCountType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

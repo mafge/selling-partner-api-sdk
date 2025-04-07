@@ -2,7 +2,7 @@
 /**
  * Error
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\df\transactions\v2021_12_28;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * Error Class Doc Comment
@@ -52,17 +50,18 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'Error';
+    protected static $openAPIModelName = 'Error';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'code' => 'string',
-             'message' => 'string',
-             'details' => 'string'    ];
+    protected static $openAPITypes = [
+        'code' => 'string',
+        'message' => 'string',
+        'details' => 'string'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,10 +70,11 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'code' => null,
-            'message' => null,
-            'details' => null    ];
+    protected static $openAPIFormats = [
+        'code' => null,
+        'message' => null,
+        'details' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -84,7 +84,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'code' => false,
         'message' => false,
-        'details' => true
+        'details' => false
     ];
 
     /**
@@ -99,7 +99,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -109,7 +109,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -172,11 +172,10 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'code' => 'code',
-                'message' => 'message',
-                'details' => 'details'
-        
+        'message' => 'message',
+        'details' => 'details'
     ];
 
     /**
@@ -184,7 +183,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'code' => 'setCode',
         'message' => 'setMessage',
         'details' => 'setDetails'
@@ -195,7 +194,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'code' => 'getCode',
         'message' => 'getMessage',
         'details' => 'getDetails'
@@ -207,7 +206,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -217,7 +216,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -227,7 +226,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -237,7 +236,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,17 +245,17 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('code', $data ?? [], null);
         $this->setIfExists('message', $data ?? [], null);
@@ -286,7 +285,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -305,7 +304,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -316,7 +315,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getCode(): string
+    public function getCode()
     {
         return $this->container['code'];
     }
@@ -328,7 +327,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCode(string $code): self
+    public function setCode($code)
     {
         if (is_null($code)) {
             throw new \InvalidArgumentException('non-nullable code cannot be null');
@@ -343,7 +342,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getMessage(): string
+    public function getMessage()
     {
         return $this->container['message'];
     }
@@ -355,7 +354,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMessage(string $message): self
+    public function setMessage($message)
     {
         if (is_null($message)) {
             throw new \InvalidArgumentException('non-nullable message cannot be null');
@@ -370,7 +369,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getDetails(): ?string
+    public function getDetails()
     {
         return $this->container['details'];
     }
@@ -382,24 +381,15 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDetails(?string $details): self
+    public function setDetails($details)
     {
         if (is_null($details)) {
-            array_push($this->openAPINullablesSetToNull, 'details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('details', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable details cannot be null');
         }
         $this->container['details'] = $details;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -420,7 +410,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -433,7 +423,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -462,7 +452,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -485,7 +475,7 @@ class Error implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

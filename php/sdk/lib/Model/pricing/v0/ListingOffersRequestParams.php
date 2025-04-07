@@ -3,7 +3,7 @@
 /**
  * ListingOffersRequestParams.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ListingOffersRequestParams';
+    protected static $openAPIModelName = 'ListingOffersRequestParams';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'marketplace_id' => 'string',
         'item_condition' => '\SpApi\Model\pricing\v0\ItemCondition',
         'customer_type' => '\SpApi\Model\pricing\v0\CustomerType',
-        'seller_sku' => 'string'];
+        'seller_sku' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'marketplace_id' => null,
         'item_condition' => null,
         'customer_type' => null,
-        'seller_sku' => null];
+        'seller_sku' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,7 +92,7 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
     protected static array $openAPINullables = [
         'marketplace_id' => false,
         'item_condition' => false,
-        'customer_type' => true,
+        'customer_type' => false,
         'seller_sku' => false,
     ];
 
@@ -106,7 +109,7 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'marketplace_id' => 'MarketplaceId',
         'item_condition' => 'ItemCondition',
         'customer_type' => 'CustomerType',
@@ -118,7 +121,7 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
         'item_condition' => 'setItemCondition',
         'customer_type' => 'setCustomerType',
@@ -130,7 +133,7 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
         'item_condition' => 'getItemCondition',
         'customer_type' => 'getCustomerType',
@@ -139,14 +142,16 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -262,15 +279,17 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
-    public function getMarketplaceId(): string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -279,8 +298,10 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
      * Sets marketplace_id.
      *
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned.
+     *
+     * @return self
      */
-    public function setMarketplaceId(string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
             throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
@@ -292,8 +313,10 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets item_condition.
+     *
+     * @return ItemCondition
      */
-    public function getItemCondition(): string
+    public function getItemCondition()
     {
         return $this->container['item_condition'];
     }
@@ -301,9 +324,11 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
     /**
      * Sets item_condition.
      *
-     * @param string $item_condition item_condition
+     * @param ItemCondition $item_condition item_condition
+     *
+     * @return self
      */
-    public function setItemCondition(string $item_condition): self
+    public function setItemCondition($item_condition)
     {
         if (is_null($item_condition)) {
             throw new \InvalidArgumentException('non-nullable item_condition cannot be null');
@@ -315,8 +340,10 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets customer_type.
+     *
+     * @return null|CustomerType
      */
-    public function getCustomerType(): ?string
+    public function getCustomerType()
     {
         return $this->container['customer_type'];
     }
@@ -324,19 +351,14 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
     /**
      * Sets customer_type.
      *
-     * @param null|string $customer_type customer_type
+     * @param null|CustomerType $customer_type customer_type
+     *
+     * @return self
      */
-    public function setCustomerType(?string $customer_type): self
+    public function setCustomerType($customer_type)
     {
         if (is_null($customer_type)) {
-            array_push($this->openAPINullablesSetToNull, 'customer_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('customer_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable customer_type cannot be null');
         }
         $this->container['customer_type'] = $customer_type;
 
@@ -345,8 +367,10 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets seller_sku.
+     *
+     * @return string
      */
-    public function getSellerSku(): string
+    public function getSellerSku()
     {
         return $this->container['seller_sku'];
     }
@@ -355,8 +379,10 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
      * Sets seller_sku.
      *
      * @param string $seller_sku The seller stock keeping unit (SKU) of the item. This is the same SKU passed as a path parameter.
+     *
+     * @return self
      */
-    public function setSellerSku(string $seller_sku): self
+    public function setSellerSku($seller_sku)
     {
         if (is_null($seller_sku)) {
             throw new \InvalidArgumentException('non-nullable seller_sku cannot be null');
@@ -384,7 +410,7 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -395,7 +421,7 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -423,15 +449,17 @@ class ListingOffersRequestParams implements ModelInterface, \ArrayAccess, \JsonS
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

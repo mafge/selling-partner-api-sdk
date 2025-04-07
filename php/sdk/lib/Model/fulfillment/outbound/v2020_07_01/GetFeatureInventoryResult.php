@@ -3,7 +3,7 @@
 /**
  * GetFeatureInventoryResult.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetFeatureInventoryResult';
+    protected static $openAPIModelName = 'GetFeatureInventoryResult';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'marketplace_id' => 'string',
         'feature_name' => 'string',
         'next_token' => 'string',
-        'feature_skus' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\FeatureSku[]'];
+        'feature_skus' => '\SpApi\Model\fulfillment\outbound\v2020_07_01\FeatureSku[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'marketplace_id' => null,
         'feature_name' => null,
         'next_token' => null,
-        'feature_skus' => null];
+        'feature_skus' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,8 +92,8 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
     protected static array $openAPINullables = [
         'marketplace_id' => false,
         'feature_name' => false,
-        'next_token' => true,
-        'feature_skus' => true,
+        'next_token' => false,
+        'feature_skus' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'marketplace_id' => 'marketplaceId',
         'feature_name' => 'featureName',
         'next_token' => 'nextToken',
@@ -118,7 +121,7 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
         'feature_name' => 'setFeatureName',
         'next_token' => 'setNextToken',
@@ -130,7 +133,7 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
         'feature_name' => 'getFeatureName',
         'next_token' => 'getNextToken',
@@ -139,14 +142,16 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -259,15 +276,17 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
-    public function getMarketplaceId(): string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -276,8 +295,10 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets marketplace_id.
      *
      * @param string $marketplace_id the requested marketplace
+     *
+     * @return self
      */
-    public function setMarketplaceId(string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
             throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
@@ -289,8 +310,10 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets feature_name.
+     *
+     * @return string
      */
-    public function getFeatureName(): string
+    public function getFeatureName()
     {
         return $this->container['feature_name'];
     }
@@ -299,8 +322,10 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets feature_name.
      *
      * @param string $feature_name the name of the feature
+     *
+     * @return self
      */
-    public function setFeatureName(string $feature_name): self
+    public function setFeatureName($feature_name)
     {
         if (is_null($feature_name)) {
             throw new \InvalidArgumentException('non-nullable feature_name cannot be null');
@@ -312,8 +337,10 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets next_token.
+     *
+     * @return null|string
      */
-    public function getNextToken(): ?string
+    public function getNextToken()
     {
         return $this->container['next_token'];
     }
@@ -322,18 +349,13 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets next_token.
      *
      * @param null|string $next_token when present and not empty, pass this string token in the next request to return the next response page
+     *
+     * @return self
      */
-    public function setNextToken(?string $next_token): self
+    public function setNextToken($next_token)
     {
         if (is_null($next_token)) {
-            array_push($this->openAPINullablesSetToNull, 'next_token');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('next_token', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable next_token cannot be null');
         }
         $this->container['next_token'] = $next_token;
 
@@ -342,8 +364,10 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets feature_skus.
+     *
+     * @return null|FeatureSku[]
      */
-    public function getFeatureSkus(): ?array
+    public function getFeatureSkus()
     {
         return $this->container['feature_skus'];
     }
@@ -351,19 +375,14 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets feature_skus.
      *
-     * @param null|array $feature_skus an array of SKUs eligible for this feature and the quantity available
+     * @param null|FeatureSku[] $feature_skus an array of SKUs eligible for this feature and the quantity available
+     *
+     * @return self
      */
-    public function setFeatureSkus(?array $feature_skus): self
+    public function setFeatureSkus($feature_skus)
     {
         if (is_null($feature_skus)) {
-            array_push($this->openAPINullablesSetToNull, 'feature_skus');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('feature_skus', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable feature_skus cannot be null');
         }
         $this->container['feature_skus'] = $feature_skus;
 
@@ -388,7 +407,7 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -399,7 +418,7 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -427,15 +446,17 @@ class GetFeatureInventoryResult implements ModelInterface, \ArrayAccess, \JsonSe
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

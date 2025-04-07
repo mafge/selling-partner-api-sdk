@@ -3,7 +3,7 @@
 /**
  * OperatingHours.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,18 +52,21 @@ class OperatingHours implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'OperatingHours';
+    protected static $openAPIModelName = 'OperatingHours';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'closing_time' => '\SpApi\Model\shipping\v2\TimeOfDay',
         'opening_time' => '\SpApi\Model\shipping\v2\TimeOfDay',
-        'mid_day_closures' => '\SpApi\Model\shipping\v2\TimeOfDay[]'];
+        'mid_day_closures' => '\SpApi\Model\shipping\v2\TimeOfDay[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,10 +77,11 @@ class OperatingHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'closing_time' => null,
         'opening_time' => null,
-        'mid_day_closures' => null];
+        'mid_day_closures' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -86,9 +89,9 @@ class OperatingHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'closing_time' => true,
-        'opening_time' => true,
-        'mid_day_closures' => true,
+        'closing_time' => false,
+        'opening_time' => false,
+        'mid_day_closures' => false,
     ];
 
     /**
@@ -104,7 +107,7 @@ class OperatingHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'closing_time' => 'closingTime',
         'opening_time' => 'openingTime',
         'mid_day_closures' => 'midDayClosures',
@@ -115,7 +118,7 @@ class OperatingHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'closing_time' => 'setClosingTime',
         'opening_time' => 'setOpeningTime',
         'mid_day_closures' => 'setMidDayClosures',
@@ -126,7 +129,7 @@ class OperatingHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'closing_time' => 'getClosingTime',
         'opening_time' => 'getOpeningTime',
         'mid_day_closures' => 'getMidDayClosures',
@@ -134,14 +137,16 @@ class OperatingHours implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -165,16 +170,20 @@ class OperatingHours implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -198,32 +207,40 @@ class OperatingHours implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -233,7 +250,7 @@ class OperatingHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -244,15 +261,17 @@ class OperatingHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets closing_time.
+     *
+     * @return null|TimeOfDay
      */
-    public function getClosingTime(): ?TimeOfDay
+    public function getClosingTime()
     {
         return $this->container['closing_time'];
     }
@@ -261,18 +280,13 @@ class OperatingHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets closing_time.
      *
      * @param null|TimeOfDay $closing_time closing_time
+     *
+     * @return self
      */
-    public function setClosingTime(?TimeOfDay $closing_time): self
+    public function setClosingTime($closing_time)
     {
         if (is_null($closing_time)) {
-            array_push($this->openAPINullablesSetToNull, 'closing_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('closing_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable closing_time cannot be null');
         }
         $this->container['closing_time'] = $closing_time;
 
@@ -281,8 +295,10 @@ class OperatingHours implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets opening_time.
+     *
+     * @return null|TimeOfDay
      */
-    public function getOpeningTime(): ?TimeOfDay
+    public function getOpeningTime()
     {
         return $this->container['opening_time'];
     }
@@ -291,18 +307,13 @@ class OperatingHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets opening_time.
      *
      * @param null|TimeOfDay $opening_time opening_time
+     *
+     * @return self
      */
-    public function setOpeningTime(?TimeOfDay $opening_time): self
+    public function setOpeningTime($opening_time)
     {
         if (is_null($opening_time)) {
-            array_push($this->openAPINullablesSetToNull, 'opening_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('opening_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable opening_time cannot be null');
         }
         $this->container['opening_time'] = $opening_time;
 
@@ -311,8 +322,10 @@ class OperatingHours implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets mid_day_closures.
+     *
+     * @return null|TimeOfDay[]
      */
-    public function getMidDayClosures(): ?array
+    public function getMidDayClosures()
     {
         return $this->container['mid_day_closures'];
     }
@@ -320,19 +333,14 @@ class OperatingHours implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets mid_day_closures.
      *
-     * @param null|array $mid_day_closures midDayClosures operating hours array
+     * @param null|TimeOfDay[] $mid_day_closures midDayClosures operating hours array
+     *
+     * @return self
      */
-    public function setMidDayClosures(?array $mid_day_closures): self
+    public function setMidDayClosures($mid_day_closures)
     {
         if (is_null($mid_day_closures)) {
-            array_push($this->openAPINullablesSetToNull, 'mid_day_closures');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('mid_day_closures', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable mid_day_closures cannot be null');
         }
         $this->container['mid_day_closures'] = $mid_day_closures;
 
@@ -357,7 +365,7 @@ class OperatingHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -368,7 +376,7 @@ class OperatingHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -396,15 +404,17 @@ class OperatingHours implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

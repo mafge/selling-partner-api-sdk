@@ -3,7 +3,7 @@
 /**
  * CreateInboundPlanRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CreateInboundPlanRequest';
+    protected static $openAPIModelName = 'CreateInboundPlanRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'destination_marketplaces' => 'string[]',
         'items' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\ItemInput[]',
         'name' => 'string',
-        'source_address' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\AddressInput'];
+        'source_address' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\AddressInput',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'destination_marketplaces' => null,
         'items' => null,
         'name' => null,
-        'source_address' => null];
+        'source_address' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,7 +92,7 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
     protected static array $openAPINullables = [
         'destination_marketplaces' => false,
         'items' => false,
-        'name' => true,
+        'name' => false,
         'source_address' => false,
     ];
 
@@ -106,7 +109,7 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'destination_marketplaces' => 'destinationMarketplaces',
         'items' => 'items',
         'name' => 'name',
@@ -118,7 +121,7 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'destination_marketplaces' => 'setDestinationMarketplaces',
         'items' => 'setItems',
         'name' => 'setName',
@@ -130,7 +133,7 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'destination_marketplaces' => 'getDestinationMarketplaces',
         'items' => 'getItems',
         'name' => 'getName',
@@ -139,14 +142,16 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -286,15 +303,17 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets destination_marketplaces.
+     *
+     * @return string[]
      */
-    public function getDestinationMarketplaces(): array
+    public function getDestinationMarketplaces()
     {
         return $this->container['destination_marketplaces'];
     }
@@ -302,9 +321,11 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Sets destination_marketplaces.
      *
-     * @param array $destination_marketplaces Marketplaces where the items need to be shipped to. Currently only one marketplace can be selected in this request.
+     * @param string[] $destination_marketplaces Marketplaces where the items need to be shipped to. Currently only one marketplace can be selected in this request.
+     *
+     * @return self
      */
-    public function setDestinationMarketplaces(array $destination_marketplaces): self
+    public function setDestinationMarketplaces($destination_marketplaces)
     {
         if (is_null($destination_marketplaces)) {
             throw new \InvalidArgumentException('non-nullable destination_marketplaces cannot be null');
@@ -323,8 +344,10 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets items.
+     *
+     * @return ItemInput[]
      */
-    public function getItems(): array
+    public function getItems()
     {
         return $this->container['items'];
     }
@@ -332,9 +355,11 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Sets items.
      *
-     * @param array $items items included in this plan
+     * @param ItemInput[] $items items included in this plan
+     *
+     * @return self
      */
-    public function setItems(array $items): self
+    public function setItems($items)
     {
         if (is_null($items)) {
             throw new \InvalidArgumentException('non-nullable items cannot be null');
@@ -353,8 +378,10 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets name.
+     *
+     * @return null|string
      */
-    public function getName(): ?string
+    public function getName()
     {
         return $this->container['name'];
     }
@@ -363,23 +390,18 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets name.
      *
      * @param null|string $name Name for the Inbound Plan. If one isn't provided, a default name will be provided.
+     *
+     * @return self
      */
-    public function setName(?string $name): self
+    public function setName($name)
     {
         if (is_null($name)) {
-            array_push($this->openAPINullablesSetToNull, 'name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
-        if (!is_null($name) && (mb_strlen($name) > 40)) {
+        if (mb_strlen($name) > 40) {
             throw new \InvalidArgumentException('invalid length for $name when calling CreateInboundPlanRequest., must be smaller than or equal to 40.');
         }
-        if (!is_null($name) && (mb_strlen($name) < 1)) {
+        if (mb_strlen($name) < 1) {
             throw new \InvalidArgumentException('invalid length for $name when calling CreateInboundPlanRequest., must be bigger than or equal to 1.');
         }
 
@@ -390,8 +412,10 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets source_address.
+     *
+     * @return AddressInput
      */
-    public function getSourceAddress(): AddressInput
+    public function getSourceAddress()
     {
         return $this->container['source_address'];
     }
@@ -400,8 +424,10 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets source_address.
      *
      * @param AddressInput $source_address source_address
+     *
+     * @return self
      */
-    public function setSourceAddress(AddressInput $source_address): self
+    public function setSourceAddress($source_address)
     {
         if (is_null($source_address)) {
             throw new \InvalidArgumentException('non-nullable source_address cannot be null');
@@ -429,7 +455,7 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -440,7 +466,7 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -468,15 +494,17 @@ class CreateInboundPlanRequest implements ModelInterface, \ArrayAccess, \JsonSer
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

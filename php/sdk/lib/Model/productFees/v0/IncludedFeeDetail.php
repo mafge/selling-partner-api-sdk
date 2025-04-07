@@ -3,7 +3,7 @@
 /**
  * IncludedFeeDetail.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\productFees\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'IncludedFeeDetail';
+    protected static $openAPIModelName = 'IncludedFeeDetail';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'fee_type' => 'string',
         'fee_amount' => '\SpApi\Model\productFees\v0\MoneyType',
         'fee_promotion' => '\SpApi\Model\productFees\v0\MoneyType',
         'tax_amount' => '\SpApi\Model\productFees\v0\MoneyType',
-        'final_fee' => '\SpApi\Model\productFees\v0\MoneyType'];
+        'final_fee' => '\SpApi\Model\productFees\v0\MoneyType',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'fee_type' => null,
         'fee_amount' => null,
         'fee_promotion' => null,
         'tax_amount' => null,
-        'final_fee' => null];
+        'final_fee' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -91,8 +94,8 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
     protected static array $openAPINullables = [
         'fee_type' => false,
         'fee_amount' => false,
-        'fee_promotion' => true,
-        'tax_amount' => true,
+        'fee_promotion' => false,
+        'tax_amount' => false,
         'final_fee' => false,
     ];
 
@@ -109,7 +112,7 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'fee_type' => 'FeeType',
         'fee_amount' => 'FeeAmount',
         'fee_promotion' => 'FeePromotion',
@@ -122,7 +125,7 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'fee_type' => 'setFeeType',
         'fee_amount' => 'setFeeAmount',
         'fee_promotion' => 'setFeePromotion',
@@ -135,7 +138,7 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'fee_type' => 'getFeeType',
         'fee_amount' => 'getFeeAmount',
         'fee_promotion' => 'getFeePromotion',
@@ -145,14 +148,16 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -269,15 +286,17 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets fee_type.
+     *
+     * @return string
      */
-    public function getFeeType(): string
+    public function getFeeType()
     {
         return $this->container['fee_type'];
     }
@@ -286,8 +305,10 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets fee_type.
      *
      * @param string $fee_type the type of fee charged to a seller
+     *
+     * @return self
      */
-    public function setFeeType(string $fee_type): self
+    public function setFeeType($fee_type)
     {
         if (is_null($fee_type)) {
             throw new \InvalidArgumentException('non-nullable fee_type cannot be null');
@@ -299,8 +320,10 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets fee_amount.
+     *
+     * @return MoneyType
      */
-    public function getFeeAmount(): MoneyType
+    public function getFeeAmount()
     {
         return $this->container['fee_amount'];
     }
@@ -309,8 +332,10 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets fee_amount.
      *
      * @param MoneyType $fee_amount fee_amount
+     *
+     * @return self
      */
-    public function setFeeAmount(MoneyType $fee_amount): self
+    public function setFeeAmount($fee_amount)
     {
         if (is_null($fee_amount)) {
             throw new \InvalidArgumentException('non-nullable fee_amount cannot be null');
@@ -322,8 +347,10 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets fee_promotion.
+     *
+     * @return null|MoneyType
      */
-    public function getFeePromotion(): ?MoneyType
+    public function getFeePromotion()
     {
         return $this->container['fee_promotion'];
     }
@@ -332,18 +359,13 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets fee_promotion.
      *
      * @param null|MoneyType $fee_promotion fee_promotion
+     *
+     * @return self
      */
-    public function setFeePromotion(?MoneyType $fee_promotion): self
+    public function setFeePromotion($fee_promotion)
     {
         if (is_null($fee_promotion)) {
-            array_push($this->openAPINullablesSetToNull, 'fee_promotion');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fee_promotion', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fee_promotion cannot be null');
         }
         $this->container['fee_promotion'] = $fee_promotion;
 
@@ -352,8 +374,10 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets tax_amount.
+     *
+     * @return null|MoneyType
      */
-    public function getTaxAmount(): ?MoneyType
+    public function getTaxAmount()
     {
         return $this->container['tax_amount'];
     }
@@ -362,18 +386,13 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets tax_amount.
      *
      * @param null|MoneyType $tax_amount tax_amount
+     *
+     * @return self
      */
-    public function setTaxAmount(?MoneyType $tax_amount): self
+    public function setTaxAmount($tax_amount)
     {
         if (is_null($tax_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'tax_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tax_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tax_amount cannot be null');
         }
         $this->container['tax_amount'] = $tax_amount;
 
@@ -382,8 +401,10 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets final_fee.
+     *
+     * @return MoneyType
      */
-    public function getFinalFee(): MoneyType
+    public function getFinalFee()
     {
         return $this->container['final_fee'];
     }
@@ -392,8 +413,10 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets final_fee.
      *
      * @param MoneyType $final_fee final_fee
+     *
+     * @return self
      */
-    public function setFinalFee(MoneyType $final_fee): self
+    public function setFinalFee($final_fee)
     {
         if (is_null($final_fee)) {
             throw new \InvalidArgumentException('non-nullable final_fee cannot be null');
@@ -421,7 +444,7 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -432,7 +455,7 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -460,15 +483,17 @@ class IncludedFeeDetail implements ModelInterface, \ArrayAccess, \JsonSerializab
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

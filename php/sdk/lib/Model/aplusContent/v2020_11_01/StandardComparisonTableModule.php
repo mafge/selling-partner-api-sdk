@@ -3,7 +3,7 @@
 /**
  * StandardComparisonTableModule.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\aplusContent\v2020_11_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class StandardComparisonTableModule implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'StandardComparisonTableModule';
+    protected static $openAPIModelName = 'StandardComparisonTableModule';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'product_columns' => '\SpApi\Model\aplusContent\v2020_11_01\StandardComparisonProductBlock[]',
-        'metric_row_labels' => '\SpApi\Model\aplusContent\v2020_11_01\PlainTextItem[]'];
+        'metric_row_labels' => '\SpApi\Model\aplusContent\v2020_11_01\PlainTextItem[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class StandardComparisonTableModule implements ModelInterface, \ArrayAccess, \Js
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'product_columns' => null,
-        'metric_row_labels' => null];
+        'metric_row_labels' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class StandardComparisonTableModule implements ModelInterface, \ArrayAccess, \Js
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'product_columns' => true,
-        'metric_row_labels' => true,
+        'product_columns' => false,
+        'metric_row_labels' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class StandardComparisonTableModule implements ModelInterface, \ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'product_columns' => 'productColumns',
         'metric_row_labels' => 'metricRowLabels',
     ];
@@ -110,7 +113,7 @@ class StandardComparisonTableModule implements ModelInterface, \ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'product_columns' => 'setProductColumns',
         'metric_row_labels' => 'setMetricRowLabels',
     ];
@@ -120,21 +123,23 @@ class StandardComparisonTableModule implements ModelInterface, \ArrayAccess, \Js
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'product_columns' => 'getProductColumns',
         'metric_row_labels' => 'getMetricRowLabels',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class StandardComparisonTableModule implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class StandardComparisonTableModule implements ModelInterface, \ArrayAccess, \Js
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class StandardComparisonTableModule implements ModelInterface, \ArrayAccess, \Js
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -254,15 +271,17 @@ class StandardComparisonTableModule implements ModelInterface, \ArrayAccess, \Js
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets product_columns.
+     *
+     * @return null|StandardComparisonProductBlock[]
      */
-    public function getProductColumns(): ?array
+    public function getProductColumns()
     {
         return $this->container['product_columns'];
     }
@@ -270,25 +289,20 @@ class StandardComparisonTableModule implements ModelInterface, \ArrayAccess, \Js
     /**
      * Sets product_columns.
      *
-     * @param null|array $product_columns product_columns
+     * @param null|StandardComparisonProductBlock[] $product_columns product_columns
+     *
+     * @return self
      */
-    public function setProductColumns(?array $product_columns): self
+    public function setProductColumns($product_columns)
     {
         if (is_null($product_columns)) {
-            array_push($this->openAPINullablesSetToNull, 'product_columns');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('product_columns', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable product_columns cannot be null');
         }
 
-        if (!is_null($product_columns) && (count($product_columns) > 6)) {
+        if (count($product_columns) > 6) {
             throw new \InvalidArgumentException('invalid value for $product_columns when calling StandardComparisonTableModule., number of items must be less than or equal to 6.');
         }
-        if (!is_null($product_columns) && (count($product_columns) < 0)) {
+        if (count($product_columns) < 0) {
             throw new \InvalidArgumentException('invalid length for $product_columns when calling StandardComparisonTableModule., number of items must be greater than or equal to 0.');
         }
         $this->container['product_columns'] = $product_columns;
@@ -298,8 +312,10 @@ class StandardComparisonTableModule implements ModelInterface, \ArrayAccess, \Js
 
     /**
      * Gets metric_row_labels.
+     *
+     * @return null|PlainTextItem[]
      */
-    public function getMetricRowLabels(): ?array
+    public function getMetricRowLabels()
     {
         return $this->container['metric_row_labels'];
     }
@@ -307,25 +323,20 @@ class StandardComparisonTableModule implements ModelInterface, \ArrayAccess, \Js
     /**
      * Sets metric_row_labels.
      *
-     * @param null|array $metric_row_labels metric_row_labels
+     * @param null|PlainTextItem[] $metric_row_labels metric_row_labels
+     *
+     * @return self
      */
-    public function setMetricRowLabels(?array $metric_row_labels): self
+    public function setMetricRowLabels($metric_row_labels)
     {
         if (is_null($metric_row_labels)) {
-            array_push($this->openAPINullablesSetToNull, 'metric_row_labels');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('metric_row_labels', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable metric_row_labels cannot be null');
         }
 
-        if (!is_null($metric_row_labels) && (count($metric_row_labels) > 10)) {
+        if (count($metric_row_labels) > 10) {
             throw new \InvalidArgumentException('invalid value for $metric_row_labels when calling StandardComparisonTableModule., number of items must be less than or equal to 10.');
         }
-        if (!is_null($metric_row_labels) && (count($metric_row_labels) < 0)) {
+        if (count($metric_row_labels) < 0) {
             throw new \InvalidArgumentException('invalid length for $metric_row_labels when calling StandardComparisonTableModule., number of items must be greater than or equal to 0.');
         }
         $this->container['metric_row_labels'] = $metric_row_labels;
@@ -351,7 +362,7 @@ class StandardComparisonTableModule implements ModelInterface, \ArrayAccess, \Js
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -362,7 +373,7 @@ class StandardComparisonTableModule implements ModelInterface, \ArrayAccess, \Js
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -390,15 +401,17 @@ class StandardComparisonTableModule implements ModelInterface, \ArrayAccess, \Js
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

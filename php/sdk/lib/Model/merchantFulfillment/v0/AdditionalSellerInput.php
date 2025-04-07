@@ -3,7 +3,7 @@
 /**
  * AdditionalSellerInput.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\merchantFulfillment\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'AdditionalSellerInput';
+    protected static $openAPIModelName = 'AdditionalSellerInput';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'data_type' => 'string',
         'value_as_string' => 'string',
         'value_as_boolean' => 'bool',
@@ -69,7 +70,8 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
         'value_as_address' => '\SpApi\Model\merchantFulfillment\v0\Address',
         'value_as_weight' => '\SpApi\Model\merchantFulfillment\v0\Weight',
         'value_as_dimension' => '\SpApi\Model\merchantFulfillment\v0\Length',
-        'value_as_currency' => '\SpApi\Model\merchantFulfillment\v0\CurrencyAmount'];
+        'value_as_currency' => '\SpApi\Model\merchantFulfillment\v0\CurrencyAmount',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -80,7 +82,7 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'data_type' => null,
         'value_as_string' => null,
         'value_as_boolean' => null,
@@ -89,7 +91,8 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
         'value_as_address' => null,
         'value_as_weight' => null,
         'value_as_dimension' => null,
-        'value_as_currency' => null];
+        'value_as_currency' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -97,15 +100,15 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'data_type' => true,
-        'value_as_string' => true,
-        'value_as_boolean' => true,
-        'value_as_integer' => true,
-        'value_as_timestamp' => true,
-        'value_as_address' => true,
-        'value_as_weight' => true,
-        'value_as_dimension' => true,
-        'value_as_currency' => true,
+        'data_type' => false,
+        'value_as_string' => false,
+        'value_as_boolean' => false,
+        'value_as_integer' => false,
+        'value_as_timestamp' => false,
+        'value_as_address' => false,
+        'value_as_weight' => false,
+        'value_as_dimension' => false,
+        'value_as_currency' => false,
     ];
 
     /**
@@ -121,7 +124,7 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'data_type' => 'DataType',
         'value_as_string' => 'ValueAsString',
         'value_as_boolean' => 'ValueAsBoolean',
@@ -138,7 +141,7 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'data_type' => 'setDataType',
         'value_as_string' => 'setValueAsString',
         'value_as_boolean' => 'setValueAsBoolean',
@@ -155,7 +158,7 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'data_type' => 'getDataType',
         'value_as_string' => 'getValueAsString',
         'value_as_boolean' => 'getValueAsBoolean',
@@ -169,14 +172,16 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -206,16 +211,20 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -239,32 +248,40 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -274,7 +291,7 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -285,15 +302,17 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets data_type.
+     *
+     * @return null|string
      */
-    public function getDataType(): ?string
+    public function getDataType()
     {
         return $this->container['data_type'];
     }
@@ -302,18 +321,13 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets data_type.
      *
      * @param null|string $data_type the data type of the additional information
+     *
+     * @return self
      */
-    public function setDataType(?string $data_type): self
+    public function setDataType($data_type)
     {
         if (is_null($data_type)) {
-            array_push($this->openAPINullablesSetToNull, 'data_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('data_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable data_type cannot be null');
         }
         $this->container['data_type'] = $data_type;
 
@@ -322,8 +336,10 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets value_as_string.
+     *
+     * @return null|string
      */
-    public function getValueAsString(): ?string
+    public function getValueAsString()
     {
         return $this->container['value_as_string'];
     }
@@ -332,18 +348,13 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets value_as_string.
      *
      * @param null|string $value_as_string the value when the data type is string
+     *
+     * @return self
      */
-    public function setValueAsString(?string $value_as_string): self
+    public function setValueAsString($value_as_string)
     {
         if (is_null($value_as_string)) {
-            array_push($this->openAPINullablesSetToNull, 'value_as_string');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('value_as_string', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable value_as_string cannot be null');
         }
         $this->container['value_as_string'] = $value_as_string;
 
@@ -352,8 +363,10 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets value_as_boolean.
+     *
+     * @return null|bool
      */
-    public function getValueAsBoolean(): ?bool
+    public function getValueAsBoolean()
     {
         return $this->container['value_as_boolean'];
     }
@@ -362,18 +375,13 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets value_as_boolean.
      *
      * @param null|bool $value_as_boolean the value when the data type is boolean
+     *
+     * @return self
      */
-    public function setValueAsBoolean(?bool $value_as_boolean): self
+    public function setValueAsBoolean($value_as_boolean)
     {
         if (is_null($value_as_boolean)) {
-            array_push($this->openAPINullablesSetToNull, 'value_as_boolean');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('value_as_boolean', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable value_as_boolean cannot be null');
         }
         $this->container['value_as_boolean'] = $value_as_boolean;
 
@@ -382,8 +390,10 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets value_as_integer.
+     *
+     * @return null|int
      */
-    public function getValueAsInteger(): ?int
+    public function getValueAsInteger()
     {
         return $this->container['value_as_integer'];
     }
@@ -392,18 +402,13 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets value_as_integer.
      *
      * @param null|int $value_as_integer the value when the data type is integer
+     *
+     * @return self
      */
-    public function setValueAsInteger(?int $value_as_integer): self
+    public function setValueAsInteger($value_as_integer)
     {
         if (is_null($value_as_integer)) {
-            array_push($this->openAPINullablesSetToNull, 'value_as_integer');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('value_as_integer', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable value_as_integer cannot be null');
         }
         $this->container['value_as_integer'] = $value_as_integer;
 
@@ -412,8 +417,10 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets value_as_timestamp.
+     *
+     * @return null|\DateTime
      */
-    public function getValueAsTimestamp(): ?\DateTime
+    public function getValueAsTimestamp()
     {
         return $this->container['value_as_timestamp'];
     }
@@ -422,18 +429,13 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets value_as_timestamp.
      *
      * @param null|\DateTime $value_as_timestamp date-time formatted timestamp
+     *
+     * @return self
      */
-    public function setValueAsTimestamp(?\DateTime $value_as_timestamp): self
+    public function setValueAsTimestamp($value_as_timestamp)
     {
         if (is_null($value_as_timestamp)) {
-            array_push($this->openAPINullablesSetToNull, 'value_as_timestamp');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('value_as_timestamp', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable value_as_timestamp cannot be null');
         }
         $this->container['value_as_timestamp'] = $value_as_timestamp;
 
@@ -442,8 +444,10 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets value_as_address.
+     *
+     * @return null|Address
      */
-    public function getValueAsAddress(): ?Address
+    public function getValueAsAddress()
     {
         return $this->container['value_as_address'];
     }
@@ -452,18 +456,13 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets value_as_address.
      *
      * @param null|Address $value_as_address value_as_address
+     *
+     * @return self
      */
-    public function setValueAsAddress(?Address $value_as_address): self
+    public function setValueAsAddress($value_as_address)
     {
         if (is_null($value_as_address)) {
-            array_push($this->openAPINullablesSetToNull, 'value_as_address');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('value_as_address', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable value_as_address cannot be null');
         }
         $this->container['value_as_address'] = $value_as_address;
 
@@ -472,8 +471,10 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets value_as_weight.
+     *
+     * @return null|Weight
      */
-    public function getValueAsWeight(): ?Weight
+    public function getValueAsWeight()
     {
         return $this->container['value_as_weight'];
     }
@@ -482,18 +483,13 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets value_as_weight.
      *
      * @param null|Weight $value_as_weight value_as_weight
+     *
+     * @return self
      */
-    public function setValueAsWeight(?Weight $value_as_weight): self
+    public function setValueAsWeight($value_as_weight)
     {
         if (is_null($value_as_weight)) {
-            array_push($this->openAPINullablesSetToNull, 'value_as_weight');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('value_as_weight', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable value_as_weight cannot be null');
         }
         $this->container['value_as_weight'] = $value_as_weight;
 
@@ -502,8 +498,10 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets value_as_dimension.
+     *
+     * @return null|Length
      */
-    public function getValueAsDimension(): ?Length
+    public function getValueAsDimension()
     {
         return $this->container['value_as_dimension'];
     }
@@ -512,18 +510,13 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets value_as_dimension.
      *
      * @param null|Length $value_as_dimension value_as_dimension
+     *
+     * @return self
      */
-    public function setValueAsDimension(?Length $value_as_dimension): self
+    public function setValueAsDimension($value_as_dimension)
     {
         if (is_null($value_as_dimension)) {
-            array_push($this->openAPINullablesSetToNull, 'value_as_dimension');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('value_as_dimension', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable value_as_dimension cannot be null');
         }
         $this->container['value_as_dimension'] = $value_as_dimension;
 
@@ -532,8 +525,10 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets value_as_currency.
+     *
+     * @return null|CurrencyAmount
      */
-    public function getValueAsCurrency(): ?CurrencyAmount
+    public function getValueAsCurrency()
     {
         return $this->container['value_as_currency'];
     }
@@ -542,18 +537,13 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets value_as_currency.
      *
      * @param null|CurrencyAmount $value_as_currency value_as_currency
+     *
+     * @return self
      */
-    public function setValueAsCurrency(?CurrencyAmount $value_as_currency): self
+    public function setValueAsCurrency($value_as_currency)
     {
         if (is_null($value_as_currency)) {
-            array_push($this->openAPINullablesSetToNull, 'value_as_currency');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('value_as_currency', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable value_as_currency cannot be null');
         }
         $this->container['value_as_currency'] = $value_as_currency;
 
@@ -578,7 +568,7 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -589,7 +579,7 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -617,15 +607,17 @@ class AdditionalSellerInput implements ModelInterface, \ArrayAccess, \JsonSerial
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

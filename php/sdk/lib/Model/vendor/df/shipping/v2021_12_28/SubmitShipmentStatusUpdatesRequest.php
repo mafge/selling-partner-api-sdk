@@ -2,7 +2,7 @@
 /**
  * SubmitShipmentStatusUpdatesRequest
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\df\shipping\v2021_12_28;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * SubmitShipmentStatusUpdatesRequest Class Doc Comment
@@ -52,15 +50,16 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'SubmitShipmentStatusUpdatesRequest';
+    protected static $openAPIModelName = 'SubmitShipmentStatusUpdatesRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'shipment_status_updates' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\ShipmentStatusUpdate[]'    ];
+    protected static $openAPITypes = [
+        'shipment_status_updates' => '\SpApi\Model\vendor\df\shipping\v2021_12_28\ShipmentStatusUpdate[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -69,8 +68,9 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'shipment_status_updates' => null    ];
+    protected static $openAPIFormats = [
+        'shipment_status_updates' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -78,7 +78,7 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'shipment_status_updates' => true
+        'shipment_status_updates' => false
     ];
 
     /**
@@ -93,7 +93,7 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -103,7 +103,7 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -166,9 +166,8 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'shipment_status_updates' => 'shipmentStatusUpdates'
-        
     ];
 
     /**
@@ -176,7 +175,7 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'shipment_status_updates' => 'setShipmentStatusUpdates'
     ];
 
@@ -185,7 +184,7 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'shipment_status_updates' => 'getShipmentStatusUpdates'
     ];
 
@@ -195,7 +194,7 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -205,7 +204,7 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -215,7 +214,7 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -225,7 +224,7 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -234,17 +233,17 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('shipment_status_updates', $data ?? [], null);
     }
@@ -272,7 +271,7 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -289,7 +288,7 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -298,9 +297,9 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
     /**
      * Gets shipment_status_updates
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\df\shipping\v2021_12_28\ShipmentStatusUpdate[]|null
      */
-    public function getShipmentStatusUpdates(): ?array
+    public function getShipmentStatusUpdates()
     {
         return $this->container['shipment_status_updates'];
     }
@@ -308,33 +307,24 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
     /**
      * Sets shipment_status_updates
      *
-     * @param array|null $shipment_status_updates Contains a list of one or more `ShipmentStatusUpdate` objects. Each `ShipmentStatusUpdate` object represents an update to the status of a specific shipment.
+     * @param \SpApi\Model\vendor\df\shipping\v2021_12_28\ShipmentStatusUpdate[]|null $shipment_status_updates Contains a list of one or more `ShipmentStatusUpdate` objects. Each `ShipmentStatusUpdate` object represents an update to the status of a specific shipment.
      *
      * @return self
      */
-    public function setShipmentStatusUpdates(?array $shipment_status_updates): self
+    public function setShipmentStatusUpdates($shipment_status_updates)
     {
         if (is_null($shipment_status_updates)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_status_updates');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_status_updates', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_status_updates cannot be null');
         }
 
 
-        if (!is_null($shipment_status_updates) && (count($shipment_status_updates) < 1)) {
+        if ((count($shipment_status_updates) < 1)) {
             throw new \InvalidArgumentException('invalid length for $shipment_status_updates when calling SubmitShipmentStatusUpdatesRequest., number of items must be greater than or equal to 1.');
         }
         $this->container['shipment_status_updates'] = $shipment_status_updates;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -355,7 +345,7 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -368,7 +358,7 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -397,7 +387,7 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -420,7 +410,7 @@ class SubmitShipmentStatusUpdatesRequest implements ModelInterface, ArrayAccess,
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * ThroughputConfig.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\supplySources\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class ThroughputConfig implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ThroughputConfig';
+    protected static $openAPIModelName = 'ThroughputConfig';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'throughput_cap' => '\SpApi\Model\supplySources\v2020_07_01\ThroughputCap',
-        'throughput_unit' => '\SpApi\Model\supplySources\v2020_07_01\ThroughputUnit'];
+        'throughput_unit' => '\SpApi\Model\supplySources\v2020_07_01\ThroughputUnit',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class ThroughputConfig implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'throughput_cap' => null,
-        'throughput_unit' => null];
+        'throughput_unit' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,7 +86,7 @@ class ThroughputConfig implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'throughput_cap' => true,
+        'throughput_cap' => false,
         'throughput_unit' => false,
     ];
 
@@ -100,7 +103,7 @@ class ThroughputConfig implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'throughput_cap' => 'throughputCap',
         'throughput_unit' => 'throughputUnit',
     ];
@@ -110,7 +113,7 @@ class ThroughputConfig implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'throughput_cap' => 'setThroughputCap',
         'throughput_unit' => 'setThroughputUnit',
     ];
@@ -120,21 +123,23 @@ class ThroughputConfig implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'throughput_cap' => 'getThroughputCap',
         'throughput_unit' => 'getThroughputUnit',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class ThroughputConfig implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class ThroughputConfig implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class ThroughputConfig implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -242,15 +259,17 @@ class ThroughputConfig implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets throughput_cap.
+     *
+     * @return null|ThroughputCap
      */
-    public function getThroughputCap(): ?ThroughputCap
+    public function getThroughputCap()
     {
         return $this->container['throughput_cap'];
     }
@@ -259,18 +278,13 @@ class ThroughputConfig implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets throughput_cap.
      *
      * @param null|ThroughputCap $throughput_cap throughput_cap
+     *
+     * @return self
      */
-    public function setThroughputCap(?ThroughputCap $throughput_cap): self
+    public function setThroughputCap($throughput_cap)
     {
         if (is_null($throughput_cap)) {
-            array_push($this->openAPINullablesSetToNull, 'throughput_cap');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('throughput_cap', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable throughput_cap cannot be null');
         }
         $this->container['throughput_cap'] = $throughput_cap;
 
@@ -279,8 +293,10 @@ class ThroughputConfig implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets throughput_unit.
+     *
+     * @return ThroughputUnit
      */
-    public function getThroughputUnit(): string
+    public function getThroughputUnit()
     {
         return $this->container['throughput_unit'];
     }
@@ -288,9 +304,11 @@ class ThroughputConfig implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Sets throughput_unit.
      *
-     * @param string $throughput_unit throughput_unit
+     * @param ThroughputUnit $throughput_unit throughput_unit
+     *
+     * @return self
      */
-    public function setThroughputUnit(string $throughput_unit): self
+    public function setThroughputUnit($throughput_unit)
     {
         if (is_null($throughput_unit)) {
             throw new \InvalidArgumentException('non-nullable throughput_unit cannot be null');
@@ -318,7 +336,7 @@ class ThroughputConfig implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -329,7 +347,7 @@ class ThroughputConfig implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -357,15 +375,17 @@ class ThroughputConfig implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -2,7 +2,7 @@
 /**
  * CarrierId
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -27,8 +27,7 @@
  */
 
 namespace SpApi\Model\vendor\df\shipping\v2021_12_28;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \SpApi\ObjectSerializer;
 
 /**
  * CarrierId Class Doc Comment
@@ -50,7 +49,7 @@ class CarrierId
      * Gets allowable values of the enum
      * @return string[]
      */
-    public static function getAllowableEnumValues(): array
+    public static function getAllowableEnumValues()
     {
         return [
             self::SWA

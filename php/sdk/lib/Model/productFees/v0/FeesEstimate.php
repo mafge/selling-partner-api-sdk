@@ -3,7 +3,7 @@
 /**
  * FeesEstimate.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\productFees\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class FeesEstimate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'FeesEstimate';
+    protected static $openAPIModelName = 'FeesEstimate';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'time_of_fees_estimation' => '\DateTime',
         'total_fees_estimate' => '\SpApi\Model\productFees\v0\MoneyType',
-        'fee_detail_list' => '\SpApi\Model\productFees\v0\FeeDetail[]'];
+        'fee_detail_list' => '\SpApi\Model\productFees\v0\FeeDetail[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class FeesEstimate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'time_of_fees_estimation' => 'date-time',
         'total_fees_estimate' => null,
-        'fee_detail_list' => null];
+        'fee_detail_list' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -86,8 +89,8 @@ class FeesEstimate implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'time_of_fees_estimation' => false,
-        'total_fees_estimate' => true,
-        'fee_detail_list' => true,
+        'total_fees_estimate' => false,
+        'fee_detail_list' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class FeesEstimate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'time_of_fees_estimation' => 'TimeOfFeesEstimation',
         'total_fees_estimate' => 'TotalFeesEstimate',
         'fee_detail_list' => 'FeeDetailList',
@@ -114,7 +117,7 @@ class FeesEstimate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'time_of_fees_estimation' => 'setTimeOfFeesEstimation',
         'total_fees_estimate' => 'setTotalFeesEstimate',
         'fee_detail_list' => 'setFeeDetailList',
@@ -125,7 +128,7 @@ class FeesEstimate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'time_of_fees_estimation' => 'getTimeOfFeesEstimation',
         'total_fees_estimate' => 'getTotalFeesEstimate',
         'fee_detail_list' => 'getFeeDetailList',
@@ -133,14 +136,16 @@ class FeesEstimate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class FeesEstimate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class FeesEstimate implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class FeesEstimate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -249,15 +266,17 @@ class FeesEstimate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets time_of_fees_estimation.
+     *
+     * @return \DateTime
      */
-    public function getTimeOfFeesEstimation(): \DateTime
+    public function getTimeOfFeesEstimation()
     {
         return $this->container['time_of_fees_estimation'];
     }
@@ -266,8 +285,10 @@ class FeesEstimate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets time_of_fees_estimation.
      *
      * @param \DateTime $time_of_fees_estimation The time at which the fees were estimated. This defaults to the time the request is made.
+     *
+     * @return self
      */
-    public function setTimeOfFeesEstimation(\DateTime $time_of_fees_estimation): self
+    public function setTimeOfFeesEstimation($time_of_fees_estimation)
     {
         if (is_null($time_of_fees_estimation)) {
             throw new \InvalidArgumentException('non-nullable time_of_fees_estimation cannot be null');
@@ -279,8 +300,10 @@ class FeesEstimate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets total_fees_estimate.
+     *
+     * @return null|MoneyType
      */
-    public function getTotalFeesEstimate(): ?MoneyType
+    public function getTotalFeesEstimate()
     {
         return $this->container['total_fees_estimate'];
     }
@@ -289,18 +312,13 @@ class FeesEstimate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets total_fees_estimate.
      *
      * @param null|MoneyType $total_fees_estimate total_fees_estimate
+     *
+     * @return self
      */
-    public function setTotalFeesEstimate(?MoneyType $total_fees_estimate): self
+    public function setTotalFeesEstimate($total_fees_estimate)
     {
         if (is_null($total_fees_estimate)) {
-            array_push($this->openAPINullablesSetToNull, 'total_fees_estimate');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_fees_estimate', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable total_fees_estimate cannot be null');
         }
         $this->container['total_fees_estimate'] = $total_fees_estimate;
 
@@ -309,8 +327,10 @@ class FeesEstimate implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets fee_detail_list.
+     *
+     * @return null|FeeDetail[]
      */
-    public function getFeeDetailList(): ?array
+    public function getFeeDetailList()
     {
         return $this->container['fee_detail_list'];
     }
@@ -318,19 +338,14 @@ class FeesEstimate implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets fee_detail_list.
      *
-     * @param null|array $fee_detail_list a list of other fees that contribute to a given fee
+     * @param null|FeeDetail[] $fee_detail_list a list of other fees that contribute to a given fee
+     *
+     * @return self
      */
-    public function setFeeDetailList(?array $fee_detail_list): self
+    public function setFeeDetailList($fee_detail_list)
     {
         if (is_null($fee_detail_list)) {
-            array_push($this->openAPINullablesSetToNull, 'fee_detail_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fee_detail_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fee_detail_list cannot be null');
         }
         $this->container['fee_detail_list'] = $fee_detail_list;
 
@@ -355,7 +370,7 @@ class FeesEstimate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -366,7 +381,7 @@ class FeesEstimate implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -394,15 +409,17 @@ class FeesEstimate implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

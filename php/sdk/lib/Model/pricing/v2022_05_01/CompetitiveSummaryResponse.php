@@ -3,7 +3,7 @@
 /**
  * CompetitiveSummaryResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v2022_05_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class CompetitiveSummaryResponse implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CompetitiveSummaryResponse';
+    protected static $openAPIModelName = 'CompetitiveSummaryResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'status' => '\SpApi\Model\pricing\v2022_05_01\HttpStatusLine',
-        'body' => '\SpApi\Model\pricing\v2022_05_01\CompetitiveSummaryResponseBody'];
+        'body' => '\SpApi\Model\pricing\v2022_05_01\CompetitiveSummaryResponseBody',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class CompetitiveSummaryResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'status' => null,
-        'body' => null];
+        'body' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -100,7 +103,7 @@ class CompetitiveSummaryResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'status' => 'status',
         'body' => 'body',
     ];
@@ -110,7 +113,7 @@ class CompetitiveSummaryResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'status' => 'setStatus',
         'body' => 'setBody',
     ];
@@ -120,21 +123,23 @@ class CompetitiveSummaryResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'status' => 'getStatus',
         'body' => 'getBody',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class CompetitiveSummaryResponse implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class CompetitiveSummaryResponse implements ModelInterface, \ArrayAccess, \JsonS
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class CompetitiveSummaryResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -245,15 +262,17 @@ class CompetitiveSummaryResponse implements ModelInterface, \ArrayAccess, \JsonS
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets status.
+     *
+     * @return HttpStatusLine
      */
-    public function getStatus(): HttpStatusLine
+    public function getStatus()
     {
         return $this->container['status'];
     }
@@ -262,8 +281,10 @@ class CompetitiveSummaryResponse implements ModelInterface, \ArrayAccess, \JsonS
      * Sets status.
      *
      * @param HttpStatusLine $status status
+     *
+     * @return self
      */
-    public function setStatus(HttpStatusLine $status): self
+    public function setStatus($status)
     {
         if (is_null($status)) {
             throw new \InvalidArgumentException('non-nullable status cannot be null');
@@ -275,8 +296,10 @@ class CompetitiveSummaryResponse implements ModelInterface, \ArrayAccess, \JsonS
 
     /**
      * Gets body.
+     *
+     * @return CompetitiveSummaryResponseBody
      */
-    public function getBody(): CompetitiveSummaryResponseBody
+    public function getBody()
     {
         return $this->container['body'];
     }
@@ -285,8 +308,10 @@ class CompetitiveSummaryResponse implements ModelInterface, \ArrayAccess, \JsonS
      * Sets body.
      *
      * @param CompetitiveSummaryResponseBody $body body
+     *
+     * @return self
      */
-    public function setBody(CompetitiveSummaryResponseBody $body): self
+    public function setBody($body)
     {
         if (is_null($body)) {
             throw new \InvalidArgumentException('non-nullable body cannot be null');
@@ -314,7 +339,7 @@ class CompetitiveSummaryResponse implements ModelInterface, \ArrayAccess, \JsonS
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -325,7 +350,7 @@ class CompetitiveSummaryResponse implements ModelInterface, \ArrayAccess, \JsonS
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -353,15 +378,17 @@ class CompetitiveSummaryResponse implements ModelInterface, \ArrayAccess, \JsonS
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

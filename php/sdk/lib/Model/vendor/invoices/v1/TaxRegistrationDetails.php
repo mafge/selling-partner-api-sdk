@@ -2,7 +2,7 @@
 /**
  * TaxRegistrationDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\invoices\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * TaxRegistrationDetails Class Doc Comment
@@ -52,16 +50,17 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'TaxRegistrationDetails';
+    protected static $openAPIModelName = 'TaxRegistrationDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'tax_registration_type' => 'string',
-             'tax_registration_number' => 'string'    ];
+    protected static $openAPITypes = [
+        'tax_registration_type' => 'string',
+        'tax_registration_number' => 'string'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,9 +69,10 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'tax_registration_type' => null,
-            'tax_registration_number' => null    ];
+    protected static $openAPIFormats = [
+        'tax_registration_type' => null,
+        'tax_registration_number' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -96,7 +96,7 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -106,7 +106,7 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -169,10 +169,9 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'tax_registration_type' => 'taxRegistrationType',
-                'tax_registration_number' => 'taxRegistrationNumber'
-        
+        'tax_registration_number' => 'taxRegistrationNumber'
     ];
 
     /**
@@ -180,7 +179,7 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'tax_registration_type' => 'setTaxRegistrationType',
         'tax_registration_number' => 'setTaxRegistrationNumber'
     ];
@@ -190,7 +189,7 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'tax_registration_type' => 'getTaxRegistrationType',
         'tax_registration_number' => 'getTaxRegistrationNumber'
     ];
@@ -201,7 +200,7 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -211,7 +210,7 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -221,7 +220,7 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -231,7 +230,7 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -244,7 +243,7 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string[]
      */
-    public function getTaxRegistrationTypeAllowableValues(): array
+    public function getTaxRegistrationTypeAllowableValues()
     {
         return [
             self::TAX_REGISTRATION_TYPE_VAT,
@@ -255,17 +254,17 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('tax_registration_type', $data ?? [], null);
         $this->setIfExists('tax_registration_number', $data ?? [], null);
@@ -294,7 +293,7 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -322,7 +321,7 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -333,7 +332,7 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string
      */
-    public function getTaxRegistrationType(): string
+    public function getTaxRegistrationType()
     {
         return $this->container['tax_registration_type'];
     }
@@ -345,7 +344,7 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setTaxRegistrationType(string $tax_registration_type): self
+    public function setTaxRegistrationType($tax_registration_type)
     {
         if (is_null($tax_registration_type)) {
             throw new \InvalidArgumentException('non-nullable tax_registration_type cannot be null');
@@ -370,7 +369,7 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string
      */
-    public function getTaxRegistrationNumber(): string
+    public function getTaxRegistrationNumber()
     {
         return $this->container['tax_registration_number'];
     }
@@ -382,7 +381,7 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return self
      */
-    public function setTaxRegistrationNumber(string $tax_registration_number): self
+    public function setTaxRegistrationNumber($tax_registration_number)
     {
         if (is_null($tax_registration_number)) {
             throw new \InvalidArgumentException('non-nullable tax_registration_number cannot be null');
@@ -391,8 +390,6 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -413,7 +410,7 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -426,7 +423,7 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -455,7 +452,7 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -478,7 +475,7 @@ class TaxRegistrationDetails implements ModelInterface, ArrayAccess, \JsonSerial
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

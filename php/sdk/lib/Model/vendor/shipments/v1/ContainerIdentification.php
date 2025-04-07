@@ -2,7 +2,7 @@
 /**
  * ContainerIdentification
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * ContainerIdentification Class Doc Comment
@@ -52,16 +50,17 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'ContainerIdentification';
+    protected static $openAPIModelName = 'ContainerIdentification';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'container_identification_type' => 'string',
-             'container_identification_number' => 'string'    ];
+    protected static $openAPITypes = [
+        'container_identification_type' => 'string',
+        'container_identification_number' => 'string'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,9 +69,10 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'container_identification_type' => null,
-            'container_identification_number' => null    ];
+    protected static $openAPIFormats = [
+        'container_identification_type' => null,
+        'container_identification_number' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -96,7 +96,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -106,7 +106,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -169,10 +169,9 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'container_identification_type' => 'containerIdentificationType',
-                'container_identification_number' => 'containerIdentificationNumber'
-        
+        'container_identification_number' => 'containerIdentificationNumber'
     ];
 
     /**
@@ -180,7 +179,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'container_identification_type' => 'setContainerIdentificationType',
         'container_identification_number' => 'setContainerIdentificationNumber'
     ];
@@ -190,7 +189,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'container_identification_type' => 'getContainerIdentificationType',
         'container_identification_number' => 'getContainerIdentificationNumber'
     ];
@@ -201,7 +200,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -211,7 +210,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -221,7 +220,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -231,7 +230,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -247,7 +246,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return string[]
      */
-    public function getContainerIdentificationTypeAllowableValues(): array
+    public function getContainerIdentificationTypeAllowableValues()
     {
         return [
             self::CONTAINER_IDENTIFICATION_TYPE_SSCC,
@@ -261,17 +260,17 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('container_identification_type', $data ?? [], null);
         $this->setIfExists('container_identification_number', $data ?? [], null);
@@ -300,7 +299,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -328,7 +327,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -339,7 +338,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return string
      */
-    public function getContainerIdentificationType(): string
+    public function getContainerIdentificationType()
     {
         return $this->container['container_identification_type'];
     }
@@ -351,7 +350,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
-    public function setContainerIdentificationType(string $container_identification_type): self
+    public function setContainerIdentificationType($container_identification_type)
     {
         if (is_null($container_identification_type)) {
             throw new \InvalidArgumentException('non-nullable container_identification_type cannot be null');
@@ -376,7 +375,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return string
      */
-    public function getContainerIdentificationNumber(): string
+    public function getContainerIdentificationNumber()
     {
         return $this->container['container_identification_number'];
     }
@@ -388,7 +387,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return self
      */
-    public function setContainerIdentificationNumber(string $container_identification_number): self
+    public function setContainerIdentificationNumber($container_identification_number)
     {
         if (is_null($container_identification_number)) {
             throw new \InvalidArgumentException('non-nullable container_identification_number cannot be null');
@@ -397,8 +396,6 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -419,7 +416,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -432,7 +429,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -461,7 +458,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -484,7 +481,7 @@ class ContainerIdentification implements ModelInterface, ArrayAccess, \JsonSeria
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * InboundPlan.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'InboundPlan';
+    protected static $openAPIModelName = 'InboundPlan';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'created_at' => '\DateTime',
         'inbound_plan_id' => 'string',
         'last_updated_at' => '\DateTime',
@@ -70,7 +71,8 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
         'placement_options' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\PlacementOptionSummary[]',
         'shipments' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\ShipmentSummary[]',
         'source_address' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Address',
-        'status' => 'string'];
+        'status' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -81,7 +83,7 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'created_at' => 'date-time',
         'inbound_plan_id' => null,
         'last_updated_at' => 'date-time',
@@ -91,7 +93,8 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
         'placement_options' => null,
         'shipments' => null,
         'source_address' => null,
-        'status' => null];
+        'status' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -104,9 +107,9 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
         'last_updated_at' => false,
         'marketplace_ids' => false,
         'name' => false,
-        'packing_options' => true,
-        'placement_options' => true,
-        'shipments' => true,
+        'packing_options' => false,
+        'placement_options' => false,
+        'shipments' => false,
         'source_address' => false,
         'status' => false,
     ];
@@ -124,7 +127,7 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'created_at' => 'createdAt',
         'inbound_plan_id' => 'inboundPlanId',
         'last_updated_at' => 'lastUpdatedAt',
@@ -142,7 +145,7 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'created_at' => 'setCreatedAt',
         'inbound_plan_id' => 'setInboundPlanId',
         'last_updated_at' => 'setLastUpdatedAt',
@@ -160,7 +163,7 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'created_at' => 'getCreatedAt',
         'inbound_plan_id' => 'getInboundPlanId',
         'last_updated_at' => 'getLastUpdatedAt',
@@ -175,14 +178,16 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -213,16 +218,20 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -246,32 +255,40 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -281,7 +298,7 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -335,15 +352,17 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets created_at.
+     *
+     * @return \DateTime
      */
-    public function getCreatedAt(): \DateTime
+    public function getCreatedAt()
     {
         return $this->container['created_at'];
     }
@@ -352,8 +371,10 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets created_at.
      *
      * @param \DateTime $created_at The time at which the inbound plan was created. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime with pattern `yyyy-MM-ddTHH:mm:ssZ`.
+     *
+     * @return self
      */
-    public function setCreatedAt(\DateTime $created_at): self
+    public function setCreatedAt($created_at)
     {
         if (is_null($created_at)) {
             throw new \InvalidArgumentException('non-nullable created_at cannot be null');
@@ -365,8 +386,10 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets inbound_plan_id.
+     *
+     * @return string
      */
-    public function getInboundPlanId(): string
+    public function getInboundPlanId()
     {
         return $this->container['inbound_plan_id'];
     }
@@ -375,8 +398,10 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets inbound_plan_id.
      *
      * @param string $inbound_plan_id identifier of an inbound plan
+     *
+     * @return self
      */
-    public function setInboundPlanId(string $inbound_plan_id): self
+    public function setInboundPlanId($inbound_plan_id)
     {
         if (is_null($inbound_plan_id)) {
             throw new \InvalidArgumentException('non-nullable inbound_plan_id cannot be null');
@@ -398,8 +423,10 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets last_updated_at.
+     *
+     * @return \DateTime
      */
-    public function getLastUpdatedAt(): \DateTime
+    public function getLastUpdatedAt()
     {
         return $this->container['last_updated_at'];
     }
@@ -408,8 +435,10 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets last_updated_at.
      *
      * @param \DateTime $last_updated_at The time at which the inbound plan was last updated. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ssZ`.
+     *
+     * @return self
      */
-    public function setLastUpdatedAt(\DateTime $last_updated_at): self
+    public function setLastUpdatedAt($last_updated_at)
     {
         if (is_null($last_updated_at)) {
             throw new \InvalidArgumentException('non-nullable last_updated_at cannot be null');
@@ -421,8 +450,10 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets marketplace_ids.
+     *
+     * @return string[]
      */
-    public function getMarketplaceIds(): array
+    public function getMarketplaceIds()
     {
         return $this->container['marketplace_ids'];
     }
@@ -430,9 +461,11 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets marketplace_ids.
      *
-     * @param array $marketplace_ids a list of marketplace IDs
+     * @param string[] $marketplace_ids a list of marketplace IDs
+     *
+     * @return self
      */
-    public function setMarketplaceIds(array $marketplace_ids): self
+    public function setMarketplaceIds($marketplace_ids)
     {
         if (is_null($marketplace_ids)) {
             throw new \InvalidArgumentException('non-nullable marketplace_ids cannot be null');
@@ -444,8 +477,10 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets name.
+     *
+     * @return string
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->container['name'];
     }
@@ -454,8 +489,10 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets name.
      *
      * @param string $name human-readable name of the inbound plan
+     *
+     * @return self
      */
-    public function setName(string $name): self
+    public function setName($name)
     {
         if (is_null($name)) {
             throw new \InvalidArgumentException('non-nullable name cannot be null');
@@ -467,8 +504,10 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets packing_options.
+     *
+     * @return null|PackingOptionSummary[]
      */
-    public function getPackingOptions(): ?array
+    public function getPackingOptions()
     {
         return $this->container['packing_options'];
     }
@@ -476,19 +515,14 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets packing_options.
      *
-     * @param null|array $packing_options Packing options for the inbound plan. This property will be populated when it has been generated via the corresponding operation. If there is a chosen placement option, only packing options for that placement option will be returned. If there are confirmed shipments, only packing options for those shipments will be returned. Query the packing option for more details.
+     * @param null|PackingOptionSummary[] $packing_options Packing options for the inbound plan. This property will be populated when it has been generated via the corresponding operation. If there is a chosen placement option, only packing options for that placement option will be returned. If there are confirmed shipments, only packing options for those shipments will be returned. Query the packing option for more details.
+     *
+     * @return self
      */
-    public function setPackingOptions(?array $packing_options): self
+    public function setPackingOptions($packing_options)
     {
         if (is_null($packing_options)) {
-            array_push($this->openAPINullablesSetToNull, 'packing_options');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('packing_options', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable packing_options cannot be null');
         }
         $this->container['packing_options'] = $packing_options;
 
@@ -497,8 +531,10 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets placement_options.
+     *
+     * @return null|PlacementOptionSummary[]
      */
-    public function getPlacementOptions(): ?array
+    public function getPlacementOptions()
     {
         return $this->container['placement_options'];
     }
@@ -506,19 +542,14 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets placement_options.
      *
-     * @param null|array $placement_options Placement options for the inbound plan. This property will be populated when it has been generated via the corresponding operation. If there is a chosen placement option, that will be the only returned option. Query the placement option for more details.
+     * @param null|PlacementOptionSummary[] $placement_options Placement options for the inbound plan. This property will be populated when it has been generated via the corresponding operation. If there is a chosen placement option, that will be the only returned option. Query the placement option for more details.
+     *
+     * @return self
      */
-    public function setPlacementOptions(?array $placement_options): self
+    public function setPlacementOptions($placement_options)
     {
         if (is_null($placement_options)) {
-            array_push($this->openAPINullablesSetToNull, 'placement_options');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('placement_options', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable placement_options cannot be null');
         }
         $this->container['placement_options'] = $placement_options;
 
@@ -527,8 +558,10 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets shipments.
+     *
+     * @return null|ShipmentSummary[]
      */
-    public function getShipments(): ?array
+    public function getShipments()
     {
         return $this->container['shipments'];
     }
@@ -536,19 +569,14 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets shipments.
      *
-     * @param null|array $shipments A list of shipment IDs for the inbound plan. This property is populated when it has been generated with the `confirmPlacementOptions` operation. Only shipments from the chosen placement option are returned. Query the shipment for more details.
+     * @param null|ShipmentSummary[] $shipments A list of shipment IDs for the inbound plan. This property is populated when it has been generated with the `confirmPlacementOptions` operation. Only shipments from the chosen placement option are returned. Query the shipment for more details.
+     *
+     * @return self
      */
-    public function setShipments(?array $shipments): self
+    public function setShipments($shipments)
     {
         if (is_null($shipments)) {
-            array_push($this->openAPINullablesSetToNull, 'shipments');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipments', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipments cannot be null');
         }
         $this->container['shipments'] = $shipments;
 
@@ -557,8 +585,10 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets source_address.
+     *
+     * @return Address
      */
-    public function getSourceAddress(): Address
+    public function getSourceAddress()
     {
         return $this->container['source_address'];
     }
@@ -567,8 +597,10 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets source_address.
      *
      * @param Address $source_address source_address
+     *
+     * @return self
      */
-    public function setSourceAddress(Address $source_address): self
+    public function setSourceAddress($source_address)
     {
         if (is_null($source_address)) {
             throw new \InvalidArgumentException('non-nullable source_address cannot be null');
@@ -580,8 +612,10 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets status.
+     *
+     * @return string
      */
-    public function getStatus(): string
+    public function getStatus()
     {
         return $this->container['status'];
     }
@@ -590,8 +624,10 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets status.
      *
      * @param string $status Current status of the inbound plan. Possible values: `ACTIVE`, `VOIDED`, `SHIPPED`, `ERRORED`.
+     *
+     * @return self
      */
-    public function setStatus(string $status): self
+    public function setStatus($status)
     {
         if (is_null($status)) {
             throw new \InvalidArgumentException('non-nullable status cannot be null');
@@ -626,7 +662,7 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -637,7 +673,7 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -665,15 +701,17 @@ class InboundPlan implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

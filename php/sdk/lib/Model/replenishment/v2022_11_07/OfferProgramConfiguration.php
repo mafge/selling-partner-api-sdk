@@ -3,7 +3,7 @@
 /**
  * OfferProgramConfiguration.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\replenishment\v2022_11_07;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class OfferProgramConfiguration implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'OfferProgramConfiguration';
+    protected static $openAPIModelName = 'OfferProgramConfiguration';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'preferences' => '\SpApi\Model\replenishment\v2022_11_07\OfferProgramConfigurationPreferences',
         'promotions' => '\SpApi\Model\replenishment\v2022_11_07\OfferProgramConfigurationPromotions',
-        'enrollment_method' => '\SpApi\Model\replenishment\v2022_11_07\EnrollmentMethod'];
+        'enrollment_method' => '\SpApi\Model\replenishment\v2022_11_07\EnrollmentMethod',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class OfferProgramConfiguration implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'preferences' => null,
         'promotions' => null,
-        'enrollment_method' => null];
+        'enrollment_method' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class OfferProgramConfiguration implements ModelInterface, \ArrayAccess, \JsonSe
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'preferences' => true,
-        'promotions' => true,
-        'enrollment_method' => true,
+        'preferences' => false,
+        'promotions' => false,
+        'enrollment_method' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class OfferProgramConfiguration implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'preferences' => 'preferences',
         'promotions' => 'promotions',
         'enrollment_method' => 'enrollmentMethod',
@@ -114,7 +117,7 @@ class OfferProgramConfiguration implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'preferences' => 'setPreferences',
         'promotions' => 'setPromotions',
         'enrollment_method' => 'setEnrollmentMethod',
@@ -125,7 +128,7 @@ class OfferProgramConfiguration implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'preferences' => 'getPreferences',
         'promotions' => 'getPromotions',
         'enrollment_method' => 'getEnrollmentMethod',
@@ -133,14 +136,16 @@ class OfferProgramConfiguration implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class OfferProgramConfiguration implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class OfferProgramConfiguration implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class OfferProgramConfiguration implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -243,15 +260,17 @@ class OfferProgramConfiguration implements ModelInterface, \ArrayAccess, \JsonSe
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets preferences.
+     *
+     * @return null|OfferProgramConfigurationPreferences
      */
-    public function getPreferences(): ?OfferProgramConfigurationPreferences
+    public function getPreferences()
     {
         return $this->container['preferences'];
     }
@@ -260,18 +279,13 @@ class OfferProgramConfiguration implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets preferences.
      *
      * @param null|OfferProgramConfigurationPreferences $preferences preferences
+     *
+     * @return self
      */
-    public function setPreferences(?OfferProgramConfigurationPreferences $preferences): self
+    public function setPreferences($preferences)
     {
         if (is_null($preferences)) {
-            array_push($this->openAPINullablesSetToNull, 'preferences');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('preferences', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable preferences cannot be null');
         }
         $this->container['preferences'] = $preferences;
 
@@ -280,8 +294,10 @@ class OfferProgramConfiguration implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets promotions.
+     *
+     * @return null|OfferProgramConfigurationPromotions
      */
-    public function getPromotions(): ?OfferProgramConfigurationPromotions
+    public function getPromotions()
     {
         return $this->container['promotions'];
     }
@@ -290,18 +306,13 @@ class OfferProgramConfiguration implements ModelInterface, \ArrayAccess, \JsonSe
      * Sets promotions.
      *
      * @param null|OfferProgramConfigurationPromotions $promotions promotions
+     *
+     * @return self
      */
-    public function setPromotions(?OfferProgramConfigurationPromotions $promotions): self
+    public function setPromotions($promotions)
     {
         if (is_null($promotions)) {
-            array_push($this->openAPINullablesSetToNull, 'promotions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('promotions', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable promotions cannot be null');
         }
         $this->container['promotions'] = $promotions;
 
@@ -310,8 +321,10 @@ class OfferProgramConfiguration implements ModelInterface, \ArrayAccess, \JsonSe
 
     /**
      * Gets enrollment_method.
+     *
+     * @return null|EnrollmentMethod
      */
-    public function getEnrollmentMethod(): ?string
+    public function getEnrollmentMethod()
     {
         return $this->container['enrollment_method'];
     }
@@ -319,19 +332,14 @@ class OfferProgramConfiguration implements ModelInterface, \ArrayAccess, \JsonSe
     /**
      * Sets enrollment_method.
      *
-     * @param null|string $enrollment_method enrollment_method
+     * @param null|EnrollmentMethod $enrollment_method enrollment_method
+     *
+     * @return self
      */
-    public function setEnrollmentMethod(?string $enrollment_method): self
+    public function setEnrollmentMethod($enrollment_method)
     {
         if (is_null($enrollment_method)) {
-            array_push($this->openAPINullablesSetToNull, 'enrollment_method');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('enrollment_method', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable enrollment_method cannot be null');
         }
         $this->container['enrollment_method'] = $enrollment_method;
 
@@ -356,7 +364,7 @@ class OfferProgramConfiguration implements ModelInterface, \ArrayAccess, \JsonSe
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -367,7 +375,7 @@ class OfferProgramConfiguration implements ModelInterface, \ArrayAccess, \JsonSe
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -395,15 +403,17 @@ class OfferProgramConfiguration implements ModelInterface, \ArrayAccess, \JsonSe
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

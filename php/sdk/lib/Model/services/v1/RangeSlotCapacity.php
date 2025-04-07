@@ -3,7 +3,7 @@
 /**
  * RangeSlotCapacity.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\services\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class RangeSlotCapacity implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'RangeSlotCapacity';
+    protected static $openAPIModelName = 'RangeSlotCapacity';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'resource_id' => 'string',
         'capacities' => '\SpApi\Model\services\v1\RangeCapacity[]',
-        'next_page_token' => 'string'];
+        'next_page_token' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class RangeSlotCapacity implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'resource_id' => null,
         'capacities' => null,
-        'next_page_token' => null];
+        'next_page_token' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class RangeSlotCapacity implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'resource_id' => true,
-        'capacities' => true,
-        'next_page_token' => true,
+        'resource_id' => false,
+        'capacities' => false,
+        'next_page_token' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class RangeSlotCapacity implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'resource_id' => 'resourceId',
         'capacities' => 'capacities',
         'next_page_token' => 'nextPageToken',
@@ -114,7 +117,7 @@ class RangeSlotCapacity implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'resource_id' => 'setResourceId',
         'capacities' => 'setCapacities',
         'next_page_token' => 'setNextPageToken',
@@ -125,7 +128,7 @@ class RangeSlotCapacity implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'resource_id' => 'getResourceId',
         'capacities' => 'getCapacities',
         'next_page_token' => 'getNextPageToken',
@@ -133,14 +136,16 @@ class RangeSlotCapacity implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class RangeSlotCapacity implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class RangeSlotCapacity implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class RangeSlotCapacity implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -243,15 +260,17 @@ class RangeSlotCapacity implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets resource_id.
+     *
+     * @return null|string
      */
-    public function getResourceId(): ?string
+    public function getResourceId()
     {
         return $this->container['resource_id'];
     }
@@ -260,18 +279,13 @@ class RangeSlotCapacity implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets resource_id.
      *
      * @param null|string $resource_id resource Identifier
+     *
+     * @return self
      */
-    public function setResourceId(?string $resource_id): self
+    public function setResourceId($resource_id)
     {
         if (is_null($resource_id)) {
-            array_push($this->openAPINullablesSetToNull, 'resource_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('resource_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable resource_id cannot be null');
         }
         $this->container['resource_id'] = $resource_id;
 
@@ -280,8 +294,10 @@ class RangeSlotCapacity implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets capacities.
+     *
+     * @return null|RangeCapacity[]
      */
-    public function getCapacities(): ?array
+    public function getCapacities()
     {
         return $this->container['capacities'];
     }
@@ -289,19 +305,14 @@ class RangeSlotCapacity implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Sets capacities.
      *
-     * @param null|array $capacities array of range capacities where each entry is for a specific capacity type
+     * @param null|RangeCapacity[] $capacities array of range capacities where each entry is for a specific capacity type
+     *
+     * @return self
      */
-    public function setCapacities(?array $capacities): self
+    public function setCapacities($capacities)
     {
         if (is_null($capacities)) {
-            array_push($this->openAPINullablesSetToNull, 'capacities');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('capacities', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable capacities cannot be null');
         }
         $this->container['capacities'] = $capacities;
 
@@ -310,8 +321,10 @@ class RangeSlotCapacity implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets next_page_token.
+     *
+     * @return null|string
      */
-    public function getNextPageToken(): ?string
+    public function getNextPageToken()
     {
         return $this->container['next_page_token'];
     }
@@ -320,18 +333,13 @@ class RangeSlotCapacity implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets next_page_token.
      *
      * @param null|string $next_page_token next page token, if there are more pages
+     *
+     * @return self
      */
-    public function setNextPageToken(?string $next_page_token): self
+    public function setNextPageToken($next_page_token)
     {
         if (is_null($next_page_token)) {
-            array_push($this->openAPINullablesSetToNull, 'next_page_token');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('next_page_token', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable next_page_token cannot be null');
         }
         $this->container['next_page_token'] = $next_page_token;
 
@@ -356,7 +364,7 @@ class RangeSlotCapacity implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -367,7 +375,7 @@ class RangeSlotCapacity implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -395,15 +403,17 @@ class RangeSlotCapacity implements ModelInterface, \ArrayAccess, \JsonSerializab
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

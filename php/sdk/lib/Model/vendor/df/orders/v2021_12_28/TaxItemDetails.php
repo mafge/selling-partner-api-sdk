@@ -2,7 +2,7 @@
 /**
  * TaxItemDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\df\orders\v2021_12_28;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * TaxItemDetails Class Doc Comment
@@ -52,15 +50,16 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'TaxItemDetails';
+    protected static $openAPIModelName = 'TaxItemDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'tax_line_item' => '\SpApi\Model\vendor\df\orders\v2021_12_28\TaxDetails[]'    ];
+    protected static $openAPITypes = [
+        'tax_line_item' => '\SpApi\Model\vendor\df\orders\v2021_12_28\TaxDetails[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -69,8 +68,9 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'tax_line_item' => null    ];
+    protected static $openAPIFormats = [
+        'tax_line_item' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -78,7 +78,7 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'tax_line_item' => true
+        'tax_line_item' => false
     ];
 
     /**
@@ -93,7 +93,7 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -103,7 +103,7 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -166,9 +166,8 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'tax_line_item' => 'taxLineItem'
-        
     ];
 
     /**
@@ -176,7 +175,7 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'tax_line_item' => 'setTaxLineItem'
     ];
 
@@ -185,7 +184,7 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'tax_line_item' => 'getTaxLineItem'
     ];
 
@@ -195,7 +194,7 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -205,7 +204,7 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -215,7 +214,7 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -225,7 +224,7 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -234,17 +233,17 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('tax_line_item', $data ?? [], null);
     }
@@ -272,7 +271,7 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -285,7 +284,7 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -294,9 +293,9 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets tax_line_item
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\df\orders\v2021_12_28\TaxDetails[]|null
      */
-    public function getTaxLineItem(): ?array
+    public function getTaxLineItem()
     {
         return $this->container['tax_line_item'];
     }
@@ -304,28 +303,19 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets tax_line_item
      *
-     * @param array|null $tax_line_item A list of tax line items.
+     * @param \SpApi\Model\vendor\df\orders\v2021_12_28\TaxDetails[]|null $tax_line_item A list of tax line items.
      *
      * @return self
      */
-    public function setTaxLineItem(?array $tax_line_item): self
+    public function setTaxLineItem($tax_line_item)
     {
         if (is_null($tax_line_item)) {
-            array_push($this->openAPINullablesSetToNull, 'tax_line_item');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tax_line_item', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tax_line_item cannot be null');
         }
         $this->container['tax_line_item'] = $tax_line_item;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -346,7 +336,7 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -359,7 +349,7 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -388,7 +378,7 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -411,7 +401,7 @@ class TaxItemDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

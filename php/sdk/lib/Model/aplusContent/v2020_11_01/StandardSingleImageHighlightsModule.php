@@ -3,7 +3,7 @@
 /**
  * StandardSingleImageHighlightsModule.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\aplusContent\v2020_11_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'StandardSingleImageHighlightsModule';
+    protected static $openAPIModelName = 'StandardSingleImageHighlightsModule';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'image' => '\SpApi\Model\aplusContent\v2020_11_01\ImageComponent',
         'headline' => '\SpApi\Model\aplusContent\v2020_11_01\TextComponent',
         'text_block1' => '\SpApi\Model\aplusContent\v2020_11_01\StandardTextBlock',
         'text_block2' => '\SpApi\Model\aplusContent\v2020_11_01\StandardTextBlock',
         'text_block3' => '\SpApi\Model\aplusContent\v2020_11_01\StandardTextBlock',
-        'bulleted_list_block' => '\SpApi\Model\aplusContent\v2020_11_01\StandardHeaderTextListBlock'];
+        'bulleted_list_block' => '\SpApi\Model\aplusContent\v2020_11_01\StandardHeaderTextListBlock',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'image' => null,
         'headline' => null,
         'text_block1' => null,
         'text_block2' => null,
         'text_block3' => null,
-        'bulleted_list_block' => null];
+        'bulleted_list_block' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -91,12 +94,12 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'image' => true,
-        'headline' => true,
-        'text_block1' => true,
-        'text_block2' => true,
-        'text_block3' => true,
-        'bulleted_list_block' => true,
+        'image' => false,
+        'headline' => false,
+        'text_block1' => false,
+        'text_block2' => false,
+        'text_block3' => false,
+        'bulleted_list_block' => false,
     ];
 
     /**
@@ -112,7 +115,7 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'image' => 'image',
         'headline' => 'headline',
         'text_block1' => 'textBlock1',
@@ -126,7 +129,7 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'image' => 'setImage',
         'headline' => 'setHeadline',
         'text_block1' => 'setTextBlock1',
@@ -140,7 +143,7 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'image' => 'getImage',
         'headline' => 'getHeadline',
         'text_block1' => 'getTextBlock1',
@@ -151,14 +154,16 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -264,15 +281,17 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets image.
+     *
+     * @return null|ImageComponent
      */
-    public function getImage(): ?ImageComponent
+    public function getImage()
     {
         return $this->container['image'];
     }
@@ -281,18 +300,13 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
      * Sets image.
      *
      * @param null|ImageComponent $image image
+     *
+     * @return self
      */
-    public function setImage(?ImageComponent $image): self
+    public function setImage($image)
     {
         if (is_null($image)) {
-            array_push($this->openAPINullablesSetToNull, 'image');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('image', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable image cannot be null');
         }
         $this->container['image'] = $image;
 
@@ -301,8 +315,10 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
 
     /**
      * Gets headline.
+     *
+     * @return null|TextComponent
      */
-    public function getHeadline(): ?TextComponent
+    public function getHeadline()
     {
         return $this->container['headline'];
     }
@@ -311,18 +327,13 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
      * Sets headline.
      *
      * @param null|TextComponent $headline headline
+     *
+     * @return self
      */
-    public function setHeadline(?TextComponent $headline): self
+    public function setHeadline($headline)
     {
         if (is_null($headline)) {
-            array_push($this->openAPINullablesSetToNull, 'headline');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('headline', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable headline cannot be null');
         }
         $this->container['headline'] = $headline;
 
@@ -331,8 +342,10 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
 
     /**
      * Gets text_block1.
+     *
+     * @return null|StandardTextBlock
      */
-    public function getTextBlock1(): ?StandardTextBlock
+    public function getTextBlock1()
     {
         return $this->container['text_block1'];
     }
@@ -341,18 +354,13 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
      * Sets text_block1.
      *
      * @param null|StandardTextBlock $text_block1 text_block1
+     *
+     * @return self
      */
-    public function setTextBlock1(?StandardTextBlock $text_block1): self
+    public function setTextBlock1($text_block1)
     {
         if (is_null($text_block1)) {
-            array_push($this->openAPINullablesSetToNull, 'text_block1');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('text_block1', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable text_block1 cannot be null');
         }
         $this->container['text_block1'] = $text_block1;
 
@@ -361,8 +369,10 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
 
     /**
      * Gets text_block2.
+     *
+     * @return null|StandardTextBlock
      */
-    public function getTextBlock2(): ?StandardTextBlock
+    public function getTextBlock2()
     {
         return $this->container['text_block2'];
     }
@@ -371,18 +381,13 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
      * Sets text_block2.
      *
      * @param null|StandardTextBlock $text_block2 text_block2
+     *
+     * @return self
      */
-    public function setTextBlock2(?StandardTextBlock $text_block2): self
+    public function setTextBlock2($text_block2)
     {
         if (is_null($text_block2)) {
-            array_push($this->openAPINullablesSetToNull, 'text_block2');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('text_block2', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable text_block2 cannot be null');
         }
         $this->container['text_block2'] = $text_block2;
 
@@ -391,8 +396,10 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
 
     /**
      * Gets text_block3.
+     *
+     * @return null|StandardTextBlock
      */
-    public function getTextBlock3(): ?StandardTextBlock
+    public function getTextBlock3()
     {
         return $this->container['text_block3'];
     }
@@ -401,18 +408,13 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
      * Sets text_block3.
      *
      * @param null|StandardTextBlock $text_block3 text_block3
+     *
+     * @return self
      */
-    public function setTextBlock3(?StandardTextBlock $text_block3): self
+    public function setTextBlock3($text_block3)
     {
         if (is_null($text_block3)) {
-            array_push($this->openAPINullablesSetToNull, 'text_block3');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('text_block3', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable text_block3 cannot be null');
         }
         $this->container['text_block3'] = $text_block3;
 
@@ -421,8 +423,10 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
 
     /**
      * Gets bulleted_list_block.
+     *
+     * @return null|StandardHeaderTextListBlock
      */
-    public function getBulletedListBlock(): ?StandardHeaderTextListBlock
+    public function getBulletedListBlock()
     {
         return $this->container['bulleted_list_block'];
     }
@@ -431,18 +435,13 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
      * Sets bulleted_list_block.
      *
      * @param null|StandardHeaderTextListBlock $bulleted_list_block bulleted_list_block
+     *
+     * @return self
      */
-    public function setBulletedListBlock(?StandardHeaderTextListBlock $bulleted_list_block): self
+    public function setBulletedListBlock($bulleted_list_block)
     {
         if (is_null($bulleted_list_block)) {
-            array_push($this->openAPINullablesSetToNull, 'bulleted_list_block');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('bulleted_list_block', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable bulleted_list_block cannot be null');
         }
         $this->container['bulleted_list_block'] = $bulleted_list_block;
 
@@ -467,7 +466,7 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -478,7 +477,7 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -506,15 +505,17 @@ class StandardSingleImageHighlightsModule implements ModelInterface, \ArrayAcces
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

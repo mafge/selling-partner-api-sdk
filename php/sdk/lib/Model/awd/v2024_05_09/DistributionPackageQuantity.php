@@ -3,7 +3,7 @@
 /**
  * DistributionPackageQuantity.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\awd\v2024_05_09;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class DistributionPackageQuantity implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'DistributionPackageQuantity';
+    protected static $openAPIModelName = 'DistributionPackageQuantity';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'count' => 'int',
-        'distribution_package' => '\SpApi\Model\awd\v2024_05_09\DistributionPackage'];
+        'distribution_package' => '\SpApi\Model\awd\v2024_05_09\DistributionPackage',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class DistributionPackageQuantity implements ModelInterface, \ArrayAccess, \Json
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'count' => 'int32',
-        'distribution_package' => null];
+        'distribution_package' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -100,7 +103,7 @@ class DistributionPackageQuantity implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'count' => 'count',
         'distribution_package' => 'distributionPackage',
     ];
@@ -110,7 +113,7 @@ class DistributionPackageQuantity implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'count' => 'setCount',
         'distribution_package' => 'setDistributionPackage',
     ];
@@ -120,21 +123,23 @@ class DistributionPackageQuantity implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'count' => 'getCount',
         'distribution_package' => 'getDistributionPackage',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class DistributionPackageQuantity implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class DistributionPackageQuantity implements ModelInterface, \ArrayAccess, \Json
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class DistributionPackageQuantity implements ModelInterface, \ArrayAccess, \Json
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -245,15 +262,17 @@ class DistributionPackageQuantity implements ModelInterface, \ArrayAccess, \Json
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets count.
+     *
+     * @return int
      */
-    public function getCount(): int
+    public function getCount()
     {
         return $this->container['count'];
     }
@@ -262,8 +281,10 @@ class DistributionPackageQuantity implements ModelInterface, \ArrayAccess, \Json
      * Sets count.
      *
      * @param int $count number of cases or pallets with the same package configuration
+     *
+     * @return self
      */
-    public function setCount(int $count): self
+    public function setCount($count)
     {
         if (is_null($count)) {
             throw new \InvalidArgumentException('non-nullable count cannot be null');
@@ -275,8 +296,10 @@ class DistributionPackageQuantity implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Gets distribution_package.
+     *
+     * @return DistributionPackage
      */
-    public function getDistributionPackage(): DistributionPackage
+    public function getDistributionPackage()
     {
         return $this->container['distribution_package'];
     }
@@ -285,8 +308,10 @@ class DistributionPackageQuantity implements ModelInterface, \ArrayAccess, \Json
      * Sets distribution_package.
      *
      * @param DistributionPackage $distribution_package distribution_package
+     *
+     * @return self
      */
-    public function setDistributionPackage(DistributionPackage $distribution_package): self
+    public function setDistributionPackage($distribution_package)
     {
         if (is_null($distribution_package)) {
             throw new \InvalidArgumentException('non-nullable distribution_package cannot be null');
@@ -314,7 +339,7 @@ class DistributionPackageQuantity implements ModelInterface, \ArrayAccess, \Json
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -325,7 +350,7 @@ class DistributionPackageQuantity implements ModelInterface, \ArrayAccess, \Json
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -353,15 +378,17 @@ class DistributionPackageQuantity implements ModelInterface, \ArrayAccess, \Json
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * Package.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,15 +52,17 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Package';
+    protected static $openAPIModelName = 'Package';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'dimensions' => '\SpApi\Model\shipping\v2\Dimensions',
         'weight' => '\SpApi\Model\shipping\v2\Weight',
         'insured_value' => '\SpApi\Model\shipping\v2\Currency',
@@ -69,7 +70,8 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
         'seller_display_name' => 'string',
         'charges' => '\SpApi\Model\shipping\v2\ChargeComponent[]',
         'package_client_reference_id' => 'string',
-        'items' => '\SpApi\Model\shipping\v2\Item[]'];
+        'items' => '\SpApi\Model\shipping\v2\Item[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -80,7 +82,7 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'dimensions' => null,
         'weight' => null,
         'insured_value' => null,
@@ -88,7 +90,8 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
         'seller_display_name' => null,
         'charges' => null,
         'package_client_reference_id' => null,
-        'items' => null];
+        'items' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -99,9 +102,9 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
         'dimensions' => false,
         'weight' => false,
         'insured_value' => false,
-        'is_hazmat' => true,
-        'seller_display_name' => true,
-        'charges' => true,
+        'is_hazmat' => false,
+        'seller_display_name' => false,
+        'charges' => false,
         'package_client_reference_id' => false,
         'items' => false,
     ];
@@ -119,7 +122,7 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'dimensions' => 'dimensions',
         'weight' => 'weight',
         'insured_value' => 'insuredValue',
@@ -135,7 +138,7 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'dimensions' => 'setDimensions',
         'weight' => 'setWeight',
         'insured_value' => 'setInsuredValue',
@@ -151,7 +154,7 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'dimensions' => 'getDimensions',
         'weight' => 'getWeight',
         'insured_value' => 'getInsuredValue',
@@ -164,14 +167,16 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -200,16 +205,20 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -233,32 +242,40 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -268,7 +285,7 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -297,15 +314,17 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets dimensions.
+     *
+     * @return Dimensions
      */
-    public function getDimensions(): Dimensions
+    public function getDimensions()
     {
         return $this->container['dimensions'];
     }
@@ -314,8 +333,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets dimensions.
      *
      * @param Dimensions $dimensions dimensions
+     *
+     * @return self
      */
-    public function setDimensions(Dimensions $dimensions): self
+    public function setDimensions($dimensions)
     {
         if (is_null($dimensions)) {
             throw new \InvalidArgumentException('non-nullable dimensions cannot be null');
@@ -327,8 +348,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets weight.
+     *
+     * @return Weight
      */
-    public function getWeight(): Weight
+    public function getWeight()
     {
         return $this->container['weight'];
     }
@@ -337,8 +360,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets weight.
      *
      * @param Weight $weight weight
+     *
+     * @return self
      */
-    public function setWeight(Weight $weight): self
+    public function setWeight($weight)
     {
         if (is_null($weight)) {
             throw new \InvalidArgumentException('non-nullable weight cannot be null');
@@ -350,8 +375,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets insured_value.
+     *
+     * @return Currency
      */
-    public function getInsuredValue(): Currency
+    public function getInsuredValue()
     {
         return $this->container['insured_value'];
     }
@@ -360,8 +387,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets insured_value.
      *
      * @param Currency $insured_value insured_value
+     *
+     * @return self
      */
-    public function setInsuredValue(Currency $insured_value): self
+    public function setInsuredValue($insured_value)
     {
         if (is_null($insured_value)) {
             throw new \InvalidArgumentException('non-nullable insured_value cannot be null');
@@ -373,8 +402,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets is_hazmat.
+     *
+     * @return null|bool
      */
-    public function getIsHazmat(): ?bool
+    public function getIsHazmat()
     {
         return $this->container['is_hazmat'];
     }
@@ -383,18 +414,13 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets is_hazmat.
      *
      * @param null|bool $is_hazmat When true, the package contains hazardous materials. Defaults to false.
+     *
+     * @return self
      */
-    public function setIsHazmat(?bool $is_hazmat): self
+    public function setIsHazmat($is_hazmat)
     {
         if (is_null($is_hazmat)) {
-            array_push($this->openAPINullablesSetToNull, 'is_hazmat');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_hazmat', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_hazmat cannot be null');
         }
         $this->container['is_hazmat'] = $is_hazmat;
 
@@ -403,8 +429,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets seller_display_name.
+     *
+     * @return null|string
      */
-    public function getSellerDisplayName(): ?string
+    public function getSellerDisplayName()
     {
         return $this->container['seller_display_name'];
     }
@@ -413,18 +441,13 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets seller_display_name.
      *
      * @param null|string $seller_display_name the seller name displayed on the label
+     *
+     * @return self
      */
-    public function setSellerDisplayName(?string $seller_display_name): self
+    public function setSellerDisplayName($seller_display_name)
     {
         if (is_null($seller_display_name)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_display_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_display_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_display_name cannot be null');
         }
         $this->container['seller_display_name'] = $seller_display_name;
 
@@ -433,8 +456,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets charges.
+     *
+     * @return null|ChargeComponent[]
      */
-    public function getCharges(): ?array
+    public function getCharges()
     {
         return $this->container['charges'];
     }
@@ -442,19 +467,14 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets charges.
      *
-     * @param null|array $charges a list of charges based on the shipping service charges applied on a package
+     * @param null|ChargeComponent[] $charges a list of charges based on the shipping service charges applied on a package
+     *
+     * @return self
      */
-    public function setCharges(?array $charges): self
+    public function setCharges($charges)
     {
         if (is_null($charges)) {
-            array_push($this->openAPINullablesSetToNull, 'charges');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('charges', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable charges cannot be null');
         }
         $this->container['charges'] = $charges;
 
@@ -463,8 +483,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets package_client_reference_id.
+     *
+     * @return string
      */
-    public function getPackageClientReferenceId(): string
+    public function getPackageClientReferenceId()
     {
         return $this->container['package_client_reference_id'];
     }
@@ -473,8 +495,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets package_client_reference_id.
      *
      * @param string $package_client_reference_id A client provided unique identifier for a package being shipped. This value should be saved by the client to pass as a parameter to the getShipmentDocuments operation.
+     *
+     * @return self
      */
-    public function setPackageClientReferenceId(string $package_client_reference_id): self
+    public function setPackageClientReferenceId($package_client_reference_id)
     {
         if (is_null($package_client_reference_id)) {
             throw new \InvalidArgumentException('non-nullable package_client_reference_id cannot be null');
@@ -486,8 +510,10 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets items.
+     *
+     * @return Item[]
      */
-    public function getItems(): array
+    public function getItems()
     {
         return $this->container['items'];
     }
@@ -495,9 +521,11 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets items.
      *
-     * @param array $items a list of items
+     * @param Item[] $items a list of items
+     *
+     * @return self
      */
-    public function setItems(array $items): self
+    public function setItems($items)
     {
         if (is_null($items)) {
             throw new \InvalidArgumentException('non-nullable items cannot be null');
@@ -525,7 +553,7 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -536,7 +564,7 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -564,15 +592,17 @@ class Package implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

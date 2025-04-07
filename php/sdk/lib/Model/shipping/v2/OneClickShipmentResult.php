@@ -3,7 +3,7 @@
 /**
  * OneClickShipmentResult.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,21 +52,24 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'OneClickShipmentResult';
+    protected static $openAPIModelName = 'OneClickShipmentResult';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'shipment_id' => 'string',
         'package_document_details' => '\SpApi\Model\shipping\v2\PackageDocumentDetail[]',
         'promise' => '\SpApi\Model\shipping\v2\Promise',
         'carrier' => '\SpApi\Model\shipping\v2\Carrier',
         'service' => '\SpApi\Model\shipping\v2\Service',
-        'total_charge' => '\SpApi\Model\shipping\v2\Currency'];
+        'total_charge' => '\SpApi\Model\shipping\v2\Currency',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -78,13 +80,14 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'shipment_id' => null,
         'package_document_details' => null,
         'promise' => null,
         'carrier' => null,
         'service' => null,
-        'total_charge' => null];
+        'total_charge' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -113,7 +116,7 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'shipment_id' => 'shipmentId',
         'package_document_details' => 'packageDocumentDetails',
         'promise' => 'promise',
@@ -127,7 +130,7 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'shipment_id' => 'setShipmentId',
         'package_document_details' => 'setPackageDocumentDetails',
         'promise' => 'setPromise',
@@ -141,7 +144,7 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'shipment_id' => 'getShipmentId',
         'package_document_details' => 'getPackageDocumentDetails',
         'promise' => 'getPromise',
@@ -152,14 +155,16 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -186,16 +191,20 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -219,32 +228,40 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -254,7 +271,7 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -286,15 +303,17 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets shipment_id.
+     *
+     * @return string
      */
-    public function getShipmentId(): string
+    public function getShipmentId()
     {
         return $this->container['shipment_id'];
     }
@@ -303,8 +322,10 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets shipment_id.
      *
      * @param string $shipment_id the unique shipment identifier provided by a shipping service
+     *
+     * @return self
      */
-    public function setShipmentId(string $shipment_id): self
+    public function setShipmentId($shipment_id)
     {
         if (is_null($shipment_id)) {
             throw new \InvalidArgumentException('non-nullable shipment_id cannot be null');
@@ -316,8 +337,10 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets package_document_details.
+     *
+     * @return PackageDocumentDetail[]
      */
-    public function getPackageDocumentDetails(): array
+    public function getPackageDocumentDetails()
     {
         return $this->container['package_document_details'];
     }
@@ -325,9 +348,11 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Sets package_document_details.
      *
-     * @param array $package_document_details a list of post-purchase details about a package that will be shipped using a shipping service
+     * @param PackageDocumentDetail[] $package_document_details a list of post-purchase details about a package that will be shipped using a shipping service
+     *
+     * @return self
      */
-    public function setPackageDocumentDetails(array $package_document_details): self
+    public function setPackageDocumentDetails($package_document_details)
     {
         if (is_null($package_document_details)) {
             throw new \InvalidArgumentException('non-nullable package_document_details cannot be null');
@@ -339,8 +364,10 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets promise.
+     *
+     * @return Promise
      */
-    public function getPromise(): Promise
+    public function getPromise()
     {
         return $this->container['promise'];
     }
@@ -349,8 +376,10 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets promise.
      *
      * @param Promise $promise promise
+     *
+     * @return self
      */
-    public function setPromise(Promise $promise): self
+    public function setPromise($promise)
     {
         if (is_null($promise)) {
             throw new \InvalidArgumentException('non-nullable promise cannot be null');
@@ -362,8 +391,10 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets carrier.
+     *
+     * @return Carrier
      */
-    public function getCarrier(): Carrier
+    public function getCarrier()
     {
         return $this->container['carrier'];
     }
@@ -372,8 +403,10 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets carrier.
      *
      * @param Carrier $carrier carrier
+     *
+     * @return self
      */
-    public function setCarrier(Carrier $carrier): self
+    public function setCarrier($carrier)
     {
         if (is_null($carrier)) {
             throw new \InvalidArgumentException('non-nullable carrier cannot be null');
@@ -385,8 +418,10 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets service.
+     *
+     * @return Service
      */
-    public function getService(): Service
+    public function getService()
     {
         return $this->container['service'];
     }
@@ -395,8 +430,10 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets service.
      *
      * @param Service $service service
+     *
+     * @return self
      */
-    public function setService(Service $service): self
+    public function setService($service)
     {
         if (is_null($service)) {
             throw new \InvalidArgumentException('non-nullable service cannot be null');
@@ -408,8 +445,10 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets total_charge.
+     *
+     * @return Currency
      */
-    public function getTotalCharge(): Currency
+    public function getTotalCharge()
     {
         return $this->container['total_charge'];
     }
@@ -418,8 +457,10 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets total_charge.
      *
      * @param Currency $total_charge total_charge
+     *
+     * @return self
      */
-    public function setTotalCharge(Currency $total_charge): self
+    public function setTotalCharge($total_charge)
     {
         if (is_null($total_charge)) {
             throw new \InvalidArgumentException('non-nullable total_charge cannot be null');
@@ -447,7 +488,7 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -458,7 +499,7 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -486,15 +527,17 @@ class OneClickShipmentResult implements ModelInterface, \ArrayAccess, \JsonSeria
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

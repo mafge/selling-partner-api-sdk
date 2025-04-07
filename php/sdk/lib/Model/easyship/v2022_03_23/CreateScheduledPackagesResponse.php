@@ -3,7 +3,7 @@
 /**
  * CreateScheduledPackagesResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\easyship\v2022_03_23;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class CreateScheduledPackagesResponse implements ModelInterface, \ArrayAccess, \
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CreateScheduledPackagesResponse';
+    protected static $openAPIModelName = 'CreateScheduledPackagesResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'scheduled_packages' => '\SpApi\Model\easyship\v2022_03_23\Package[]',
         'rejected_orders' => '\SpApi\Model\easyship\v2022_03_23\RejectedOrder[]',
-        'printable_documents_url' => 'string'];
+        'printable_documents_url' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class CreateScheduledPackagesResponse implements ModelInterface, \ArrayAccess, \
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'scheduled_packages' => null,
         'rejected_orders' => null,
-        'printable_documents_url' => null];
+        'printable_documents_url' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class CreateScheduledPackagesResponse implements ModelInterface, \ArrayAccess, \
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'scheduled_packages' => true,
-        'rejected_orders' => true,
-        'printable_documents_url' => true,
+        'scheduled_packages' => false,
+        'rejected_orders' => false,
+        'printable_documents_url' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class CreateScheduledPackagesResponse implements ModelInterface, \ArrayAccess, \
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'scheduled_packages' => 'scheduledPackages',
         'rejected_orders' => 'rejectedOrders',
         'printable_documents_url' => 'printableDocumentsUrl',
@@ -114,7 +117,7 @@ class CreateScheduledPackagesResponse implements ModelInterface, \ArrayAccess, \
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'scheduled_packages' => 'setScheduledPackages',
         'rejected_orders' => 'setRejectedOrders',
         'printable_documents_url' => 'setPrintableDocumentsUrl',
@@ -125,7 +128,7 @@ class CreateScheduledPackagesResponse implements ModelInterface, \ArrayAccess, \
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'scheduled_packages' => 'getScheduledPackages',
         'rejected_orders' => 'getRejectedOrders',
         'printable_documents_url' => 'getPrintableDocumentsUrl',
@@ -133,14 +136,16 @@ class CreateScheduledPackagesResponse implements ModelInterface, \ArrayAccess, \
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class CreateScheduledPackagesResponse implements ModelInterface, \ArrayAccess, \
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class CreateScheduledPackagesResponse implements ModelInterface, \ArrayAccess, \
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class CreateScheduledPackagesResponse implements ModelInterface, \ArrayAccess, \
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -249,15 +266,17 @@ class CreateScheduledPackagesResponse implements ModelInterface, \ArrayAccess, \
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets scheduled_packages.
+     *
+     * @return null|Package[]
      */
-    public function getScheduledPackages(): ?array
+    public function getScheduledPackages()
     {
         return $this->container['scheduled_packages'];
     }
@@ -265,22 +284,17 @@ class CreateScheduledPackagesResponse implements ModelInterface, \ArrayAccess, \
     /**
      * Sets scheduled_packages.
      *
-     * @param null|array $scheduled_packages A list of packages. Refer to the `Package` object.
+     * @param null|Package[] $scheduled_packages A list of packages. Refer to the `Package` object.
+     *
+     * @return self
      */
-    public function setScheduledPackages(?array $scheduled_packages): self
+    public function setScheduledPackages($scheduled_packages)
     {
         if (is_null($scheduled_packages)) {
-            array_push($this->openAPINullablesSetToNull, 'scheduled_packages');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('scheduled_packages', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable scheduled_packages cannot be null');
         }
 
-        if (!is_null($scheduled_packages) && (count($scheduled_packages) > 100)) {
+        if (count($scheduled_packages) > 100) {
             throw new \InvalidArgumentException('invalid value for $scheduled_packages when calling CreateScheduledPackagesResponse., number of items must be less than or equal to 100.');
         }
         $this->container['scheduled_packages'] = $scheduled_packages;
@@ -290,8 +304,10 @@ class CreateScheduledPackagesResponse implements ModelInterface, \ArrayAccess, \
 
     /**
      * Gets rejected_orders.
+     *
+     * @return null|RejectedOrder[]
      */
-    public function getRejectedOrders(): ?array
+    public function getRejectedOrders()
     {
         return $this->container['rejected_orders'];
     }
@@ -299,19 +315,14 @@ class CreateScheduledPackagesResponse implements ModelInterface, \ArrayAccess, \
     /**
      * Sets rejected_orders.
      *
-     * @param null|array $rejected_orders A list of orders we couldn't scheduled on your behalf. Each element contains the reason and details on the error.
+     * @param null|RejectedOrder[] $rejected_orders A list of orders we couldn't scheduled on your behalf. Each element contains the reason and details on the error.
+     *
+     * @return self
      */
-    public function setRejectedOrders(?array $rejected_orders): self
+    public function setRejectedOrders($rejected_orders)
     {
         if (is_null($rejected_orders)) {
-            array_push($this->openAPINullablesSetToNull, 'rejected_orders');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rejected_orders', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable rejected_orders cannot be null');
         }
         $this->container['rejected_orders'] = $rejected_orders;
 
@@ -320,8 +331,10 @@ class CreateScheduledPackagesResponse implements ModelInterface, \ArrayAccess, \
 
     /**
      * Gets printable_documents_url.
+     *
+     * @return null|string
      */
-    public function getPrintableDocumentsUrl(): ?string
+    public function getPrintableDocumentsUrl()
     {
         return $this->container['printable_documents_url'];
     }
@@ -330,18 +343,13 @@ class CreateScheduledPackagesResponse implements ModelInterface, \ArrayAccess, \
      * Sets printable_documents_url.
      *
      * @param null|string $printable_documents_url a pre-signed URL for the zip document containing the shipping labels and the documents enabled for your marketplace
+     *
+     * @return self
      */
-    public function setPrintableDocumentsUrl(?string $printable_documents_url): self
+    public function setPrintableDocumentsUrl($printable_documents_url)
     {
         if (is_null($printable_documents_url)) {
-            array_push($this->openAPINullablesSetToNull, 'printable_documents_url');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('printable_documents_url', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable printable_documents_url cannot be null');
         }
         $this->container['printable_documents_url'] = $printable_documents_url;
 
@@ -366,7 +374,7 @@ class CreateScheduledPackagesResponse implements ModelInterface, \ArrayAccess, \
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -377,7 +385,7 @@ class CreateScheduledPackagesResponse implements ModelInterface, \ArrayAccess, \
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -405,15 +413,17 @@ class CreateScheduledPackagesResponse implements ModelInterface, \ArrayAccess, \
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

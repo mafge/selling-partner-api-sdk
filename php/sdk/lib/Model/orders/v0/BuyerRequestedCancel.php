@@ -3,7 +3,7 @@
 /**
  * BuyerRequestedCancel.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\orders\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class BuyerRequestedCancel implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'BuyerRequestedCancel';
+    protected static $openAPIModelName = 'BuyerRequestedCancel';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'is_buyer_requested_cancel' => 'string',
-        'buyer_cancel_reason' => 'string'];
+        'buyer_cancel_reason' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class BuyerRequestedCancel implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'is_buyer_requested_cancel' => null,
-        'buyer_cancel_reason' => null];
+        'buyer_cancel_reason' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class BuyerRequestedCancel implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'is_buyer_requested_cancel' => true,
-        'buyer_cancel_reason' => true,
+        'is_buyer_requested_cancel' => false,
+        'buyer_cancel_reason' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class BuyerRequestedCancel implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'is_buyer_requested_cancel' => 'IsBuyerRequestedCancel',
         'buyer_cancel_reason' => 'BuyerCancelReason',
     ];
@@ -110,7 +113,7 @@ class BuyerRequestedCancel implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'is_buyer_requested_cancel' => 'setIsBuyerRequestedCancel',
         'buyer_cancel_reason' => 'setBuyerCancelReason',
     ];
@@ -120,21 +123,23 @@ class BuyerRequestedCancel implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'is_buyer_requested_cancel' => 'getIsBuyerRequestedCancel',
         'buyer_cancel_reason' => 'getBuyerCancelReason',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class BuyerRequestedCancel implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class BuyerRequestedCancel implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class BuyerRequestedCancel implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -236,15 +253,17 @@ class BuyerRequestedCancel implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets is_buyer_requested_cancel.
+     *
+     * @return null|string
      */
-    public function getIsBuyerRequestedCancel(): ?string
+    public function getIsBuyerRequestedCancel()
     {
         return $this->container['is_buyer_requested_cancel'];
     }
@@ -253,18 +272,13 @@ class BuyerRequestedCancel implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets is_buyer_requested_cancel.
      *
      * @param null|string $is_buyer_requested_cancel Indicate whether the buyer has requested cancellation.  **Possible Values**: `true`, `false`.
+     *
+     * @return self
      */
-    public function setIsBuyerRequestedCancel(?string $is_buyer_requested_cancel): self
+    public function setIsBuyerRequestedCancel($is_buyer_requested_cancel)
     {
         if (is_null($is_buyer_requested_cancel)) {
-            array_push($this->openAPINullablesSetToNull, 'is_buyer_requested_cancel');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_buyer_requested_cancel', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_buyer_requested_cancel cannot be null');
         }
         $this->container['is_buyer_requested_cancel'] = $is_buyer_requested_cancel;
 
@@ -273,8 +287,10 @@ class BuyerRequestedCancel implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets buyer_cancel_reason.
+     *
+     * @return null|string
      */
-    public function getBuyerCancelReason(): ?string
+    public function getBuyerCancelReason()
     {
         return $this->container['buyer_cancel_reason'];
     }
@@ -283,18 +299,13 @@ class BuyerRequestedCancel implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets buyer_cancel_reason.
      *
      * @param null|string $buyer_cancel_reason the reason that the buyer requested cancellation
+     *
+     * @return self
      */
-    public function setBuyerCancelReason(?string $buyer_cancel_reason): self
+    public function setBuyerCancelReason($buyer_cancel_reason)
     {
         if (is_null($buyer_cancel_reason)) {
-            array_push($this->openAPINullablesSetToNull, 'buyer_cancel_reason');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('buyer_cancel_reason', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable buyer_cancel_reason cannot be null');
         }
         $this->container['buyer_cancel_reason'] = $buyer_cancel_reason;
 
@@ -319,7 +330,7 @@ class BuyerRequestedCancel implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +341,7 @@ class BuyerRequestedCancel implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +369,17 @@ class BuyerRequestedCancel implements ModelInterface, \ArrayAccess, \JsonSeriali
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

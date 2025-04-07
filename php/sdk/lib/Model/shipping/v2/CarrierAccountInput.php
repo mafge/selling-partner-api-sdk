@@ -3,7 +3,7 @@
 /**
  * CarrierAccountInput.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,15 +52,17 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CarrierAccountInput';
+    protected static $openAPIModelName = 'CarrierAccountInput';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'description_localization_key' => 'string',
         'name' => 'string',
         'group_name' => 'string',
@@ -69,7 +70,8 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
         'is_mandatory' => 'bool',
         'is_confidential' => 'bool',
         'is_hidden' => 'bool',
-        'validation_metadata' => '\SpApi\Model\shipping\v2\ValidationMetadata[]'];
+        'validation_metadata' => '\SpApi\Model\shipping\v2\ValidationMetadata[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -80,7 +82,7 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'description_localization_key' => null,
         'name' => null,
         'group_name' => null,
@@ -88,7 +90,8 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
         'is_mandatory' => null,
         'is_confidential' => null,
         'is_hidden' => null,
-        'validation_metadata' => null];
+        'validation_metadata' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -96,14 +99,14 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'description_localization_key' => true,
-        'name' => true,
-        'group_name' => true,
-        'input_type' => true,
-        'is_mandatory' => true,
-        'is_confidential' => true,
-        'is_hidden' => true,
-        'validation_metadata' => true,
+        'description_localization_key' => false,
+        'name' => false,
+        'group_name' => false,
+        'input_type' => false,
+        'is_mandatory' => false,
+        'is_confidential' => false,
+        'is_hidden' => false,
+        'validation_metadata' => false,
     ];
 
     /**
@@ -119,7 +122,7 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'description_localization_key' => 'descriptionLocalizationKey',
         'name' => 'name',
         'group_name' => 'groupName',
@@ -135,7 +138,7 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'description_localization_key' => 'setDescriptionLocalizationKey',
         'name' => 'setName',
         'group_name' => 'setGroupName',
@@ -151,7 +154,7 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'description_localization_key' => 'getDescriptionLocalizationKey',
         'name' => 'getName',
         'group_name' => 'getGroupName',
@@ -164,14 +167,16 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -200,16 +205,20 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -233,32 +242,40 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -268,7 +285,7 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -279,15 +296,17 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets description_localization_key.
+     *
+     * @return null|string
      */
-    public function getDescriptionLocalizationKey(): ?string
+    public function getDescriptionLocalizationKey()
     {
         return $this->container['description_localization_key'];
     }
@@ -296,18 +315,13 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets description_localization_key.
      *
      * @param null|string $description_localization_key descriptionLocalizationKey value
+     *
+     * @return self
      */
-    public function setDescriptionLocalizationKey(?string $description_localization_key): self
+    public function setDescriptionLocalizationKey($description_localization_key)
     {
         if (is_null($description_localization_key)) {
-            array_push($this->openAPINullablesSetToNull, 'description_localization_key');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('description_localization_key', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable description_localization_key cannot be null');
         }
         $this->container['description_localization_key'] = $description_localization_key;
 
@@ -316,8 +330,10 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets name.
+     *
+     * @return null|string
      */
-    public function getName(): ?string
+    public function getName()
     {
         return $this->container['name'];
     }
@@ -326,18 +342,13 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets name.
      *
      * @param null|string $name name value
+     *
+     * @return self
      */
-    public function setName(?string $name): self
+    public function setName($name)
     {
         if (is_null($name)) {
-            array_push($this->openAPINullablesSetToNull, 'name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable name cannot be null');
         }
         $this->container['name'] = $name;
 
@@ -346,8 +357,10 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets group_name.
+     *
+     * @return null|string
      */
-    public function getGroupName(): ?string
+    public function getGroupName()
     {
         return $this->container['group_name'];
     }
@@ -356,18 +369,13 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets group_name.
      *
      * @param null|string $group_name groupName value
+     *
+     * @return self
      */
-    public function setGroupName(?string $group_name): self
+    public function setGroupName($group_name)
     {
         if (is_null($group_name)) {
-            array_push($this->openAPINullablesSetToNull, 'group_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('group_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable group_name cannot be null');
         }
         $this->container['group_name'] = $group_name;
 
@@ -376,8 +384,10 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets input_type.
+     *
+     * @return null|InputType
      */
-    public function getInputType(): ?string
+    public function getInputType()
     {
         return $this->container['input_type'];
     }
@@ -385,19 +395,14 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets input_type.
      *
-     * @param null|string $input_type input_type
+     * @param null|InputType $input_type input_type
+     *
+     * @return self
      */
-    public function setInputType(?string $input_type): self
+    public function setInputType($input_type)
     {
         if (is_null($input_type)) {
-            array_push($this->openAPINullablesSetToNull, 'input_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('input_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable input_type cannot be null');
         }
         $this->container['input_type'] = $input_type;
 
@@ -406,8 +411,10 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets is_mandatory.
+     *
+     * @return null|bool
      */
-    public function getIsMandatory(): ?bool
+    public function getIsMandatory()
     {
         return $this->container['is_mandatory'];
     }
@@ -416,18 +423,13 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets is_mandatory.
      *
      * @param null|bool $is_mandatory mandatory or not  value
+     *
+     * @return self
      */
-    public function setIsMandatory(?bool $is_mandatory): self
+    public function setIsMandatory($is_mandatory)
     {
         if (is_null($is_mandatory)) {
-            array_push($this->openAPINullablesSetToNull, 'is_mandatory');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_mandatory', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_mandatory cannot be null');
         }
         $this->container['is_mandatory'] = $is_mandatory;
 
@@ -436,8 +438,10 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets is_confidential.
+     *
+     * @return null|bool
      */
-    public function getIsConfidential(): ?bool
+    public function getIsConfidential()
     {
         return $this->container['is_confidential'];
     }
@@ -446,18 +450,13 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets is_confidential.
      *
      * @param null|bool $is_confidential is value is Confidential
+     *
+     * @return self
      */
-    public function setIsConfidential(?bool $is_confidential): self
+    public function setIsConfidential($is_confidential)
     {
         if (is_null($is_confidential)) {
-            array_push($this->openAPINullablesSetToNull, 'is_confidential');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_confidential', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_confidential cannot be null');
         }
         $this->container['is_confidential'] = $is_confidential;
 
@@ -466,8 +465,10 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets is_hidden.
+     *
+     * @return null|bool
      */
-    public function getIsHidden(): ?bool
+    public function getIsHidden()
     {
         return $this->container['is_hidden'];
     }
@@ -476,18 +477,13 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets is_hidden.
      *
      * @param null|bool $is_hidden is value is hidden
+     *
+     * @return self
      */
-    public function setIsHidden(?bool $is_hidden): self
+    public function setIsHidden($is_hidden)
     {
         if (is_null($is_hidden)) {
-            array_push($this->openAPINullablesSetToNull, 'is_hidden');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_hidden', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_hidden cannot be null');
         }
         $this->container['is_hidden'] = $is_hidden;
 
@@ -496,8 +492,10 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets validation_metadata.
+     *
+     * @return null|ValidationMetadata[]
      */
-    public function getValidationMetadata(): ?array
+    public function getValidationMetadata()
     {
         return $this->container['validation_metadata'];
     }
@@ -505,19 +503,14 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Sets validation_metadata.
      *
-     * @param null|array $validation_metadata A list of ValidationMetadata
+     * @param null|ValidationMetadata[] $validation_metadata A list of ValidationMetadata
+     *
+     * @return self
      */
-    public function setValidationMetadata(?array $validation_metadata): self
+    public function setValidationMetadata($validation_metadata)
     {
         if (is_null($validation_metadata)) {
-            array_push($this->openAPINullablesSetToNull, 'validation_metadata');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('validation_metadata', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable validation_metadata cannot be null');
         }
         $this->container['validation_metadata'] = $validation_metadata;
 
@@ -542,7 +535,7 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -553,7 +546,7 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -581,15 +574,17 @@ class CarrierAccountInput implements ModelInterface, \ArrayAccess, \JsonSerializ
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

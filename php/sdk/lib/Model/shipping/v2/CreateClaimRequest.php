@@ -3,7 +3,7 @@
 /**
  * CreateClaimRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,21 +52,24 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CreateClaimRequest';
+    protected static $openAPIModelName = 'CreateClaimRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'tracking_id' => 'string',
         'declared_value' => '\SpApi\Model\shipping\v2\Currency',
         'claim_reason' => '\SpApi\Model\shipping\v2\ClaimReason',
         'is_replacement_package_sent' => 'bool',
         'proofs' => 'string[]',
-        'settlement_type' => '\SpApi\Model\shipping\v2\SettlementType'];
+        'settlement_type' => '\SpApi\Model\shipping\v2\SettlementType',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -78,13 +80,14 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'tracking_id' => null,
         'declared_value' => null,
         'claim_reason' => null,
         'is_replacement_package_sent' => null,
         'proofs' => null,
-        'settlement_type' => null];
+        'settlement_type' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -93,10 +96,10 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
      */
     protected static array $openAPINullables = [
         'tracking_id' => false,
-        'declared_value' => true,
+        'declared_value' => false,
         'claim_reason' => false,
-        'is_replacement_package_sent' => true,
-        'proofs' => true,
+        'is_replacement_package_sent' => false,
+        'proofs' => false,
         'settlement_type' => false,
     ];
 
@@ -113,7 +116,7 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'tracking_id' => 'trackingId',
         'declared_value' => 'declaredValue',
         'claim_reason' => 'claimReason',
@@ -127,7 +130,7 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'tracking_id' => 'setTrackingId',
         'declared_value' => 'setDeclaredValue',
         'claim_reason' => 'setClaimReason',
@@ -141,7 +144,7 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'tracking_id' => 'getTrackingId',
         'declared_value' => 'getDeclaredValue',
         'claim_reason' => 'getClaimReason',
@@ -152,14 +155,16 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -186,16 +191,20 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -219,32 +228,40 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -254,7 +271,7 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -277,15 +294,17 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets tracking_id.
+     *
+     * @return string
      */
-    public function getTrackingId(): string
+    public function getTrackingId()
     {
         return $this->container['tracking_id'];
     }
@@ -294,8 +313,10 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets tracking_id.
      *
      * @param string $tracking_id the carrier generated identifier for a package in a purchased shipment
+     *
+     * @return self
      */
-    public function setTrackingId(string $tracking_id): self
+    public function setTrackingId($tracking_id)
     {
         if (is_null($tracking_id)) {
             throw new \InvalidArgumentException('non-nullable tracking_id cannot be null');
@@ -307,8 +328,10 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets declared_value.
+     *
+     * @return null|Currency
      */
-    public function getDeclaredValue(): ?Currency
+    public function getDeclaredValue()
     {
         return $this->container['declared_value'];
     }
@@ -317,18 +340,13 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets declared_value.
      *
      * @param null|Currency $declared_value declared_value
+     *
+     * @return self
      */
-    public function setDeclaredValue(?Currency $declared_value): self
+    public function setDeclaredValue($declared_value)
     {
         if (is_null($declared_value)) {
-            array_push($this->openAPINullablesSetToNull, 'declared_value');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('declared_value', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable declared_value cannot be null');
         }
         $this->container['declared_value'] = $declared_value;
 
@@ -337,8 +355,10 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets claim_reason.
+     *
+     * @return ClaimReason
      */
-    public function getClaimReason(): string
+    public function getClaimReason()
     {
         return $this->container['claim_reason'];
     }
@@ -346,9 +366,11 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Sets claim_reason.
      *
-     * @param string $claim_reason claim_reason
+     * @param ClaimReason $claim_reason claim_reason
+     *
+     * @return self
      */
-    public function setClaimReason(string $claim_reason): self
+    public function setClaimReason($claim_reason)
     {
         if (is_null($claim_reason)) {
             throw new \InvalidArgumentException('non-nullable claim_reason cannot be null');
@@ -360,8 +382,10 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets is_replacement_package_sent.
+     *
+     * @return null|bool
      */
-    public function getIsReplacementPackageSent(): ?bool
+    public function getIsReplacementPackageSent()
     {
         return $this->container['is_replacement_package_sent'];
     }
@@ -370,18 +394,13 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets is_replacement_package_sent.
      *
      * @param null|bool $is_replacement_package_sent Applicable for only On Amazon shipments to identify if replacement was sent
+     *
+     * @return self
      */
-    public function setIsReplacementPackageSent(?bool $is_replacement_package_sent): self
+    public function setIsReplacementPackageSent($is_replacement_package_sent)
     {
         if (is_null($is_replacement_package_sent)) {
-            array_push($this->openAPINullablesSetToNull, 'is_replacement_package_sent');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_replacement_package_sent', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_replacement_package_sent cannot be null');
         }
         $this->container['is_replacement_package_sent'] = $is_replacement_package_sent;
 
@@ -390,8 +409,10 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets proofs.
+     *
+     * @return null|string[]
      */
-    public function getProofs(): ?array
+    public function getProofs()
     {
         return $this->container['proofs'];
     }
@@ -399,19 +420,14 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Sets proofs.
      *
-     * @param null|array $proofs A list of proof URLs for a claim. Basic URL validation will happen for each URLs present in the list
+     * @param null|string[] $proofs A list of proof URLs for a claim. Basic URL validation will happen for each URLs present in the list
+     *
+     * @return self
      */
-    public function setProofs(?array $proofs): self
+    public function setProofs($proofs)
     {
         if (is_null($proofs)) {
-            array_push($this->openAPINullablesSetToNull, 'proofs');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('proofs', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable proofs cannot be null');
         }
         $this->container['proofs'] = $proofs;
 
@@ -420,8 +436,10 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets settlement_type.
+     *
+     * @return SettlementType
      */
-    public function getSettlementType(): string
+    public function getSettlementType()
     {
         return $this->container['settlement_type'];
     }
@@ -429,9 +447,11 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Sets settlement_type.
      *
-     * @param string $settlement_type settlement_type
+     * @param SettlementType $settlement_type settlement_type
+     *
+     * @return self
      */
-    public function setSettlementType(string $settlement_type): self
+    public function setSettlementType($settlement_type)
     {
         if (is_null($settlement_type)) {
             throw new \InvalidArgumentException('non-nullable settlement_type cannot be null');
@@ -459,7 +479,7 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -470,7 +490,7 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -498,15 +518,17 @@ class CreateClaimRequest implements ModelInterface, \ArrayAccess, \JsonSerializa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

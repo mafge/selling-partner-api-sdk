@@ -3,7 +3,7 @@
 /**
  * SolutionProviderCreditEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'SolutionProviderCreditEvent';
+    protected static $openAPIModelName = 'SolutionProviderCreditEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'provider_transaction_type' => 'string',
         'seller_order_id' => 'string',
         'marketplace_id' => 'string',
@@ -70,7 +71,8 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
         'provider_id' => 'string',
         'provider_store_name' => 'string',
         'transaction_amount' => '\SpApi\Model\finances\v0\Currency',
-        'transaction_creation_date' => '\DateTime'];
+        'transaction_creation_date' => '\DateTime',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -81,7 +83,7 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'provider_transaction_type' => null,
         'seller_order_id' => null,
         'marketplace_id' => null,
@@ -91,7 +93,8 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
         'provider_id' => null,
         'provider_store_name' => null,
         'transaction_amount' => null,
-        'transaction_creation_date' => 'date-time'];
+        'transaction_creation_date' => 'date-time',
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -99,16 +102,16 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'provider_transaction_type' => true,
-        'seller_order_id' => true,
-        'marketplace_id' => true,
-        'marketplace_country_code' => true,
-        'seller_id' => true,
-        'seller_store_name' => true,
-        'provider_id' => true,
-        'provider_store_name' => true,
-        'transaction_amount' => true,
-        'transaction_creation_date' => true,
+        'provider_transaction_type' => false,
+        'seller_order_id' => false,
+        'marketplace_id' => false,
+        'marketplace_country_code' => false,
+        'seller_id' => false,
+        'seller_store_name' => false,
+        'provider_id' => false,
+        'provider_store_name' => false,
+        'transaction_amount' => false,
+        'transaction_creation_date' => false,
     ];
 
     /**
@@ -124,7 +127,7 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'provider_transaction_type' => 'ProviderTransactionType',
         'seller_order_id' => 'SellerOrderId',
         'marketplace_id' => 'MarketplaceId',
@@ -142,7 +145,7 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'provider_transaction_type' => 'setProviderTransactionType',
         'seller_order_id' => 'setSellerOrderId',
         'marketplace_id' => 'setMarketplaceId',
@@ -160,7 +163,7 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'provider_transaction_type' => 'getProviderTransactionType',
         'seller_order_id' => 'getSellerOrderId',
         'marketplace_id' => 'getMarketplaceId',
@@ -175,14 +178,16 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -213,16 +218,20 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -246,32 +255,40 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -281,7 +298,7 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -292,15 +309,17 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets provider_transaction_type.
+     *
+     * @return null|string
      */
-    public function getProviderTransactionType(): ?string
+    public function getProviderTransactionType()
     {
         return $this->container['provider_transaction_type'];
     }
@@ -309,18 +328,13 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
      * Sets provider_transaction_type.
      *
      * @param null|string $provider_transaction_type the transaction type
+     *
+     * @return self
      */
-    public function setProviderTransactionType(?string $provider_transaction_type): self
+    public function setProviderTransactionType($provider_transaction_type)
     {
         if (is_null($provider_transaction_type)) {
-            array_push($this->openAPINullablesSetToNull, 'provider_transaction_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('provider_transaction_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable provider_transaction_type cannot be null');
         }
         $this->container['provider_transaction_type'] = $provider_transaction_type;
 
@@ -329,8 +343,10 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Gets seller_order_id.
+     *
+     * @return null|string
      */
-    public function getSellerOrderId(): ?string
+    public function getSellerOrderId()
     {
         return $this->container['seller_order_id'];
     }
@@ -339,18 +355,13 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
      * Sets seller_order_id.
      *
      * @param null|string $seller_order_id a seller-defined identifier for an order
+     *
+     * @return self
      */
-    public function setSellerOrderId(?string $seller_order_id): self
+    public function setSellerOrderId($seller_order_id)
     {
         if (is_null($seller_order_id)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_order_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_order_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_order_id cannot be null');
         }
         $this->container['seller_order_id'] = $seller_order_id;
 
@@ -359,8 +370,10 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Gets marketplace_id.
+     *
+     * @return null|string
      */
-    public function getMarketplaceId(): ?string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -369,18 +382,13 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
      * Sets marketplace_id.
      *
      * @param null|string $marketplace_id the identifier of the marketplace where the order was placed
+     *
+     * @return self
      */
-    public function setMarketplaceId(?string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
-            array_push($this->openAPINullablesSetToNull, 'marketplace_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('marketplace_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
         }
         $this->container['marketplace_id'] = $marketplace_id;
 
@@ -389,8 +397,10 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Gets marketplace_country_code.
+     *
+     * @return null|string
      */
-    public function getMarketplaceCountryCode(): ?string
+    public function getMarketplaceCountryCode()
     {
         return $this->container['marketplace_country_code'];
     }
@@ -399,18 +409,13 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
      * Sets marketplace_country_code.
      *
      * @param null|string $marketplace_country_code the two-letter country code of the country associated with the marketplace where the order was placed
+     *
+     * @return self
      */
-    public function setMarketplaceCountryCode(?string $marketplace_country_code): self
+    public function setMarketplaceCountryCode($marketplace_country_code)
     {
         if (is_null($marketplace_country_code)) {
-            array_push($this->openAPINullablesSetToNull, 'marketplace_country_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('marketplace_country_code', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable marketplace_country_code cannot be null');
         }
         $this->container['marketplace_country_code'] = $marketplace_country_code;
 
@@ -419,8 +424,10 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Gets seller_id.
+     *
+     * @return null|string
      */
-    public function getSellerId(): ?string
+    public function getSellerId()
     {
         return $this->container['seller_id'];
     }
@@ -429,18 +436,13 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
      * Sets seller_id.
      *
      * @param null|string $seller_id the Amazon-defined identifier of the seller
+     *
+     * @return self
      */
-    public function setSellerId(?string $seller_id): self
+    public function setSellerId($seller_id)
     {
         if (is_null($seller_id)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_id cannot be null');
         }
         $this->container['seller_id'] = $seller_id;
 
@@ -449,8 +451,10 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Gets seller_store_name.
+     *
+     * @return null|string
      */
-    public function getSellerStoreName(): ?string
+    public function getSellerStoreName()
     {
         return $this->container['seller_store_name'];
     }
@@ -459,18 +463,13 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
      * Sets seller_store_name.
      *
      * @param null|string $seller_store_name the store name where the payment event occurred
+     *
+     * @return self
      */
-    public function setSellerStoreName(?string $seller_store_name): self
+    public function setSellerStoreName($seller_store_name)
     {
         if (is_null($seller_store_name)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_store_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_store_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_store_name cannot be null');
         }
         $this->container['seller_store_name'] = $seller_store_name;
 
@@ -479,8 +478,10 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Gets provider_id.
+     *
+     * @return null|string
      */
-    public function getProviderId(): ?string
+    public function getProviderId()
     {
         return $this->container['provider_id'];
     }
@@ -489,18 +490,13 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
      * Sets provider_id.
      *
      * @param null|string $provider_id the Amazon-defined identifier of the solution provider
+     *
+     * @return self
      */
-    public function setProviderId(?string $provider_id): self
+    public function setProviderId($provider_id)
     {
         if (is_null($provider_id)) {
-            array_push($this->openAPINullablesSetToNull, 'provider_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('provider_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable provider_id cannot be null');
         }
         $this->container['provider_id'] = $provider_id;
 
@@ -509,8 +505,10 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Gets provider_store_name.
+     *
+     * @return null|string
      */
-    public function getProviderStoreName(): ?string
+    public function getProviderStoreName()
     {
         return $this->container['provider_store_name'];
     }
@@ -519,18 +517,13 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
      * Sets provider_store_name.
      *
      * @param null|string $provider_store_name the store name where the payment event occurred
+     *
+     * @return self
      */
-    public function setProviderStoreName(?string $provider_store_name): self
+    public function setProviderStoreName($provider_store_name)
     {
         if (is_null($provider_store_name)) {
-            array_push($this->openAPINullablesSetToNull, 'provider_store_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('provider_store_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable provider_store_name cannot be null');
         }
         $this->container['provider_store_name'] = $provider_store_name;
 
@@ -539,8 +532,10 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Gets transaction_amount.
+     *
+     * @return null|Currency
      */
-    public function getTransactionAmount(): ?Currency
+    public function getTransactionAmount()
     {
         return $this->container['transaction_amount'];
     }
@@ -549,18 +544,13 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
      * Sets transaction_amount.
      *
      * @param null|Currency $transaction_amount transaction_amount
+     *
+     * @return self
      */
-    public function setTransactionAmount(?Currency $transaction_amount): self
+    public function setTransactionAmount($transaction_amount)
     {
         if (is_null($transaction_amount)) {
-            array_push($this->openAPINullablesSetToNull, 'transaction_amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transaction_amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transaction_amount cannot be null');
         }
         $this->container['transaction_amount'] = $transaction_amount;
 
@@ -569,8 +559,10 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
 
     /**
      * Gets transaction_creation_date.
+     *
+     * @return null|\DateTime
      */
-    public function getTransactionCreationDate(): ?\DateTime
+    public function getTransactionCreationDate()
     {
         return $this->container['transaction_creation_date'];
     }
@@ -579,18 +571,13 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
      * Sets transaction_creation_date.
      *
      * @param null|\DateTime $transaction_creation_date fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate)
+     *
+     * @return self
      */
-    public function setTransactionCreationDate(?\DateTime $transaction_creation_date): self
+    public function setTransactionCreationDate($transaction_creation_date)
     {
         if (is_null($transaction_creation_date)) {
-            array_push($this->openAPINullablesSetToNull, 'transaction_creation_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transaction_creation_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transaction_creation_date cannot be null');
         }
         $this->container['transaction_creation_date'] = $transaction_creation_date;
 
@@ -615,7 +602,7 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -626,7 +613,7 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -654,15 +641,17 @@ class SolutionProviderCreditEvent implements ModelInterface, \ArrayAccess, \Json
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * InboundShipmentSummary.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\awd\v2024_05_09;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'InboundShipmentSummary';
+    protected static $openAPIModelName = 'InboundShipmentSummary';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'created_at' => '\DateTime',
         'external_reference_id' => 'string',
         'order_id' => 'string',
         'shipment_id' => 'string',
         'shipment_status' => '\SpApi\Model\awd\v2024_05_09\InboundShipmentStatus',
-        'updated_at' => '\DateTime'];
+        'updated_at' => '\DateTime',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'created_at' => 'date-time',
         'external_reference_id' => null,
         'order_id' => null,
         'shipment_id' => null,
         'shipment_status' => null,
-        'updated_at' => 'date-time'];
+        'updated_at' => 'date-time',
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -91,12 +94,12 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'created_at' => true,
-        'external_reference_id' => true,
+        'created_at' => false,
+        'external_reference_id' => false,
         'order_id' => false,
         'shipment_id' => false,
         'shipment_status' => false,
-        'updated_at' => true,
+        'updated_at' => false,
     ];
 
     /**
@@ -112,7 +115,7 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'created_at' => 'createdAt',
         'external_reference_id' => 'externalReferenceId',
         'order_id' => 'orderId',
@@ -126,7 +129,7 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'created_at' => 'setCreatedAt',
         'external_reference_id' => 'setExternalReferenceId',
         'order_id' => 'setOrderId',
@@ -140,7 +143,7 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'created_at' => 'getCreatedAt',
         'external_reference_id' => 'getExternalReferenceId',
         'order_id' => 'getOrderId',
@@ -151,14 +154,16 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -284,15 +301,17 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets created_at.
+     *
+     * @return null|\DateTime
      */
-    public function getCreatedAt(): ?\DateTime
+    public function getCreatedAt()
     {
         return $this->container['created_at'];
     }
@@ -301,18 +320,13 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets created_at.
      *
      * @param null|\DateTime $created_at timestamp when the shipment was created
+     *
+     * @return self
      */
-    public function setCreatedAt(?\DateTime $created_at): self
+    public function setCreatedAt($created_at)
     {
         if (is_null($created_at)) {
-            array_push($this->openAPINullablesSetToNull, 'created_at');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('created_at', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
         }
         $this->container['created_at'] = $created_at;
 
@@ -321,8 +335,10 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets external_reference_id.
+     *
+     * @return null|string
      */
-    public function getExternalReferenceId(): ?string
+    public function getExternalReferenceId()
     {
         return $this->container['external_reference_id'];
     }
@@ -331,18 +347,13 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets external_reference_id.
      *
      * @param null|string $external_reference_id Optional client-provided reference ID that can be used to correlate this shipment with client resources. For example, to map this shipment to an internal bookkeeping order record.
+     *
+     * @return self
      */
-    public function setExternalReferenceId(?string $external_reference_id): self
+    public function setExternalReferenceId($external_reference_id)
     {
         if (is_null($external_reference_id)) {
-            array_push($this->openAPINullablesSetToNull, 'external_reference_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('external_reference_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable external_reference_id cannot be null');
         }
         $this->container['external_reference_id'] = $external_reference_id;
 
@@ -351,8 +362,10 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets order_id.
+     *
+     * @return string
      */
-    public function getOrderId(): string
+    public function getOrderId()
     {
         return $this->container['order_id'];
     }
@@ -361,8 +374,10 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets order_id.
      *
      * @param string $order_id the AWD inbound order ID that this inbound shipment belongs to
+     *
+     * @return self
      */
-    public function setOrderId(string $order_id): self
+    public function setOrderId($order_id)
     {
         if (is_null($order_id)) {
             throw new \InvalidArgumentException('non-nullable order_id cannot be null');
@@ -379,8 +394,10 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets shipment_id.
+     *
+     * @return string
      */
-    public function getShipmentId(): string
+    public function getShipmentId()
     {
         return $this->container['shipment_id'];
     }
@@ -389,8 +406,10 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets shipment_id.
      *
      * @param string $shipment_id a unique shipment ID
+     *
+     * @return self
      */
-    public function setShipmentId(string $shipment_id): self
+    public function setShipmentId($shipment_id)
     {
         if (is_null($shipment_id)) {
             throw new \InvalidArgumentException('non-nullable shipment_id cannot be null');
@@ -407,8 +426,10 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets shipment_status.
+     *
+     * @return InboundShipmentStatus
      */
-    public function getShipmentStatus(): string
+    public function getShipmentStatus()
     {
         return $this->container['shipment_status'];
     }
@@ -416,9 +437,11 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Sets shipment_status.
      *
-     * @param string $shipment_status shipment_status
+     * @param InboundShipmentStatus $shipment_status shipment_status
+     *
+     * @return self
      */
-    public function setShipmentStatus(string $shipment_status): self
+    public function setShipmentStatus($shipment_status)
     {
         if (is_null($shipment_status)) {
             throw new \InvalidArgumentException('non-nullable shipment_status cannot be null');
@@ -430,8 +453,10 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets updated_at.
+     *
+     * @return null|\DateTime
      */
-    public function getUpdatedAt(): ?\DateTime
+    public function getUpdatedAt()
     {
         return $this->container['updated_at'];
     }
@@ -440,18 +465,13 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets updated_at.
      *
      * @param null|\DateTime $updated_at timestamp when the shipment was updated
+     *
+     * @return self
      */
-    public function setUpdatedAt(?\DateTime $updated_at): self
+    public function setUpdatedAt($updated_at)
     {
         if (is_null($updated_at)) {
-            array_push($this->openAPINullablesSetToNull, 'updated_at');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('updated_at', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable updated_at cannot be null');
         }
         $this->container['updated_at'] = $updated_at;
 
@@ -476,7 +496,7 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -487,7 +507,7 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -515,15 +535,17 @@ class InboundShipmentSummary implements ModelInterface, \ArrayAccess, \JsonSeria
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

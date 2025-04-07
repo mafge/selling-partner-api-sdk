@@ -3,7 +3,7 @@
 /**
  * ShipmentDestination.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class ShipmentDestination implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ShipmentDestination';
+    protected static $openAPIModelName = 'ShipmentDestination';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'address' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Address',
         'destination_type' => 'string',
-        'warehouse_id' => 'string'];
+        'warehouse_id' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class ShipmentDestination implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'address' => null,
         'destination_type' => null,
-        'warehouse_id' => null];
+        'warehouse_id' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class ShipmentDestination implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'address' => true,
+        'address' => false,
         'destination_type' => false,
-        'warehouse_id' => true,
+        'warehouse_id' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class ShipmentDestination implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'address' => 'address',
         'destination_type' => 'destinationType',
         'warehouse_id' => 'warehouseId',
@@ -114,7 +117,7 @@ class ShipmentDestination implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'address' => 'setAddress',
         'destination_type' => 'setDestinationType',
         'warehouse_id' => 'setWarehouseId',
@@ -125,7 +128,7 @@ class ShipmentDestination implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'address' => 'getAddress',
         'destination_type' => 'getDestinationType',
         'warehouse_id' => 'getWarehouseId',
@@ -133,14 +136,16 @@ class ShipmentDestination implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class ShipmentDestination implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class ShipmentDestination implements ModelInterface, \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class ShipmentDestination implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -264,15 +281,17 @@ class ShipmentDestination implements ModelInterface, \ArrayAccess, \JsonSerializ
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets address.
+     *
+     * @return null|Address
      */
-    public function getAddress(): ?Address
+    public function getAddress()
     {
         return $this->container['address'];
     }
@@ -281,18 +300,13 @@ class ShipmentDestination implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets address.
      *
      * @param null|Address $address address
+     *
+     * @return self
      */
-    public function setAddress(?Address $address): self
+    public function setAddress($address)
     {
         if (is_null($address)) {
-            array_push($this->openAPINullablesSetToNull, 'address');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('address', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable address cannot be null');
         }
         $this->container['address'] = $address;
 
@@ -301,8 +315,10 @@ class ShipmentDestination implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets destination_type.
+     *
+     * @return string
      */
-    public function getDestinationType(): string
+    public function getDestinationType()
     {
         return $this->container['destination_type'];
     }
@@ -311,8 +327,10 @@ class ShipmentDestination implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets destination_type.
      *
      * @param string $destination_type The type of destination for this shipment. Possible values: `AMAZON_OPTIMIZED`, `AMAZON_WAREHOUSE`.
+     *
+     * @return self
      */
-    public function setDestinationType(string $destination_type): self
+    public function setDestinationType($destination_type)
     {
         if (is_null($destination_type)) {
             throw new \InvalidArgumentException('non-nullable destination_type cannot be null');
@@ -331,8 +349,10 @@ class ShipmentDestination implements ModelInterface, \ArrayAccess, \JsonSerializ
 
     /**
      * Gets warehouse_id.
+     *
+     * @return null|string
      */
-    public function getWarehouseId(): ?string
+    public function getWarehouseId()
     {
         return $this->container['warehouse_id'];
     }
@@ -341,23 +361,18 @@ class ShipmentDestination implements ModelInterface, \ArrayAccess, \JsonSerializ
      * Sets warehouse_id.
      *
      * @param null|string $warehouse_id The warehouse that the shipment should be sent to. Empty if the destination type is `AMAZON_OPTIMIZED`.
+     *
+     * @return self
      */
-    public function setWarehouseId(?string $warehouse_id): self
+    public function setWarehouseId($warehouse_id)
     {
         if (is_null($warehouse_id)) {
-            array_push($this->openAPINullablesSetToNull, 'warehouse_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('warehouse_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable warehouse_id cannot be null');
         }
-        if (!is_null($warehouse_id) && (mb_strlen($warehouse_id) > 1024)) {
+        if (mb_strlen($warehouse_id) > 1024) {
             throw new \InvalidArgumentException('invalid length for $warehouse_id when calling ShipmentDestination., must be smaller than or equal to 1024.');
         }
-        if (!is_null($warehouse_id) && (mb_strlen($warehouse_id) < 1)) {
+        if (mb_strlen($warehouse_id) < 1) {
             throw new \InvalidArgumentException('invalid length for $warehouse_id when calling ShipmentDestination., must be bigger than or equal to 1.');
         }
 
@@ -384,7 +399,7 @@ class ShipmentDestination implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -395,7 +410,7 @@ class ShipmentDestination implements ModelInterface, \ArrayAccess, \JsonSerializ
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -423,15 +438,17 @@ class ShipmentDestination implements ModelInterface, \ArrayAccess, \JsonSerializ
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

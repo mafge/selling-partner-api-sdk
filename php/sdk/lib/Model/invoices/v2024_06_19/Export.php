@@ -3,7 +3,7 @@
 /**
  * Export.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\invoices\v2024_06_19;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Export';
+    protected static $openAPIModelName = 'Export';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'error_message' => 'string',
         'export_id' => 'string',
         'generate_export_finished_at' => '\DateTime',
         'generate_export_started_at' => '\DateTime',
         'invoices_document_ids' => 'string[]',
-        'status' => '\SpApi\Model\invoices\v2024_06_19\ExportStatus'];
+        'status' => '\SpApi\Model\invoices\v2024_06_19\ExportStatus',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'error_message' => null,
         'export_id' => null,
         'generate_export_finished_at' => 'date-time',
         'generate_export_started_at' => 'date-time',
         'invoices_document_ids' => null,
-        'status' => null];
+        'status' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -91,12 +94,12 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'error_message' => true,
-        'export_id' => true,
-        'generate_export_finished_at' => true,
-        'generate_export_started_at' => true,
-        'invoices_document_ids' => true,
-        'status' => true,
+        'error_message' => false,
+        'export_id' => false,
+        'generate_export_finished_at' => false,
+        'generate_export_started_at' => false,
+        'invoices_document_ids' => false,
+        'status' => false,
     ];
 
     /**
@@ -112,7 +115,7 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'error_message' => 'errorMessage',
         'export_id' => 'exportId',
         'generate_export_finished_at' => 'generateExportFinishedAt',
@@ -126,7 +129,7 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'error_message' => 'setErrorMessage',
         'export_id' => 'setExportId',
         'generate_export_finished_at' => 'setGenerateExportFinishedAt',
@@ -140,7 +143,7 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'error_message' => 'getErrorMessage',
         'export_id' => 'getExportId',
         'generate_export_finished_at' => 'getGenerateExportFinishedAt',
@@ -151,14 +154,16 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -264,15 +281,17 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets error_message.
+     *
+     * @return null|string
      */
-    public function getErrorMessage(): ?string
+    public function getErrorMessage()
     {
         return $this->container['error_message'];
     }
@@ -281,18 +300,13 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets error_message.
      *
      * @param null|string $error_message when the export generation fails, this attribute contains a description of the error
+     *
+     * @return self
      */
-    public function setErrorMessage(?string $error_message): self
+    public function setErrorMessage($error_message)
     {
         if (is_null($error_message)) {
-            array_push($this->openAPINullablesSetToNull, 'error_message');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('error_message', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable error_message cannot be null');
         }
         $this->container['error_message'] = $error_message;
 
@@ -301,8 +315,10 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets export_id.
+     *
+     * @return null|string
      */
-    public function getExportId(): ?string
+    public function getExportId()
     {
         return $this->container['export_id'];
     }
@@ -311,18 +327,13 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets export_id.
      *
      * @param null|string $export_id the export identifier
+     *
+     * @return self
      */
-    public function setExportId(?string $export_id): self
+    public function setExportId($export_id)
     {
         if (is_null($export_id)) {
-            array_push($this->openAPINullablesSetToNull, 'export_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('export_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable export_id cannot be null');
         }
         $this->container['export_id'] = $export_id;
 
@@ -331,8 +342,10 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets generate_export_finished_at.
+     *
+     * @return null|\DateTime
      */
-    public function getGenerateExportFinishedAt(): ?\DateTime
+    public function getGenerateExportFinishedAt()
     {
         return $this->container['generate_export_finished_at'];
     }
@@ -341,18 +354,13 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets generate_export_finished_at.
      *
      * @param null|\DateTime $generate_export_finished_at The date and time when the export generation finished. Vales are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+     *
+     * @return self
      */
-    public function setGenerateExportFinishedAt(?\DateTime $generate_export_finished_at): self
+    public function setGenerateExportFinishedAt($generate_export_finished_at)
     {
         if (is_null($generate_export_finished_at)) {
-            array_push($this->openAPINullablesSetToNull, 'generate_export_finished_at');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('generate_export_finished_at', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable generate_export_finished_at cannot be null');
         }
         $this->container['generate_export_finished_at'] = $generate_export_finished_at;
 
@@ -361,8 +369,10 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets generate_export_started_at.
+     *
+     * @return null|\DateTime
      */
-    public function getGenerateExportStartedAt(): ?\DateTime
+    public function getGenerateExportStartedAt()
     {
         return $this->container['generate_export_started_at'];
     }
@@ -371,18 +381,13 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets generate_export_started_at.
      *
      * @param null|\DateTime $generate_export_started_at The date and time when the export generation started. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+     *
+     * @return self
      */
-    public function setGenerateExportStartedAt(?\DateTime $generate_export_started_at): self
+    public function setGenerateExportStartedAt($generate_export_started_at)
     {
         if (is_null($generate_export_started_at)) {
-            array_push($this->openAPINullablesSetToNull, 'generate_export_started_at');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('generate_export_started_at', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable generate_export_started_at cannot be null');
         }
         $this->container['generate_export_started_at'] = $generate_export_started_at;
 
@@ -391,8 +396,10 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets invoices_document_ids.
+     *
+     * @return null|string[]
      */
-    public function getInvoicesDocumentIds(): ?array
+    public function getInvoicesDocumentIds()
     {
         return $this->container['invoices_document_ids'];
     }
@@ -400,19 +407,14 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets invoices_document_ids.
      *
-     * @param null|array $invoices_document_ids The identifier for the export documents. To get the information required to retrieve the export document's contents, pass each ID in the `getInvoicesDocument` operation.  This list is empty until the status is `DONE`.
+     * @param null|string[] $invoices_document_ids The identifier for the export documents. To get the information required to retrieve the export document's contents, pass each ID in the `getInvoicesDocument` operation.  This list is empty until the status is `DONE`.
+     *
+     * @return self
      */
-    public function setInvoicesDocumentIds(?array $invoices_document_ids): self
+    public function setInvoicesDocumentIds($invoices_document_ids)
     {
         if (is_null($invoices_document_ids)) {
-            array_push($this->openAPINullablesSetToNull, 'invoices_document_ids');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('invoices_document_ids', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable invoices_document_ids cannot be null');
         }
         $this->container['invoices_document_ids'] = $invoices_document_ids;
 
@@ -421,8 +423,10 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets status.
+     *
+     * @return null|ExportStatus
      */
-    public function getStatus(): ?string
+    public function getStatus()
     {
         return $this->container['status'];
     }
@@ -430,19 +434,14 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets status.
      *
-     * @param null|string $status status
+     * @param null|ExportStatus $status status
+     *
+     * @return self
      */
-    public function setStatus(?string $status): self
+    public function setStatus($status)
     {
         if (is_null($status)) {
-            array_push($this->openAPINullablesSetToNull, 'status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('status', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable status cannot be null');
         }
         $this->container['status'] = $status;
 
@@ -467,7 +466,7 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -478,7 +477,7 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -506,15 +505,17 @@ class Export implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

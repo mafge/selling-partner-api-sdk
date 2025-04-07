@@ -3,7 +3,7 @@
 /**
  * DestinationDetails.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\awd\v2024_05_09;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class DestinationDetails implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'DestinationDetails';
+    protected static $openAPIModelName = 'DestinationDetails';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'destination_address' => '\SpApi\Model\awd\v2024_05_09\Address',
         'destination_region' => 'string',
-        'shipment_id' => 'string'];
+        'shipment_id' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class DestinationDetails implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'destination_address' => null,
         'destination_region' => null,
-        'shipment_id' => null];
+        'shipment_id' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class DestinationDetails implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'destination_address' => true,
-        'destination_region' => true,
-        'shipment_id' => true,
+        'destination_address' => false,
+        'destination_region' => false,
+        'shipment_id' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class DestinationDetails implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'destination_address' => 'destinationAddress',
         'destination_region' => 'destinationRegion',
         'shipment_id' => 'shipmentId',
@@ -114,7 +117,7 @@ class DestinationDetails implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'destination_address' => 'setDestinationAddress',
         'destination_region' => 'setDestinationRegion',
         'shipment_id' => 'setShipmentId',
@@ -125,7 +128,7 @@ class DestinationDetails implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'destination_address' => 'getDestinationAddress',
         'destination_region' => 'getDestinationRegion',
         'shipment_id' => 'getShipmentId',
@@ -133,14 +136,16 @@ class DestinationDetails implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class DestinationDetails implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class DestinationDetails implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class DestinationDetails implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -249,15 +266,17 @@ class DestinationDetails implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets destination_address.
+     *
+     * @return null|Address
      */
-    public function getDestinationAddress(): ?Address
+    public function getDestinationAddress()
     {
         return $this->container['destination_address'];
     }
@@ -266,18 +285,13 @@ class DestinationDetails implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets destination_address.
      *
      * @param null|Address $destination_address destination_address
+     *
+     * @return self
      */
-    public function setDestinationAddress(?Address $destination_address): self
+    public function setDestinationAddress($destination_address)
     {
         if (is_null($destination_address)) {
-            array_push($this->openAPINullablesSetToNull, 'destination_address');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('destination_address', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable destination_address cannot be null');
         }
         $this->container['destination_address'] = $destination_address;
 
@@ -286,8 +300,10 @@ class DestinationDetails implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets destination_region.
+     *
+     * @return null|string
      */
-    public function getDestinationRegion(): ?string
+    public function getDestinationRegion()
     {
         return $this->container['destination_region'];
     }
@@ -296,18 +312,13 @@ class DestinationDetails implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets destination_region.
      *
      * @param null|string $destination_region Assigned region where the order will be shipped. This can differ from what was passed as preference. AWD currently supports following region IDs: [us-west, us-east, us-southcentral, us-southeast]
+     *
+     * @return self
      */
-    public function setDestinationRegion(?string $destination_region): self
+    public function setDestinationRegion($destination_region)
     {
         if (is_null($destination_region)) {
-            array_push($this->openAPINullablesSetToNull, 'destination_region');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('destination_region', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable destination_region cannot be null');
         }
         $this->container['destination_region'] = $destination_region;
 
@@ -316,8 +327,10 @@ class DestinationDetails implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets shipment_id.
+     *
+     * @return null|string
      */
-    public function getShipmentId(): ?string
+    public function getShipmentId()
     {
         return $this->container['shipment_id'];
     }
@@ -326,21 +339,16 @@ class DestinationDetails implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets shipment_id.
      *
      * @param null|string $shipment_id Unique ID of the confirmed shipment being shipped to the assigned destination. This will be available only after an inbound order is confirmed and can be used to track the shipment.
+     *
+     * @return self
      */
-    public function setShipmentId(?string $shipment_id): self
+    public function setShipmentId($shipment_id)
     {
         if (is_null($shipment_id)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_id cannot be null');
         }
 
-        if (!is_null($shipment_id) && (mb_strlen($shipment_id) < 1)) {
+        if (mb_strlen($shipment_id) < 1) {
             throw new \InvalidArgumentException('invalid length for $shipment_id when calling DestinationDetails., must be bigger than or equal to 1.');
         }
 
@@ -367,7 +375,7 @@ class DestinationDetails implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -378,7 +386,7 @@ class DestinationDetails implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -406,15 +414,17 @@ class DestinationDetails implements ModelInterface, \ArrayAccess, \JsonSerializa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * ImageComponent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\aplusContent\v2020_11_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class ImageComponent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ImageComponent';
+    protected static $openAPIModelName = 'ImageComponent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'upload_destination_id' => 'string',
         'image_crop_specification' => '\SpApi\Model\aplusContent\v2020_11_01\ImageCropSpecification',
-        'alt_text' => 'string'];
+        'alt_text' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class ImageComponent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'upload_destination_id' => null,
         'image_crop_specification' => null,
-        'alt_text' => null];
+        'alt_text' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -103,7 +106,7 @@ class ImageComponent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'upload_destination_id' => 'uploadDestinationId',
         'image_crop_specification' => 'imageCropSpecification',
         'alt_text' => 'altText',
@@ -114,7 +117,7 @@ class ImageComponent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'upload_destination_id' => 'setUploadDestinationId',
         'image_crop_specification' => 'setImageCropSpecification',
         'alt_text' => 'setAltText',
@@ -125,7 +128,7 @@ class ImageComponent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'upload_destination_id' => 'getUploadDestinationId',
         'image_crop_specification' => 'getImageCropSpecification',
         'alt_text' => 'getAltText',
@@ -133,14 +136,16 @@ class ImageComponent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class ImageComponent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class ImageComponent implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class ImageComponent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -266,15 +283,17 @@ class ImageComponent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets upload_destination_id.
+     *
+     * @return string
      */
-    public function getUploadDestinationId(): string
+    public function getUploadDestinationId()
     {
         return $this->container['upload_destination_id'];
     }
@@ -283,8 +302,10 @@ class ImageComponent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets upload_destination_id.
      *
      * @param string $upload_destination_id This identifier is provided by the [Uploads API](https://developer-docs.amazon.com/sp-api/reference/welcome-to-api-references).
+     *
+     * @return self
      */
-    public function setUploadDestinationId(string $upload_destination_id): self
+    public function setUploadDestinationId($upload_destination_id)
     {
         if (is_null($upload_destination_id)) {
             throw new \InvalidArgumentException('non-nullable upload_destination_id cannot be null');
@@ -301,8 +322,10 @@ class ImageComponent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets image_crop_specification.
+     *
+     * @return ImageCropSpecification
      */
-    public function getImageCropSpecification(): ImageCropSpecification
+    public function getImageCropSpecification()
     {
         return $this->container['image_crop_specification'];
     }
@@ -311,8 +334,10 @@ class ImageComponent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets image_crop_specification.
      *
      * @param ImageCropSpecification $image_crop_specification image_crop_specification
+     *
+     * @return self
      */
-    public function setImageCropSpecification(ImageCropSpecification $image_crop_specification): self
+    public function setImageCropSpecification($image_crop_specification)
     {
         if (is_null($image_crop_specification)) {
             throw new \InvalidArgumentException('non-nullable image_crop_specification cannot be null');
@@ -324,8 +349,10 @@ class ImageComponent implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets alt_text.
+     *
+     * @return string
      */
-    public function getAltText(): string
+    public function getAltText()
     {
         return $this->container['alt_text'];
     }
@@ -334,8 +361,10 @@ class ImageComponent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets alt_text.
      *
      * @param string $alt_text the alternative text for the image
+     *
+     * @return self
      */
-    public function setAltText(string $alt_text): self
+    public function setAltText($alt_text)
     {
         if (is_null($alt_text)) {
             throw new \InvalidArgumentException('non-nullable alt_text cannot be null');
@@ -370,7 +399,7 @@ class ImageComponent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -381,7 +410,7 @@ class ImageComponent implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -409,15 +438,17 @@ class ImageComponent implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

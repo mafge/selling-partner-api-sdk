@@ -3,7 +3,7 @@
 /**
  * OrderAddress.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\orders\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'OrderAddress';
+    protected static $openAPIModelName = 'OrderAddress';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'amazon_order_id' => 'string',
         'buyer_company_name' => 'string',
         'shipping_address' => '\SpApi\Model\orders\v0\Address',
-        'delivery_preferences' => '\SpApi\Model\orders\v0\DeliveryPreferences'];
+        'delivery_preferences' => '\SpApi\Model\orders\v0\DeliveryPreferences',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'amazon_order_id' => null,
         'buyer_company_name' => null,
         'shipping_address' => null,
-        'delivery_preferences' => null];
+        'delivery_preferences' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -88,9 +91,9 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'amazon_order_id' => false,
-        'buyer_company_name' => true,
-        'shipping_address' => true,
-        'delivery_preferences' => true,
+        'buyer_company_name' => false,
+        'shipping_address' => false,
+        'delivery_preferences' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'amazon_order_id' => 'AmazonOrderId',
         'buyer_company_name' => 'BuyerCompanyName',
         'shipping_address' => 'ShippingAddress',
@@ -118,7 +121,7 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'amazon_order_id' => 'setAmazonOrderId',
         'buyer_company_name' => 'setBuyerCompanyName',
         'shipping_address' => 'setShippingAddress',
@@ -130,7 +133,7 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'amazon_order_id' => 'getAmazonOrderId',
         'buyer_company_name' => 'getBuyerCompanyName',
         'shipping_address' => 'getShippingAddress',
@@ -139,14 +142,16 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -256,15 +273,17 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets amazon_order_id.
+     *
+     * @return string
      */
-    public function getAmazonOrderId(): string
+    public function getAmazonOrderId()
     {
         return $this->container['amazon_order_id'];
     }
@@ -273,8 +292,10 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets amazon_order_id.
      *
      * @param string $amazon_order_id an Amazon-defined order identifier, in 3-7-7 format
+     *
+     * @return self
      */
-    public function setAmazonOrderId(string $amazon_order_id): self
+    public function setAmazonOrderId($amazon_order_id)
     {
         if (is_null($amazon_order_id)) {
             throw new \InvalidArgumentException('non-nullable amazon_order_id cannot be null');
@@ -286,8 +307,10 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets buyer_company_name.
+     *
+     * @return null|string
      */
-    public function getBuyerCompanyName(): ?string
+    public function getBuyerCompanyName()
     {
         return $this->container['buyer_company_name'];
     }
@@ -296,18 +319,13 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets buyer_company_name.
      *
      * @param null|string $buyer_company_name The company name of the contact buyer. For IBA orders, the buyer company must be Amazon entities.
+     *
+     * @return self
      */
-    public function setBuyerCompanyName(?string $buyer_company_name): self
+    public function setBuyerCompanyName($buyer_company_name)
     {
         if (is_null($buyer_company_name)) {
-            array_push($this->openAPINullablesSetToNull, 'buyer_company_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('buyer_company_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable buyer_company_name cannot be null');
         }
         $this->container['buyer_company_name'] = $buyer_company_name;
 
@@ -316,8 +334,10 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets shipping_address.
+     *
+     * @return null|Address
      */
-    public function getShippingAddress(): ?Address
+    public function getShippingAddress()
     {
         return $this->container['shipping_address'];
     }
@@ -326,18 +346,13 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets shipping_address.
      *
      * @param null|Address $shipping_address shipping_address
+     *
+     * @return self
      */
-    public function setShippingAddress(?Address $shipping_address): self
+    public function setShippingAddress($shipping_address)
     {
         if (is_null($shipping_address)) {
-            array_push($this->openAPINullablesSetToNull, 'shipping_address');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipping_address', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipping_address cannot be null');
         }
         $this->container['shipping_address'] = $shipping_address;
 
@@ -346,8 +361,10 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets delivery_preferences.
+     *
+     * @return null|DeliveryPreferences
      */
-    public function getDeliveryPreferences(): ?DeliveryPreferences
+    public function getDeliveryPreferences()
     {
         return $this->container['delivery_preferences'];
     }
@@ -356,18 +373,13 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets delivery_preferences.
      *
      * @param null|DeliveryPreferences $delivery_preferences delivery_preferences
+     *
+     * @return self
      */
-    public function setDeliveryPreferences(?DeliveryPreferences $delivery_preferences): self
+    public function setDeliveryPreferences($delivery_preferences)
     {
         if (is_null($delivery_preferences)) {
-            array_push($this->openAPINullablesSetToNull, 'delivery_preferences');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('delivery_preferences', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable delivery_preferences cannot be null');
         }
         $this->container['delivery_preferences'] = $delivery_preferences;
 
@@ -392,7 +404,7 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -403,7 +415,7 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -431,15 +443,17 @@ class OrderAddress implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -2,7 +2,7 @@
 /**
  * Stop
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * Stop Class Doc Comment
@@ -52,18 +50,19 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'Stop';
+    protected static $openAPIModelName = 'Stop';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'function_code' => 'string',
-             'location_identification' => '\SpApi\Model\vendor\shipments\v1\Location',
-             'arrival_time' => '\DateTime',
-             'departure_time' => '\DateTime'    ];
+    protected static $openAPITypes = [
+        'function_code' => 'string',
+        'location_identification' => '\SpApi\Model\vendor\shipments\v1\Location',
+        'arrival_time' => '\DateTime',
+        'departure_time' => '\DateTime'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -72,11 +71,12 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'function_code' => null,
-            'location_identification' => null,
-            'arrival_time' => 'date-time',
-            'departure_time' => 'date-time'    ];
+    protected static $openAPIFormats = [
+        'function_code' => null,
+        'location_identification' => null,
+        'arrival_time' => 'date-time',
+        'departure_time' => 'date-time'
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -85,9 +85,9 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'function_code' => false,
-        'location_identification' => true,
-        'arrival_time' => true,
-        'departure_time' => true
+        'location_identification' => false,
+        'arrival_time' => false,
+        'departure_time' => false
     ];
 
     /**
@@ -102,7 +102,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -112,7 +112,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -175,12 +175,11 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'function_code' => 'functionCode',
-                'location_identification' => 'locationIdentification',
-                'arrival_time' => 'arrivalTime',
-                'departure_time' => 'departureTime'
-        
+        'location_identification' => 'locationIdentification',
+        'arrival_time' => 'arrivalTime',
+        'departure_time' => 'departureTime'
     ];
 
     /**
@@ -188,7 +187,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'function_code' => 'setFunctionCode',
         'location_identification' => 'setLocationIdentification',
         'arrival_time' => 'setArrivalTime',
@@ -200,7 +199,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'function_code' => 'getFunctionCode',
         'location_identification' => 'getLocationIdentification',
         'arrival_time' => 'getArrivalTime',
@@ -213,7 +212,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -223,7 +222,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -233,7 +232,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -243,7 +242,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -257,7 +256,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getFunctionCodeAllowableValues(): array
+    public function getFunctionCodeAllowableValues()
     {
         return [
             self::FUNCTION_CODE_PORT_OF_DISCHARGE,
@@ -269,17 +268,17 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('function_code', $data ?? [], null);
         $this->setIfExists('location_identification', $data ?? [], null);
@@ -310,7 +309,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -335,7 +334,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -346,7 +345,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getFunctionCode(): string
+    public function getFunctionCode()
     {
         return $this->container['function_code'];
     }
@@ -358,7 +357,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setFunctionCode(string $function_code): self
+    public function setFunctionCode($function_code)
     {
         if (is_null($function_code)) {
             throw new \InvalidArgumentException('non-nullable function_code cannot be null');
@@ -383,7 +382,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\shipments\v1\Location|null
      */
-    public function getLocationIdentification(): ?\SpApi\Model\vendor\shipments\v1\Location
+    public function getLocationIdentification()
     {
         return $this->container['location_identification'];
     }
@@ -395,17 +394,10 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLocationIdentification(?\SpApi\Model\vendor\shipments\v1\Location $location_identification): self
+    public function setLocationIdentification($location_identification)
     {
         if (is_null($location_identification)) {
-            array_push($this->openAPINullablesSetToNull, 'location_identification');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('location_identification', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable location_identification cannot be null');
         }
         $this->container['location_identification'] = $location_identification;
 
@@ -417,7 +409,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime|null
      */
-    public function getArrivalTime(): ?\DateTime
+    public function getArrivalTime()
     {
         return $this->container['arrival_time'];
     }
@@ -429,17 +421,10 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setArrivalTime(?\DateTime $arrival_time): self
+    public function setArrivalTime($arrival_time)
     {
         if (is_null($arrival_time)) {
-            array_push($this->openAPINullablesSetToNull, 'arrival_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('arrival_time', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable arrival_time cannot be null');
         }
         $this->container['arrival_time'] = $arrival_time;
 
@@ -451,7 +436,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime|null
      */
-    public function getDepartureTime(): ?\DateTime
+    public function getDepartureTime()
     {
         return $this->container['departure_time'];
     }
@@ -463,24 +448,15 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDepartureTime(?\DateTime $departure_time): self
+    public function setDepartureTime($departure_time)
     {
         if (is_null($departure_time)) {
-            array_push($this->openAPINullablesSetToNull, 'departure_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('departure_time', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable departure_time cannot be null');
         }
         $this->container['departure_time'] = $departure_time;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -501,7 +477,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -514,7 +490,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -543,7 +519,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -566,7 +542,7 @@ class Stop implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

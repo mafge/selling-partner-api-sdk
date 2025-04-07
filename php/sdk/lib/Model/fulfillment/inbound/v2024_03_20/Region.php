@@ -3,7 +3,7 @@
 /**
  * Region.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class Region implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Region';
+    protected static $openAPIModelName = 'Region';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'country_code' => 'string',
         'state' => 'string',
-        'warehouse_id' => 'string'];
+        'warehouse_id' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class Region implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'country_code' => null,
         'state' => null,
-        'warehouse_id' => null];
+        'warehouse_id' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class Region implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'country_code' => true,
-        'state' => true,
-        'warehouse_id' => true,
+        'country_code' => false,
+        'state' => false,
+        'warehouse_id' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class Region implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'country_code' => 'countryCode',
         'state' => 'state',
         'warehouse_id' => 'warehouseId',
@@ -114,7 +117,7 @@ class Region implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'country_code' => 'setCountryCode',
         'state' => 'setState',
         'warehouse_id' => 'setWarehouseId',
@@ -125,7 +128,7 @@ class Region implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'country_code' => 'getCountryCode',
         'state' => 'getState',
         'warehouse_id' => 'getWarehouseId',
@@ -133,14 +136,16 @@ class Region implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class Region implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class Region implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class Region implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -269,15 +286,17 @@ class Region implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets country_code.
+     *
+     * @return null|string
      */
-    public function getCountryCode(): ?string
+    public function getCountryCode()
     {
         return $this->container['country_code'];
     }
@@ -286,23 +305,18 @@ class Region implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets country_code.
      *
      * @param null|string $country_code ISO 3166 standard alpha-2 country code
+     *
+     * @return self
      */
-    public function setCountryCode(?string $country_code): self
+    public function setCountryCode($country_code)
     {
         if (is_null($country_code)) {
-            array_push($this->openAPINullablesSetToNull, 'country_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('country_code', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable country_code cannot be null');
         }
-        if (!is_null($country_code) && (mb_strlen($country_code) > 1024)) {
+        if (mb_strlen($country_code) > 1024) {
             throw new \InvalidArgumentException('invalid length for $country_code when calling Region., must be smaller than or equal to 1024.');
         }
-        if (!is_null($country_code) && (mb_strlen($country_code) < 1)) {
+        if (mb_strlen($country_code) < 1) {
             throw new \InvalidArgumentException('invalid length for $country_code when calling Region., must be bigger than or equal to 1.');
         }
 
@@ -313,8 +327,10 @@ class Region implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets state.
+     *
+     * @return null|string
      */
-    public function getState(): ?string
+    public function getState()
     {
         return $this->container['state'];
     }
@@ -323,23 +339,18 @@ class Region implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets state.
      *
      * @param null|string $state state
+     *
+     * @return self
      */
-    public function setState(?string $state): self
+    public function setState($state)
     {
         if (is_null($state)) {
-            array_push($this->openAPINullablesSetToNull, 'state');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('state', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable state cannot be null');
         }
-        if (!is_null($state) && (mb_strlen($state) > 1024)) {
+        if (mb_strlen($state) > 1024) {
             throw new \InvalidArgumentException('invalid length for $state when calling Region., must be smaller than or equal to 1024.');
         }
-        if (!is_null($state) && (mb_strlen($state) < 1)) {
+        if (mb_strlen($state) < 1) {
             throw new \InvalidArgumentException('invalid length for $state when calling Region., must be bigger than or equal to 1.');
         }
 
@@ -350,8 +361,10 @@ class Region implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets warehouse_id.
+     *
+     * @return null|string
      */
-    public function getWarehouseId(): ?string
+    public function getWarehouseId()
     {
         return $this->container['warehouse_id'];
     }
@@ -360,23 +373,18 @@ class Region implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets warehouse_id.
      *
      * @param null|string $warehouse_id an identifier for a warehouse, such as a FC, IXD, upstream storage
+     *
+     * @return self
      */
-    public function setWarehouseId(?string $warehouse_id): self
+    public function setWarehouseId($warehouse_id)
     {
         if (is_null($warehouse_id)) {
-            array_push($this->openAPINullablesSetToNull, 'warehouse_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('warehouse_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable warehouse_id cannot be null');
         }
-        if (!is_null($warehouse_id) && (mb_strlen($warehouse_id) > 1024)) {
+        if (mb_strlen($warehouse_id) > 1024) {
             throw new \InvalidArgumentException('invalid length for $warehouse_id when calling Region., must be smaller than or equal to 1024.');
         }
-        if (!is_null($warehouse_id) && (mb_strlen($warehouse_id) < 1)) {
+        if (mb_strlen($warehouse_id) < 1) {
             throw new \InvalidArgumentException('invalid length for $warehouse_id when calling Region., must be bigger than or equal to 1.');
         }
 
@@ -403,7 +411,7 @@ class Region implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -414,7 +422,7 @@ class Region implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -442,15 +450,17 @@ class Region implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

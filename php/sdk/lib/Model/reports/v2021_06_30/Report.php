@@ -3,7 +3,7 @@
 /**
  * Report.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\reports\v2021_06_30;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -58,15 +57,17 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Report';
+    protected static $openAPIModelName = 'Report';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'marketplace_ids' => 'string[]',
         'report_id' => 'string',
         'report_type' => 'string',
@@ -77,7 +78,8 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
         'processing_status' => 'string',
         'processing_start_time' => '\DateTime',
         'processing_end_time' => '\DateTime',
-        'report_document_id' => 'string'];
+        'report_document_id' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -88,7 +90,7 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'marketplace_ids' => null,
         'report_id' => null,
         'report_type' => null,
@@ -99,7 +101,8 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
         'processing_status' => null,
         'processing_start_time' => 'date-time',
         'processing_end_time' => 'date-time',
-        'report_document_id' => null];
+        'report_document_id' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -107,17 +110,17 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'marketplace_ids' => true,
+        'marketplace_ids' => false,
         'report_id' => false,
         'report_type' => false,
-        'data_start_time' => true,
-        'data_end_time' => true,
-        'report_schedule_id' => true,
+        'data_start_time' => false,
+        'data_end_time' => false,
+        'report_schedule_id' => false,
         'created_time' => false,
         'processing_status' => false,
-        'processing_start_time' => true,
-        'processing_end_time' => true,
-        'report_document_id' => true,
+        'processing_start_time' => false,
+        'processing_end_time' => false,
+        'report_document_id' => false,
     ];
 
     /**
@@ -133,7 +136,7 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'marketplace_ids' => 'marketplaceIds',
         'report_id' => 'reportId',
         'report_type' => 'reportType',
@@ -152,7 +155,7 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'marketplace_ids' => 'setMarketplaceIds',
         'report_id' => 'setReportId',
         'report_type' => 'setReportType',
@@ -171,7 +174,7 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'marketplace_ids' => 'getMarketplaceIds',
         'report_id' => 'getReportId',
         'report_type' => 'getReportType',
@@ -187,14 +190,16 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -226,16 +231,20 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -259,32 +268,40 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -294,7 +311,7 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getProcessingStatusAllowableValues(): array
+    public function getProcessingStatusAllowableValues()
     {
         return [
             self::PROCESSING_STATUS_CANCELLED,
@@ -310,7 +327,7 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -344,15 +361,17 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets marketplace_ids.
+     *
+     * @return null|string[]
      */
-    public function getMarketplaceIds(): ?array
+    public function getMarketplaceIds()
     {
         return $this->container['marketplace_ids'];
     }
@@ -360,19 +379,14 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets marketplace_ids.
      *
-     * @param null|array $marketplace_ids a list of marketplace identifiers for the report
+     * @param null|string[] $marketplace_ids a list of marketplace identifiers for the report
+     *
+     * @return self
      */
-    public function setMarketplaceIds(?array $marketplace_ids): self
+    public function setMarketplaceIds($marketplace_ids)
     {
         if (is_null($marketplace_ids)) {
-            array_push($this->openAPINullablesSetToNull, 'marketplace_ids');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('marketplace_ids', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable marketplace_ids cannot be null');
         }
         $this->container['marketplace_ids'] = $marketplace_ids;
 
@@ -381,8 +395,10 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets report_id.
+     *
+     * @return string
      */
-    public function getReportId(): string
+    public function getReportId()
     {
         return $this->container['report_id'];
     }
@@ -391,8 +407,10 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets report_id.
      *
      * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID.
+     *
+     * @return self
      */
-    public function setReportId(string $report_id): self
+    public function setReportId($report_id)
     {
         if (is_null($report_id)) {
             throw new \InvalidArgumentException('non-nullable report_id cannot be null');
@@ -404,8 +422,10 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets report_type.
+     *
+     * @return string
      */
-    public function getReportType(): string
+    public function getReportType()
     {
         return $this->container['report_type'];
     }
@@ -414,8 +434,10 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets report_type.
      *
      * @param string $report_type The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
+     *
+     * @return self
      */
-    public function setReportType(string $report_type): self
+    public function setReportType($report_type)
     {
         if (is_null($report_type)) {
             throw new \InvalidArgumentException('non-nullable report_type cannot be null');
@@ -427,8 +449,10 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets data_start_time.
+     *
+     * @return null|\DateTime
      */
-    public function getDataStartTime(): ?\DateTime
+    public function getDataStartTime()
     {
         return $this->container['data_start_time'];
     }
@@ -437,18 +461,13 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets data_start_time.
      *
      * @param null|\DateTime $data_start_time the start of a date and time range used for selecting the data to report
+     *
+     * @return self
      */
-    public function setDataStartTime(?\DateTime $data_start_time): self
+    public function setDataStartTime($data_start_time)
     {
         if (is_null($data_start_time)) {
-            array_push($this->openAPINullablesSetToNull, 'data_start_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('data_start_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable data_start_time cannot be null');
         }
         $this->container['data_start_time'] = $data_start_time;
 
@@ -457,8 +476,10 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets data_end_time.
+     *
+     * @return null|\DateTime
      */
-    public function getDataEndTime(): ?\DateTime
+    public function getDataEndTime()
     {
         return $this->container['data_end_time'];
     }
@@ -467,18 +488,13 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets data_end_time.
      *
      * @param null|\DateTime $data_end_time the end of a date and time range used for selecting the data to report
+     *
+     * @return self
      */
-    public function setDataEndTime(?\DateTime $data_end_time): self
+    public function setDataEndTime($data_end_time)
     {
         if (is_null($data_end_time)) {
-            array_push($this->openAPINullablesSetToNull, 'data_end_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('data_end_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable data_end_time cannot be null');
         }
         $this->container['data_end_time'] = $data_end_time;
 
@@ -487,8 +503,10 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets report_schedule_id.
+     *
+     * @return null|string
      */
-    public function getReportScheduleId(): ?string
+    public function getReportScheduleId()
     {
         return $this->container['report_schedule_id'];
     }
@@ -497,18 +515,13 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets report_schedule_id.
      *
      * @param null|string $report_schedule_id The identifier of the report schedule that created this report (if any). This identifier is unique only in combination with a seller ID.
+     *
+     * @return self
      */
-    public function setReportScheduleId(?string $report_schedule_id): self
+    public function setReportScheduleId($report_schedule_id)
     {
         if (is_null($report_schedule_id)) {
-            array_push($this->openAPINullablesSetToNull, 'report_schedule_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('report_schedule_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable report_schedule_id cannot be null');
         }
         $this->container['report_schedule_id'] = $report_schedule_id;
 
@@ -517,8 +530,10 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets created_time.
+     *
+     * @return \DateTime
      */
-    public function getCreatedTime(): \DateTime
+    public function getCreatedTime()
     {
         return $this->container['created_time'];
     }
@@ -527,8 +542,10 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets created_time.
      *
      * @param \DateTime $created_time the date and time when the report was created
+     *
+     * @return self
      */
-    public function setCreatedTime(\DateTime $created_time): self
+    public function setCreatedTime($created_time)
     {
         if (is_null($created_time)) {
             throw new \InvalidArgumentException('non-nullable created_time cannot be null');
@@ -540,8 +557,10 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets processing_status.
+     *
+     * @return string
      */
-    public function getProcessingStatus(): string
+    public function getProcessingStatus()
     {
         return $this->container['processing_status'];
     }
@@ -550,8 +569,10 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets processing_status.
      *
      * @param string $processing_status the processing status of the report
+     *
+     * @return self
      */
-    public function setProcessingStatus(string $processing_status): self
+    public function setProcessingStatus($processing_status)
     {
         if (is_null($processing_status)) {
             throw new \InvalidArgumentException('non-nullable processing_status cannot be null');
@@ -573,8 +594,10 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets processing_start_time.
+     *
+     * @return null|\DateTime
      */
-    public function getProcessingStartTime(): ?\DateTime
+    public function getProcessingStartTime()
     {
         return $this->container['processing_start_time'];
     }
@@ -583,18 +606,13 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets processing_start_time.
      *
      * @param null|\DateTime $processing_start_time The date and time when the report processing started, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
+     *
+     * @return self
      */
-    public function setProcessingStartTime(?\DateTime $processing_start_time): self
+    public function setProcessingStartTime($processing_start_time)
     {
         if (is_null($processing_start_time)) {
-            array_push($this->openAPINullablesSetToNull, 'processing_start_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('processing_start_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable processing_start_time cannot be null');
         }
         $this->container['processing_start_time'] = $processing_start_time;
 
@@ -603,8 +621,10 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets processing_end_time.
+     *
+     * @return null|\DateTime
      */
-    public function getProcessingEndTime(): ?\DateTime
+    public function getProcessingEndTime()
     {
         return $this->container['processing_end_time'];
     }
@@ -613,18 +633,13 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets processing_end_time.
      *
      * @param null|\DateTime $processing_end_time The date and time when the report processing completed, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
+     *
+     * @return self
      */
-    public function setProcessingEndTime(?\DateTime $processing_end_time): self
+    public function setProcessingEndTime($processing_end_time)
     {
         if (is_null($processing_end_time)) {
-            array_push($this->openAPINullablesSetToNull, 'processing_end_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('processing_end_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable processing_end_time cannot be null');
         }
         $this->container['processing_end_time'] = $processing_end_time;
 
@@ -633,8 +648,10 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets report_document_id.
+     *
+     * @return null|string
      */
-    public function getReportDocumentId(): ?string
+    public function getReportDocumentId()
     {
         return $this->container['report_document_id'];
     }
@@ -643,18 +660,13 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets report_document_id.
      *
      * @param null|string $report_document_id The identifier for the report document. Pass this into the `getReportDocument` operation to get the information you will need to retrieve the report document's contents.
+     *
+     * @return self
      */
-    public function setReportDocumentId(?string $report_document_id): self
+    public function setReportDocumentId($report_document_id)
     {
         if (is_null($report_document_id)) {
-            array_push($this->openAPINullablesSetToNull, 'report_document_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('report_document_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable report_document_id cannot be null');
         }
         $this->container['report_document_id'] = $report_document_id;
 
@@ -679,7 +691,7 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -690,7 +702,7 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -718,15 +730,17 @@ class Report implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

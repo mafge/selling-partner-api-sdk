@@ -2,7 +2,7 @@
 /**
  * PackedQuantity
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * PackedQuantity Class Doc Comment
@@ -52,17 +50,18 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'PackedQuantity';
+    protected static $openAPIModelName = 'PackedQuantity';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'amount' => 'int',
-             'unit_of_measure' => 'string',
-             'unit_size' => 'int'    ];
+    protected static $openAPITypes = [
+        'amount' => 'int',
+        'unit_of_measure' => 'string',
+        'unit_size' => 'int'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,10 +70,11 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'amount' => null,
-            'unit_of_measure' => null,
-            'unit_size' => null    ];
+    protected static $openAPIFormats = [
+        'amount' => null,
+        'unit_of_measure' => null,
+        'unit_size' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -84,7 +84,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'amount' => false,
         'unit_of_measure' => false,
-        'unit_size' => true
+        'unit_size' => false
     ];
 
     /**
@@ -99,7 +99,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -109,7 +109,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -172,11 +172,10 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'amount' => 'amount',
-                'unit_of_measure' => 'unitOfMeasure',
-                'unit_size' => 'unitSize'
-        
+        'unit_of_measure' => 'unitOfMeasure',
+        'unit_size' => 'unitSize'
     ];
 
     /**
@@ -184,7 +183,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'amount' => 'setAmount',
         'unit_of_measure' => 'setUnitOfMeasure',
         'unit_size' => 'setUnitSize'
@@ -195,7 +194,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'amount' => 'getAmount',
         'unit_of_measure' => 'getUnitOfMeasure',
         'unit_size' => 'getUnitSize'
@@ -207,7 +206,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -217,7 +216,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -227,7 +226,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -237,7 +236,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -250,7 +249,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getUnitOfMeasureAllowableValues(): array
+    public function getUnitOfMeasureAllowableValues()
     {
         return [
             self::UNIT_OF_MEASURE_CASES,
@@ -261,17 +260,17 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('amount', $data ?? [], null);
         $this->setIfExists('unit_of_measure', $data ?? [], null);
@@ -301,7 +300,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -329,7 +328,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -340,7 +339,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return int
      */
-    public function getAmount(): int
+    public function getAmount()
     {
         return $this->container['amount'];
     }
@@ -352,7 +351,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setAmount(int $amount): self
+    public function setAmount($amount)
     {
         if (is_null($amount)) {
             throw new \InvalidArgumentException('non-nullable amount cannot be null');
@@ -367,7 +366,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getUnitOfMeasure(): string
+    public function getUnitOfMeasure()
     {
         return $this->container['unit_of_measure'];
     }
@@ -379,7 +378,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUnitOfMeasure(string $unit_of_measure): self
+    public function setUnitOfMeasure($unit_of_measure)
     {
         if (is_null($unit_of_measure)) {
             throw new \InvalidArgumentException('non-nullable unit_of_measure cannot be null');
@@ -404,7 +403,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return int|null
      */
-    public function getUnitSize(): ?int
+    public function getUnitSize()
     {
         return $this->container['unit_size'];
     }
@@ -416,24 +415,15 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setUnitSize(?int $unit_size): self
+    public function setUnitSize($unit_size)
     {
         if (is_null($unit_size)) {
-            array_push($this->openAPINullablesSetToNull, 'unit_size');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('unit_size', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable unit_size cannot be null');
         }
         $this->container['unit_size'] = $unit_size;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -454,7 +444,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -467,7 +457,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -496,7 +486,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -519,7 +509,7 @@ class PackedQuantity implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

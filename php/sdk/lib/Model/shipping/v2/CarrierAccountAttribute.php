@@ -3,7 +3,7 @@
 /**
  * CarrierAccountAttribute.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,18 +52,21 @@ class CarrierAccountAttribute implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CarrierAccountAttribute';
+    protected static $openAPIModelName = 'CarrierAccountAttribute';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'attribute_name' => 'string',
         'property_group' => 'string',
-        'value' => 'string'];
+        'value' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,10 +77,11 @@ class CarrierAccountAttribute implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'attribute_name' => null,
         'property_group' => null,
-        'value' => null];
+        'value' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -86,9 +89,9 @@ class CarrierAccountAttribute implements ModelInterface, \ArrayAccess, \JsonSeri
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'attribute_name' => true,
-        'property_group' => true,
-        'value' => true,
+        'attribute_name' => false,
+        'property_group' => false,
+        'value' => false,
     ];
 
     /**
@@ -104,7 +107,7 @@ class CarrierAccountAttribute implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'attribute_name' => 'attributeName',
         'property_group' => 'propertyGroup',
         'value' => 'value',
@@ -115,7 +118,7 @@ class CarrierAccountAttribute implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'attribute_name' => 'setAttributeName',
         'property_group' => 'setPropertyGroup',
         'value' => 'setValue',
@@ -126,7 +129,7 @@ class CarrierAccountAttribute implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'attribute_name' => 'getAttributeName',
         'property_group' => 'getPropertyGroup',
         'value' => 'getValue',
@@ -134,14 +137,16 @@ class CarrierAccountAttribute implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -165,16 +170,20 @@ class CarrierAccountAttribute implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -198,32 +207,40 @@ class CarrierAccountAttribute implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -233,7 +250,7 @@ class CarrierAccountAttribute implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -244,15 +261,17 @@ class CarrierAccountAttribute implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets attribute_name.
+     *
+     * @return null|string
      */
-    public function getAttributeName(): ?string
+    public function getAttributeName()
     {
         return $this->container['attribute_name'];
     }
@@ -261,18 +280,13 @@ class CarrierAccountAttribute implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets attribute_name.
      *
      * @param null|string $attribute_name attribute Name
+     *
+     * @return self
      */
-    public function setAttributeName(?string $attribute_name): self
+    public function setAttributeName($attribute_name)
     {
         if (is_null($attribute_name)) {
-            array_push($this->openAPINullablesSetToNull, 'attribute_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('attribute_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable attribute_name cannot be null');
         }
         $this->container['attribute_name'] = $attribute_name;
 
@@ -281,8 +295,10 @@ class CarrierAccountAttribute implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets property_group.
+     *
+     * @return null|string
      */
-    public function getPropertyGroup(): ?string
+    public function getPropertyGroup()
     {
         return $this->container['property_group'];
     }
@@ -291,18 +307,13 @@ class CarrierAccountAttribute implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets property_group.
      *
      * @param null|string $property_group property Group
+     *
+     * @return self
      */
-    public function setPropertyGroup(?string $property_group): self
+    public function setPropertyGroup($property_group)
     {
         if (is_null($property_group)) {
-            array_push($this->openAPINullablesSetToNull, 'property_group');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('property_group', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable property_group cannot be null');
         }
         $this->container['property_group'] = $property_group;
 
@@ -311,8 +322,10 @@ class CarrierAccountAttribute implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets value.
+     *
+     * @return null|string
      */
-    public function getValue(): ?string
+    public function getValue()
     {
         return $this->container['value'];
     }
@@ -321,18 +334,13 @@ class CarrierAccountAttribute implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets value.
      *
      * @param null|string $value value
+     *
+     * @return self
      */
-    public function setValue(?string $value): self
+    public function setValue($value)
     {
         if (is_null($value)) {
-            array_push($this->openAPINullablesSetToNull, 'value');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('value', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable value cannot be null');
         }
         $this->container['value'] = $value;
 
@@ -357,7 +365,7 @@ class CarrierAccountAttribute implements ModelInterface, \ArrayAccess, \JsonSeri
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -368,7 +376,7 @@ class CarrierAccountAttribute implements ModelInterface, \ArrayAccess, \JsonSeri
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -396,15 +404,17 @@ class CarrierAccountAttribute implements ModelInterface, \ArrayAccess, \JsonSeri
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

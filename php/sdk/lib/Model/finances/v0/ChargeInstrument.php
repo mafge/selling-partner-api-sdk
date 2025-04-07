@@ -3,7 +3,7 @@
 /**
  * ChargeInstrument.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class ChargeInstrument implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ChargeInstrument';
+    protected static $openAPIModelName = 'ChargeInstrument';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'description' => 'string',
         'tail' => 'string',
-        'amount' => '\SpApi\Model\finances\v0\Currency'];
+        'amount' => '\SpApi\Model\finances\v0\Currency',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class ChargeInstrument implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'description' => null,
         'tail' => null,
-        'amount' => null];
+        'amount' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class ChargeInstrument implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'description' => true,
-        'tail' => true,
-        'amount' => true,
+        'description' => false,
+        'tail' => false,
+        'amount' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class ChargeInstrument implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'description' => 'Description',
         'tail' => 'Tail',
         'amount' => 'Amount',
@@ -114,7 +117,7 @@ class ChargeInstrument implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'description' => 'setDescription',
         'tail' => 'setTail',
         'amount' => 'setAmount',
@@ -125,7 +128,7 @@ class ChargeInstrument implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'description' => 'getDescription',
         'tail' => 'getTail',
         'amount' => 'getAmount',
@@ -133,14 +136,16 @@ class ChargeInstrument implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class ChargeInstrument implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class ChargeInstrument implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class ChargeInstrument implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -243,15 +260,17 @@ class ChargeInstrument implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets description.
+     *
+     * @return null|string
      */
-    public function getDescription(): ?string
+    public function getDescription()
     {
         return $this->container['description'];
     }
@@ -260,18 +279,13 @@ class ChargeInstrument implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets description.
      *
      * @param null|string $description a short description of the charge instrument
+     *
+     * @return self
      */
-    public function setDescription(?string $description): self
+    public function setDescription($description)
     {
         if (is_null($description)) {
-            array_push($this->openAPINullablesSetToNull, 'description');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('description', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable description cannot be null');
         }
         $this->container['description'] = $description;
 
@@ -280,8 +294,10 @@ class ChargeInstrument implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets tail.
+     *
+     * @return null|string
      */
-    public function getTail(): ?string
+    public function getTail()
     {
         return $this->container['tail'];
     }
@@ -290,18 +306,13 @@ class ChargeInstrument implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets tail.
      *
      * @param null|string $tail the account tail (trailing digits) of the charge instrument
+     *
+     * @return self
      */
-    public function setTail(?string $tail): self
+    public function setTail($tail)
     {
         if (is_null($tail)) {
-            array_push($this->openAPINullablesSetToNull, 'tail');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tail', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tail cannot be null');
         }
         $this->container['tail'] = $tail;
 
@@ -310,8 +321,10 @@ class ChargeInstrument implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets amount.
+     *
+     * @return null|Currency
      */
-    public function getAmount(): ?Currency
+    public function getAmount()
     {
         return $this->container['amount'];
     }
@@ -320,18 +333,13 @@ class ChargeInstrument implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets amount.
      *
      * @param null|Currency $amount amount
+     *
+     * @return self
      */
-    public function setAmount(?Currency $amount): self
+    public function setAmount($amount)
     {
         if (is_null($amount)) {
-            array_push($this->openAPINullablesSetToNull, 'amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable amount cannot be null');
         }
         $this->container['amount'] = $amount;
 
@@ -356,7 +364,7 @@ class ChargeInstrument implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -367,7 +375,7 @@ class ChargeInstrument implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -395,15 +403,17 @@ class ChargeInstrument implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

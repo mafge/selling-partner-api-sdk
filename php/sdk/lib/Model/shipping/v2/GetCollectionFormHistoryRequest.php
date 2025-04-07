@@ -3,7 +3,7 @@
 /**
  * GetCollectionFormHistoryRequest.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,20 +52,23 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetCollectionFormHistoryRequest';
+    protected static $openAPIModelName = 'GetCollectionFormHistoryRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'client_reference_details' => '\SpApi\Model\shipping\v2\ClientReferenceDetail[]',
         'max_results' => 'int',
         'carrier_id' => 'string',
         'ship_from_address' => '\SpApi\Model\shipping\v2\Address',
-        'date_range' => '\SpApi\Model\shipping\v2\DateRange'];
+        'date_range' => '\SpApi\Model\shipping\v2\DateRange',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,12 +79,13 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'client_reference_details' => null,
         'max_results' => null,
         'carrier_id' => null,
         'ship_from_address' => null,
-        'date_range' => null];
+        'date_range' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -90,11 +93,11 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'client_reference_details' => true,
-        'max_results' => true,
-        'carrier_id' => true,
-        'ship_from_address' => true,
-        'date_range' => true,
+        'client_reference_details' => false,
+        'max_results' => false,
+        'carrier_id' => false,
+        'ship_from_address' => false,
+        'date_range' => false,
     ];
 
     /**
@@ -110,7 +113,7 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'client_reference_details' => 'clientReferenceDetails',
         'max_results' => 'maxResults',
         'carrier_id' => 'carrierId',
@@ -123,7 +126,7 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'client_reference_details' => 'setClientReferenceDetails',
         'max_results' => 'setMaxResults',
         'carrier_id' => 'setCarrierId',
@@ -136,7 +139,7 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'client_reference_details' => 'getClientReferenceDetails',
         'max_results' => 'getMaxResults',
         'carrier_id' => 'getCarrierId',
@@ -146,14 +149,16 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -179,16 +184,20 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -212,32 +221,40 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -247,7 +264,7 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -258,15 +275,17 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets client_reference_details.
+     *
+     * @return null|ClientReferenceDetail[]
      */
-    public function getClientReferenceDetails(): ?array
+    public function getClientReferenceDetails()
     {
         return $this->container['client_reference_details'];
     }
@@ -274,19 +293,14 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
     /**
      * Sets client_reference_details.
      *
-     * @param null|array $client_reference_details Object to pass additional information about the MCI Integrator shipperType: List of ClientReferenceDetail
+     * @param null|ClientReferenceDetail[] $client_reference_details Object to pass additional information about the MCI Integrator shipperType: List of ClientReferenceDetail
+     *
+     * @return self
      */
-    public function setClientReferenceDetails(?array $client_reference_details): self
+    public function setClientReferenceDetails($client_reference_details)
     {
         if (is_null($client_reference_details)) {
-            array_push($this->openAPINullablesSetToNull, 'client_reference_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('client_reference_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable client_reference_details cannot be null');
         }
         $this->container['client_reference_details'] = $client_reference_details;
 
@@ -295,8 +309,10 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
 
     /**
      * Gets max_results.
+     *
+     * @return null|int
      */
-    public function getMaxResults(): ?int
+    public function getMaxResults()
     {
         return $this->container['max_results'];
     }
@@ -305,18 +321,13 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
      * Sets max_results.
      *
      * @param null|int $max_results max Number of Results for query
+     *
+     * @return self
      */
-    public function setMaxResults(?int $max_results): self
+    public function setMaxResults($max_results)
     {
         if (is_null($max_results)) {
-            array_push($this->openAPINullablesSetToNull, 'max_results');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('max_results', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable max_results cannot be null');
         }
         $this->container['max_results'] = $max_results;
 
@@ -325,8 +336,10 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
 
     /**
      * Gets carrier_id.
+     *
+     * @return null|string
      */
-    public function getCarrierId(): ?string
+    public function getCarrierId()
     {
         return $this->container['carrier_id'];
     }
@@ -335,18 +348,13 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
      * Sets carrier_id.
      *
      * @param null|string $carrier_id the carrier identifier for the offering, provided by the carrier
+     *
+     * @return self
      */
-    public function setCarrierId(?string $carrier_id): self
+    public function setCarrierId($carrier_id)
     {
         if (is_null($carrier_id)) {
-            array_push($this->openAPINullablesSetToNull, 'carrier_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('carrier_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable carrier_id cannot be null');
         }
         $this->container['carrier_id'] = $carrier_id;
 
@@ -355,8 +363,10 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
 
     /**
      * Gets ship_from_address.
+     *
+     * @return null|Address
      */
-    public function getShipFromAddress(): ?Address
+    public function getShipFromAddress()
     {
         return $this->container['ship_from_address'];
     }
@@ -365,18 +375,13 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
      * Sets ship_from_address.
      *
      * @param null|Address $ship_from_address ship_from_address
+     *
+     * @return self
      */
-    public function setShipFromAddress(?Address $ship_from_address): self
+    public function setShipFromAddress($ship_from_address)
     {
         if (is_null($ship_from_address)) {
-            array_push($this->openAPINullablesSetToNull, 'ship_from_address');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ship_from_address', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ship_from_address cannot be null');
         }
         $this->container['ship_from_address'] = $ship_from_address;
 
@@ -385,8 +390,10 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
 
     /**
      * Gets date_range.
+     *
+     * @return null|DateRange
      */
-    public function getDateRange(): ?DateRange
+    public function getDateRange()
     {
         return $this->container['date_range'];
     }
@@ -395,18 +402,13 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
      * Sets date_range.
      *
      * @param null|DateRange $date_range date_range
+     *
+     * @return self
      */
-    public function setDateRange(?DateRange $date_range): self
+    public function setDateRange($date_range)
     {
         if (is_null($date_range)) {
-            array_push($this->openAPINullablesSetToNull, 'date_range');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('date_range', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable date_range cannot be null');
         }
         $this->container['date_range'] = $date_range;
 
@@ -431,7 +433,7 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -442,7 +444,7 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -470,15 +472,17 @@ class GetCollectionFormHistoryRequest implements ModelInterface, \ArrayAccess, \
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

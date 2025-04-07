@@ -2,7 +2,7 @@
 /**
  * Shipment
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * Shipment Class Doc Comment
@@ -52,34 +50,35 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'Shipment';
+    protected static $openAPIModelName = 'Shipment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'vendor_shipment_identifier' => 'string',
-             'transaction_type' => 'string',
-             'buyer_reference_number' => 'string',
-             'transaction_date' => '\DateTime',
-             'current_shipment_status' => 'string',
-             'currentshipment_status_date' => '\DateTime',
-             'shipment_status_details' => '\SpApi\Model\vendor\shipments\v1\ShipmentStatusDetails[]',
-             'shipment_create_date' => '\DateTime',
-             'shipment_confirm_date' => '\DateTime',
-             'package_label_create_date' => '\DateTime',
-             'shipment_freight_term' => 'string',
-             'selling_party' => '\SpApi\Model\vendor\shipments\v1\PartyIdentification',
-             'ship_from_party' => '\SpApi\Model\vendor\shipments\v1\PartyIdentification',
-             'ship_to_party' => '\SpApi\Model\vendor\shipments\v1\PartyIdentification',
-             'shipment_measurements' => '\SpApi\Model\vendor\shipments\v1\TransportShipmentMeasurements',
-             'collect_freight_pickup_details' => '\SpApi\Model\vendor\shipments\v1\CollectFreightPickupDetails',
-             'purchase_orders' => '\SpApi\Model\vendor\shipments\v1\PurchaseOrders[]',
-             'import_details' => '\SpApi\Model\vendor\shipments\v1\ImportDetails',
-             'containers' => '\SpApi\Model\vendor\shipments\v1\Containers[]',
-             'transportation_details' => '\SpApi\Model\vendor\shipments\v1\TransportationDetails'    ];
+    protected static $openAPITypes = [
+        'vendor_shipment_identifier' => 'string',
+        'transaction_type' => 'string',
+        'buyer_reference_number' => 'string',
+        'transaction_date' => '\DateTime',
+        'current_shipment_status' => 'string',
+        'currentshipment_status_date' => '\DateTime',
+        'shipment_status_details' => '\SpApi\Model\vendor\shipments\v1\ShipmentStatusDetails[]',
+        'shipment_create_date' => '\DateTime',
+        'shipment_confirm_date' => '\DateTime',
+        'package_label_create_date' => '\DateTime',
+        'shipment_freight_term' => 'string',
+        'selling_party' => '\SpApi\Model\vendor\shipments\v1\PartyIdentification',
+        'ship_from_party' => '\SpApi\Model\vendor\shipments\v1\PartyIdentification',
+        'ship_to_party' => '\SpApi\Model\vendor\shipments\v1\PartyIdentification',
+        'shipment_measurements' => '\SpApi\Model\vendor\shipments\v1\TransportShipmentMeasurements',
+        'collect_freight_pickup_details' => '\SpApi\Model\vendor\shipments\v1\CollectFreightPickupDetails',
+        'purchase_orders' => '\SpApi\Model\vendor\shipments\v1\PurchaseOrders[]',
+        'import_details' => '\SpApi\Model\vendor\shipments\v1\ImportDetails',
+        'containers' => '\SpApi\Model\vendor\shipments\v1\Containers[]',
+        'transportation_details' => '\SpApi\Model\vendor\shipments\v1\TransportationDetails'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -88,27 +87,28 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'vendor_shipment_identifier' => null,
-            'transaction_type' => null,
-            'buyer_reference_number' => null,
-            'transaction_date' => 'date-time',
-            'current_shipment_status' => null,
-            'currentshipment_status_date' => 'date-time',
-            'shipment_status_details' => null,
-            'shipment_create_date' => 'date-time',
-            'shipment_confirm_date' => 'date-time',
-            'package_label_create_date' => 'date-time',
-            'shipment_freight_term' => null,
-            'selling_party' => null,
-            'ship_from_party' => null,
-            'ship_to_party' => null,
-            'shipment_measurements' => null,
-            'collect_freight_pickup_details' => null,
-            'purchase_orders' => null,
-            'import_details' => null,
-            'containers' => null,
-            'transportation_details' => null    ];
+    protected static $openAPIFormats = [
+        'vendor_shipment_identifier' => null,
+        'transaction_type' => null,
+        'buyer_reference_number' => null,
+        'transaction_date' => 'date-time',
+        'current_shipment_status' => null,
+        'currentshipment_status_date' => 'date-time',
+        'shipment_status_details' => null,
+        'shipment_create_date' => 'date-time',
+        'shipment_confirm_date' => 'date-time',
+        'package_label_create_date' => 'date-time',
+        'shipment_freight_term' => null,
+        'selling_party' => null,
+        'ship_from_party' => null,
+        'ship_to_party' => null,
+        'shipment_measurements' => null,
+        'collect_freight_pickup_details' => null,
+        'purchase_orders' => null,
+        'import_details' => null,
+        'containers' => null,
+        'transportation_details' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -118,24 +118,24 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'vendor_shipment_identifier' => false,
         'transaction_type' => false,
-        'buyer_reference_number' => true,
+        'buyer_reference_number' => false,
         'transaction_date' => false,
-        'current_shipment_status' => true,
-        'currentshipment_status_date' => true,
-        'shipment_status_details' => true,
-        'shipment_create_date' => true,
-        'shipment_confirm_date' => true,
-        'package_label_create_date' => true,
-        'shipment_freight_term' => true,
+        'current_shipment_status' => false,
+        'currentshipment_status_date' => false,
+        'shipment_status_details' => false,
+        'shipment_create_date' => false,
+        'shipment_confirm_date' => false,
+        'package_label_create_date' => false,
+        'shipment_freight_term' => false,
         'selling_party' => false,
         'ship_from_party' => false,
         'ship_to_party' => false,
-        'shipment_measurements' => true,
-        'collect_freight_pickup_details' => true,
-        'purchase_orders' => true,
-        'import_details' => true,
-        'containers' => true,
-        'transportation_details' => true
+        'shipment_measurements' => false,
+        'collect_freight_pickup_details' => false,
+        'purchase_orders' => false,
+        'import_details' => false,
+        'containers' => false,
+        'transportation_details' => false
     ];
 
     /**
@@ -150,7 +150,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -160,7 +160,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -223,28 +223,27 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'vendor_shipment_identifier' => 'vendorShipmentIdentifier',
-                'transaction_type' => 'transactionType',
-                'buyer_reference_number' => 'buyerReferenceNumber',
-                'transaction_date' => 'transactionDate',
-                'current_shipment_status' => 'currentShipmentStatus',
-                'currentshipment_status_date' => 'currentshipmentStatusDate',
-                'shipment_status_details' => 'shipmentStatusDetails',
-                'shipment_create_date' => 'shipmentCreateDate',
-                'shipment_confirm_date' => 'shipmentConfirmDate',
-                'package_label_create_date' => 'packageLabelCreateDate',
-                'shipment_freight_term' => 'shipmentFreightTerm',
-                'selling_party' => 'sellingParty',
-                'ship_from_party' => 'shipFromParty',
-                'ship_to_party' => 'shipToParty',
-                'shipment_measurements' => 'shipmentMeasurements',
-                'collect_freight_pickup_details' => 'collectFreightPickupDetails',
-                'purchase_orders' => 'purchaseOrders',
-                'import_details' => 'importDetails',
-                'containers' => 'containers',
-                'transportation_details' => 'transportationDetails'
-        
+        'transaction_type' => 'transactionType',
+        'buyer_reference_number' => 'buyerReferenceNumber',
+        'transaction_date' => 'transactionDate',
+        'current_shipment_status' => 'currentShipmentStatus',
+        'currentshipment_status_date' => 'currentshipmentStatusDate',
+        'shipment_status_details' => 'shipmentStatusDetails',
+        'shipment_create_date' => 'shipmentCreateDate',
+        'shipment_confirm_date' => 'shipmentConfirmDate',
+        'package_label_create_date' => 'packageLabelCreateDate',
+        'shipment_freight_term' => 'shipmentFreightTerm',
+        'selling_party' => 'sellingParty',
+        'ship_from_party' => 'shipFromParty',
+        'ship_to_party' => 'shipToParty',
+        'shipment_measurements' => 'shipmentMeasurements',
+        'collect_freight_pickup_details' => 'collectFreightPickupDetails',
+        'purchase_orders' => 'purchaseOrders',
+        'import_details' => 'importDetails',
+        'containers' => 'containers',
+        'transportation_details' => 'transportationDetails'
     ];
 
     /**
@@ -252,7 +251,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'vendor_shipment_identifier' => 'setVendorShipmentIdentifier',
         'transaction_type' => 'setTransactionType',
         'buyer_reference_number' => 'setBuyerReferenceNumber',
@@ -280,7 +279,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'vendor_shipment_identifier' => 'getVendorShipmentIdentifier',
         'transaction_type' => 'getTransactionType',
         'buyer_reference_number' => 'getBuyerReferenceNumber',
@@ -309,7 +308,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -319,7 +318,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -329,7 +328,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -339,7 +338,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -358,7 +357,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getTransactionTypeAllowableValues(): array
+    public function getTransactionTypeAllowableValues()
     {
         return [
             self::TRANSACTION_TYPE__NEW,
@@ -371,7 +370,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getCurrentShipmentStatusAllowableValues(): array
+    public function getCurrentShipmentStatusAllowableValues()
     {
         return [
             self::CURRENT_SHIPMENT_STATUS_CREATED,
@@ -386,7 +385,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getShipmentFreightTermAllowableValues(): array
+    public function getShipmentFreightTermAllowableValues()
     {
         return [
             self::SHIPMENT_FREIGHT_TERM_COLLECT,
@@ -397,17 +396,17 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('vendor_shipment_identifier', $data ?? [], null);
         $this->setIfExists('transaction_type', $data ?? [], null);
@@ -454,7 +453,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -512,7 +511,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -523,7 +522,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getVendorShipmentIdentifier(): string
+    public function getVendorShipmentIdentifier()
     {
         return $this->container['vendor_shipment_identifier'];
     }
@@ -535,7 +534,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setVendorShipmentIdentifier(string $vendor_shipment_identifier): self
+    public function setVendorShipmentIdentifier($vendor_shipment_identifier)
     {
         if (is_null($vendor_shipment_identifier)) {
             throw new \InvalidArgumentException('non-nullable vendor_shipment_identifier cannot be null');
@@ -550,7 +549,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getTransactionType(): string
+    public function getTransactionType()
     {
         return $this->container['transaction_type'];
     }
@@ -562,7 +561,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTransactionType(string $transaction_type): self
+    public function setTransactionType($transaction_type)
     {
         if (is_null($transaction_type)) {
             throw new \InvalidArgumentException('non-nullable transaction_type cannot be null');
@@ -587,7 +586,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getBuyerReferenceNumber(): ?string
+    public function getBuyerReferenceNumber()
     {
         return $this->container['buyer_reference_number'];
     }
@@ -599,17 +598,10 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setBuyerReferenceNumber(?string $buyer_reference_number): self
+    public function setBuyerReferenceNumber($buyer_reference_number)
     {
         if (is_null($buyer_reference_number)) {
-            array_push($this->openAPINullablesSetToNull, 'buyer_reference_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('buyer_reference_number', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable buyer_reference_number cannot be null');
         }
         $this->container['buyer_reference_number'] = $buyer_reference_number;
 
@@ -621,7 +613,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime
      */
-    public function getTransactionDate(): \DateTime
+    public function getTransactionDate()
     {
         return $this->container['transaction_date'];
     }
@@ -633,7 +625,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTransactionDate(\DateTime $transaction_date): self
+    public function setTransactionDate($transaction_date)
     {
         if (is_null($transaction_date)) {
             throw new \InvalidArgumentException('non-nullable transaction_date cannot be null');
@@ -648,7 +640,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getCurrentShipmentStatus(): ?string
+    public function getCurrentShipmentStatus()
     {
         return $this->container['current_shipment_status'];
     }
@@ -660,20 +652,13 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCurrentShipmentStatus(?string $current_shipment_status): self
+    public function setCurrentShipmentStatus($current_shipment_status)
     {
         if (is_null($current_shipment_status)) {
-            array_push($this->openAPINullablesSetToNull, 'current_shipment_status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('current_shipment_status', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable current_shipment_status cannot be null');
         }
         $allowedValues = $this->getCurrentShipmentStatusAllowableValues();
-        if (!is_null($current_shipment_status) && !in_array($current_shipment_status, $allowedValues, true)) {
+        if (!in_array($current_shipment_status, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'current_shipment_status', must be one of '%s'",
@@ -692,7 +677,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime|null
      */
-    public function getCurrentshipmentStatusDate(): ?\DateTime
+    public function getCurrentshipmentStatusDate()
     {
         return $this->container['currentshipment_status_date'];
     }
@@ -704,17 +689,10 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCurrentshipmentStatusDate(?\DateTime $currentshipment_status_date): self
+    public function setCurrentshipmentStatusDate($currentshipment_status_date)
     {
         if (is_null($currentshipment_status_date)) {
-            array_push($this->openAPINullablesSetToNull, 'currentshipment_status_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('currentshipment_status_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable currentshipment_status_date cannot be null');
         }
         $this->container['currentshipment_status_date'] = $currentshipment_status_date;
 
@@ -724,9 +702,9 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets shipment_status_details
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\shipments\v1\ShipmentStatusDetails[]|null
      */
-    public function getShipmentStatusDetails(): ?array
+    public function getShipmentStatusDetails()
     {
         return $this->container['shipment_status_details'];
     }
@@ -734,21 +712,14 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets shipment_status_details
      *
-     * @param array|null $shipment_status_details Indicates the list of current shipment status details and when the last update was received from carrier this is available on shipment Details response.
+     * @param \SpApi\Model\vendor\shipments\v1\ShipmentStatusDetails[]|null $shipment_status_details Indicates the list of current shipment status details and when the last update was received from carrier this is available on shipment Details response.
      *
      * @return self
      */
-    public function setShipmentStatusDetails(?array $shipment_status_details): self
+    public function setShipmentStatusDetails($shipment_status_details)
     {
         if (is_null($shipment_status_details)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_status_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_status_details', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_status_details cannot be null');
         }
         $this->container['shipment_status_details'] = $shipment_status_details;
 
@@ -760,7 +731,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime|null
      */
-    public function getShipmentCreateDate(): ?\DateTime
+    public function getShipmentCreateDate()
     {
         return $this->container['shipment_create_date'];
     }
@@ -772,17 +743,10 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShipmentCreateDate(?\DateTime $shipment_create_date): self
+    public function setShipmentCreateDate($shipment_create_date)
     {
         if (is_null($shipment_create_date)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_create_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_create_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_create_date cannot be null');
         }
         $this->container['shipment_create_date'] = $shipment_create_date;
 
@@ -794,7 +758,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime|null
      */
-    public function getShipmentConfirmDate(): ?\DateTime
+    public function getShipmentConfirmDate()
     {
         return $this->container['shipment_confirm_date'];
     }
@@ -806,17 +770,10 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShipmentConfirmDate(?\DateTime $shipment_confirm_date): self
+    public function setShipmentConfirmDate($shipment_confirm_date)
     {
         if (is_null($shipment_confirm_date)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_confirm_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_confirm_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_confirm_date cannot be null');
         }
         $this->container['shipment_confirm_date'] = $shipment_confirm_date;
 
@@ -828,7 +785,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime|null
      */
-    public function getPackageLabelCreateDate(): ?\DateTime
+    public function getPackageLabelCreateDate()
     {
         return $this->container['package_label_create_date'];
     }
@@ -840,17 +797,10 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setPackageLabelCreateDate(?\DateTime $package_label_create_date): self
+    public function setPackageLabelCreateDate($package_label_create_date)
     {
         if (is_null($package_label_create_date)) {
-            array_push($this->openAPINullablesSetToNull, 'package_label_create_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('package_label_create_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable package_label_create_date cannot be null');
         }
         $this->container['package_label_create_date'] = $package_label_create_date;
 
@@ -862,7 +812,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getShipmentFreightTerm(): ?string
+    public function getShipmentFreightTerm()
     {
         return $this->container['shipment_freight_term'];
     }
@@ -874,20 +824,13 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShipmentFreightTerm(?string $shipment_freight_term): self
+    public function setShipmentFreightTerm($shipment_freight_term)
     {
         if (is_null($shipment_freight_term)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_freight_term');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_freight_term', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_freight_term cannot be null');
         }
         $allowedValues = $this->getShipmentFreightTermAllowableValues();
-        if (!is_null($shipment_freight_term) && !in_array($shipment_freight_term, $allowedValues, true)) {
+        if (!in_array($shipment_freight_term, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'shipment_freight_term', must be one of '%s'",
@@ -906,7 +849,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\shipments\v1\PartyIdentification
      */
-    public function getSellingParty(): \SpApi\Model\vendor\shipments\v1\PartyIdentification
+    public function getSellingParty()
     {
         return $this->container['selling_party'];
     }
@@ -918,7 +861,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSellingParty(\SpApi\Model\vendor\shipments\v1\PartyIdentification $selling_party): self
+    public function setSellingParty($selling_party)
     {
         if (is_null($selling_party)) {
             throw new \InvalidArgumentException('non-nullable selling_party cannot be null');
@@ -933,7 +876,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\shipments\v1\PartyIdentification
      */
-    public function getShipFromParty(): \SpApi\Model\vendor\shipments\v1\PartyIdentification
+    public function getShipFromParty()
     {
         return $this->container['ship_from_party'];
     }
@@ -945,7 +888,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShipFromParty(\SpApi\Model\vendor\shipments\v1\PartyIdentification $ship_from_party): self
+    public function setShipFromParty($ship_from_party)
     {
         if (is_null($ship_from_party)) {
             throw new \InvalidArgumentException('non-nullable ship_from_party cannot be null');
@@ -960,7 +903,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\shipments\v1\PartyIdentification
      */
-    public function getShipToParty(): \SpApi\Model\vendor\shipments\v1\PartyIdentification
+    public function getShipToParty()
     {
         return $this->container['ship_to_party'];
     }
@@ -972,7 +915,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShipToParty(\SpApi\Model\vendor\shipments\v1\PartyIdentification $ship_to_party): self
+    public function setShipToParty($ship_to_party)
     {
         if (is_null($ship_to_party)) {
             throw new \InvalidArgumentException('non-nullable ship_to_party cannot be null');
@@ -987,7 +930,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\shipments\v1\TransportShipmentMeasurements|null
      */
-    public function getShipmentMeasurements(): ?\SpApi\Model\vendor\shipments\v1\TransportShipmentMeasurements
+    public function getShipmentMeasurements()
     {
         return $this->container['shipment_measurements'];
     }
@@ -999,17 +942,10 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShipmentMeasurements(?\SpApi\Model\vendor\shipments\v1\TransportShipmentMeasurements $shipment_measurements): self
+    public function setShipmentMeasurements($shipment_measurements)
     {
         if (is_null($shipment_measurements)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_measurements');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_measurements', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_measurements cannot be null');
         }
         $this->container['shipment_measurements'] = $shipment_measurements;
 
@@ -1021,7 +957,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\shipments\v1\CollectFreightPickupDetails|null
      */
-    public function getCollectFreightPickupDetails(): ?\SpApi\Model\vendor\shipments\v1\CollectFreightPickupDetails
+    public function getCollectFreightPickupDetails()
     {
         return $this->container['collect_freight_pickup_details'];
     }
@@ -1033,17 +969,10 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setCollectFreightPickupDetails(?\SpApi\Model\vendor\shipments\v1\CollectFreightPickupDetails $collect_freight_pickup_details): self
+    public function setCollectFreightPickupDetails($collect_freight_pickup_details)
     {
         if (is_null($collect_freight_pickup_details)) {
-            array_push($this->openAPINullablesSetToNull, 'collect_freight_pickup_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('collect_freight_pickup_details', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable collect_freight_pickup_details cannot be null');
         }
         $this->container['collect_freight_pickup_details'] = $collect_freight_pickup_details;
 
@@ -1053,9 +982,9 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets purchase_orders
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\shipments\v1\PurchaseOrders[]|null
      */
-    public function getPurchaseOrders(): ?array
+    public function getPurchaseOrders()
     {
         return $this->container['purchase_orders'];
     }
@@ -1063,21 +992,14 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets purchase_orders
      *
-     * @param array|null $purchase_orders Indicates the purchase orders involved for the transportation request. This group is an array create 1 for each PO and list their corresponding items. This information is used for deciding the route,truck allocation and storage efficiently. This is a mandatory information for Buyer performing transportation from vendor warehouse (WePay/Collect)
+     * @param \SpApi\Model\vendor\shipments\v1\PurchaseOrders[]|null $purchase_orders Indicates the purchase orders involved for the transportation request. This group is an array create 1 for each PO and list their corresponding items. This information is used for deciding the route,truck allocation and storage efficiently. This is a mandatory information for Buyer performing transportation from vendor warehouse (WePay/Collect)
      *
      * @return self
      */
-    public function setPurchaseOrders(?array $purchase_orders): self
+    public function setPurchaseOrders($purchase_orders)
     {
         if (is_null($purchase_orders)) {
-            array_push($this->openAPINullablesSetToNull, 'purchase_orders');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('purchase_orders', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable purchase_orders cannot be null');
         }
         $this->container['purchase_orders'] = $purchase_orders;
 
@@ -1089,7 +1011,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\shipments\v1\ImportDetails|null
      */
-    public function getImportDetails(): ?\SpApi\Model\vendor\shipments\v1\ImportDetails
+    public function getImportDetails()
     {
         return $this->container['import_details'];
     }
@@ -1101,17 +1023,10 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setImportDetails(?\SpApi\Model\vendor\shipments\v1\ImportDetails $import_details): self
+    public function setImportDetails($import_details)
     {
         if (is_null($import_details)) {
-            array_push($this->openAPINullablesSetToNull, 'import_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('import_details', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable import_details cannot be null');
         }
         $this->container['import_details'] = $import_details;
 
@@ -1121,9 +1036,9 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets containers
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\shipments\v1\Containers[]|null
      */
-    public function getContainers(): ?array
+    public function getContainers()
     {
         return $this->container['containers'];
     }
@@ -1131,21 +1046,14 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets containers
      *
-     * @param array|null $containers A list of the items in this transportation and their associated inner container details. If any of the item detail fields are common at a carton or a pallet level, provide them at the corresponding carton or pallet level.
+     * @param \SpApi\Model\vendor\shipments\v1\Containers[]|null $containers A list of the items in this transportation and their associated inner container details. If any of the item detail fields are common at a carton or a pallet level, provide them at the corresponding carton or pallet level.
      *
      * @return self
      */
-    public function setContainers(?array $containers): self
+    public function setContainers($containers)
     {
         if (is_null($containers)) {
-            array_push($this->openAPINullablesSetToNull, 'containers');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('containers', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable containers cannot be null');
         }
         $this->container['containers'] = $containers;
 
@@ -1157,7 +1065,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\shipments\v1\TransportationDetails|null
      */
-    public function getTransportationDetails(): ?\SpApi\Model\vendor\shipments\v1\TransportationDetails
+    public function getTransportationDetails()
     {
         return $this->container['transportation_details'];
     }
@@ -1169,24 +1077,15 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setTransportationDetails(?\SpApi\Model\vendor\shipments\v1\TransportationDetails $transportation_details): self
+    public function setTransportationDetails($transportation_details)
     {
         if (is_null($transportation_details)) {
-            array_push($this->openAPINullablesSetToNull, 'transportation_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transportation_details', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transportation_details cannot be null');
         }
         $this->container['transportation_details'] = $transportation_details;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -1207,7 +1106,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -1220,7 +1119,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -1249,7 +1148,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -1272,7 +1171,7 @@ class Shipment implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

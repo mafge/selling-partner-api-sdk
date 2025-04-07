@@ -3,7 +3,7 @@
 /**
  * RetrochargeEvent.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\finances\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,22 +51,25 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'RetrochargeEvent';
+    protected static $openAPIModelName = 'RetrochargeEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'retrocharge_event_type' => 'string',
         'amazon_order_id' => 'string',
         'posted_date' => '\DateTime',
         'base_tax' => '\SpApi\Model\finances\v0\Currency',
         'shipping_tax' => '\SpApi\Model\finances\v0\Currency',
         'marketplace_name' => 'string',
-        'retrocharge_tax_withheld_list' => '\SpApi\Model\finances\v0\TaxWithheldComponent[]'];
+        'retrocharge_tax_withheld_list' => '\SpApi\Model\finances\v0\TaxWithheldComponent[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -78,14 +80,15 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'retrocharge_event_type' => null,
         'amazon_order_id' => null,
         'posted_date' => 'date-time',
         'base_tax' => null,
         'shipping_tax' => null,
         'marketplace_name' => null,
-        'retrocharge_tax_withheld_list' => null];
+        'retrocharge_tax_withheld_list' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -93,13 +96,13 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'retrocharge_event_type' => true,
-        'amazon_order_id' => true,
-        'posted_date' => true,
-        'base_tax' => true,
-        'shipping_tax' => true,
-        'marketplace_name' => true,
-        'retrocharge_tax_withheld_list' => true,
+        'retrocharge_event_type' => false,
+        'amazon_order_id' => false,
+        'posted_date' => false,
+        'base_tax' => false,
+        'shipping_tax' => false,
+        'marketplace_name' => false,
+        'retrocharge_tax_withheld_list' => false,
     ];
 
     /**
@@ -115,7 +118,7 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'retrocharge_event_type' => 'RetrochargeEventType',
         'amazon_order_id' => 'AmazonOrderId',
         'posted_date' => 'PostedDate',
@@ -130,7 +133,7 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'retrocharge_event_type' => 'setRetrochargeEventType',
         'amazon_order_id' => 'setAmazonOrderId',
         'posted_date' => 'setPostedDate',
@@ -145,7 +148,7 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'retrocharge_event_type' => 'getRetrochargeEventType',
         'amazon_order_id' => 'getAmazonOrderId',
         'posted_date' => 'getPostedDate',
@@ -157,14 +160,16 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -192,16 +197,20 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -225,32 +234,40 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -260,7 +277,7 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -271,15 +288,17 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets retrocharge_event_type.
+     *
+     * @return null|string
      */
-    public function getRetrochargeEventType(): ?string
+    public function getRetrochargeEventType()
     {
         return $this->container['retrocharge_event_type'];
     }
@@ -288,18 +307,13 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets retrocharge_event_type.
      *
      * @param null|string $retrocharge_event_type The type of event.  Possible values:  * Retrocharge  * RetrochargeReversal
+     *
+     * @return self
      */
-    public function setRetrochargeEventType(?string $retrocharge_event_type): self
+    public function setRetrochargeEventType($retrocharge_event_type)
     {
         if (is_null($retrocharge_event_type)) {
-            array_push($this->openAPINullablesSetToNull, 'retrocharge_event_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('retrocharge_event_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable retrocharge_event_type cannot be null');
         }
         $this->container['retrocharge_event_type'] = $retrocharge_event_type;
 
@@ -308,8 +322,10 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets amazon_order_id.
+     *
+     * @return null|string
      */
-    public function getAmazonOrderId(): ?string
+    public function getAmazonOrderId()
     {
         return $this->container['amazon_order_id'];
     }
@@ -318,18 +334,13 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets amazon_order_id.
      *
      * @param null|string $amazon_order_id an Amazon-defined identifier for an order
+     *
+     * @return self
      */
-    public function setAmazonOrderId(?string $amazon_order_id): self
+    public function setAmazonOrderId($amazon_order_id)
     {
         if (is_null($amazon_order_id)) {
-            array_push($this->openAPINullablesSetToNull, 'amazon_order_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amazon_order_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable amazon_order_id cannot be null');
         }
         $this->container['amazon_order_id'] = $amazon_order_id;
 
@@ -338,8 +349,10 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTime
      */
-    public function getPostedDate(): ?\DateTime
+    public function getPostedDate()
     {
         return $this->container['posted_date'];
     }
@@ -348,18 +361,13 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets posted_date.
      *
      * @param null|\DateTime $posted_date fields with a schema type of date are in ISO 8601 date time format (for example GroupBeginDate)
+     *
+     * @return self
      */
-    public function setPostedDate(?\DateTime $posted_date): self
+    public function setPostedDate($posted_date)
     {
         if (is_null($posted_date)) {
-            array_push($this->openAPINullablesSetToNull, 'posted_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('posted_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable posted_date cannot be null');
         }
         $this->container['posted_date'] = $posted_date;
 
@@ -368,8 +376,10 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets base_tax.
+     *
+     * @return null|Currency
      */
-    public function getBaseTax(): ?Currency
+    public function getBaseTax()
     {
         return $this->container['base_tax'];
     }
@@ -378,18 +388,13 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets base_tax.
      *
      * @param null|Currency $base_tax base_tax
+     *
+     * @return self
      */
-    public function setBaseTax(?Currency $base_tax): self
+    public function setBaseTax($base_tax)
     {
         if (is_null($base_tax)) {
-            array_push($this->openAPINullablesSetToNull, 'base_tax');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('base_tax', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable base_tax cannot be null');
         }
         $this->container['base_tax'] = $base_tax;
 
@@ -398,8 +403,10 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets shipping_tax.
+     *
+     * @return null|Currency
      */
-    public function getShippingTax(): ?Currency
+    public function getShippingTax()
     {
         return $this->container['shipping_tax'];
     }
@@ -408,18 +415,13 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets shipping_tax.
      *
      * @param null|Currency $shipping_tax shipping_tax
+     *
+     * @return self
      */
-    public function setShippingTax(?Currency $shipping_tax): self
+    public function setShippingTax($shipping_tax)
     {
         if (is_null($shipping_tax)) {
-            array_push($this->openAPINullablesSetToNull, 'shipping_tax');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipping_tax', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipping_tax cannot be null');
         }
         $this->container['shipping_tax'] = $shipping_tax;
 
@@ -428,8 +430,10 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets marketplace_name.
+     *
+     * @return null|string
      */
-    public function getMarketplaceName(): ?string
+    public function getMarketplaceName()
     {
         return $this->container['marketplace_name'];
     }
@@ -438,18 +442,13 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * Sets marketplace_name.
      *
      * @param null|string $marketplace_name the name of the marketplace where the retrocharge event occurred
+     *
+     * @return self
      */
-    public function setMarketplaceName(?string $marketplace_name): self
+    public function setMarketplaceName($marketplace_name)
     {
         if (is_null($marketplace_name)) {
-            array_push($this->openAPINullablesSetToNull, 'marketplace_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('marketplace_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable marketplace_name cannot be null');
         }
         $this->container['marketplace_name'] = $marketplace_name;
 
@@ -458,8 +457,10 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets retrocharge_tax_withheld_list.
+     *
+     * @return null|TaxWithheldComponent[]
      */
-    public function getRetrochargeTaxWithheldList(): ?array
+    public function getRetrochargeTaxWithheldList()
     {
         return $this->container['retrocharge_tax_withheld_list'];
     }
@@ -467,19 +468,14 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
     /**
      * Sets retrocharge_tax_withheld_list.
      *
-     * @param null|array $retrocharge_tax_withheld_list a list of information about taxes withheld
+     * @param null|TaxWithheldComponent[] $retrocharge_tax_withheld_list a list of information about taxes withheld
+     *
+     * @return self
      */
-    public function setRetrochargeTaxWithheldList(?array $retrocharge_tax_withheld_list): self
+    public function setRetrochargeTaxWithheldList($retrocharge_tax_withheld_list)
     {
         if (is_null($retrocharge_tax_withheld_list)) {
-            array_push($this->openAPINullablesSetToNull, 'retrocharge_tax_withheld_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('retrocharge_tax_withheld_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable retrocharge_tax_withheld_list cannot be null');
         }
         $this->container['retrocharge_tax_withheld_list'] = $retrocharge_tax_withheld_list;
 
@@ -504,7 +500,7 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -515,7 +511,7 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -543,15 +539,17 @@ class RetrochargeEvent implements ModelInterface, \ArrayAccess, \JsonSerializabl
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

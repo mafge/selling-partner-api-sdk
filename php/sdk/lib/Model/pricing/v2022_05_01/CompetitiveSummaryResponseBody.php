@@ -3,7 +3,7 @@
 /**
  * CompetitiveSummaryResponseBody.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\pricing\v2022_05_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,21 +51,24 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'CompetitiveSummaryResponseBody';
+    protected static $openAPIModelName = 'CompetitiveSummaryResponseBody';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'asin' => 'string',
         'marketplace_id' => 'string',
         'featured_buying_options' => '\SpApi\Model\pricing\v2022_05_01\FeaturedBuyingOption[]',
         'lowest_priced_offers' => '\SpApi\Model\pricing\v2022_05_01\LowestPricedOffer[]',
         'reference_prices' => '\SpApi\Model\pricing\v2022_05_01\ReferencePrice[]',
-        'errors' => '\SpApi\Model\pricing\v2022_05_01\Error[]'];
+        'errors' => '\SpApi\Model\pricing\v2022_05_01\Error[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -77,13 +79,14 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'asin' => null,
         'marketplace_id' => null,
         'featured_buying_options' => null,
         'lowest_priced_offers' => null,
         'reference_prices' => null,
-        'errors' => null];
+        'errors' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -93,10 +96,10 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
     protected static array $openAPINullables = [
         'asin' => false,
         'marketplace_id' => false,
-        'featured_buying_options' => true,
-        'lowest_priced_offers' => true,
-        'reference_prices' => true,
-        'errors' => true,
+        'featured_buying_options' => false,
+        'lowest_priced_offers' => false,
+        'reference_prices' => false,
+        'errors' => false,
     ];
 
     /**
@@ -112,7 +115,7 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'asin' => 'asin',
         'marketplace_id' => 'marketplaceId',
         'featured_buying_options' => 'featuredBuyingOptions',
@@ -126,7 +129,7 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'asin' => 'setAsin',
         'marketplace_id' => 'setMarketplaceId',
         'featured_buying_options' => 'setFeaturedBuyingOptions',
@@ -140,7 +143,7 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'asin' => 'getAsin',
         'marketplace_id' => 'getMarketplaceId',
         'featured_buying_options' => 'getFeaturedBuyingOptions',
@@ -151,14 +154,16 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -185,16 +190,20 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -218,32 +227,40 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -253,7 +270,7 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -273,15 +290,17 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets asin.
+     *
+     * @return string
      */
-    public function getAsin(): string
+    public function getAsin()
     {
         return $this->container['asin'];
     }
@@ -290,8 +309,10 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
      * Sets asin.
      *
      * @param string $asin the ASIN of the item
+     *
+     * @return self
      */
-    public function setAsin(string $asin): self
+    public function setAsin($asin)
     {
         if (is_null($asin)) {
             throw new \InvalidArgumentException('non-nullable asin cannot be null');
@@ -303,8 +324,10 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
-    public function getMarketplaceId(): string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -313,8 +336,10 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
      * Sets marketplace_id.
      *
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which data is returned.
+     *
+     * @return self
      */
-    public function setMarketplaceId(string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
             throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
@@ -326,8 +351,10 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets featured_buying_options.
+     *
+     * @return null|FeaturedBuyingOption[]
      */
-    public function getFeaturedBuyingOptions(): ?array
+    public function getFeaturedBuyingOptions()
     {
         return $this->container['featured_buying_options'];
     }
@@ -335,19 +362,14 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
     /**
      * Sets featured_buying_options.
      *
-     * @param null|array $featured_buying_options a list of featured buying options for the specified ASIN `marketplaceId` combination
+     * @param null|FeaturedBuyingOption[] $featured_buying_options a list of featured buying options for the specified ASIN `marketplaceId` combination
+     *
+     * @return self
      */
-    public function setFeaturedBuyingOptions(?array $featured_buying_options): self
+    public function setFeaturedBuyingOptions($featured_buying_options)
     {
         if (is_null($featured_buying_options)) {
-            array_push($this->openAPINullablesSetToNull, 'featured_buying_options');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('featured_buying_options', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable featured_buying_options cannot be null');
         }
         $this->container['featured_buying_options'] = $featured_buying_options;
 
@@ -356,8 +378,10 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets lowest_priced_offers.
+     *
+     * @return null|LowestPricedOffer[]
      */
-    public function getLowestPricedOffers(): ?array
+    public function getLowestPricedOffers()
     {
         return $this->container['lowest_priced_offers'];
     }
@@ -365,19 +389,14 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
     /**
      * Sets lowest_priced_offers.
      *
-     * @param null|array $lowest_priced_offers a list of lowest priced offers for the specified ASIN `marketplaceId` combination
+     * @param null|LowestPricedOffer[] $lowest_priced_offers a list of lowest priced offers for the specified ASIN `marketplaceId` combination
+     *
+     * @return self
      */
-    public function setLowestPricedOffers(?array $lowest_priced_offers): self
+    public function setLowestPricedOffers($lowest_priced_offers)
     {
         if (is_null($lowest_priced_offers)) {
-            array_push($this->openAPINullablesSetToNull, 'lowest_priced_offers');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('lowest_priced_offers', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable lowest_priced_offers cannot be null');
         }
         $this->container['lowest_priced_offers'] = $lowest_priced_offers;
 
@@ -386,8 +405,10 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets reference_prices.
+     *
+     * @return null|ReferencePrice[]
      */
-    public function getReferencePrices(): ?array
+    public function getReferencePrices()
     {
         return $this->container['reference_prices'];
     }
@@ -395,19 +416,14 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
     /**
      * Sets reference_prices.
      *
-     * @param null|array $reference_prices a list of reference prices for the specified ASIN `marketplaceId` combination
+     * @param null|ReferencePrice[] $reference_prices a list of reference prices for the specified ASIN `marketplaceId` combination
+     *
+     * @return self
      */
-    public function setReferencePrices(?array $reference_prices): self
+    public function setReferencePrices($reference_prices)
     {
         if (is_null($reference_prices)) {
-            array_push($this->openAPINullablesSetToNull, 'reference_prices');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('reference_prices', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable reference_prices cannot be null');
         }
         $this->container['reference_prices'] = $reference_prices;
 
@@ -416,8 +432,10 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets errors.
+     *
+     * @return null|Error[]
      */
-    public function getErrors(): ?array
+    public function getErrors()
     {
         return $this->container['errors'];
     }
@@ -425,19 +443,14 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
     /**
      * Sets errors.
      *
-     * @param null|array $errors a list of error responses that are returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses that are returned when a request is unsuccessful
+     *
+     * @return self
      */
-    public function setErrors(?array $errors): self
+    public function setErrors($errors)
     {
         if (is_null($errors)) {
-            array_push($this->openAPINullablesSetToNull, 'errors');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('errors', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable errors cannot be null');
         }
         $this->container['errors'] = $errors;
 
@@ -462,7 +475,7 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -473,7 +486,7 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -501,15 +514,17 @@ class CompetitiveSummaryResponseBody implements ModelInterface, \ArrayAccess, \J
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

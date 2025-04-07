@@ -3,7 +3,7 @@
 /**
  * StandardMultipleImageTextModule.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\aplusContent\v2020_11_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,16 +51,19 @@ class StandardMultipleImageTextModule implements ModelInterface, \ArrayAccess, \
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'StandardMultipleImageTextModule';
+    protected static $openAPIModelName = 'StandardMultipleImageTextModule';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
-        'blocks' => '\SpApi\Model\aplusContent\v2020_11_01\StandardImageTextCaptionBlock[]'];
+    protected static $openAPITypes = [
+        'blocks' => '\SpApi\Model\aplusContent\v2020_11_01\StandardImageTextCaptionBlock[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -72,8 +74,9 @@ class StandardMultipleImageTextModule implements ModelInterface, \ArrayAccess, \
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
-        'blocks' => null];
+    protected static $openAPIFormats = [
+        'blocks' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -81,7 +84,7 @@ class StandardMultipleImageTextModule implements ModelInterface, \ArrayAccess, \
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'blocks' => true,
+        'blocks' => false,
     ];
 
     /**
@@ -97,7 +100,7 @@ class StandardMultipleImageTextModule implements ModelInterface, \ArrayAccess, \
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'blocks' => 'blocks',
     ];
 
@@ -106,7 +109,7 @@ class StandardMultipleImageTextModule implements ModelInterface, \ArrayAccess, \
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'blocks' => 'setBlocks',
     ];
 
@@ -115,20 +118,22 @@ class StandardMultipleImageTextModule implements ModelInterface, \ArrayAccess, \
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'blocks' => 'getBlocks',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -150,16 +155,20 @@ class StandardMultipleImageTextModule implements ModelInterface, \ArrayAccess, \
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -183,32 +192,40 @@ class StandardMultipleImageTextModule implements ModelInterface, \ArrayAccess, \
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -218,7 +235,7 @@ class StandardMultipleImageTextModule implements ModelInterface, \ArrayAccess, \
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -229,15 +246,17 @@ class StandardMultipleImageTextModule implements ModelInterface, \ArrayAccess, \
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets blocks.
+     *
+     * @return null|StandardImageTextCaptionBlock[]
      */
-    public function getBlocks(): ?array
+    public function getBlocks()
     {
         return $this->container['blocks'];
     }
@@ -245,19 +264,14 @@ class StandardMultipleImageTextModule implements ModelInterface, \ArrayAccess, \
     /**
      * Sets blocks.
      *
-     * @param null|array $blocks blocks
+     * @param null|StandardImageTextCaptionBlock[] $blocks blocks
+     *
+     * @return self
      */
-    public function setBlocks(?array $blocks): self
+    public function setBlocks($blocks)
     {
         if (is_null($blocks)) {
-            array_push($this->openAPINullablesSetToNull, 'blocks');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('blocks', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable blocks cannot be null');
         }
         $this->container['blocks'] = $blocks;
 
@@ -282,7 +296,7 @@ class StandardMultipleImageTextModule implements ModelInterface, \ArrayAccess, \
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -293,7 +307,7 @@ class StandardMultipleImageTextModule implements ModelInterface, \ArrayAccess, \
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -321,15 +335,17 @@ class StandardMultipleImageTextModule implements ModelInterface, \ArrayAccess, \
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

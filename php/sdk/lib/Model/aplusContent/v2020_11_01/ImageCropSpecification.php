@@ -3,7 +3,7 @@
 /**
  * ImageCropSpecification.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\aplusContent\v2020_11_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class ImageCropSpecification implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ImageCropSpecification';
+    protected static $openAPIModelName = 'ImageCropSpecification';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'size' => '\SpApi\Model\aplusContent\v2020_11_01\ImageDimensions',
-        'offset' => '\SpApi\Model\aplusContent\v2020_11_01\ImageOffsets'];
+        'offset' => '\SpApi\Model\aplusContent\v2020_11_01\ImageOffsets',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class ImageCropSpecification implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'size' => null,
-        'offset' => null];
+        'offset' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -84,7 +87,7 @@ class ImageCropSpecification implements ModelInterface, \ArrayAccess, \JsonSeria
      */
     protected static array $openAPINullables = [
         'size' => false,
-        'offset' => true,
+        'offset' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class ImageCropSpecification implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'size' => 'size',
         'offset' => 'offset',
     ];
@@ -110,7 +113,7 @@ class ImageCropSpecification implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'size' => 'setSize',
         'offset' => 'setOffset',
     ];
@@ -120,21 +123,23 @@ class ImageCropSpecification implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'size' => 'getSize',
         'offset' => 'getOffset',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class ImageCropSpecification implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class ImageCropSpecification implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class ImageCropSpecification implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -242,15 +259,17 @@ class ImageCropSpecification implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets size.
+     *
+     * @return ImageDimensions
      */
-    public function getSize(): ImageDimensions
+    public function getSize()
     {
         return $this->container['size'];
     }
@@ -259,8 +278,10 @@ class ImageCropSpecification implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets size.
      *
      * @param ImageDimensions $size size
+     *
+     * @return self
      */
-    public function setSize(ImageDimensions $size): self
+    public function setSize($size)
     {
         if (is_null($size)) {
             throw new \InvalidArgumentException('non-nullable size cannot be null');
@@ -272,8 +293,10 @@ class ImageCropSpecification implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets offset.
+     *
+     * @return null|ImageOffsets
      */
-    public function getOffset(): ?ImageOffsets
+    public function getOffset()
     {
         return $this->container['offset'];
     }
@@ -282,18 +305,13 @@ class ImageCropSpecification implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets offset.
      *
      * @param null|ImageOffsets $offset offset
+     *
+     * @return self
      */
-    public function setOffset(?ImageOffsets $offset): self
+    public function setOffset($offset)
     {
         if (is_null($offset)) {
-            array_push($this->openAPINullablesSetToNull, 'offset');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('offset', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable offset cannot be null');
         }
         $this->container['offset'] = $offset;
 
@@ -318,7 +336,7 @@ class ImageCropSpecification implements ModelInterface, \ArrayAccess, \JsonSeria
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -329,7 +347,7 @@ class ImageCropSpecification implements ModelInterface, \ArrayAccess, \JsonSeria
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -357,15 +375,17 @@ class ImageCropSpecification implements ModelInterface, \ArrayAccess, \JsonSeria
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

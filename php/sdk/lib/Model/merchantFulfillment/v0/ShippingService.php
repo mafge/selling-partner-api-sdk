@@ -3,7 +3,7 @@
 /**
  * ShippingService.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\merchantFulfillment\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ShippingService';
+    protected static $openAPIModelName = 'ShippingService';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'shipping_service_name' => 'string',
         'carrier_name' => 'string',
         'shipping_service_id' => 'string',
@@ -74,7 +75,8 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
         'available_label_formats' => '\SpApi\Model\merchantFulfillment\v0\LabelFormat[]',
         'available_format_options_for_label' => '\SpApi\Model\merchantFulfillment\v0\LabelFormatOption[]',
         'requires_additional_seller_inputs' => 'bool',
-        'benefits' => '\SpApi\Model\merchantFulfillment\v0\Benefits'];
+        'benefits' => '\SpApi\Model\merchantFulfillment\v0\Benefits',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -85,7 +87,7 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'shipping_service_name' => null,
         'carrier_name' => null,
         'shipping_service_id' => null,
@@ -99,7 +101,8 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
         'available_label_formats' => null,
         'available_format_options_for_label' => null,
         'requires_additional_seller_inputs' => null,
-        'benefits' => null];
+        'benefits' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -112,15 +115,15 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
         'shipping_service_id' => false,
         'shipping_service_offer_id' => false,
         'ship_date' => false,
-        'earliest_estimated_delivery_date' => true,
-        'latest_estimated_delivery_date' => true,
+        'earliest_estimated_delivery_date' => false,
+        'latest_estimated_delivery_date' => false,
         'rate' => false,
         'shipping_service_options' => false,
-        'available_shipping_service_options' => true,
-        'available_label_formats' => true,
-        'available_format_options_for_label' => true,
+        'available_shipping_service_options' => false,
+        'available_label_formats' => false,
+        'available_format_options_for_label' => false,
         'requires_additional_seller_inputs' => false,
-        'benefits' => true,
+        'benefits' => false,
     ];
 
     /**
@@ -136,7 +139,7 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'shipping_service_name' => 'ShippingServiceName',
         'carrier_name' => 'CarrierName',
         'shipping_service_id' => 'ShippingServiceId',
@@ -158,7 +161,7 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'shipping_service_name' => 'setShippingServiceName',
         'carrier_name' => 'setCarrierName',
         'shipping_service_id' => 'setShippingServiceId',
@@ -180,7 +183,7 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'shipping_service_name' => 'getShippingServiceName',
         'carrier_name' => 'getCarrierName',
         'shipping_service_id' => 'getShippingServiceId',
@@ -199,14 +202,16 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -241,16 +246,20 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -274,32 +283,40 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -309,7 +326,7 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -347,15 +364,17 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets shipping_service_name.
+     *
+     * @return string
      */
-    public function getShippingServiceName(): string
+    public function getShippingServiceName()
     {
         return $this->container['shipping_service_name'];
     }
@@ -364,8 +383,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets shipping_service_name.
      *
      * @param string $shipping_service_name A plain text representation of a carrier's shipping service. For example, \"UPS Ground\" or \"FedEx Standard Overnight\".
+     *
+     * @return self
      */
-    public function setShippingServiceName(string $shipping_service_name): self
+    public function setShippingServiceName($shipping_service_name)
     {
         if (is_null($shipping_service_name)) {
             throw new \InvalidArgumentException('non-nullable shipping_service_name cannot be null');
@@ -377,8 +398,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets carrier_name.
+     *
+     * @return string
      */
-    public function getCarrierName(): string
+    public function getCarrierName()
     {
         return $this->container['carrier_name'];
     }
@@ -387,8 +410,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets carrier_name.
      *
      * @param string $carrier_name the name of the carrier
+     *
+     * @return self
      */
-    public function setCarrierName(string $carrier_name): self
+    public function setCarrierName($carrier_name)
     {
         if (is_null($carrier_name)) {
             throw new \InvalidArgumentException('non-nullable carrier_name cannot be null');
@@ -400,8 +425,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets shipping_service_id.
+     *
+     * @return string
      */
-    public function getShippingServiceId(): string
+    public function getShippingServiceId()
     {
         return $this->container['shipping_service_id'];
     }
@@ -410,8 +437,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets shipping_service_id.
      *
      * @param string $shipping_service_id an Amazon-defined shipping service identifier
+     *
+     * @return self
      */
-    public function setShippingServiceId(string $shipping_service_id): self
+    public function setShippingServiceId($shipping_service_id)
     {
         if (is_null($shipping_service_id)) {
             throw new \InvalidArgumentException('non-nullable shipping_service_id cannot be null');
@@ -423,8 +452,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets shipping_service_offer_id.
+     *
+     * @return string
      */
-    public function getShippingServiceOfferId(): string
+    public function getShippingServiceOfferId()
     {
         return $this->container['shipping_service_offer_id'];
     }
@@ -433,8 +464,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets shipping_service_offer_id.
      *
      * @param string $shipping_service_offer_id an Amazon-defined shipping service offer identifier
+     *
+     * @return self
      */
-    public function setShippingServiceOfferId(string $shipping_service_offer_id): self
+    public function setShippingServiceOfferId($shipping_service_offer_id)
     {
         if (is_null($shipping_service_offer_id)) {
             throw new \InvalidArgumentException('non-nullable shipping_service_offer_id cannot be null');
@@ -446,8 +479,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets ship_date.
+     *
+     * @return \DateTime
      */
-    public function getShipDate(): \DateTime
+    public function getShipDate()
     {
         return $this->container['ship_date'];
     }
@@ -456,8 +491,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets ship_date.
      *
      * @param \DateTime $ship_date date-time formatted timestamp
+     *
+     * @return self
      */
-    public function setShipDate(\DateTime $ship_date): self
+    public function setShipDate($ship_date)
     {
         if (is_null($ship_date)) {
             throw new \InvalidArgumentException('non-nullable ship_date cannot be null');
@@ -469,8 +506,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets earliest_estimated_delivery_date.
+     *
+     * @return null|\DateTime
      */
-    public function getEarliestEstimatedDeliveryDate(): ?\DateTime
+    public function getEarliestEstimatedDeliveryDate()
     {
         return $this->container['earliest_estimated_delivery_date'];
     }
@@ -479,18 +518,13 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets earliest_estimated_delivery_date.
      *
      * @param null|\DateTime $earliest_estimated_delivery_date date-time formatted timestamp
+     *
+     * @return self
      */
-    public function setEarliestEstimatedDeliveryDate(?\DateTime $earliest_estimated_delivery_date): self
+    public function setEarliestEstimatedDeliveryDate($earliest_estimated_delivery_date)
     {
         if (is_null($earliest_estimated_delivery_date)) {
-            array_push($this->openAPINullablesSetToNull, 'earliest_estimated_delivery_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('earliest_estimated_delivery_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable earliest_estimated_delivery_date cannot be null');
         }
         $this->container['earliest_estimated_delivery_date'] = $earliest_estimated_delivery_date;
 
@@ -499,8 +533,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets latest_estimated_delivery_date.
+     *
+     * @return null|\DateTime
      */
-    public function getLatestEstimatedDeliveryDate(): ?\DateTime
+    public function getLatestEstimatedDeliveryDate()
     {
         return $this->container['latest_estimated_delivery_date'];
     }
@@ -509,18 +545,13 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets latest_estimated_delivery_date.
      *
      * @param null|\DateTime $latest_estimated_delivery_date date-time formatted timestamp
+     *
+     * @return self
      */
-    public function setLatestEstimatedDeliveryDate(?\DateTime $latest_estimated_delivery_date): self
+    public function setLatestEstimatedDeliveryDate($latest_estimated_delivery_date)
     {
         if (is_null($latest_estimated_delivery_date)) {
-            array_push($this->openAPINullablesSetToNull, 'latest_estimated_delivery_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('latest_estimated_delivery_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable latest_estimated_delivery_date cannot be null');
         }
         $this->container['latest_estimated_delivery_date'] = $latest_estimated_delivery_date;
 
@@ -529,8 +560,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets rate.
+     *
+     * @return CurrencyAmount
      */
-    public function getRate(): CurrencyAmount
+    public function getRate()
     {
         return $this->container['rate'];
     }
@@ -539,8 +572,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets rate.
      *
      * @param CurrencyAmount $rate rate
+     *
+     * @return self
      */
-    public function setRate(CurrencyAmount $rate): self
+    public function setRate($rate)
     {
         if (is_null($rate)) {
             throw new \InvalidArgumentException('non-nullable rate cannot be null');
@@ -552,8 +587,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets shipping_service_options.
+     *
+     * @return ShippingServiceOptions
      */
-    public function getShippingServiceOptions(): ShippingServiceOptions
+    public function getShippingServiceOptions()
     {
         return $this->container['shipping_service_options'];
     }
@@ -562,8 +599,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets shipping_service_options.
      *
      * @param ShippingServiceOptions $shipping_service_options shipping_service_options
+     *
+     * @return self
      */
-    public function setShippingServiceOptions(ShippingServiceOptions $shipping_service_options): self
+    public function setShippingServiceOptions($shipping_service_options)
     {
         if (is_null($shipping_service_options)) {
             throw new \InvalidArgumentException('non-nullable shipping_service_options cannot be null');
@@ -575,8 +614,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets available_shipping_service_options.
+     *
+     * @return null|AvailableShippingServiceOptions
      */
-    public function getAvailableShippingServiceOptions(): ?AvailableShippingServiceOptions
+    public function getAvailableShippingServiceOptions()
     {
         return $this->container['available_shipping_service_options'];
     }
@@ -585,18 +626,13 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets available_shipping_service_options.
      *
      * @param null|AvailableShippingServiceOptions $available_shipping_service_options available_shipping_service_options
+     *
+     * @return self
      */
-    public function setAvailableShippingServiceOptions(?AvailableShippingServiceOptions $available_shipping_service_options): self
+    public function setAvailableShippingServiceOptions($available_shipping_service_options)
     {
         if (is_null($available_shipping_service_options)) {
-            array_push($this->openAPINullablesSetToNull, 'available_shipping_service_options');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('available_shipping_service_options', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable available_shipping_service_options cannot be null');
         }
         $this->container['available_shipping_service_options'] = $available_shipping_service_options;
 
@@ -605,8 +641,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets available_label_formats.
+     *
+     * @return null|LabelFormat[]
      */
-    public function getAvailableLabelFormats(): ?array
+    public function getAvailableLabelFormats()
     {
         return $this->container['available_label_formats'];
     }
@@ -614,19 +652,14 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets available_label_formats.
      *
-     * @param null|array $available_label_formats list of label formats
+     * @param null|LabelFormat[] $available_label_formats list of label formats
+     *
+     * @return self
      */
-    public function setAvailableLabelFormats(?array $available_label_formats): self
+    public function setAvailableLabelFormats($available_label_formats)
     {
         if (is_null($available_label_formats)) {
-            array_push($this->openAPINullablesSetToNull, 'available_label_formats');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('available_label_formats', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable available_label_formats cannot be null');
         }
         $this->container['available_label_formats'] = $available_label_formats;
 
@@ -635,8 +668,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets available_format_options_for_label.
+     *
+     * @return null|LabelFormatOption[]
      */
-    public function getAvailableFormatOptionsForLabel(): ?array
+    public function getAvailableFormatOptionsForLabel()
     {
         return $this->container['available_format_options_for_label'];
     }
@@ -644,19 +679,14 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets available_format_options_for_label.
      *
-     * @param null|array $available_format_options_for_label the available label formats
+     * @param null|LabelFormatOption[] $available_format_options_for_label the available label formats
+     *
+     * @return self
      */
-    public function setAvailableFormatOptionsForLabel(?array $available_format_options_for_label): self
+    public function setAvailableFormatOptionsForLabel($available_format_options_for_label)
     {
         if (is_null($available_format_options_for_label)) {
-            array_push($this->openAPINullablesSetToNull, 'available_format_options_for_label');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('available_format_options_for_label', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable available_format_options_for_label cannot be null');
         }
         $this->container['available_format_options_for_label'] = $available_format_options_for_label;
 
@@ -665,8 +695,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets requires_additional_seller_inputs.
+     *
+     * @return bool
      */
-    public function getRequiresAdditionalSellerInputs(): bool
+    public function getRequiresAdditionalSellerInputs()
     {
         return $this->container['requires_additional_seller_inputs'];
     }
@@ -675,8 +707,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets requires_additional_seller_inputs.
      *
      * @param bool $requires_additional_seller_inputs when true, additional seller inputs are required
+     *
+     * @return self
      */
-    public function setRequiresAdditionalSellerInputs(bool $requires_additional_seller_inputs): self
+    public function setRequiresAdditionalSellerInputs($requires_additional_seller_inputs)
     {
         if (is_null($requires_additional_seller_inputs)) {
             throw new \InvalidArgumentException('non-nullable requires_additional_seller_inputs cannot be null');
@@ -688,8 +722,10 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets benefits.
+     *
+     * @return null|Benefits
      */
-    public function getBenefits(): ?Benefits
+    public function getBenefits()
     {
         return $this->container['benefits'];
     }
@@ -698,18 +734,13 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets benefits.
      *
      * @param null|Benefits $benefits benefits
+     *
+     * @return self
      */
-    public function setBenefits(?Benefits $benefits): self
+    public function setBenefits($benefits)
     {
         if (is_null($benefits)) {
-            array_push($this->openAPINullablesSetToNull, 'benefits');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('benefits', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable benefits cannot be null');
         }
         $this->container['benefits'] = $benefits;
 
@@ -734,7 +765,7 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -745,7 +776,7 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -773,15 +804,17 @@ class ShippingService implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

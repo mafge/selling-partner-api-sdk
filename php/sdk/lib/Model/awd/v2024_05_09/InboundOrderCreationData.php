@@ -3,7 +3,7 @@
 /**
  * InboundOrderCreationData.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\awd\v2024_05_09;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'InboundOrderCreationData';
+    protected static $openAPIModelName = 'InboundOrderCreationData';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'external_reference_id' => 'string',
         'origin_address' => '\SpApi\Model\awd\v2024_05_09\Address',
         'packages_to_inbound' => '\SpApi\Model\awd\v2024_05_09\DistributionPackageQuantity[]',
-        'preferences' => '\SpApi\Model\awd\v2024_05_09\InboundPreferences'];
+        'preferences' => '\SpApi\Model\awd\v2024_05_09\InboundPreferences',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'external_reference_id' => null,
         'origin_address' => null,
         'packages_to_inbound' => null,
-        'preferences' => null];
+        'preferences' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,10 +90,10 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'external_reference_id' => true,
+        'external_reference_id' => false,
         'origin_address' => false,
         'packages_to_inbound' => false,
-        'preferences' => true,
+        'preferences' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'external_reference_id' => 'externalReferenceId',
         'origin_address' => 'originAddress',
         'packages_to_inbound' => 'packagesToInbound',
@@ -118,7 +121,7 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'external_reference_id' => 'setExternalReferenceId',
         'origin_address' => 'setOriginAddress',
         'packages_to_inbound' => 'setPackagesToInbound',
@@ -130,7 +133,7 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'external_reference_id' => 'getExternalReferenceId',
         'origin_address' => 'getOriginAddress',
         'packages_to_inbound' => 'getPackagesToInbound',
@@ -139,14 +142,16 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -262,15 +279,17 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets external_reference_id.
+     *
+     * @return null|string
      */
-    public function getExternalReferenceId(): ?string
+    public function getExternalReferenceId()
     {
         return $this->container['external_reference_id'];
     }
@@ -279,18 +298,13 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets external_reference_id.
      *
      * @param null|string $external_reference_id reference ID that can be used to correlate the order with partner resources
+     *
+     * @return self
      */
-    public function setExternalReferenceId(?string $external_reference_id): self
+    public function setExternalReferenceId($external_reference_id)
     {
         if (is_null($external_reference_id)) {
-            array_push($this->openAPINullablesSetToNull, 'external_reference_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('external_reference_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable external_reference_id cannot be null');
         }
         $this->container['external_reference_id'] = $external_reference_id;
 
@@ -299,8 +313,10 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets origin_address.
+     *
+     * @return Address
      */
-    public function getOriginAddress(): Address
+    public function getOriginAddress()
     {
         return $this->container['origin_address'];
     }
@@ -309,8 +325,10 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets origin_address.
      *
      * @param Address $origin_address origin_address
+     *
+     * @return self
      */
-    public function setOriginAddress(Address $origin_address): self
+    public function setOriginAddress($origin_address)
     {
         if (is_null($origin_address)) {
             throw new \InvalidArgumentException('non-nullable origin_address cannot be null');
@@ -322,8 +340,10 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets packages_to_inbound.
+     *
+     * @return DistributionPackageQuantity[]
      */
-    public function getPackagesToInbound(): array
+    public function getPackagesToInbound()
     {
         return $this->container['packages_to_inbound'];
     }
@@ -331,9 +351,11 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Sets packages_to_inbound.
      *
-     * @param array $packages_to_inbound list of packages to be inbounded
+     * @param DistributionPackageQuantity[] $packages_to_inbound list of packages to be inbounded
+     *
+     * @return self
      */
-    public function setPackagesToInbound(array $packages_to_inbound): self
+    public function setPackagesToInbound($packages_to_inbound)
     {
         if (is_null($packages_to_inbound)) {
             throw new \InvalidArgumentException('non-nullable packages_to_inbound cannot be null');
@@ -349,8 +371,10 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets preferences.
+     *
+     * @return null|InboundPreferences
      */
-    public function getPreferences(): ?InboundPreferences
+    public function getPreferences()
     {
         return $this->container['preferences'];
     }
@@ -359,18 +383,13 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets preferences.
      *
      * @param null|InboundPreferences $preferences preferences
+     *
+     * @return self
      */
-    public function setPreferences(?InboundPreferences $preferences): self
+    public function setPreferences($preferences)
     {
         if (is_null($preferences)) {
-            array_push($this->openAPINullablesSetToNull, 'preferences');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('preferences', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable preferences cannot be null');
         }
         $this->container['preferences'] = $preferences;
 
@@ -395,7 +414,7 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -406,7 +425,7 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -434,15 +453,17 @@ class InboundOrderCreationData implements ModelInterface, \ArrayAccess, \JsonSer
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

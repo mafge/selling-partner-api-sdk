@@ -2,7 +2,7 @@
 /**
  * PartyIdentification
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * PartyIdentification Class Doc Comment
@@ -52,17 +50,18 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'PartyIdentification';
+    protected static $openAPIModelName = 'PartyIdentification';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'address' => '\SpApi\Model\vendor\shipments\v1\Address',
-             'party_id' => 'string',
-             'tax_registration_details' => '\SpApi\Model\vendor\shipments\v1\TaxRegistrationDetails[]'    ];
+    protected static $openAPITypes = [
+        'address' => '\SpApi\Model\vendor\shipments\v1\Address',
+        'party_id' => 'string',
+        'tax_registration_details' => '\SpApi\Model\vendor\shipments\v1\TaxRegistrationDetails[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,10 +70,11 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'address' => null,
-            'party_id' => null,
-            'tax_registration_details' => null    ];
+    protected static $openAPIFormats = [
+        'address' => null,
+        'party_id' => null,
+        'tax_registration_details' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -82,9 +82,9 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'address' => true,
+        'address' => false,
         'party_id' => false,
-        'tax_registration_details' => true
+        'tax_registration_details' => false
     ];
 
     /**
@@ -99,7 +99,7 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -109,7 +109,7 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -172,11 +172,10 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'address' => 'address',
-                'party_id' => 'partyId',
-                'tax_registration_details' => 'taxRegistrationDetails'
-        
+        'party_id' => 'partyId',
+        'tax_registration_details' => 'taxRegistrationDetails'
     ];
 
     /**
@@ -184,7 +183,7 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'address' => 'setAddress',
         'party_id' => 'setPartyId',
         'tax_registration_details' => 'setTaxRegistrationDetails'
@@ -195,7 +194,7 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'address' => 'getAddress',
         'party_id' => 'getPartyId',
         'tax_registration_details' => 'getTaxRegistrationDetails'
@@ -207,7 +206,7 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -217,7 +216,7 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -227,7 +226,7 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -237,7 +236,7 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,17 +245,17 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('address', $data ?? [], null);
         $this->setIfExists('party_id', $data ?? [], null);
@@ -286,7 +285,7 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -302,7 +301,7 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -313,7 +312,7 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return \SpApi\Model\vendor\shipments\v1\Address|null
      */
-    public function getAddress(): ?\SpApi\Model\vendor\shipments\v1\Address
+    public function getAddress()
     {
         return $this->container['address'];
     }
@@ -325,17 +324,10 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setAddress(?\SpApi\Model\vendor\shipments\v1\Address $address): self
+    public function setAddress($address)
     {
         if (is_null($address)) {
-            array_push($this->openAPINullablesSetToNull, 'address');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('address', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable address cannot be null');
         }
         $this->container['address'] = $address;
 
@@ -347,7 +339,7 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return string
      */
-    public function getPartyId(): string
+    public function getPartyId()
     {
         return $this->container['party_id'];
     }
@@ -359,7 +351,7 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return self
      */
-    public function setPartyId(string $party_id): self
+    public function setPartyId($party_id)
     {
         if (is_null($party_id)) {
             throw new \InvalidArgumentException('non-nullable party_id cannot be null');
@@ -372,9 +364,9 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Gets tax_registration_details
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\shipments\v1\TaxRegistrationDetails[]|null
      */
-    public function getTaxRegistrationDetails(): ?array
+    public function getTaxRegistrationDetails()
     {
         return $this->container['tax_registration_details'];
     }
@@ -382,28 +374,19 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
     /**
      * Sets tax_registration_details
      *
-     * @param array|null $tax_registration_details Tax registration details of the entity.
+     * @param \SpApi\Model\vendor\shipments\v1\TaxRegistrationDetails[]|null $tax_registration_details Tax registration details of the entity.
      *
      * @return self
      */
-    public function setTaxRegistrationDetails(?array $tax_registration_details): self
+    public function setTaxRegistrationDetails($tax_registration_details)
     {
         if (is_null($tax_registration_details)) {
-            array_push($this->openAPINullablesSetToNull, 'tax_registration_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('tax_registration_details', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable tax_registration_details cannot be null');
         }
         $this->container['tax_registration_details'] = $tax_registration_details;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -424,7 +407,7 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -437,7 +420,7 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -466,7 +449,7 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -489,7 +472,7 @@ class PartyIdentification implements ModelInterface, ArrayAccess, \JsonSerializa
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

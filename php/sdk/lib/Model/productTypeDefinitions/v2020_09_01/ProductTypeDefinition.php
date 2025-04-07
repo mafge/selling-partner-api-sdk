@@ -3,7 +3,7 @@
 /**
  * ProductTypeDefinition.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\productTypeDefinitions\v2020_09_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -58,15 +57,17 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ProductTypeDefinition';
+    protected static $openAPIModelName = 'ProductTypeDefinition';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'meta_schema' => '\SpApi\Model\productTypeDefinitions\v2020_09_01\SchemaLink',
         'schema' => '\SpApi\Model\productTypeDefinitions\v2020_09_01\SchemaLink',
         'requirements' => 'string',
@@ -76,7 +77,8 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
         'marketplace_ids' => 'string[]',
         'product_type' => 'string',
         'display_name' => 'string',
-        'product_type_version' => '\SpApi\Model\productTypeDefinitions\v2020_09_01\ProductTypeVersion'];
+        'product_type_version' => '\SpApi\Model\productTypeDefinitions\v2020_09_01\ProductTypeVersion',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -87,7 +89,7 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'meta_schema' => null,
         'schema' => null,
         'requirements' => null,
@@ -97,7 +99,8 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
         'marketplace_ids' => null,
         'product_type' => null,
         'display_name' => null,
-        'product_type_version' => null];
+        'product_type_version' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -105,7 +108,7 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'meta_schema' => true,
+        'meta_schema' => false,
         'schema' => false,
         'requirements' => false,
         'requirements_enforced' => false,
@@ -130,7 +133,7 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'meta_schema' => 'metaSchema',
         'schema' => 'schema',
         'requirements' => 'requirements',
@@ -148,7 +151,7 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'meta_schema' => 'setMetaSchema',
         'schema' => 'setSchema',
         'requirements' => 'setRequirements',
@@ -166,7 +169,7 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'meta_schema' => 'getMetaSchema',
         'schema' => 'getSchema',
         'requirements' => 'getRequirements',
@@ -181,14 +184,16 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -219,16 +224,20 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -252,32 +261,40 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -287,7 +304,7 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return string[]
      */
-    public function getRequirementsAllowableValues(): array
+    public function getRequirementsAllowableValues()
     {
         return [
             self::REQUIREMENTS_LISTING,
@@ -301,7 +318,7 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return string[]
      */
-    public function getRequirementsEnforcedAllowableValues(): array
+    public function getRequirementsEnforcedAllowableValues()
     {
         return [
             self::REQUIREMENTS_ENFORCED_ENFORCED,
@@ -314,7 +331,7 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -373,15 +390,17 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets meta_schema.
+     *
+     * @return null|SchemaLink
      */
-    public function getMetaSchema(): ?SchemaLink
+    public function getMetaSchema()
     {
         return $this->container['meta_schema'];
     }
@@ -390,18 +409,13 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets meta_schema.
      *
      * @param null|SchemaLink $meta_schema meta_schema
+     *
+     * @return self
      */
-    public function setMetaSchema(?SchemaLink $meta_schema): self
+    public function setMetaSchema($meta_schema)
     {
         if (is_null($meta_schema)) {
-            array_push($this->openAPINullablesSetToNull, 'meta_schema');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('meta_schema', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable meta_schema cannot be null');
         }
         $this->container['meta_schema'] = $meta_schema;
 
@@ -410,8 +424,10 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets schema.
+     *
+     * @return SchemaLink
      */
-    public function getSchema(): SchemaLink
+    public function getSchema()
     {
         return $this->container['schema'];
     }
@@ -420,8 +436,10 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets schema.
      *
      * @param SchemaLink $schema schema
+     *
+     * @return self
      */
-    public function setSchema(SchemaLink $schema): self
+    public function setSchema($schema)
     {
         if (is_null($schema)) {
             throw new \InvalidArgumentException('non-nullable schema cannot be null');
@@ -433,8 +451,10 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets requirements.
+     *
+     * @return string
      */
-    public function getRequirements(): string
+    public function getRequirements()
     {
         return $this->container['requirements'];
     }
@@ -443,8 +463,10 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets requirements.
      *
      * @param string $requirements name of the requirements set represented in this product type definition
+     *
+     * @return self
      */
-    public function setRequirements(string $requirements): self
+    public function setRequirements($requirements)
     {
         if (is_null($requirements)) {
             throw new \InvalidArgumentException('non-nullable requirements cannot be null');
@@ -466,8 +488,10 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets requirements_enforced.
+     *
+     * @return string
      */
-    public function getRequirementsEnforced(): string
+    public function getRequirementsEnforced()
     {
         return $this->container['requirements_enforced'];
     }
@@ -476,8 +500,10 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets requirements_enforced.
      *
      * @param string $requirements_enforced Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all of the required attributes being present (such as for partial updates).
+     *
+     * @return self
      */
-    public function setRequirementsEnforced(string $requirements_enforced): self
+    public function setRequirementsEnforced($requirements_enforced)
     {
         if (is_null($requirements_enforced)) {
             throw new \InvalidArgumentException('non-nullable requirements_enforced cannot be null');
@@ -502,7 +528,7 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return array<string,PropertyGroup>
      */
-    public function getPropertyGroups(): array
+    public function getPropertyGroups()
     {
         return $this->container['property_groups'];
     }
@@ -511,8 +537,10 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets property_groups.
      *
      * @param array<string,PropertyGroup> $property_groups Mapping of property group names to property groups. Property groups represent logical groupings of schema properties that can be used for display or informational purposes.
+     *
+     * @return self
      */
-    public function setPropertyGroups(array $property_groups): self
+    public function setPropertyGroups($property_groups)
     {
         if (is_null($property_groups)) {
             throw new \InvalidArgumentException('non-nullable property_groups cannot be null');
@@ -524,8 +552,10 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets locale.
+     *
+     * @return string
      */
-    public function getLocale(): string
+    public function getLocale()
     {
         return $this->container['locale'];
     }
@@ -534,8 +564,10 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets locale.
      *
      * @param string $locale locale of the display elements contained in the product type definition
+     *
+     * @return self
      */
-    public function setLocale(string $locale): self
+    public function setLocale($locale)
     {
         if (is_null($locale)) {
             throw new \InvalidArgumentException('non-nullable locale cannot be null');
@@ -547,8 +579,10 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets marketplace_ids.
+     *
+     * @return string[]
      */
-    public function getMarketplaceIds(): array
+    public function getMarketplaceIds()
     {
         return $this->container['marketplace_ids'];
     }
@@ -556,9 +590,11 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Sets marketplace_ids.
      *
-     * @param array $marketplace_ids amazon marketplace identifiers for which the product type definition is applicable
+     * @param string[] $marketplace_ids amazon marketplace identifiers for which the product type definition is applicable
+     *
+     * @return self
      */
-    public function setMarketplaceIds(array $marketplace_ids): self
+    public function setMarketplaceIds($marketplace_ids)
     {
         if (is_null($marketplace_ids)) {
             throw new \InvalidArgumentException('non-nullable marketplace_ids cannot be null');
@@ -570,8 +606,10 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets product_type.
+     *
+     * @return string
      */
-    public function getProductType(): string
+    public function getProductType()
     {
         return $this->container['product_type'];
     }
@@ -580,8 +618,10 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets product_type.
      *
      * @param string $product_type the name of the Amazon product type that this product type definition applies to
+     *
+     * @return self
      */
-    public function setProductType(string $product_type): self
+    public function setProductType($product_type)
     {
         if (is_null($product_type)) {
             throw new \InvalidArgumentException('non-nullable product_type cannot be null');
@@ -593,8 +633,10 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets display_name.
+     *
+     * @return string
      */
-    public function getDisplayName(): string
+    public function getDisplayName()
     {
         return $this->container['display_name'];
     }
@@ -603,8 +645,10 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets display_name.
      *
      * @param string $display_name human-readable and localized description of the Amazon product type
+     *
+     * @return self
      */
-    public function setDisplayName(string $display_name): self
+    public function setDisplayName($display_name)
     {
         if (is_null($display_name)) {
             throw new \InvalidArgumentException('non-nullable display_name cannot be null');
@@ -616,8 +660,10 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets product_type_version.
+     *
+     * @return ProductTypeVersion
      */
-    public function getProductTypeVersion(): ProductTypeVersion
+    public function getProductTypeVersion()
     {
         return $this->container['product_type_version'];
     }
@@ -626,8 +672,10 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets product_type_version.
      *
      * @param ProductTypeVersion $product_type_version product_type_version
+     *
+     * @return self
      */
-    public function setProductTypeVersion(ProductTypeVersion $product_type_version): self
+    public function setProductTypeVersion($product_type_version)
     {
         if (is_null($product_type_version)) {
             throw new \InvalidArgumentException('non-nullable product_type_version cannot be null');
@@ -655,7 +703,7 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -666,7 +714,7 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -694,15 +742,17 @@ class ProductTypeDefinition implements ModelInterface, \ArrayAccess, \JsonSerial
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

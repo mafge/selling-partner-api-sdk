@@ -3,7 +3,7 @@
 /**
  * ShippingRequirements.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class ShippingRequirements implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ShippingRequirements';
+    protected static $openAPIModelName = 'ShippingRequirements';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'modes' => 'string[]',
-        'solution' => 'string'];
+        'solution' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class ShippingRequirements implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'modes' => null,
-        'solution' => null];
+        'solution' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -100,7 +103,7 @@ class ShippingRequirements implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'modes' => 'modes',
         'solution' => 'solution',
     ];
@@ -110,7 +113,7 @@ class ShippingRequirements implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'modes' => 'setModes',
         'solution' => 'setSolution',
     ];
@@ -120,21 +123,23 @@ class ShippingRequirements implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'modes' => 'getModes',
         'solution' => 'getSolution',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class ShippingRequirements implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class ShippingRequirements implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class ShippingRequirements implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -252,15 +269,17 @@ class ShippingRequirements implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets modes.
+     *
+     * @return string[]
      */
-    public function getModes(): array
+    public function getModes()
     {
         return $this->container['modes'];
     }
@@ -268,9 +287,11 @@ class ShippingRequirements implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Sets modes.
      *
-     * @param array $modes available shipment modes for this shipping program
+     * @param string[] $modes available shipment modes for this shipping program
+     *
+     * @return self
      */
-    public function setModes(array $modes): self
+    public function setModes($modes)
     {
         if (is_null($modes)) {
             throw new \InvalidArgumentException('non-nullable modes cannot be null');
@@ -282,8 +303,10 @@ class ShippingRequirements implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets solution.
+     *
+     * @return string
      */
-    public function getSolution(): string
+    public function getSolution()
     {
         return $this->container['solution'];
     }
@@ -292,8 +315,10 @@ class ShippingRequirements implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets solution.
      *
      * @param string $solution Shipping program for the option. Can be: `AMAZON_PARTNERED_CARRIER`, `USE_YOUR_OWN_CARRIER`.
+     *
+     * @return self
      */
-    public function setSolution(string $solution): self
+    public function setSolution($solution)
     {
         if (is_null($solution)) {
             throw new \InvalidArgumentException('non-nullable solution cannot be null');
@@ -328,7 +353,7 @@ class ShippingRequirements implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -339,7 +364,7 @@ class ShippingRequirements implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -367,15 +392,17 @@ class ShippingRequirements implements ModelInterface, \ArrayAccess, \JsonSeriali
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

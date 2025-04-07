@@ -2,7 +2,7 @@
 /**
  * ScheduledDeliveryShipment
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\df\orders\v2021_12_28;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * ScheduledDeliveryShipment Class Doc Comment
@@ -52,17 +50,18 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'ScheduledDeliveryShipment';
+    protected static $openAPIModelName = 'ScheduledDeliveryShipment';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'scheduled_delivery_service_type' => 'string',
-             'earliest_nominated_delivery_date' => '\DateTime',
-             'latest_nominated_delivery_date' => '\DateTime'    ];
+    protected static $openAPITypes = [
+        'scheduled_delivery_service_type' => 'string',
+        'earliest_nominated_delivery_date' => '\DateTime',
+        'latest_nominated_delivery_date' => '\DateTime'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,10 +70,11 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'scheduled_delivery_service_type' => null,
-            'earliest_nominated_delivery_date' => 'date-time',
-            'latest_nominated_delivery_date' => 'date-time'    ];
+    protected static $openAPIFormats = [
+        'scheduled_delivery_service_type' => null,
+        'earliest_nominated_delivery_date' => 'date-time',
+        'latest_nominated_delivery_date' => 'date-time'
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -82,9 +82,9 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'scheduled_delivery_service_type' => true,
-        'earliest_nominated_delivery_date' => true,
-        'latest_nominated_delivery_date' => true
+        'scheduled_delivery_service_type' => false,
+        'earliest_nominated_delivery_date' => false,
+        'latest_nominated_delivery_date' => false
     ];
 
     /**
@@ -99,7 +99,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -109,7 +109,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -172,11 +172,10 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'scheduled_delivery_service_type' => 'scheduledDeliveryServiceType',
-                'earliest_nominated_delivery_date' => 'earliestNominatedDeliveryDate',
-                'latest_nominated_delivery_date' => 'latestNominatedDeliveryDate'
-        
+        'earliest_nominated_delivery_date' => 'earliestNominatedDeliveryDate',
+        'latest_nominated_delivery_date' => 'latestNominatedDeliveryDate'
     ];
 
     /**
@@ -184,7 +183,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'scheduled_delivery_service_type' => 'setScheduledDeliveryServiceType',
         'earliest_nominated_delivery_date' => 'setEarliestNominatedDeliveryDate',
         'latest_nominated_delivery_date' => 'setLatestNominatedDeliveryDate'
@@ -195,7 +194,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'scheduled_delivery_service_type' => 'getScheduledDeliveryServiceType',
         'earliest_nominated_delivery_date' => 'getEarliestNominatedDeliveryDate',
         'latest_nominated_delivery_date' => 'getLatestNominatedDeliveryDate'
@@ -207,7 +206,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -217,7 +216,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -227,7 +226,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -237,7 +236,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,17 +245,17 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('scheduled_delivery_service_type', $data ?? [], null);
         $this->setIfExists('earliest_nominated_delivery_date', $data ?? [], null);
@@ -286,7 +285,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -299,7 +298,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -310,7 +309,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return string|null
      */
-    public function getScheduledDeliveryServiceType(): ?string
+    public function getScheduledDeliveryServiceType()
     {
         return $this->container['scheduled_delivery_service_type'];
     }
@@ -322,17 +321,10 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setScheduledDeliveryServiceType(?string $scheduled_delivery_service_type): self
+    public function setScheduledDeliveryServiceType($scheduled_delivery_service_type)
     {
         if (is_null($scheduled_delivery_service_type)) {
-            array_push($this->openAPINullablesSetToNull, 'scheduled_delivery_service_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('scheduled_delivery_service_type', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable scheduled_delivery_service_type cannot be null');
         }
         $this->container['scheduled_delivery_service_type'] = $scheduled_delivery_service_type;
 
@@ -344,7 +336,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return \DateTime|null
      */
-    public function getEarliestNominatedDeliveryDate(): ?\DateTime
+    public function getEarliestNominatedDeliveryDate()
     {
         return $this->container['earliest_nominated_delivery_date'];
     }
@@ -356,17 +348,10 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setEarliestNominatedDeliveryDate(?\DateTime $earliest_nominated_delivery_date): self
+    public function setEarliestNominatedDeliveryDate($earliest_nominated_delivery_date)
     {
         if (is_null($earliest_nominated_delivery_date)) {
-            array_push($this->openAPINullablesSetToNull, 'earliest_nominated_delivery_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('earliest_nominated_delivery_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable earliest_nominated_delivery_date cannot be null');
         }
         $this->container['earliest_nominated_delivery_date'] = $earliest_nominated_delivery_date;
 
@@ -378,7 +363,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return \DateTime|null
      */
-    public function getLatestNominatedDeliveryDate(): ?\DateTime
+    public function getLatestNominatedDeliveryDate()
     {
         return $this->container['latest_nominated_delivery_date'];
     }
@@ -390,24 +375,15 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return self
      */
-    public function setLatestNominatedDeliveryDate(?\DateTime $latest_nominated_delivery_date): self
+    public function setLatestNominatedDeliveryDate($latest_nominated_delivery_date)
     {
         if (is_null($latest_nominated_delivery_date)) {
-            array_push($this->openAPINullablesSetToNull, 'latest_nominated_delivery_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('latest_nominated_delivery_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable latest_nominated_delivery_date cannot be null');
         }
         $this->container['latest_nominated_delivery_date'] = $latest_nominated_delivery_date;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -428,7 +404,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -441,7 +417,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -470,7 +446,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -493,7 +469,7 @@ class ScheduledDeliveryShipment implements ModelInterface, ArrayAccess, \JsonSer
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

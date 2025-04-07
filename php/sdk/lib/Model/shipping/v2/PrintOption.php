@@ -3,7 +3,7 @@
 /**
  * PrintOption.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,19 +52,22 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'PrintOption';
+    protected static $openAPIModelName = 'PrintOption';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'supported_dpis' => 'int[]',
         'supported_page_layouts' => 'string[]',
         'supported_file_joining_options' => 'bool[]',
-        'supported_document_details' => '\SpApi\Model\shipping\v2\SupportedDocumentDetail[]'];
+        'supported_document_details' => '\SpApi\Model\shipping\v2\SupportedDocumentDetail[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,11 +78,12 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'supported_dpis' => null,
         'supported_page_layouts' => null,
         'supported_file_joining_options' => null,
-        'supported_document_details' => null];
+        'supported_document_details' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -88,7 +91,7 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'supported_dpis' => true,
+        'supported_dpis' => false,
         'supported_page_layouts' => false,
         'supported_file_joining_options' => false,
         'supported_document_details' => false,
@@ -107,7 +110,7 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'supported_dpis' => 'supportedDPIs',
         'supported_page_layouts' => 'supportedPageLayouts',
         'supported_file_joining_options' => 'supportedFileJoiningOptions',
@@ -119,7 +122,7 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'supported_dpis' => 'setSupportedDpis',
         'supported_page_layouts' => 'setSupportedPageLayouts',
         'supported_file_joining_options' => 'setSupportedFileJoiningOptions',
@@ -131,7 +134,7 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'supported_dpis' => 'getSupportedDpis',
         'supported_page_layouts' => 'getSupportedPageLayouts',
         'supported_file_joining_options' => 'getSupportedFileJoiningOptions',
@@ -140,14 +143,16 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -172,16 +177,20 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -205,32 +214,40 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -240,7 +257,7 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -263,15 +280,17 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets supported_dpis.
+     *
+     * @return null|int[]
      */
-    public function getSupportedDpis(): ?array
+    public function getSupportedDpis()
     {
         return $this->container['supported_dpis'];
     }
@@ -279,19 +298,14 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets supported_dpis.
      *
-     * @param null|array $supported_dpis a list of the supported DPI options for a document
+     * @param null|int[] $supported_dpis a list of the supported DPI options for a document
+     *
+     * @return self
      */
-    public function setSupportedDpis(?array $supported_dpis): self
+    public function setSupportedDpis($supported_dpis)
     {
         if (is_null($supported_dpis)) {
-            array_push($this->openAPINullablesSetToNull, 'supported_dpis');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('supported_dpis', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable supported_dpis cannot be null');
         }
         $this->container['supported_dpis'] = $supported_dpis;
 
@@ -300,8 +314,10 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets supported_page_layouts.
+     *
+     * @return string[]
      */
-    public function getSupportedPageLayouts(): array
+    public function getSupportedPageLayouts()
     {
         return $this->container['supported_page_layouts'];
     }
@@ -309,9 +325,11 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets supported_page_layouts.
      *
-     * @param array $supported_page_layouts a list of the supported page layout options for a document
+     * @param string[] $supported_page_layouts a list of the supported page layout options for a document
+     *
+     * @return self
      */
-    public function setSupportedPageLayouts(array $supported_page_layouts): self
+    public function setSupportedPageLayouts($supported_page_layouts)
     {
         if (is_null($supported_page_layouts)) {
             throw new \InvalidArgumentException('non-nullable supported_page_layouts cannot be null');
@@ -323,8 +341,10 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets supported_file_joining_options.
+     *
+     * @return bool[]
      */
-    public function getSupportedFileJoiningOptions(): array
+    public function getSupportedFileJoiningOptions()
     {
         return $this->container['supported_file_joining_options'];
     }
@@ -332,9 +352,11 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets supported_file_joining_options.
      *
-     * @param array $supported_file_joining_options a list of the supported needFileJoining boolean values for a document
+     * @param bool[] $supported_file_joining_options a list of the supported needFileJoining boolean values for a document
+     *
+     * @return self
      */
-    public function setSupportedFileJoiningOptions(array $supported_file_joining_options): self
+    public function setSupportedFileJoiningOptions($supported_file_joining_options)
     {
         if (is_null($supported_file_joining_options)) {
             throw new \InvalidArgumentException('non-nullable supported_file_joining_options cannot be null');
@@ -346,8 +368,10 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets supported_document_details.
+     *
+     * @return SupportedDocumentDetail[]
      */
-    public function getSupportedDocumentDetails(): array
+    public function getSupportedDocumentDetails()
     {
         return $this->container['supported_document_details'];
     }
@@ -355,9 +379,11 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets supported_document_details.
      *
-     * @param array $supported_document_details a list of the supported documented details
+     * @param SupportedDocumentDetail[] $supported_document_details a list of the supported documented details
+     *
+     * @return self
      */
-    public function setSupportedDocumentDetails(array $supported_document_details): self
+    public function setSupportedDocumentDetails($supported_document_details)
     {
         if (is_null($supported_document_details)) {
             throw new \InvalidArgumentException('non-nullable supported_document_details cannot be null');
@@ -385,7 +411,7 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -396,7 +422,7 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -424,15 +450,17 @@ class PrintOption implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

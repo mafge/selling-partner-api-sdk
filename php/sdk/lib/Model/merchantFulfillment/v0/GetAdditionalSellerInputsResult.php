@@ -3,7 +3,7 @@
 /**
  * GetAdditionalSellerInputsResult.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\merchantFulfillment\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class GetAdditionalSellerInputsResult implements ModelInterface, \ArrayAccess, \
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetAdditionalSellerInputsResult';
+    protected static $openAPIModelName = 'GetAdditionalSellerInputsResult';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'shipment_level_fields' => '\SpApi\Model\merchantFulfillment\v0\AdditionalInputs[]',
-        'item_level_fields_list' => '\SpApi\Model\merchantFulfillment\v0\ItemLevelFields[]'];
+        'item_level_fields_list' => '\SpApi\Model\merchantFulfillment\v0\ItemLevelFields[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class GetAdditionalSellerInputsResult implements ModelInterface, \ArrayAccess, \
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'shipment_level_fields' => null,
-        'item_level_fields_list' => null];
+        'item_level_fields_list' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class GetAdditionalSellerInputsResult implements ModelInterface, \ArrayAccess, \
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'shipment_level_fields' => true,
-        'item_level_fields_list' => true,
+        'shipment_level_fields' => false,
+        'item_level_fields_list' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class GetAdditionalSellerInputsResult implements ModelInterface, \ArrayAccess, \
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'shipment_level_fields' => 'ShipmentLevelFields',
         'item_level_fields_list' => 'ItemLevelFieldsList',
     ];
@@ -110,7 +113,7 @@ class GetAdditionalSellerInputsResult implements ModelInterface, \ArrayAccess, \
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'shipment_level_fields' => 'setShipmentLevelFields',
         'item_level_fields_list' => 'setItemLevelFieldsList',
     ];
@@ -120,21 +123,23 @@ class GetAdditionalSellerInputsResult implements ModelInterface, \ArrayAccess, \
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'shipment_level_fields' => 'getShipmentLevelFields',
         'item_level_fields_list' => 'getItemLevelFieldsList',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class GetAdditionalSellerInputsResult implements ModelInterface, \ArrayAccess, \
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class GetAdditionalSellerInputsResult implements ModelInterface, \ArrayAccess, \
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class GetAdditionalSellerInputsResult implements ModelInterface, \ArrayAccess, \
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -236,15 +253,17 @@ class GetAdditionalSellerInputsResult implements ModelInterface, \ArrayAccess, \
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets shipment_level_fields.
+     *
+     * @return null|AdditionalInputs[]
      */
-    public function getShipmentLevelFields(): ?array
+    public function getShipmentLevelFields()
     {
         return $this->container['shipment_level_fields'];
     }
@@ -252,19 +271,14 @@ class GetAdditionalSellerInputsResult implements ModelInterface, \ArrayAccess, \
     /**
      * Sets shipment_level_fields.
      *
-     * @param null|array $shipment_level_fields a list of additional inputs
+     * @param null|AdditionalInputs[] $shipment_level_fields a list of additional inputs
+     *
+     * @return self
      */
-    public function setShipmentLevelFields(?array $shipment_level_fields): self
+    public function setShipmentLevelFields($shipment_level_fields)
     {
         if (is_null($shipment_level_fields)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_level_fields');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_level_fields', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_level_fields cannot be null');
         }
         $this->container['shipment_level_fields'] = $shipment_level_fields;
 
@@ -273,8 +287,10 @@ class GetAdditionalSellerInputsResult implements ModelInterface, \ArrayAccess, \
 
     /**
      * Gets item_level_fields_list.
+     *
+     * @return null|ItemLevelFields[]
      */
-    public function getItemLevelFieldsList(): ?array
+    public function getItemLevelFieldsList()
     {
         return $this->container['item_level_fields_list'];
     }
@@ -282,19 +298,14 @@ class GetAdditionalSellerInputsResult implements ModelInterface, \ArrayAccess, \
     /**
      * Sets item_level_fields_list.
      *
-     * @param null|array $item_level_fields_list a list of item level fields
+     * @param null|ItemLevelFields[] $item_level_fields_list a list of item level fields
+     *
+     * @return self
      */
-    public function setItemLevelFieldsList(?array $item_level_fields_list): self
+    public function setItemLevelFieldsList($item_level_fields_list)
     {
         if (is_null($item_level_fields_list)) {
-            array_push($this->openAPINullablesSetToNull, 'item_level_fields_list');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('item_level_fields_list', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable item_level_fields_list cannot be null');
         }
         $this->container['item_level_fields_list'] = $item_level_fields_list;
 
@@ -319,7 +330,7 @@ class GetAdditionalSellerInputsResult implements ModelInterface, \ArrayAccess, \
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +341,7 @@ class GetAdditionalSellerInputsResult implements ModelInterface, \ArrayAccess, \
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +369,17 @@ class GetAdditionalSellerInputsResult implements ModelInterface, \ArrayAccess, \
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

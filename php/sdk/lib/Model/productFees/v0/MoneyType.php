@@ -3,7 +3,7 @@
 /**
  * MoneyType.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\productFees\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -50,17 +49,20 @@ class MoneyType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'MoneyType';
+    protected static $openAPIModelName = 'MoneyType';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'currency_code' => 'string',
-        'amount' => 'float'];
+        'amount' => 'float',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -71,9 +73,10 @@ class MoneyType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'currency_code' => null,
-        'amount' => null];
+        'amount' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -81,8 +84,8 @@ class MoneyType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'currency_code' => true,
-        'amount' => true,
+        'currency_code' => false,
+        'amount' => false,
     ];
 
     /**
@@ -98,7 +101,7 @@ class MoneyType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'currency_code' => 'CurrencyCode',
         'amount' => 'Amount',
     ];
@@ -108,7 +111,7 @@ class MoneyType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'currency_code' => 'setCurrencyCode',
         'amount' => 'setAmount',
     ];
@@ -118,21 +121,23 @@ class MoneyType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'currency_code' => 'getCurrencyCode',
         'amount' => 'getAmount',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -155,16 +160,20 @@ class MoneyType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -188,32 +197,40 @@ class MoneyType implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -223,7 +240,7 @@ class MoneyType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -234,15 +251,17 @@ class MoneyType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets currency_code.
+     *
+     * @return null|string
      */
-    public function getCurrencyCode(): ?string
+    public function getCurrencyCode()
     {
         return $this->container['currency_code'];
     }
@@ -251,18 +270,13 @@ class MoneyType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets currency_code.
      *
      * @param null|string $currency_code the currency code in ISO 4217 format
+     *
+     * @return self
      */
-    public function setCurrencyCode(?string $currency_code): self
+    public function setCurrencyCode($currency_code)
     {
         if (is_null($currency_code)) {
-            array_push($this->openAPINullablesSetToNull, 'currency_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('currency_code', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable currency_code cannot be null');
         }
         $this->container['currency_code'] = $currency_code;
 
@@ -271,8 +285,10 @@ class MoneyType implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets amount.
+     *
+     * @return null|float
      */
-    public function getAmount(): ?float
+    public function getAmount()
     {
         return $this->container['amount'];
     }
@@ -281,18 +297,13 @@ class MoneyType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets amount.
      *
      * @param null|float $amount the monetary value
+     *
+     * @return self
      */
-    public function setAmount(?float $amount): self
+    public function setAmount($amount)
     {
         if (is_null($amount)) {
-            array_push($this->openAPINullablesSetToNull, 'amount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable amount cannot be null');
         }
         $this->container['amount'] = $amount;
 
@@ -317,7 +328,7 @@ class MoneyType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -328,7 +339,7 @@ class MoneyType implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -356,15 +367,17 @@ class MoneyType implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

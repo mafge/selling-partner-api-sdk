@@ -3,7 +3,7 @@
 /**
  * Order.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\orders\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -73,15 +72,17 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Order';
+    protected static $openAPIModelName = 'Order';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'amazon_order_id' => 'string',
         'seller_order_id' => 'string',
         'purchase_date' => 'string',
@@ -128,7 +129,8 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
         'buyer_info' => '\SpApi\Model\orders\v0\BuyerInfo',
         'automated_shipping_settings' => '\SpApi\Model\orders\v0\AutomatedShippingSettings',
         'has_regulated_items' => 'bool',
-        'electronic_invoice_status' => '\SpApi\Model\orders\v0\ElectronicInvoiceStatus'];
+        'electronic_invoice_status' => '\SpApi\Model\orders\v0\ElectronicInvoiceStatus',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -139,7 +141,7 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'amazon_order_id' => null,
         'seller_order_id' => null,
         'purchase_date' => null,
@@ -186,7 +188,8 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
         'buyer_info' => null,
         'automated_shipping_settings' => null,
         'has_regulated_items' => null,
-        'electronic_invoice_status' => null];
+        'electronic_invoice_status' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -195,52 +198,52 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPINullables = [
         'amazon_order_id' => false,
-        'seller_order_id' => true,
+        'seller_order_id' => false,
         'purchase_date' => false,
         'last_update_date' => false,
         'order_status' => false,
-        'fulfillment_channel' => true,
-        'sales_channel' => true,
-        'order_channel' => true,
-        'ship_service_level' => true,
-        'order_total' => true,
-        'number_of_items_shipped' => true,
-        'number_of_items_unshipped' => true,
-        'payment_execution_detail' => true,
-        'payment_method' => true,
-        'payment_method_details' => true,
-        'marketplace_id' => true,
-        'shipment_service_level_category' => true,
-        'easy_ship_shipment_status' => true,
-        'cba_displayable_shipping_label' => true,
-        'order_type' => true,
-        'earliest_ship_date' => true,
-        'latest_ship_date' => true,
-        'earliest_delivery_date' => true,
-        'latest_delivery_date' => true,
-        'is_business_order' => true,
-        'is_prime' => true,
-        'is_premium_order' => true,
-        'is_global_express_enabled' => true,
-        'replaced_order_id' => true,
-        'is_replacement_order' => true,
-        'promise_response_due_date' => true,
-        'is_estimated_ship_date_set' => true,
-        'is_sold_by_ab' => true,
-        'is_iba' => true,
-        'default_ship_from_location_address' => true,
-        'buyer_invoice_preference' => true,
-        'buyer_tax_information' => true,
-        'fulfillment_instruction' => true,
-        'is_ispu' => true,
-        'is_access_point_order' => true,
-        'marketplace_tax_info' => true,
-        'seller_display_name' => true,
-        'shipping_address' => true,
-        'buyer_info' => true,
-        'automated_shipping_settings' => true,
-        'has_regulated_items' => true,
-        'electronic_invoice_status' => true,
+        'fulfillment_channel' => false,
+        'sales_channel' => false,
+        'order_channel' => false,
+        'ship_service_level' => false,
+        'order_total' => false,
+        'number_of_items_shipped' => false,
+        'number_of_items_unshipped' => false,
+        'payment_execution_detail' => false,
+        'payment_method' => false,
+        'payment_method_details' => false,
+        'marketplace_id' => false,
+        'shipment_service_level_category' => false,
+        'easy_ship_shipment_status' => false,
+        'cba_displayable_shipping_label' => false,
+        'order_type' => false,
+        'earliest_ship_date' => false,
+        'latest_ship_date' => false,
+        'earliest_delivery_date' => false,
+        'latest_delivery_date' => false,
+        'is_business_order' => false,
+        'is_prime' => false,
+        'is_premium_order' => false,
+        'is_global_express_enabled' => false,
+        'replaced_order_id' => false,
+        'is_replacement_order' => false,
+        'promise_response_due_date' => false,
+        'is_estimated_ship_date_set' => false,
+        'is_sold_by_ab' => false,
+        'is_iba' => false,
+        'default_ship_from_location_address' => false,
+        'buyer_invoice_preference' => false,
+        'buyer_tax_information' => false,
+        'fulfillment_instruction' => false,
+        'is_ispu' => false,
+        'is_access_point_order' => false,
+        'marketplace_tax_info' => false,
+        'seller_display_name' => false,
+        'shipping_address' => false,
+        'buyer_info' => false,
+        'automated_shipping_settings' => false,
+        'has_regulated_items' => false,
+        'electronic_invoice_status' => false,
     ];
 
     /**
@@ -256,7 +259,7 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'amazon_order_id' => 'AmazonOrderId',
         'seller_order_id' => 'SellerOrderId',
         'purchase_date' => 'PurchaseDate',
@@ -311,7 +314,7 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'amazon_order_id' => 'setAmazonOrderId',
         'seller_order_id' => 'setSellerOrderId',
         'purchase_date' => 'setPurchaseDate',
@@ -366,7 +369,7 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'amazon_order_id' => 'getAmazonOrderId',
         'seller_order_id' => 'getSellerOrderId',
         'purchase_date' => 'getPurchaseDate',
@@ -418,14 +421,16 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -493,16 +498,20 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -526,32 +535,40 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -561,7 +578,7 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getOrderStatusAllowableValues(): array
+    public function getOrderStatusAllowableValues()
     {
         return [
             self::ORDER_STATUS_PENDING,
@@ -580,7 +597,7 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getFulfillmentChannelAllowableValues(): array
+    public function getFulfillmentChannelAllowableValues()
     {
         return [
             self::FULFILLMENT_CHANNEL_MFN,
@@ -593,7 +610,7 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getPaymentMethodAllowableValues(): array
+    public function getPaymentMethodAllowableValues()
     {
         return [
             self::PAYMENT_METHOD_COD,
@@ -607,7 +624,7 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getOrderTypeAllowableValues(): array
+    public function getOrderTypeAllowableValues()
     {
         return [
             self::ORDER_TYPE_STANDARD_ORDER,
@@ -623,7 +640,7 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getBuyerInvoicePreferenceAllowableValues(): array
+    public function getBuyerInvoicePreferenceAllowableValues()
     {
         return [
             self::BUYER_INVOICE_PREFERENCE_INDIVIDUAL,
@@ -636,7 +653,7 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -706,15 +723,17 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets amazon_order_id.
+     *
+     * @return string
      */
-    public function getAmazonOrderId(): string
+    public function getAmazonOrderId()
     {
         return $this->container['amazon_order_id'];
     }
@@ -723,8 +742,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets amazon_order_id.
      *
      * @param string $amazon_order_id an Amazon-defined order identifier, in 3-7-7 format
+     *
+     * @return self
      */
-    public function setAmazonOrderId(string $amazon_order_id): self
+    public function setAmazonOrderId($amazon_order_id)
     {
         if (is_null($amazon_order_id)) {
             throw new \InvalidArgumentException('non-nullable amazon_order_id cannot be null');
@@ -736,8 +757,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets seller_order_id.
+     *
+     * @return null|string
      */
-    public function getSellerOrderId(): ?string
+    public function getSellerOrderId()
     {
         return $this->container['seller_order_id'];
     }
@@ -746,18 +769,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets seller_order_id.
      *
      * @param null|string $seller_order_id a seller-defined order identifier
+     *
+     * @return self
      */
-    public function setSellerOrderId(?string $seller_order_id): self
+    public function setSellerOrderId($seller_order_id)
     {
         if (is_null($seller_order_id)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_order_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_order_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_order_id cannot be null');
         }
         $this->container['seller_order_id'] = $seller_order_id;
 
@@ -766,8 +784,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets purchase_date.
+     *
+     * @return string
      */
-    public function getPurchaseDate(): string
+    public function getPurchaseDate()
     {
         return $this->container['purchase_date'];
     }
@@ -776,8 +796,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets purchase_date.
      *
      * @param string $purchase_date the date when the order was created
+     *
+     * @return self
      */
-    public function setPurchaseDate(string $purchase_date): self
+    public function setPurchaseDate($purchase_date)
     {
         if (is_null($purchase_date)) {
             throw new \InvalidArgumentException('non-nullable purchase_date cannot be null');
@@ -789,8 +811,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets last_update_date.
+     *
+     * @return string
      */
-    public function getLastUpdateDate(): string
+    public function getLastUpdateDate()
     {
         return $this->container['last_update_date'];
     }
@@ -799,8 +823,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets last_update_date.
      *
      * @param string $last_update_date The date when the order was last updated.  __Note__: `LastUpdateDate` is returned with an incorrect date for orders that were last updated before 2009-04-01.
+     *
+     * @return self
      */
-    public function setLastUpdateDate(string $last_update_date): self
+    public function setLastUpdateDate($last_update_date)
     {
         if (is_null($last_update_date)) {
             throw new \InvalidArgumentException('non-nullable last_update_date cannot be null');
@@ -812,8 +838,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets order_status.
+     *
+     * @return string
      */
-    public function getOrderStatus(): string
+    public function getOrderStatus()
     {
         return $this->container['order_status'];
     }
@@ -822,8 +850,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets order_status.
      *
      * @param string $order_status the current order status
+     *
+     * @return self
      */
-    public function setOrderStatus(string $order_status): self
+    public function setOrderStatus($order_status)
     {
         if (is_null($order_status)) {
             throw new \InvalidArgumentException('non-nullable order_status cannot be null');
@@ -845,8 +875,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets fulfillment_channel.
+     *
+     * @return null|string
      */
-    public function getFulfillmentChannel(): ?string
+    public function getFulfillmentChannel()
     {
         return $this->container['fulfillment_channel'];
     }
@@ -855,21 +887,16 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets fulfillment_channel.
      *
      * @param null|string $fulfillment_channel whether the order was fulfilled by Amazon (`AFN`) or by the seller (`MFN`)
+     *
+     * @return self
      */
-    public function setFulfillmentChannel(?string $fulfillment_channel): self
+    public function setFulfillmentChannel($fulfillment_channel)
     {
         if (is_null($fulfillment_channel)) {
-            array_push($this->openAPINullablesSetToNull, 'fulfillment_channel');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fulfillment_channel', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fulfillment_channel cannot be null');
         }
         $allowedValues = $this->getFulfillmentChannelAllowableValues();
-        if (!is_null($fulfillment_channel) && !in_array($fulfillment_channel, $allowedValues, true)) {
+        if (!in_array($fulfillment_channel, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'fulfillment_channel', must be one of '%s'",
@@ -885,8 +912,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets sales_channel.
+     *
+     * @return null|string
      */
-    public function getSalesChannel(): ?string
+    public function getSalesChannel()
     {
         return $this->container['sales_channel'];
     }
@@ -895,18 +924,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets sales_channel.
      *
      * @param null|string $sales_channel the sales channel for the first item in the order
+     *
+     * @return self
      */
-    public function setSalesChannel(?string $sales_channel): self
+    public function setSalesChannel($sales_channel)
     {
         if (is_null($sales_channel)) {
-            array_push($this->openAPINullablesSetToNull, 'sales_channel');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sales_channel', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable sales_channel cannot be null');
         }
         $this->container['sales_channel'] = $sales_channel;
 
@@ -915,8 +939,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets order_channel.
+     *
+     * @return null|string
      */
-    public function getOrderChannel(): ?string
+    public function getOrderChannel()
     {
         return $this->container['order_channel'];
     }
@@ -925,18 +951,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets order_channel.
      *
      * @param null|string $order_channel the order channel for the first item in the order
+     *
+     * @return self
      */
-    public function setOrderChannel(?string $order_channel): self
+    public function setOrderChannel($order_channel)
     {
         if (is_null($order_channel)) {
-            array_push($this->openAPINullablesSetToNull, 'order_channel');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('order_channel', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable order_channel cannot be null');
         }
         $this->container['order_channel'] = $order_channel;
 
@@ -945,8 +966,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets ship_service_level.
+     *
+     * @return null|string
      */
-    public function getShipServiceLevel(): ?string
+    public function getShipServiceLevel()
     {
         return $this->container['ship_service_level'];
     }
@@ -955,18 +978,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets ship_service_level.
      *
      * @param null|string $ship_service_level the order's shipment service level
+     *
+     * @return self
      */
-    public function setShipServiceLevel(?string $ship_service_level): self
+    public function setShipServiceLevel($ship_service_level)
     {
         if (is_null($ship_service_level)) {
-            array_push($this->openAPINullablesSetToNull, 'ship_service_level');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ship_service_level', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ship_service_level cannot be null');
         }
         $this->container['ship_service_level'] = $ship_service_level;
 
@@ -975,8 +993,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets order_total.
+     *
+     * @return null|Money
      */
-    public function getOrderTotal(): ?Money
+    public function getOrderTotal()
     {
         return $this->container['order_total'];
     }
@@ -985,18 +1005,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets order_total.
      *
      * @param null|Money $order_total order_total
+     *
+     * @return self
      */
-    public function setOrderTotal(?Money $order_total): self
+    public function setOrderTotal($order_total)
     {
         if (is_null($order_total)) {
-            array_push($this->openAPINullablesSetToNull, 'order_total');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('order_total', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable order_total cannot be null');
         }
         $this->container['order_total'] = $order_total;
 
@@ -1005,8 +1020,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets number_of_items_shipped.
+     *
+     * @return null|int
      */
-    public function getNumberOfItemsShipped(): ?int
+    public function getNumberOfItemsShipped()
     {
         return $this->container['number_of_items_shipped'];
     }
@@ -1015,18 +1032,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets number_of_items_shipped.
      *
      * @param null|int $number_of_items_shipped the number of items shipped
+     *
+     * @return self
      */
-    public function setNumberOfItemsShipped(?int $number_of_items_shipped): self
+    public function setNumberOfItemsShipped($number_of_items_shipped)
     {
         if (is_null($number_of_items_shipped)) {
-            array_push($this->openAPINullablesSetToNull, 'number_of_items_shipped');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('number_of_items_shipped', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable number_of_items_shipped cannot be null');
         }
         $this->container['number_of_items_shipped'] = $number_of_items_shipped;
 
@@ -1035,8 +1047,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets number_of_items_unshipped.
+     *
+     * @return null|int
      */
-    public function getNumberOfItemsUnshipped(): ?int
+    public function getNumberOfItemsUnshipped()
     {
         return $this->container['number_of_items_unshipped'];
     }
@@ -1045,18 +1059,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets number_of_items_unshipped.
      *
      * @param null|int $number_of_items_unshipped the number of items unshipped
+     *
+     * @return self
      */
-    public function setNumberOfItemsUnshipped(?int $number_of_items_unshipped): self
+    public function setNumberOfItemsUnshipped($number_of_items_unshipped)
     {
         if (is_null($number_of_items_unshipped)) {
-            array_push($this->openAPINullablesSetToNull, 'number_of_items_unshipped');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('number_of_items_unshipped', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable number_of_items_unshipped cannot be null');
         }
         $this->container['number_of_items_unshipped'] = $number_of_items_unshipped;
 
@@ -1065,8 +1074,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets payment_execution_detail.
+     *
+     * @return null|PaymentExecutionDetailItem[]
      */
-    public function getPaymentExecutionDetail(): ?array
+    public function getPaymentExecutionDetail()
     {
         return $this->container['payment_execution_detail'];
     }
@@ -1074,19 +1085,14 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets payment_execution_detail.
      *
-     * @param null|array $payment_execution_detail a list of payment execution detail items
+     * @param null|PaymentExecutionDetailItem[] $payment_execution_detail a list of payment execution detail items
+     *
+     * @return self
      */
-    public function setPaymentExecutionDetail(?array $payment_execution_detail): self
+    public function setPaymentExecutionDetail($payment_execution_detail)
     {
         if (is_null($payment_execution_detail)) {
-            array_push($this->openAPINullablesSetToNull, 'payment_execution_detail');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('payment_execution_detail', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable payment_execution_detail cannot be null');
         }
         $this->container['payment_execution_detail'] = $payment_execution_detail;
 
@@ -1095,8 +1101,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets payment_method.
+     *
+     * @return null|string
      */
-    public function getPaymentMethod(): ?string
+    public function getPaymentMethod()
     {
         return $this->container['payment_method'];
     }
@@ -1105,21 +1113,16 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets payment_method.
      *
      * @param null|string $payment_method The payment method for the order. This property is limited to COD and CVS payment methods. Unless you need the specific COD payment information provided by the `PaymentExecutionDetailItem` object, we recommend using the `PaymentMethodDetails` property to get payment method information.
+     *
+     * @return self
      */
-    public function setPaymentMethod(?string $payment_method): self
+    public function setPaymentMethod($payment_method)
     {
         if (is_null($payment_method)) {
-            array_push($this->openAPINullablesSetToNull, 'payment_method');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('payment_method', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable payment_method cannot be null');
         }
         $allowedValues = $this->getPaymentMethodAllowableValues();
-        if (!is_null($payment_method) && !in_array($payment_method, $allowedValues, true)) {
+        if (!in_array($payment_method, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'payment_method', must be one of '%s'",
@@ -1135,8 +1138,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets payment_method_details.
+     *
+     * @return null|string[]
      */
-    public function getPaymentMethodDetails(): ?array
+    public function getPaymentMethodDetails()
     {
         return $this->container['payment_method_details'];
     }
@@ -1144,19 +1149,14 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets payment_method_details.
      *
-     * @param null|array $payment_method_details a list of payment method detail items
+     * @param null|string[] $payment_method_details a list of payment method detail items
+     *
+     * @return self
      */
-    public function setPaymentMethodDetails(?array $payment_method_details): self
+    public function setPaymentMethodDetails($payment_method_details)
     {
         if (is_null($payment_method_details)) {
-            array_push($this->openAPINullablesSetToNull, 'payment_method_details');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('payment_method_details', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable payment_method_details cannot be null');
         }
         $this->container['payment_method_details'] = $payment_method_details;
 
@@ -1165,8 +1165,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets marketplace_id.
+     *
+     * @return null|string
      */
-    public function getMarketplaceId(): ?string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -1175,18 +1177,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets marketplace_id.
      *
      * @param null|string $marketplace_id the identifier for the marketplace where the order was placed
+     *
+     * @return self
      */
-    public function setMarketplaceId(?string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
-            array_push($this->openAPINullablesSetToNull, 'marketplace_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('marketplace_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
         }
         $this->container['marketplace_id'] = $marketplace_id;
 
@@ -1195,8 +1192,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets shipment_service_level_category.
+     *
+     * @return null|string
      */
-    public function getShipmentServiceLevelCategory(): ?string
+    public function getShipmentServiceLevelCategory()
     {
         return $this->container['shipment_service_level_category'];
     }
@@ -1205,18 +1204,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets shipment_service_level_category.
      *
      * @param null|string $shipment_service_level_category The shipment service level category for the order.  **Possible values**: `Expedited`, `FreeEconomy`, `NextDay`, `Priority`, `SameDay`, `SecondDay`, `Scheduled`, and `Standard`.
+     *
+     * @return self
      */
-    public function setShipmentServiceLevelCategory(?string $shipment_service_level_category): self
+    public function setShipmentServiceLevelCategory($shipment_service_level_category)
     {
         if (is_null($shipment_service_level_category)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_service_level_category');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_service_level_category', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_service_level_category cannot be null');
         }
         $this->container['shipment_service_level_category'] = $shipment_service_level_category;
 
@@ -1225,8 +1219,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets easy_ship_shipment_status.
+     *
+     * @return null|EasyShipShipmentStatus
      */
-    public function getEasyShipShipmentStatus(): ?string
+    public function getEasyShipShipmentStatus()
     {
         return $this->container['easy_ship_shipment_status'];
     }
@@ -1234,19 +1230,14 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets easy_ship_shipment_status.
      *
-     * @param null|string $easy_ship_shipment_status easy_ship_shipment_status
+     * @param null|EasyShipShipmentStatus $easy_ship_shipment_status easy_ship_shipment_status
+     *
+     * @return self
      */
-    public function setEasyShipShipmentStatus(?string $easy_ship_shipment_status): self
+    public function setEasyShipShipmentStatus($easy_ship_shipment_status)
     {
         if (is_null($easy_ship_shipment_status)) {
-            array_push($this->openAPINullablesSetToNull, 'easy_ship_shipment_status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('easy_ship_shipment_status', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable easy_ship_shipment_status cannot be null');
         }
         $this->container['easy_ship_shipment_status'] = $easy_ship_shipment_status;
 
@@ -1255,8 +1246,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets cba_displayable_shipping_label.
+     *
+     * @return null|string
      */
-    public function getCbaDisplayableShippingLabel(): ?string
+    public function getCbaDisplayableShippingLabel()
     {
         return $this->container['cba_displayable_shipping_label'];
     }
@@ -1265,18 +1258,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets cba_displayable_shipping_label.
      *
      * @param null|string $cba_displayable_shipping_label custom ship label for Checkout by Amazon (CBA)
+     *
+     * @return self
      */
-    public function setCbaDisplayableShippingLabel(?string $cba_displayable_shipping_label): self
+    public function setCbaDisplayableShippingLabel($cba_displayable_shipping_label)
     {
         if (is_null($cba_displayable_shipping_label)) {
-            array_push($this->openAPINullablesSetToNull, 'cba_displayable_shipping_label');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('cba_displayable_shipping_label', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable cba_displayable_shipping_label cannot be null');
         }
         $this->container['cba_displayable_shipping_label'] = $cba_displayable_shipping_label;
 
@@ -1285,8 +1273,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets order_type.
+     *
+     * @return null|string
      */
-    public function getOrderType(): ?string
+    public function getOrderType()
     {
         return $this->container['order_type'];
     }
@@ -1295,21 +1285,16 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets order_type.
      *
      * @param null|string $order_type the order's type
+     *
+     * @return self
      */
-    public function setOrderType(?string $order_type): self
+    public function setOrderType($order_type)
     {
         if (is_null($order_type)) {
-            array_push($this->openAPINullablesSetToNull, 'order_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('order_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable order_type cannot be null');
         }
         $allowedValues = $this->getOrderTypeAllowableValues();
-        if (!is_null($order_type) && !in_array($order_type, $allowedValues, true)) {
+        if (!in_array($order_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'order_type', must be one of '%s'",
@@ -1325,8 +1310,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets earliest_ship_date.
+     *
+     * @return null|string
      */
-    public function getEarliestShipDate(): ?string
+    public function getEarliestShipDate()
     {
         return $this->container['earliest_ship_date'];
     }
@@ -1335,18 +1322,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets earliest_ship_date.
      *
      * @param null|string $earliest_ship_date The start of the time period within which you have committed to ship the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders.  __Note__: `EarliestShipDate` might not be returned for orders placed before February 1, 2013.
+     *
+     * @return self
      */
-    public function setEarliestShipDate(?string $earliest_ship_date): self
+    public function setEarliestShipDate($earliest_ship_date)
     {
         if (is_null($earliest_ship_date)) {
-            array_push($this->openAPINullablesSetToNull, 'earliest_ship_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('earliest_ship_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable earliest_ship_date cannot be null');
         }
         $this->container['earliest_ship_date'] = $earliest_ship_date;
 
@@ -1355,8 +1337,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets latest_ship_date.
+     *
+     * @return null|string
      */
-    public function getLatestShipDate(): ?string
+    public function getLatestShipDate()
     {
         return $this->container['latest_ship_date'];
     }
@@ -1365,18 +1349,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets latest_ship_date.
      *
      * @param null|string $latest_ship_date The end of the time period within which you have committed to ship the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders.  __Note__: `LatestShipDate` might not be returned for orders placed before February 1, 2013.
+     *
+     * @return self
      */
-    public function setLatestShipDate(?string $latest_ship_date): self
+    public function setLatestShipDate($latest_ship_date)
     {
         if (is_null($latest_ship_date)) {
-            array_push($this->openAPINullablesSetToNull, 'latest_ship_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('latest_ship_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable latest_ship_date cannot be null');
         }
         $this->container['latest_ship_date'] = $latest_ship_date;
 
@@ -1385,8 +1364,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets earliest_delivery_date.
+     *
+     * @return null|string
      */
-    public function getEarliestDeliveryDate(): ?string
+    public function getEarliestDeliveryDate()
     {
         return $this->container['earliest_delivery_date'];
     }
@@ -1395,18 +1376,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets earliest_delivery_date.
      *
      * @param null|string $earliest_delivery_date The start of the time period within which you have committed to fulfill the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders.
+     *
+     * @return self
      */
-    public function setEarliestDeliveryDate(?string $earliest_delivery_date): self
+    public function setEarliestDeliveryDate($earliest_delivery_date)
     {
         if (is_null($earliest_delivery_date)) {
-            array_push($this->openAPINullablesSetToNull, 'earliest_delivery_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('earliest_delivery_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable earliest_delivery_date cannot be null');
         }
         $this->container['earliest_delivery_date'] = $earliest_delivery_date;
 
@@ -1415,8 +1391,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets latest_delivery_date.
+     *
+     * @return null|string
      */
-    public function getLatestDeliveryDate(): ?string
+    public function getLatestDeliveryDate()
     {
         return $this->container['latest_delivery_date'];
     }
@@ -1425,18 +1403,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets latest_delivery_date.
      *
      * @param null|string $latest_delivery_date The end of the time period within which you have committed to fulfill the order. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. Only returned for seller-fulfilled orders that do not have a `PendingAvailability`, `Pending`, or `Canceled` status.
+     *
+     * @return self
      */
-    public function setLatestDeliveryDate(?string $latest_delivery_date): self
+    public function setLatestDeliveryDate($latest_delivery_date)
     {
         if (is_null($latest_delivery_date)) {
-            array_push($this->openAPINullablesSetToNull, 'latest_delivery_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('latest_delivery_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable latest_delivery_date cannot be null');
         }
         $this->container['latest_delivery_date'] = $latest_delivery_date;
 
@@ -1445,8 +1418,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets is_business_order.
+     *
+     * @return null|bool
      */
-    public function getIsBusinessOrder(): ?bool
+    public function getIsBusinessOrder()
     {
         return $this->container['is_business_order'];
     }
@@ -1455,18 +1430,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets is_business_order.
      *
      * @param null|bool $is_business_order When true, the order is an Amazon Business order. An Amazon Business order is an order where the buyer is a Verified Business Buyer.
+     *
+     * @return self
      */
-    public function setIsBusinessOrder(?bool $is_business_order): self
+    public function setIsBusinessOrder($is_business_order)
     {
         if (is_null($is_business_order)) {
-            array_push($this->openAPINullablesSetToNull, 'is_business_order');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_business_order', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_business_order cannot be null');
         }
         $this->container['is_business_order'] = $is_business_order;
 
@@ -1475,8 +1445,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets is_prime.
+     *
+     * @return null|bool
      */
-    public function getIsPrime(): ?bool
+    public function getIsPrime()
     {
         return $this->container['is_prime'];
     }
@@ -1485,18 +1457,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets is_prime.
      *
      * @param null|bool $is_prime when true, the order is a seller-fulfilled Amazon Prime order
+     *
+     * @return self
      */
-    public function setIsPrime(?bool $is_prime): self
+    public function setIsPrime($is_prime)
     {
         if (is_null($is_prime)) {
-            array_push($this->openAPINullablesSetToNull, 'is_prime');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_prime', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_prime cannot be null');
         }
         $this->container['is_prime'] = $is_prime;
 
@@ -1505,8 +1472,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets is_premium_order.
+     *
+     * @return null|bool
      */
-    public function getIsPremiumOrder(): ?bool
+    public function getIsPremiumOrder()
     {
         return $this->container['is_premium_order'];
     }
@@ -1515,18 +1484,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets is_premium_order.
      *
      * @param null|bool $is_premium_order When true, the order has a Premium Shipping Service Level Agreement. For more information about Premium Shipping orders, refer to \"Premium Shipping Options\" in the Seller Central Help for your marketplace.
+     *
+     * @return self
      */
-    public function setIsPremiumOrder(?bool $is_premium_order): self
+    public function setIsPremiumOrder($is_premium_order)
     {
         if (is_null($is_premium_order)) {
-            array_push($this->openAPINullablesSetToNull, 'is_premium_order');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_premium_order', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_premium_order cannot be null');
         }
         $this->container['is_premium_order'] = $is_premium_order;
 
@@ -1535,8 +1499,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets is_global_express_enabled.
+     *
+     * @return null|bool
      */
-    public function getIsGlobalExpressEnabled(): ?bool
+    public function getIsGlobalExpressEnabled()
     {
         return $this->container['is_global_express_enabled'];
     }
@@ -1545,18 +1511,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets is_global_express_enabled.
      *
      * @param null|bool $is_global_express_enabled when true, the order is a `GlobalExpress` order
+     *
+     * @return self
      */
-    public function setIsGlobalExpressEnabled(?bool $is_global_express_enabled): self
+    public function setIsGlobalExpressEnabled($is_global_express_enabled)
     {
         if (is_null($is_global_express_enabled)) {
-            array_push($this->openAPINullablesSetToNull, 'is_global_express_enabled');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_global_express_enabled', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_global_express_enabled cannot be null');
         }
         $this->container['is_global_express_enabled'] = $is_global_express_enabled;
 
@@ -1565,8 +1526,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets replaced_order_id.
+     *
+     * @return null|string
      */
-    public function getReplacedOrderId(): ?string
+    public function getReplacedOrderId()
     {
         return $this->container['replaced_order_id'];
     }
@@ -1575,18 +1538,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets replaced_order_id.
      *
      * @param null|string $replaced_order_id The order ID value for the order that is being replaced. Returned only if IsReplacementOrder = true.
+     *
+     * @return self
      */
-    public function setReplacedOrderId(?string $replaced_order_id): self
+    public function setReplacedOrderId($replaced_order_id)
     {
         if (is_null($replaced_order_id)) {
-            array_push($this->openAPINullablesSetToNull, 'replaced_order_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('replaced_order_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable replaced_order_id cannot be null');
         }
         $this->container['replaced_order_id'] = $replaced_order_id;
 
@@ -1595,8 +1553,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets is_replacement_order.
+     *
+     * @return null|bool
      */
-    public function getIsReplacementOrder(): ?bool
+    public function getIsReplacementOrder()
     {
         return $this->container['is_replacement_order'];
     }
@@ -1605,18 +1565,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets is_replacement_order.
      *
      * @param null|bool $is_replacement_order when true, this is a replacement order
+     *
+     * @return self
      */
-    public function setIsReplacementOrder(?bool $is_replacement_order): self
+    public function setIsReplacementOrder($is_replacement_order)
     {
         if (is_null($is_replacement_order)) {
-            array_push($this->openAPINullablesSetToNull, 'is_replacement_order');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_replacement_order', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_replacement_order cannot be null');
         }
         $this->container['is_replacement_order'] = $is_replacement_order;
 
@@ -1625,8 +1580,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets promise_response_due_date.
+     *
+     * @return null|string
      */
-    public function getPromiseResponseDueDate(): ?string
+    public function getPromiseResponseDueDate()
     {
         return $this->container['promise_response_due_date'];
     }
@@ -1635,18 +1592,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets promise_response_due_date.
      *
      * @param null|string $promise_response_due_date Indicates the date by which the seller must respond to the buyer with an estimated ship date. Only returned for Sourcing on Demand orders.
+     *
+     * @return self
      */
-    public function setPromiseResponseDueDate(?string $promise_response_due_date): self
+    public function setPromiseResponseDueDate($promise_response_due_date)
     {
         if (is_null($promise_response_due_date)) {
-            array_push($this->openAPINullablesSetToNull, 'promise_response_due_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('promise_response_due_date', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable promise_response_due_date cannot be null');
         }
         $this->container['promise_response_due_date'] = $promise_response_due_date;
 
@@ -1655,8 +1607,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets is_estimated_ship_date_set.
+     *
+     * @return null|bool
      */
-    public function getIsEstimatedShipDateSet(): ?bool
+    public function getIsEstimatedShipDateSet()
     {
         return $this->container['is_estimated_ship_date_set'];
     }
@@ -1665,18 +1619,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets is_estimated_ship_date_set.
      *
      * @param null|bool $is_estimated_ship_date_set When true, the estimated ship date is set for the order. Only returned for Sourcing on Demand orders.
+     *
+     * @return self
      */
-    public function setIsEstimatedShipDateSet(?bool $is_estimated_ship_date_set): self
+    public function setIsEstimatedShipDateSet($is_estimated_ship_date_set)
     {
         if (is_null($is_estimated_ship_date_set)) {
-            array_push($this->openAPINullablesSetToNull, 'is_estimated_ship_date_set');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_estimated_ship_date_set', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_estimated_ship_date_set cannot be null');
         }
         $this->container['is_estimated_ship_date_set'] = $is_estimated_ship_date_set;
 
@@ -1685,8 +1634,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets is_sold_by_ab.
+     *
+     * @return null|bool
      */
-    public function getIsSoldByAb(): ?bool
+    public function getIsSoldByAb()
     {
         return $this->container['is_sold_by_ab'];
     }
@@ -1695,18 +1646,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets is_sold_by_ab.
      *
      * @param null|bool $is_sold_by_ab When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller.
+     *
+     * @return self
      */
-    public function setIsSoldByAb(?bool $is_sold_by_ab): self
+    public function setIsSoldByAb($is_sold_by_ab)
     {
         if (is_null($is_sold_by_ab)) {
-            array_push($this->openAPINullablesSetToNull, 'is_sold_by_ab');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_sold_by_ab', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_sold_by_ab cannot be null');
         }
         $this->container['is_sold_by_ab'] = $is_sold_by_ab;
 
@@ -1715,8 +1661,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets is_iba.
+     *
+     * @return null|bool
      */
-    public function getIsIba(): ?bool
+    public function getIsIba()
     {
         return $this->container['is_iba'];
     }
@@ -1725,18 +1673,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets is_iba.
      *
      * @param null|bool $is_iba When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller.
+     *
+     * @return self
      */
-    public function setIsIba(?bool $is_iba): self
+    public function setIsIba($is_iba)
     {
         if (is_null($is_iba)) {
-            array_push($this->openAPINullablesSetToNull, 'is_iba');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_iba', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_iba cannot be null');
         }
         $this->container['is_iba'] = $is_iba;
 
@@ -1745,8 +1688,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets default_ship_from_location_address.
+     *
+     * @return null|Address
      */
-    public function getDefaultShipFromLocationAddress(): ?Address
+    public function getDefaultShipFromLocationAddress()
     {
         return $this->container['default_ship_from_location_address'];
     }
@@ -1755,18 +1700,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets default_ship_from_location_address.
      *
      * @param null|Address $default_ship_from_location_address default_ship_from_location_address
+     *
+     * @return self
      */
-    public function setDefaultShipFromLocationAddress(?Address $default_ship_from_location_address): self
+    public function setDefaultShipFromLocationAddress($default_ship_from_location_address)
     {
         if (is_null($default_ship_from_location_address)) {
-            array_push($this->openAPINullablesSetToNull, 'default_ship_from_location_address');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('default_ship_from_location_address', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable default_ship_from_location_address cannot be null');
         }
         $this->container['default_ship_from_location_address'] = $default_ship_from_location_address;
 
@@ -1775,8 +1715,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets buyer_invoice_preference.
+     *
+     * @return null|string
      */
-    public function getBuyerInvoicePreference(): ?string
+    public function getBuyerInvoicePreference()
     {
         return $this->container['buyer_invoice_preference'];
     }
@@ -1785,21 +1727,16 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets buyer_invoice_preference.
      *
      * @param null|string $buyer_invoice_preference The buyer's invoicing preference. Sellers can use this data to issue electronic invoices for orders in Turkey.  **Note**: This attribute is only available in the Turkey marketplace.
+     *
+     * @return self
      */
-    public function setBuyerInvoicePreference(?string $buyer_invoice_preference): self
+    public function setBuyerInvoicePreference($buyer_invoice_preference)
     {
         if (is_null($buyer_invoice_preference)) {
-            array_push($this->openAPINullablesSetToNull, 'buyer_invoice_preference');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('buyer_invoice_preference', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable buyer_invoice_preference cannot be null');
         }
         $allowedValues = $this->getBuyerInvoicePreferenceAllowableValues();
-        if (!is_null($buyer_invoice_preference) && !in_array($buyer_invoice_preference, $allowedValues, true)) {
+        if (!in_array($buyer_invoice_preference, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'buyer_invoice_preference', must be one of '%s'",
@@ -1815,8 +1752,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets buyer_tax_information.
+     *
+     * @return null|BuyerTaxInformation
      */
-    public function getBuyerTaxInformation(): ?BuyerTaxInformation
+    public function getBuyerTaxInformation()
     {
         return $this->container['buyer_tax_information'];
     }
@@ -1825,18 +1764,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets buyer_tax_information.
      *
      * @param null|BuyerTaxInformation $buyer_tax_information buyer_tax_information
+     *
+     * @return self
      */
-    public function setBuyerTaxInformation(?BuyerTaxInformation $buyer_tax_information): self
+    public function setBuyerTaxInformation($buyer_tax_information)
     {
         if (is_null($buyer_tax_information)) {
-            array_push($this->openAPINullablesSetToNull, 'buyer_tax_information');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('buyer_tax_information', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable buyer_tax_information cannot be null');
         }
         $this->container['buyer_tax_information'] = $buyer_tax_information;
 
@@ -1845,8 +1779,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets fulfillment_instruction.
+     *
+     * @return null|FulfillmentInstruction
      */
-    public function getFulfillmentInstruction(): ?FulfillmentInstruction
+    public function getFulfillmentInstruction()
     {
         return $this->container['fulfillment_instruction'];
     }
@@ -1855,18 +1791,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets fulfillment_instruction.
      *
      * @param null|FulfillmentInstruction $fulfillment_instruction fulfillment_instruction
+     *
+     * @return self
      */
-    public function setFulfillmentInstruction(?FulfillmentInstruction $fulfillment_instruction): self
+    public function setFulfillmentInstruction($fulfillment_instruction)
     {
         if (is_null($fulfillment_instruction)) {
-            array_push($this->openAPINullablesSetToNull, 'fulfillment_instruction');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fulfillment_instruction', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fulfillment_instruction cannot be null');
         }
         $this->container['fulfillment_instruction'] = $fulfillment_instruction;
 
@@ -1875,8 +1806,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets is_ispu.
+     *
+     * @return null|bool
      */
-    public function getIsIspu(): ?bool
+    public function getIsIspu()
     {
         return $this->container['is_ispu'];
     }
@@ -1885,18 +1818,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets is_ispu.
      *
      * @param null|bool $is_ispu when true, this order is marked to be picked up from a store rather than delivered
+     *
+     * @return self
      */
-    public function setIsIspu(?bool $is_ispu): self
+    public function setIsIspu($is_ispu)
     {
         if (is_null($is_ispu)) {
-            array_push($this->openAPINullablesSetToNull, 'is_ispu');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_ispu', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_ispu cannot be null');
         }
         $this->container['is_ispu'] = $is_ispu;
 
@@ -1905,8 +1833,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets is_access_point_order.
+     *
+     * @return null|bool
      */
-    public function getIsAccessPointOrder(): ?bool
+    public function getIsAccessPointOrder()
     {
         return $this->container['is_access_point_order'];
     }
@@ -1915,18 +1845,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets is_access_point_order.
      *
      * @param null|bool $is_access_point_order When true, this order is marked to be delivered to an Access Point. The access location is chosen by the customer. Access Points include Amazon Hub Lockers, Amazon Hub Counters, and pickup points operated by carriers.
+     *
+     * @return self
      */
-    public function setIsAccessPointOrder(?bool $is_access_point_order): self
+    public function setIsAccessPointOrder($is_access_point_order)
     {
         if (is_null($is_access_point_order)) {
-            array_push($this->openAPINullablesSetToNull, 'is_access_point_order');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('is_access_point_order', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable is_access_point_order cannot be null');
         }
         $this->container['is_access_point_order'] = $is_access_point_order;
 
@@ -1935,8 +1860,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets marketplace_tax_info.
+     *
+     * @return null|MarketplaceTaxInfo
      */
-    public function getMarketplaceTaxInfo(): ?MarketplaceTaxInfo
+    public function getMarketplaceTaxInfo()
     {
         return $this->container['marketplace_tax_info'];
     }
@@ -1945,18 +1872,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets marketplace_tax_info.
      *
      * @param null|MarketplaceTaxInfo $marketplace_tax_info marketplace_tax_info
+     *
+     * @return self
      */
-    public function setMarketplaceTaxInfo(?MarketplaceTaxInfo $marketplace_tax_info): self
+    public function setMarketplaceTaxInfo($marketplace_tax_info)
     {
         if (is_null($marketplace_tax_info)) {
-            array_push($this->openAPINullablesSetToNull, 'marketplace_tax_info');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('marketplace_tax_info', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable marketplace_tax_info cannot be null');
         }
         $this->container['marketplace_tax_info'] = $marketplace_tax_info;
 
@@ -1965,8 +1887,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets seller_display_name.
+     *
+     * @return null|string
      */
-    public function getSellerDisplayName(): ?string
+    public function getSellerDisplayName()
     {
         return $this->container['seller_display_name'];
     }
@@ -1975,18 +1899,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets seller_display_name.
      *
      * @param null|string $seller_display_name The seller’s friendly name registered in the marketplace where the sale took place. Sellers can use this data to issue electronic invoices for orders in Brazil.  **Note**: This attribute is only available in the Brazil marketplace for the orders with `Pending` or `Unshipped` status.
+     *
+     * @return self
      */
-    public function setSellerDisplayName(?string $seller_display_name): self
+    public function setSellerDisplayName($seller_display_name)
     {
         if (is_null($seller_display_name)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_display_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_display_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_display_name cannot be null');
         }
         $this->container['seller_display_name'] = $seller_display_name;
 
@@ -1995,8 +1914,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets shipping_address.
+     *
+     * @return null|Address
      */
-    public function getShippingAddress(): ?Address
+    public function getShippingAddress()
     {
         return $this->container['shipping_address'];
     }
@@ -2005,18 +1926,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets shipping_address.
      *
      * @param null|Address $shipping_address shipping_address
+     *
+     * @return self
      */
-    public function setShippingAddress(?Address $shipping_address): self
+    public function setShippingAddress($shipping_address)
     {
         if (is_null($shipping_address)) {
-            array_push($this->openAPINullablesSetToNull, 'shipping_address');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipping_address', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipping_address cannot be null');
         }
         $this->container['shipping_address'] = $shipping_address;
 
@@ -2025,8 +1941,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets buyer_info.
+     *
+     * @return null|BuyerInfo
      */
-    public function getBuyerInfo(): ?BuyerInfo
+    public function getBuyerInfo()
     {
         return $this->container['buyer_info'];
     }
@@ -2035,18 +1953,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets buyer_info.
      *
      * @param null|BuyerInfo $buyer_info buyer_info
+     *
+     * @return self
      */
-    public function setBuyerInfo(?BuyerInfo $buyer_info): self
+    public function setBuyerInfo($buyer_info)
     {
         if (is_null($buyer_info)) {
-            array_push($this->openAPINullablesSetToNull, 'buyer_info');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('buyer_info', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable buyer_info cannot be null');
         }
         $this->container['buyer_info'] = $buyer_info;
 
@@ -2055,8 +1968,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets automated_shipping_settings.
+     *
+     * @return null|AutomatedShippingSettings
      */
-    public function getAutomatedShippingSettings(): ?AutomatedShippingSettings
+    public function getAutomatedShippingSettings()
     {
         return $this->container['automated_shipping_settings'];
     }
@@ -2065,18 +1980,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets automated_shipping_settings.
      *
      * @param null|AutomatedShippingSettings $automated_shipping_settings automated_shipping_settings
+     *
+     * @return self
      */
-    public function setAutomatedShippingSettings(?AutomatedShippingSettings $automated_shipping_settings): self
+    public function setAutomatedShippingSettings($automated_shipping_settings)
     {
         if (is_null($automated_shipping_settings)) {
-            array_push($this->openAPINullablesSetToNull, 'automated_shipping_settings');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('automated_shipping_settings', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable automated_shipping_settings cannot be null');
         }
         $this->container['automated_shipping_settings'] = $automated_shipping_settings;
 
@@ -2085,8 +1995,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets has_regulated_items.
+     *
+     * @return null|bool
      */
-    public function getHasRegulatedItems(): ?bool
+    public function getHasRegulatedItems()
     {
         return $this->container['has_regulated_items'];
     }
@@ -2095,18 +2007,13 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets has_regulated_items.
      *
      * @param null|bool $has_regulated_items whether the order contains regulated items which may require additional approval steps before being fulfilled
+     *
+     * @return self
      */
-    public function setHasRegulatedItems(?bool $has_regulated_items): self
+    public function setHasRegulatedItems($has_regulated_items)
     {
         if (is_null($has_regulated_items)) {
-            array_push($this->openAPINullablesSetToNull, 'has_regulated_items');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('has_regulated_items', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable has_regulated_items cannot be null');
         }
         $this->container['has_regulated_items'] = $has_regulated_items;
 
@@ -2115,8 +2022,10 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets electronic_invoice_status.
+     *
+     * @return null|ElectronicInvoiceStatus
      */
-    public function getElectronicInvoiceStatus(): ?string
+    public function getElectronicInvoiceStatus()
     {
         return $this->container['electronic_invoice_status'];
     }
@@ -2124,19 +2033,14 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets electronic_invoice_status.
      *
-     * @param null|string $electronic_invoice_status electronic_invoice_status
+     * @param null|ElectronicInvoiceStatus $electronic_invoice_status electronic_invoice_status
+     *
+     * @return self
      */
-    public function setElectronicInvoiceStatus(?string $electronic_invoice_status): self
+    public function setElectronicInvoiceStatus($electronic_invoice_status)
     {
         if (is_null($electronic_invoice_status)) {
-            array_push($this->openAPINullablesSetToNull, 'electronic_invoice_status');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('electronic_invoice_status', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable electronic_invoice_status cannot be null');
         }
         $this->container['electronic_invoice_status'] = $electronic_invoice_status;
 
@@ -2161,7 +2065,7 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -2172,7 +2076,7 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -2200,15 +2104,17 @@ class Order implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

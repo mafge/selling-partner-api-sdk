@@ -3,7 +3,7 @@
 /**
  * Box.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Box';
+    protected static $openAPIModelName = 'Box';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'box_id' => 'string',
         'content_information_source' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\BoxContentInformationSource',
         'destination_region' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Region',
@@ -71,7 +72,8 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
         'package_id' => 'string',
         'quantity' => 'int',
         'template_name' => 'string',
-        'weight' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Weight'];
+        'weight' => '\SpApi\Model\fulfillment\inbound\v2024_03_20\Weight',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -82,7 +84,7 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'box_id' => null,
         'content_information_source' => null,
         'destination_region' => null,
@@ -93,7 +95,8 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
         'package_id' => null,
         'quantity' => null,
         'template_name' => null,
-        'weight' => null];
+        'weight' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -101,17 +104,17 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'box_id' => true,
-        'content_information_source' => true,
-        'destination_region' => true,
-        'dimensions' => true,
-        'external_container_identifier' => true,
-        'external_container_identifier_type' => true,
-        'items' => true,
+        'box_id' => false,
+        'content_information_source' => false,
+        'destination_region' => false,
+        'dimensions' => false,
+        'external_container_identifier' => false,
+        'external_container_identifier_type' => false,
+        'items' => false,
         'package_id' => false,
-        'quantity' => true,
-        'template_name' => true,
-        'weight' => true,
+        'quantity' => false,
+        'template_name' => false,
+        'weight' => false,
     ];
 
     /**
@@ -127,7 +130,7 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'box_id' => 'boxId',
         'content_information_source' => 'contentInformationSource',
         'destination_region' => 'destinationRegion',
@@ -146,7 +149,7 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'box_id' => 'setBoxId',
         'content_information_source' => 'setContentInformationSource',
         'destination_region' => 'setDestinationRegion',
@@ -165,7 +168,7 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'box_id' => 'getBoxId',
         'content_information_source' => 'getContentInformationSource',
         'destination_region' => 'getDestinationRegion',
@@ -181,14 +184,16 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -220,16 +225,20 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -253,32 +262,40 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -288,7 +305,7 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -356,15 +373,17 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets box_id.
+     *
+     * @return null|string
      */
-    public function getBoxId(): ?string
+    public function getBoxId()
     {
         return $this->container['box_id'];
     }
@@ -373,23 +392,18 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets box_id.
      *
      * @param null|string $box_id The ID provided by Amazon that identifies a given box. This ID is comprised of the external shipment ID (which is generated after transportation has been confirmed) and the index of the box.
+     *
+     * @return self
      */
-    public function setBoxId(?string $box_id): self
+    public function setBoxId($box_id)
     {
         if (is_null($box_id)) {
-            array_push($this->openAPINullablesSetToNull, 'box_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('box_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable box_id cannot be null');
         }
-        if (!is_null($box_id) && (mb_strlen($box_id) > 1024)) {
+        if (mb_strlen($box_id) > 1024) {
             throw new \InvalidArgumentException('invalid length for $box_id when calling Box., must be smaller than or equal to 1024.');
         }
-        if (!is_null($box_id) && (mb_strlen($box_id) < 1)) {
+        if (mb_strlen($box_id) < 1) {
             throw new \InvalidArgumentException('invalid length for $box_id when calling Box., must be bigger than or equal to 1.');
         }
 
@@ -400,8 +414,10 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets content_information_source.
+     *
+     * @return null|BoxContentInformationSource
      */
-    public function getContentInformationSource(): ?string
+    public function getContentInformationSource()
     {
         return $this->container['content_information_source'];
     }
@@ -409,19 +425,14 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets content_information_source.
      *
-     * @param null|string $content_information_source content_information_source
+     * @param null|BoxContentInformationSource $content_information_source content_information_source
+     *
+     * @return self
      */
-    public function setContentInformationSource(?string $content_information_source): self
+    public function setContentInformationSource($content_information_source)
     {
         if (is_null($content_information_source)) {
-            array_push($this->openAPINullablesSetToNull, 'content_information_source');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('content_information_source', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable content_information_source cannot be null');
         }
         $this->container['content_information_source'] = $content_information_source;
 
@@ -430,8 +441,10 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets destination_region.
+     *
+     * @return null|Region
      */
-    public function getDestinationRegion(): ?Region
+    public function getDestinationRegion()
     {
         return $this->container['destination_region'];
     }
@@ -440,18 +453,13 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets destination_region.
      *
      * @param null|Region $destination_region destination_region
+     *
+     * @return self
      */
-    public function setDestinationRegion(?Region $destination_region): self
+    public function setDestinationRegion($destination_region)
     {
         if (is_null($destination_region)) {
-            array_push($this->openAPINullablesSetToNull, 'destination_region');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('destination_region', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable destination_region cannot be null');
         }
         $this->container['destination_region'] = $destination_region;
 
@@ -460,8 +468,10 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets dimensions.
+     *
+     * @return null|Dimensions
      */
-    public function getDimensions(): ?Dimensions
+    public function getDimensions()
     {
         return $this->container['dimensions'];
     }
@@ -470,18 +480,13 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets dimensions.
      *
      * @param null|Dimensions $dimensions dimensions
+     *
+     * @return self
      */
-    public function setDimensions(?Dimensions $dimensions): self
+    public function setDimensions($dimensions)
     {
         if (is_null($dimensions)) {
-            array_push($this->openAPINullablesSetToNull, 'dimensions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('dimensions', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable dimensions cannot be null');
         }
         $this->container['dimensions'] = $dimensions;
 
@@ -490,8 +495,10 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets external_container_identifier.
+     *
+     * @return null|string
      */
-    public function getExternalContainerIdentifier(): ?string
+    public function getExternalContainerIdentifier()
     {
         return $this->container['external_container_identifier'];
     }
@@ -500,23 +507,18 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets external_container_identifier.
      *
      * @param null|string $external_container_identifier the external identifier for this container / box
+     *
+     * @return self
      */
-    public function setExternalContainerIdentifier(?string $external_container_identifier): self
+    public function setExternalContainerIdentifier($external_container_identifier)
     {
         if (is_null($external_container_identifier)) {
-            array_push($this->openAPINullablesSetToNull, 'external_container_identifier');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('external_container_identifier', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable external_container_identifier cannot be null');
         }
-        if (!is_null($external_container_identifier) && (mb_strlen($external_container_identifier) > 1024)) {
+        if (mb_strlen($external_container_identifier) > 1024) {
             throw new \InvalidArgumentException('invalid length for $external_container_identifier when calling Box., must be smaller than or equal to 1024.');
         }
-        if (!is_null($external_container_identifier) && (mb_strlen($external_container_identifier) < 1)) {
+        if (mb_strlen($external_container_identifier) < 1) {
             throw new \InvalidArgumentException('invalid length for $external_container_identifier when calling Box., must be bigger than or equal to 1.');
         }
 
@@ -527,8 +529,10 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets external_container_identifier_type.
+     *
+     * @return null|string
      */
-    public function getExternalContainerIdentifierType(): ?string
+    public function getExternalContainerIdentifierType()
     {
         return $this->container['external_container_identifier_type'];
     }
@@ -537,23 +541,18 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets external_container_identifier_type.
      *
      * @param null|string $external_container_identifier_type Type of the external identifier used. Can be: `AMAZON`, `SSCC`.
+     *
+     * @return self
      */
-    public function setExternalContainerIdentifierType(?string $external_container_identifier_type): self
+    public function setExternalContainerIdentifierType($external_container_identifier_type)
     {
         if (is_null($external_container_identifier_type)) {
-            array_push($this->openAPINullablesSetToNull, 'external_container_identifier_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('external_container_identifier_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable external_container_identifier_type cannot be null');
         }
-        if (!is_null($external_container_identifier_type) && (mb_strlen($external_container_identifier_type) > 1024)) {
+        if (mb_strlen($external_container_identifier_type) > 1024) {
             throw new \InvalidArgumentException('invalid length for $external_container_identifier_type when calling Box., must be smaller than or equal to 1024.');
         }
-        if (!is_null($external_container_identifier_type) && (mb_strlen($external_container_identifier_type) < 1)) {
+        if (mb_strlen($external_container_identifier_type) < 1) {
             throw new \InvalidArgumentException('invalid length for $external_container_identifier_type when calling Box., must be bigger than or equal to 1.');
         }
 
@@ -564,8 +563,10 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets items.
+     *
+     * @return null|Item[]
      */
-    public function getItems(): ?array
+    public function getItems()
     {
         return $this->container['items'];
     }
@@ -573,19 +574,14 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets items.
      *
-     * @param null|array $items items contained within the box
+     * @param null|Item[] $items items contained within the box
+     *
+     * @return self
      */
-    public function setItems(?array $items): self
+    public function setItems($items)
     {
         if (is_null($items)) {
-            array_push($this->openAPINullablesSetToNull, 'items');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('items', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable items cannot be null');
         }
         $this->container['items'] = $items;
 
@@ -594,8 +590,10 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets package_id.
+     *
+     * @return string
      */
-    public function getPackageId(): string
+    public function getPackageId()
     {
         return $this->container['package_id'];
     }
@@ -604,8 +602,10 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets package_id.
      *
      * @param string $package_id primary key to uniquely identify a Package (Box or Pallet)
+     *
+     * @return self
      */
-    public function setPackageId(string $package_id): self
+    public function setPackageId($package_id)
     {
         if (is_null($package_id)) {
             throw new \InvalidArgumentException('non-nullable package_id cannot be null');
@@ -627,8 +627,10 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets quantity.
+     *
+     * @return null|int
      */
-    public function getQuantity(): ?int
+    public function getQuantity()
     {
         return $this->container['quantity'];
     }
@@ -637,24 +639,19 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets quantity.
      *
      * @param null|int $quantity the number of containers where all other properties like weight or dimensions are identical
+     *
+     * @return self
      */
-    public function setQuantity(?int $quantity): self
+    public function setQuantity($quantity)
     {
         if (is_null($quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable quantity cannot be null');
         }
 
-        if (!is_null($quantity) && ($quantity > 10000)) {
+        if ($quantity > 10000) {
             throw new \InvalidArgumentException('invalid value for $quantity when calling Box., must be smaller than or equal to 10000.');
         }
-        if (!is_null($quantity) && ($quantity < 1)) {
+        if ($quantity < 1) {
             throw new \InvalidArgumentException('invalid value for $quantity when calling Box., must be bigger than or equal to 1.');
         }
 
@@ -665,8 +662,10 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets template_name.
+     *
+     * @return null|string
      */
-    public function getTemplateName(): ?string
+    public function getTemplateName()
     {
         return $this->container['template_name'];
     }
@@ -675,23 +674,18 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets template_name.
      *
      * @param null|string $template_name template name of the box
+     *
+     * @return self
      */
-    public function setTemplateName(?string $template_name): self
+    public function setTemplateName($template_name)
     {
         if (is_null($template_name)) {
-            array_push($this->openAPINullablesSetToNull, 'template_name');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('template_name', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable template_name cannot be null');
         }
-        if (!is_null($template_name) && (mb_strlen($template_name) > 1024)) {
+        if (mb_strlen($template_name) > 1024) {
             throw new \InvalidArgumentException('invalid length for $template_name when calling Box., must be smaller than or equal to 1024.');
         }
-        if (!is_null($template_name) && (mb_strlen($template_name) < 1)) {
+        if (mb_strlen($template_name) < 1) {
             throw new \InvalidArgumentException('invalid length for $template_name when calling Box., must be bigger than or equal to 1.');
         }
 
@@ -702,8 +696,10 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets weight.
+     *
+     * @return null|Weight
      */
-    public function getWeight(): ?Weight
+    public function getWeight()
     {
         return $this->container['weight'];
     }
@@ -712,18 +708,13 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets weight.
      *
      * @param null|Weight $weight weight
+     *
+     * @return self
      */
-    public function setWeight(?Weight $weight): self
+    public function setWeight($weight)
     {
         if (is_null($weight)) {
-            array_push($this->openAPINullablesSetToNull, 'weight');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('weight', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable weight cannot be null');
         }
         $this->container['weight'] = $weight;
 
@@ -748,7 +739,7 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -759,7 +750,7 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -787,15 +778,17 @@ class Box implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * Promotion.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\replenishment\v2022_11_07;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Promotion';
+    protected static $openAPIModelName = 'Promotion';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'selling_partner_funded_base_discount' => '\SpApi\Model\replenishment\v2022_11_07\DiscountFunding',
         'selling_partner_funded_tiered_discount' => '\SpApi\Model\replenishment\v2022_11_07\DiscountFunding',
         'amazon_funded_base_discount' => '\SpApi\Model\replenishment\v2022_11_07\DiscountFunding',
-        'amazon_funded_tiered_discount' => '\SpApi\Model\replenishment\v2022_11_07\DiscountFunding'];
+        'amazon_funded_tiered_discount' => '\SpApi\Model\replenishment\v2022_11_07\DiscountFunding',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'selling_partner_funded_base_discount' => null,
         'selling_partner_funded_tiered_discount' => null,
         'amazon_funded_base_discount' => null,
-        'amazon_funded_tiered_discount' => null];
+        'amazon_funded_tiered_discount' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,10 +90,10 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'selling_partner_funded_base_discount' => true,
-        'selling_partner_funded_tiered_discount' => true,
-        'amazon_funded_base_discount' => true,
-        'amazon_funded_tiered_discount' => true,
+        'selling_partner_funded_base_discount' => false,
+        'selling_partner_funded_tiered_discount' => false,
+        'amazon_funded_base_discount' => false,
+        'amazon_funded_tiered_discount' => false,
     ];
 
     /**
@@ -106,7 +109,7 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'selling_partner_funded_base_discount' => 'sellingPartnerFundedBaseDiscount',
         'selling_partner_funded_tiered_discount' => 'sellingPartnerFundedTieredDiscount',
         'amazon_funded_base_discount' => 'amazonFundedBaseDiscount',
@@ -118,7 +121,7 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'selling_partner_funded_base_discount' => 'setSellingPartnerFundedBaseDiscount',
         'selling_partner_funded_tiered_discount' => 'setSellingPartnerFundedTieredDiscount',
         'amazon_funded_base_discount' => 'setAmazonFundedBaseDiscount',
@@ -130,7 +133,7 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'selling_partner_funded_base_discount' => 'getSellingPartnerFundedBaseDiscount',
         'selling_partner_funded_tiered_discount' => 'getSellingPartnerFundedTieredDiscount',
         'amazon_funded_base_discount' => 'getAmazonFundedBaseDiscount',
@@ -139,14 +142,16 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -250,15 +267,17 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets selling_partner_funded_base_discount.
+     *
+     * @return null|DiscountFunding
      */
-    public function getSellingPartnerFundedBaseDiscount(): ?DiscountFunding
+    public function getSellingPartnerFundedBaseDiscount()
     {
         return $this->container['selling_partner_funded_base_discount'];
     }
@@ -267,18 +286,13 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets selling_partner_funded_base_discount.
      *
      * @param null|DiscountFunding $selling_partner_funded_base_discount selling_partner_funded_base_discount
+     *
+     * @return self
      */
-    public function setSellingPartnerFundedBaseDiscount(?DiscountFunding $selling_partner_funded_base_discount): self
+    public function setSellingPartnerFundedBaseDiscount($selling_partner_funded_base_discount)
     {
         if (is_null($selling_partner_funded_base_discount)) {
-            array_push($this->openAPINullablesSetToNull, 'selling_partner_funded_base_discount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('selling_partner_funded_base_discount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable selling_partner_funded_base_discount cannot be null');
         }
         $this->container['selling_partner_funded_base_discount'] = $selling_partner_funded_base_discount;
 
@@ -287,8 +301,10 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets selling_partner_funded_tiered_discount.
+     *
+     * @return null|DiscountFunding
      */
-    public function getSellingPartnerFundedTieredDiscount(): ?DiscountFunding
+    public function getSellingPartnerFundedTieredDiscount()
     {
         return $this->container['selling_partner_funded_tiered_discount'];
     }
@@ -297,18 +313,13 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets selling_partner_funded_tiered_discount.
      *
      * @param null|DiscountFunding $selling_partner_funded_tiered_discount selling_partner_funded_tiered_discount
+     *
+     * @return self
      */
-    public function setSellingPartnerFundedTieredDiscount(?DiscountFunding $selling_partner_funded_tiered_discount): self
+    public function setSellingPartnerFundedTieredDiscount($selling_partner_funded_tiered_discount)
     {
         if (is_null($selling_partner_funded_tiered_discount)) {
-            array_push($this->openAPINullablesSetToNull, 'selling_partner_funded_tiered_discount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('selling_partner_funded_tiered_discount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable selling_partner_funded_tiered_discount cannot be null');
         }
         $this->container['selling_partner_funded_tiered_discount'] = $selling_partner_funded_tiered_discount;
 
@@ -317,8 +328,10 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets amazon_funded_base_discount.
+     *
+     * @return null|DiscountFunding
      */
-    public function getAmazonFundedBaseDiscount(): ?DiscountFunding
+    public function getAmazonFundedBaseDiscount()
     {
         return $this->container['amazon_funded_base_discount'];
     }
@@ -327,18 +340,13 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets amazon_funded_base_discount.
      *
      * @param null|DiscountFunding $amazon_funded_base_discount amazon_funded_base_discount
+     *
+     * @return self
      */
-    public function setAmazonFundedBaseDiscount(?DiscountFunding $amazon_funded_base_discount): self
+    public function setAmazonFundedBaseDiscount($amazon_funded_base_discount)
     {
         if (is_null($amazon_funded_base_discount)) {
-            array_push($this->openAPINullablesSetToNull, 'amazon_funded_base_discount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amazon_funded_base_discount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable amazon_funded_base_discount cannot be null');
         }
         $this->container['amazon_funded_base_discount'] = $amazon_funded_base_discount;
 
@@ -347,8 +355,10 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets amazon_funded_tiered_discount.
+     *
+     * @return null|DiscountFunding
      */
-    public function getAmazonFundedTieredDiscount(): ?DiscountFunding
+    public function getAmazonFundedTieredDiscount()
     {
         return $this->container['amazon_funded_tiered_discount'];
     }
@@ -357,18 +367,13 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets amazon_funded_tiered_discount.
      *
      * @param null|DiscountFunding $amazon_funded_tiered_discount amazon_funded_tiered_discount
+     *
+     * @return self
      */
-    public function setAmazonFundedTieredDiscount(?DiscountFunding $amazon_funded_tiered_discount): self
+    public function setAmazonFundedTieredDiscount($amazon_funded_tiered_discount)
     {
         if (is_null($amazon_funded_tiered_discount)) {
-            array_push($this->openAPINullablesSetToNull, 'amazon_funded_tiered_discount');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amazon_funded_tiered_discount', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable amazon_funded_tiered_discount cannot be null');
         }
         $this->container['amazon_funded_tiered_discount'] = $amazon_funded_tiered_discount;
 
@@ -393,7 +398,7 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -404,7 +409,7 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -432,15 +437,17 @@ class Promotion implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

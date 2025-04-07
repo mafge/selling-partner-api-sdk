@@ -3,7 +3,7 @@
 /**
  * SelectedDeliveryWindow.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\inbound\v2024_03_20;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'SelectedDeliveryWindow';
+    protected static $openAPIModelName = 'SelectedDeliveryWindow';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'availability_type' => 'string',
         'delivery_window_option_id' => 'string',
         'editable_until' => '\DateTime',
         'end_date' => '\DateTime',
-        'start_date' => '\DateTime'];
+        'start_date' => '\DateTime',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'availability_type' => null,
         'delivery_window_option_id' => null,
         'editable_until' => 'date-time',
         'end_date' => 'date-time',
-        'start_date' => 'date-time'];
+        'start_date' => 'date-time',
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -91,7 +94,7 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
     protected static array $openAPINullables = [
         'availability_type' => false,
         'delivery_window_option_id' => false,
-        'editable_until' => true,
+        'editable_until' => false,
         'end_date' => false,
         'start_date' => false,
     ];
@@ -109,7 +112,7 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'availability_type' => 'availabilityType',
         'delivery_window_option_id' => 'deliveryWindowOptionId',
         'editable_until' => 'editableUntil',
@@ -122,7 +125,7 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'availability_type' => 'setAvailabilityType',
         'delivery_window_option_id' => 'setDeliveryWindowOptionId',
         'editable_until' => 'setEditableUntil',
@@ -135,7 +138,7 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'availability_type' => 'getAvailabilityType',
         'delivery_window_option_id' => 'getDeliveryWindowOptionId',
         'editable_until' => 'getEditableUntil',
@@ -145,14 +148,16 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -284,15 +301,17 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets availability_type.
+     *
+     * @return string
      */
-    public function getAvailabilityType(): string
+    public function getAvailabilityType()
     {
         return $this->container['availability_type'];
     }
@@ -301,8 +320,10 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets availability_type.
      *
      * @param string $availability_type Identifies type of Delivery Window Availability. Values: `AVAILABLE`, `CONGESTED`
+     *
+     * @return self
      */
-    public function setAvailabilityType(string $availability_type): self
+    public function setAvailabilityType($availability_type)
     {
         if (is_null($availability_type)) {
             throw new \InvalidArgumentException('non-nullable availability_type cannot be null');
@@ -314,8 +335,10 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets delivery_window_option_id.
+     *
+     * @return string
      */
-    public function getDeliveryWindowOptionId(): string
+    public function getDeliveryWindowOptionId()
     {
         return $this->container['delivery_window_option_id'];
     }
@@ -324,8 +347,10 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets delivery_window_option_id.
      *
      * @param string $delivery_window_option_id Identifier of a delivery window option. A delivery window option represent one option for when a shipment is expected to be delivered.
+     *
+     * @return self
      */
-    public function setDeliveryWindowOptionId(string $delivery_window_option_id): self
+    public function setDeliveryWindowOptionId($delivery_window_option_id)
     {
         if (is_null($delivery_window_option_id)) {
             throw new \InvalidArgumentException('non-nullable delivery_window_option_id cannot be null');
@@ -347,8 +372,10 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets editable_until.
+     *
+     * @return null|\DateTime
      */
-    public function getEditableUntil(): ?\DateTime
+    public function getEditableUntil()
     {
         return $this->container['editable_until'];
     }
@@ -357,18 +384,13 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets editable_until.
      *
      * @param null|\DateTime $editable_until the timestamp at which this Window can no longer be edited
+     *
+     * @return self
      */
-    public function setEditableUntil(?\DateTime $editable_until): self
+    public function setEditableUntil($editable_until)
     {
         if (is_null($editable_until)) {
-            array_push($this->openAPINullablesSetToNull, 'editable_until');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('editable_until', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable editable_until cannot be null');
         }
         $this->container['editable_until'] = $editable_until;
 
@@ -377,8 +399,10 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets end_date.
+     *
+     * @return \DateTime
      */
-    public function getEndDate(): \DateTime
+    public function getEndDate()
     {
         return $this->container['end_date'];
     }
@@ -387,8 +411,10 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets end_date.
      *
      * @param \DateTime $end_date the end timestamp of the window
+     *
+     * @return self
      */
-    public function setEndDate(\DateTime $end_date): self
+    public function setEndDate($end_date)
     {
         if (is_null($end_date)) {
             throw new \InvalidArgumentException('non-nullable end_date cannot be null');
@@ -400,8 +426,10 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets start_date.
+     *
+     * @return \DateTime
      */
-    public function getStartDate(): \DateTime
+    public function getStartDate()
     {
         return $this->container['start_date'];
     }
@@ -410,8 +438,10 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets start_date.
      *
      * @param \DateTime $start_date the start timestamp of the window
+     *
+     * @return self
      */
-    public function setStartDate(\DateTime $start_date): self
+    public function setStartDate($start_date)
     {
         if (is_null($start_date)) {
             throw new \InvalidArgumentException('non-nullable start_date cannot be null');
@@ -439,7 +469,7 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -450,7 +480,7 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -478,15 +508,17 @@ class SelectedDeliveryWindow implements ModelInterface, \ArrayAccess, \JsonSeria
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

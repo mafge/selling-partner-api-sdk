@@ -2,7 +2,7 @@
 /**
  * ImportDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\orders\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * ImportDetails Class Doc Comment
@@ -52,19 +50,20 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'ImportDetails';
+    protected static $openAPIModelName = 'ImportDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'method_of_payment' => 'string',
-             'international_commercial_terms' => 'string',
-             'port_of_delivery' => 'string',
-             'import_containers' => 'string',
-             'shipping_instructions' => 'string'    ];
+    protected static $openAPITypes = [
+        'method_of_payment' => 'string',
+        'international_commercial_terms' => 'string',
+        'port_of_delivery' => 'string',
+        'import_containers' => 'string',
+        'shipping_instructions' => 'string'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -73,12 +72,13 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'method_of_payment' => null,
-            'international_commercial_terms' => null,
-            'port_of_delivery' => null,
-            'import_containers' => null,
-            'shipping_instructions' => null    ];
+    protected static $openAPIFormats = [
+        'method_of_payment' => null,
+        'international_commercial_terms' => null,
+        'port_of_delivery' => null,
+        'import_containers' => null,
+        'shipping_instructions' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -86,11 +86,11 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'method_of_payment' => true,
-        'international_commercial_terms' => true,
-        'port_of_delivery' => true,
-        'import_containers' => true,
-        'shipping_instructions' => true
+        'method_of_payment' => false,
+        'international_commercial_terms' => false,
+        'port_of_delivery' => false,
+        'import_containers' => false,
+        'shipping_instructions' => false
     ];
 
     /**
@@ -105,7 +105,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -115,7 +115,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -178,13 +178,12 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'method_of_payment' => 'methodOfPayment',
-                'international_commercial_terms' => 'internationalCommercialTerms',
-                'port_of_delivery' => 'portOfDelivery',
-                'import_containers' => 'importContainers',
-                'shipping_instructions' => 'shippingInstructions'
-        
+        'international_commercial_terms' => 'internationalCommercialTerms',
+        'port_of_delivery' => 'portOfDelivery',
+        'import_containers' => 'importContainers',
+        'shipping_instructions' => 'shippingInstructions'
     ];
 
     /**
@@ -192,7 +191,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'method_of_payment' => 'setMethodOfPayment',
         'international_commercial_terms' => 'setInternationalCommercialTerms',
         'port_of_delivery' => 'setPortOfDelivery',
@@ -205,7 +204,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'method_of_payment' => 'getMethodOfPayment',
         'international_commercial_terms' => 'getInternationalCommercialTerms',
         'port_of_delivery' => 'getPortOfDelivery',
@@ -219,7 +218,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -229,7 +228,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -239,7 +238,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -249,7 +248,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -277,7 +276,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getMethodOfPaymentAllowableValues(): array
+    public function getMethodOfPaymentAllowableValues()
     {
         return [
             self::METHOD_OF_PAYMENT_PAID_BY_BUYER,
@@ -294,7 +293,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getInternationalCommercialTermsAllowableValues(): array
+    public function getInternationalCommercialTermsAllowableValues()
     {
         return [
             self::INTERNATIONAL_COMMERCIAL_TERMS_EX_WORKS,
@@ -314,17 +313,17 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('method_of_payment', $data ?? [], null);
         $this->setIfExists('international_commercial_terms', $data ?? [], null);
@@ -356,7 +355,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -395,7 +394,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -406,7 +405,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getMethodOfPayment(): ?string
+    public function getMethodOfPayment()
     {
         return $this->container['method_of_payment'];
     }
@@ -418,20 +417,13 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setMethodOfPayment(?string $method_of_payment): self
+    public function setMethodOfPayment($method_of_payment)
     {
         if (is_null($method_of_payment)) {
-            array_push($this->openAPINullablesSetToNull, 'method_of_payment');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('method_of_payment', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable method_of_payment cannot be null');
         }
         $allowedValues = $this->getMethodOfPaymentAllowableValues();
-        if (!is_null($method_of_payment) && !in_array($method_of_payment, $allowedValues, true)) {
+        if (!in_array($method_of_payment, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'method_of_payment', must be one of '%s'",
@@ -450,7 +442,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getInternationalCommercialTerms(): ?string
+    public function getInternationalCommercialTerms()
     {
         return $this->container['international_commercial_terms'];
     }
@@ -462,20 +454,13 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setInternationalCommercialTerms(?string $international_commercial_terms): self
+    public function setInternationalCommercialTerms($international_commercial_terms)
     {
         if (is_null($international_commercial_terms)) {
-            array_push($this->openAPINullablesSetToNull, 'international_commercial_terms');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('international_commercial_terms', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable international_commercial_terms cannot be null');
         }
         $allowedValues = $this->getInternationalCommercialTermsAllowableValues();
-        if (!is_null($international_commercial_terms) && !in_array($international_commercial_terms, $allowedValues, true)) {
+        if (!in_array($international_commercial_terms, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'international_commercial_terms', must be one of '%s'",
@@ -494,7 +479,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getPortOfDelivery(): ?string
+    public function getPortOfDelivery()
     {
         return $this->container['port_of_delivery'];
     }
@@ -506,19 +491,12 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setPortOfDelivery(?string $port_of_delivery): self
+    public function setPortOfDelivery($port_of_delivery)
     {
         if (is_null($port_of_delivery)) {
-            array_push($this->openAPINullablesSetToNull, 'port_of_delivery');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('port_of_delivery', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable port_of_delivery cannot be null');
         }
-        if (!is_null($port_of_delivery) && (mb_strlen($port_of_delivery) > 64)) {
+        if ((mb_strlen($port_of_delivery) > 64)) {
             throw new \InvalidArgumentException('invalid length for $port_of_delivery when calling ImportDetails., must be smaller than or equal to 64.');
         }
 
@@ -532,7 +510,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getImportContainers(): ?string
+    public function getImportContainers()
     {
         return $this->container['import_containers'];
     }
@@ -544,19 +522,12 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setImportContainers(?string $import_containers): self
+    public function setImportContainers($import_containers)
     {
         if (is_null($import_containers)) {
-            array_push($this->openAPINullablesSetToNull, 'import_containers');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('import_containers', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable import_containers cannot be null');
         }
-        if (!is_null($import_containers) && (mb_strlen($import_containers) > 64)) {
+        if ((mb_strlen($import_containers) > 64)) {
             throw new \InvalidArgumentException('invalid length for $import_containers when calling ImportDetails., must be smaller than or equal to 64.');
         }
 
@@ -570,7 +541,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getShippingInstructions(): ?string
+    public function getShippingInstructions()
     {
         return $this->container['shipping_instructions'];
     }
@@ -582,24 +553,15 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShippingInstructions(?string $shipping_instructions): self
+    public function setShippingInstructions($shipping_instructions)
     {
         if (is_null($shipping_instructions)) {
-            array_push($this->openAPINullablesSetToNull, 'shipping_instructions');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipping_instructions', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipping_instructions cannot be null');
         }
         $this->container['shipping_instructions'] = $shipping_instructions;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -620,7 +582,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -633,7 +595,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -662,7 +624,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -685,7 +647,7 @@ class ImportDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

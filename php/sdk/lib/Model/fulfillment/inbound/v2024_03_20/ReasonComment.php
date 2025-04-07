@@ -3,7 +3,7 @@
 /**
  * ReasonComment.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -69,7 +69,7 @@ class ReasonComment
      *
      * @return string[]
      */
-    public static function getAllowableEnumValues(): array
+    public static function getAllowableEnumValues()
     {
         return [
             self::APPOINTMENT_REQUESTED_BY_MISTAKE,

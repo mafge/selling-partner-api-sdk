@@ -3,7 +3,7 @@
 /**
  * ValueAddedService.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,18 +52,21 @@ class ValueAddedService implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ValueAddedService';
+    protected static $openAPIModelName = 'ValueAddedService';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'id' => 'string',
         'name' => 'string',
-        'cost' => '\SpApi\Model\shipping\v2\Currency'];
+        'cost' => '\SpApi\Model\shipping\v2\Currency',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,10 +77,11 @@ class ValueAddedService implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'id' => null,
         'name' => null,
-        'cost' => null];
+        'cost' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -104,7 +107,7 @@ class ValueAddedService implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'id' => 'id',
         'name' => 'name',
         'cost' => 'cost',
@@ -115,7 +118,7 @@ class ValueAddedService implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'id' => 'setId',
         'name' => 'setName',
         'cost' => 'setCost',
@@ -126,7 +129,7 @@ class ValueAddedService implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'id' => 'getId',
         'name' => 'getName',
         'cost' => 'getCost',
@@ -134,14 +137,16 @@ class ValueAddedService implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -165,16 +170,20 @@ class ValueAddedService implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -198,32 +207,40 @@ class ValueAddedService implements ModelInterface, \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -233,7 +250,7 @@ class ValueAddedService implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -256,15 +273,17 @@ class ValueAddedService implements ModelInterface, \ArrayAccess, \JsonSerializab
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets id.
+     *
+     * @return string
      */
-    public function getId(): string
+    public function getId()
     {
         return $this->container['id'];
     }
@@ -273,8 +292,10 @@ class ValueAddedService implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets id.
      *
      * @param string $id the identifier for the value-added service
+     *
+     * @return self
      */
-    public function setId(string $id): self
+    public function setId($id)
     {
         if (is_null($id)) {
             throw new \InvalidArgumentException('non-nullable id cannot be null');
@@ -286,8 +307,10 @@ class ValueAddedService implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets name.
+     *
+     * @return string
      */
-    public function getName(): string
+    public function getName()
     {
         return $this->container['name'];
     }
@@ -296,8 +319,10 @@ class ValueAddedService implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets name.
      *
      * @param string $name the name of the value-added service
+     *
+     * @return self
      */
-    public function setName(string $name): self
+    public function setName($name)
     {
         if (is_null($name)) {
             throw new \InvalidArgumentException('non-nullable name cannot be null');
@@ -309,8 +334,10 @@ class ValueAddedService implements ModelInterface, \ArrayAccess, \JsonSerializab
 
     /**
      * Gets cost.
+     *
+     * @return Currency
      */
-    public function getCost(): Currency
+    public function getCost()
     {
         return $this->container['cost'];
     }
@@ -319,8 +346,10 @@ class ValueAddedService implements ModelInterface, \ArrayAccess, \JsonSerializab
      * Sets cost.
      *
      * @param Currency $cost cost
+     *
+     * @return self
      */
-    public function setCost(Currency $cost): self
+    public function setCost($cost)
     {
         if (is_null($cost)) {
             throw new \InvalidArgumentException('non-nullable cost cannot be null');
@@ -348,7 +377,7 @@ class ValueAddedService implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -359,7 +388,7 @@ class ValueAddedService implements ModelInterface, \ArrayAccess, \JsonSerializab
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -387,15 +416,17 @@ class ValueAddedService implements ModelInterface, \ArrayAccess, \JsonSerializab
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

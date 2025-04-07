@@ -2,7 +2,7 @@
 /**
  * PurchaseOrders
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * PurchaseOrders Class Doc Comment
@@ -52,18 +50,19 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'PurchaseOrders';
+    protected static $openAPIModelName = 'PurchaseOrders';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'purchase_order_number' => 'string',
-             'purchase_order_date' => '\DateTime',
-             'ship_window' => 'string',
-             'items' => '\SpApi\Model\vendor\shipments\v1\PurchaseOrderItems[]'    ];
+    protected static $openAPITypes = [
+        'purchase_order_number' => 'string',
+        'purchase_order_date' => '\DateTime',
+        'ship_window' => 'string',
+        'items' => '\SpApi\Model\vendor\shipments\v1\PurchaseOrderItems[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -72,11 +71,12 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'purchase_order_number' => null,
-            'purchase_order_date' => 'date-time',
-            'ship_window' => null,
-            'items' => null    ];
+    protected static $openAPIFormats = [
+        'purchase_order_number' => null,
+        'purchase_order_date' => 'date-time',
+        'ship_window' => null,
+        'items' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -84,10 +84,10 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'purchase_order_number' => true,
-        'purchase_order_date' => true,
-        'ship_window' => true,
-        'items' => true
+        'purchase_order_number' => false,
+        'purchase_order_date' => false,
+        'ship_window' => false,
+        'items' => false
     ];
 
     /**
@@ -102,7 +102,7 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -112,7 +112,7 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -175,12 +175,11 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'purchase_order_number' => 'purchaseOrderNumber',
-                'purchase_order_date' => 'purchaseOrderDate',
-                'ship_window' => 'shipWindow',
-                'items' => 'items'
-        
+        'purchase_order_date' => 'purchaseOrderDate',
+        'ship_window' => 'shipWindow',
+        'items' => 'items'
     ];
 
     /**
@@ -188,7 +187,7 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'purchase_order_number' => 'setPurchaseOrderNumber',
         'purchase_order_date' => 'setPurchaseOrderDate',
         'ship_window' => 'setShipWindow',
@@ -200,7 +199,7 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'purchase_order_number' => 'getPurchaseOrderNumber',
         'purchase_order_date' => 'getPurchaseOrderDate',
         'ship_window' => 'getShipWindow',
@@ -213,7 +212,7 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -223,7 +222,7 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -233,7 +232,7 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -243,7 +242,7 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -252,17 +251,17 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('purchase_order_number', $data ?? [], null);
         $this->setIfExists('purchase_order_date', $data ?? [], null);
@@ -293,7 +292,7 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -306,7 +305,7 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -317,7 +316,7 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getPurchaseOrderNumber(): ?string
+    public function getPurchaseOrderNumber()
     {
         return $this->container['purchase_order_number'];
     }
@@ -329,17 +328,10 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setPurchaseOrderNumber(?string $purchase_order_number): self
+    public function setPurchaseOrderNumber($purchase_order_number)
     {
         if (is_null($purchase_order_number)) {
-            array_push($this->openAPINullablesSetToNull, 'purchase_order_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('purchase_order_number', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable purchase_order_number cannot be null');
         }
         $this->container['purchase_order_number'] = $purchase_order_number;
 
@@ -351,7 +343,7 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime|null
      */
-    public function getPurchaseOrderDate(): ?\DateTime
+    public function getPurchaseOrderDate()
     {
         return $this->container['purchase_order_date'];
     }
@@ -363,17 +355,10 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setPurchaseOrderDate(?\DateTime $purchase_order_date): self
+    public function setPurchaseOrderDate($purchase_order_date)
     {
         if (is_null($purchase_order_date)) {
-            array_push($this->openAPINullablesSetToNull, 'purchase_order_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('purchase_order_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable purchase_order_date cannot be null');
         }
         $this->container['purchase_order_date'] = $purchase_order_date;
 
@@ -385,7 +370,7 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getShipWindow(): ?string
+    public function getShipWindow()
     {
         return $this->container['ship_window'];
     }
@@ -397,17 +382,10 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShipWindow(?string $ship_window): self
+    public function setShipWindow($ship_window)
     {
         if (is_null($ship_window)) {
-            array_push($this->openAPINullablesSetToNull, 'ship_window');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('ship_window', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable ship_window cannot be null');
         }
         $this->container['ship_window'] = $ship_window;
 
@@ -417,9 +395,9 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets items
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\shipments\v1\PurchaseOrderItems[]|null
      */
-    public function getItems(): ?array
+    public function getItems()
     {
         return $this->container['items'];
     }
@@ -427,28 +405,19 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets items
      *
-     * @param array|null $items A list of the items that are associated to the PO in this transport and their associated details.
+     * @param \SpApi\Model\vendor\shipments\v1\PurchaseOrderItems[]|null $items A list of the items that are associated to the PO in this transport and their associated details.
      *
      * @return self
      */
-    public function setItems(?array $items): self
+    public function setItems($items)
     {
         if (is_null($items)) {
-            array_push($this->openAPINullablesSetToNull, 'items');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('items', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable items cannot be null');
         }
         $this->container['items'] = $items;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -469,7 +438,7 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -482,7 +451,7 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -511,7 +480,7 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -534,7 +503,7 @@ class PurchaseOrders implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * ValidationMetadata.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -31,7 +31,6 @@
 
 namespace SpApi\Model\shipping\v2;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -53,18 +52,21 @@ class ValidationMetadata implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ValidationMetadata';
+    protected static $openAPIModelName = 'ValidationMetadata';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'error_message' => 'string',
         'validation_strategy' => 'string',
-        'value' => 'string'];
+        'value' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,10 +77,11 @@ class ValidationMetadata implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'error_message' => null,
         'validation_strategy' => null,
-        'value' => null];
+        'value' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -86,9 +89,9 @@ class ValidationMetadata implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'error_message' => true,
-        'validation_strategy' => true,
-        'value' => true,
+        'error_message' => false,
+        'validation_strategy' => false,
+        'value' => false,
     ];
 
     /**
@@ -104,7 +107,7 @@ class ValidationMetadata implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'error_message' => 'errorMessage',
         'validation_strategy' => 'validationStrategy',
         'value' => 'value',
@@ -115,7 +118,7 @@ class ValidationMetadata implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'error_message' => 'setErrorMessage',
         'validation_strategy' => 'setValidationStrategy',
         'value' => 'setValue',
@@ -126,7 +129,7 @@ class ValidationMetadata implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'error_message' => 'getErrorMessage',
         'validation_strategy' => 'getValidationStrategy',
         'value' => 'getValue',
@@ -134,14 +137,16 @@ class ValidationMetadata implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -165,16 +170,20 @@ class ValidationMetadata implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -198,32 +207,40 @@ class ValidationMetadata implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -233,7 +250,7 @@ class ValidationMetadata implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -244,15 +261,17 @@ class ValidationMetadata implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets error_message.
+     *
+     * @return null|string
      */
-    public function getErrorMessage(): ?string
+    public function getErrorMessage()
     {
         return $this->container['error_message'];
     }
@@ -261,18 +280,13 @@ class ValidationMetadata implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets error_message.
      *
      * @param null|string $error_message errorMessage for the error
+     *
+     * @return self
      */
-    public function setErrorMessage(?string $error_message): self
+    public function setErrorMessage($error_message)
     {
         if (is_null($error_message)) {
-            array_push($this->openAPINullablesSetToNull, 'error_message');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('error_message', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable error_message cannot be null');
         }
         $this->container['error_message'] = $error_message;
 
@@ -281,8 +295,10 @@ class ValidationMetadata implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets validation_strategy.
+     *
+     * @return null|string
      */
-    public function getValidationStrategy(): ?string
+    public function getValidationStrategy()
     {
         return $this->container['validation_strategy'];
     }
@@ -291,18 +307,13 @@ class ValidationMetadata implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets validation_strategy.
      *
      * @param null|string $validation_strategy validationStrategy for the error
+     *
+     * @return self
      */
-    public function setValidationStrategy(?string $validation_strategy): self
+    public function setValidationStrategy($validation_strategy)
     {
         if (is_null($validation_strategy)) {
-            array_push($this->openAPINullablesSetToNull, 'validation_strategy');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('validation_strategy', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable validation_strategy cannot be null');
         }
         $this->container['validation_strategy'] = $validation_strategy;
 
@@ -311,8 +322,10 @@ class ValidationMetadata implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets value.
+     *
+     * @return null|string
      */
-    public function getValue(): ?string
+    public function getValue()
     {
         return $this->container['value'];
     }
@@ -321,18 +334,13 @@ class ValidationMetadata implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets value.
      *
      * @param null|string $value value
+     *
+     * @return self
      */
-    public function setValue(?string $value): self
+    public function setValue($value)
     {
         if (is_null($value)) {
-            array_push($this->openAPINullablesSetToNull, 'value');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('value', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable value cannot be null');
         }
         $this->container['value'] = $value;
 
@@ -357,7 +365,7 @@ class ValidationMetadata implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -368,7 +376,7 @@ class ValidationMetadata implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -396,15 +404,17 @@ class ValidationMetadata implements ModelInterface, \ArrayAccess, \JsonSerializa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

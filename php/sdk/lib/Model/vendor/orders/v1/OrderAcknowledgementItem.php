@@ -2,7 +2,7 @@
 /**
  * OrderAcknowledgementItem
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\orders\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * OrderAcknowledgementItem Class Doc Comment
@@ -52,22 +50,23 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'OrderAcknowledgementItem';
+    protected static $openAPIModelName = 'OrderAcknowledgementItem';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'item_sequence_number' => 'string',
-             'amazon_product_identifier' => 'string',
-             'vendor_product_identifier' => 'string',
-             'ordered_quantity' => '\SpApi\Model\vendor\orders\v1\ItemQuantity',
-             'net_cost' => '\SpApi\Model\vendor\orders\v1\Money',
-             'list_price' => '\SpApi\Model\vendor\orders\v1\Money',
-             'discount_multiplier' => 'string',
-             'item_acknowledgements' => '\SpApi\Model\vendor\orders\v1\OrderItemAcknowledgement[]'    ];
+    protected static $openAPITypes = [
+        'item_sequence_number' => 'string',
+        'amazon_product_identifier' => 'string',
+        'vendor_product_identifier' => 'string',
+        'ordered_quantity' => '\SpApi\Model\vendor\orders\v1\ItemQuantity',
+        'net_cost' => '\SpApi\Model\vendor\orders\v1\Money',
+        'list_price' => '\SpApi\Model\vendor\orders\v1\Money',
+        'discount_multiplier' => 'string',
+        'item_acknowledgements' => '\SpApi\Model\vendor\orders\v1\OrderItemAcknowledgement[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -76,15 +75,16 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'item_sequence_number' => null,
-            'amazon_product_identifier' => null,
-            'vendor_product_identifier' => null,
-            'ordered_quantity' => null,
-            'net_cost' => null,
-            'list_price' => null,
-            'discount_multiplier' => null,
-            'item_acknowledgements' => null    ];
+    protected static $openAPIFormats = [
+        'item_sequence_number' => null,
+        'amazon_product_identifier' => null,
+        'vendor_product_identifier' => null,
+        'ordered_quantity' => null,
+        'net_cost' => null,
+        'list_price' => null,
+        'discount_multiplier' => null,
+        'item_acknowledgements' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -92,13 +92,13 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'item_sequence_number' => true,
-        'amazon_product_identifier' => true,
-        'vendor_product_identifier' => true,
+        'item_sequence_number' => false,
+        'amazon_product_identifier' => false,
+        'vendor_product_identifier' => false,
         'ordered_quantity' => false,
-        'net_cost' => true,
-        'list_price' => true,
-        'discount_multiplier' => true,
+        'net_cost' => false,
+        'list_price' => false,
+        'discount_multiplier' => false,
         'item_acknowledgements' => false
     ];
 
@@ -114,7 +114,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -124,7 +124,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -187,16 +187,15 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'item_sequence_number' => 'itemSequenceNumber',
-                'amazon_product_identifier' => 'amazonProductIdentifier',
-                'vendor_product_identifier' => 'vendorProductIdentifier',
-                'ordered_quantity' => 'orderedQuantity',
-                'net_cost' => 'netCost',
-                'list_price' => 'listPrice',
-                'discount_multiplier' => 'discountMultiplier',
-                'item_acknowledgements' => 'itemAcknowledgements'
-        
+        'amazon_product_identifier' => 'amazonProductIdentifier',
+        'vendor_product_identifier' => 'vendorProductIdentifier',
+        'ordered_quantity' => 'orderedQuantity',
+        'net_cost' => 'netCost',
+        'list_price' => 'listPrice',
+        'discount_multiplier' => 'discountMultiplier',
+        'item_acknowledgements' => 'itemAcknowledgements'
     ];
 
     /**
@@ -204,7 +203,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'item_sequence_number' => 'setItemSequenceNumber',
         'amazon_product_identifier' => 'setAmazonProductIdentifier',
         'vendor_product_identifier' => 'setVendorProductIdentifier',
@@ -220,7 +219,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'item_sequence_number' => 'getItemSequenceNumber',
         'amazon_product_identifier' => 'getAmazonProductIdentifier',
         'vendor_product_identifier' => 'getVendorProductIdentifier',
@@ -237,7 +236,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -247,7 +246,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -257,7 +256,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -267,7 +266,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -276,17 +275,17 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('item_sequence_number', $data ?? [], null);
         $this->setIfExists('amazon_product_identifier', $data ?? [], null);
@@ -321,7 +320,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -340,7 +339,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -351,7 +350,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return string|null
      */
-    public function getItemSequenceNumber(): ?string
+    public function getItemSequenceNumber()
     {
         return $this->container['item_sequence_number'];
     }
@@ -363,17 +362,10 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setItemSequenceNumber(?string $item_sequence_number): self
+    public function setItemSequenceNumber($item_sequence_number)
     {
         if (is_null($item_sequence_number)) {
-            array_push($this->openAPINullablesSetToNull, 'item_sequence_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('item_sequence_number', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable item_sequence_number cannot be null');
         }
         $this->container['item_sequence_number'] = $item_sequence_number;
 
@@ -385,7 +377,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return string|null
      */
-    public function getAmazonProductIdentifier(): ?string
+    public function getAmazonProductIdentifier()
     {
         return $this->container['amazon_product_identifier'];
     }
@@ -397,17 +389,10 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setAmazonProductIdentifier(?string $amazon_product_identifier): self
+    public function setAmazonProductIdentifier($amazon_product_identifier)
     {
         if (is_null($amazon_product_identifier)) {
-            array_push($this->openAPINullablesSetToNull, 'amazon_product_identifier');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('amazon_product_identifier', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable amazon_product_identifier cannot be null');
         }
         $this->container['amazon_product_identifier'] = $amazon_product_identifier;
 
@@ -419,7 +404,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return string|null
      */
-    public function getVendorProductIdentifier(): ?string
+    public function getVendorProductIdentifier()
     {
         return $this->container['vendor_product_identifier'];
     }
@@ -431,17 +416,10 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setVendorProductIdentifier(?string $vendor_product_identifier): self
+    public function setVendorProductIdentifier($vendor_product_identifier)
     {
         if (is_null($vendor_product_identifier)) {
-            array_push($this->openAPINullablesSetToNull, 'vendor_product_identifier');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('vendor_product_identifier', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable vendor_product_identifier cannot be null');
         }
         $this->container['vendor_product_identifier'] = $vendor_product_identifier;
 
@@ -453,7 +431,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return \SpApi\Model\vendor\orders\v1\ItemQuantity
      */
-    public function getOrderedQuantity(): \SpApi\Model\vendor\orders\v1\ItemQuantity
+    public function getOrderedQuantity()
     {
         return $this->container['ordered_quantity'];
     }
@@ -465,7 +443,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setOrderedQuantity(\SpApi\Model\vendor\orders\v1\ItemQuantity $ordered_quantity): self
+    public function setOrderedQuantity($ordered_quantity)
     {
         if (is_null($ordered_quantity)) {
             throw new \InvalidArgumentException('non-nullable ordered_quantity cannot be null');
@@ -480,7 +458,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return \SpApi\Model\vendor\orders\v1\Money|null
      */
-    public function getNetCost(): ?\SpApi\Model\vendor\orders\v1\Money
+    public function getNetCost()
     {
         return $this->container['net_cost'];
     }
@@ -492,17 +470,10 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setNetCost(?\SpApi\Model\vendor\orders\v1\Money $net_cost): self
+    public function setNetCost($net_cost)
     {
         if (is_null($net_cost)) {
-            array_push($this->openAPINullablesSetToNull, 'net_cost');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('net_cost', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable net_cost cannot be null');
         }
         $this->container['net_cost'] = $net_cost;
 
@@ -514,7 +485,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return \SpApi\Model\vendor\orders\v1\Money|null
      */
-    public function getListPrice(): ?\SpApi\Model\vendor\orders\v1\Money
+    public function getListPrice()
     {
         return $this->container['list_price'];
     }
@@ -526,17 +497,10 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setListPrice(?\SpApi\Model\vendor\orders\v1\Money $list_price): self
+    public function setListPrice($list_price)
     {
         if (is_null($list_price)) {
-            array_push($this->openAPINullablesSetToNull, 'list_price');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('list_price', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable list_price cannot be null');
         }
         $this->container['list_price'] = $list_price;
 
@@ -548,7 +512,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return string|null
      */
-    public function getDiscountMultiplier(): ?string
+    public function getDiscountMultiplier()
     {
         return $this->container['discount_multiplier'];
     }
@@ -560,17 +524,10 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return self
      */
-    public function setDiscountMultiplier(?string $discount_multiplier): self
+    public function setDiscountMultiplier($discount_multiplier)
     {
         if (is_null($discount_multiplier)) {
-            array_push($this->openAPINullablesSetToNull, 'discount_multiplier');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('discount_multiplier', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable discount_multiplier cannot be null');
         }
         $this->container['discount_multiplier'] = $discount_multiplier;
 
@@ -580,9 +537,9 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Gets item_acknowledgements
      *
-     * @return array
+     * @return \SpApi\Model\vendor\orders\v1\OrderItemAcknowledgement[]
      */
-    public function getItemAcknowledgements(): array
+    public function getItemAcknowledgements()
     {
         return $this->container['item_acknowledgements'];
     }
@@ -590,11 +547,11 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
     /**
      * Sets item_acknowledgements
      *
-     * @param array $item_acknowledgements This is used to indicate acknowledged quantity.
+     * @param \SpApi\Model\vendor\orders\v1\OrderItemAcknowledgement[] $item_acknowledgements This is used to indicate acknowledged quantity.
      *
      * @return self
      */
-    public function setItemAcknowledgements(array $item_acknowledgements): self
+    public function setItemAcknowledgements($item_acknowledgements)
     {
         if (is_null($item_acknowledgements)) {
             throw new \InvalidArgumentException('non-nullable item_acknowledgements cannot be null');
@@ -603,8 +560,6 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -625,7 +580,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -638,7 +593,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -667,7 +622,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -690,7 +645,7 @@ class OrderAcknowledgementItem implements ModelInterface, ArrayAccess, \JsonSeri
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * ParkingConfiguration.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\supplySources\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,18 +51,21 @@ class ParkingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ParkingConfiguration';
+    protected static $openAPIModelName = 'ParkingConfiguration';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'parking_cost_type' => '\SpApi\Model\supplySources\v2020_07_01\ParkingCostType',
         'parking_spot_identification_type' => '\SpApi\Model\supplySources\v2020_07_01\ParkingSpotIdentificationType',
-        'number_of_parking_spots' => 'int'];
+        'number_of_parking_spots' => 'int',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -74,10 +76,11 @@ class ParkingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'parking_cost_type' => null,
         'parking_spot_identification_type' => null,
-        'number_of_parking_spots' => null];
+        'number_of_parking_spots' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -85,9 +88,9 @@ class ParkingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'parking_cost_type' => true,
-        'parking_spot_identification_type' => true,
-        'number_of_parking_spots' => true,
+        'parking_cost_type' => false,
+        'parking_spot_identification_type' => false,
+        'number_of_parking_spots' => false,
     ];
 
     /**
@@ -103,7 +106,7 @@ class ParkingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'parking_cost_type' => 'parkingCostType',
         'parking_spot_identification_type' => 'parkingSpotIdentificationType',
         'number_of_parking_spots' => 'numberOfParkingSpots',
@@ -114,7 +117,7 @@ class ParkingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'parking_cost_type' => 'setParkingCostType',
         'parking_spot_identification_type' => 'setParkingSpotIdentificationType',
         'number_of_parking_spots' => 'setNumberOfParkingSpots',
@@ -125,7 +128,7 @@ class ParkingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'parking_cost_type' => 'getParkingCostType',
         'parking_spot_identification_type' => 'getParkingSpotIdentificationType',
         'number_of_parking_spots' => 'getNumberOfParkingSpots',
@@ -133,14 +136,16 @@ class ParkingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -164,16 +169,20 @@ class ParkingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -197,32 +206,40 @@ class ParkingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -232,7 +249,7 @@ class ParkingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -249,15 +266,17 @@ class ParkingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets parking_cost_type.
+     *
+     * @return null|ParkingCostType
      */
-    public function getParkingCostType(): ?string
+    public function getParkingCostType()
     {
         return $this->container['parking_cost_type'];
     }
@@ -265,19 +284,14 @@ class ParkingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Sets parking_cost_type.
      *
-     * @param null|string $parking_cost_type parking_cost_type
+     * @param null|ParkingCostType $parking_cost_type parking_cost_type
+     *
+     * @return self
      */
-    public function setParkingCostType(?string $parking_cost_type): self
+    public function setParkingCostType($parking_cost_type)
     {
         if (is_null($parking_cost_type)) {
-            array_push($this->openAPINullablesSetToNull, 'parking_cost_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('parking_cost_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable parking_cost_type cannot be null');
         }
         $this->container['parking_cost_type'] = $parking_cost_type;
 
@@ -286,8 +300,10 @@ class ParkingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets parking_spot_identification_type.
+     *
+     * @return null|ParkingSpotIdentificationType
      */
-    public function getParkingSpotIdentificationType(): ?string
+    public function getParkingSpotIdentificationType()
     {
         return $this->container['parking_spot_identification_type'];
     }
@@ -295,19 +311,14 @@ class ParkingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
     /**
      * Sets parking_spot_identification_type.
      *
-     * @param null|string $parking_spot_identification_type parking_spot_identification_type
+     * @param null|ParkingSpotIdentificationType $parking_spot_identification_type parking_spot_identification_type
+     *
+     * @return self
      */
-    public function setParkingSpotIdentificationType(?string $parking_spot_identification_type): self
+    public function setParkingSpotIdentificationType($parking_spot_identification_type)
     {
         if (is_null($parking_spot_identification_type)) {
-            array_push($this->openAPINullablesSetToNull, 'parking_spot_identification_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('parking_spot_identification_type', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable parking_spot_identification_type cannot be null');
         }
         $this->container['parking_spot_identification_type'] = $parking_spot_identification_type;
 
@@ -316,8 +327,10 @@ class ParkingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
 
     /**
      * Gets number_of_parking_spots.
+     *
+     * @return null|int
      */
-    public function getNumberOfParkingSpots(): ?int
+    public function getNumberOfParkingSpots()
     {
         return $this->container['number_of_parking_spots'];
     }
@@ -326,21 +339,16 @@ class ParkingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      * Sets number_of_parking_spots.
      *
      * @param null|int $number_of_parking_spots an unsigned integer that can be only positive or zero
+     *
+     * @return self
      */
-    public function setNumberOfParkingSpots(?int $number_of_parking_spots): self
+    public function setNumberOfParkingSpots($number_of_parking_spots)
     {
         if (is_null($number_of_parking_spots)) {
-            array_push($this->openAPINullablesSetToNull, 'number_of_parking_spots');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('number_of_parking_spots', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable number_of_parking_spots cannot be null');
         }
 
-        if (!is_null($number_of_parking_spots) && ($number_of_parking_spots < 0)) {
+        if ($number_of_parking_spots < 0) {
             throw new \InvalidArgumentException('invalid value for $number_of_parking_spots when calling ParkingConfiguration., must be bigger than or equal to 0.');
         }
 
@@ -367,7 +375,7 @@ class ParkingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -378,7 +386,7 @@ class ParkingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -406,15 +414,17 @@ class ParkingConfiguration implements ModelInterface, \ArrayAccess, \JsonSeriali
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

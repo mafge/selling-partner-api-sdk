@@ -3,7 +3,7 @@
 /**
  * VariablePrecisionAddress.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,15 +51,17 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'VariablePrecisionAddress';
+    protected static $openAPIModelName = 'VariablePrecisionAddress';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'address_line1' => 'string',
         'address_line2' => 'string',
         'address_line3' => 'string',
@@ -68,7 +69,8 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
         'district_or_county' => 'string',
         'state_or_region' => 'string',
         'postal_code' => 'string',
-        'country_code' => 'string'];
+        'country_code' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -79,7 +81,7 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'address_line1' => null,
         'address_line2' => null,
         'address_line3' => null,
@@ -87,7 +89,8 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
         'district_or_county' => null,
         'state_or_region' => null,
         'postal_code' => null,
-        'country_code' => null];
+        'country_code' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -95,12 +98,12 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'address_line1' => true,
-        'address_line2' => true,
-        'address_line3' => true,
-        'city' => true,
-        'district_or_county' => true,
-        'state_or_region' => true,
+        'address_line1' => false,
+        'address_line2' => false,
+        'address_line3' => false,
+        'city' => false,
+        'district_or_county' => false,
+        'state_or_region' => false,
         'postal_code' => false,
         'country_code' => false,
     ];
@@ -118,7 +121,7 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'address_line1' => 'addressLine1',
         'address_line2' => 'addressLine2',
         'address_line3' => 'addressLine3',
@@ -134,7 +137,7 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'address_line1' => 'setAddressLine1',
         'address_line2' => 'setAddressLine2',
         'address_line3' => 'setAddressLine3',
@@ -150,7 +153,7 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'address_line1' => 'getAddressLine1',
         'address_line2' => 'getAddressLine2',
         'address_line3' => 'getAddressLine3',
@@ -163,14 +166,16 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -199,16 +204,20 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -232,32 +241,40 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -267,7 +284,7 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -294,15 +311,17 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets address_line1.
+     *
+     * @return null|string
      */
-    public function getAddressLine1(): ?string
+    public function getAddressLine1()
     {
         return $this->container['address_line1'];
     }
@@ -311,18 +330,13 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets address_line1.
      *
      * @param null|string $address_line1 the first line of the address
+     *
+     * @return self
      */
-    public function setAddressLine1(?string $address_line1): self
+    public function setAddressLine1($address_line1)
     {
         if (is_null($address_line1)) {
-            array_push($this->openAPINullablesSetToNull, 'address_line1');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('address_line1', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable address_line1 cannot be null');
         }
         $this->container['address_line1'] = $address_line1;
 
@@ -331,8 +345,10 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets address_line2.
+     *
+     * @return null|string
      */
-    public function getAddressLine2(): ?string
+    public function getAddressLine2()
     {
         return $this->container['address_line2'];
     }
@@ -341,18 +357,13 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets address_line2.
      *
      * @param null|string $address_line2 additional address information, if required
+     *
+     * @return self
      */
-    public function setAddressLine2(?string $address_line2): self
+    public function setAddressLine2($address_line2)
     {
         if (is_null($address_line2)) {
-            array_push($this->openAPINullablesSetToNull, 'address_line2');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('address_line2', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable address_line2 cannot be null');
         }
         $this->container['address_line2'] = $address_line2;
 
@@ -361,8 +372,10 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets address_line3.
+     *
+     * @return null|string
      */
-    public function getAddressLine3(): ?string
+    public function getAddressLine3()
     {
         return $this->container['address_line3'];
     }
@@ -371,18 +384,13 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets address_line3.
      *
      * @param null|string $address_line3 additional address information, if required
+     *
+     * @return self
      */
-    public function setAddressLine3(?string $address_line3): self
+    public function setAddressLine3($address_line3)
     {
         if (is_null($address_line3)) {
-            array_push($this->openAPINullablesSetToNull, 'address_line3');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('address_line3', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable address_line3 cannot be null');
         }
         $this->container['address_line3'] = $address_line3;
 
@@ -391,8 +399,10 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets city.
+     *
+     * @return null|string
      */
-    public function getCity(): ?string
+    public function getCity()
     {
         return $this->container['city'];
     }
@@ -401,18 +411,13 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets city.
      *
      * @param null|string $city The city where the person, business, or institution is located. This property should not be used in Japan.
+     *
+     * @return self
      */
-    public function setCity(?string $city): self
+    public function setCity($city)
     {
         if (is_null($city)) {
-            array_push($this->openAPINullablesSetToNull, 'city');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('city', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable city cannot be null');
         }
         $this->container['city'] = $city;
 
@@ -421,8 +426,10 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets district_or_county.
+     *
+     * @return null|string
      */
-    public function getDistrictOrCounty(): ?string
+    public function getDistrictOrCounty()
     {
         return $this->container['district_or_county'];
     }
@@ -431,18 +438,13 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets district_or_county.
      *
      * @param null|string $district_or_county the district or county where the person, business, or institution is located
+     *
+     * @return self
      */
-    public function setDistrictOrCounty(?string $district_or_county): self
+    public function setDistrictOrCounty($district_or_county)
     {
         if (is_null($district_or_county)) {
-            array_push($this->openAPINullablesSetToNull, 'district_or_county');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('district_or_county', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable district_or_county cannot be null');
         }
         $this->container['district_or_county'] = $district_or_county;
 
@@ -451,8 +453,10 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets state_or_region.
+     *
+     * @return null|string
      */
-    public function getStateOrRegion(): ?string
+    public function getStateOrRegion()
     {
         return $this->container['state_or_region'];
     }
@@ -461,18 +465,13 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets state_or_region.
      *
      * @param null|string $state_or_region the state or region where the person, business or institution is located
+     *
+     * @return self
      */
-    public function setStateOrRegion(?string $state_or_region): self
+    public function setStateOrRegion($state_or_region)
     {
         if (is_null($state_or_region)) {
-            array_push($this->openAPINullablesSetToNull, 'state_or_region');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('state_or_region', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable state_or_region cannot be null');
         }
         $this->container['state_or_region'] = $state_or_region;
 
@@ -481,8 +480,10 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets postal_code.
+     *
+     * @return string
      */
-    public function getPostalCode(): string
+    public function getPostalCode()
     {
         return $this->container['postal_code'];
     }
@@ -491,8 +492,10 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets postal_code.
      *
      * @param string $postal_code the postal code of the address
+     *
+     * @return self
      */
-    public function setPostalCode(string $postal_code): self
+    public function setPostalCode($postal_code)
     {
         if (is_null($postal_code)) {
             throw new \InvalidArgumentException('non-nullable postal_code cannot be null');
@@ -504,8 +507,10 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets country_code.
+     *
+     * @return string
      */
-    public function getCountryCode(): string
+    public function getCountryCode()
     {
         return $this->container['country_code'];
     }
@@ -514,8 +519,10 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets country_code.
      *
      * @param string $country_code The two digit country code. In ISO 3166-1 alpha-2 format.
+     *
+     * @return self
      */
-    public function setCountryCode(string $country_code): self
+    public function setCountryCode($country_code)
     {
         if (is_null($country_code)) {
             throw new \InvalidArgumentException('non-nullable country_code cannot be null');
@@ -550,7 +557,7 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -561,7 +568,7 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -589,15 +596,17 @@ class VariablePrecisionAddress implements ModelInterface, \ArrayAccess, \JsonSer
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

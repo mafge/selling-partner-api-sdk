@@ -2,7 +2,7 @@
 /**
  * CreditNoteDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\invoices\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * CreditNoteDetails Class Doc Comment
@@ -52,21 +50,22 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'CreditNoteDetails';
+    protected static $openAPIModelName = 'CreditNoteDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'reference_invoice_number' => 'string',
-             'debit_note_number' => 'string',
-             'returns_reference_number' => 'string',
-             'goods_return_date' => '\DateTime',
-             'rma_id' => 'string',
-             'coop_reference_number' => 'string',
-             'consignors_reference_number' => 'string'    ];
+    protected static $openAPITypes = [
+        'reference_invoice_number' => 'string',
+        'debit_note_number' => 'string',
+        'returns_reference_number' => 'string',
+        'goods_return_date' => '\DateTime',
+        'rma_id' => 'string',
+        'coop_reference_number' => 'string',
+        'consignors_reference_number' => 'string'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -75,14 +74,15 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'reference_invoice_number' => null,
-            'debit_note_number' => null,
-            'returns_reference_number' => null,
-            'goods_return_date' => 'date-time',
-            'rma_id' => null,
-            'coop_reference_number' => null,
-            'consignors_reference_number' => null    ];
+    protected static $openAPIFormats = [
+        'reference_invoice_number' => null,
+        'debit_note_number' => null,
+        'returns_reference_number' => null,
+        'goods_return_date' => 'date-time',
+        'rma_id' => null,
+        'coop_reference_number' => null,
+        'consignors_reference_number' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -90,13 +90,13 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'reference_invoice_number' => true,
-        'debit_note_number' => true,
-        'returns_reference_number' => true,
-        'goods_return_date' => true,
-        'rma_id' => true,
-        'coop_reference_number' => true,
-        'consignors_reference_number' => true
+        'reference_invoice_number' => false,
+        'debit_note_number' => false,
+        'returns_reference_number' => false,
+        'goods_return_date' => false,
+        'rma_id' => false,
+        'coop_reference_number' => false,
+        'consignors_reference_number' => false
     ];
 
     /**
@@ -111,7 +111,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -121,7 +121,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -184,15 +184,14 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'reference_invoice_number' => 'referenceInvoiceNumber',
-                'debit_note_number' => 'debitNoteNumber',
-                'returns_reference_number' => 'returnsReferenceNumber',
-                'goods_return_date' => 'goodsReturnDate',
-                'rma_id' => 'rmaId',
-                'coop_reference_number' => 'coopReferenceNumber',
-                'consignors_reference_number' => 'consignorsReferenceNumber'
-        
+        'debit_note_number' => 'debitNoteNumber',
+        'returns_reference_number' => 'returnsReferenceNumber',
+        'goods_return_date' => 'goodsReturnDate',
+        'rma_id' => 'rmaId',
+        'coop_reference_number' => 'coopReferenceNumber',
+        'consignors_reference_number' => 'consignorsReferenceNumber'
     ];
 
     /**
@@ -200,7 +199,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'reference_invoice_number' => 'setReferenceInvoiceNumber',
         'debit_note_number' => 'setDebitNoteNumber',
         'returns_reference_number' => 'setReturnsReferenceNumber',
@@ -215,7 +214,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'reference_invoice_number' => 'getReferenceInvoiceNumber',
         'debit_note_number' => 'getDebitNoteNumber',
         'returns_reference_number' => 'getReturnsReferenceNumber',
@@ -231,7 +230,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -241,7 +240,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -251,7 +250,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -261,7 +260,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -270,17 +269,17 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('reference_invoice_number', $data ?? [], null);
         $this->setIfExists('debit_note_number', $data ?? [], null);
@@ -314,7 +313,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -327,7 +326,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -338,7 +337,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return string|null
      */
-    public function getReferenceInvoiceNumber(): ?string
+    public function getReferenceInvoiceNumber()
     {
         return $this->container['reference_invoice_number'];
     }
@@ -350,17 +349,10 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setReferenceInvoiceNumber(?string $reference_invoice_number): self
+    public function setReferenceInvoiceNumber($reference_invoice_number)
     {
         if (is_null($reference_invoice_number)) {
-            array_push($this->openAPINullablesSetToNull, 'reference_invoice_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('reference_invoice_number', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable reference_invoice_number cannot be null');
         }
         $this->container['reference_invoice_number'] = $reference_invoice_number;
 
@@ -372,7 +364,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return string|null
      */
-    public function getDebitNoteNumber(): ?string
+    public function getDebitNoteNumber()
     {
         return $this->container['debit_note_number'];
     }
@@ -384,17 +376,10 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setDebitNoteNumber(?string $debit_note_number): self
+    public function setDebitNoteNumber($debit_note_number)
     {
         if (is_null($debit_note_number)) {
-            array_push($this->openAPINullablesSetToNull, 'debit_note_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('debit_note_number', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable debit_note_number cannot be null');
         }
         $this->container['debit_note_number'] = $debit_note_number;
 
@@ -406,7 +391,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return string|null
      */
-    public function getReturnsReferenceNumber(): ?string
+    public function getReturnsReferenceNumber()
     {
         return $this->container['returns_reference_number'];
     }
@@ -418,17 +403,10 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setReturnsReferenceNumber(?string $returns_reference_number): self
+    public function setReturnsReferenceNumber($returns_reference_number)
     {
         if (is_null($returns_reference_number)) {
-            array_push($this->openAPINullablesSetToNull, 'returns_reference_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('returns_reference_number', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable returns_reference_number cannot be null');
         }
         $this->container['returns_reference_number'] = $returns_reference_number;
 
@@ -440,7 +418,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return \DateTime|null
      */
-    public function getGoodsReturnDate(): ?\DateTime
+    public function getGoodsReturnDate()
     {
         return $this->container['goods_return_date'];
     }
@@ -452,17 +430,10 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setGoodsReturnDate(?\DateTime $goods_return_date): self
+    public function setGoodsReturnDate($goods_return_date)
     {
         if (is_null($goods_return_date)) {
-            array_push($this->openAPINullablesSetToNull, 'goods_return_date');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('goods_return_date', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable goods_return_date cannot be null');
         }
         $this->container['goods_return_date'] = $goods_return_date;
 
@@ -474,7 +445,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return string|null
      */
-    public function getRmaId(): ?string
+    public function getRmaId()
     {
         return $this->container['rma_id'];
     }
@@ -486,17 +457,10 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setRmaId(?string $rma_id): self
+    public function setRmaId($rma_id)
     {
         if (is_null($rma_id)) {
-            array_push($this->openAPINullablesSetToNull, 'rma_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('rma_id', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable rma_id cannot be null');
         }
         $this->container['rma_id'] = $rma_id;
 
@@ -508,7 +472,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return string|null
      */
-    public function getCoopReferenceNumber(): ?string
+    public function getCoopReferenceNumber()
     {
         return $this->container['coop_reference_number'];
     }
@@ -520,17 +484,10 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setCoopReferenceNumber(?string $coop_reference_number): self
+    public function setCoopReferenceNumber($coop_reference_number)
     {
         if (is_null($coop_reference_number)) {
-            array_push($this->openAPINullablesSetToNull, 'coop_reference_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('coop_reference_number', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable coop_reference_number cannot be null');
         }
         $this->container['coop_reference_number'] = $coop_reference_number;
 
@@ -542,7 +499,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return string|null
      */
-    public function getConsignorsReferenceNumber(): ?string
+    public function getConsignorsReferenceNumber()
     {
         return $this->container['consignors_reference_number'];
     }
@@ -554,24 +511,15 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return self
      */
-    public function setConsignorsReferenceNumber(?string $consignors_reference_number): self
+    public function setConsignorsReferenceNumber($consignors_reference_number)
     {
         if (is_null($consignors_reference_number)) {
-            array_push($this->openAPINullablesSetToNull, 'consignors_reference_number');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('consignors_reference_number', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable consignors_reference_number cannot be null');
         }
         $this->container['consignors_reference_number'] = $consignors_reference_number;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -592,7 +540,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -605,7 +553,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -634,7 +582,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -657,7 +605,7 @@ class CreditNoteDetails implements ModelInterface, ArrayAccess, \JsonSerializabl
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

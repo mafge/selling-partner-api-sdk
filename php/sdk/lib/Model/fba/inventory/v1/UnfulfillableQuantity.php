@@ -3,7 +3,7 @@
 /**
  * UnfulfillableQuantity.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fba\inventory\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,22 +51,25 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'UnfulfillableQuantity';
+    protected static $openAPIModelName = 'UnfulfillableQuantity';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'total_unfulfillable_quantity' => 'int',
         'customer_damaged_quantity' => 'int',
         'warehouse_damaged_quantity' => 'int',
         'distributor_damaged_quantity' => 'int',
         'carrier_damaged_quantity' => 'int',
         'defective_quantity' => 'int',
-        'expired_quantity' => 'int'];
+        'expired_quantity' => 'int',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -78,14 +80,15 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'total_unfulfillable_quantity' => null,
         'customer_damaged_quantity' => null,
         'warehouse_damaged_quantity' => null,
         'distributor_damaged_quantity' => null,
         'carrier_damaged_quantity' => null,
         'defective_quantity' => null,
-        'expired_quantity' => null];
+        'expired_quantity' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -93,13 +96,13 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'total_unfulfillable_quantity' => true,
-        'customer_damaged_quantity' => true,
-        'warehouse_damaged_quantity' => true,
-        'distributor_damaged_quantity' => true,
-        'carrier_damaged_quantity' => true,
-        'defective_quantity' => true,
-        'expired_quantity' => true,
+        'total_unfulfillable_quantity' => false,
+        'customer_damaged_quantity' => false,
+        'warehouse_damaged_quantity' => false,
+        'distributor_damaged_quantity' => false,
+        'carrier_damaged_quantity' => false,
+        'defective_quantity' => false,
+        'expired_quantity' => false,
     ];
 
     /**
@@ -115,7 +118,7 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'total_unfulfillable_quantity' => 'totalUnfulfillableQuantity',
         'customer_damaged_quantity' => 'customerDamagedQuantity',
         'warehouse_damaged_quantity' => 'warehouseDamagedQuantity',
@@ -130,7 +133,7 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'total_unfulfillable_quantity' => 'setTotalUnfulfillableQuantity',
         'customer_damaged_quantity' => 'setCustomerDamagedQuantity',
         'warehouse_damaged_quantity' => 'setWarehouseDamagedQuantity',
@@ -145,7 +148,7 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'total_unfulfillable_quantity' => 'getTotalUnfulfillableQuantity',
         'customer_damaged_quantity' => 'getCustomerDamagedQuantity',
         'warehouse_damaged_quantity' => 'getWarehouseDamagedQuantity',
@@ -157,14 +160,16 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -192,16 +197,20 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -225,32 +234,40 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -260,7 +277,7 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -271,15 +288,17 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets total_unfulfillable_quantity.
+     *
+     * @return null|int
      */
-    public function getTotalUnfulfillableQuantity(): ?int
+    public function getTotalUnfulfillableQuantity()
     {
         return $this->container['total_unfulfillable_quantity'];
     }
@@ -288,18 +307,13 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets total_unfulfillable_quantity.
      *
      * @param null|int $total_unfulfillable_quantity the total number of units in Amazon's fulfillment network in unsellable condition
+     *
+     * @return self
      */
-    public function setTotalUnfulfillableQuantity(?int $total_unfulfillable_quantity): self
+    public function setTotalUnfulfillableQuantity($total_unfulfillable_quantity)
     {
         if (is_null($total_unfulfillable_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'total_unfulfillable_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('total_unfulfillable_quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable total_unfulfillable_quantity cannot be null');
         }
         $this->container['total_unfulfillable_quantity'] = $total_unfulfillable_quantity;
 
@@ -308,8 +322,10 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets customer_damaged_quantity.
+     *
+     * @return null|int
      */
-    public function getCustomerDamagedQuantity(): ?int
+    public function getCustomerDamagedQuantity()
     {
         return $this->container['customer_damaged_quantity'];
     }
@@ -318,18 +334,13 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets customer_damaged_quantity.
      *
      * @param null|int $customer_damaged_quantity the number of units in customer damaged disposition
+     *
+     * @return self
      */
-    public function setCustomerDamagedQuantity(?int $customer_damaged_quantity): self
+    public function setCustomerDamagedQuantity($customer_damaged_quantity)
     {
         if (is_null($customer_damaged_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'customer_damaged_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('customer_damaged_quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable customer_damaged_quantity cannot be null');
         }
         $this->container['customer_damaged_quantity'] = $customer_damaged_quantity;
 
@@ -338,8 +349,10 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets warehouse_damaged_quantity.
+     *
+     * @return null|int
      */
-    public function getWarehouseDamagedQuantity(): ?int
+    public function getWarehouseDamagedQuantity()
     {
         return $this->container['warehouse_damaged_quantity'];
     }
@@ -348,18 +361,13 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets warehouse_damaged_quantity.
      *
      * @param null|int $warehouse_damaged_quantity the number of units in warehouse damaged disposition
+     *
+     * @return self
      */
-    public function setWarehouseDamagedQuantity(?int $warehouse_damaged_quantity): self
+    public function setWarehouseDamagedQuantity($warehouse_damaged_quantity)
     {
         if (is_null($warehouse_damaged_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'warehouse_damaged_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('warehouse_damaged_quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable warehouse_damaged_quantity cannot be null');
         }
         $this->container['warehouse_damaged_quantity'] = $warehouse_damaged_quantity;
 
@@ -368,8 +376,10 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets distributor_damaged_quantity.
+     *
+     * @return null|int
      */
-    public function getDistributorDamagedQuantity(): ?int
+    public function getDistributorDamagedQuantity()
     {
         return $this->container['distributor_damaged_quantity'];
     }
@@ -378,18 +388,13 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets distributor_damaged_quantity.
      *
      * @param null|int $distributor_damaged_quantity the number of units in distributor damaged disposition
+     *
+     * @return self
      */
-    public function setDistributorDamagedQuantity(?int $distributor_damaged_quantity): self
+    public function setDistributorDamagedQuantity($distributor_damaged_quantity)
     {
         if (is_null($distributor_damaged_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'distributor_damaged_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('distributor_damaged_quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable distributor_damaged_quantity cannot be null');
         }
         $this->container['distributor_damaged_quantity'] = $distributor_damaged_quantity;
 
@@ -398,8 +403,10 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets carrier_damaged_quantity.
+     *
+     * @return null|int
      */
-    public function getCarrierDamagedQuantity(): ?int
+    public function getCarrierDamagedQuantity()
     {
         return $this->container['carrier_damaged_quantity'];
     }
@@ -408,18 +415,13 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets carrier_damaged_quantity.
      *
      * @param null|int $carrier_damaged_quantity the number of units in carrier damaged disposition
+     *
+     * @return self
      */
-    public function setCarrierDamagedQuantity(?int $carrier_damaged_quantity): self
+    public function setCarrierDamagedQuantity($carrier_damaged_quantity)
     {
         if (is_null($carrier_damaged_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'carrier_damaged_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('carrier_damaged_quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable carrier_damaged_quantity cannot be null');
         }
         $this->container['carrier_damaged_quantity'] = $carrier_damaged_quantity;
 
@@ -428,8 +430,10 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets defective_quantity.
+     *
+     * @return null|int
      */
-    public function getDefectiveQuantity(): ?int
+    public function getDefectiveQuantity()
     {
         return $this->container['defective_quantity'];
     }
@@ -438,18 +442,13 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets defective_quantity.
      *
      * @param null|int $defective_quantity the number of units in defective disposition
+     *
+     * @return self
      */
-    public function setDefectiveQuantity(?int $defective_quantity): self
+    public function setDefectiveQuantity($defective_quantity)
     {
         if (is_null($defective_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'defective_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('defective_quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable defective_quantity cannot be null');
         }
         $this->container['defective_quantity'] = $defective_quantity;
 
@@ -458,8 +457,10 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets expired_quantity.
+     *
+     * @return null|int
      */
-    public function getExpiredQuantity(): ?int
+    public function getExpiredQuantity()
     {
         return $this->container['expired_quantity'];
     }
@@ -468,18 +469,13 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets expired_quantity.
      *
      * @param null|int $expired_quantity the number of units in expired disposition
+     *
+     * @return self
      */
-    public function setExpiredQuantity(?int $expired_quantity): self
+    public function setExpiredQuantity($expired_quantity)
     {
         if (is_null($expired_quantity)) {
-            array_push($this->openAPINullablesSetToNull, 'expired_quantity');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('expired_quantity', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable expired_quantity cannot be null');
         }
         $this->container['expired_quantity'] = $expired_quantity;
 
@@ -504,7 +500,7 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -515,7 +511,7 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -543,15 +539,17 @@ class UnfulfillableQuantity implements ModelInterface, \ArrayAccess, \JsonSerial
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

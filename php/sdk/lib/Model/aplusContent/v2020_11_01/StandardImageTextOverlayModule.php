@@ -3,7 +3,7 @@
 /**
  * StandardImageTextOverlayModule.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\aplusContent\v2020_11_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class StandardImageTextOverlayModule implements ModelInterface, \ArrayAccess, \J
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'StandardImageTextOverlayModule';
+    protected static $openAPIModelName = 'StandardImageTextOverlayModule';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'overlay_color_type' => '\SpApi\Model\aplusContent\v2020_11_01\ColorType',
-        'block' => '\SpApi\Model\aplusContent\v2020_11_01\StandardImageTextBlock'];
+        'block' => '\SpApi\Model\aplusContent\v2020_11_01\StandardImageTextBlock',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class StandardImageTextOverlayModule implements ModelInterface, \ArrayAccess, \J
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'overlay_color_type' => null,
-        'block' => null];
+        'block' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -84,7 +87,7 @@ class StandardImageTextOverlayModule implements ModelInterface, \ArrayAccess, \J
      */
     protected static array $openAPINullables = [
         'overlay_color_type' => false,
-        'block' => true,
+        'block' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class StandardImageTextOverlayModule implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'overlay_color_type' => 'overlayColorType',
         'block' => 'block',
     ];
@@ -110,7 +113,7 @@ class StandardImageTextOverlayModule implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'overlay_color_type' => 'setOverlayColorType',
         'block' => 'setBlock',
     ];
@@ -120,21 +123,23 @@ class StandardImageTextOverlayModule implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'overlay_color_type' => 'getOverlayColorType',
         'block' => 'getBlock',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class StandardImageTextOverlayModule implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class StandardImageTextOverlayModule implements ModelInterface, \ArrayAccess, \J
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class StandardImageTextOverlayModule implements ModelInterface, \ArrayAccess, \J
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -242,15 +259,17 @@ class StandardImageTextOverlayModule implements ModelInterface, \ArrayAccess, \J
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets overlay_color_type.
+     *
+     * @return ColorType
      */
-    public function getOverlayColorType(): string
+    public function getOverlayColorType()
     {
         return $this->container['overlay_color_type'];
     }
@@ -258,9 +277,11 @@ class StandardImageTextOverlayModule implements ModelInterface, \ArrayAccess, \J
     /**
      * Sets overlay_color_type.
      *
-     * @param string $overlay_color_type overlay_color_type
+     * @param ColorType $overlay_color_type overlay_color_type
+     *
+     * @return self
      */
-    public function setOverlayColorType(string $overlay_color_type): self
+    public function setOverlayColorType($overlay_color_type)
     {
         if (is_null($overlay_color_type)) {
             throw new \InvalidArgumentException('non-nullable overlay_color_type cannot be null');
@@ -272,8 +293,10 @@ class StandardImageTextOverlayModule implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets block.
+     *
+     * @return null|StandardImageTextBlock
      */
-    public function getBlock(): ?StandardImageTextBlock
+    public function getBlock()
     {
         return $this->container['block'];
     }
@@ -282,18 +305,13 @@ class StandardImageTextOverlayModule implements ModelInterface, \ArrayAccess, \J
      * Sets block.
      *
      * @param null|StandardImageTextBlock $block block
+     *
+     * @return self
      */
-    public function setBlock(?StandardImageTextBlock $block): self
+    public function setBlock($block)
     {
         if (is_null($block)) {
-            array_push($this->openAPINullablesSetToNull, 'block');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('block', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable block cannot be null');
         }
         $this->container['block'] = $block;
 
@@ -318,7 +336,7 @@ class StandardImageTextOverlayModule implements ModelInterface, \ArrayAccess, \J
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -329,7 +347,7 @@ class StandardImageTextOverlayModule implements ModelInterface, \ArrayAccess, \J
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -357,15 +375,17 @@ class StandardImageTextOverlayModule implements ModelInterface, \ArrayAccess, \J
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

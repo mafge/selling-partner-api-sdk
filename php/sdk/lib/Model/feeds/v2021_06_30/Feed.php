@@ -3,7 +3,7 @@
 /**
  * Feed.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\feeds\v2021_06_30;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -58,15 +57,17 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'Feed';
+    protected static $openAPIModelName = 'Feed';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'feed_id' => 'string',
         'feed_type' => 'string',
         'marketplace_ids' => 'string[]',
@@ -74,7 +75,8 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
         'processing_status' => 'string',
         'processing_start_time' => '\DateTime',
         'processing_end_time' => '\DateTime',
-        'result_feed_document_id' => 'string'];
+        'result_feed_document_id' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -85,7 +87,7 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'feed_id' => null,
         'feed_type' => null,
         'marketplace_ids' => null,
@@ -93,7 +95,8 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
         'processing_status' => null,
         'processing_start_time' => 'date-time',
         'processing_end_time' => 'date-time',
-        'result_feed_document_id' => null];
+        'result_feed_document_id' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -103,12 +106,12 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'feed_id' => false,
         'feed_type' => false,
-        'marketplace_ids' => true,
+        'marketplace_ids' => false,
         'created_time' => false,
         'processing_status' => false,
-        'processing_start_time' => true,
-        'processing_end_time' => true,
-        'result_feed_document_id' => true,
+        'processing_start_time' => false,
+        'processing_end_time' => false,
+        'result_feed_document_id' => false,
     ];
 
     /**
@@ -124,7 +127,7 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'feed_id' => 'feedId',
         'feed_type' => 'feedType',
         'marketplace_ids' => 'marketplaceIds',
@@ -140,7 +143,7 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'feed_id' => 'setFeedId',
         'feed_type' => 'setFeedType',
         'marketplace_ids' => 'setMarketplaceIds',
@@ -156,7 +159,7 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'feed_id' => 'getFeedId',
         'feed_type' => 'getFeedType',
         'marketplace_ids' => 'getMarketplaceIds',
@@ -169,14 +172,16 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -205,16 +210,20 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -238,32 +247,40 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -273,7 +290,7 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getProcessingStatusAllowableValues(): array
+    public function getProcessingStatusAllowableValues()
     {
         return [
             self::PROCESSING_STATUS_CANCELLED,
@@ -289,7 +306,7 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -323,15 +340,17 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets feed_id.
+     *
+     * @return string
      */
-    public function getFeedId(): string
+    public function getFeedId()
     {
         return $this->container['feed_id'];
     }
@@ -340,8 +359,10 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets feed_id.
      *
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID.
+     *
+     * @return self
      */
-    public function setFeedId(string $feed_id): self
+    public function setFeedId($feed_id)
     {
         if (is_null($feed_id)) {
             throw new \InvalidArgumentException('non-nullable feed_id cannot be null');
@@ -353,8 +374,10 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets feed_type.
+     *
+     * @return string
      */
-    public function getFeedType(): string
+    public function getFeedType()
     {
         return $this->container['feed_type'];
     }
@@ -363,8 +386,10 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets feed_type.
      *
      * @param string $feed_type the feed type
+     *
+     * @return self
      */
-    public function setFeedType(string $feed_type): self
+    public function setFeedType($feed_type)
     {
         if (is_null($feed_type)) {
             throw new \InvalidArgumentException('non-nullable feed_type cannot be null');
@@ -376,8 +401,10 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets marketplace_ids.
+     *
+     * @return null|string[]
      */
-    public function getMarketplaceIds(): ?array
+    public function getMarketplaceIds()
     {
         return $this->container['marketplace_ids'];
     }
@@ -385,19 +412,14 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets marketplace_ids.
      *
-     * @param null|array $marketplace_ids a list of identifiers for the marketplaces that the feed is applied to
+     * @param null|string[] $marketplace_ids a list of identifiers for the marketplaces that the feed is applied to
+     *
+     * @return self
      */
-    public function setMarketplaceIds(?array $marketplace_ids): self
+    public function setMarketplaceIds($marketplace_ids)
     {
         if (is_null($marketplace_ids)) {
-            array_push($this->openAPINullablesSetToNull, 'marketplace_ids');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('marketplace_ids', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable marketplace_ids cannot be null');
         }
         $this->container['marketplace_ids'] = $marketplace_ids;
 
@@ -406,8 +428,10 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets created_time.
+     *
+     * @return \DateTime
      */
-    public function getCreatedTime(): \DateTime
+    public function getCreatedTime()
     {
         return $this->container['created_time'];
     }
@@ -416,8 +440,10 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets created_time.
      *
      * @param \DateTime $created_time the date and time when the feed was created, in ISO 8601 date time format
+     *
+     * @return self
      */
-    public function setCreatedTime(\DateTime $created_time): self
+    public function setCreatedTime($created_time)
     {
         if (is_null($created_time)) {
             throw new \InvalidArgumentException('non-nullable created_time cannot be null');
@@ -429,8 +455,10 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets processing_status.
+     *
+     * @return string
      */
-    public function getProcessingStatus(): string
+    public function getProcessingStatus()
     {
         return $this->container['processing_status'];
     }
@@ -439,8 +467,10 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets processing_status.
      *
      * @param string $processing_status the processing status of the feed
+     *
+     * @return self
      */
-    public function setProcessingStatus(string $processing_status): self
+    public function setProcessingStatus($processing_status)
     {
         if (is_null($processing_status)) {
             throw new \InvalidArgumentException('non-nullable processing_status cannot be null');
@@ -462,8 +492,10 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets processing_start_time.
+     *
+     * @return null|\DateTime
      */
-    public function getProcessingStartTime(): ?\DateTime
+    public function getProcessingStartTime()
     {
         return $this->container['processing_start_time'];
     }
@@ -472,18 +504,13 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets processing_start_time.
      *
      * @param null|\DateTime $processing_start_time the date and time when feed processing started, in ISO 8601 date time format
+     *
+     * @return self
      */
-    public function setProcessingStartTime(?\DateTime $processing_start_time): self
+    public function setProcessingStartTime($processing_start_time)
     {
         if (is_null($processing_start_time)) {
-            array_push($this->openAPINullablesSetToNull, 'processing_start_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('processing_start_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable processing_start_time cannot be null');
         }
         $this->container['processing_start_time'] = $processing_start_time;
 
@@ -492,8 +519,10 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets processing_end_time.
+     *
+     * @return null|\DateTime
      */
-    public function getProcessingEndTime(): ?\DateTime
+    public function getProcessingEndTime()
     {
         return $this->container['processing_end_time'];
     }
@@ -502,18 +531,13 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets processing_end_time.
      *
      * @param null|\DateTime $processing_end_time the date and time when feed processing completed, in ISO 8601 date time format
+     *
+     * @return self
      */
-    public function setProcessingEndTime(?\DateTime $processing_end_time): self
+    public function setProcessingEndTime($processing_end_time)
     {
         if (is_null($processing_end_time)) {
-            array_push($this->openAPINullablesSetToNull, 'processing_end_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('processing_end_time', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable processing_end_time cannot be null');
         }
         $this->container['processing_end_time'] = $processing_end_time;
 
@@ -522,8 +546,10 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets result_feed_document_id.
+     *
+     * @return null|string
      */
-    public function getResultFeedDocumentId(): ?string
+    public function getResultFeedDocumentId()
     {
         return $this->container['result_feed_document_id'];
     }
@@ -532,18 +558,13 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets result_feed_document_id.
      *
      * @param null|string $result_feed_document_id The identifier for the feed document. This identifier is unique only in combination with a seller ID.
+     *
+     * @return self
      */
-    public function setResultFeedDocumentId(?string $result_feed_document_id): self
+    public function setResultFeedDocumentId($result_feed_document_id)
     {
         if (is_null($result_feed_document_id)) {
-            array_push($this->openAPINullablesSetToNull, 'result_feed_document_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('result_feed_document_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable result_feed_document_id cannot be null');
         }
         $this->container['result_feed_document_id'] = $result_feed_document_id;
 
@@ -568,7 +589,7 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -579,7 +600,7 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -607,15 +628,17 @@ class Feed implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

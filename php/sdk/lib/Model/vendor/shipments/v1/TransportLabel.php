@@ -2,7 +2,7 @@
 /**
  * TransportLabel
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * TransportLabel Class Doc Comment
@@ -52,17 +50,18 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'TransportLabel';
+    protected static $openAPIModelName = 'TransportLabel';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'label_create_date_time' => '\DateTime',
-             'shipment_information' => '\SpApi\Model\vendor\shipments\v1\ShipmentInformation',
-             'label_data' => '\SpApi\Model\vendor\shipments\v1\LabelData[]'    ];
+    protected static $openAPITypes = [
+        'label_create_date_time' => '\DateTime',
+        'shipment_information' => '\SpApi\Model\vendor\shipments\v1\ShipmentInformation',
+        'label_data' => '\SpApi\Model\vendor\shipments\v1\LabelData[]'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,10 +70,11 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'label_create_date_time' => 'date-time',
-            'shipment_information' => null,
-            'label_data' => null    ];
+    protected static $openAPIFormats = [
+        'label_create_date_time' => 'date-time',
+        'shipment_information' => null,
+        'label_data' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -82,9 +82,9 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'label_create_date_time' => true,
-        'shipment_information' => true,
-        'label_data' => true
+        'label_create_date_time' => false,
+        'shipment_information' => false,
+        'label_data' => false
     ];
 
     /**
@@ -99,7 +99,7 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -109,7 +109,7 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -172,11 +172,10 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'label_create_date_time' => 'labelCreateDateTime',
-                'shipment_information' => 'shipmentInformation',
-                'label_data' => 'labelData'
-        
+        'shipment_information' => 'shipmentInformation',
+        'label_data' => 'labelData'
     ];
 
     /**
@@ -184,7 +183,7 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'label_create_date_time' => 'setLabelCreateDateTime',
         'shipment_information' => 'setShipmentInformation',
         'label_data' => 'setLabelData'
@@ -195,7 +194,7 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'label_create_date_time' => 'getLabelCreateDateTime',
         'shipment_information' => 'getShipmentInformation',
         'label_data' => 'getLabelData'
@@ -207,7 +206,7 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -217,7 +216,7 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -227,7 +226,7 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -237,7 +236,7 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,17 +245,17 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('label_create_date_time', $data ?? [], null);
         $this->setIfExists('shipment_information', $data ?? [], null);
@@ -286,7 +285,7 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -299,7 +298,7 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -310,7 +309,7 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \DateTime|null
      */
-    public function getLabelCreateDateTime(): ?\DateTime
+    public function getLabelCreateDateTime()
     {
         return $this->container['label_create_date_time'];
     }
@@ -322,17 +321,10 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setLabelCreateDateTime(?\DateTime $label_create_date_time): self
+    public function setLabelCreateDateTime($label_create_date_time)
     {
         if (is_null($label_create_date_time)) {
-            array_push($this->openAPINullablesSetToNull, 'label_create_date_time');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('label_create_date_time', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable label_create_date_time cannot be null');
         }
         $this->container['label_create_date_time'] = $label_create_date_time;
 
@@ -344,7 +336,7 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\shipments\v1\ShipmentInformation|null
      */
-    public function getShipmentInformation(): ?\SpApi\Model\vendor\shipments\v1\ShipmentInformation
+    public function getShipmentInformation()
     {
         return $this->container['shipment_information'];
     }
@@ -356,17 +348,10 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setShipmentInformation(?\SpApi\Model\vendor\shipments\v1\ShipmentInformation $shipment_information): self
+    public function setShipmentInformation($shipment_information)
     {
         if (is_null($shipment_information)) {
-            array_push($this->openAPINullablesSetToNull, 'shipment_information');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('shipment_information', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable shipment_information cannot be null');
         }
         $this->container['shipment_information'] = $shipment_information;
 
@@ -376,9 +361,9 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Gets label_data
      *
-     * @return array|null
+     * @return \SpApi\Model\vendor\shipments\v1\LabelData[]|null
      */
-    public function getLabelData(): ?array
+    public function getLabelData()
     {
         return $this->container['label_data'];
     }
@@ -386,28 +371,19 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Sets label_data
      *
-     * @param array|null $label_data Indicates the label data,format and type associated .
+     * @param \SpApi\Model\vendor\shipments\v1\LabelData[]|null $label_data Indicates the label data,format and type associated .
      *
      * @return self
      */
-    public function setLabelData(?array $label_data): self
+    public function setLabelData($label_data)
     {
         if (is_null($label_data)) {
-            array_push($this->openAPINullablesSetToNull, 'label_data');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('label_data', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable label_data cannot be null');
         }
         $this->container['label_data'] = $label_data;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -428,7 +404,7 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -441,7 +417,7 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -470,7 +446,7 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -493,7 +469,7 @@ class TransportLabel implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

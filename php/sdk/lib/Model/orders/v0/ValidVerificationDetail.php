@@ -3,7 +3,7 @@
 /**
  * ValidVerificationDetail.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\orders\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class ValidVerificationDetail implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ValidVerificationDetail';
+    protected static $openAPIModelName = 'ValidVerificationDetail';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'verification_detail_type' => 'string',
-        'valid_verification_statuses' => '\SpApi\Model\orders\v0\VerificationStatus[]'];
+        'valid_verification_statuses' => '\SpApi\Model\orders\v0\VerificationStatus[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class ValidVerificationDetail implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'verification_detail_type' => null,
-        'valid_verification_statuses' => null];
+        'valid_verification_statuses' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -100,7 +103,7 @@ class ValidVerificationDetail implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'verification_detail_type' => 'VerificationDetailType',
         'valid_verification_statuses' => 'ValidVerificationStatuses',
     ];
@@ -110,7 +113,7 @@ class ValidVerificationDetail implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'verification_detail_type' => 'setVerificationDetailType',
         'valid_verification_statuses' => 'setValidVerificationStatuses',
     ];
@@ -120,21 +123,23 @@ class ValidVerificationDetail implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'verification_detail_type' => 'getVerificationDetailType',
         'valid_verification_statuses' => 'getValidVerificationStatuses',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class ValidVerificationDetail implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class ValidVerificationDetail implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class ValidVerificationDetail implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -245,15 +262,17 @@ class ValidVerificationDetail implements ModelInterface, \ArrayAccess, \JsonSeri
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets verification_detail_type.
+     *
+     * @return string
      */
-    public function getVerificationDetailType(): string
+    public function getVerificationDetailType()
     {
         return $this->container['verification_detail_type'];
     }
@@ -262,8 +281,10 @@ class ValidVerificationDetail implements ModelInterface, \ArrayAccess, \JsonSeri
      * Sets verification_detail_type.
      *
      * @param string $verification_detail_type A supported type of verification detail. The type indicates which verification detail could be shared while updating the regulated order. Valid value: `prescriptionDetail`.
+     *
+     * @return self
      */
-    public function setVerificationDetailType(string $verification_detail_type): self
+    public function setVerificationDetailType($verification_detail_type)
     {
         if (is_null($verification_detail_type)) {
             throw new \InvalidArgumentException('non-nullable verification_detail_type cannot be null');
@@ -275,8 +296,10 @@ class ValidVerificationDetail implements ModelInterface, \ArrayAccess, \JsonSeri
 
     /**
      * Gets valid_verification_statuses.
+     *
+     * @return VerificationStatus[]
      */
-    public function getValidVerificationStatuses(): array
+    public function getValidVerificationStatuses()
     {
         return $this->container['valid_verification_statuses'];
     }
@@ -284,9 +307,11 @@ class ValidVerificationDetail implements ModelInterface, \ArrayAccess, \JsonSeri
     /**
      * Sets valid_verification_statuses.
      *
-     * @param array $valid_verification_statuses A list of valid verification statuses where the associated verification detail type may be provided. For example, if the value of this field is [\"Approved\"], calls to provide the associated verification detail will fail for orders with a `VerificationStatus` of `Pending`, `Rejected`, `Expired`, or `Cancelled`.
+     * @param VerificationStatus[] $valid_verification_statuses A list of valid verification statuses where the associated verification detail type may be provided. For example, if the value of this field is [\"Approved\"], calls to provide the associated verification detail will fail for orders with a `VerificationStatus` of `Pending`, `Rejected`, `Expired`, or `Cancelled`.
+     *
+     * @return self
      */
-    public function setValidVerificationStatuses(array $valid_verification_statuses): self
+    public function setValidVerificationStatuses($valid_verification_statuses)
     {
         if (is_null($valid_verification_statuses)) {
             throw new \InvalidArgumentException('non-nullable valid_verification_statuses cannot be null');
@@ -314,7 +339,7 @@ class ValidVerificationDetail implements ModelInterface, \ArrayAccess, \JsonSeri
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -325,7 +350,7 @@ class ValidVerificationDetail implements ModelInterface, \ArrayAccess, \JsonSeri
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -353,15 +378,17 @@ class ValidVerificationDetail implements ModelInterface, \ArrayAccess, \JsonSeri
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

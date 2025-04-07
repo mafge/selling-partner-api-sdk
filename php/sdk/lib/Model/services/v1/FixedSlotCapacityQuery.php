@@ -3,7 +3,7 @@
 /**
  * FixedSlotCapacityQuery.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\services\v1;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,19 +51,22 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'FixedSlotCapacityQuery';
+    protected static $openAPIModelName = 'FixedSlotCapacityQuery';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'capacity_types' => '\SpApi\Model\services\v1\CapacityType[]',
         'slot_duration' => 'float',
         'start_date_time' => '\DateTime',
-        'end_date_time' => '\DateTime'];
+        'end_date_time' => '\DateTime',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -75,11 +77,12 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'capacity_types' => null,
         'slot_duration' => 'int32',
         'start_date_time' => 'date-time',
-        'end_date_time' => 'date-time'];
+        'end_date_time' => 'date-time',
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -87,8 +90,8 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'capacity_types' => true,
-        'slot_duration' => true,
+        'capacity_types' => false,
+        'slot_duration' => false,
         'start_date_time' => false,
         'end_date_time' => false,
     ];
@@ -106,7 +109,7 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'capacity_types' => 'capacityTypes',
         'slot_duration' => 'slotDuration',
         'start_date_time' => 'startDateTime',
@@ -118,7 +121,7 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'capacity_types' => 'setCapacityTypes',
         'slot_duration' => 'setSlotDuration',
         'start_date_time' => 'setStartDateTime',
@@ -130,7 +133,7 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'capacity_types' => 'getCapacityTypes',
         'slot_duration' => 'getSlotDuration',
         'start_date_time' => 'getStartDateTime',
@@ -139,14 +142,16 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -171,16 +176,20 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -204,32 +213,40 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -239,7 +256,7 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -259,15 +276,17 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets capacity_types.
+     *
+     * @return null|CapacityType[]
      */
-    public function getCapacityTypes(): ?array
+    public function getCapacityTypes()
     {
         return $this->container['capacity_types'];
     }
@@ -275,19 +294,14 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Sets capacity_types.
      *
-     * @param null|array $capacity_types An array of capacity types which are being requested. Default value is `[SCHEDULED_CAPACITY]`.
+     * @param null|CapacityType[] $capacity_types An array of capacity types which are being requested. Default value is `[SCHEDULED_CAPACITY]`.
+     *
+     * @return self
      */
-    public function setCapacityTypes(?array $capacity_types): self
+    public function setCapacityTypes($capacity_types)
     {
         if (is_null($capacity_types)) {
-            array_push($this->openAPINullablesSetToNull, 'capacity_types');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('capacity_types', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable capacity_types cannot be null');
         }
         $this->container['capacity_types'] = $capacity_types;
 
@@ -296,8 +310,10 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets slot_duration.
+     *
+     * @return null|float
      */
-    public function getSlotDuration(): ?float
+    public function getSlotDuration()
     {
         return $this->container['slot_duration'];
     }
@@ -306,18 +322,13 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets slot_duration.
      *
      * @param null|float $slot_duration Size in which slots are being requested. This value should be a multiple of 5 and fall in the range: 5 <= `slotDuration` <= 360.
+     *
+     * @return self
      */
-    public function setSlotDuration(?float $slot_duration): self
+    public function setSlotDuration($slot_duration)
     {
         if (is_null($slot_duration)) {
-            array_push($this->openAPINullablesSetToNull, 'slot_duration');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('slot_duration', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable slot_duration cannot be null');
         }
 
         $this->container['slot_duration'] = $slot_duration;
@@ -327,8 +338,10 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets start_date_time.
+     *
+     * @return \DateTime
      */
-    public function getStartDateTime(): \DateTime
+    public function getStartDateTime()
     {
         return $this->container['start_date_time'];
     }
@@ -337,8 +350,10 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets start_date_time.
      *
      * @param \DateTime $start_date_time start date time from which the capacity slots are being requested in ISO 8601 format
+     *
+     * @return self
      */
-    public function setStartDateTime(\DateTime $start_date_time): self
+    public function setStartDateTime($start_date_time)
     {
         if (is_null($start_date_time)) {
             throw new \InvalidArgumentException('non-nullable start_date_time cannot be null');
@@ -350,8 +365,10 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets end_date_time.
+     *
+     * @return \DateTime
      */
-    public function getEndDateTime(): \DateTime
+    public function getEndDateTime()
     {
         return $this->container['end_date_time'];
     }
@@ -360,8 +377,10 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets end_date_time.
      *
      * @param \DateTime $end_date_time end date time up to which the capacity slots are being requested in ISO 8601 format
+     *
+     * @return self
      */
-    public function setEndDateTime(\DateTime $end_date_time): self
+    public function setEndDateTime($end_date_time)
     {
         if (is_null($end_date_time)) {
             throw new \InvalidArgumentException('non-nullable end_date_time cannot be null');
@@ -389,7 +408,7 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -400,7 +419,7 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -428,15 +447,17 @@ class FixedSlotCapacityQuery implements ModelInterface, \ArrayAccess, \JsonSeria
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

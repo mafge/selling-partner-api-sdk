@@ -3,7 +3,7 @@
 /**
  * ItemVendorDetailsByMarketplace.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\catalogItems\v2022_04_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -63,15 +62,17 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ItemVendorDetailsByMarketplace';
+    protected static $openAPIModelName = 'ItemVendorDetailsByMarketplace';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'marketplace_id' => 'string',
         'brand_code' => 'string',
         'manufacturer_code' => 'string',
@@ -79,7 +80,8 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
         'product_category' => '\SpApi\Model\catalogItems\v2022_04_01\ItemVendorDetailsCategory',
         'product_group' => 'string',
         'product_subcategory' => '\SpApi\Model\catalogItems\v2022_04_01\ItemVendorDetailsCategory',
-        'replenishment_category' => 'string'];
+        'replenishment_category' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -90,7 +92,7 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'marketplace_id' => null,
         'brand_code' => null,
         'manufacturer_code' => null,
@@ -98,7 +100,8 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
         'product_category' => null,
         'product_group' => null,
         'product_subcategory' => null,
-        'replenishment_category' => null];
+        'replenishment_category' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -107,13 +110,13 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
      */
     protected static array $openAPINullables = [
         'marketplace_id' => false,
-        'brand_code' => true,
-        'manufacturer_code' => true,
-        'manufacturer_code_parent' => true,
-        'product_category' => true,
-        'product_group' => true,
-        'product_subcategory' => true,
-        'replenishment_category' => true,
+        'brand_code' => false,
+        'manufacturer_code' => false,
+        'manufacturer_code_parent' => false,
+        'product_category' => false,
+        'product_group' => false,
+        'product_subcategory' => false,
+        'replenishment_category' => false,
     ];
 
     /**
@@ -129,7 +132,7 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'marketplace_id' => 'marketplaceId',
         'brand_code' => 'brandCode',
         'manufacturer_code' => 'manufacturerCode',
@@ -145,7 +148,7 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'marketplace_id' => 'setMarketplaceId',
         'brand_code' => 'setBrandCode',
         'manufacturer_code' => 'setManufacturerCode',
@@ -161,7 +164,7 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'marketplace_id' => 'getMarketplaceId',
         'brand_code' => 'getBrandCode',
         'manufacturer_code' => 'getManufacturerCode',
@@ -174,14 +177,16 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -210,16 +215,20 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -243,32 +252,40 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -278,7 +295,7 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
      *
      * @return string[]
      */
-    public function getReplenishmentCategoryAllowableValues(): array
+    public function getReplenishmentCategoryAllowableValues()
     {
         return [
             self::REPLENISHMENT_CATEGORY_ALLOCATED,
@@ -299,7 +316,7 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -324,15 +341,17 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
-    public function getMarketplaceId(): string
+    public function getMarketplaceId()
     {
         return $this->container['marketplace_id'];
     }
@@ -341,8 +360,10 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
      * Sets marketplace_id.
      *
      * @param string $marketplace_id Amazon marketplace identifier. To find the ID for your marketplace, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
+     *
+     * @return self
      */
-    public function setMarketplaceId(string $marketplace_id): self
+    public function setMarketplaceId($marketplace_id)
     {
         if (is_null($marketplace_id)) {
             throw new \InvalidArgumentException('non-nullable marketplace_id cannot be null');
@@ -354,8 +375,10 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets brand_code.
+     *
+     * @return null|string
      */
-    public function getBrandCode(): ?string
+    public function getBrandCode()
     {
         return $this->container['brand_code'];
     }
@@ -364,18 +387,13 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
      * Sets brand_code.
      *
      * @param null|string $brand_code the brand code that is associated with an Amazon catalog item
+     *
+     * @return self
      */
-    public function setBrandCode(?string $brand_code): self
+    public function setBrandCode($brand_code)
     {
         if (is_null($brand_code)) {
-            array_push($this->openAPINullablesSetToNull, 'brand_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('brand_code', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable brand_code cannot be null');
         }
         $this->container['brand_code'] = $brand_code;
 
@@ -384,8 +402,10 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets manufacturer_code.
+     *
+     * @return null|string
      */
-    public function getManufacturerCode(): ?string
+    public function getManufacturerCode()
     {
         return $this->container['manufacturer_code'];
     }
@@ -394,18 +414,13 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
      * Sets manufacturer_code.
      *
      * @param null|string $manufacturer_code the manufacturer code that is associated with an Amazon catalog item
+     *
+     * @return self
      */
-    public function setManufacturerCode(?string $manufacturer_code): self
+    public function setManufacturerCode($manufacturer_code)
     {
         if (is_null($manufacturer_code)) {
-            array_push($this->openAPINullablesSetToNull, 'manufacturer_code');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('manufacturer_code', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable manufacturer_code cannot be null');
         }
         $this->container['manufacturer_code'] = $manufacturer_code;
 
@@ -414,8 +429,10 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets manufacturer_code_parent.
+     *
+     * @return null|string
      */
-    public function getManufacturerCodeParent(): ?string
+    public function getManufacturerCodeParent()
     {
         return $this->container['manufacturer_code_parent'];
     }
@@ -424,18 +441,13 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
      * Sets manufacturer_code_parent.
      *
      * @param null|string $manufacturer_code_parent the parent vendor code of the manufacturer code
+     *
+     * @return self
      */
-    public function setManufacturerCodeParent(?string $manufacturer_code_parent): self
+    public function setManufacturerCodeParent($manufacturer_code_parent)
     {
         if (is_null($manufacturer_code_parent)) {
-            array_push($this->openAPINullablesSetToNull, 'manufacturer_code_parent');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('manufacturer_code_parent', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable manufacturer_code_parent cannot be null');
         }
         $this->container['manufacturer_code_parent'] = $manufacturer_code_parent;
 
@@ -444,8 +456,10 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets product_category.
+     *
+     * @return null|ItemVendorDetailsCategory
      */
-    public function getProductCategory(): ?ItemVendorDetailsCategory
+    public function getProductCategory()
     {
         return $this->container['product_category'];
     }
@@ -454,18 +468,13 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
      * Sets product_category.
      *
      * @param null|ItemVendorDetailsCategory $product_category product_category
+     *
+     * @return self
      */
-    public function setProductCategory(?ItemVendorDetailsCategory $product_category): self
+    public function setProductCategory($product_category)
     {
         if (is_null($product_category)) {
-            array_push($this->openAPINullablesSetToNull, 'product_category');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('product_category', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable product_category cannot be null');
         }
         $this->container['product_category'] = $product_category;
 
@@ -474,8 +483,10 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets product_group.
+     *
+     * @return null|string
      */
-    public function getProductGroup(): ?string
+    public function getProductGroup()
     {
         return $this->container['product_group'];
     }
@@ -484,18 +495,13 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
      * Sets product_group.
      *
      * @param null|string $product_group the product group that is associated with an Amazon catalog item
+     *
+     * @return self
      */
-    public function setProductGroup(?string $product_group): self
+    public function setProductGroup($product_group)
     {
         if (is_null($product_group)) {
-            array_push($this->openAPINullablesSetToNull, 'product_group');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('product_group', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable product_group cannot be null');
         }
         $this->container['product_group'] = $product_group;
 
@@ -504,8 +510,10 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets product_subcategory.
+     *
+     * @return null|ItemVendorDetailsCategory
      */
-    public function getProductSubcategory(): ?ItemVendorDetailsCategory
+    public function getProductSubcategory()
     {
         return $this->container['product_subcategory'];
     }
@@ -514,18 +522,13 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
      * Sets product_subcategory.
      *
      * @param null|ItemVendorDetailsCategory $product_subcategory product_subcategory
+     *
+     * @return self
      */
-    public function setProductSubcategory(?ItemVendorDetailsCategory $product_subcategory): self
+    public function setProductSubcategory($product_subcategory)
     {
         if (is_null($product_subcategory)) {
-            array_push($this->openAPINullablesSetToNull, 'product_subcategory');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('product_subcategory', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable product_subcategory cannot be null');
         }
         $this->container['product_subcategory'] = $product_subcategory;
 
@@ -534,8 +537,10 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
 
     /**
      * Gets replenishment_category.
+     *
+     * @return null|string
      */
-    public function getReplenishmentCategory(): ?string
+    public function getReplenishmentCategory()
     {
         return $this->container['replenishment_category'];
     }
@@ -544,21 +549,16 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
      * Sets replenishment_category.
      *
      * @param null|string $replenishment_category the replenishment category that is associated with an Amazon catalog item
+     *
+     * @return self
      */
-    public function setReplenishmentCategory(?string $replenishment_category): self
+    public function setReplenishmentCategory($replenishment_category)
     {
         if (is_null($replenishment_category)) {
-            array_push($this->openAPINullablesSetToNull, 'replenishment_category');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('replenishment_category', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable replenishment_category cannot be null');
         }
         $allowedValues = $this->getReplenishmentCategoryAllowableValues();
-        if (!is_null($replenishment_category) && !in_array($replenishment_category, $allowedValues, true)) {
+        if (!in_array($replenishment_category, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'replenishment_category', must be one of '%s'",
@@ -590,7 +590,7 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -601,7 +601,7 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -629,15 +629,17 @@ class ItemVendorDetailsByMarketplace implements ModelInterface, \ArrayAccess, \J
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

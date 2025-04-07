@@ -3,7 +3,7 @@
 /**
  * AdditionalSellerInputs.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\merchantFulfillment\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class AdditionalSellerInputs implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'AdditionalSellerInputs';
+    protected static $openAPIModelName = 'AdditionalSellerInputs';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'additional_input_field_name' => 'string',
-        'additional_seller_input' => '\SpApi\Model\merchantFulfillment\v0\AdditionalSellerInput'];
+        'additional_seller_input' => '\SpApi\Model\merchantFulfillment\v0\AdditionalSellerInput',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class AdditionalSellerInputs implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'additional_input_field_name' => null,
-        'additional_seller_input' => null];
+        'additional_seller_input' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -100,7 +103,7 @@ class AdditionalSellerInputs implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'additional_input_field_name' => 'AdditionalInputFieldName',
         'additional_seller_input' => 'AdditionalSellerInput',
     ];
@@ -110,7 +113,7 @@ class AdditionalSellerInputs implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'additional_input_field_name' => 'setAdditionalInputFieldName',
         'additional_seller_input' => 'setAdditionalSellerInput',
     ];
@@ -120,21 +123,23 @@ class AdditionalSellerInputs implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'additional_input_field_name' => 'getAdditionalInputFieldName',
         'additional_seller_input' => 'getAdditionalSellerInput',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class AdditionalSellerInputs implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class AdditionalSellerInputs implements ModelInterface, \ArrayAccess, \JsonSeria
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class AdditionalSellerInputs implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -245,15 +262,17 @@ class AdditionalSellerInputs implements ModelInterface, \ArrayAccess, \JsonSeria
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets additional_input_field_name.
+     *
+     * @return string
      */
-    public function getAdditionalInputFieldName(): string
+    public function getAdditionalInputFieldName()
     {
         return $this->container['additional_input_field_name'];
     }
@@ -262,8 +281,10 @@ class AdditionalSellerInputs implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets additional_input_field_name.
      *
      * @param string $additional_input_field_name the name of the additional input field
+     *
+     * @return self
      */
-    public function setAdditionalInputFieldName(string $additional_input_field_name): self
+    public function setAdditionalInputFieldName($additional_input_field_name)
     {
         if (is_null($additional_input_field_name)) {
             throw new \InvalidArgumentException('non-nullable additional_input_field_name cannot be null');
@@ -275,8 +296,10 @@ class AdditionalSellerInputs implements ModelInterface, \ArrayAccess, \JsonSeria
 
     /**
      * Gets additional_seller_input.
+     *
+     * @return AdditionalSellerInput
      */
-    public function getAdditionalSellerInput(): AdditionalSellerInput
+    public function getAdditionalSellerInput()
     {
         return $this->container['additional_seller_input'];
     }
@@ -285,8 +308,10 @@ class AdditionalSellerInputs implements ModelInterface, \ArrayAccess, \JsonSeria
      * Sets additional_seller_input.
      *
      * @param AdditionalSellerInput $additional_seller_input additional_seller_input
+     *
+     * @return self
      */
-    public function setAdditionalSellerInput(AdditionalSellerInput $additional_seller_input): self
+    public function setAdditionalSellerInput($additional_seller_input)
     {
         if (is_null($additional_seller_input)) {
             throw new \InvalidArgumentException('non-nullable additional_seller_input cannot be null');
@@ -314,7 +339,7 @@ class AdditionalSellerInputs implements ModelInterface, \ArrayAccess, \JsonSeria
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -325,7 +350,7 @@ class AdditionalSellerInputs implements ModelInterface, \ArrayAccess, \JsonSeria
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -353,15 +378,17 @@ class AdditionalSellerInputs implements ModelInterface, \ArrayAccess, \JsonSeria
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

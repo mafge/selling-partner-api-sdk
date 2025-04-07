@@ -3,7 +3,7 @@
 /**
  * ListContentDocumentAsinRelationsResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\aplusContent\v2020_11_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -50,18 +49,21 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, \Array
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'ListContentDocumentAsinRelationsResponse';
+    protected static $openAPIModelName = 'ListContentDocumentAsinRelationsResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'warnings' => '\SpApi\Model\aplusContent\v2020_11_01\Error[]',
         'next_page_token' => 'string',
-        'asin_metadata_set' => '\SpApi\Model\aplusContent\v2020_11_01\AsinMetadata[]'];
+        'asin_metadata_set' => '\SpApi\Model\aplusContent\v2020_11_01\AsinMetadata[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -72,10 +74,11 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, \Array
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'warnings' => null,
         'next_page_token' => null,
-        'asin_metadata_set' => null];
+        'asin_metadata_set' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, \Array
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'warnings' => true,
-        'next_page_token' => true,
+        'warnings' => false,
+        'next_page_token' => false,
         'asin_metadata_set' => false,
     ];
 
@@ -101,7 +104,7 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, \Array
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'warnings' => 'warnings',
         'next_page_token' => 'nextPageToken',
         'asin_metadata_set' => 'asinMetadataSet',
@@ -112,7 +115,7 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, \Array
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'warnings' => 'setWarnings',
         'next_page_token' => 'setNextPageToken',
         'asin_metadata_set' => 'setAsinMetadataSet',
@@ -123,7 +126,7 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, \Array
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'warnings' => 'getWarnings',
         'next_page_token' => 'getNextPageToken',
         'asin_metadata_set' => 'getAsinMetadataSet',
@@ -131,14 +134,16 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, \Array
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -162,16 +167,20 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, \Array
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -195,32 +204,40 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, \Array
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -230,7 +247,7 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, \Array
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -251,15 +268,17 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, \Array
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets warnings.
+     *
+     * @return null|Error[]
      */
-    public function getWarnings(): ?array
+    public function getWarnings()
     {
         return $this->container['warnings'];
     }
@@ -267,19 +286,14 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, \Array
     /**
      * Sets warnings.
      *
-     * @param null|array $warnings a set of messages to the user, such as warnings or comments
+     * @param null|Error[] $warnings a set of messages to the user, such as warnings or comments
+     *
+     * @return self
      */
-    public function setWarnings(?array $warnings): self
+    public function setWarnings($warnings)
     {
         if (is_null($warnings)) {
-            array_push($this->openAPINullablesSetToNull, 'warnings');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('warnings', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable warnings cannot be null');
         }
 
         $this->container['warnings'] = $warnings;
@@ -289,8 +303,10 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, \Array
 
     /**
      * Gets next_page_token.
+     *
+     * @return null|string
      */
-    public function getNextPageToken(): ?string
+    public function getNextPageToken()
     {
         return $this->container['next_page_token'];
     }
@@ -299,21 +315,16 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, \Array
      * Sets next_page_token.
      *
      * @param null|string $next_page_token a token that you use to fetch a specific page when there are multiple pages of results
+     *
+     * @return self
      */
-    public function setNextPageToken(?string $next_page_token): self
+    public function setNextPageToken($next_page_token)
     {
         if (is_null($next_page_token)) {
-            array_push($this->openAPINullablesSetToNull, 'next_page_token');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('next_page_token', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable next_page_token cannot be null');
         }
 
-        if (!is_null($next_page_token) && (mb_strlen($next_page_token) < 1)) {
+        if (mb_strlen($next_page_token) < 1) {
             throw new \InvalidArgumentException('invalid length for $next_page_token when calling ListContentDocumentAsinRelationsResponse., must be bigger than or equal to 1.');
         }
 
@@ -324,8 +335,10 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, \Array
 
     /**
      * Gets asin_metadata_set.
+     *
+     * @return AsinMetadata[]
      */
-    public function getAsinMetadataSet(): array
+    public function getAsinMetadataSet()
     {
         return $this->container['asin_metadata_set'];
     }
@@ -333,9 +346,11 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, \Array
     /**
      * Sets asin_metadata_set.
      *
-     * @param array $asin_metadata_set the set of ASIN metadata
+     * @param AsinMetadata[] $asin_metadata_set the set of ASIN metadata
+     *
+     * @return self
      */
-    public function setAsinMetadataSet(array $asin_metadata_set): self
+    public function setAsinMetadataSet($asin_metadata_set)
     {
         if (is_null($asin_metadata_set)) {
             throw new \InvalidArgumentException('non-nullable asin_metadata_set cannot be null');
@@ -364,7 +379,7 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, \Array
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -375,7 +390,7 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, \Array
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -403,15 +418,17 @@ class ListContentDocumentAsinRelationsResponse implements ModelInterface, \Array
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

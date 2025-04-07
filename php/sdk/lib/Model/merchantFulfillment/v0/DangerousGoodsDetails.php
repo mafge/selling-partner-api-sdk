@@ -3,7 +3,7 @@
 /**
  * DangerousGoodsDetails.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\merchantFulfillment\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -69,19 +68,22 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'DangerousGoodsDetails';
+    protected static $openAPIModelName = 'DangerousGoodsDetails';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'united_nations_regulatory_id' => 'string',
         'transportation_regulatory_class' => 'string',
         'packing_group' => 'string',
-        'packing_instruction' => 'string'];
+        'packing_instruction' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -92,11 +94,12 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'united_nations_regulatory_id' => null,
         'transportation_regulatory_class' => null,
         'packing_group' => null,
-        'packing_instruction' => null];
+        'packing_instruction' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -104,10 +107,10 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'united_nations_regulatory_id' => true,
-        'transportation_regulatory_class' => true,
-        'packing_group' => true,
-        'packing_instruction' => true,
+        'united_nations_regulatory_id' => false,
+        'transportation_regulatory_class' => false,
+        'packing_group' => false,
+        'packing_instruction' => false,
     ];
 
     /**
@@ -123,7 +126,7 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'united_nations_regulatory_id' => 'UnitedNationsRegulatoryId',
         'transportation_regulatory_class' => 'TransportationRegulatoryClass',
         'packing_group' => 'PackingGroup',
@@ -135,7 +138,7 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'united_nations_regulatory_id' => 'setUnitedNationsRegulatoryId',
         'transportation_regulatory_class' => 'setTransportationRegulatoryClass',
         'packing_group' => 'setPackingGroup',
@@ -147,7 +150,7 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'united_nations_regulatory_id' => 'getUnitedNationsRegulatoryId',
         'transportation_regulatory_class' => 'getTransportationRegulatoryClass',
         'packing_group' => 'getPackingGroup',
@@ -156,14 +159,16 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -188,16 +193,20 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -221,32 +230,40 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -256,7 +273,7 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return string[]
      */
-    public function getPackingGroupAllowableValues(): array
+    public function getPackingGroupAllowableValues()
     {
         return [
             self::PACKING_GROUP_I,
@@ -270,7 +287,7 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return string[]
      */
-    public function getPackingInstructionAllowableValues(): array
+    public function getPackingInstructionAllowableValues()
     {
         return [
             self::PACKING_INSTRUCTION_PI965_SECTION_IA,
@@ -294,7 +311,7 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -333,15 +350,17 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets united_nations_regulatory_id.
+     *
+     * @return null|string
      */
-    public function getUnitedNationsRegulatoryId(): ?string
+    public function getUnitedNationsRegulatoryId()
     {
         return $this->container['united_nations_regulatory_id'];
     }
@@ -350,21 +369,16 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets united_nations_regulatory_id.
      *
      * @param null|string $united_nations_regulatory_id the specific UNID of the item being shipped
+     *
+     * @return self
      */
-    public function setUnitedNationsRegulatoryId(?string $united_nations_regulatory_id): self
+    public function setUnitedNationsRegulatoryId($united_nations_regulatory_id)
     {
         if (is_null($united_nations_regulatory_id)) {
-            array_push($this->openAPINullablesSetToNull, 'united_nations_regulatory_id');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('united_nations_regulatory_id', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable united_nations_regulatory_id cannot be null');
         }
 
-        if (!is_null($united_nations_regulatory_id) && (!preg_match('/^(UN|ID|NA)[0-9]{4}$/', ObjectSerializer::toString($united_nations_regulatory_id)))) {
+        if (!preg_match('/^(UN|ID|NA)[0-9]{4}$/', ObjectSerializer::toString($united_nations_regulatory_id))) {
             throw new \InvalidArgumentException('invalid value for $united_nations_regulatory_id when calling DangerousGoodsDetails., must conform to the pattern /^(UN|ID|NA)[0-9]{4}$/.');
         }
 
@@ -375,8 +389,10 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets transportation_regulatory_class.
+     *
+     * @return null|string
      */
-    public function getTransportationRegulatoryClass(): ?string
+    public function getTransportationRegulatoryClass()
     {
         return $this->container['transportation_regulatory_class'];
     }
@@ -385,21 +401,16 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets transportation_regulatory_class.
      *
      * @param null|string $transportation_regulatory_class the specific regulatory class of the shipped item
+     *
+     * @return self
      */
-    public function setTransportationRegulatoryClass(?string $transportation_regulatory_class): self
+    public function setTransportationRegulatoryClass($transportation_regulatory_class)
     {
         if (is_null($transportation_regulatory_class)) {
-            array_push($this->openAPINullablesSetToNull, 'transportation_regulatory_class');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('transportation_regulatory_class', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable transportation_regulatory_class cannot be null');
         }
 
-        if (!is_null($transportation_regulatory_class) && (!preg_match('/^[1-9](\\.[1-9])?$/', ObjectSerializer::toString($transportation_regulatory_class)))) {
+        if (!preg_match('/^[1-9](\\.[1-9])?$/', ObjectSerializer::toString($transportation_regulatory_class))) {
             throw new \InvalidArgumentException('invalid value for $transportation_regulatory_class when calling DangerousGoodsDetails., must conform to the pattern /^[1-9](\\.[1-9])?$/.');
         }
 
@@ -410,8 +421,10 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets packing_group.
+     *
+     * @return null|string
      */
-    public function getPackingGroup(): ?string
+    public function getPackingGroup()
     {
         return $this->container['packing_group'];
     }
@@ -420,21 +433,16 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets packing_group.
      *
      * @param null|string $packing_group the specific packaging group of the item being shipped
+     *
+     * @return self
      */
-    public function setPackingGroup(?string $packing_group): self
+    public function setPackingGroup($packing_group)
     {
         if (is_null($packing_group)) {
-            array_push($this->openAPINullablesSetToNull, 'packing_group');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('packing_group', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable packing_group cannot be null');
         }
         $allowedValues = $this->getPackingGroupAllowableValues();
-        if (!is_null($packing_group) && !in_array($packing_group, $allowedValues, true)) {
+        if (!in_array($packing_group, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'packing_group', must be one of '%s'",
@@ -450,8 +458,10 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
 
     /**
      * Gets packing_instruction.
+     *
+     * @return null|string
      */
-    public function getPackingInstruction(): ?string
+    public function getPackingInstruction()
     {
         return $this->container['packing_instruction'];
     }
@@ -460,21 +470,16 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      * Sets packing_instruction.
      *
      * @param null|string $packing_instruction the specific packing instruction of the item being shipped
+     *
+     * @return self
      */
-    public function setPackingInstruction(?string $packing_instruction): self
+    public function setPackingInstruction($packing_instruction)
     {
         if (is_null($packing_instruction)) {
-            array_push($this->openAPINullablesSetToNull, 'packing_instruction');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('packing_instruction', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable packing_instruction cannot be null');
         }
         $allowedValues = $this->getPackingInstructionAllowableValues();
-        if (!is_null($packing_instruction) && !in_array($packing_instruction, $allowedValues, true)) {
+        if (!in_array($packing_instruction, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'packing_instruction', must be one of '%s'",
@@ -506,7 +511,7 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -517,7 +522,7 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -545,15 +550,17 @@ class DangerousGoodsDetails implements ModelInterface, \ArrayAccess, \JsonSerial
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

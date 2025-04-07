@@ -3,7 +3,7 @@
 /**
  * FeatureSku.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\fulfillment\outbound\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'FeatureSku';
+    protected static $openAPIModelName = 'FeatureSku';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'seller_sku' => 'string',
         'fn_sku' => 'string',
         'asin' => 'string',
         'sku_count' => 'float',
-        'overlapping_skus' => 'string[]'];
+        'overlapping_skus' => 'string[]',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'seller_sku' => null,
         'fn_sku' => null,
         'asin' => null,
         'sku_count' => null,
-        'overlapping_skus' => null];
+        'overlapping_skus' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,11 +92,11 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'seller_sku' => true,
-        'fn_sku' => true,
-        'asin' => true,
-        'sku_count' => true,
-        'overlapping_skus' => true,
+        'seller_sku' => false,
+        'fn_sku' => false,
+        'asin' => false,
+        'sku_count' => false,
+        'overlapping_skus' => false,
     ];
 
     /**
@@ -109,7 +112,7 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'seller_sku' => 'sellerSku',
         'fn_sku' => 'fnSku',
         'asin' => 'asin',
@@ -122,7 +125,7 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'seller_sku' => 'setSellerSku',
         'fn_sku' => 'setFnSku',
         'asin' => 'setAsin',
@@ -135,7 +138,7 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'seller_sku' => 'getSellerSku',
         'fn_sku' => 'getFnSku',
         'asin' => 'getAsin',
@@ -145,14 +148,16 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -257,15 +274,17 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets seller_sku.
+     *
+     * @return null|string
      */
-    public function getSellerSku(): ?string
+    public function getSellerSku()
     {
         return $this->container['seller_sku'];
     }
@@ -274,18 +293,13 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets seller_sku.
      *
      * @param null|string $seller_sku Used to identify an item in the given marketplace. `SellerSKU` is qualified by the seller's SellerId, which is included with every operation that you submit.
+     *
+     * @return self
      */
-    public function setSellerSku(?string $seller_sku): self
+    public function setSellerSku($seller_sku)
     {
         if (is_null($seller_sku)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_sku');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_sku', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_sku cannot be null');
         }
         $this->container['seller_sku'] = $seller_sku;
 
@@ -294,8 +308,10 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets fn_sku.
+     *
+     * @return null|string
      */
-    public function getFnSku(): ?string
+    public function getFnSku()
     {
         return $this->container['fn_sku'];
     }
@@ -304,18 +320,13 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets fn_sku.
      *
      * @param null|string $fn_sku the unique SKU used by Amazon's fulfillment network
+     *
+     * @return self
      */
-    public function setFnSku(?string $fn_sku): self
+    public function setFnSku($fn_sku)
     {
         if (is_null($fn_sku)) {
-            array_push($this->openAPINullablesSetToNull, 'fn_sku');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('fn_sku', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable fn_sku cannot be null');
         }
         $this->container['fn_sku'] = $fn_sku;
 
@@ -324,8 +335,10 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
-    public function getAsin(): ?string
+    public function getAsin()
     {
         return $this->container['asin'];
     }
@@ -334,18 +347,13 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number (ASIN) of the item
+     *
+     * @return self
      */
-    public function setAsin(?string $asin): self
+    public function setAsin($asin)
     {
         if (is_null($asin)) {
-            array_push($this->openAPINullablesSetToNull, 'asin');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('asin', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable asin cannot be null');
         }
         $this->container['asin'] = $asin;
 
@@ -354,8 +362,10 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets sku_count.
+     *
+     * @return null|float
      */
-    public function getSkuCount(): ?float
+    public function getSkuCount()
     {
         return $this->container['sku_count'];
     }
@@ -364,18 +374,13 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
      * Sets sku_count.
      *
      * @param null|float $sku_count the number of SKUs available for this service
+     *
+     * @return self
      */
-    public function setSkuCount(?float $sku_count): self
+    public function setSkuCount($sku_count)
     {
         if (is_null($sku_count)) {
-            array_push($this->openAPINullablesSetToNull, 'sku_count');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('sku_count', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable sku_count cannot be null');
         }
         $this->container['sku_count'] = $sku_count;
 
@@ -384,8 +389,10 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
 
     /**
      * Gets overlapping_skus.
+     *
+     * @return null|string[]
      */
-    public function getOverlappingSkus(): ?array
+    public function getOverlappingSkus()
     {
         return $this->container['overlapping_skus'];
     }
@@ -393,19 +400,14 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
     /**
      * Sets overlapping_skus.
      *
-     * @param null|array $overlapping_skus other seller SKUs that are shared across the same inventory
+     * @param null|string[] $overlapping_skus other seller SKUs that are shared across the same inventory
+     *
+     * @return self
      */
-    public function setOverlappingSkus(?array $overlapping_skus): self
+    public function setOverlappingSkus($overlapping_skus)
     {
         if (is_null($overlapping_skus)) {
-            array_push($this->openAPINullablesSetToNull, 'overlapping_skus');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('overlapping_skus', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable overlapping_skus cannot be null');
         }
         $this->container['overlapping_skus'] = $overlapping_skus;
 
@@ -430,7 +432,7 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -441,7 +443,7 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -469,15 +471,17 @@ class FeatureSku implements ModelInterface, \ArrayAccess, \JsonSerializable
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

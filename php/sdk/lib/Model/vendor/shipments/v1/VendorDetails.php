@@ -2,7 +2,7 @@
 /**
  * VendorDetails
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\shipments\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * VendorDetails Class Doc Comment
@@ -52,16 +50,17 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'VendorDetails';
+    protected static $openAPIModelName = 'VendorDetails';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'selling_party' => '\SpApi\Model\vendor\shipments\v1\PartyIdentification',
-             'vendor_shipment_identifier' => 'string'    ];
+    protected static $openAPITypes = [
+        'selling_party' => '\SpApi\Model\vendor\shipments\v1\PartyIdentification',
+        'vendor_shipment_identifier' => 'string'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -70,9 +69,10 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'selling_party' => null,
-            'vendor_shipment_identifier' => null    ];
+    protected static $openAPIFormats = [
+        'selling_party' => null,
+        'vendor_shipment_identifier' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -80,8 +80,8 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'selling_party' => true,
-        'vendor_shipment_identifier' => true
+        'selling_party' => false,
+        'vendor_shipment_identifier' => false
     ];
 
     /**
@@ -96,7 +96,7 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -106,7 +106,7 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -169,10 +169,9 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'selling_party' => 'sellingParty',
-                'vendor_shipment_identifier' => 'vendorShipmentIdentifier'
-        
+        'vendor_shipment_identifier' => 'vendorShipmentIdentifier'
     ];
 
     /**
@@ -180,7 +179,7 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'selling_party' => 'setSellingParty',
         'vendor_shipment_identifier' => 'setVendorShipmentIdentifier'
     ];
@@ -190,7 +189,7 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'selling_party' => 'getSellingParty',
         'vendor_shipment_identifier' => 'getVendorShipmentIdentifier'
     ];
@@ -201,7 +200,7 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -211,7 +210,7 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -221,7 +220,7 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -231,7 +230,7 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -240,17 +239,17 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('selling_party', $data ?? [], null);
         $this->setIfExists('vendor_shipment_identifier', $data ?? [], null);
@@ -279,7 +278,7 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -292,7 +291,7 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -303,7 +302,7 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return \SpApi\Model\vendor\shipments\v1\PartyIdentification|null
      */
-    public function getSellingParty(): ?\SpApi\Model\vendor\shipments\v1\PartyIdentification
+    public function getSellingParty()
     {
         return $this->container['selling_party'];
     }
@@ -315,17 +314,10 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setSellingParty(?\SpApi\Model\vendor\shipments\v1\PartyIdentification $selling_party): self
+    public function setSellingParty($selling_party)
     {
         if (is_null($selling_party)) {
-            array_push($this->openAPINullablesSetToNull, 'selling_party');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('selling_party', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable selling_party cannot be null');
         }
         $this->container['selling_party'] = $selling_party;
 
@@ -337,7 +329,7 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getVendorShipmentIdentifier(): ?string
+    public function getVendorShipmentIdentifier()
     {
         return $this->container['vendor_shipment_identifier'];
     }
@@ -349,24 +341,15 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setVendorShipmentIdentifier(?string $vendor_shipment_identifier): self
+    public function setVendorShipmentIdentifier($vendor_shipment_identifier)
     {
         if (is_null($vendor_shipment_identifier)) {
-            array_push($this->openAPINullablesSetToNull, 'vendor_shipment_identifier');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('vendor_shipment_identifier', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable vendor_shipment_identifier cannot be null');
         }
         $this->container['vendor_shipment_identifier'] = $vendor_shipment_identifier;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -387,7 +370,7 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -400,7 +383,7 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -429,7 +412,7 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -452,7 +435,7 @@ class VendorDetails implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -2,7 +2,7 @@
 /**
  * PackingSlip
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\df\shipping\v2021_12_28;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * PackingSlip Class Doc Comment
@@ -52,17 +50,18 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'PackingSlip';
+    protected static $openAPIModelName = 'PackingSlip';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'purchase_order_number' => 'string',
-             'content' => 'string',
-             'content_type' => 'string'    ];
+    protected static $openAPITypes = [
+        'purchase_order_number' => 'string',
+        'content' => 'string',
+        'content_type' => 'string'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -71,10 +70,11 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'purchase_order_number' => null,
-            'content' => null,
-            'content_type' => null    ];
+    protected static $openAPIFormats = [
+        'purchase_order_number' => null,
+        'content' => null,
+        'content_type' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -84,7 +84,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
     protected static array $openAPINullables = [
         'purchase_order_number' => false,
         'content' => false,
-        'content_type' => true
+        'content_type' => false
     ];
 
     /**
@@ -99,7 +99,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -109,7 +109,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -172,11 +172,10 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'purchase_order_number' => 'purchaseOrderNumber',
-                'content' => 'content',
-                'content_type' => 'contentType'
-        
+        'content' => 'content',
+        'content_type' => 'contentType'
     ];
 
     /**
@@ -184,7 +183,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'purchase_order_number' => 'setPurchaseOrderNumber',
         'content' => 'setContent',
         'content_type' => 'setContentType'
@@ -195,7 +194,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'purchase_order_number' => 'getPurchaseOrderNumber',
         'content' => 'getContent',
         'content_type' => 'getContentType'
@@ -207,7 +206,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -217,7 +216,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -227,7 +226,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -237,7 +236,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -249,7 +248,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getContentTypeAllowableValues(): array
+    public function getContentTypeAllowableValues()
     {
         return [
             self::CONTENT_TYPE_APPLICATION_PDF,
@@ -259,17 +258,17 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('purchase_order_number', $data ?? [], null);
         $this->setIfExists('content', $data ?? [], null);
@@ -299,7 +298,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -331,7 +330,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -342,7 +341,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getPurchaseOrderNumber(): string
+    public function getPurchaseOrderNumber()
     {
         return $this->container['purchase_order_number'];
     }
@@ -354,7 +353,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setPurchaseOrderNumber(string $purchase_order_number): self
+    public function setPurchaseOrderNumber($purchase_order_number)
     {
         if (is_null($purchase_order_number)) {
             throw new \InvalidArgumentException('non-nullable purchase_order_number cannot be null');
@@ -374,7 +373,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getContent(): string
+    public function getContent()
     {
         return $this->container['content'];
     }
@@ -386,7 +385,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setContent(string $content): self
+    public function setContent($content)
     {
         if (is_null($content)) {
             throw new \InvalidArgumentException('non-nullable content cannot be null');
@@ -401,7 +400,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getContentType(): ?string
+    public function getContentType()
     {
         return $this->container['content_type'];
     }
@@ -413,20 +412,13 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setContentType(?string $content_type): self
+    public function setContentType($content_type)
     {
         if (is_null($content_type)) {
-            array_push($this->openAPINullablesSetToNull, 'content_type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('content_type', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable content_type cannot be null');
         }
         $allowedValues = $this->getContentTypeAllowableValues();
-        if (!is_null($content_type) && !in_array($content_type, $allowedValues, true)) {
+        if (!in_array($content_type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'content_type', must be one of '%s'",
@@ -439,8 +431,6 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -461,7 +451,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -474,7 +464,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -503,7 +493,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -526,7 +516,7 @@ class PackingSlip implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

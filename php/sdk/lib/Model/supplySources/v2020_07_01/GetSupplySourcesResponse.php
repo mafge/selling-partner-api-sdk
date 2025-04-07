@@ -3,7 +3,7 @@
 /**
  * GetSupplySourcesResponse.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\supplySources\v2020_07_01;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,17 +51,20 @@ class GetSupplySourcesResponse implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'GetSupplySourcesResponse';
+    protected static $openAPIModelName = 'GetSupplySourcesResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'supply_sources' => '\SpApi\Model\supplySources\v2020_07_01\SupplySourceListInner[]',
-        'next_page_token' => 'string'];
+        'next_page_token' => 'string',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -73,9 +75,10 @@ class GetSupplySourcesResponse implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'supply_sources' => null,
-        'next_page_token' => null];
+        'next_page_token' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -83,8 +86,8 @@ class GetSupplySourcesResponse implements ModelInterface, \ArrayAccess, \JsonSer
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'supply_sources' => true,
-        'next_page_token' => true,
+        'supply_sources' => false,
+        'next_page_token' => false,
     ];
 
     /**
@@ -100,7 +103,7 @@ class GetSupplySourcesResponse implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'supply_sources' => 'supplySources',
         'next_page_token' => 'nextPageToken',
     ];
@@ -110,7 +113,7 @@ class GetSupplySourcesResponse implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'supply_sources' => 'setSupplySources',
         'next_page_token' => 'setNextPageToken',
     ];
@@ -120,21 +123,23 @@ class GetSupplySourcesResponse implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'supply_sources' => 'getSupplySources',
         'next_page_token' => 'getNextPageToken',
     ];
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -157,16 +162,20 @@ class GetSupplySourcesResponse implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -190,32 +199,40 @@ class GetSupplySourcesResponse implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -225,7 +242,7 @@ class GetSupplySourcesResponse implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -236,15 +253,17 @@ class GetSupplySourcesResponse implements ModelInterface, \ArrayAccess, \JsonSer
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets supply_sources.
+     *
+     * @return null|SupplySourceListInner[]
      */
-    public function getSupplySources(): ?array
+    public function getSupplySources()
     {
         return $this->container['supply_sources'];
     }
@@ -252,19 +271,14 @@ class GetSupplySourcesResponse implements ModelInterface, \ArrayAccess, \JsonSer
     /**
      * Sets supply_sources.
      *
-     * @param null|array $supply_sources the list of `SupplySource`s
+     * @param null|SupplySourceListInner[] $supply_sources the list of `SupplySource`s
+     *
+     * @return self
      */
-    public function setSupplySources(?array $supply_sources): self
+    public function setSupplySources($supply_sources)
     {
         if (is_null($supply_sources)) {
-            array_push($this->openAPINullablesSetToNull, 'supply_sources');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('supply_sources', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable supply_sources cannot be null');
         }
         $this->container['supply_sources'] = $supply_sources;
 
@@ -273,8 +287,10 @@ class GetSupplySourcesResponse implements ModelInterface, \ArrayAccess, \JsonSer
 
     /**
      * Gets next_page_token.
+     *
+     * @return null|string
      */
-    public function getNextPageToken(): ?string
+    public function getNextPageToken()
     {
         return $this->container['next_page_token'];
     }
@@ -283,18 +299,13 @@ class GetSupplySourcesResponse implements ModelInterface, \ArrayAccess, \JsonSer
      * Sets next_page_token.
      *
      * @param null|string $next_page_token if present, use this pagination token to retrieve the next page of supply sources
+     *
+     * @return self
      */
-    public function setNextPageToken(?string $next_page_token): self
+    public function setNextPageToken($next_page_token)
     {
         if (is_null($next_page_token)) {
-            array_push($this->openAPINullablesSetToNull, 'next_page_token');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('next_page_token', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable next_page_token cannot be null');
         }
         $this->container['next_page_token'] = $next_page_token;
 
@@ -319,7 +330,7 @@ class GetSupplySourcesResponse implements ModelInterface, \ArrayAccess, \JsonSer
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,7 +341,7 @@ class GetSupplySourcesResponse implements ModelInterface, \ArrayAccess, \JsonSer
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -358,15 +369,17 @@ class GetSupplySourcesResponse implements ModelInterface, \ArrayAccess, \JsonSer
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

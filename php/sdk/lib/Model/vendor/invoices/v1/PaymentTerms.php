@@ -2,7 +2,7 @@
 /**
  * PaymentTerms
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  * @package  SpApi
@@ -28,10 +28,8 @@
 
 namespace SpApi\Model\vendor\invoices\v1;
 
-use
-ArrayAccess;
-use SpApi\ObjectSerializer;
-use SpApi\Model\ModelInterface;
+use \ArrayAccess;
+use \SpApi\ObjectSerializer;
 
 /**
  * PaymentTerms Class Doc Comment
@@ -52,18 +50,19 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'PaymentTerms';
+    protected static $openAPIModelName = 'PaymentTerms';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       *
       * @var string[]
       */
-    protected static array $openAPITypes = [
-             'type' => 'string',
-             'discount_percent' => 'string',
-             'discount_due_days' => 'float',
-             'net_due_days' => 'float'    ];
+    protected static $openAPITypes = [
+        'type' => 'string',
+        'discount_percent' => 'string',
+        'discount_due_days' => 'float',
+        'net_due_days' => 'float'
+    ];
 
     /**
       * Array of property to format mappings. Used for (de)serialization
@@ -72,11 +71,12 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
       * @phpstan-var array<string, string|null>
       * @psalm-var array<string, string|null>
       */
-    protected static array $openAPIFormats = [
-            'type' => null,
-            'discount_percent' => null,
-            'discount_due_days' => null,
-            'net_due_days' => null    ];
+    protected static $openAPIFormats = [
+        'type' => null,
+        'discount_percent' => null,
+        'discount_due_days' => null,
+        'net_due_days' => null
+    ];
 
     /**
       * Array of nullable properties. Used for (de)serialization
@@ -84,10 +84,10 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'type' => true,
-        'discount_percent' => true,
-        'discount_due_days' => true,
-        'net_due_days' => true
+        'type' => false,
+        'discount_percent' => false,
+        'discount_due_days' => false,
+        'net_due_days' => false
     ];
 
     /**
@@ -102,7 +102,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
@@ -112,7 +112,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -175,12 +175,11 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'type' => 'type',
-                'discount_percent' => 'discountPercent',
-                'discount_due_days' => 'discountDueDays',
-                'net_due_days' => 'netDueDays'
-        
+        'discount_percent' => 'discountPercent',
+        'discount_due_days' => 'discountDueDays',
+        'net_due_days' => 'netDueDays'
     ];
 
     /**
@@ -188,7 +187,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'type' => 'setType',
         'discount_percent' => 'setDiscountPercent',
         'discount_due_days' => 'setDiscountDueDays',
@@ -200,7 +199,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'type' => 'getType',
         'discount_percent' => 'getDiscountPercent',
         'discount_due_days' => 'getDiscountDueDays',
@@ -213,7 +212,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
@@ -223,7 +222,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
@@ -233,7 +232,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
@@ -243,7 +242,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -260,7 +259,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string[]
      */
-    public function getTypeAllowableValues(): array
+    public function getTypeAllowableValues()
     {
         return [
             self::TYPE_BASIC,
@@ -275,17 +274,17 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
     /**
      * Associative array for storing property values
      *
-     * @var array
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor
      *
-     * @param array|null $data Associated array of property values
+     * @param mixed[] $data Associated array of property values
      *                      initializing the model
      */
-    public function __construct(?array $data = null)
+    public function __construct(array $data = null)
     {
         $this->setIfExists('type', $data ?? [], null);
         $this->setIfExists('discount_percent', $data ?? [], null);
@@ -316,7 +315,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         $invalidProperties = [];
 
@@ -338,7 +337,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return count($this->listInvalidProperties()) === 0;
     }
@@ -349,7 +348,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getType(): ?string
+    public function getType()
     {
         return $this->container['type'];
     }
@@ -361,20 +360,13 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setType(?string $type): self
+    public function setType($type)
     {
         if (is_null($type)) {
-            array_push($this->openAPINullablesSetToNull, 'type');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('type', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable type cannot be null');
         }
         $allowedValues = $this->getTypeAllowableValues();
-        if (!is_null($type) && !in_array($type, $allowedValues, true)) {
+        if (!in_array($type, $allowedValues, true)) {
             throw new \InvalidArgumentException(
                 sprintf(
                     "Invalid value '%s' for 'type', must be one of '%s'",
@@ -393,7 +385,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string|null
      */
-    public function getDiscountPercent(): ?string
+    public function getDiscountPercent()
     {
         return $this->container['discount_percent'];
     }
@@ -405,17 +397,10 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDiscountPercent(?string $discount_percent): self
+    public function setDiscountPercent($discount_percent)
     {
         if (is_null($discount_percent)) {
-            array_push($this->openAPINullablesSetToNull, 'discount_percent');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('discount_percent', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable discount_percent cannot be null');
         }
         $this->container['discount_percent'] = $discount_percent;
 
@@ -427,7 +412,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return float|null
      */
-    public function getDiscountDueDays(): ?float
+    public function getDiscountDueDays()
     {
         return $this->container['discount_due_days'];
     }
@@ -439,17 +424,10 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setDiscountDueDays(?float $discount_due_days): self
+    public function setDiscountDueDays($discount_due_days)
     {
         if (is_null($discount_due_days)) {
-            array_push($this->openAPINullablesSetToNull, 'discount_due_days');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('discount_due_days', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable discount_due_days cannot be null');
         }
         $this->container['discount_due_days'] = $discount_due_days;
 
@@ -461,7 +439,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return float|null
      */
-    public function getNetDueDays(): ?float
+    public function getNetDueDays()
     {
         return $this->container['net_due_days'];
     }
@@ -473,24 +451,15 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return self
      */
-    public function setNetDueDays(?float $net_due_days): self
+    public function setNetDueDays($net_due_days)
     {
         if (is_null($net_due_days)) {
-            array_push($this->openAPINullablesSetToNull, 'net_due_days');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('net_due_days', $nullablesSetToNull);
-            if ($index !== false) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable net_due_days cannot be null');
         }
         $this->container['net_due_days'] = $net_due_days;
 
         return $this;
     }
-
-
     /**
      * Returns true if offset exists. False otherwise.
      *
@@ -511,7 +480,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      * @return mixed|null
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -524,7 +493,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return void
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -553,7 +522,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      * of any type other than a resource.
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
        return ObjectSerializer::sanitizeForSerialization($this);
     }
@@ -576,7 +545,7 @@ class PaymentTerms implements ModelInterface, ArrayAccess, \JsonSerializable
      *
      * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }

@@ -3,7 +3,7 @@
 /**
  * SubstitutionOption.
  *
- * PHP version 8.3
+ * PHP version 7.4
  *
  * @category Class
  *
@@ -30,7 +30,6 @@
 
 namespace SpApi\Model\orders\v0;
 
-use SpApi\Model\ModelInterface;
 use SpApi\ObjectSerializer;
 
 /**
@@ -52,20 +51,23 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
+     *
+     * @var string
      */
-    protected static string $openAPIModelName = 'SubstitutionOption';
+    protected static $openAPIModelName = 'SubstitutionOption';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
      * @var string[]
      */
-    protected static array $openAPITypes = [
+    protected static $openAPITypes = [
         'asin' => 'string',
         'quantity_ordered' => 'int',
         'seller_sku' => 'string',
         'title' => 'string',
-        'measurement' => '\SpApi\Model\orders\v0\Measurement'];
+        'measurement' => '\SpApi\Model\orders\v0\Measurement',
+    ];
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
@@ -76,12 +78,13 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @psalm-var array<string, string|null>
      */
-    protected static array $openAPIFormats = [
+    protected static $openAPIFormats = [
         'asin' => null,
         'quantity_ordered' => null,
         'seller_sku' => null,
         'title' => null,
-        'measurement' => null];
+        'measurement' => null,
+    ];
 
     /**
      * Array of nullable properties. Used for (de)serialization.
@@ -89,11 +92,11 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @var bool[]
      */
     protected static array $openAPINullables = [
-        'asin' => true,
-        'quantity_ordered' => true,
-        'seller_sku' => true,
-        'title' => true,
-        'measurement' => true,
+        'asin' => false,
+        'quantity_ordered' => false,
+        'seller_sku' => false,
+        'title' => false,
+        'measurement' => false,
     ];
 
     /**
@@ -109,7 +112,7 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $attributeMap = [
+    protected static $attributeMap = [
         'asin' => 'ASIN',
         'quantity_ordered' => 'QuantityOrdered',
         'seller_sku' => 'SellerSKU',
@@ -122,7 +125,7 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $setters = [
+    protected static $setters = [
         'asin' => 'setAsin',
         'quantity_ordered' => 'setQuantityOrdered',
         'seller_sku' => 'setSellerSku',
@@ -135,7 +138,7 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @var string[]
      */
-    protected static array $getters = [
+    protected static $getters = [
         'asin' => 'getAsin',
         'quantity_ordered' => 'getQuantityOrdered',
         'seller_sku' => 'getSellerSku',
@@ -145,14 +148,16 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Associative array for storing property values.
+     *
+     * @var mixed[]
      */
-    protected array $container = [];
+    protected $container = [];
 
     /**
      * Constructor.
      *
-     * @param null|array $data Associated array of property values
-     *                         initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(?array $data = null)
     {
@@ -178,16 +183,20 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPITypes(): array
+    public static function openAPITypes()
     {
         return self::$openAPITypes;
     }
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
+     *
+     * @return array
      */
-    public static function openAPIFormats(): array
+    public static function openAPIFormats()
     {
         return self::$openAPIFormats;
     }
@@ -211,32 +220,40 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
+     *
+     * @return array
      */
-    public static function attributeMap(): array
+    public static function attributeMap()
     {
         return self::$attributeMap;
     }
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
+     *
+     * @return array
      */
-    public static function setters(): array
+    public static function setters()
     {
         return self::$setters;
     }
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
+     *
+     * @return array
      */
-    public static function getters(): array
+    public static function getters()
     {
         return self::$getters;
     }
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
-    public function getModelName(): string
+    public function getModelName()
     {
         return self::$openAPIModelName;
     }
@@ -246,7 +263,7 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return array invalid properties with reasons
      */
-    public function listInvalidProperties(): array
+    public function listInvalidProperties()
     {
         return [];
     }
@@ -257,15 +274,17 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
      *
      * @return bool True if all properties are valid
      */
-    public function valid(): bool
+    public function valid()
     {
         return 0 === count($this->listInvalidProperties());
     }
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
-    public function getAsin(): ?string
+    public function getAsin()
     {
         return $this->container['asin'];
     }
@@ -274,18 +293,13 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets asin.
      *
      * @param null|string $asin the item's Amazon Standard Identification Number (ASIN)
+     *
+     * @return self
      */
-    public function setAsin(?string $asin): self
+    public function setAsin($asin)
     {
         if (is_null($asin)) {
-            array_push($this->openAPINullablesSetToNull, 'asin');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('asin', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable asin cannot be null');
         }
         $this->container['asin'] = $asin;
 
@@ -294,8 +308,10 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets quantity_ordered.
+     *
+     * @return null|int
      */
-    public function getQuantityOrdered(): ?int
+    public function getQuantityOrdered()
     {
         return $this->container['quantity_ordered'];
     }
@@ -304,18 +320,13 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets quantity_ordered.
      *
      * @param null|int $quantity_ordered the number of items to be picked for this substitution option
+     *
+     * @return self
      */
-    public function setQuantityOrdered(?int $quantity_ordered): self
+    public function setQuantityOrdered($quantity_ordered)
     {
         if (is_null($quantity_ordered)) {
-            array_push($this->openAPINullablesSetToNull, 'quantity_ordered');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('quantity_ordered', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable quantity_ordered cannot be null');
         }
         $this->container['quantity_ordered'] = $quantity_ordered;
 
@@ -324,8 +335,10 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets seller_sku.
+     *
+     * @return null|string
      */
-    public function getSellerSku(): ?string
+    public function getSellerSku()
     {
         return $this->container['seller_sku'];
     }
@@ -334,18 +347,13 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets seller_sku.
      *
      * @param null|string $seller_sku the item's seller stock keeping unit (SKU)
+     *
+     * @return self
      */
-    public function setSellerSku(?string $seller_sku): self
+    public function setSellerSku($seller_sku)
     {
         if (is_null($seller_sku)) {
-            array_push($this->openAPINullablesSetToNull, 'seller_sku');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('seller_sku', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable seller_sku cannot be null');
         }
         $this->container['seller_sku'] = $seller_sku;
 
@@ -354,8 +362,10 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets title.
+     *
+     * @return null|string
      */
-    public function getTitle(): ?string
+    public function getTitle()
     {
         return $this->container['title'];
     }
@@ -364,18 +374,13 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets title.
      *
      * @param null|string $title the item's title
+     *
+     * @return self
      */
-    public function setTitle(?string $title): self
+    public function setTitle($title)
     {
         if (is_null($title)) {
-            array_push($this->openAPINullablesSetToNull, 'title');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('title', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable title cannot be null');
         }
         $this->container['title'] = $title;
 
@@ -384,8 +389,10 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
 
     /**
      * Gets measurement.
+     *
+     * @return null|Measurement
      */
-    public function getMeasurement(): ?Measurement
+    public function getMeasurement()
     {
         return $this->container['measurement'];
     }
@@ -394,18 +401,13 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
      * Sets measurement.
      *
      * @param null|Measurement $measurement measurement
+     *
+     * @return self
      */
-    public function setMeasurement(?Measurement $measurement): self
+    public function setMeasurement($measurement)
     {
         if (is_null($measurement)) {
-            array_push($this->openAPINullablesSetToNull, 'measurement');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('measurement', $nullablesSetToNull);
-            if (false !== $index) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
+            throw new \InvalidArgumentException('non-nullable measurement cannot be null');
         }
         $this->container['measurement'] = $measurement;
 
@@ -430,7 +432,7 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset): mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -441,7 +443,7 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
      * @param null|int $offset Offset
      * @param mixed    $value  Value to be set
      */
-    public function offsetSet($offset, mixed $value): void
+    public function offsetSet($offset, $value): void
     {
         if (is_null($offset)) {
             $this->container[] = $value;
@@ -469,15 +471,17 @@ class SubstitutionOption implements ModelInterface, \ArrayAccess, \JsonSerializa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize(): mixed
+    public function jsonSerialize()
     {
         return ObjectSerializer::sanitizeForSerialization($this);
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue(): string
+    public function toHeaderValue()
     {
         return json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
