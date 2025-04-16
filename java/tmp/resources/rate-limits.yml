@@ -76,8 +76,9 @@ AppIntegrationsApi-recordActionFeedback:
   - 5
 # App Management API
 ApplicationsApi-rotateApplicationClientSecret:
-  - 0.0167
   - 1
+  - 1
+  - 60
 # Catalog Items API
 CatalogApi-getCatalogItem:
   - 2
@@ -87,11 +88,13 @@ CatalogApi-searchCatalogItems:
   - 2
 # Data Kiosk API
 QueriesApi-getQueries:
-  - 0.0167
+  - 1
   - 15
+  - 60
 QueriesApi-createQuery:
-  - 0.0167
+  - 1
   - 15
+  - 60
 QueriesApi-getQuery:
   - 2
   - 15
@@ -99,8 +102,9 @@ QueriesApi-cancelQuery:
   - 2
   - 15
 QueriesApi-getDocument:
-  - 0.0167
+  - 1
   - 15
+  - 60
 # Easy Ship API
 EasyShip-listHandoverSlots:
   - 1
@@ -139,40 +143,50 @@ FeedsApi-cancelFeed:
   - 2
   - 15
 FeedsApi-createFeed:
-  - 0.0083
+  - 1
   - 15
+  - 120
 FeedsApi-createFeedDocument:
-  - 0.5
+  - 1
   - 15
+  - 2
 FeedsApi-getFeed:
   - 2
   - 15
 FeedsApi-getFeeds:
-  - 0.0222
+  - 1
   - 10
+  - 45
 FeedsApi-getFeedDocument:
-  - 0.0222
+  - 1
   - 10
+  - 45
 # Finances V0 API
 DefaultApi-listFinancialEventGroups:
-  - 0.5
+  - 1
   - 30
+  - 2
 DefaultApi-listFinancialEventsByGroupId:
-  - 0.5
+  - 1
   - 30
+  - 2
 DefaultApi-listFinancialEventsByOrderId:
-  - 0.5
+  - 1
   - 30
+  - 2
 DefaultApi-listFinancialEvents:
-  - 0.5
+  - 1
   - 30
+  - 2
 # Transfers API
 DefaultApi-initiatePayout:
-  - 0.017
+  - 1
   - 2
+  - 60
 DefaultApi-getPaymentMethods:
-  - 0.5
+  - 1
   - 30
+  - 2
 # FBA Inbound V0 API
 FbaInboundApi-getPrepInstructions:
   - 2
@@ -376,20 +390,24 @@ InvoicesApi-getInvoicesAttributes:
   - 1
   - 1
 InvoicesApi-getInvoicesDocument:
-  - 0.0167
   - 1
+  - 1
+  - 60
 InvoicesApi-createInvoicesExport:
-  - 0.0167
   - 1
+  - 1
+  - 60
 InvoicesApi-getInvoicesExports:
-  - 0.1
+  - 1
   - 20
+  - 10
 InvoicesApi-getInvoicesExport:
   - 2
   - 15
 InvoicesApi-getInvoices:
-  - 0.1
+  - 1
   - 20
+  - 10
 InvoicesApi-getInvoice:
   - 2
   - 15
@@ -499,32 +517,40 @@ OrdersV0Api-confirmShipment:
   - 2
   - 10
 OrdersV0Api-getOrder:
-  - 0.5
+  - 1
   - 30
+  - 2
 OrdersV0Api-getOrderAddress:
-  - 0.5
+  - 1
   - 30
+  - 2
 OrdersV0Api-getOrderBuyerInfo:
-  - 0.5
+  - 1
   - 30
+  - 2
 OrdersV0Api-getOrderItems:
-  - 0.5
+  - 1
   - 30
+  - 2
 OrdersV0Api-getOrderItemsBuyerInfo:
-  - 0.5
+  - 1
   - 30
+  - 2
 OrdersV0Api-getOrderRegulatedInfo:
-  - 0.5
+  - 1
   - 30
+  - 2
 OrdersV0Api-getOrders:
-  - 0.0167
+  - 1
   - 20
+  - 60
 ShipmentApi-updateShipmentStatus:
   - 5
   - 15
 OrdersV0Api-updateVerificationStatus:
-  - 0.5
+  - 1
   - 30
+  - 2
 # Product Fees API
 FeesApi-getMyFeesEstimateForSKU:
   - 1
@@ -533,33 +559,41 @@ FeesApi-getMyFeesEstimateForASIN:
   - 1
   - 2
 FeesApi-getMyFeesEstimates:
-  - 0.5
   - 1
+  - 1
+  - 2
 # Pricing API
 ProductPricingApi-getFeaturedOfferExpectedPriceBatch:
-  - 0.033
   - 1
+  - 1
+  - 30
 ProductPricingApi-getCompetitiveSummary:
-  - 0.033
   - 1
+  - 1
+  - 30
 ProductPricingApi-getPricing:
-  - 0.5
   - 1
+  - 1
+  - 2
 ProductPricingApi-getCompetitivePricing:
-  - 0.5
   - 1
+  - 1
+  - 2
 ProductPricingApi-getListingOffers:
   - 1
   - 2
 ProductPricingApi-getItemOffers:
-  - 0.5
   - 1
+  - 1
+  - 2
 ProductPricingApi-getItemOffersBatch:
-  - 0.1
   - 1
+  - 1
+  - 10
 ProductPricingApi-getListingOffersBatch:
-  - 0.5
   - 1
+  - 1
+  - 2
 # Product Type Definitions API
 DefinitionsApi-getDefinitionsProductType:
   - 5
@@ -579,43 +613,54 @@ OffersApi-listOffers:
   - 1
 # Reports API
 ReportsApi-getReports:
-  - 0.0222
+  - 1
   - 10
+  - 45
 ReportsApi-createReport:
-  - 0.0167
+  - 1
   - 15
+  - 60
 ReportsApi-cancelReport:
-  - 0.0222
+  - 1
   - 10
+  - 45
 ReportsApi-getReport:
   - 2
   - 15
 ReportsApi-getReportSchedules:
-  - 0.0222
+  - 1
   - 10
+  - 45
 ReportsApi-createReportSchedule:
-  - 0.0222
+  - 1
   - 10
+  - 45
 ReportsApi-cancelReportSchedule:
-  - 0.0222
+  - 1
   - 10
+  - 45
 ReportsApi-getReportSchedule:
-  - 0.0222
+  - 1
   - 10
+  - 45
 ReportsApi-getReportDocument:
-  - 0.0167
+  - 1
   - 15
+  - 60
 # Sales API
 SalesApi-getOrderMetrics:
-  - 0.5
+  - 1
   - 15
+  - 2
 # Sellers API
 SellersApi-getMarketplaceParticipations:
-  - 0.016
+  - 1
   - 15
+  - 60
 SellersApi-getAccount:
-  - 0.5
+  - 1
   - 30
+  - 2
 # Services API
 ServiceApi-getServiceJobByServiceJobId:
   - 20

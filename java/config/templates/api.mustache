@@ -47,7 +47,13 @@ public class {{classname}} {
 
     {{#operation}}
     private final Bucket {{operationId}}Bucket = Bucket.builder()
-        .addLimit(limit -> limit.capacity(config.getRateLimitBurst("{{classname}}-{{operationId}}")).refillGreedy(config.getRateLimitRate("{{classname}}-{{operationId}}"), Duration.ofSeconds(1)))
+        .addLimit(limit ->
+            limit.capacity(config.getRateLimitBurst("{{classname}}-{{operationId}}"))
+                 .refillGreedy(
+                    config.getRateLimitRate("{{classname}}-{{operationId}}"),
+                    Duration.ofSeconds(config.getRateLimitDuration("{{classname}}-{{operationId}}"))
+                 )
+            )
         .build();
 
     {{/operation}}
