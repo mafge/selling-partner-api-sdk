@@ -1,0 +1,41 @@
+{{>licenseInfo}}
+
+package {{invokerPackage}};
+
+import org.yaml.snakeyaml.Yaml;
+
+import java.util.List;
+import java.util.Map;
+
+{{>generatedAnnotation}}
+public class Configuration {
+    private final Map<String, List<Integer>> rateLimitConfiguration = new Yaml().load(
+            this.getClass().getClassLoader().getResourceAsStream("rate-limits.yml")
+    );
+    private static Configuration instance;
+
+    private Configuration(){}
+
+    public Integer getRateLimitRate(String operation) {
+        return getRateLimit(operation, 0);
+    }
+
+    public Integer getRateLimitBurst(String operation) {
+        return getRateLimit(operation, 1);
+    }
+
+    private Integer getRateLimit(String operation, Integer position) {
+        if (rateLimitConfiguration.containsKey(operation)) {
+            return rateLimitConfiguration.get(operation).get(position);
+        }
+
+        return 1;
+    }
+
+    public static Configuration get() {
+        if (instance == null) {
+            instance = new Configuration();
+        }
+        return instance;
+    }
+}

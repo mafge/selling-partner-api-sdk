@@ -1,0 +1,831 @@
+# Rate limits for SP-API (rate, burst)
+# AWD API
+AwdApi-getInboundShipment:
+  - 2
+  - 2
+AwdApi-listInboundShipments:
+  - 1
+  - 1
+AwdApi-listInventory:
+  - 2
+  - 2
+AwdApi-createInbound:
+  - 1
+  - 1
+AwdApi-getInbound:
+  - 2
+  - 2
+AwdApi-updateInbound:
+  - 1
+  - 1
+AwdApi-cancelInbound:
+  - 1
+  - 1
+AwdApi-confirmInbound:
+  - 1
+  - 1
+AwdApi-getInboundShipmentLabels:
+  - 1
+  - 2
+AwdApi-updateInboundShipmentTransportDetails:
+  - 1
+  - 1
+AwdApi-checkInboundEligibility:
+  - 1
+  - 1
+# A+ Content API
+AplusContentApi-searchContentDocuments:
+  - 5
+  - 5
+AplusContentApi-createContentDocument:
+  - 5
+  - 5
+AplusContentApi-getContentDocument:
+  - 5
+  - 5
+AplusContentApi-updateContentDocument:
+  - 5
+  - 5
+AplusContentApi-listContentDocumentAsinRelations:
+  - 5
+  - 5
+AplusContentApi-postContentDocumentAsinRelations:
+  - 5
+  - 5
+AplusContentApi-validateContentDocumentAsinRelations:
+  - 5
+  - 5
+AplusContentApi-searchContentPublishRecords:
+  - 5
+  - 5
+AplusContentApi-postContentDocumentApprovalSubmission:
+  - 5
+  - 5
+AplusContentApi-postContentDocumentSuspendSubmission:
+  - 5
+  - 5
+# App Integrations API
+AppIntegrationsApi-createNotification:
+  - 1
+  - 5
+AppIntegrationsApi-deleteNotifications:
+  - 1
+  - 5
+AppIntegrationsApi-recordActionFeedback:
+  - 1
+  - 5
+# App Management API
+ApplicationsApi-rotateApplicationClientSecret:
+  - 0.0167
+  - 1
+# Catalog Items API
+CatalogApi-getCatalogItem:
+  - 2
+  - 2
+CatalogApi-searchCatalogItems:
+  - 2
+  - 2
+# Data Kiosk API
+QueriesApi-getQueries:
+  - 0.0167
+  - 15
+QueriesApi-createQuery:
+  - 0.0167
+  - 15
+QueriesApi-getQuery:
+  - 2
+  - 15
+QueriesApi-cancelQuery:
+  - 2
+  - 15
+QueriesApi-getDocument:
+  - 0.0167
+  - 15
+# Easy Ship API
+EasyShip-listHandoverSlots:
+  - 1
+  - 5
+EasyShip-getScheduledPackage:
+  - 1
+  - 5
+EasyShip-createScheduledPackage:
+  - 1
+  - 5
+EasyShip-updateScheduledPackages:
+  - 1
+  - 5
+EasyShip-createScheduledPackageBulk:
+  - 1
+  - 5
+# FBA Inbound Eligibility API
+FbaInboundApi-getItemEligibilityPreview:
+  - 1
+  - 1
+# FBA Inventory API
+FbaInventoryApi-getInventorySummaries:
+  - 2
+  - 2
+FbaInventoryApi-createInventoryItem:
+  - 2
+  - 3
+FbaInventoryApi-deleteInventoryItem:
+  - 2
+  - 3
+FbaInventoryApi-addInventory:
+  - 2
+  - 3
+# Feeds API
+FeedsApi-cancelFeed:
+  - 2
+  - 15
+FeedsApi-createFeed:
+  - 0.0083
+  - 15
+FeedsApi-createFeedDocument:
+  - 0.5
+  - 15
+FeedsApi-getFeed:
+  - 2
+  - 15
+FeedsApi-getFeeds:
+  - 0.0222
+  - 10
+FeedsApi-getFeedDocument:
+  - 0.0222
+  - 10
+# Finances V0 API
+DefaultApi-listFinancialEventGroups:
+  - 0.5
+  - 30
+DefaultApi-listFinancialEventsByGroupId:
+  - 0.5
+  - 30
+DefaultApi-listFinancialEventsByOrderId:
+  - 0.5
+  - 30
+DefaultApi-listFinancialEvents:
+  - 0.5
+  - 30
+# Transfers API
+DefaultApi-initiatePayout:
+  - 0.017
+  - 2
+DefaultApi-getPaymentMethods:
+  - 0.5
+  - 30
+# FBA Inbound V0 API
+FbaInboundApi-getPrepInstructions:
+  - 2
+  - 30
+FbaInboundApi-getLabels:
+  - 2
+  - 30
+FbaInboundApi-getBillOfLading:
+  - 2
+  - 30
+FbaInboundApi-getShipments:
+  - 2
+  - 30
+FbaInboundApi-getShipmentItemsByShipmentId:
+  - 2
+  - 30
+FbaInboundApi-getShipmentItems:
+  - 2
+  - 30
+# FBA Inbound V2024-03-20 API
+FbaInboundApi-listInboundPlans:
+  - 2
+  - 6
+FbaInboundApi-createInboundPlan:
+  - 2
+  - 2
+FbaInboundApi-getInboundPlan:
+  - 2
+  - 6
+FbaInboundApi-listInboundPlanBoxes:
+  - 2
+  - 6
+FbaInboundApi-cancelInboundPlan:
+  - 2
+  - 2
+FbaInboundApi-listInboundPlanItems:
+  - 2
+  - 6
+FbaInboundApi-updateInboundPlanName:
+  - 2
+  - 30
+FbaInboundApi-listPackingGroupBoxes:
+  - 2
+  - 30
+FbaInboundApi-listPackingGroupItems:
+  - 2
+  - 30
+FbaInboundApi-setPackingInformation:
+  - 2
+  - 2
+FbaInboundApi-listPackingOptions:
+  - 2
+  - 6
+FbaInboundApi-generatePackingOptions:
+  - 2
+  - 2
+FbaInboundApi-confirmPackingOption:
+  - 2
+  - 2
+FbaInboundApi-listInboundPlanPallets:
+  - 2
+  - 6
+FbaInboundApi-listPlacementOptions:
+  - 2
+  - 6
+FbaInboundApi-generatePlacementOptions:
+  - 2
+  - 2
+FbaInboundApi-confirmPlacementOption:
+  - 2
+  - 2
+FbaInboundApi-getShipment:
+  - 2
+  - 6
+FbaInboundApi-listShipmentBoxes:
+  - 2
+  - 30
+FbaInboundApi-listShipmentContentUpdatePreviews:
+  - 2
+  - 30
+FbaInboundApi-generateShipmentContentUpdatePreviews:
+  - 2
+  - 30
+FbaInboundApi-getShipmentContentUpdatePreview:
+  - 2
+  - 30
+FbaInboundApi-confirmShipmentContentUpdatePreview:
+  - 2
+  - 30
+FbaInboundApi-getDeliveryChallanDocument:
+  - 2
+  - 6
+FbaInboundApi-listDeliveryWindowOptions:
+  - 2
+  - 30
+FbaInboundApi-generateDeliveryWindowOptions:
+  - 2
+  - 30
+FbaInboundApi-confirmDeliveryWindowOptions:
+  - 2
+  - 30
+FbaInboundApi-listShipmentItems:
+  - 2
+  - 30
+FbaInboundApi-updateShipmentName:
+  - 2
+  - 30
+FbaInboundApi-listShipmentPallets:
+  - 2
+  - 30
+FbaInboundApi-cancelSelfShipAppointment:
+  - 2
+  - 30
+FbaInboundApi-getSelfShipAppointmentSlots:
+  - 2
+  - 6
+FbaInboundApi-generateSelfShipAppointmentSlots:
+  - 2
+  - 2
+FbaInboundApi-scheduleSelfShipAppointment:
+  - 2
+  - 2
+FbaInboundApi-updateShipmentSourceAddress:
+  - 2
+  - 30
+FbaInboundApi-updateShipmentTrackingDetails:
+  - 2
+  - 2
+FbaInboundApi-listTransportationOptions:
+  - 2
+  - 6
+FbaInboundApi-generateTransportationOptions:
+  - 2
+  - 2
+FbaInboundApi-confirmTransportationOptions:
+  - 2
+  - 2
+FbaInboundApi-listItemComplianceDetails:
+  - 2
+  - 6
+FbaInboundApi-updateItemComplianceDetails:
+  - 2
+  - 2
+FbaInboundApi-createMarketplaceItemLabels:
+  - 2
+  - 30
+FbaInboundApi-listPrepDetails:
+  - 2
+  - 30
+FbaInboundApi-setPrepDetails:
+  - 2
+  - 30
+FbaInboundApi-getInboundOperationStatus:
+  - 2
+  - 6
+# FBA Outbound API
+FbaOutboundApi-getFulfillmentPreview:
+  - 2
+  - 30
+FbaOutboundApi-deliveryOffers:
+  - 10
+  - 30
+FbaOutboundApi-listAllFulfillmentOrders:
+  - 2
+  - 30
+FbaOutboundApi-createFulfillmentOrder:
+  - 2
+  - 30
+FbaOutboundApi-getPackageTrackingDetails:
+  - 2
+  - 30
+FbaOutboundApi-listReturnReasonCodes:
+  - 2
+  - 30
+FbaOutboundApi-createFulfillmentReturn:
+  - 2
+  - 30
+FbaOutboundApi-getFulfillmentOrder:
+  - 2
+  - 30
+FbaOutboundApi-updateFulfillmentOrder:
+  - 2
+  - 30
+FbaOutboundApi-cancelFulfillmentOrder:
+  - 2
+  - 30
+FbaOutboundApi-submitFulfillmentOrderStatusUpdate:
+  - 1
+  - 1
+FbaOutboundApi-getFeatures:
+  - 2
+  - 30
+FbaOutboundApi-getFeatureInventory:
+  - 2
+  - 30
+FbaOutboundApi-getFeatureSKU:
+  - 2
+  - 30
+# Invoices API
+InvoicesApi-getInvoicesAttributes:
+  - 1
+  - 1
+InvoicesApi-getInvoicesDocument:
+  - 0.0167
+  - 1
+InvoicesApi-createInvoicesExport:
+  - 0.0167
+  - 1
+InvoicesApi-getInvoicesExports:
+  - 0.1
+  - 20
+InvoicesApi-getInvoicesExport:
+  - 2
+  - 15
+InvoicesApi-getInvoices:
+  - 0.1
+  - 20
+InvoicesApi-getInvoice:
+  - 2
+  - 15
+# Listings Items API
+ListingsApi-deleteListingsItem:
+  - 5
+  - 5
+ListingsApi-getListingsItem:
+  - 5
+  - 5
+ListingsApi-patchListingsItem:
+  - 5
+  - 5
+ListingsApi-putListingsItem:
+  - 5
+  - 5
+ListingsApi-searchListingsItems:
+  - 5
+  - 5
+# Listings Restrictions API
+ListingsApi-getListingsRestrictions:
+  - 5
+  - 10
+# Merchant Fulfillment API
+MerchantFulfillmentApi-getEligibleShipmentServices:
+  - 6
+  - 12
+MerchantFulfillmentApi-getShipment:
+  - 5
+  - 10
+MerchantFulfillmentApi-cancelShipment:
+  - 5
+  - 10
+MerchantFulfillmentApi-createShipment:
+  - 5
+  - 10
+MerchantFulfillmentApi-getAdditionalSellerInputs:
+  - 5
+  - 10
+# Messaging API
+MessagingApi-getMessagingActionsForOrder:
+  - 1
+  - 5
+MessagingApi-confirmCustomizationDetails:
+  - 1
+  - 5
+MessagingApi-createConfirmDeliveryDetails:
+  - 1
+  - 5
+MessagingApi-createLegalDisclosure:
+  - 1
+  - 5
+MessagingApi-createNegativeFeedbackRemoval:
+  - 1
+  - 5
+MessagingApi-createConfirmOrderDetails:
+  - 1
+  - 5
+MessagingApi-createConfirmServiceDetails:
+  - 1
+  - 5
+MessagingApi-CreateAmazonMotors:
+  - 1
+  - 5
+MessagingApi-CreateWarranty:
+  - 1
+  - 5
+MessagingApi-GetAttributes:
+  - 1
+  - 5
+MessagingApi-createDigitalAccessKey:
+  - 1
+  - 5
+MessagingApi-createUnexpectedProblem:
+  - 1
+  - 5
+MessagingApi-sendInvoice:
+  - 1
+  - 5
+# Notifications API
+NotificationsApi-getSubscription:
+  - 1
+  - 5
+NotificationsApi-createSubscription:
+  - 1
+  - 5
+NotificationsApi-getSubscriptionById:
+  - 1
+  - 5
+NotificationsApi-deleteSubscriptionById:
+  - 1
+  - 5
+NotificationsApi-getDestinations:
+  - 1
+  - 5
+NotificationsApi-createDestination:
+  - 1
+  - 5
+NotificationsApi-getDestination:
+  - 1
+  - 5
+NotificationsApi-deleteDestination:
+  - 1
+  - 5
+# Orders API
+OrdersV0Api-confirmShipment:
+  - 2
+  - 10
+OrdersV0Api-getOrder:
+  - 0.5
+  - 30
+OrdersV0Api-getOrderAddress:
+  - 0.5
+  - 30
+OrdersV0Api-getOrderBuyerInfo:
+  - 0.5
+  - 30
+OrdersV0Api-getOrderItems:
+  - 0.5
+  - 30
+OrdersV0Api-getOrderItemsBuyerInfo:
+  - 0.5
+  - 30
+OrdersV0Api-getOrderRegulatedInfo:
+  - 0.5
+  - 30
+OrdersV0Api-getOrders:
+  - 0.0167
+  - 20
+ShipmentApi-updateShipmentStatus:
+  - 5
+  - 15
+OrdersV0Api-updateVerificationStatus:
+  - 0.5
+  - 30
+# Product Fees API
+FeesApi-getMyFeesEstimateForSKU:
+  - 1
+  - 2
+FeesApi-getMyFeesEstimateForASIN:
+  - 1
+  - 2
+FeesApi-getMyFeesEstimates:
+  - 0.5
+  - 1
+# Pricing API
+ProductPricingApi-getFeaturedOfferExpectedPriceBatch:
+  - 0.033
+  - 1
+ProductPricingApi-getCompetitiveSummary:
+  - 0.033
+  - 1
+ProductPricingApi-getPricing:
+  - 0.5
+  - 1
+ProductPricingApi-getCompetitivePricing:
+  - 0.5
+  - 1
+ProductPricingApi-getListingOffers:
+  - 1
+  - 2
+ProductPricingApi-getItemOffers:
+  - 0.5
+  - 1
+ProductPricingApi-getItemOffersBatch:
+  - 0.1
+  - 1
+ProductPricingApi-getListingOffersBatch:
+  - 0.5
+  - 1
+# Product Type Definitions API
+DefinitionsApi-getDefinitionsProductType:
+  - 5
+  - 5
+DefinitionsApi-searchDefinitionsProductTypes:
+  - 5
+  - 5
+# Replenishment API
+SellingpartnersApi-getSellingPartnerMetrics:
+  - 1
+  - 1
+OffersApi-listOfferMetrics:
+  - 1
+  - 1
+OffersApi-listOffers:
+  - 1
+  - 1
+# Reports API
+ReportsApi-getReports:
+  - 0.0222
+  - 10
+ReportsApi-createReport:
+  - 0.0167
+  - 15
+ReportsApi-cancelReport:
+  - 0.0222
+  - 10
+ReportsApi-getReport:
+  - 2
+  - 15
+ReportsApi-getReportSchedules:
+  - 0.0222
+  - 10
+ReportsApi-createReportSchedule:
+  - 0.0222
+  - 10
+ReportsApi-cancelReportSchedule:
+  - 0.0222
+  - 10
+ReportsApi-getReportSchedule:
+  - 0.0222
+  - 10
+ReportsApi-getReportDocument:
+  - 0.0167
+  - 15
+# Sales API
+SalesApi-getOrderMetrics:
+  - 0.5
+  - 15
+# Sellers API
+SellersApi-getMarketplaceParticipations:
+  - 0.016
+  - 15
+SellersApi-getAccount:
+  - 0.5
+  - 30
+# Services API
+ServiceApi-getServiceJobByServiceJobId:
+  - 20
+  - 40
+ServiceApi-cancelServiceJobByServiceJobId:
+  - 5
+  - 20
+ServiceApi-completeServiceJobByServiceJobId:
+  - 5
+  - 20
+ServiceApi-getServiceJobs:
+  - 10
+  - 40
+ServiceApi-addAppointmentForServiceJobByServiceJobId:
+  - 5
+  - 20
+ServiceApi-rescheduleAppointmentForServiceJobByServiceJobId:
+  - 5
+  - 20
+ServiceApi-assignAppointmentResources:
+  - 5
+  - 20
+ServiceApi-setAppointmentFulfillmentData:
+  - 5
+  - 20
+ServiceApi-getRangeSlotCapacity:
+  - 5
+  - 20
+ServiceApi-getFixedSlotCapacity:
+  - 5
+  - 20
+ServiceApi-updateSchedule:
+  - 5
+  - 20
+ServiceApi-createReservation:
+  - 5
+  - 20
+ServiceApi-updateReservation:
+  - 5
+  - 20
+ServiceApi-cancelReservation:
+  - 5
+  - 20
+ServiceApi-getAppointmmentSlotsByJobId:
+  - 5
+  - 20
+ServiceApi-getAppointmentSlots:
+  - 5
+  - 20
+ServiceApi-createServiceDocumentUploadDestination:
+  - 5
+  - 20
+# Shipment Invoicing API
+ShipmentInvoiceApi-getShipmentDetails:
+  - 1.133
+  - 25
+ShipmentInvoiceApi-submitInvoice:
+  - 1.133
+  - 25
+ShipmentInvoiceApi-getInvoiceStatus:
+  - 1.133
+  - 25
+# Shipping V2 API
+ShippingApi-createShipment:
+  - 5
+  - 15
+ShippingApi-getShipment:
+  - 5
+  - 15
+ShippingApi-cancelShipment:
+  - 5
+  - 15
+ShippingApi-purchaseLabels:
+  - 5
+  - 15
+ShippingApi-retrieveShippingLabel:
+  - 5
+  - 15
+ShippingApi-purchaseShipment:
+  - 5
+  - 15
+ShippingApi-getRates:
+  - 5
+  - 15
+ShippingApi-getAccount:
+  - 5
+  - 15
+ShippingApi-getTrackingInformation:
+  - 1
+  - 1
+# Solicitations API
+SolicitationsApi-getSolicitationActionsForOrder:
+  - 1
+  - 5
+SolicitationsApi-createProductReviewAndSellerFeedbackSolicitation:
+  - 1
+  - 5
+# Supply Sources API
+SupplySourcesApi-getSupplySources:
+  - 10
+  - 10
+SupplySourcesApi-createSupplySource:
+  - 2
+  - 2
+SupplySourcesApi-getSupplySource:
+  - 40
+  - 40
+SupplySourcesApi-updateSupplySource:
+  - 1
+  - 1
+SupplySourcesApi-archiveSupplySource:
+  - 20
+  - 20
+SupplySourcesApi-updateSupplySourceStatus:
+  - 20
+  - 20
+# Tokens API
+TokensApi-createRestrictedDataToken:
+  - 1
+  - 10
+# Uploads API
+UploadsApi-createUploadDestinationForResource:
+  - 5
+  - 5
+# Vehicles API
+AutomotiveApi-getVehicles:
+  - 20
+  - 5
+VehiclesApi-getVehicles:
+  - 20
+  - 5
+# Vendor DF APIs
+UpdateInventoryApi-submitInventoryUpdate:
+  - 10
+  - 10
+VendorOrdersApi-getOrders:
+  - 10
+  - 10
+VendorOrdersApi-getOrder:
+  - 10
+  - 10
+VendorOrdersApi-submitAcknowledgement:
+  - 10
+  - 10
+VendorInvoiceApi-submitInvoice:
+  - 10
+  - 10
+VendorShippingLabelsApi-getShippingLabels:
+  - 10
+  - 10
+VendorShippingLabelsApi-submitShippingLabelRequest:
+  - 10
+  - 10
+VendorShippingLabelsApi-getShippingLabel:
+  - 10
+  - 10
+VendorShippingLabelsApi-createShippingLabels:
+  - 10
+  - 10
+VendorShippingApi-submitShipmentConfirmations:
+  - 10
+  - 10
+VendorShippingApi-submitShipmentStatusUpdates:
+  - 10
+  - 10
+CustomerInvoicesApi-getCustomerInvoices:
+  - 10
+  - 10
+CustomerInvoicesApi-getCustomerInvoice:
+  - 10
+  - 10
+VendorShippingApi-getPackingSlips:
+  - 10
+  - 10
+VendorShippingApi-getPackingSlip:
+  - 10
+  - 10
+CreateContainerLabelApi-createContainerLabel:
+  - 10
+  - 10
+VendorTransactionsApi-getTransactionStatus:
+  - 10
+  - 10
+# Vendor APIs
+VendorPaymentsApi-submitInvoices:
+  - 10
+  - 10
+VendorOrdersApi-getPurchaseOrders:
+  - 10
+  - 10
+VendorOrdersApi-getPurchaseOrder:
+  - 10
+  - 10
+VendorOrdersApi-getPurchaseOrdersStatus:
+  - 10
+  - 10
+VendorShippingApi-SubmitShipmentConfirmations:
+  - 10
+  - 10
+VendorShippingApi-SubmitShipments:
+  - 10
+  - 10
+VendorShippingApi-GetShipmentDetails:
+  - 10
+  - 10
+VendorShippingApi-GetShipmentLabels:
+  - 10
+  - 10
+VendorTransactionApi-getTransaction:
+  - 10
+  - 10
+
+
