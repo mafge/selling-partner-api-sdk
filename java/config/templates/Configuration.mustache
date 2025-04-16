@@ -2,6 +2,8 @@
 
 package {{invokerPackage}};
 
+import io.github.bucket4j.BandwidthBuilder.BandwidthBuilderBuildStage;
+import io.github.bucket4j.BandwidthBuilder.BandwidthBuilderCapacityStage;
 import org.yaml.snakeyaml.Yaml;
 
 import java.util.List;
@@ -15,16 +17,10 @@ public class Configuration {
 
     private Configuration() {}
 
-    public Integer getRateLimitRate(String operation) {
-        return getValue(operation, 0);
-    }
-
-    public Integer getRateLimitBurst(String operation) {
-        return getValue(operation, 1);
-    }
-
-    public Integer getRateLimitDuration(String operation) {
-        return getValue(operation, 2);
+    public Function<BandwidthBuilderCapacityStage, BandwidthBuilderBuildStage> getLimit(String operation) {
+        return limit ->
+                limit.capacity(getValue(operation, 1))
+                        .refillGreedy(getValue(operation, 0), Duration.ofSeconds(getValue(operation, 2)));
     }
 
     private Integer getValue(String operation, Integer position) {
