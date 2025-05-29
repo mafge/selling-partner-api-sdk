@@ -93,7 +93,6 @@ jobs:
         working-directory: ./selling-partner-api-sdk/csharp/
         run: |
             dotnet build --configuration Release
-            dotnet pack --configuration Release --output nupkg
       - name: Create PR
         uses: peter-evans/create-pull-request@v7
         with:
