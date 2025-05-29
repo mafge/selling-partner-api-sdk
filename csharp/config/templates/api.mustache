@@ -98,7 +98,7 @@ namespace {{packageName}}.{{apiPackage}}
         IReadableConfiguration IApiAccessor.Configuration 
         {
             get => Configuration;  // Implicit upcast to interface
-            set => Configuration = (Amazon.SellingPartnerAPI.SDK.Client.Configuration)value;
+            set => Configuration = (Amazon.SPAPI.SDK.Client.Configuration)value;
         }
 
         /// <summary>
