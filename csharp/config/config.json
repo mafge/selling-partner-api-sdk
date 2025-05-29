@@ -1,5 +1,6 @@
 {
     "packageName":"Amazon.SellingPartnerAPI.SDK",
+    "packageVersion": "1.0.2",
     "targetFramework":"net7.0",
     "engineOptions": { "library": "Stubble" }
 }
