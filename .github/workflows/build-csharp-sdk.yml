@@ -82,7 +82,7 @@ jobs:
       - name: Print workspace path
         run: echo ${{ github.workspace }}
       - name: Copy auth lib files to sdk directory
-        working-directory: ./selling-partner-api-sdk/csharp/sdk/src/Amazon.SellingPartnerAPI.SDK/
+        working-directory: ./selling-partner-api-sdk/csharp/sdk/src/Amazon.SPAPI.SDK/
         run: |
             mkdir Authlib
             cp ../../../authlib/* ./Authlib/
