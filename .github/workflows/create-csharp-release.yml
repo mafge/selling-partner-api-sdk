@@ -27,20 +27,20 @@ jobs:
           dotnet-version: '7.0.x'
 
       - name: Restore dependencies
-        working-directory: ./csharp/sdk/src/Amazon.SPAPI.SDK
+        working-directory: ./csharp/sdk/src/software.amzn.spapi
         run: dotnet restore
             
       - name: Build
-        working-directory: ./csharp/sdk/src/Amazon.SPAPI.SDK
+        working-directory: ./csharp/sdk/src/software.amzn.spapi
         id: build-project
         run: dotnet build --configuration Release --no-restore
   
       - name: Pack
-        working-directory: ./csharp/sdk/src/Amazon.SPAPI.SDK
+        working-directory: ./csharp/sdk/src/software.amzn.spapi
         id: pack-csharp
         run: |
-            dotnet pack ./Amazon.SPAPI.SDK.csproj --configuration Release
+            dotnet pack ./software.amzn.spapi.csproj --configuration Release
 
       - name: PushNuget
-        working-directory: ./csharp/sdk/src/Amazon.SPAPI.SDK
+        working-directory: ./csharp/sdk/src/software.amzn.spapi
         run: dotnet nuget push "**/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_TOKEN }} --skip-duplicate

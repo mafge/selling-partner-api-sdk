@@ -1,6 +1,6 @@
 {
-    "packageName":"Amazon.SPAPI.SDK",
-    "packageVersion": "1.0.0",
+    "packageName":"software.amzn.spapi",
+    "packageVersion": "1.1.0",
     "targetFramework":"net7.0",
     "engineOptions": { "library": "Stubble" }
 }

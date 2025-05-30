@@ -82,17 +82,17 @@ jobs:
       - name: Print workspace path
         run: echo ${{ github.workspace }}
       - name: Copy auth lib files to sdk directory
-        working-directory: ./selling-partner-api-sdk/csharp/sdk/src/Amazon.SPAPI.SDK/
+        working-directory: ./selling-partner-api-sdk/csharp/sdk/src/software.amzn.spapi/
         run: |
             mkdir Authlib
             cp ../../../authlib/* ./Authlib/
       - name: Restore dependencies
-        working-directory: ./selling-partner-api-sdk/csharp/
+        working-directory: ./selling-partner-api-sdk/csharp/sdk/src/software.amzn.spapi/
         run: dotnet restore
       - name: Build SDK and generate artifact
-        working-directory: ./selling-partner-api-sdk/csharp/
+        working-directory: ./selling-partner-api-sdk/csharp/sdk/src/software.amzn.spapi/
         run: |
-            dotnet build --configuration Release
+            dotnet build --configuration Release --no-restore
       - name: Create PR
         uses: peter-evans/create-pull-request@v7
         with:
